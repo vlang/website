@@ -1,0 +1,163 @@
+body {
+  margin: 0; }
+
+* {
+  font-family: "Roboto", "Helvetica Neue";
+  line-height: 1.5; }
+
+a {
+  text-decoration: none;
+  color: #4078C0; }
+
+pre {
+  font-family: "Roboto Mono",  "Courier New", Menlo; }
+
+.hello_devs {
+  margin: 0 auto;
+  width: 750px;
+  margin-top: 40px;
+  background-color: #f9f9f9;
+  padding: 5px;
+  border: 1px solid #dfdfdf;
+  display: table-cell; }
+
+#install {
+  float: right;
+  position: relative;
+  left: 240px;
+  display: none; }
+
+.row {
+  display: table;
+  width: 100%; }
+  @media (max-width: 1230px) {
+    .row {
+      display: block; } }
+
+.center {
+  margin: 0 auto;
+  max-width: 900px; }
+
+.menu {
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 10px; }
+  @media (min-width: 1230px) {
+    .menu {
+      height: 60px; } }
+  .menu a {
+    color: #777;
+    padding-right: 18px;
+    padding-left: 18px;
+    line-height: 70px;
+    font-size: 22px;
+    font-weight: 300; }
+    .menu a:hover {
+      color: #333; }
+
+.right {
+  float: left;
+  bottom: 10px;
+  width: 200px;
+  margin-left: 20px; }
+  @media (min-width: 1230px) {
+    .right {
+      position: relative;
+      top: 70px; } }
+
+.right a {
+  display: block;
+  margin-bottom: 10px; }
+
+.right img {
+  margin-right: 10px;
+  position: relative;
+  top: 10px; }
+
+h1 {
+  display: block;
+  text-align: center;
+  font-weight: 300; }
+
+h2 {
+  font-size: 22px;
+  font-weight: 300;
+  margin-top: 40px; }
+  @media (max-width: 1230px) {
+    h2 {
+      font-size: 22pt; } }
+
+.feature {
+  /*float: left;*/
+  /*height: 200px;*/
+  /*
+	border-bottom: 1px solid #dfdfdf;
+	border-right: 1px solid #dfdfdf;
+	*/
+  padding-top: 30px;
+  display: table-cell;
+  /*
+	display: block;
+	width: 100%;
+	*/ }
+  @media (min-width: 1230px) {
+    .feature {
+      width: 440px;
+      min-width: 440px;
+      max-width: 440px; } }
+  @media (max-width: 1230px) {
+    .feature {
+      display: block;
+      width: 90%;
+      font-size: 20pt;
+      margin-left: 10px; } }
+
+@media (min-width: 1230px) {
+  .first {
+    padding-right: 70px; } }
+
+.feature img {
+  width: 300px; }
+
+clear {
+  clear: both; }
+
+final {
+  margin-bottom: 300px; }
+
+td {
+  width: 120px; }
+  @media (max-width: 1230px) {
+    td {
+      width: 30%; } }
+
+.toc {
+  float: left;
+  position: sticky;
+  top: 20px; }
+  .toc a {
+    display: block; }
+
+.docs {
+  margin-left: 270px; }
+
+code {
+  font-family: 'Roboto Mono';
+  background-color: #f0f0f0;
+  padding: 1px 3px 1px 3px; }
+
+comment {
+  font-family: 'Roboto Mono';
+  color: #777; }
+
+.next {
+  display: table-cell;
+  cursor: pointer;
+  vertical-align: middle;
+  font-size: 170%;
+  padding: 10px; }
+
+.txt-subscribe {
+  font-size: 14px;
+  font-weight: 300;
+  padding: 2px;
+  width: 200px; }

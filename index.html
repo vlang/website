@@ -1,0 +1,691 @@
+@t header
+
+
+<script>
+@if . 
+	alert("You've been subscribed. Thanks!") 
+@end
+
+function isMob() {
+	return typeof( window.orientation ) !== "undefined" || 
+	navigator.userAgent.indexOf('IEMobile') !== -1;
+
+}
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+
+
+})
+
+function soon() {
+alert('Coming in March') 
+return false 
+} 
+
+var ex_id = 1; 
+const nr_exs = 4; 
+
+function prev() {
+next()
+} 
+function next() {
+//var old = ex_id; 
+ex_id++; 
+if (ex_id > nr_exs) ex_id = 1; 
+var elems = document.querySelectorAll('.hello_devs');
+    for (var index = 0 ; index < elems.length; index++) {
+//document.getElementById('ex' + old).style.display = 'none';  
+        elems[index].style.display = 'none'; 
+    } 
+document.getElementById('ex' + ex_id).style.display = 'table-cell'; 
+if (ex_id == 1) { 
+document.getElementById('ex' + ex_id).style.fontSize = '100%';  
+} 
+else { 
+document.getElementById('ex' + ex_id).style.fontSize = '80%'; 
+} 
+
+
+var select = document.getElementById("select") ;
+select.value = ex_id; 
+ 
+getAjax('/next') 
+
+ 
+} 
+
+function change_ex() {
+var select = document.getElementById("select") ;
+ex_id = select.value - 1;
+//if (ex_id < 1) ex_id=1; 
+next(); 
+ 
+} 
+
+function getAjax(url) {
+	    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+		    xhr.open('GET', url);
+								    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+									    xhr.send();
+										    return xhr;
+} 
+
+function size_note() {
+alert(` 
+Of course, it's not a very fair comparison. All these languages have a lot more features and support more platforms.
+
+However, V's numbers are unlikely to become more than 1 MB / 1 second.
+
+
+
+`) 
+} 
+
+function comp_note() {
+alert(` 
+In this example Doom 3 is translated from C++ to V and then compiled directly to x64 machine code.
+V to x64 takes 0.5 seconds. 
+
+Compilation to x64 is at an early stage, and right now only Mach-O is supported.
+
+Most likely for now you'll have to use compilation to C for your projects, then the compilation time
+drops to about 200k lines/second, which is still pretty fast. 
+ 
+
+`) 
+} 
+ 
+ 
+</script>
+</head>
+
+<body>
+
+<div class='right'>
+<a target=_blank href='https://github.com/vlang-io/V'><img width=30 src='img/github.png'>GitHub repo</a>
+
+<a target=_blank href='https://join.slack.com/t/vlang-io/shared_invite/enQtNTQ4NDk4OTE1NTM2LWQ4YmU2YjgzYWIxMzg5NzVjY2RiNGZiNTY2YmU2MjE4MGM1NzhhZTY4MmNkYTRhYmUxY2Q4OTM0OTdiOTY5Yzc'><img width=30 src='img/slack.png'>Discuss on Slack</a>
+
+<a target=_blank href='https://twitter.com/vlang_io'><img width=30 src='img/twitter.png'>&#64;vlang_io</a>
+
+<a target=_blank href='https://old.reddit.com/r/vlang'><img width=30 src='img/reddit.png'>/r/vlang</a>
+
+<!-- 
+<a target=_blank href='https://groups.google.com/forum/#!forum/vlang'><img width=30 src='img/gmail.png'>V mailing list</a>
+--> 
+
+<div style='width:300px;clear:both; font-size:12px;margin-top:30px;'> 
+<form method='POST' action='/subscribe'>
+	Subscribe to development updates: 
+	<input type='text' name='email' class='txt-subscribe' placeholder='Enter your email and press enter'> 
+	<br>
+	<input type='submit' value='Subscribe' style='visibility:hidden'> 
+</form>
+</div> 
+
+
+
+
+
+</div>
+
+<div style='float:right; margin-right: 5px; margin-top: 5px;'>
+<a target=_blank href='https://www.patreon.com/vlang'><img height=35 src='/img/patreon.png'></a> 
+<a style='text-align:center; display:block; position:relative; top:-4px;' target=_blank href='https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=HRGVJ2LA2LKJ8&item_name=Support+V+development&currency_code=USD&source=url&lc=US '> Donate via PayPal </a>
+</div> 
+
+<div class='menu'>
+
+
+<div class='center' style='text-align:center'> 
+<a target=_blank href='https://github.com/vlang-io/V/tree/master/examples'>Examples</a>
+<a href='/docs' >Documentation</a>
+<a href='/play'>Playground</a>
+<a href='//blog.vlang.io'>Blog</a> 
+<a href='/#faq'>FAQ</a>
+<a href='/#software'>Software built in V</a>
+</div> 
+
+</div> 
+
+<div class='center'>
+	<h1>
+	The V Programming Language
+	</h1>
+	<div style='font-size:12px; text-align:center; position: relative; top:-10px;'>
+
+	Fast, safe, compiled language created for developing <a target=_blank href='https://volt.ws'>Volt</a>,
+	soon available for everyone.
+	<br><br>
+	Open source release in June 2019. 
+<a target=_blank href='https://www.patreon.com/vlang'>Early access</a> on April 15.</div>
+
+<div id='install'>
+    Install V from source in 0.5 seconds
+	<pre>wget vlang.io/v.c && gcc -o v v.c</pre>
+	<!--
+	or if you already have V
+	<pre>wget https://vlang.io/v.v && v v.v</pre>
+	-->
+	</div>
+
+</div> 
+
+<div style=''> 
+
+<div class='row' style='margin-top:30px'> 
+<div class='next' style='text-align:right' onclick='prev()'>  <img src=/img/left.png width=30></div> 
+
+	<pre class='hello_devs' id=ex1>
+fn main() {
+	types := ['game', 'web', 'tools', 'GUI']
+	for typ in types {
+		println('Hello, $typ developers!')
+	}
+}	</pre>
+
+<pre class='hello_devs' id=ex2 style='display:none'>
+struct Story {
+    title string
+}
+
+<comment>// Fetches top HN stories in 8 coroutines</comment> 
+fn main() {
+    resp := http.get('https://hacker-news.firebaseio.com/v0/topstories.json')?
+    ids := json.decode([]int, resp.body)?
+    mut cursor := 0
+    for _ in 0..8 {
+        go fn() {
+            for  {
+                lock { <comment>// Without this lock the program will not compile</comment> 
+                    if cursor >= ids.len {
+                        break
+                    }
+                    id := ids[cursor]
+                    cursor++
+                }
+                resp := http.get('https://hacker-news.firebaseio.com/v0/item/$id.json')? 
+                story := json.decode(Story, resp.body)?
+                println(story.title)
+            }
+        }()
+    }
+    runtime.wait() <comment>// Waits for all coroutines to finish</comment> 
+} 
+</pre> 
+
+
+<pre class='hello_devs' id=ex3 style='display:none'>
+import ui  // Native cross platform ui toolkit (uses Cocoa, win32, GTK+)  
+
+// There are no globals, so we have to use a context struct 
+struct Context {
+    input ui.TextBox // this uses native conrols (NSTextView on macOS, edit HWND on Windows)  
+    names []string   // let's log the names to demonstrate how arrays work  
+}
+
+fn main() {
+    wnd := ui.new_window(ui.WindowCfg{  // V has no default arguments and overloading. 
+        width:  600                     // All stdlib functions with many args use Cfg wrappers.
+        height: 300 
+        title:  'hello world' 
+    }) 
+    ctx := Context{
+        input: ui.new_textbox(wnd) 
+        // we don't need to initialize the names array, it's done automatically  
+    }
+    ctx.input.set_placeholder('Enter your name')
+    btn := ui.new_button(wnd, 'Click me', ctx.btn_click)
+    for {
+        ui.wait_events()
+    }
+}
+
+fn (ctx mut Context) btn_click() { 
+    name := ctx.input.text()
+    ctx.input.hide()
+    println('current list of names: $ctx.names')  // >> current list of names: [ "Bob", "Alex" ] 
+    ui.alert('Hello, $name!')
+    if ctx.names.contains(name) {
+        ui.alert('I already greeted you ;)') 
+    } 
+    ctx.names << name 
+} 
+</pre> 
+
+
+
+<pre class='hello_devs' id=ex4 style='display:none'>
+struct User { /* ... */ }
+struct Post { /* ... */ }
+struct DB   { /* ... */ }
+
+struct Repo &lt;T> {
+    db DB
+}
+
+fn new_repo&lt;T>(db DB) Repo {
+    return Repo&lt;T>{db: db}
+}
+
+fn (r Repo) find_by_id(id int) T? { // `?` means the function returns an optional
+    table_name := T.name // in this example getting the name of the type gives us the table name
+    return r.db.query_one&lt;T>('select * from $table_name where id = ?', id)
+}
+
+fn main() {
+    db := new_db()
+    users_repo := new_repo&lt;User>(db)
+    posts_repo := new_repo&lt;Post>(db)
+    user := users_repo.find_by_id(1) or {
+        eprintln('User not found')
+        return
+    }
+    post := posts_repo.find_by_id(1) or {
+        eprintln('Post not found')
+        return
+    }
+} 
+</pre> 
+
+
+<div class='next' onclick='next()'><img src=/img/right.png width=30></div> 
+
+
+</div> 
+
+<div class='center' style='text-align:center'> 
+<select id='select' onchange='change_ex()'>
+<option value=1>Hello world</option> 
+<option value=2>Concurrent news fetcher</option> 
+<option value=3>Simple GUI app</option> 
+<option value=4>Generic SQL repository</option> 
+</select> 
+<br>
+<input type='button' onclick='window.location="/play"' value='Run'> 
+</div> 
+
+</div> 
+
+
+
+<div class='menu' ></div> 
+<div class='center'>
+	<div class='row'>
+<div class='feature first'>
+	<h2>Fast compilation</h2>
+	V compiles 1.5 million lines of code per second per CPU core
+	<pre>
+cd doom3/
+wc -l doom3.v     # 458 713
+time v doom3.v    # 0.5s <a style='font-size:140%' href='#' onclick='comp_note()'>*</a></pre> 
+       <a href='/compilation_speed'>Compilation speed benchmark 
+and comparison with other languages</a>. 
+</div>
+
+
+<div class='feature'>
+	<h2>Safety</h2>
+	<li>No global state 
+	<li>No null
+	<li>No undefined values 
+	<li><a target=_blank href='/docs#option'>Option types</a> 
+	<li><a target=_blank href='/docs#generics'>Generics</a> 
+	<li><a target=_blank href='/docs#vars'>Immutability by default</a> 
+	<li><a target=_blank href='/docs#recvs'>Partially pure functions</a> 
+</div>
+
+</div>
+
+	<div class='row'>
+<div class='feature first'> 
+
+	<h2>C/C++ translation</h2>
+	V can translate your entire C/C++ project and offer you the safety, simplicity, and up to 200x compilation speed up.
+	<br>
+	<pre style='float:left; font-size:80%;'>
+std::vector&lt;std::string> s;
+s.push_back("V is ");
+s.push_back("awesome");
+std::cout << s.size(); </pre>
+	<pre style= 'font-size:80%;'>
+	mut s := []string 
+	s << 'V is '
+	s << 'awesome'
+	println(s.len)</pre>
+<!-- 
+	Read about translating <a href='/doom' onclick='return soon()'>Doom & Doom 3</a>, 
+<a href='#'>LevelDB</a>, <a href='#'>SQLite</a>.
+--> 
+
+<p> 
+<a href='#cppinfo'>How does it work?</a> 
+<p> 
+	Read about translating <u>Doom & Doom 3</u>, <u>LevelDB</u>, <u>SQLite</u> (coming in early April).  
+</div>
+
+<div class='feature'> 
+<h2>400 KB compiler with zero dependencies <a href='#' onclick='size_note()'>*</a></h2>
+<p>
+The entire language and its standard library are less than 400 KB. 
+You can build V in 0.3 seconds. 
+</p>
+<p>
+For comparison:
+</p>
+<table>
+<tr><td></td><td>Space required</td><td>Build time</td></tr>
+<tr><td>Go</td><td>525 MB</td><td>1m 33s</td></tr>
+<tr><td>Rust</td><td>30 GB</td><td>45m</td></tr>
+<tr><td>gcc</td><td>8 GB</td><td>50m</td></tr>
+<tr><td>Clang</td><td>15-20 GB</td><td>25m</td></tr>
+<tr><td>Swift</td><td>70 GB <a target=_blank href='https://github.com/apple/swift#getting-started'>*</a></td><td>90m</td></tr>
+<tr><td>V</td><td>0.4 MB</td><td>0.3s</td></tr>
+</table>
+</div>
+</div>
+
+<!--
+row {
+	feature height:360px {
+		h2 { 200 KB }
+		p { The entire V 
+		-->
+
+	<div class='row'>
+<div class='feature first'>
+	<h2>Performance</h2>
+	<li>As fast as C
+	<li>Minimal amount of allocations <br>
+	<li>Built-in serialization without reflection <br>
+
+
+
+
+</div>
+
+<div class='feature'>
+<h2>Hot code reloading</h2>
+<p>
+Get your changes instantly without recompiling!
+<p>
+ Since you also don't have to
+waste time to get to the state you are working on after every compilation, this can save a lot of 
+precious minutes of your development time.
+</p>
+<p> 
+<a target=_blank href='https://volt-app.com/img/lang.webm'>Demonstration of hot code reloading.</a> 
+</p> 
+ 
+</div>
+
+</div>
+
+	<div class='row'>
+<div class='feature first'>
+<h2>Simple language for building  maintainable programs</h2> 
+<p> 
+You can learn the entire language by going through the 
+<a target=_blank href='/docs'>documentation</a> in half an hour. 
+<p> 
+Despite being simple, it gives a lot of power to the developer. Anything you can do in other languages, you can do in V. 
+
+
+
+</div>
+
+<div class='feature'>
+<h2>REPL</h2>
+<pre>
+ v
+ >> data := http.get('https://vlang.io/utc_now')? 
+ >> data 
+ '1551205308' 
+</pre> 
+  
+
+</div>
+
+</div>
+
+	<div class='row'>
+<div class='feature first'>
+<h2>Native cross platform UI library</h2>
+Build native apps that look native. You no longer need to embed a browser to
+develop cross platform apps quickly.
+</div>
+
+<div class='feature'>
+<h2>Run everywhere</h2>
+V can compile to (human readable) C, so you get the great platform support and 
+optimization of gcc and Clang.
+</div>
+
+</div>
+
+</div> 
+
+
+<div class='menu' ></div> 
+
+<div class='center'> 
+
+<h1 id='faq'>FAQ</h1>
+<p>
+<b>Why create V when there are already so many languages? Why not use Go, Rust, C++, Python etc?</b> 
+<p>
+<a href='/compare'>Detailed comparison of V and other languages.</a>
+</p>
+
+<br> 
+<p>
+<b>What language is V written in? </b> 
+<p>
+V. The compiler can compile itself. The original version was written in Go. 
+</p>
+
+<br> 
+<p>
+<b>Does V use LLVM? </b> 
+<p>
+No. V compiles directly to machine code. It's one of the main reasons it's so light and fast. 
+Right now only x64 architecture/Mach-O format are supported.  Once V is open-sourced,
+other architectures and formats should be implemented relatively quickly. 
+</p>
+<p>
+V can also emit human readable C, which can then be compiled to run on any platform. 
+This way the compilation speed is about 10 times slower (≈150k lines/second).   
+</p>
+
+<br> 
+<p>
+<b> What about optimization?  </b> 
+<p>
+For now V emits C and uses GCC/Clang for optimized production builds. 
+This way you get access to sophisticated optimization. 
+
+<p>
+Such builds are compiled ≈150 times slower than V development builds (but are still 
+an order of magnitude  
+faster than C++ production builds). 
+<p> 
+This can be a problem for industries where optimization is required during development (for example AAA 
+games). In this case hot code reloading can be used. 
+</p> 
+<p>
+In the future V will have its own optimizer.
+</p> 
+
+<br> 
+<p> 
+<b> Is there garbage collection?  </b> 
+<p> 
+No. V manages memory at compilation time (like Rust). Right now only basic cases are handled. 
+For others, manual memory management is required for now. The right approach to solve this will
+be figured out in the near future. 
+</p> 
+
+<br> 
+<p> 
+<b> Is there going to be a package manager? </b> 
+<p> 
+Yes! V is a very modular language and encourages creation of modules that are easy to reuse.
+There will be a central package manager, and installing modules will be as easy as 
+<pre>v install sqlite</pre> 
+
+
+<br> 
+<p> 
+<b> Is V going to change a lot before v1.0?</b> 
+<p> 
+No. The things you can learn from <a target=_blank href='/docs'>documentation</a> today are going to 
+stay the same. There will be several new features of course (like coroutines). 
+<p>
+When designing V, I spent a lot of time on research to make sure I won't have to change
+things in the future.
+<p>
+Even if something does change, there will be an automatic migration tool.  
+<p>
+The same will be true after v1.0 is released. 
+
+ 
+</p> 
+
+<br> 
+<p> 
+<b> What operating systems are supported?</b> 
+<p> 
+Windows, macOS, Linux, *BSD. On release, only Linux and macOS. 
+
+ 
+</p> 
+
+<br> 
+<p> 
+<b>Who's behind V? </b> 
+<p> 
+<a target=_blank href='https://github.com/medvednikov'>Just me.</a> 
+
+ 
+</p> 
+
+<br> 
+<p> 
+<b id=cppinfo>How can it translate C++? It's impossible for one person to write a C++ parser.</b> 
+<p> 
+Indeed it is. Luckily I didn't have to write it. I use Clang parser for translating C/C++ to V.  
+
+ 
+</p> 
+
+
+<br> 
+<p> 
+<b> Why "V"? </b> 
+<p> 
+Initially the language had the same name as the product it was created for: Volt. The extension was ".v",
+I didn't want to mess up git history, so I decided to name it V :) 
+<p>
+It's a simple name that reflects the simplicity of the language and it's easy to pronounce for everyone in the
+world. 
+<p>
+Please note that the name of the language is "V", not "Vlang" or "V-Lang" etc. 
+
+<br> 
+<br> 
+<p> 
+<b>Under which license is V going to be published?</b> 
+<p> 
+MIT. 
+ 
+<p> 
+<br> 
+<br> 
+<div class='center' style='text-align:center'> 
+Have an unanswered question?  
+<a href='mailto:alex&#64;medvednikov.com'>Contact me.</a> 
+</div> 
+
+</p>
+
+
+</div> 
+
+<div class='menu' ></div> 
+
+
+<div class='center'> 
+
+<h1 id='software'>Software built in V</h1>
+
+<div class='row'>
+	<div class='feature first'>
+		<h2>V</h2>
+		V itself is written in V.
+	</div>
+	<div class='feature'>
+		<h2><a target=_blank href='https://volt-app.com'>Volt</a></h2>
+		Native desktop client for Slack, Skype, Matrix, Telegram, Twitch and many more 
+		services.
+		<!--<img src='https://volt.ws/img/screen2.png'>-->
+	</div>
+</div>
+
+<div class='row'>
+	<div class='feature first'>
+		<h2>Filey</h2>
+		Cross platform file manager with Miller Columns and built-in selective sync
+		with major cloud platforms.
+		<!--<img src='/img/filey.png'>-->
+	</div>
+	<div class='feature'>
+		<h2><a target=_blank href='https://github.com/medvednikov/vid'>Vid</a></h2> 
+		Open source 200 KB editor with the performance of Sublime Text.
+	</div>
+
+</div>
+
+
+<div class='row'>
+	<div class='feature first'>
+	<h2>C/C++ to V translator</h2>
+	This tool supports the latest standard of notoriously complex C++
+	and allows full automatic conversion to human readable code. 
+	</div>
+	<div class='feature'>
+	<h2> V ui</h2>
+	Cross platform widget toolkit using native APIs.
+	</div>
+</div>
+<div class='row'>
+	<div class='feature first'>
+		<h2><a target=_blank href='http://gitly.org'>gitly</a></h2>
+Open-source light and fast alternative to GitHub/GitLab. 
+	</div>
+	<div class='feature'>
+	<h2><a href='//blog.vlang.io'>V blog</a></h2>
+	Right now it's powered by very basic blogging software, but in the future it will be a full featured
+light alternative to Discourse. 
+	</div>
+
+</div>
+
+<br><br>
+<!-- 
+<div style='text-align:center;margin-top:30px;'> 
+Are you using V to build your product or library? <a href='mailto:alex&#64;medvednikov.com'>
+Have it added to this list</a>.
+</div> 
+--> 
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+
+
+	</body>
+
+</html>
+@t footer

@@ -1,0 +1,385 @@
+
+@t header
+
+<style>
+textarea {
+width: 85% !important; 
+//width:400px !important; 
+height: 500px; 
+font-family: 'Roboto Mono'; 
+font-size:13px; 
+//margin-top:20px; 
+padding: 5px; 
+    border: none;
+    outline: none; 
+
+background-color:#f5f5f5; 
+} 
+.menu {
+height: auto; 
+} 
+button {
+width: 80px; 
+font-size:20px; 
+} 
+.controls {
+padding-top:20px ; 
+height:40px; 
+} 
+.example {
+display:none; 
+} 
+.center {
+max-width:1070px !important; 
+} 
+
+.output {
+font-family: 'Roboto Mono'; 
+ 
+} 
+
+.buttons button {
+height: 30px; 
+font-size:14px; 
+margin-bottom:10px; 
+width: 100%; 
+} 
+.lines {
+position:relative;
+top:5px; 
+float:left; 
+font-size:13px;
+color:#aaa; 
+text-align:right; 
+background-color:#f5f5f5; 
+} 
+.lines div { 
+} 
+
+</style> 
+
+<script  src="/js/jquery.min.js"></script> 
+<script src="/js/jquery-linedtextarea.js"></script> 
+
+
+<script>
+
+
+var ip = 'play2.vlang.io'//35.196.197.15' 
+//ip = 'localhost:8080' 
+function run() {
+	var body = $('textarea').val(); 
+	$('#btnRun').hide(); 
+	$('.output').text('Waiting for remote server...') 
+	$.post('https://' + ip + '/compile', {body:body}, function(resp) {
+	//alert(resp) 
+	var vals = resp.split('==vmft:') 
+	console.log(vals) 
+	$('.output').text(vals[0]); 
+	$('#btnRun').show(); 
+	if (vals.length > 1){ 
+	var fmt = vals[1]; 
+	if (fmt != '') { 
+	$('textarea').val(fmt); 
+	} 
+	} 
+} ); 
+ 
+} 
+
+function select_ex(id ) { 
+	var text = $('#ex' + id).text()
+	$('textarea').val(text) 
+} 
+
+$(document).ready(function() {
+			$('#code').linedtextarea();
+
+	var s = localStorage.getItem('play') 
+if (s != '') { 
+$('textarea').val(s) 
+
+localStorage.setItem('play', '') 
+} 
+
+}); 
+
+</script> 
+
+<div class='right'>
+<a target=_blank href='https://github.com/vlang-io/V'><img width=30 src='img/github.png'>GitHub repo</a>
+
+<a target=_blank href='https://join.slack.com/t/vlang-io/shared_invite/enQtNTQ4NDk4OTE1NTM2LWQ4YmU2YjgzYWIxMzg5NzVjY2RiNGZiNTY2YmU2MjE4MGM1NzhhZTY4MmNkYTRhYmUxY2Q4OTM0OTdiOTY5Yzc'><img width=30 src='img/slack.png'>Discuss on Slack</a>
+
+<a target=_blank href='https://twitter.com/vlang_io'><img width=30 src='img/twitter.png'>&#64;vlang_io</a>
+
+<a target=_blank href='https://old.reddit.com/r/vlang'><img width=30 src='img/reddit.png'>/r/vlang</a>
+</div> 
+
+
+<div style='float:right; margin-right: 5px; margin-top: 5px;'>
+<a target=_blank href='https://www.patreon.com/vlang'><img height=35 src='/img/patreon.png'></a> 
+<a style='text-align:center; display:block; position:relative; top:-4px;' target=_blank href='https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=HRGVJ2LA2LKJ8&item_name=Support+V+development&currency_code=USD&source=url&lc=US '> Donate via PayPal </a>
+</div> 
+
+<div class='menu'>
+
+
+<div class='center' style='text-align:center'> 
+<a href='/' >Home</a>
+<a target=_blank href='https://github.com/vlang-io/V/tree/master/examples'>Examples</a>
+<a href='/docs' >Documentation</a>
+<!-- 
+<a href='/play'>Playground</a>
+--> 
+<a href='https://blog.vlang.io'>Blog</a> 
+<a href='/#faq'>FAQ</a>
+<a href='/#software'>Software built in V</a>
+</div> 
+
+</div> 
+
+<div class='center'>
+	<h1>
+	<a href='/' style='color:black'>The V Playground</a> 
+	</h1>
+	<div style='font-size:12px; text-align:center; position: relative; top:-10px;'>
+
+	Fast, safe, compiled language created for developing <a target=_blank href='https://volt.ws'>Volt</a>,
+	soon available for everyone.
+	<br><br>
+	Open source release in June 2019. 
+<a target=_blank href='https://www.patreon.com/vlang'>Early access</a> on April 15.</div>
+
+</div> 
+<div class='menu'>
+</div> 
+
+
+<div class='center'> 
+<p> 
+<!-- 
+Due to inconsitencies between the documentation and this pre-alpha build,
+the playground has been disabled until a more stable release and an updated documentation. 
+--> 
+<p> 
+
+</div> 
+<div class='center'>
+<div class='controls'> 
+<button id=btnRun onclick='run()' >Run</button> 
+<!-- 
+Disabled for 8 hours. Sorry. A major update is coming. 
+--> 
+<span style='float:right; font-size:80%;line-height:40px'>Your code will be formatted automatically</span> 
+</div> 
+
+
+<div style='float:right; width:210px; margin-top:20px' class='buttons'> 
+<button onclick='select_ex(0)'>Hello world</button> 
+<button onclick='select_ex(1)'>Fibonacci</button> 
+<button onclick='select_ex(2)'>Fibonacci + memoization</button> 
+<button onclick='select_ex(3)'>JSON + option types</button> 
+<button onclick='select_ex(4)'>Users repository</button> 
+<button onclick='select_ex(5)'>Advanced consts</button> 
+
+<br> 
+<a target=_blank href='/docs'>Check out the docs for more examples</a> 
+</div> 
+
+<div style='height:505px; max-height:505px;'> 
+<textarea id='code' autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false">fn main() {
+        types := ['game', 'web', 'tools', 'GUI']
+        for typ in types {
+                println('Hello, $typ developers!')
+        }
+} 
+</textarea> 
+</div> 
+
+<span class='example' id='ex0' >fn main() { 
+        types := ['game', 'web', 'tools', 'GUI']
+        for typ in types {
+                println('Hello, $typ developers!')
+        }
+} 
+</span> 
+<span class='example' id='ex1'>fn fib(n int) int {
+        if n <= 1 {
+                return n
+        }
+        return fib(n - 1) + fib(n - 2)
+}
+
+fn main() {
+        for i := 0; i < 10; i++ {
+                println(fib(i))
+        }
+}
+</span> 
+<span class='example' id=ex2>const (
+        MAX = 15 
+)
+
+struct Fib {
+        nums []int
+}
+
+fn (fib mut Fib) calc(n int) int {
+        if n <= 1 {
+                return n
+        }
+        if fib.nums[n] != 0 {
+                return fib.nums[n]
+        }
+        fib.nums[n] = fib.calc(n - 1) + fib.calc(n - 2)
+        return fib.nums[n]
+}
+
+fn main() {
+        fib := Fib {
+                nums: [0; MAX]
+        }
+        for i := 0; i < MAX; i++ {
+                println(fib.calc(i))
+        }
+}
+</span> 
+
+<span class='example' id=ex3>struct User {
+        name          string
+        age           int
+        is_registered bool
+}
+
+fn main() {
+        s := '[{ "name":"Frodo", "age":25}, {"name":"Bobby", "age":10}]'
+        users := json.decode( []User, s) or {
+                eprintln('Failed to parse json')
+                return
+        }
+        for user in users {
+                println('$user.name: $user.age')
+        }
+        println('')
+        for i, user in users {
+                println('$i) $user.name')
+                if !user.can_register() {
+                        println('Cannot register $user.name, they are too young')
+                }
+        }
+        // Let's encode users again just for fun
+        println('')
+        println(json.encode(users))
+}
+
+fn (u User) can_register() bool {
+        return u.age >= 16
+}
+
+fn (u mut User) register() {
+        u.is_registered = true
+}
+</span> 
+
+<span class='example' id=ex4>struct User {
+	id int 
+} 
+
+struct Repo {
+	users []User 
+} 
+
+fn new_repo() Repo {
+        user := User{id:10}
+        return Repo {
+                users: [user]
+        }
+} 
+
+fn (r Repo) find_user_by_id(id int) User? { 
+	for user in r.users {
+		if user.id == id {
+			// V automatically wraps this into an option type  
+			return user 
+		} 
+	} 
+	return error('User $id not found') 
+} 
+
+fn main() {
+	repo := new_repo() 
+	// Option types must be handled by `or` blocks  
+	user := repo.find_user_by_id(10) or { 
+		// `or` block must end with `return`, `break`, or `continue`  
+		println('not found') 
+		return  
+	} 
+	println(user.id) // ==> '10'  
+}  
+</span> 
+
+<span class='example' id=ex5>struct Color {
+        r int
+        g int
+        b int
+}
+
+fn (c Color) str() string {
+	return '{$c.r, $c.g, $c.b}' 
+} 
+
+fn rgb(r, g, b int) Color { 
+	return Color{r: r, g: g, b: b}
+} 
+
+const (
+        NUMBERS = [1, 2, 3]
+
+        RED  = Color{r: 255, g: 0, b: 0}
+        BLUE = rgb(0, 0, 255)
+)
+
+fn main() {
+        println(NUMBERS)
+        println(RED)
+        println(BLUE)
+}  
+</span> 
+
+
+<span class='example' id=ex6> 
+</span> 
+
+<pre class='output'> 
+Thank you for trying out V.
+
+This is a pre-alpha stage. The language is going to become 
+a lot more stable in the next month.
+
+Please report all issues via GitHub. 
+
+For security reasons imports are temporarily disabled, the size of the program is limited,
+and your program can't run for more than 1 second. 
+
+
+Coming soon: online C to V translator.
+
+Coming not so soon: online C++ to V translator. 
+
+</pre> 
+</div> 
+
+<!-- 
+Things that are currently broken:
+- Interface method calls
+- Interfaces have to be declared with `type Foo interface {` 
+- Foo{a,b} syntax (use Foo{a:a, b:b}) 
+- Closures
+- a[i].field
+- Locks (lock {}). Use sync.Mutex for now. 
+- Enums 
+--> 
+
+@t footer
+
