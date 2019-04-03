@@ -301,7 +301,75 @@ fn main() {
 <br> 
 <br> 
 <br> 
+<h3 id=nim>Nim</h3> 
+<p>
+V and Nim are very different. One of V's main philosophies is "there must be only one way of doing things". 
+This results in predictable, simple, and maintanable code. 
+<p> 
+Nim gives a lot of options and freedom to developers. For example, in V you would write 
+<code>foo.bar_baz()</code>,
+but in Nim all of these are valid: <code>foo.barBaz()</code>, <code>foo.bar_baz()</code>, 
+<code>bar_baz(foo)</code>, <code>barBaz(foo)</code>,
+<code>barbaz(foo)</code> etc. 
+<p>
+In V there's only one way to return a value from a function: <code>return value</code>. In Nim you can do 
+<code>return value</code>, <code>result = value</code>, <code>value</code> (final expression), or modify
+a <code>ref</code> argument. 
 
+<p>Features like macros and OOP offer even more ways to solve problems and increase complexity. 
+
+<p>Nim's strings are mutable, in my opinion this is a huge drawback. I'll post a detailed article
+about the power of immutable strings. 
+
+<p> Unlike V, Nim generates unreadable C code with lots of extra bloat. This is a small segment 
+copied from a simple hello world program: 
+<pre>     NI T1_;
+     T1_ = (NI)0;
+     {
+             if (!(framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw == NIM_NIL)) goto LA4_;
+             T1_ = ((NI) 0);
+     }
+     goto LA2_;
+     LA4_: ;
+     {
+             T1_ = ((NI) ((NI16)((*framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw).calldepth + ((NI16) 1))));
+     }
+     LA2_: ;
+     (*s).calldepth = ((NI16) (T1_));
+     (*s).prev = framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
+     framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw = s;
+     {
+             if (!((*s).calldepth == ((NI16) 2000))) goto LA9_;
+             stackOverflow_II46IjNZztN9bmbxUD8dt8g();
+     }
+     LA9_: ;
+</pre> 
+
+<p> 
+This must be  one of the reasons it compiles almost <a target=_blank href='/compilation_speed'>100 
+times slower</a> than V.  
+
+<p> 
+V can emit native code directly, Nim can only emit C and JavaScript. It's also possible to embed C code
+in Nim, which reduces safety and portability. 
+
+<p>Nim allows importing functions into global namespace. This becomes a huge problem when working on large
+code bases. Explicit imports that V, Go, Oberon have are much more practical: <code>pkg.function()</code> vs
+<code>function()</code>. 
+
+<p>V's syntax is a lot cleaner with much fewer rules. Lack of significant whitespace improves
+readability and maintainability of large code bases and makes generating code much easier. 
+
+
+<p> 
+
+<p>The list can go on and on. Nim is a language with a lot of features, still developing and changing. 
+V is not going to change much, if at all. 
+ 
+
+<br> 
+<br> 
+<br> 
 <h3>Zig</h3> 
 
 Zig's goals are similar. 
