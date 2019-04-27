@@ -103,18 +103,18 @@ window.open('/play')
 
 <div class='docs'>
 <h2 id=introduction style='border:0'>Introduction</h2> 
-V is a statically typed compiled programming language designed for building maintainable software. 
+V is a statically-typed compiled programming language designed for building maintainable software. 
 
 <p> 
 It's similar to Go and is also influenced by Oberon, Rust, Swift. 
 
 <p> 
 V is a very simple language. Going through this documentation will take you about half an hour,
-and by the end of it you will learn pretty much the entire language. 
+and by the end of it, you will learn pretty much the entire language. 
 
 <p> 
 Despite being simple, it gives a lot of power to the developer. Anything you can do in other languages,
-you can do in V. 
+you can do it in V. 
 
 <p>
 Found an error/typo? Please <a target=_blank 
@@ -216,14 +216,14 @@ fn main() {
 <input class='run' type='button' value='Run'> 
 
 <p> 
-To change the value of the variable use <code>=</code>. In V variables are 
+Use <code>=</code> to change the value of the variable. In V, variables are 
 immutable by default. To be able to change the value of the variable, you
 have to declare it with <code>mut</code>.
 
 
 <p>
-Please note the difference between <code>:=</code> and <code>=</code><br> <code>:=</code> 
-is used for declaring and initializing, <code>=</code> is used for assigning.
+Please note the difference between <code>:=</code> and <code>=</code>.<br> <code>:=</code> 
+is used for declaring and initializing, and <code>=</code> is used for assigning.
 
 <p>&nbsp;</p>
 
@@ -235,7 +235,7 @@ fn main() {
 <input class='run' type='button' value='Run'> 
 <p> 
 This code will not compile, because variable <code>age</code> is not declared.
-All variables need to be declared in V.
+All variables needs to be declared in V.
 
 
 <h2 id=btypes>Basic types</h2>
@@ -255,7 +255,7 @@ rune <comment>// alias for i32, represents a Unicode code point </comment>
 f32 f64
 </pre>
 
-Please note, than unlike C and Go, <code>int</code> is always a 32 bit integer.
+Please note, that unlike C and Go, <code>int</code> is always a 32 bit integer.
 
 
 <h2 id=consts>Constants</h2>
@@ -278,10 +278,10 @@ Constants are declared with <code>const</code>. They can only be defined
 at the module level (outside of functions).
 
 <p>
-Constant names must be capitalized. This helps distinguish them from variables.
+Constant names must be capitalized. This helps to distinguish them from variables.
 
 <p>
-Constant values can never be changed.
+Constant values can not be changed.
 
 <p>
 V constants are more flexible than in most languages. You can assign more complex values: 
@@ -369,17 +369,16 @@ fn main() {
 <input class='run' type='button' value='Run'> 
 
 <p> 
-Array type is determined by the first element: <code>[1, 2, 3]</code> is an array of ints <br> 
-(<code>[]int</code>). <br> 
-<code>['a', 'b']</code> is an array of strings (<code>[]string</code>). 
+Array type is determined by the first element: <br>
+<code>[1, 2, 3]</code> is an array of ints (<code>[]int</code>) and <code>['a', 'b']</code> is an array of strings (<code>[]string</code>). 
 
 <p>
-All elements in an array must have the same type. <code>[1, 'a']</code> will not compile.
+All elements in an array must have the same type: <code>[1, 'a']</code> will not compile.
 
 <p>
 <code>&lt;&lt;</code> is an operator that appends a value to the end of the array. 
 
-<p><code>.len</code> field returns the length of the array. Note, that it's a read-only field,
+<p><code>.len</code> field returns the length of the array. Note that it's a read-only field,
 and it can't be modified by the user. All exported fields are read-only by default in V. 
 
 <p><code>.contains(val)</code> method returns true if the array contains <code>val</code>. 
@@ -498,7 +497,7 @@ fn main() {
 
 <p> 
 
-Finally, there's the traditional C style <code>for</code> loop. It's safer than the `while` form
+Finally, there's a traditional C style <code>for</code> loop. It's safer than the <code>while</code> form
 because with the latter it's easy to forget to update the counter and get
 stuck in an infinite loop.
 
@@ -523,7 +522,8 @@ fn main() {
 <input class='run' type='button' value='Run'> 
 <p> 
 
-A switch statement is a shorter way to write a sequence of <code>if - else</code> statements. It runs the first case whose value is equal to the condition expression.
+A switch statement is a shorter way to write a sequence of <code>if - else</code> statements. 
+It runs the first case whose value is equal to the condition expression.
 <p>
 Unlike C, <code>break</code> statement is not needed at the end of every block.
 
@@ -635,9 +635,9 @@ fn main() {
 Please note that functions can only modify receivers.<br><code>fn register(u mut User)</code> 
 will not compile. 
 <p>
-V functions are partially pure: function arguments can never be modified by the function. 
+V functions are partially pure: function arguments can not be modified by the function. 
 <p>
-Another way to modify an object is simply to return a modified version: <br>
+Another way to modify an object is to simply return a modified version: <br>
 <pre>
 <comment>// TODO: this syntax is not implemented yet </comment> 
 fn register(u User) User { 
@@ -678,7 +678,8 @@ fn main() {
 </pre> 
 <input class='run' type='button' value='Run'> 
 <p> 
-A type implements an interface by implementing its methods. There is no explicit declaration of intent, no "implements" keyword.
+A type implements an interface by implementing its methods. 
+There is no explicit declaration of intent, no "implements" keyword.
 </p> 
 <p>
 V interfaces are very efficient. There's no dynamic dispatch.
@@ -784,7 +785,7 @@ fn main() {
 } 
 </pre> 
 
-<span style='font-size:80%'>The initial version of V had generics because arrays and maps were built with
+<span style='font-size:80%'>The initial version of V had generics because arrays and maps were built within
 them. Later I figured out a way to implement these data structures without generics. This simplified code
 greatly.  
 <br><br>
@@ -816,10 +817,10 @@ fn main() {
 JSON is very popular nowadays, that's why JSON support is built in. 
 <p>
 The first argument of the <code>json.decode</code> function is the type to decode to. 
-The second argument is the json string. 
+The second argument is the JSON string. 
 
 <p>
-V generates code for json encoding and decoding. No reflection is used. This results in much better
+V generates code for JSON encoding and decoding. No reflection is used. This results in much better
 performance. 
 
 <h2 id=testing>Testing</h2>
