@@ -3,7 +3,6 @@
 
 <style>
 h2 {
-	border-top: 1px solid #dfdfdf;
 	padding-top: 10px;
 }
 pre {
@@ -14,48 +13,41 @@ comment {
 font-family: 'Roboto Mono'; 
 color: #777;
 }
+table,td {
+border-collapse: collapse; 
+border: 1px solid #dfdfdf; 
+} 
+td {
+padding: 5px; 
+} 
 </style>
 
-<div class='menu'>
-
-
-<div class='center'> 
-<a target=_blank href='https://github.com/vlang-io/V/tree/master/examples'>Examples</a>
-<a href='/docs' onclick='return soon()' >Documentation</a>
-<a href='/play' onclick='return soon()'>Playground</a>
-<a href='/blog' onclick='return soon()'>Blog</a> 
-<a href='/#faq'>FAQ</a>
-<a href='/#software'>Software built in V</a>
-</div> 
-
-</div> 
-
-
-<div class='center'>
-	<h1>
-	V programming language
-	</h1>
-	<div style='font-size:12px; text-align:center; position: relative; top:-10px;'>
-
-	Fast, safe, compiled language created for developing <a target=_blank href='https://volt.ws'>Volt</a>,
-	soon available for everyone.
-	<br><br>
-	Open source release in mid 2019.</div>
-
-<div id='install'>
-    Install V from source in 0.5 seconds
-	<pre>wget vlang.io/v.c && gcc -o v v.c</pre>
-	<!--
-	or if you already have V
-	<pre>wget https://vlang.io/v.v && v v.v</pre>
-	-->
-	</div>
-
-</div> 
+<div class='sep'></div> 
 
 <div class='center'>
 
 <h2>Comparison of V and other languages</h2> 
+
+<p>
+
+I created V because none of the existing languages had all of the following 
+features:
+
+<table>
+<tr><td style='width:300px'>Fast compilation<td style='width:200px'> Go, Delphi 
+<tr><td>Simplicity<td>Go, Python 
+<tr><td>Great performance on par with C + <br>zero cost C interop<td> C, C++, Delphi, Rust, Nim 
+<tr><td>Safety (immutability, no null, option types, free from data races)<td> Rust 
+<tr><td>Easy concurrency<td> Go 
+</table> 
+
+
+<p> 
+ 
+This is a bit of a sensitive topic, I'm not a fan of language comparisons. Everyone has their favorite language 
+and their favorite features.  Everything listed below are my personal opinions and preferences.  
+
+<br><br> 
 
 <h3>Go</h3> 
 
@@ -84,7 +76,7 @@ V is very similar to Go, and these are the things it improves upon:
 - Much smaller runtime
 
 <p>
-- Much smaller binaries  (simple web server written in V is ~140 KB vs 11 MB in Go) 
+- Much smaller binaries (a simple web server written in V is 65 KB vs 11 MB in Go) 
 
 <p> 
 - Zero cost C interop 
@@ -93,13 +85,24 @@ V is very similar to Go, and these are the things it improves upon:
 - No GC 
 
 <p>
+- Much faster serialization using codegen and no reflection
+
+<p>
+- Precompiled HTML templates unlike <code>html/template</code>s that have to be parsed on every request 
+
+<p>
 - Fearless concurrency (no data race guarantee at compilation) 
+
+<p>
+- Enums 
 
 <p>
 - Generics (in July) 
 
+<!-- 
 <p> 
 - Cheaper interfaces without dynamic dispatch 
+--> 
 
 <p> 
 - String interpolation: <code>println('$foo: $bar.baz')</code> 
@@ -143,7 +146,7 @@ Since V's domain is close to both Go and Rust, I decided to use a simple example
 
 <p>
 
-It's a simple concurrent program that fetches top Hacker News stories concurrently. 
+It's a simple program that fetches top Hacker News stories concurrently. 
 
 <p> 
 <b>Rust</b> 
@@ -316,33 +319,71 @@ In V there's only one way to return a value from a function: <code>return value<
 <code>return value</code>, <code>result = value</code>, <code>value</code> (final expression), or modify
 a <code>ref</code> argument. 
 
-<p>Features like macros and OOP offer even more ways to solve problems and increase complexity. 
+<p>Features like macros and OOP offer multiple ways to solve problems and increase complexity. 
 
 <p>Nim's strings are mutable, in my opinion this is a huge drawback. I'll post a detailed article
 about the power of immutable strings. 
 
-<p> Unlike V, Nim generates unreadable C code with lots of extra bloat. This is a small segment 
-copied from a simple hello world program: 
-<pre>     NI T1_;
-     T1_ = (NI)0;
-     {
-             if (!(framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw == NIM_NIL)) goto LA4_;
-             T1_ = ((NI) 0);
-     }
-     goto LA2_;
-     LA4_: ;
-     {
-             T1_ = ((NI) ((NI16)((*framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw).calldepth + ((NI16) 1))));
-     }
-     LA2_: ;
-     (*s).calldepth = ((NI16) (T1_));
-     (*s).prev = framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
-     framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw = s;
-     {
-             if (!((*s).calldepth == ((NI16) 2000))) goto LA9_;
-             stackOverflow_II46IjNZztN9bmbxUD8dt8g();
-     }
-     LA9_: ;
+<p> Unlike V, Nim generates unreadable C code with lots of extra bloat. For example: 
+<pre> 
+var users = [
+ User(name: "Carl", last_name: "Black", age: 22),
+ User(name: "Sam", last_name: "Johnson", age: 23) 
+] 
+</pre>
+
+If we build this with <code>nim c -d:release test.nim</code>, we get 
+
+
+<pre> 
+STRING_LITERAL(TM_R8RUzYq41iOx0I9bZH5Nyrw_5, "Carl", 4);
+STRING_LITERAL(TM_R8RUzYq41iOx0I9bZH5Nyrw_6, "Black", 5);
+STRING_LITERAL(TM_R8RUzYq41iOx0I9bZH5Nyrw_7, "Sam", 3);
+STRING_LITERAL(TM_R8RUzYq41iOx0I9bZH5Nyrw_8, "Johnson", 7);
+NIM_CONST tyArray_m9aGbgPB3gZgFcKcDkjg9a8g TM_R8RUzYq41iOx0I9bZH5Nyrw_4 = { { ((NimStringDesc*) &TM_R8RUzYq41iOx0I9bZH5Nyrw_5), ((NimStringDesc*) &TM_R8RUzY
+q41iOx0I9bZH5Nyrw_6), ((NI) 22)},
+
+{((NimStringDesc*) &TM_R8RUzYq41iOx0I9bZH5Nyrw_7), ((NimStringDesc*) &TM_R8RUzYq41iOx0I9bZH5Nyrw_8), ((NI) 23)}}
+;
+ 
+N_LIB_PRIVATE N_NIMCALL(void, NimMainModule)(void) {
+{
+        TFrame FR_; FR_.len = 0;
+}
+nimRegisterGlobalMarker(TM_R8RUzYq41iOx0I9bZH5Nyrw_3);
+        genericAssign((void*)users_oOczRkVOc3qtKT8rsAJzaw, (void*)TM_R8RUzYq41iOx0I9bZH5Nyrw_4, (&NTI_m9aGbgPB3gZgFcKcDkjg9a8g_));
+}
+
+N_LIB_PRIVATE N_NIMCALL(void, aDatInit000)(void) {
+static TNimNode* TM_R8RUzYq41iOx0I9bZH5Nyrw_2[3];
+static TNimNode TM_R8RUzYq41iOx0I9bZH5Nyrw_0[4];
+NTI_Qp0mfNOzxWdmSSWLHA9cnZQ_.size = sizeof(tyObject_User_Qp0mfNOzxWdmSSWLHA9cnZQ);
+NTI_Qp0mfNOzxWdmSSWLHA9cnZQ_.kind = 18;
+NTI_Qp0mfNOzxWdmSSWLHA9cnZQ_.base = 0;
+NTI_Qp0mfNOzxWdmSSWLHA9cnZQ_.flags = 2;
+TM_R8RUzYq41iOx0I9bZH5Nyrw_2[0] = &TM_R8RUzYq41iOx0I9bZH5Nyrw_0[1];
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[1].kind = 1;
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[1].offset = offsetof(tyObject_User_Qp0mfNOzxWdmSSWLHA9cnZQ, name);
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[1].typ = (&NTI_77mFvmsOLKik79ci2hXkHEg_);
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[1].name = "name";
+TM_R8RUzYq41iOx0I9bZH5Nyrw_2[1] = &TM_R8RUzYq41iOx0I9bZH5Nyrw_0[2];
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[2].kind = 1;
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[2].offset = offsetof(tyObject_User_Qp0mfNOzxWdmSSWLHA9cnZQ, last_name);
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[2].typ = (&NTI_77mFvmsOLKik79ci2hXkHEg_);
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[2].name = "last_name";
+TM_R8RUzYq41iOx0I9bZH5Nyrw_2[2] = &TM_R8RUzYq41iOx0I9bZH5Nyrw_0[3];
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[3].kind = 1;
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[3].offset = offsetof(tyObject_User_Qp0mfNOzxWdmSSWLHA9cnZQ, age);
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[3].typ = (&NTI_rR5Bzr1D5krxoo1NcNyeMA_);
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[3].name = "age";
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[0].len = 3; TM_R8RUzYq41iOx0I9bZH5Nyrw_0[0].kind = 2; TM_R8RUzYq41iOx0I9bZH5Nyrw_0[0].sons = &TM_R8RUzYq41iOx0I9bZH5Nyrw_2[0]
+;
+NTI_Qp0mfNOzxWdmSSWLHA9cnZQ_.node = &TM_R8RUzYq41iOx0I9bZH5Nyrw_0[0];
+NTI_m9aGbgPB3gZgFcKcDkjg9a8g_.size = sizeof(tyArray_m9aGbgPB3gZgFcKcDkjg9a8g);
+NTI_m9aGbgPB3gZgFcKcDkjg9a8g_.kind = 16;
+NTI_m9aGbgPB3gZgFcKcDkjg9a8g_.base = (&NTI_Qp0mfNOzxWdmSSWLHA9cnZQ_);
+NTI_m9aGbgPB3gZgFcKcDkjg9a8g_.flags = 2;
+}
 </pre> 
 
 <p> 
@@ -357,14 +398,20 @@ in Nim, which reduces safety and portability.
 code bases. Explicit imports that V, Go, Oberon have are much more practical: <code>pkg.function()</code> vs
 <code>function()</code>. 
 
-<p>V's syntax is a lot cleaner with much fewer rules. Lack of significant whitespace improves
+<p>V's syntax is cleaner with fewer rules. Lack of significant whitespace improves
 readability and maintainability of large code bases and makes generating code much easier. 
+From my experience of working with a huge Python code base, moving large blocks of code in whitespace sensitive
+languages is scary. 
+
+<p>The list can go on and on. Nim is a language with a lot of features, still developing and changing. 
+V is not going to change much, if at all. 
+
+<p>Again, I'm not saying it's a worse language. It's a very different language that offers a lot of 
+options and features. Many developers prefer this approach. And that's ok. 
 
 
 <p> 
 
-<p>The list can go on and on. Nim is a language with a lot of features, still developing and changing. 
-V is not going to change much, if at all. 
  
 
 <br> 

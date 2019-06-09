@@ -16,7 +16,7 @@ padding: 5px;
 background-color:#f5f5f5; 
 } 
 .menu {
-height: auto; 
+//height: auto; 
 } 
 button {
 width: 80px; 
@@ -45,8 +45,8 @@ margin-bottom:10px;
 width: 100%; 
 } 
 .lines {
-position:relative;
-top:5px; 
+//position:relative;
+padding-top:5px; 
 float:left; 
 font-size:13px;
 color:#aaa; 
@@ -65,14 +65,19 @@ background-color:#f5f5f5;
 <script>
 
 
-var ip = 'play2.vlang.io'//35.196.197.15' 
-//ip = 'localhost:8080' 
+var ip = 'play3.vlang.io' 
+//var ip = '3.82.141.227' 
 function run() {
 	var body = $('textarea').val(); 
 	$('#btnRun').hide(); 
 	$('.output').text('Waiting for remote server...') 
-	$.post('https://' + ip + '/compile', {body:body}, function(resp) {
-	//alert(resp) 
+	var http = 'https://';
+	if (!ip.includes('play')) {
+http = 'http://'; 
+} 
+	console.log(http + ip + '/compile') 
+	$.post(http + ip + '/compile', {body:body}, function(resp) {
+	console.log(resp) 
 	var vals = resp.split('==vmft:') 
 	console.log(vals) 
 	$('.output').text(vals[0]); 
@@ -106,55 +111,8 @@ localStorage.setItem('play', '')
 
 </script> 
 
-<div class='right'>
-<a target=_blank href='https://github.com/vlang-io/V'><img width=30 src='img/github.png'>GitHub repo</a>
 
-<a target=_blank href='https://join.slack.com/t/vlang-io/shared_invite/enQtNTQ4NDk4OTE1NTM2LWQ4YmU2YjgzYWIxMzg5NzVjY2RiNGZiNTY2YmU2MjE4MGM1NzhhZTY4MmNkYTRhYmUxY2Q4OTM0OTdiOTY5Yzc'><img width=30 src='img/slack.png'>Discuss on Slack</a>
-
-<a target=_blank href='https://twitter.com/vlang_io'><img width=30 src='img/twitter.png'>&#64;vlang_io</a>
-
-<a target=_blank href='https://old.reddit.com/r/vlang'><img width=30 src='img/reddit.png'>/r/vlang</a>
-</div> 
-
-
-<div style='float:right; margin-right: 5px; margin-top: 5px;'>
-<a target=_blank href='https://www.patreon.com/vlang'><img height=35 src='/img/patreon.png'></a> 
-<a style='text-align:center; display:block; position:relative; top:-4px;' target=_blank href='https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=HRGVJ2LA2LKJ8&item_name=Support+V+development&currency_code=USD&source=url&lc=US '> Donate via PayPal </a>
-</div> 
-
-<div class='menu'>
-
-
-<div class='center' style='text-align:center'> 
-<a href='/' >Home</a>
-<a target=_blank href='https://github.com/vlang-io/V/tree/master/examples'>Examples</a>
-<a href='/docs' >Documentation</a>
-<!-- 
-<a href='/play'>Playground</a>
---> 
-<a href='https://blog.vlang.io'>Blog</a> 
-<a href='/#faq'>FAQ</a>
-<a href='/#software'>Software built in V</a>
-</div> 
-
-</div> 
-
-<div class='center'>
-	<h1>
-	<a href='/' style='color:black'>The V Playground</a> 
-	</h1>
-	<div style='font-size:12px; text-align:center; position: relative; top:-10px;'>
-
-	Fast, safe, compiled language created for developing <a target=_blank href='https://volt.ws'>Volt</a>,
-	soon available for everyone.
-	<br><br>
-	Open source release in June 2019. 
-<a target=_blank href='https://www.patreon.com/vlang'>Early access</a> on April 15.</div>
-
-</div> 
-<div class='menu'>
-</div> 
-
+<div class='sep'></div> 
 
 <div class='center'> 
 <p> 
@@ -169,7 +127,7 @@ the playground has been disabled until a more stable release and an updated docu
 <div class='controls'> 
 <button id=btnRun onclick='run()' >Run</button> 
 <!-- 
-Disabled for 8 hours. Sorry. A major update is coming. 
+The playground will be back today (moving to a new server) 
 --> 
 <span style='float:right; font-size:80%;line-height:40px'>Your code will be formatted automatically</span> 
 </div> 
@@ -179,9 +137,11 @@ Disabled for 8 hours. Sorry. A major update is coming.
 <button onclick='select_ex(0)'>Hello world</button> 
 <button onclick='select_ex(1)'>Fibonacci</button> 
 <button onclick='select_ex(2)'>Fibonacci + memoization</button> 
-<button onclick='select_ex(3)'>JSON + option types</button> 
-<button onclick='select_ex(4)'>Users repository</button> 
+<button onclick='select_ex(3)'>JSON decoding/encoding</button> 
+<button onclick='select_ex(4)'>Users repo + option types</button> 
 <button onclick='select_ex(5)'>Advanced consts</button> 
+<button onclick='select_ex(6)'>Basic operator overloading</button> 
+<button onclick='select_ex(7)'>An updated copy of a struct</button> 
 
 <br> 
 <a target=_blank href='/docs'>Check out the docs for more examples</a> 
@@ -189,18 +149,18 @@ Disabled for 8 hours. Sorry. A major update is coming.
 
 <div style='height:505px; max-height:505px;'> 
 <textarea id='code' autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false">fn main() {
-        types := ['game', 'web', 'tools', 'GUI']
-        for typ in types {
-                println('Hello, $typ developers!')
+	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI']
+        for area in areas {
+                println('Hello, $area developers!')
         }
 } 
 </textarea> 
 </div> 
 
 <span class='example' id='ex0' >fn main() { 
-        types := ['game', 'web', 'tools', 'GUI']
-        for typ in types {
-                println('Hello, $typ developers!')
+	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI']
+        for area in areas {
+                println('Hello, $area developers!')
         }
 } 
 </span> 
@@ -237,7 +197,7 @@ fn (fib mut Fib) calc(n int) int {
 }
 
 fn main() {
-        fib := Fib {
+        mut fib := Fib {
                 nums: [0; MAX]
         }
         for i := 0; i < MAX; i++ {
@@ -246,9 +206,12 @@ fn main() {
 }
 </span> 
 
-<span class='example' id=ex3>struct User {
+<span class='example' id=ex3>import json
+
+struct User {
         name          string
         age           int
+  mut: 
         is_registered bool
 }
 
@@ -291,9 +254,8 @@ struct Repo {
 } 
 
 fn new_repo() Repo {
-        user := User{id:10}
         return Repo {
-                users: [user]
+                users: [User{1}, User{2}, User{10}]
         }
 } 
 
@@ -348,18 +310,58 @@ fn main() {
 </span> 
 
 
-<span class='example' id=ex6> 
+<span class='example' id=ex6>struct Vec {
+	x int
+	y int
+}
+
+fn (a Vec) str() string {
+	return '{$a.x, $a.y}'
+}
+
+fn (a Vec) + (b Vec) Vec {
+	return Vec {
+		a.x + b.x,
+		a.y + b.y
+	}
+}
+
+fn (a Vec) - (b Vec) Vec {
+	return Vec {
+		a.x - b.x,
+		a.y - b.y
+	}
+}
+
+fn main() {
+	a := Vec{2, 3}
+	b := Vec{4, 5}
+	println(a + b) 
+	println(a - b) 
+}
+</span> 
+
+
+<span class='example' id=ex7>struct User {
+	name string
+	age  int	 
+} 
+
+fn main() { 
+	user1 := User{'Bob', 20} 
+	user2 := { user1 | name: 'Peter' } 
+	println(user2.name) 
+	println(user2.age)
+} 
 </span> 
 
 <pre class='output'> 
-Thank you for trying out V.
+Current version: V @.
 
-This is a pre-alpha stage. The language is going to become 
-a lot more stable in the next month.
+ 
+This is an alpha stage, please report all issues via GitHub. 
 
-Please report all issues via GitHub. 
-
-For security reasons imports are temporarily disabled, the size of the program is limited,
+For security reasons, imports are temporarily disabled, the size of the program is limited,
 and your program can't run for more than 1 second. 
 
 
@@ -369,17 +371,6 @@ Coming not so soon: online C++ to V translator.
 
 </pre> 
 </div> 
-
-<!-- 
-Things that are currently broken:
-- Interface method calls
-- Interfaces have to be declared with `type Foo interface {` 
-- Foo{a,b} syntax (use Foo{a:a, b:b}) 
-- Closures
-- a[i].field
-- Locks (lock {}). Use sync.Mutex for now. 
-- Enums 
---> 
 
 @t footer
 

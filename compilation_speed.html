@@ -3,7 +3,6 @@
 
 <style>
 h2 {
-	border-top: 1px solid #dfdfdf;
 	padding-top: 10px;
 }
 
@@ -13,42 +12,8 @@ color: #777;
 }
 </style>
 
-<div class='menu'>
 
-
-<div class='center'> 
-<a target=_blank href='https://github.com/vlang-io/V/tree/master/examples'>Examples</a>
-<a href='/docs' onclick='return soon()' >Documentation</a>
-<a href='/play' onclick='return soon()'>Playground</a>
-<a href='/blog' onclick='return soon()'>Blog</a> 
-<a href='/#faq'>FAQ</a>
-<a href='/#software'>Software built in V</a>
-</div> 
-
-</div> 
-
-
-<div class='center'>
-	<h1>
-	<a href='/' style='color:black'>V programming language</a> 
-	</h1>
-	<div style='font-size:12px; text-align:center; position: relative; top:-10px;'>
-
-	Fast, safe, compiled language created for developing <a target=_blank href='https://volt.ws'>Volt</a>,
-	soon available for everyone.
-	<br><br>
-	Open source release in mid 2019.</div>
-
-<div id='install'>
-    Install V from source in 0.5 seconds
-	<pre>wget vlang.io/v.c && gcc -o v v.c</pre>
-	<!--
-	or if you already have V
-	<pre>wget https://vlang.io/v.v && v v.v</pre>
-	-->
-	</div>
-
-</div> 
+<div class='sep'></div> 
 
 <div class='center'>
 
@@ -71,11 +36,14 @@ I wrote a small program that generates 400 000 lines of code in several language
 compilation speed. 
 
 <p>
+All compilers (except Go) don't do optimization in this benchmark.
+
+<p>
 <b>update</b> <i>Turns out generating one function with 400k lines of code is a bad idea :)
 Go and D segfault, Java simply refuses to compile. I'll modify the test soon. </i> 
 
 <p> 
-You can read the code of the generator <a target=_blank href='https://github.com/vlang-io/V/blob/e2a19cccd013cd1f35daa7eb9a89037d22ff8a93/website/compilation_speed_test_gen.v '>here</a>.  
+You can access the code of the generator <a target=_blank href='https://github.com/vlang-io/V/blob/e2a19cccd013cd1f35daa7eb9a89037d22ff8a93/website/compilation_speed_test_gen.v '>here</a>.  
 
 <p> 
 It's a bit silly, all it does is generate the following pair of statements 200 000 times:
