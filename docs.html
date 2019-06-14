@@ -1229,24 +1229,29 @@ an OS.
 
 <h2 id=codegen>Reflection via codegen</h2> 
 Having built-in JSON support is nice, but V also allows you to create efficient 
-serializers for anything:
+serializers for anything, using compile-time <key>if</key> and <key>for</key>:
 
 <pre>
+<pre><key>struct</key> User {
+	name string
+	age  int 
+}
+ 
 <comment>// TODO: planned in June</comment>
 <key>fn</key> decode&lt;T>(data string) T {
         mut result := T{}
-        for field in T.fields {
-                if field.typ == <str>'string'</str> {
+        $for field in T.fields {
+                $if field is string {
                         result.$field = get_string(data, field.name)
-                } else if field.typ == <str>'int'</str> {
+                } else $if field is int {
                         result.$field = get_int(data, field.name)
                 }
         }
         return result
 }
 
-<comment>// generates to:</comment>
-fn decode_User(data string) User {
+<comment>// decode&lt;User> generates:</comment>
+<key>fn</key> decode_User(data string) User {
         mut result := User{}
         result.name = get_string(data, 'name')
         result.age = get_int(data, 'age')
@@ -1398,7 +1403,7 @@ when compiling GUI apps using the <code>ui</code> module or graphical apps using
 
 <h2 id=keywords>Appendix I: Keywords</h2>
 
-V has 21 keywords: 
+V has 22 keywords: 
 
 <pre>
 break 
@@ -1414,7 +1419,8 @@ goto
 if
 import
 in 
-interface 
+interface
+is 
 match 
 module 
 mut 
