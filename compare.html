@@ -35,17 +35,43 @@ features:
 
 <table>
 <tr><td style='width:300px'>Fast compilation<td style='width:200px'> Go, Delphi 
-<tr><td>Simplicity<td>Go, Python 
-<tr><td>Great performance on par with C + <br>zero cost C interop<td> C, C++, Delphi, Rust, Nim 
+<tr><td>Simplicity & maintainability<td>Go
+<tr><td>Great performance on par with C and <br>zero cost C interop<td> C, C++, Delphi, Rust, Nim, Zig
 <tr><td>Safety (immutability, no null, option types, free from data races)<td> Rust 
 <tr><td>Easy concurrency<td> Go 
+<tr><td>Easy cross compilation<td>Go
+<tr><td>Compile time code generation<td>Zig
+<tr><td>Small compiler with zero dependencies<td>-
+<tr><td>No global state<td>-
+<tr><td>Hot code reloading<td>-
 </table> 
 
 
 <p> 
+
+Initially I was going to compare V to all major languages, but it got repetitive pretty quickly.
+
+<p>
+The table above and the list of the features on the home page should give you a pretty good picture.
+
+<p>
+For example, it's pretty obvious that compared to C++, V is much much simpler. It offers up to 400 times faster compilation, 
+safety, lack of undefined behavior, easy concurrency, compile time code generation, etc.
+
+<p>
+Compared to Python, it's much faster, simpler, safer, more maintainable, etc.
+
+<p>
+You can use this formula for any language.
+
+
+<p> 
+Since V is very similar to Go, and its domain is similar to Rust's, I left a comparison with these two languages.
  
+ <!--
 This is a bit of a sensitive topic, I'm not a fan of language comparisons. Everyone has their favorite language 
 and their favorite features.  Everything listed below are my personal opinions and preferences.  
+-->
 
 <br><br> 
 
@@ -58,9 +84,6 @@ V is very similar to Go, and these are the things it improves upon:
 - No global state <br> 
 
 <p> 
-- Only one declaration style (<code>a := 0</code>)
-
-<p> 
 - No null
 
 <p> 
@@ -71,6 +94,9 @@ V is very similar to Go, and these are the things it improves upon:
 
 <p> 
 - Immutability by default
+
+<p> 
+- Only one declaration style (<code>a := 0</code>)
 
 <p> 
 - Much smaller runtime
@@ -133,8 +159,23 @@ and understand what's going on, feel like it was you who wrote it, because the l
  there's only one way of doing things. 
 
 <p> 
-Rust's compilation speed is slow, on par with C++.  V compiles 1.5 million lines of code per cpu per second. 
+Rust's compilation speed is slow, on par with C++.  V compiles 1.2 million lines of code per cpu per second. 
 </p> 
+
+<!-- 
+fn read_username_from_file() -> Result<String, io::Error> {
+    let mut f = File::open("username.txt")?;
+    let mut s = String::new();
+
+    f.read_to_string(&mut s)?;
+
+    Ok(s)
+} 
+
+fn read_username_from_file() ?string {
+	return os.read_file('username.txt')? 
+} 
+--> 
 
 
 
@@ -270,15 +311,17 @@ func main() {
 
 
 <pre>
-const STORIES_URL = 'https://hacker-news.firebaseio.com/v0/topstories.json'
-const ITEM_URL_BASE = 'https://hacker-news.firebaseio.com/v0/item'
+const (
+	StoriesUrl = 'https://hacker-news.firebaseio.com/v0/topstories.json'
+	ItemUrlBase = 'https://hacker-news.firebaseio.com/v0/item'
+)
 
 struct Story {
     title string
 }
 
 fn main() {
-    resp := http.get(STORIES_URL)? 
+    resp := http.get(StoriesUrl)? 
     ids := json.decode([]int, resp.body)? 
     mut cursor := 0
     for _ in 0..8 {
@@ -291,7 +334,7 @@ fn main() {
                     id := ids[cursor]
                     cursor++
                 }
-                resp := http.get('$ITEM_URL_BASE/$id.json')? 
+                resp := http.get('$ItemUrlBase/$id.json')? 
                 story := json.decode(Story, resp.body)?
                 println(story.title)
             }
@@ -300,6 +343,8 @@ fn main() {
     runtime.wait() 
 }  
 </pre> 
+
+<!--
  
 <br> 
 <br> 
@@ -433,6 +478,7 @@ The things V improves upon:
 <br> 
 <br> 
 More languages coming soon... 
+-->
 
 
 

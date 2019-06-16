@@ -89,6 +89,7 @@ However, V's numbers are unlikely to become more than 10 MB / 1 second.
 `) 
 } 
 
+<!-- 
 function comp_note() {
 alert(` 
 In this example DOOM is translated from C to V and then compiled directly to x64 machine code.
@@ -102,10 +103,23 @@ drops to about 150k lines/second, which is still pretty fast.
 Once the C++ translator is more mature later this year, it will be possible to compile Doom 3 with V 
 as well.
  
+The C++ translator will be done as well, then it will be possible to compile Doom 3 with V. 
 
 `) 
 } 
  
+--> 
+function comp_note() {
+alert(` 
+In this example DOOM is translated from C to V. 
+
+For now it takes much longer to compile DOOM with V (0.7 instead of 0.2 seconds) because x64 generation is not mature enough for this project yet. 
+
+It's still about 25 times faster than compiling DOOM with C.
+
+By the end of this year x64 generation should be mature enough to compile DOOM in 0.2 seconds.
+`) 
+} 
  
 </script>
 
@@ -120,7 +134,7 @@ as well.
 
 	<pre class='hello_devs' id=ex1>
 fn main() {
-	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI']
+	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI', 'mobile'] 
 	for area in areas {
 		println('Hello, $area developers!')
 	}
@@ -264,21 +278,21 @@ wc -l doom3.v     # 458 713
 time v doom3.v    # 0.5s <a style='font-size:140%' href='#' onclick='comp_note()'>*</a></pre> 
 -->
 	<pre>
-wc -l doom.v     # 80 120
-time v doom.v    # 0.3s <a style='font-size:140%' href='#' onclick='comp_note()'>*</a></pre> 
+cd doom/ && wc -l *.v     # 80 120
+time v .                  # 0.7s <a style='font-size:140%' href='#' onclick='comp_note()'>*</a></pre> 
        <a href='/compilation_speed'>Compilation speed benchmark</a> 
 </div>
 
 
 <div class='feature'>
 	<h2>Safety</h2>
-	<li>No global state 
 	<li>No null
+	<li>No global variables 
 	<li>No undefined values 
 	<li>No undefined behavior 
 	<li><a target=_blank href='/docs#option'>Option/Result types</a> 
 	<li><a target=_blank href='/docs#generics'>Generics</a> 
-	<li><a target=_blank href='/docs#vars'>Immutabile variables by default</a> 
+	<li><a target=_blank href='/docs#vars'>Immutable variables by default</a> 
 	<li><a target=_blank href='/docs#recvs'>Pure functions by default</a> 
 	<li><a target=_blank href='/docs#mod'>Immutable structs by default</a> 
 </div>
@@ -373,8 +387,8 @@ row {
 <div class='center'>
 
 <div class='feature first'>
-	<h2>C/C++ translation</h2>
-	V can translate your entire C/C++ project and offer you the safety, simplicity, and up to 200x compilation speed up.
+	<h2 id=ctranslation>C/C++ translation</h2>
+	V can translate your entire C/C++ project and offer you the safety, simplicity, and up to 400x compilation speed-up.
 	<br>
 	<pre style='float:left; font-size:80%;'>
 std::vector&lt;std::string> s;
@@ -394,7 +408,15 @@ std::cout << s.size(); </pre>
 <p> 
 <a href='#cppinfo'>How does it work?</a> 
 <p> 
-	Read about translating <u>Doom & Doom 3</u>, <u>LevelDB</u>, <u>SQLite</u> (coming soon).  
+	Read about translating <u>DOOM</u>, <u>Doom 3</u>, <u>LevelDB</u>, <u>SQLite</u> (coming soon).  
+</div> 
+
+<div class='feature'>
+<h2 style='height:1px'>&nbsp;</h2>  <!-- i'll never understand css... --> 
+(coming soon) Translating DOOM from C to V and building it in 0.7 seconds (x25 speed-up):
+
+<img style='width:350px !important' src='/img/doom.png'> 
+
 </div> 
 </div>
 
@@ -437,7 +459,12 @@ precious minutes of your development time.
 <div class='feature first'>
 <h2>Powerful graphics libraries</h2> 
 Cross-platform drawing library built on top of GDI+/Cocoa Drawing, and an OpenGL based graphics library
-for more complex 2D/3D applications. 
+for more complex 2D/3D applications, that has the following features:
+<br> 
+<br> 
+- Loading complex 3D objects with textures <br> 
+- Camera (moving, looking around) <br> 
+- Skeletal animation (soon) <br> 
 <p>
 DirectX, Vulkan, and Metal support soon. 
 
@@ -445,13 +472,9 @@ DirectX, Vulkan, and Metal support soon.
 </div>
 
 <div class='feature'>
-<h2>REPL</h2>
-<pre>
- v
- >> data := http.get('https://vlang.io/utc_now')? 
- >> data 
- '1551205308' 
-</pre> 
+<h2 style='height:1px'>&nbsp;</h2>  <!-- i'll never understand css... --> 
+<img src='/img/gg.png'> 
+
   
 
 </div>
@@ -459,6 +482,9 @@ DirectX, Vulkan, and Metal support soon.
 </div>
 
 </div> 
+
+
+
 
 <div class='sep' ></div> 
 
@@ -503,12 +529,12 @@ To cross compile your software simply run <code>v -os windows .</code> or
 </div>
 
 <div class='feature'>
-<h2>Run everywhere</h2>
-V can compile to (human readable) C, so you get the great platform support and 
-optimization of GCC and Clang.
-<p>
-V can call C code, and calling V code is possible in any language that has C interop. 
-</div>
+<p> 
+Building V for Windows using V for macOS, and then testing resulting v.exe on a Windows VM: 
+</p> 
+<video style='display:block; border: 1px solid #dfdfdf' muted autoplay src='/img/vwin.mp4'></video>   
+</div> 
+
 
 </div>
 </div>
@@ -530,7 +556,46 @@ without any dependencies. <a href='#' onclick='alert("Of course, if you use C li
 <p>
 Installing new libraries is as simple as <code>v get sqlite</code>.
 </div>
+
+
+<div class='feature'>
+<h2>Run everywhere</h2>
+V can compile to (human readable) C, so you get the great platform support and 
+optimization of GCC and Clang.
+<p>
+V can call C code, and calling V code is possible in any language that has C interop. 
 </div>
+</div>
+
+
+<div class='sep' ></div> 
+<div class='center'>
+<div class='feature first'>
+	<h2>REPL</h2>
+	<pre>
+ v
+ >> data := http.get('https://vlang.io/utc_now')? 
+ >> data 
+ '1551205308' 
+	</pre> 
+</div>
+
+
+<div class='feature'>
+	<h2>V Script</h2>
+	<pre>
+#v 
+for file in ls('build/') {
+	rm(file) 
+}  
+mv('*.exe', 'build/') 
+
+v run deploy.v 
+	</pre> 
+<a target=_blank src='/docs#bash'>Read more...</a> 
+</div>
+</div> 
+
 
 
 

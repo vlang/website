@@ -2,6 +2,9 @@
 
 <script  src="/js/jquery.min.js"></script> 
 
+<script>
+$(document).ready(function() { $("a:contains(Documentation)").css('font-weight', '500') }) 
+</script> 
 
 <style>
 h2 {
@@ -56,6 +59,7 @@ $(document).ready(function() {
 <a href='#arrays'>Arrays</a> 
 <a href='#maps'>Maps</a> 
 <a href='#if'>If</a> 
+<a href='#in'>In operator</a> 
 <a href='#for'>For loop</a> 
 <a href='#switch'>Switch</a>
 <a href='#structs'>Structs</a>
@@ -84,8 +88,10 @@ Advanced Topics
 <a href='#cpp'>Translating C/C++ to V</a>
 <a href='#hot'>Hot code reloading</a>
 <a href='#cross'>Cross compilation</a>
+<a href='#bash'>Cross-platform shell scripts in V</a>
 <br> 
 <a href='#keywords'>Appendix I: Keywords</a>
+<a href='#operators'>Appendix II: Operators</a> 
 
 </div> 
 
@@ -451,6 +457,29 @@ println(s) <comment>// ==> "odd"</comment>
 
 
 
+<h2 id=in>In operator</h2>
+
+<code>in</code> allows to check whether an array contains an element.
+
+<pre>nums := [1, 2, 3]
+println(1 <key>in</key> nums) <comment>// ==> true</comment> 
+</pre> 
+
+It's also useful for writing more clear and compact boolean expressions: 
+
+<pre><key>if</key> parser.token == .plus || parser.token == .minus || parser.token == .div || parser.token == .mult {
+	... 
+} 
+
+<key>if</key> parser.token <key>in</key> [.plus, .minus, .div, .mult] {
+	... 
+} 
+</pre> 
+
+V optimizes such expressions, so both <code>if</code> statements above produce the same machine code, 
+no arrays are created.  
+
+ 
 
 
 
@@ -966,8 +995,8 @@ is_green := color == .green
 	red green blue 
 } 
 
-mut color := Color.red
-<comment>// V knows that color is a Color. No need to use `Color.green` here.</comment>
+<key>mut</key> color := Color.red
+<comment>// V knows that `color` is a `Color`. No need to use `Color.green` here.</comment>
 color = .green 
 println(color) <comment>// ==> "1"  TODO: print "green"? </comment> 
 </pre> 
@@ -1048,26 +1077,28 @@ println(resp.body)
  
 
 <h2 id=generics>Generics (July)</h2> 
-<pre><key>struct</key> Repo&lt;T> {
+<pre><key>struct</key> Repo⟨T⟩ {
 	db DB
 }
 
-<key>fn </key>new_repo&lt;T>(db DB) Repo&lt;T> {
-	return Repo&lt;T>{db: db}
+<key>fn </key>new_repo⟨T⟩(db DB) Repo⟨T⟩ {
+	return Repo⟨T⟩{db: db}
 }
 
 <comment>// This is a generic function. V will generate it for every type it's used with.</comment> 
-<key>fn </key>(r Repo&lt;T>) find_by_id(id int) ?T {  
+<key>fn </key>(r Repo⟨T⟩) find_by_id(id int) ?T {  
 	table_name := T.name <comment>// in this example getting the name of the type gives us the table name</comment> 
-	return r.db.query_one&lt;T>('select * from $table_name where id = ?', id)
+	return r.db.query_one⟨T⟩('select * from $table_name where id = ?', id)
 }
 
 db := new_db()
-users_repo := new_repo&lt;User>(db)
-posts_repo := new_repo&lt;Post>(db)
+users_repo := new_repo⟨User⟩(db)
+posts_repo := new_repo⟨Post⟩(db)
 user := users_repo.find_by_id(1)? 
 post := posts_repo.find_by_id(1)? 
 </pre> 
+
+For readability, ⟨⟩ are allowed instead of &lt;>. vfmt automatically replaces <> with ⟨⟩. 
 
 <h2 id=concurrency>Concurrency</h2> 
 The concurrency model is very similar to Go. To run <code>foo()</code> concurrently, just
@@ -1401,6 +1432,54 @@ If you don't have any C dependencies, that's all you need to do. This works even
 when compiling GUI apps using the <code>ui</code> module or graphical apps using
 <code>gg</code>.
 
+
+<h2 id=bash>Cross-platform shell scripts in V</h2> 
+
+(Coming later in June.) 
+
+<p>
+V can be used as an alternative to Bash to write deployment scripts, build scripts,
+etc.
+
+<p>
+The advantage of using V for this is the simplicity and predictability of the language, and
+cross-platform support. "V scripts" run on Unix-like systems as well as on Windows. 
+
+<p>
+Start your program with a <code>#v</code> directive. It will make all functions in the <code>os</code>
+module global (so that you can use <code>ls()</code> instead of <code>os.ls()</code>, for example). 
+
+<pre><comment>#v</comment> 
+
+rm(<str>'build/*'</str>) 
+<comment>// Same as: </comment> 
+<key>for</key> file <key>in</key> ls(<str>'build/'</str>) {
+	rm(file) 
+} 
+
+mv(<str>'*.v'</str>, <str>'build/'</str>) 
+<comment>// Same as: </comment> 
+<key>for</key> file <key>in</key> ls(<str>'.'</str>) {
+	<key>if</key> file.ends_with(<str>'.v'</str>) { 
+		mv(file, <str>'build/'</str>) 
+	} 
+} 
+</pre> 
+
+Now you can either compile this like a normal V program and get an executable you can deploy and run
+anywhere:
+
+<code>v deploy.v && ./deploy</code> 
+
+
+<p> 
+Or just run it more like a traditional bash script:
+
+<code>v run deploy.v</code> 
+ 
+
+
+
 <h2 id=keywords>Appendix I: Keywords</h2>
 
 V has 22 keywords: 
@@ -1425,12 +1504,43 @@ match
 module 
 mut 
 or 
+pub 
 return
 struct
 type 
 </pre> 
 
 
+<h2 id=operators>Appendix II: Operators</h2>
+<pre>
++    sum                    integers, floats, strings
+-    difference             integers, floats 
+*    product                integers, floats 
+/    quotient               integers, floats 
+%    remainder              integers
+
+&    bitwise AND            integers
+|    bitwise OR             integers
+^    bitwise XOR            integers
+
+<<   left shift             integer << unsigned integer
+>>   right shift            integer >> unsigned integer 
+
+
+Precedence    Operator
+    5             *  /  %  <<  >>  & 
+    4             +  -  |  ^
+    3             ==  !=  <  <=  >  >=
+    2             &&
+    1             || 
+
+
+Assignment Operators 
++=   -=   *=   /=   %=
+&=   |=   ^=
+&&=  ||=
+>>=  <<= 
+</pre> 
 
 
 </div> 

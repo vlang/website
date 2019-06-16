@@ -32,6 +32,12 @@ display:none;
 .center {
 max-width:1070px !important; 
 } 
+#status {
+color:#777; 
+font-size: 80%; 
+font-family: 'Roboto Mono'; 
+margin-top: 10px; 
+} 
 
 .output {
 font-family: 'Roboto Mono'; 
@@ -56,6 +62,12 @@ background-color:#f5f5f5;
 .lines div { 
 } 
 
+	@@media (max-width: 1500px) {
+#social-extra {
+display:none !important; 
+} 
+} 
+
 </style> 
 
 <script  src="/js/jquery.min.js"></script> 
@@ -66,27 +78,28 @@ background-color:#f5f5f5;
 
 
 var ip = 'play3.vlang.io' 
-//var ip = '3.82.141.227' 
 function run() {
 	var body = $('textarea').val(); 
-	$('#btnRun').hide(); 
+	$('.controls').css('visibility', 'hidden'); 
 	$('.output').text('Waiting for remote server...') 
+	$('#status').text('') 
 	var http = 'https://';
 	if (!ip.includes('play')) {
-http = 'http://'; 
-} 
+		http = 'http://'; 
+	} 
 	console.log(http + ip + '/compile') 
 	$.post(http + ip + '/compile', {body:body}, function(resp) {
-	console.log(resp) 
-	var vals = resp.split('==vmft:') 
-	console.log(vals) 
-	$('.output').text(vals[0]); 
-	$('#btnRun').show(); 
-	if (vals.length > 1){ 
-	var fmt = vals[1]; 
-	if (fmt != '') { 
-	$('textarea').val(fmt); 
-	} 
+		console.log(resp) 
+		var vals = resp.split('==vmft:') 
+		console.log(vals) 
+		$('.output').text(vals[0]); 
+	$('.controls').css('visibility', 'visible'); 
+		if (vals.length > 1){ 
+		var fmt = vals[1]; 
+		if (fmt != '') { 
+			$('textarea').val(fmt); 
+		} 
+		$('#status').text('Program exited.') 
 	} 
 } ); 
  
@@ -98,16 +111,25 @@ function select_ex(id ) {
 } 
 
 $(document).ready(function() {
+$("a:contains(Playground)").css('font-weight', '500') 
 			$('#code').linedtextarea();
 
 	var s = localStorage.getItem('play') 
-if (s != '') { 
-$('textarea').val(s) 
+	if (s != '') { 
+		$('textarea').val(s) 
+		localStorage.setItem('play', '') 
+	} 
 
-localStorage.setItem('play', '') 
-} 
+	document.addEventListener('keyup', doc_keyUp, false); 
 
 }); 
+
+
+function doc_keyUp(e) {
+    if (e.ctrlKey && e.keyCode == 13) {
+	run() 
+    }
+}
 
 </script> 
 
@@ -126,6 +148,9 @@ the playground has been disabled until a more stable release and an updated docu
 <div class='center'>
 <div class='controls'> 
 <button id=btnRun onclick='run()' >Run</button> 
+<span style='font-size:80%; margin-left:10px; color:#444;'> 
+(or press Ctrl + Enter to run the program) 
+</span> 
 <!-- 
 The playground will be back today (moving to a new server) 
 --> 
@@ -209,31 +234,33 @@ fn main() {
 <span class='example' id=ex3>import json
 
 struct User {
-        name          string
-        age           int
-  mut: 
-        is_registered bool
+	name          string
+	age           int
+mut: 
+	is_registered bool
 }
 
 fn main() {
-        s := '[{ "name":"Frodo", "age":25}, {"name":"Bobby", "age":10}]'
-        users := json.decode( []User, s) or {
-                eprintln('Failed to parse json')
-                return
-        }
-        for user in users {
-                println('$user.name: $user.age')
-        }
-        println('')
-        for i, user in users {
-                println('$i) $user.name')
-                if !user.can_register() {
-                        println('Cannot register $user.name, they are too young')
-                }
-        }
-        // Let's encode users again just for fun
-        println('')
-        println(json.encode(users))
+	s := '[{ "name":"Frodo", "age":25}, {"name":"Bobby", "age":10}]'
+	users := json.decode( []User, s) or {
+		eprintln('Failed to parse json')
+		return 
+	}
+	for user in users {
+		println('$user.name: $user.age')
+	}
+	println('')
+	for i, user in users {
+		println('$i) $user.name')
+		if !user.can_register() {
+			println('Cannot register $user.name, they are too young')
+			continue 
+		}
+		users[i].register() // `user` is immutable, we have to modify the array 
+	}
+	// Let's encode users again just for fun
+	println('')
+	println(json.encode(users))
 }
 
 fn (u User) can_register() bool {
@@ -246,39 +273,41 @@ fn (u mut User) register() {
 </span> 
 
 <span class='example' id=ex4>struct User {
-	id int 
-} 
+	id   int
+	name string
+}
 
 struct Repo {
-	users []User 
-} 
+	users []User
+}
 
 fn new_repo() Repo {
-        return Repo {
-                users: [User{1}, User{2}, User{10}]
-        }
-} 
+	return Repo {
+		users: [User{1, 'Andrew'}, User {2, 'Bob'}, User {10, 'Charles'}]
+	}
+}
 
-fn (r Repo) find_user_by_id(id int) User? { 
+fn (r Repo) find_user_by_id(id int) User? {
 	for user in r.users {
 		if user.id == id {
-			// V automatically wraps this into an option type  
-			return user 
-		} 
-	} 
-	return error('User $id not found') 
-} 
+			// V automatically wraps this into an option type
+			return user
+		}
+	}
+	return error('User $id not found')
+}
 
 fn main() {
-	repo := new_repo() 
-	// Option types must be handled by `or` blocks  
-	user := repo.find_user_by_id(10) or { 
-		// `or` block must end with `return`, `break`, or `continue`  
-		println('not found') 
-		return  
-	} 
-	println(user.id) // ==> '10'  
-}  
+	repo := new_repo()
+	// Option types must be handled by `or` blocks
+	user := repo.find_user_by_id(10) or {
+		// `or` block must end with `return`, `break`, or `continue`
+		println('not found')
+		return
+	}
+	println(user.id) // ==> '10'
+	println(user.name) // ==> 'Charles'
+}
 </span> 
 
 <span class='example' id=ex5>struct Color {
@@ -370,6 +399,7 @@ Coming soon: online C to V translator.
 Coming not so soon: online C++ to V translator. 
 
 </pre> 
+<span id='status'></span> 
 </div> 
 
 @t footer
