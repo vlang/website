@@ -647,7 +647,7 @@ Their access modifiers can be changed with
 	b int     <comment>// private mutable</comment> 
 	c int     <comment>// (you can list multiple fields with the same access modifier) </comment>  
 <key>pub</key>: 
-	d int     <comment>// public immmutable (readonly)</comment> 
+	d int     <comment>// public immutable (readonly)</comment> 
 <key>pub mut</key>: 
 	e int     <comment>// public, but mutable only in parent module </comment> 
 <key>pub mut mut</key>: 
@@ -819,7 +819,7 @@ Use <code>user.register()</code> or <code>user = register(user)</code>
 instead of <code>register(mut user)</code>.
 
 <p>
-V makes it easy to return a modifed version of an an object: <br>
+V makes it easy to return a modified version of an object: <br>
 <pre>
 <key>fn </key>register(u User) User { 
 	return { u | is_registered: true } 
