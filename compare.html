@@ -193,43 +193,28 @@ It's a simple program that fetches top Hacker News stories concurrently.
 <p> 
 <b>Rust</b> 
 
-<pre>use serde::Deserialize;
-use std::sync::{Arc, Mutex};
+<pre>use rayon::prelude::*;
+use serde::Deserialize;
 
-const STORIES_URL: &str = "https://hacker-news.firebaseio.com/v0/topstories.json";
-const ITEM_URL_BASE: &str = "https://hacker-news.firebaseio.com/v0/item";
+const STORIES_URL: &amp;str = &quot;https://hacker-news.firebaseio.com/v0/topstories.json&quot;;
+const ITEM_URL_BASE: &amp;str = &quot;https://hacker-news.firebaseio.com/v0/item&quot;;
 
 #[derive(Deserialize)]
 struct Story {
     title: String,
 }
 
-fn main() {
-    let story_ids: Arc&lt;Vec&lt;u64>> = Arc::new(reqwest::get(STORIES_URL).unwrap().json().unwrap());
-    let cursor = Arc::new(Mutex::new(0));
-    let mut handles = Vec::new();
-    for _ in 0..8 {
-        let cursor = cursor.clone();
-        let story_ids = story_ids.clone();
-        handles.push(std::thread::spawn(move || loop {
-            let index = {
-                let mut cursor_guard = cursor.lock().unwrap();
-                let index = *cursor_guard;
-                if index >= story_ids.len() {
-                    return;
-                }
-                *cursor_guard += 1;
-                index
-            };
-            let story_url = format!("{}/{}.json", ITEM_URL_BASE, story_ids[index]);
-            let story: Story = reqwest::get(&story_url).unwrap().json().unwrap();
-            println!("{}", story.title);
-        }));
-    }
-    for handle in handles {
-        handle.join().unwrap();
-    }
-} 
+fn main() -&gt; Result&lt;(), reqwest::Error&gt; {
+    let story_ids: Vec&lt;u64&gt; = reqwest::get(STORIES_URL)?.json()?;
+
+    story_ids.into_par_iter().try_for_each(|story_id| {
+        let story_url = format!(&quot;{}/{}.json&quot;, ITEM_URL_BASE, story_id);
+        let story: Story = reqwest::get(&amp;story_url)?.json()?;
+        println!(&quot;{}&quot;, story.title);
+
+        Ok(())
+    })
+}
 </pre> 
 
 <b>Go</b> 
