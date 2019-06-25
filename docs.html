@@ -1,10 +1,10 @@
 @t header
 
-<script  src="/js/jquery.min.js"></script> 
+<script  src="/js/jquery.min.js"></script>
 
 <script>
-$(document).ready(function() { $("a:contains(Documentation)").css('font-weight', '500') }) 
-</script> 
+$(document).ready(function() { $("a:contains(Documentation)").css('font-weight', '500') })
+</script>
 
 <style>
 h2 {
@@ -13,15 +13,15 @@ h2 {
 }
 
 str {
-color: brown; 
+color: brown;
 	font-family: 'Roboto Mono';
- 
-} 
+
+}
 key {
-	color: rgb(74,103,154); 
+	color: rgb(74,103,154);
 	font-family: 'Roboto Mono';
- 
-} 
+
+}
 
 code {
 	font-family: 'Roboto Mono';
@@ -35,48 +35,48 @@ code {
 <script>
 $(document).ready(function() {
 	$('.run').click(function() {
-		var pre = $(this).prev('pre') 
-		localStorage.setItem('play', pre.text()) 
-		window.open('/play') 
-	}); 
-}); 
-</script> 
+		var pre = $(this).prev('pre')
+		localStorage.setItem('play', pre.text())
+		window.open('/play')
+	});
+});
+</script>
 
-<div class='sep'></div> 
+<div class='sep'></div>
 
 <div class='center'>
 
 
 
-<div class='toc'> 
-<a href='#introduction'>Introduction</a> 
-<a href='#hello'>Hello World</a> 
-<a href='#comments'>Comments</a> 
-<a href='#fns'>Functions</a> 
-<a href='#vars'>Variables</a> 
-<a href='#btypes'>Basic types</a> 
-<a href='#strings'>Strings</a> 
-<a href='#arrays'>Arrays</a> 
-<a href='#maps'>Maps</a> 
-<a href='#if'>If</a> 
-<a href='#in'>In operator</a> 
-<a href='#for'>For loop</a> 
+<div class='toc'>
+<a href='#introduction'>Introduction</a>
+<a href='#hello'>Hello World</a>
+<a href='#comments'>Comments</a>
+<a href='#fns'>Functions</a>
+<a href='#vars'>Variables</a>
+<a href='#btypes'>Basic types</a>
+<a href='#strings'>Strings</a>
+<a href='#arrays'>Arrays</a>
+<a href='#maps'>Maps</a>
+<a href='#if'>If</a>
+<a href='#in'>In operator</a>
+<a href='#for'>For loop</a>
 <a href='#switch'>Switch</a>
 <a href='#structs'>Structs</a>
 <a href='#mod'>Access modifiers</a>
 <a href='#methods'>Methods</a>
 <a href='#recvs'>Pure functions</a>
-<a href='#consts'>Constants</a> 
-<a href='#modules'>Modules</a> 
+<a href='#consts'>Constants</a>
+<a href='#modules'>Modules</a>
 <a href='#interfaces'>Interfaces</a>
 <a href='#enums'>Enums</a>
 <a href='#option'>Option types & error handling</a>
-<a href='#generics'>Generics</a> 
-<a href='#concurrency'>Concurrency</a> 
+<a href='#generics'>Generics</a>
+<a href='#concurrency'>Concurrency</a>
 <a href='#json'>Decoding JSON</a>
 <a href='#testing'>Testing</a>
 <a href='#memory'>Memory management</a>
-<br> 
+<br>
 Advanced Topics
 
 <br>
@@ -89,50 +89,50 @@ Advanced Topics
 <a href='#hot'>Hot code reloading</a>
 <a href='#cross'>Cross compilation</a>
 <a href='#bash'>Cross-platform shell scripts in V</a>
-<br> 
+<br>
 <a href='#keywords'>Appendix I: Keywords</a>
-<a href='#operators'>Appendix II: Operators</a> 
+<a href='#operators'>Appendix II: Operators</a>
 
-</div> 
+</div>
 
 
 <div class='docs'>
-<h2 id=introduction style='border:0; margin-top:0; padding-top:20px;'>Introduction</h2> 
-V is a statically typed compiled programming language designed for building maintainable software. 
+<h2 id=introduction style='border:0; margin-top:0; padding-top:20px;'>Introduction</h2>
+V is a statically typed compiled programming language designed for building maintainable software.
 
-<p> 
-It's similar to Go and is also influenced by Oberon, Rust, Swift. 
+<p>
+It's similar to Go and is also influenced by Oberon, Rust, Swift.
 
-<p> 
+<p>
 V is a very simple language. Going through this documentation will take you about half an hour,
-and by the end of it you will learn pretty much the entire language. 
+and by the end of it you will learn pretty much the entire language.
 
-<p> 
+<p>
 Despite being simple, it gives a lot of power to the developer. Anything you can do in other languages,
-you can do in V. 
+you can do in V.
 
-<!-- 
+<!--
 <p>
-V is very strict. It helps with safety, readability, and maintainability. 
---> 
+V is very strict. It helps with safety, readability, and maintainability.
+-->
 
 <p>
-Found an error/typo? Please <a target=_blank 
-href='https://github.com/vlang-io/website/blob/master/docs.html'>submit a pull request</a>. 
+Found an error/typo? Please <a target=_blank
+href='https://github.com/vlang-io/website/blob/master/docs.html'>submit a pull request</a>.
 
 
 
-<h2 id=hello>Hello World</h2> 
+<h2 id=hello>Hello World</h2>
 
 <pre><key>fn</key> main() {
 	println(<str>'hello world'</str>)
 }</pre>
 
-<input class='run' type='button' value='Run'> 
+<input class='run' type='button' value='Run'>
 
 <p>
 Functions are declared with <code>fn</code>. Return type goes after the function
-name. In this case <code>main</code> doesn't return anything, so the type is 
+name. In this case <code>main</code> doesn't return anything, so the type is
 omitted.
 
 <p>
@@ -143,7 +143,7 @@ Just like in C and all related languages, <code>main</code> is an entry point.
 to standard output.
 
 <p><code>fn main()</code> declaration can be skipped in one file programs.
-This is useful when writing small programs, "scripts", or just learning 
+This is useful when writing small programs, "scripts", or just learning
 the language. For brevity, <code>fn main()</code> will be skipped in this
 tutorial.
 
@@ -153,7 +153,7 @@ This means that a "hello world" program can be as simple as
 <pre>
 println(<str>'hello world'</str>)
 </pre>
-<input class='run' type='button' value='Run'> 
+<input class='run' type='button' value='Run'>
 
 
 <h2 id=comments>Comments</h2>
@@ -181,17 +181,17 @@ println(<str>'hello world'</str>)
 	return x - y
 }
 </pre>
-<input class='run' type='button' value='Run'> 
+<input class='run' type='button' value='Run'>
 
-<p> 
-Again, the type comes after the argument's name.<!-- If two or more arguments in a row have the same type, 
-shorter notation can be used: <code>a</code> 
-can be listed 
---> 
+<p>
+Again, the type comes after the argument's name.<!-- If two or more arguments in a row have the same type,
+shorter notation can be used: <code>a</code>
+can be listed
+-->
 
 <p>
 Just like in Go and C, functions cannot be overloaded. This simplifies the code and improves
-maintainability and readability. 
+maintainability and readability.
 
 <p>
 Functions can be used before their declaration:
@@ -206,14 +206,14 @@ or thinking about the order of files and declarations.
 
  <h2 id=vars>Variables</h2>
 <pre>
-name := <str>'Bob'</str> 
+name := <str>'Bob'</str>
 age := 20
 large_number := i64(9999999999)
 println(name)
 println(age)
-println(large_number) 
+println(large_number)
 </pre>
-<input class='run' type='button' value='Run'> 
+<input class='run' type='button' value='Run'>
 
 <p>
 Variables are declared and initialized with <code>:=</code>. This is the only
@@ -222,12 +222,12 @@ value.
 
 <p>
 The variable's type is inferred from the value on the right hand side.
-To force a different type, use type conversion: 
+To force a different type, use type conversion:
 the expression <code>T(v)</code> converts the value <code>v</code> to the
  type <code>T</code>.
 
 <p>
-Unlike most other languages, V only allows defining variables in functions. 
+Unlike most other languages, V only allows defining variables in functions.
 Global (module level) variables are not allowed. There's no global state in V.
 <!--You can read why <a href='#'> here</a>.-->
 
@@ -239,19 +239,19 @@ println(age)
 age = 21
 println(age)
 </pre>
-<input class='run' type='button' value='Run'> 
+<input class='run' type='button' value='Run'>
 
-<p> 
-To change the value of the variable use <code>=</code>. In V, variables are 
+<p>
+To change the value of the variable use <code>=</code>. In V, variables are
 immutable by default. To be able to change the value of the variable, you
 have to declare it with <code>mut</code>.
 
-<p>Try compiling the program above after removing <code>mut</code> from 
+<p>Try compiling the program above after removing <code>mut</code> from
 the first line.
 
 
 <p>
-Please note the difference between <code>:=</code> and <code>=</code><br> <code>:=</code> 
+Please note the difference between <code>:=</code> and <code>=</code><br> <code>:=</code>
 is used for declaring and initializing, <code>=</code> is used for assigning.
 
 <p>&nbsp;</p>
@@ -261,8 +261,8 @@ is used for declaring and initializing, <code>=</code> is used for assigning.
 	age = 21
 }
 </pre>
-<input class='run' type='button' value='Run'> 
-<p> 
+<input class='run' type='button' value='Run'>
+<p>
 This code will not compile, because variable <code>age</code> is not declared.
 All variables need to be declared in V.
 
@@ -274,7 +274,7 @@ All variables need to be declared in V.
 	age := 21
 }
 </pre>
-<input class='run' type='button' value='Run'> 
+<input class='run' type='button' value='Run'>
 <p>
 This code will not compile either, because unused variables result in a compilation error.
 
@@ -283,16 +283,16 @@ This code will not compile either, because unused variables result in a compilat
 
 <pre>
 <key>fn </key>main() {
-	a := 10 
+	a := 10
 	if true {
 		a := 20
-	} 
+	}
 }
 </pre>
-<input class='run' type='button' value='Run'> 
+<input class='run' type='button' value='Run'>
 <p>
 Unlike most languages, variable shadowing is not allowed. Declaring a variable with a name that is already
-used in a parent scope will result in a compilation error. 
+used in a parent scope will result in a compilation error.
 
 <h2 id=btypes>Basic types</h2>
 
@@ -302,11 +302,11 @@ bool
 string
 
 i8  i16  i32  i64
-u8  u16  u32  u64 
+u8  u16  u32  u64
 
-byte <comment>// alias for u8 </comment> 
-int  <comment>// alias for i32 </comment> 
-rune <comment>// alias for i32, represents a Unicode code point </comment> 
+byte <comment>// alias for u8 </comment>
+int  <comment>// alias for i32 </comment>
+rune <comment>// alias for i32, represents a Unicode code point </comment>
 
 f32 f64
 </pre>
@@ -314,48 +314,48 @@ f32 f64
 Please note that unlike C and Go, <code>int</code> is always a 32 bit integer.
 
 
- 
+
 
 <h2 id=strings>Strings</h2>
 <pre>
-name := <str>'Bob'</str> 
-println(<str>'Hello, </str>$name<str>!'</str>)  <comment>// `$` is used for string interpolation</comment> 
-println(name.len) 
+name := <str>'Bob'</str>
+println(<str>'Hello, </str>$name<str>!'</str>)  <comment>// `$` is used for string interpolation</comment>
+println(name.len)
 
-bobby := name + <str>'by'</str> <comment>// + is used to concatenate strings</comment> 
-println(bobby) <comment>// ==> "Bobby" </comment> 
+bobby := name + <str>'by'</str> <comment>// + is used to concatenate strings</comment>
+println(bobby) <comment>// ==> "Bobby" </comment>
 
-println(bobby.substr(1, 3)) <comment>// ==> "ob" </comment> 
-<comment>// println(bobby[1:3]) // This syntax will most likely replace the substr() method  </comment> 
-</pre> 
-<input class='run' type='button' value='Run'> 
+println(bobby.substr(1, 3)) <comment>// ==> "ob" </comment>
+<comment>// println(bobby[1:3]) // This syntax will most likely replace the substr() method  </comment>
+</pre>
+<input class='run' type='button' value='Run'>
 
-<p> 
-In V, a string is a read-only array of bytes. String data is encoded using UTF-8. 
+<p>
+In V, a string is a read-only array of bytes. String data is encoded using UTF-8.
 
 <p>
 Both single and double quotes can be used to denote strings (TODO: double quotes are not supported
 yet). For consistency, <code>vfmt</code> converts double quotes to single quotes unless the string
-contains a single quote character. 
-
-<p> 
-Strings are immutable. This means that the substring function is very efficient: 
-no copying is performed, no extra allocations required. 
+contains a single quote character.
 
 <p>
-&nbsp; 
+Strings are immutable. This means that the substring function is very efficient:
+no copying is performed, no extra allocations required.
 
 <p>
-All operators in V must have values of the same type on both sides. 
-This code will not compile if <code>age</code> is an <code>int</code>: 
+&nbsp;
+
+<p>
+All operators in V must have values of the same type on both sides.
+This code will not compile if <code>age</code> is an <code>int</code>:
 <pre>println(<str>'age = '</str> + age)</pre>
 
 We have to either convert <code>age</code> to a <code>string</code>:
- <pre>println(<str>'age = '</str> + age.str())</pre> or use string interpolation (preferred): 
+ <pre>println(<str>'age = '</str> + age.str())</pre> or use string interpolation (preferred):
 <pre>println(<str>'age = $age'</str>)</pre>
 <!--
 or simply pass a second argument to <code>println</code>:
-<pre>println(<str>'age = '</str>, age) <comment>// TODO: not implemented yet</comment></pre> 
+<pre>println(<str>'age = '</str>, age) <comment>// TODO: not implemented yet</comment></pre>
 -->
 
 
@@ -366,81 +366,79 @@ or simply pass a second argument to <code>println</code>:
 <pre>
 nums := [1, 2, 3]
 println(nums)
-println(nums[1]) <comment>// ==> "2"</comment> 
+println(nums[1]) <comment>// ==> "2"</comment>
 
 <key>mut</key> names := [<str>'John'</str>]
-names << <str>'Peter'</str> 
-names << <str>'Sam'</str> 
-<comment>// names << 10  <-- This will not compile. `names` is an array of strings.</comment> 
-println(names.len) <comment>// ==> "3"</comment> 
-println(<str>'Alex'</str> <key>in</key> names) <comment>// ==> "false"</comment> 
+names << <str>'Peter'</str>
+names << <str>'Sam'</str>
+<comment>// names << 10  <-- This will not compile. `names` is an array of strings.</comment>
+println(names.len) <comment>// ==> "3"</comment>
+println(<str>'Alex'</str> <key>in</key> names) <comment>// ==> "false"</comment>
 
-<comment>// We can also preallocate a certain amount of elements.</comment> 
+<comment>// We can also preallocate a certain amount of elements.</comment>
 nr_ids := 50
-mut ids := [0 ; nr_ids] <comment>// This creates an array with 50 zeroes</comment> 
-<!-- 
+mut ids := [0 ; nr_ids] <comment>// This creates an array with 50 zeroes</comment>
+<!--
 	for i := 0; i < nr_ids; i++ {
-		ids[i] = i <comment>// This is more efficient than </comment> 
-		           <comment>// ids << i</comment> 
+		ids[i] = i <comment>// This is more efficient than </comment>
+		           <comment>// ids << i</comment>
 
 	}
 -->
 </pre>
 
-<input class='run' type='button' value='Run'> 
+<input class='run' type='button' value='Run'>
 
-<p> 
-Array type is determined by the first element: <code>[1, 2, 3]</code> is an array of ints <br> 
-(<code>[]int</code>). <br> 
-<code>['a', 'b']</code> is an array of strings (<code>[]string</code>). 
+<p>
+Array type is determined by the first element: <code>[1, 2, 3]</code> is an array of ints <br>
+(<code>[]int</code>). <br>
+<code>['a', 'b']</code> is an array of strings (<code>[]string</code>).
 
 <p>
 All elements must have the same type. <code>[1, 'a']</code> will not compile.
 
 <p>
-<code>&lt;&lt;</code> is an operator that appends a value to the end of the array. 
+<code>&lt;&lt;</code> is an operator that appends a value to the end of the array.
 
 <p><code>.len</code> field returns the length of the array. Note, that it's a read-only field,
-and it can't be modified by the user. All exported fields are read-only by default in V. 
+and it can't be modified by the user. All exported fields are read-only by default in V.
 
-<p><code>val in array</code> returns true if the array contains <code>val</code>. 
+<p><code>val in array</code> returns true if the array contains <code>val</code>.
 
 <h2 id=maps>Maps</h2>
 <pre>
-<key>mut</key> m := map[string]int{} <comment>// Only maps with string keys are allowed for now </comment> 
+<key>mut</key> m := map[string]int{} <comment>// Only maps with string keys are allowed for now </comment>
 m[<str>'one'</str>] = 1
-println(m[<str>'one'</str>]) <comment>// ==> "1" </comment> 
-println(m[<str>'bad_key'</str>]) <comment>// ==> "0" </comment> 
+println(m[<str>'one'</str>]) <comment>// ==> "1" </comment>
+println(m[<str>'bad_key'</str>]) <comment>// ==> "0" </comment>
+<comment>// TODO: implement a way to check if the key exists</comment>
 
-println(m.exists(<str>'one'</str>) <comment>// ==> true </comment>
-println(m.exists(<str>'bad_key'</str>)) <comment>// ==> false </comment>
-
-numbers := { <comment>// TODO: this syntax is not implemented yet </comment> 
+numbers := { <comment>// TODO: this syntax is not implemented yet </comment>
 	<str>'one'</str>: 1,
 	<str>'two'</str>: 2,
-} 
-</pre> 
+}
+</pre>
 
 <h2 id=if>If</h2>
 <pre>
-a := 10 
-b := 20 
-<key>if </key>a < b { 
-	println(<str>'$a < $b'</str>) 
-} <key>else if </key>a > b { 
-	println(<str>'$a > $b'</str>) 
-} <key>else</key> { 
-	println(<str>'$a == $b'</str>) 
-} 
+a := 10
+b := 20
+<key>if </key>a < b {
+	println(<str>'$a < $b'</str>)
+} <key>else if </key>a > b {
+	println(<str>'$a > $b'</str>)
+} <key>else</key> {
+	println(<str>'$a == $b'</str>)
+}
 </pre>
-<input class='run' type='button' value='Run'> 
+<input class='run' type='button' value='Run'>
 
-<p> 
+<p>
 <code>if</code> statements are pretty straightforward and similar to most
 other languages.
 
 <p>
-Unlike other C-like languages, there are no parentheses surrounding the 
+Unlike other C-like languages, there are no parentheses surrounding the
 condition, and the braces are always required.
 </p>
 
@@ -464,24 +462,24 @@ println(s) <comment>// ==> "odd"</comment>
 <code>in</code> allows to check whether an array contains an element.
 
 <pre>nums := [1, 2, 3]
-println(1 <key>in</key> nums) <comment>// ==> true</comment> 
-</pre> 
+println(1 <key>in</key> nums) <comment>// ==> true</comment>
+</pre>
 
-It's also useful for writing more clear and compact boolean expressions: 
+It's also useful for writing more clear and compact boolean expressions:
 
 <pre><key>if</key> parser.token == .plus || parser.token == .minus || parser.token == .div || parser.token == .mult {
-	... 
-} 
+	...
+}
 
 <key>if</key> parser.token <key>in</key> [.plus, .minus, .div, .mult] {
-	... 
-} 
-</pre> 
+	...
+}
+</pre>
 
-V optimizes such expressions, so both <code>if</code> statements above produce the same machine code, 
-no arrays are created.  
+V optimizes such expressions, so both <code>if</code> statements above produce the same machine code,
+no arrays are created.
 
- 
+
 
 
 
@@ -498,9 +496,9 @@ names := [<str>'Sam'</str>, <str>'Peter'</str>]
 	println(<str>'$i) $name'</str>)  // Output: 0) Sam
 }                             //         1) Peter
 </pre>
-<input class='run' type='button' value='Run'> 
+<input class='run' type='button' value='Run'>
 
-<p> 
+<p>
 
 The <code>for .. in</code> loop is used for going through elements of an array.
 
@@ -515,18 +513,18 @@ for i <= 100 {
 	sum += i
 	i++
 }
-println(sum) // ==> "5050" 
+println(sum) // ==> "5050"
 </pre>
-<input class='run' type='button' value='Run'> 
+<input class='run' type='button' value='Run'>
 
-<p> 
+<p>
 This form of the loop is similar to <code>while</code>
 loops in other languages.
 <p>
 The loop will stop iterating once the boolean condition evaluates to false.
 
 <p>
-Again, there are no parentheses surrounding the 
+Again, there are no parentheses surrounding the
 condition, and the braces are always required.
 
 <p>&nbsp;</p>
@@ -536,14 +534,14 @@ mut num := 0
 for {
 	num++
 	<key>if </key>num >= 10 {
-		break 
-	} 
+		break
+	}
 }
-println(num) // ==> "10" 
+println(num) // ==> "10"
 </pre>
-<input class='run' type='button' value='Run'> 
+<input class='run' type='button' value='Run'>
 
-<p> 
+<p>
 The condition can be omitted, this results in an infinite loop.
 
 
@@ -553,23 +551,23 @@ for i := 0; i < 10; i++ {
 	println(i)
 }
 </pre>
-<input class='run' type='button' value='Run'> 
+<input class='run' type='button' value='Run'>
 
-<p> 
+<p>
 
 Finally, there's the traditional C style <code>for</code> loop. It's safer than the `while` form
 because with the latter it's easy to forget to update the counter and get
 stuck in an infinite loop.
 
 <p>
-Here <code>i</code> doesn't need to be declared with <code>mut</code> since it's always going to be mutable by definition. 
+Here <code>i</code> doesn't need to be declared with <code>mut</code> since it's always going to be mutable by definition.
 
 
 
 
 <h2 id=switch>Switch</h2>
 <pre>
-os := 'windows' 
+os := 'windows'
 print('V is running on ')
 switch os {
 case 'darwin':
@@ -577,12 +575,12 @@ case 'darwin':
 case 'linux':
 	println('Linux.')
 default:
-	println(os) 
+	println(os)
 }
-<comment>// TODO: replace with match expressions</comment> 
+<comment>// TODO: replace with match expressions</comment>
 </pre>
-<input class='run' type='button' value='Run'> 
-<p> 
+<input class='run' type='button' value='Run'>
+<p>
 
 A switch statement is a shorter way to write a sequence of <code>if - else</code> statements. It runs the first case whose value is equal to the condition expression.
 <p>
@@ -594,16 +592,16 @@ Unlike C, <code>break</code> statement is not needed at the end of every block.
 <pre>
 <key>struct</key> Point {
 	x int
-	y int 
-} 
+	y int
+}
 
 p := Point{
-	x: 10 
-	y: 20 
-} 
-println(p.x) <comment>// Struct fields are accessed using a dot</comment> 
+	x: 10
+	y: 20
+}
+println(p.x) <comment>// Struct fields are accessed using a dot</comment>
 </pre>
-<input class='run' type='button' value='Run'> 
+<input class='run' type='button' value='Run'>
 
 <p> &nbsp;
 
@@ -613,8 +611,8 @@ a pointer to it, use the <code>&</code> prefix:
 
 <pre>
 pointer := &Point{10, 10}  <comment>// Alternative initialization syntax for structs with 3 fields or fewer</comment>
-println(pointer.x) <comment>// Pointers have the same syntax for accessing fields </comment> 
-</pre> 
+println(pointer.x) <comment>// Pointers have the same syntax for accessing fields </comment>
+</pre>
 
 <p> &nbsp;
 
@@ -638,28 +636,28 @@ button.widget.set_pos(x,y)
 </pre>
 
 <h2 id=mod>Access modifiers</h2>
-<p> 
+<p>
 Struct fields are private and immutable by default (making structs immutable as well).
 Their access modifiers can be changed with
-<code>pub</code> and <code>mut</code>. In total, there are 5 possible options: 
+<code>pub</code> and <code>mut</code>. In total, there are 5 possible options:
 
 <pre><key>struct</key> Foo {
-	a int     <comment>// private immutable (default)</comment> 
-<key>mut</key>: 
-	b int     <comment>// private mutable</comment> 
-	c int     <comment>// (you can list multiple fields with the same access modifier) </comment>  
-<key>pub</key>: 
-	d int     <comment>// public immmutable (readonly)</comment> 
-<key>pub mut</key>: 
-	e int     <comment>// public, but mutable only in parent module </comment> 
-<key>pub mut mut</key>: 
-	f int 	  <comment>// public and mutable both inside and outside parent module </comment> 
-}                 <comment>// (not recommended to use, that's why it's so verbose)</comment> 
-</pre> 
+	a int     <comment>// private immutable (default)</comment>
+<key>mut</key>:
+	b int     <comment>// private mutable</comment>
+	c int     <comment>// (you can list multiple fields with the same access modifier) </comment>
+<key>pub</key>:
+	d int     <comment>// public immmutable (readonly)</comment>
+<key>pub mut</key>:
+	e int     <comment>// public, but mutable only in parent module </comment>
+<key>pub mut mut</key>:
+	f int 	  <comment>// public and mutable both inside and outside parent module </comment>
+}                 <comment>// (not recommended to use, that's why it's so verbose)</comment>
+</pre>
 
 <p> &nbsp;
 
-<p> 
+<p>
 For example, here's the <code>string</code> type defined in the <code>builtin</code> module:
 
 <pre>
@@ -668,26 +666,26 @@ For example, here's the <code>string</code> type defined in the <code>builtin</c
 <key>pub</key>:
 	len int
 }
-</pre> 
+</pre>
 
-<p> 
+<p>
  It's easy to see from this definition that
-<code>string</code> is an immutable type. 
+<code>string</code> is an immutable type.
 
-<p> 
-The byte pointer with the string data is not accessible outside <code>builtin</code> at all. 
+<p>
+The byte pointer with the string data is not accessible outside <code>builtin</code> at all.
 <code>len</code> field is public, but not mutable.
 
 
 <pre>
 <key>fn</key> main() {
-	str := <str>'hello'</str> 
-	len := str.len <comment>// OK </comment> 
-	str.len++      <comment>// Compilation error </comment> 
-} 
-</pre> 
+	str := <str>'hello'</str>
+	len := str.len <comment>// OK </comment>
+	str.len++      <comment>// Compilation error </comment>
+}
+</pre>
 
- 
+
 
 
 
@@ -696,65 +694,65 @@ The byte pointer with the string data is not accessible outside <code>builtin</c
 
 
 <h2 id=methods>Methods</h2>
-<!-- 
+<!--
 <pre>
 import math
- 
+
 struct Point {
 	x int
-	y int 
-} 
+	y int
+}
 
-<key>fn </key>(a Point) distance_to(b Point) f64 { 
-	return math.sqrt((a.x-b.x)**2 + (a.y-b.y)**2) 
-} 
+<key>fn </key>(a Point) distance_to(b Point) f64 {
+	return math.sqrt((a.x-b.x)**2 + (a.y-b.y)**2)
+}
 
 p := Point{10,10}
-p2 := Point{20,20} 
-println(p.distance_to(p2)) 
-</pre> 
+p2 := Point{20,20}
+println(p.distance_to(p2))
+</pre>
 -->
 <pre>
 struct User {
-	age int 
-} 
+	age int
+}
 
 <key>fn </key>(u User) can_register() bool {
-	return u.age > 16 
-} 
+	return u.age > 16
+}
 
-user := User{age: 10} 
-println(user.can_register()) <comment>// ==> "false" </comment> 
+user := User{age: 10}
+println(user.can_register()) <comment>// ==> "false" </comment>
 
-user2 := User{age: 20} 
-println(user2.can_register()) <comment>// ==> "true" </comment> 
-</pre> 
-<input class='run' type='button' value='Run'> 
+user2 := User{age: 20}
+println(user2.can_register()) <comment>// ==> "true" </comment>
+</pre>
+<input class='run' type='button' value='Run'>
 
-<p> 
-V doesn't have classes. But you can define methods on types. 
+<p>
+V doesn't have classes. But you can define methods on types.
 <p>
 A method is a function with a special receiver argument.
-<p> 
+<p>
 
 The receiver appears in its own argument list between the <code>fn</code> keyword and the method name.
-<p> 
+<p>
 
-<!-- 
-In this example, the <code>distance_to</code> method has a receiver of type <code>Point</code> 
-named <code>a</code>. 
---> 
+<!--
+In this example, the <code>distance_to</code> method has a receiver of type <code>Point</code>
+named <code>a</code>.
+-->
 
-In this example, the <code>can_register</code> method has a receiver of type <code>User</code> 
+In this example, the <code>can_register</code> method has a receiver of type <code>User</code>
 named <code>u</code>.  The convention is not to use receiver names like <code>self</code> or
-<code>this</code>, but a short, preferably one letter long, name. 
+<code>this</code>, but a short, preferably one letter long, name.
 
 
-<h2 id=recvs>Pure functions by default</h2> 
-V functions are pure by default, meaning that their return values are only determined by 
+<h2 id=recvs>Pure functions by default</h2>
+V functions are pure by default, meaning that their return values are only determined by
 their arguments, and their evaluation has no side effects.
 <p>
-This is achieved by lack of global variables and all function arguments being 
+This is achieved by lack of global variables and all function arguments being
 immutable by default, even when references are passed.
 
 <p>
@@ -763,19 +761,19 @@ by using the same keyword <code>mut</code>:
 
 
 <pre><key>struct</key> User {
-	is_registered bool 
-} 
+	is_registered bool
+}
 
 <key>fn </key>(u <key>mut</key> User) register() {
-	u.is_registered = true 
-} 
+	u.is_registered = true
+}
 
-mut user := User{} 
-println(user.is_registered) <comment>// ==> "false" </comment> 
-user.register() 
-println(user.is_registered) <comment>// ==> "true" </comment> 
-</pre> 
-<input class='run' type='button' value='Run'> 
+mut user := User{}
+println(user.is_registered) <comment>// ==> "false" </comment>
+user.register()
+println(user.is_registered) <comment>// ==> "true" </comment>
+</pre>
+<input class='run' type='button' value='Run'>
 
 <p>
 In this example, the receiver (which is simply the first argument) is marked as mutable,
@@ -800,35 +798,35 @@ Note, that you have to add <code>mut</code> before <code>nums</code> when callin
 it clear that the function being called will modify the value.
 
 <!--
-<p> 
-Please note that functions can only modify receivers.<br><code><key>fn </key>register(u mut User)</code> 
-will not compile. 
 <p>
-This is very important, so I'll say it again: V functions are partially pure, their arguments can 
-never be modified by the function. 
+Please note that functions can only modify receivers.<br><code><key>fn </key>register(u mut User)</code>
+will not compile.
+<p>
+This is very important, so I'll say it again: V functions are partially pure, their arguments can
+never be modified by the function.
 <p>
 
 -->
-<p>It is preferable to return values instead of modifying arguments. 
-Modifying arguments should only be done in performance-critical parts of your application 
+<p>It is preferable to return values instead of modifying arguments.
+Modifying arguments should only be done in performance-critical parts of your application
 to reduce allocations and copying.
 
 
 
 
 <p>
-Use <code>user.register()</code> or <code>user = register(user)</code> 
+Use <code>user.register()</code> or <code>user = register(user)</code>
 instead of <code>register(mut user)</code>.
 
 <p>
 V makes it easy to return a modifed version of an an object: <br>
 <pre>
-<key>fn </key>register(u User) User { 
-	return { u | is_registered: true } 
+<key>fn </key>register(u User) User {
+	return { u | is_registered: true }
 }
 
-user = register(user) 
-</pre> 
+user = register(user)
+</pre>
 
 
 <h2 id=consts>Constants</h2>
@@ -837,14 +835,14 @@ user = register(user)
 <key>const</key> (
 	PI    = 3.14
 	World = <str>'世界'</str>
-) 
+)
 
 println(PI)
 println(World)
 </pre>
-<input class='run' type='button' value='Run'> 
+<input class='run' type='button' value='Run'>
 
-<p> 
+<p>
 Constants are declared with <code>const</code>. They can only be defined
 at the module level (outside of functions).
 
@@ -855,7 +853,7 @@ Constant names must be capitalized. This helps distinguish them from variables.
 Constant values can never be changed.
 
 <p>
-V constants are more flexible than in most languages. You can assign more complex values: 
+V constants are more flexible than in most languages. You can assign more complex values:
 
 <pre>
 <key>struct</key> Color {
@@ -878,17 +876,17 @@ V constants are more flexible than in most languages. You can assign more comple
 println(Numbers)
 println(Red)
 println(Blue)
-</pre> 
-<input class='run' type='button' value='Run'> 
+</pre>
+<input class='run' type='button' value='Run'>
 
-<p> 
-Global variables are not allowed, so this can be really useful. 
+<p>
+Global variables are not allowed, so this can be really useful.
 
 <h2 id=modules>Modules</h2>
 V is a very modular language. Creating reusable modules is encouraged and is
 very simple.
 
-To create a new module, create a directory with your module's name and 
+To create a new module, create a directory with your module's name and
 .v files with code:
 
 <pre>
@@ -927,7 +925,7 @@ That's it, you can now use it in your code:
 
 Note that you have to specify the module every time you call an external function.
 This may seem verbose at first, but it makes code much more readable
-and easier to understand, since it's always clear which function from 
+and easier to understand, since it's always clear which function from
 which module is being called. Especially in large code bases.
 
 <p>
@@ -936,119 +934,119 @@ Module names should be short, under 10 characters. Circular imports are not allo
 
 <p>
 
-You can create modules anywhere. 
+You can create modules anywhere.
 
 <p>
 All modules are compiled statically into a single executable.
 
 
 
-<h2 id=interfaces>Interfaces</h2> 
+<h2 id=interfaces>Interfaces</h2>
 <pre>
 <key>struct</key> Dog {}
 <key>struct</key> Cat {}
 
-<key>fn </key>(d Dog) speak() string { 
+<key>fn </key>(d Dog) speak() string {
 	return <str>'woof'</str>
-} 
+}
 
-<key>fn </key>(c Cat) speak() string { 
+<key>fn </key>(c Cat) speak() string {
 	return <str>'meow' </str>
-} 
+}
 
 <key>interface</key> Speaker {
 	speak() string
 }
 
-<key>fn </key>perform(s Speaker) { 
+<key>fn </key>perform(s Speaker) {
 	println(s.speak())
-} 
+}
 
-dog := Dog{} 
-cat := Cat{} 
+dog := Dog{}
+cat := Cat{}
 perform(dog) <comment>// ==> "woof" </comment>
 perform(cat) <comment>// ==> "meow" </comment>
-</pre> 
-<input class='run' type='button' value='Run'> 
-<p> 
+</pre>
+<input class='run' type='button' value='Run'>
+<p>
 A type implements an interface by implementing its methods. There is no explicit declaration of intent, no "implements" keyword.
-</p> 
-<!-- 
+</p>
+<!--
 <p>
 V interfaces are very efficient. There's no dynamic dispatch.
-</p> 
---> 
+</p>
+-->
 
-<h2 id=enums>Enums</h2> 
-<!-- 
+<h2 id=enums>Enums</h2>
+<!--
 <pre>
 enum Color {
-	red, green, blue 
-} 
+	red, green, blue
+}
 
 mut color := Color.red
-println(color) // ==> "red" 
-color = .green 
-is_green := color == .green 
-</pre> 
---> 
+println(color) // ==> "red"
+color = .green
+is_green := color == .green
+</pre>
+-->
 <pre>
 <key>enum</key> Color {
-	red green blue 
-} 
+	red green blue
+}
 
 <key>mut</key> color := Color.red
 <comment>// V knows that `color` is a `Color`. No need to use `Color.green` here.</comment>
-color = .green 
-println(color) <comment>// ==> "1"  TODO: print "green"? </comment> 
-</pre> 
-<input class='run' type='button' value='Run'> 
+color = .green
+println(color) <comment>// ==> "1"  TODO: print "green"? </comment>
+</pre>
+<input class='run' type='button' value='Run'>
 
-<h2 id=option>Option/Result types & error handling</h2> 
+<h2 id=option>Option/Result types & error handling</h2>
 
 <pre><key>struct</key> User {
-	id int 
-} 
+	id int
+}
 
 <key>struct</key> Repo {
-	users []User 
-} 
+	users []User
+}
 
 <key>fn </key>new_repo() Repo {
         user := User{id:10}
         return Repo {
                 users: [user]
         }
-} 
+}
 
-<key>fn </key>(r Repo) find_user_by_id(id int) User? { 
+<key>fn </key>(r Repo) find_user_by_id(id int) User? {
 	for user in r.users {
 		<key>if </key>user.id == id {
-			<comment>// V automatically wraps this into an option type </comment> 
-			return user 
-		} 
-	} 
-	return error(<str>'User </str>$id<str> not found'</str>) 
-} 
+			<comment>// V automatically wraps this into an option type </comment>
+			return user
+		}
+	}
+	return error(<str>'User </str>$id<str> not found'</str>)
+}
 
-repo := new_repo() 
-user := repo.find_user_by_id(10) or { <comment>// Option types must be handled by `or` blocks </comment> 
-	return  // <comment>`or` block must end with `return`, `break`, or `continue` </comment> 
-} 
-println(user.id) // <comment>==> "10" </comment> 
-</pre> 
-<!-- 
-		eprintln(err) 
---> 
-<input class='run' type='button' value='Run'> 
+repo := new_repo()
+user := repo.find_user_by_id(10) or { <comment>// Option types must be handled by `or` blocks </comment>
+	return  // <comment>`or` block must end with `return`, `break`, or `continue` </comment>
+}
+println(user.id) // <comment>==> "10" </comment>
+</pre>
+<!--
+		eprintln(err)
+-->
+<input class='run' type='button' value='Run'>
 
 <p>V combines Option and Result into one type, so you don't need to decide which one to use.
-<p> 
-The amount of work required to "upgrade" a function to an optional function is minimal:
-you have to add a <code>?</code> to the return type and return an error when something goes wrong. 
 <p>
-If you don't need to return an error, you can simply <code>return None</code>. (TODO: <code>None</code> is 
-not implemented yet). 
+The amount of work required to "upgrade" a function to an optional function is minimal:
+you have to add a <code>?</code> to the return type and return an error when something goes wrong.
+<p>
+If you don't need to return an error, you can simply <code>return None</code>. (TODO: <code>None</code> is
+not implemented yet).
 <p>
 This is the primary way of handling errors in V. They are still values, like in Go,
 but the advantage is that errors can't be unhandled, and handling them is a lot less verbose.
@@ -1061,7 +1059,7 @@ resp := http.get(url)?
 println(resp.body)
 </pre>
 
-<code>http.get</code> returns <code>?http.Response</code>. It was called with 
+<code>http.get</code> returns <code>?http.Response</code>. It was called with
 <code>?</code>, so the error is propagated to the calling function or in case of
 <code>main</code> leads to a panic.
 
@@ -1076,9 +1074,9 @@ println(resp.body)
 
 
 
- 
 
-<h2 id=generics>Generics (July)</h2> 
+
+<h2 id=generics>Generics (July)</h2>
 <pre><key>struct</key> Repo⟨T⟩ {
 	db DB
 }
@@ -1087,55 +1085,55 @@ println(resp.body)
 	return Repo⟨T⟩{db: db}
 }
 
-<comment>// This is a generic function. V will generate it for every type it's used with.</comment> 
-<key>fn </key>(r Repo⟨T⟩) find_by_id(id int) ?T {  
-	table_name := T.name <comment>// in this example getting the name of the type gives us the table name</comment> 
+<comment>// This is a generic function. V will generate it for every type it's used with.</comment>
+<key>fn </key>(r Repo⟨T⟩) find_by_id(id int) ?T {
+	table_name := T.name <comment>// in this example getting the name of the type gives us the table name</comment>
 	return r.db.query_one⟨T⟩('select * from $table_name where id = ?', id)
 }
 
 db := new_db()
 users_repo := new_repo⟨User⟩(db)
 posts_repo := new_repo⟨Post⟩(db)
-user := users_repo.find_by_id(1)? 
-post := posts_repo.find_by_id(1)? 
-</pre> 
+user := users_repo.find_by_id(1)?
+post := posts_repo.find_by_id(1)?
+</pre>
 
-For readability, ⟨⟩ are allowed instead of &lt;>. vfmt automatically replaces <> with ⟨⟩. 
+For readability, ⟨⟩ are allowed instead of &lt;>. vfmt automatically replaces <> with ⟨⟩.
 
-<h2 id=concurrency>Concurrency</h2> 
+<h2 id=concurrency>Concurrency</h2>
 The concurrency model is very similar to Go. To run <code>foo()</code> concurrently, just
 call it with <code>go foo()</code>. Right now, it launches the function in a new system
 thread. Soon goroutines and the scheduler will be implemented.
 
 
 
-<h2 id=json>Decoding JSON</h2> 
+<h2 id=json>Decoding JSON</h2>
 
 <pre><key>struct</key> User {
 	name string
-	age  int 
-	foo  Foo    [skip]  <comment>// Use `skip` attribute to skip certain fields</comment> 
-} 
+	age  int
+	foo  Foo    [skip]  <comment>// Use `skip` attribute to skip certain fields</comment>
+}
 
 data := <str>'{ "name": "Frodo", "age": 25 }'</str>
 user := json.decode(User, data) <key>or</key> {
 	eprintln(<str>'Failed to decode json'</str>)
-	return 
-} 
+	return
+}
 println(user.name)
-println(user.age) 
-</pre> 
-<input class='run' type='button' value='Run'> 
+println(user.age)
+</pre>
+<input class='run' type='button' value='Run'>
 
-<p> 
-JSON is very popular nowadays, that's why JSON support is built in. 
 <p>
-The first argument of the <code>json.decode</code> function is the type to decode to. 
-The second argument is the JSON string. 
+JSON is very popular nowadays, that's why JSON support is built in.
+<p>
+The first argument of the <code>json.decode</code> function is the type to decode to.
+The second argument is the JSON string.
 
 <p>
 V generates code for JSON encoding and decoding. No runtime reflection is used. This results in much better
-performance. 
+performance.
 
 
 
@@ -1143,21 +1141,21 @@ performance.
 
 
 <h2 id=testing>Testing</h2>
-<pre><comment>// hello.v</comment> 
+<pre><comment>// hello.v</comment>
 <key>fn </key>hello() string {
 	return <str>'Hello world'</str>
-} 
+}
 
-<comment>// hello_test.v</comment> 
+<comment>// hello_test.v</comment>
 <key>fn </key>test_hello() {
     <key>assert</key> hello() == <str>'Hello world'</str>
-} 
-</pre> 
+}
+</pre>
 
-All test functions have to be placed in <code>*_test.v</code> files and begin with <code>test_</code>. 
+All test functions have to be placed in <code>*_test.v</code> files and begin with <code>test_</code>.
 
 To run the tests do <code>v hello_test.v</code>. To test an entire module, do
-<code>v test mymodule</code>. 
+<code>v test mymodule</code>.
 
 
 
@@ -1174,11 +1172,11 @@ during compilation. For example:
 }
 
 <key>fn</key> draw_scene() {
-	... 
+	...
 	draw_text(<str>'hello $name1'</str>, 10, 10)
 	draw_text(<str>'hello $name2'</str>, 100, 10)
 	draw_text(strings.repeat(<str>'X'</str>, 10000), 10, 50)
-	... 
+	...
 }
 </pre>
 
@@ -1187,28 +1185,28 @@ the function exits.
 
 <p>
 In fact, the first two calls won't result in any allocations at all.
-These two strings are small, 
+These two strings are small,
 V will use a preallocated buffer for them.
 
 
 <p>
-For more complex cases manual memory management is required. This will be 
+For more complex cases manual memory management is required. This will be
 fixed  soon.
 
 <p>V will detect memory leaks at runtime and report them. To clean up, for example,
 an array, use the <code>free()</code> method:
 
 <pre>
-numbers := [0; 1000000] 
+numbers := [0; 1000000]
 ...
 numbers.free()
-</pre> 
- 
+</pre>
 
 
 
 
-<h1>Advanced Topics</h1> 
+
+<h1>Advanced Topics</h1>
 
 
 
@@ -1222,54 +1220,54 @@ numbers.free()
 
 #include "sqlite3.h"
 
-struct C.sqlite3 
-struct C.sqlite3_stmt 
+struct C.sqlite3
+struct C.sqlite3_stmt
 
-<key>fn </key>C.sqlite3_column_int(C.sqlite_stmt, int) int 
+<key>fn </key>C.sqlite3_column_int(C.sqlite_stmt, int) int
 
 <key>fn </key>main() {
-	path := 'sqlite3_users.db' 
-	db := &C.sqlite3{} 
+	path := 'sqlite3_users.db'
+	db := &C.sqlite3{}
 	C.sqlite3_open(path.cstr(), &db)
 
-	query := 'select count(*) from users' 
-	stmt := &C.sqlite3_stmt{} 
+	query := 'select count(*) from users'
+	stmt := &C.sqlite3_stmt{}
 	C.sqlite3_prepare_v2(db, query.cstr(), - 1, &stmt, 0)
-	C.sqlite3_step(stmt) 
+	C.sqlite3_step(stmt)
 	nr_users := C.sqlite3_column_int(res, 0)
 	C.sqlite3_finalize(res)
-	println(nr_users) 
-} 
-</pre> 
+	println(nr_users)
+}
+</pre>
 
 
 
 
-<h2 id=comp_if>Compile time if</h2> 
+<h2 id=comp_if>Compile time if</h2>
 <pre><key>$if</key> windows {
-	println('Windows')  
-}  
+	println('Windows')
+}
 <key>$if</key> linux {
-	println('Linux') 
-} 
+	println('Linux')
+}
 <key>$if</key> mac {
-	println('macOS') 
-} 
-</pre> 
+	println('macOS')
+}
+</pre>
 
 Compile time <code>if</code> starts with a <code>$</code>. Right now it can only be used to detect
-an OS. 
+an OS.
 
-<h2 id=codegen>Reflection via codegen</h2> 
-Having built-in JSON support is nice, but V also allows you to create efficient 
+<h2 id=codegen>Reflection via codegen</h2>
+Having built-in JSON support is nice, but V also allows you to create efficient
 serializers for anything, using compile-time <key>if</key> and <key>for</key>:
 
 <pre>
 <pre><key>struct</key> User {
 	name string
-	age  int 
+	age  int
 }
- 
+
 <comment>// TODO: planned in June</comment>
 <key>fn</key> decode&lt;T>(data string) T {
         mut result := T{}
@@ -1294,57 +1292,56 @@ serializers for anything, using compile-time <key>if</key> and <key>for</key>:
 
 
 
-<h2 id=op> Limited operator overloading</h2> 
+<h2 id=op> Limited operator overloading</h2>
 
 <pre><key>struct</key> Vec {
 	x int
 	y int
 }
 
-<key>fn</key> (a Vec) str() string { 
-	<key>return</key> <str>'{$a.x, $a.y}'</str> 
+<key>fn</key> (a Vec) str() string {
+	<key>return</key> <str>'{$a.x, $a.y}'</str>
 }
 
 <key>fn</key> (a Vec) + (b Vec) Vec {
 	<key>return</key> Vec {
-		a.x + b.x, 
-		a.y + b.y 
+		a.x + b.x,
+		a.y + b.y
 	}
 }
 
 <key>fn</key> (a Vec) - (b Vec) Vec {
 	<key>return</key> Vec {
-		a.x - b.x, 
+		a.x - b.x,
 		a.y - b.y
 	}
 }
 
-<key>fn</key> main() { 
+<key>fn</key> main() {
 	a := Vec{2, 3}
 	b := Vec{4, 5}
-	println(a + b) <comment>// ==> "{6, 8}" </comment> 
-	println(a - b) <comment>// ==> "{-2, -2}" </comment> 
-} 
-</pre> 
-<input class='run' type='button' value='Run'> 
-
-<p> 
-Operator overloading goes against V's philosophy of simplicity and predictability. But since
-scientific and graphical applications are among V's domains, operator overloading is very important to have
-in order to improve readability: 
+	println(a + b) <comment>// ==> "{6, 8}" </comment>
+	println(a - b) <comment>// ==> "{-2, -2}" </comment>
+}
+</pre>
+<input class='run' type='button' value='Run'>
 
 <p>
-<code>a.add(b).add(c.mul(d))</code> is a lot less readable than <code>a + b + c * d</code>. 
+Operator overloading goes against V's philosophy of simplicity and predictability. But since
+scientific and graphical applications are among V's domains, operator overloading is very important to have
+in order to improve readability:
+
+<p>
+<code>a.add(b).add(c.mul(d))</code> is a lot less readable than <code>a + b + c * d</code>.
 
 <p>
 To improve safety and maintainability, operator overloading has several limitations:
 
 <p>
-- It's only possible to overload <code>+, -, *, /</code>  operators. <br>  
-- Calling other functions inside operator functions is not allowed.  <br> 
-- Operator functions can't modify their arguments.  <br> 
-- Both arguments must have the same type (just like with all operators in V). 
- 
+- It's only possible to overload <code>+, -, *, /</code>  operators. <br>
+- Calling other functions inside operator functions is not allowed.  <br>
+- Operator functions can't modify their arguments.  <br>
+- Both arguments must have the same type (just like with all operators in V).
 
 
 
@@ -1355,16 +1352,17 @@ To improve safety and maintainability, operator overloading has several limitati
 
 
 
- 
+
+
 
 <h2 id=cpp>Translating C/C++ to V</h2>
 
-TODO: translating C to V will be available in June. C++ to V will be available later this year. 
-<p> 
+TODO: translating C to V will be available in June. C++ to V will be available later this year.
+<p>
 
-V can translate your C/C++ code to human readable V code. 
+V can translate your C/C++ code to human readable V code.
 
-Let's create a simple program <code>test.cpp</code> first: 
+Let's create a simple program <code>test.cpp</code> first:
 
 <pre>#include &lt;vector>
 #include &lt;string>
@@ -1376,39 +1374,39 @@ int main() {
         s.push_back("awesome");
         std::cout << s.size() << std::endl;
         return 0;
-} 
-</pre> 
+}
+</pre>
 
-Run <code>v translate test.cpp</code> and V will generate <code>test.v</code>: 
+Run <code>v translate test.cpp</code> and V will generate <code>test.v</code>:
 
 <pre><key>fn </key>main {
         mut s := []
 	s << 'V is '
 	s << 'awesome'
-	println(s.len) 
-} 
-</pre> 
+	println(s.len)
+}
+</pre>
 
 <p>
-An online C/C++ to V translator is coming soon. 
+An online C/C++ to V translator is coming soon.
 
 <p>
 When should you translate C code and when should you simply call C code from V?
 
-<p> 
+<p>
 If you have well-written, well-tested C code, then of course you can always simply call this C code from V.
 
-<p> 
-Translating it to V gives you several advantages: 
+<p>
+Translating it to V gives you several advantages:
 
-<p> 
+<p>
 - If you plan to develop that code base, you now have everything in one language, which is much safer and easier to develop in that C.
 
-<p> 
-- Cross-compilation becomes a lot easier. You don't have to worry about it at all. 
+<p>
+- Cross-compilation becomes a lot easier. You don't have to worry about it at all.
 
-<p> 
-- No more build flags and include files either. 
+<p>
+- No more build flags and include files either.
 
 
 <h2 id=hot>Hot code reloading</h2>
@@ -1421,7 +1419,7 @@ To cross compile your project simply run
 v -os windows .
 </pre>
 
-or 
+or
 
 <pre>
 v -os linux .
@@ -1435,9 +1433,9 @@ when compiling GUI apps using the <code>ui</code> module or graphical apps using
 <code>gg</code>.
 
 
-<h2 id=bash>Cross-platform shell scripts in V</h2> 
+<h2 id=bash>Cross-platform shell scripts in V</h2>
 
-(Coming later in June.) 
+(Coming later in June.)
 
 <p>
 V can be used as an alternative to Bash to write deployment scripts, build scripts,
@@ -1445,80 +1443,80 @@ etc.
 
 <p>
 The advantage of using V for this is the simplicity and predictability of the language, and
-cross-platform support. "V scripts" run on Unix-like systems as well as on Windows. 
+cross-platform support. "V scripts" run on Unix-like systems as well as on Windows.
 
 <p>
 Start your program with a <code>#v</code> directive. It will make all functions in the <code>os</code>
-module global (so that you can use <code>ls()</code> instead of <code>os.ls()</code>, for example). 
+module global (so that you can use <code>ls()</code> instead of <code>os.ls()</code>, for example).
 
-<pre><comment>#v</comment> 
+<pre><comment>#v</comment>
 
-rm(<str>'build/*'</str>) 
-<comment>// Same as: </comment> 
+rm(<str>'build/*'</str>)
+<comment>// Same as: </comment>
 <key>for</key> file <key>in</key> ls(<str>'build/'</str>) {
-	rm(file) 
-} 
+	rm(file)
+}
 
-mv(<str>'*.v'</str>, <str>'build/'</str>) 
-<comment>// Same as: </comment> 
+mv(<str>'*.v'</str>, <str>'build/'</str>)
+<comment>// Same as: </comment>
 <key>for</key> file <key>in</key> ls(<str>'.'</str>) {
-	<key>if</key> file.ends_with(<str>'.v'</str>) { 
-		mv(file, <str>'build/'</str>) 
-	} 
-} 
-</pre> 
+	<key>if</key> file.ends_with(<str>'.v'</str>) {
+		mv(file, <str>'build/'</str>)
+	}
+}
+</pre>
 
 Now you can either compile this like a normal V program and get an executable you can deploy and run
 anywhere:
 
-<code>v deploy.v && ./deploy</code> 
+<code>v deploy.v && ./deploy</code>
 
 
-<p> 
+<p>
 Or just run it more like a traditional bash script:
 
-<code>v run deploy.v</code> 
- 
+<code>v run deploy.v</code>
+
 
 
 
 <h2 id=keywords>Appendix I: Keywords</h2>
 
-V has 22 keywords: 
+V has 22 keywords:
 
 <pre>
-break 
-const  
-continue 
-defer 
-else 
-enum 
+break
+const
+continue
+defer
+else
+enum
 fn
 for
 go
 goto
 if
 import
-in 
+in
 interface
-is 
-match 
-module 
-mut 
-or 
-pub 
+is
+match
+module
+mut
+or
+pub
 return
 struct
-type 
-</pre> 
+type
+</pre>
 
 
 <h2 id=operators>Appendix II: Operators</h2>
 <pre>
 +    sum                    integers, floats, strings
--    difference             integers, floats 
-*    product                integers, floats 
-/    quotient               integers, floats 
+-    difference             integers, floats
+*    product                integers, floats
+/    quotient               integers, floats
 %    remainder              integers
 
 &    bitwise AND            integers
@@ -1526,26 +1524,26 @@ type
 ^    bitwise XOR            integers
 
 <<   left shift             integer << unsigned integer
->>   right shift            integer >> unsigned integer 
+>>   right shift            integer >> unsigned integer
 
 
 Precedence    Operator
-    5             *  /  %  <<  >>  & 
+    5             *  /  %  <<  >>  &
     4             +  -  |  ^
     3             ==  !=  <  <=  >  >=
     2             &&
-    1             || 
+    1             ||
 
 
-Assignment Operators 
+Assignment Operators
 +=   -=   *=   /=   %=
 &=   |=   ^=
 &&=  ||=
->>=  <<= 
-</pre> 
+>>=  <<=
+</pre>
 
 
-</div> 
+</div>
 </div>
 
 	</body>
