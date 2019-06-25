@@ -411,7 +411,9 @@ and it can't be modified by the user. All exported fields are read-only by defau
 m[<str>'one'</str>] = 1
 println(m[<str>'one'</str>]) <comment>// ==> "1" </comment>
 println(m[<str>'bad_key'</str>]) <comment>// ==> "0" </comment>
-<comment>// TODO: implement a way to check if the key exists</comment>
+
+println(m.exists(<str>'one'</str>) <comment>// ==> true </comment>
+println(m.exists(<str>'bad_key'</str>)) <comment>// ==> false </comment>
 
 numbers := { <comment>// TODO: this syntax is not implemented yet </comment>
 	<str>'one'</str>: 1,
