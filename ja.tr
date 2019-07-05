@@ -1,0 +1,68 @@
+examples
+例
+-----
+documentation
+ドキュメント
+-----
+modules
+モジュール
+-----
+faq
+よくある質問
+-----
+built_in_v
+Built in V
+-----
+the_v_lang
+Vプログラミング言語
+-----
+v_slogan
+Simple, fast, safe, compiled language for developing maintainable software
+-----
+includes_binaries 
+includes binaries for 3 systems
+-----
+install_source 
+Or install V from source 
+-----
+couple_seconds 
+これには数秒かかります
+-----
+wip_info
+V is an actively developed language at an early stage.
+Features that are still being worked on are marked with $wip
+
+Everything else on this page and the docs has been implemented and open-sourced.
+By the time of the V 1.0 release planned for December 2019, there will be no $wip's left.
+-----
+forum
+フォーラム
+-----
+blog
+ブログ
+-----
+fast_compilation
+高速コンパイル
+-----
+safety
+安全性
+-----
+performance 
+パフォーマンス
+-----
+simple_language_for_maintainable_programs
+Simple language for building  maintainable programs 
+-----
+zero_deps 
+400 KB compiler with zero dependencies
+-----
+c_translation 
+C/C++ translation 
+-----
+-----
+-----
+-----
+-----
+-----
+
+

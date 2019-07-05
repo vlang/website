@@ -35,10 +35,10 @@ p {
 	flex-wrap: wrap;
 }
 pre {
-	font-family: "Roboto Mono",  "Courier New", Menlo;
+	font-family: "Roboto Mono", "Courier New", Menlo;
 	@include mobile {
 		overflow: scroll;
-		font-size: 11px;
+		font-size: 12px;
 	}
 }
 #donate {
@@ -95,7 +95,7 @@ pre {
 	}
 	background-color: #f9f9f9;
 	@include mobile {
-display:none; 
+display:none;
 		width: 70%;
 		max-width: 70%;
 		margin-top:10px;
@@ -108,9 +108,9 @@ display:none;
 select {
 	@include mobile {
 display:none;
-} 
- 
-} 
+}
+
+}
 #install {
 	float: right;
 	position: relative;
@@ -234,7 +234,7 @@ h2 {
 	margin-top: 40px;
 }
 .feature {
-	@include  desktop {
+	@include desktop {
 		width: 440px;
 		min-width: 440px;
 		max-width: 440px;
@@ -292,7 +292,9 @@ td {
 		margin-top:20px;
 		height: calc(100vh - 300px);
 		overflow-y: auto;
+
 		width: 250px;
+
 	}
 	@include mobile {
 		padding: 10px;
@@ -313,6 +315,7 @@ td {
 code {
 	font-family: 'Roboto Mono';
 	background-color: #f0f0f0;
+	color: black;
 	padding: 1px 3px 1px 3px;
 }
 comment {
@@ -389,7 +392,10 @@ video {
 	width: 200px;
 }
 .sidenote {
-font-size: 75%;
-    position: relative;
-    top: -5px; 
-} 
+	font-size: 75%;
+	position: relative;
+	top: -5px;
+}
+input[type=button] {
+	font-size: 20px;
+}
