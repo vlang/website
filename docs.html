@@ -54,41 +54,41 @@ $(document).ready(function() {
 <a href='#comments'>Comments</a> 
 <a href='#fns'>Functions</a> 
 <a href='#vars'>Variables</a> 
-<a href='#btypes'>Basic types</a> 
+<a href='#btypes'>Basic Types</a> 
 <a href='#strings'>Strings</a> 
 <a href='#arrays'>Arrays</a> 
 <a href='#maps'>Maps</a> 
 <a href='#if'>If</a> 
-<a href='#in'>In operator</a> 
-<a href='#for'>For loop</a> 
+<a href='#in'>In Operator</a> 
+<a href='#for'>For Loop</a> 
 <a href='#switch'>Switch</a>
 <a href='#structs'>Structs</a>
-<a href='#mod'>Access modifiers</a>
+<a href='#mod'>Access Modifiers</a>
 <a href='#methods'>Methods</a>
-<a href='#recvs'>Pure functions</a>
+<a href='#recvs'>Pure Functions</a>
 <a href='#consts'>Constants</a> 
 <a href='#modules'>Modules</a> 
 <a href='#interfaces'>Interfaces</a>
 <a href='#enums'>Enums</a>
-<a href='#option'>Option types & error handling</a>
+<a href='#option'>Option Types & Error Handling</a>
 <a href='#generics'>Generics</a> 
 <a href='#concurrency'>Concurrency</a> 
 <a href='#json'>Decoding JSON</a>
 <a href='#testing'>Testing</a>
-<a href='#memory'>Memory management</a>
+<a href='#memory'>Memory Management</a>
 <br> 
 Advanced Topics
 
 <br>
 <br>
-<a href='#calling_c'>Calling C functions from V</a>
-<a href='#comp_if'>Compile time if</a>
-<a href='#codegen'>Reflection via codegen</a>
-<a href='#op'>Limited operator overloading</a>
+<a href='#calling_c'>Calling C Functions from V</a>
+<a href='#comp_if'>Compile Time If</a>
+<a href='#codegen'>Reflection via Codegen</a>
+<a href='#op'>Limited Operator Overloading</a>
 <a href='#cpp'>Translating C/C++ to V</a>
-<a href='#hot'>Hot code reloading</a>
-<a href='#cross'>Cross compilation</a>
-<a href='#bash'>Cross-platform shell scripts in V</a>
+<a href='#hot'>Hot Code Reloading</a>
+<a href='#cross'>Cross Compilation</a>
+<a href='#bash'>Cross-Platform Shell Scripts in V</a>
 <br> 
 <a href='#keywords'>Appendix I: Keywords</a>
 <a href='#operators'>Appendix II: Operators</a> 
@@ -294,7 +294,7 @@ This code will not compile either, because unused variables result in a compilat
 Unlike most languages, variable shadowing is not allowed. Declaring a variable with a name that is already
 used in a parent scope will result in a compilation error. 
 
-<h2 id=btypes>Basic types</h2>
+<h2 id=btypes>Basic Types</h2>
 
 <pre>
 bool
@@ -457,7 +457,7 @@ println(s) <comment>// ==> "odd"</comment>
 
 
 
-<h2 id=in>In operator</h2>
+<h2 id=in>In Operator</h2>
 
 <code>in</code> allows to check whether an array contains an element.
 
@@ -483,7 +483,7 @@ no arrays are created.
 
 
 
-<h2 id=for>For loop</h2>
+<h2 id=for>For Loop</h2>
 V has only one looping construct: <code>for</code>.
 
 <pre>
@@ -635,7 +635,7 @@ button.set_pos(x, y)
 button.widget.set_pos(x,y)
 </pre>
 
-<h2 id=mod>Access modifiers</h2>
+<h2 id=mod>Access Modifiers</h2>
 <p> 
 Struct fields are private and immutable by default (making structs immutable as well).
 Their access modifiers can be changed with
@@ -748,7 +748,7 @@ named <code>u</code>.  The convention is not to use receiver names like <code>se
 <code>this</code>, but a short, preferably one letter long, name. 
 
 
-<h2 id=recvs>Pure functions by default</h2> 
+<h2 id=recvs>Pure Functions by Default</h2> 
 V functions are pure by default, meaning that their return values are only determined by 
 their arguments, and their evaluation has no side effects.
 <p>
@@ -1002,7 +1002,7 @@ println(color) <comment>// ==> "1"  TODO: print "green"? </comment>
 </pre> 
 <input class='run' type='button' value='Run'> 
 
-<h2 id=option>Option/Result types & error handling</h2> 
+<h2 id=option>Option/Result Types & Error Handling</h2> 
 
 <pre><key>struct</key> User {
 	id int 
@@ -1161,7 +1161,7 @@ To run the tests do <code>v hello_test.v</code>. To test an entire module, do
 
 
 
-<h2 id=memory>Memory management</h2>
+<h2 id=memory>Memory Management</h2>
 
 There's no garbage collection or reference counting. V cleans up what it can
 during compilation. For example:
@@ -1214,7 +1214,7 @@ numbers.free()
 
 
 
-<h2 id=calling_c>Calling C functions from V</h2>
+<h2 id=calling_c>Calling C Functions from V</h2>
 <pre>
 #flag -lsqlite3
 
@@ -1243,7 +1243,7 @@ struct C.sqlite3_stmt
 
 
 
-<h2 id=comp_if>Compile time if</h2> 
+<h2 id=comp_if>Compile Time If</h2> 
 <pre><key>$if</key> windows {
 	println('Windows')  
 }  
@@ -1258,7 +1258,7 @@ struct C.sqlite3_stmt
 Compile time <code>if</code> starts with a <code>$</code>. Right now it can only be used to detect
 an OS. 
 
-<h2 id=codegen>Reflection via codegen</h2> 
+<h2 id=codegen>Reflection via Codegen</h2> 
 Having built-in JSON support is nice, but V also allows you to create efficient 
 serializers for anything, using compile-time <key>if</key> and <key>for</key>:
 
@@ -1292,7 +1292,7 @@ serializers for anything, using compile-time <key>if</key> and <key>for</key>:
 
 
 
-<h2 id=op> Limited operator overloading</h2> 
+<h2 id=op>Limited Operator Overloading</h2> 
 
 <pre><key>struct</key> Vec {
 	x int
@@ -1409,10 +1409,10 @@ Translating it to V gives you several advantages:
 - No more build flags and include files either. 
 
 
-<h2 id=hot>Hot code reloading</h2>
+<h2 id=hot>Hot Code Reloading</h2>
 TODO
 
-<h2 id=cross>Cross compilation</h2>
+<h2 id=cross>Cross Compilation</h2>
 To cross compile your project simply run
 
 <pre>
@@ -1433,7 +1433,7 @@ when compiling GUI apps using the <code>ui</code> module or graphical apps using
 <code>gg</code>.
 
 
-<h2 id=bash>Cross-platform shell scripts in V</h2> 
+<h2 id=bash>Cross-Platform Shell Scripts in V</h2> 
 
 (Coming later in June.) 
 
