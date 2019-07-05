@@ -11,7 +11,7 @@ faq
 FAQ
 -----
 built_in_v
-Mit V gemacht
+Mit V erstellt
 -----
 the_v_lang
 The V Programming Language
@@ -19,27 +19,27 @@ The V Programming Language
 v_slogan
 Einfache, schnelle und sichere kompilierte Sprache zur Entwicklung von wartbarer Software
 -----
-includes_binaries 
-mit Binarys für 3 Systeme
+includes_binaries
+mit Binaries für 3 Systeme
 -----
-install_source 
-Oder installiere V aus dem Source-Code
+install_source
+Oder installiere V aus dem Source Code
 -----
-couple_seconds 
-dauert ein paar sekunden
+couple_seconds
+dauert ein paar Sekunden
 -----
 wip_info
 V ist eine aktiv entwickelte Sprache in einer frühen Stadium.
 Features, an denen noch gearbeitet wird sind mit $wip markiert
 
-Alles andere auf dieser Seite und die Dokumentation wurden implementiert und sind Open-Source
+Alles andere auf dieser Seite und die Dokumentation wurde implementiert und ist Open Source
 Zum Zeitpunkt der Veröffentlichung, die für den Dezember 2019 geplant ist, wird es keine $wip's mehr geben.
 -----
 forum
 Forum
 -----
 blog
-Blog 
+Blog
 -----
 fast_compilation
 Schnelle Kompilierung
@@ -47,20 +47,20 @@ Schnelle Kompilierung
 safety
 Sicherheit
 -----
-performance 
+performance
 Leistung
 -----
 simple_language_for_maintainable_programs
-Eine einfache Sprache zum erstellen von wartbaren Programmen
+Eine einfache Sprache zum Erstellen von wartbaren Programmen
 -----
-zero_deps 
+zero_deps
 400 KB Compiler ohne Abhängigkeiten von Drittanbietern
 -----
-c_translation 
+c_translation
 C/C++ Übersetzung
 -----
 introduction
-Einführung 
+Einführung
 -----
 comments
 Kommentare
@@ -71,74 +71,74 @@ Funktionen
 variables
 Variablen
 -----
-basic_types 
-Grundtypen 
+basic_types
+Grundtypen
 -----
 strings
 Strings
 -----
 arrays
-Arrays 
+Arrays
 -----
 maps
-Maps 
+Maps
 -----
 if
-If 
+If
 -----
-in_op 
-In-Operator 
+in_op
+In-Operator
 -----
-for_loop 
-For Schleife 
+for_loop
+For-Schleife
 -----
-switch 
-Switch 
+switch
+Switch
 -----
-structs 
-Structs 
+structs
+Structs
 -----
-access_mod 
-Zugriffsmodifikatoren 
+access_mod
+Zugriffsmodifikatoren
 -----
 methods
 Methoden
 -----
-pure_fns 
-Pure Funktionen 
+pure_fns
+Pure Funktionen
 -----
-high_fns 
-Funktionen höherer Ordnung 
+high_fns
+Funktionen höherer Ordnung
 -----
-constants 
-Konstanten 
+constants
+Konstanten
 -----
 modules
-Module 
+Module
 -----
 interfaces
-Interfaces 
+Interfaces
 -----
 enums
-Enums 
+Enums
 -----
-optionals_and_errors 
+optionals_and_errors
 Optionstypen und Fehlerbehandlung
 -----
 generics
-Generics 
+Generics
 -----
 concurrency
-Parallelität 
+Parallelität
 -----
-decoding_json 
+decoding_json
 JSON dekodieren
 -----
 testing
-Testen 
+Testen
 -----
-memory_management 
-Speicherverwaltung 
+memory_management
+Speicherverwaltung
 -----
 -----
 -----
