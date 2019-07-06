@@ -1,0 +1,160 @@
+examples
+Esempi
+-----
+documentation
+Documentazione
+-----
+modules
+Moduli
+-----
+faq
+FAQ
+-----
+built_in_v
+Scritto in V
+-----
+the_v_lang
+Il Linguaggio di Programmazione V
+-----
+v_slogan
+Linguaggio semplice, veloce, sicuro, compilato per sviluppare software manutenibile
+-----
+includes_binaries 
+include gli eseguibili per 3 sistemi
+-----
+install_source 
+Oppure installa V a partire dal sorgente
+-----
+couple_seconds 
+questo richiederà un paio di secondi
+-----
+wip_info
+V è un linguaggio in corso di sviluppo ad una fase iniziale.
+Le caratteristiche su cui si sta ancora lavorando sono contrassegnate da $wip
+
+Tutto il resto in questa pagina e nei documenti è stato implementato ed è open-source.
+Al momento della release 1.0 di V, prevista per dicembre 2019, non rimarranno più $wip.
+-----
+forum
+Forum
+-----
+blog
+Blog 
+-----
+fast_compilation
+Compilazione rapida
+-----
+safety
+Sicurezza
+-----
+performance 
+Prestazioni 
+-----
+simple_language_for_maintainable_programs
+Linguaggio semplice per sviluppare programmi manutenibili
+-----
+zero_deps 
+Compilatore di 400 KB con zero dipendenze
+-----
+c_translation 
+Traduzione di C/C++
+-----
+introduction
+Introduzione
+-----
+comments
+Commenti
+-----
+functions
+Funzioni
+-----
+variables
+Variabili
+-----
+basic_types 
+Tipi di base 
+-----
+strings
+Stringhe
+-----
+arrays
+Array
+-----
+maps
+Array associativi 
+-----
+if
+If 
+-----
+in_op 
+Operator in
+-----
+for_loop 
+Ciclo for
+-----
+switch 
+Switch
+-----
+structs 
+Strutture
+-----
+access_mod 
+Modificatori di accesso
+-----
+methods
+Metodi
+-----
+pure_fns 
+Funzioni pure
+-----
+high_fns 
+Funzioni di ordine superiore
+-----
+constants 
+Costanti
+-----
+modules
+Moduli
+-----
+interfaces
+Interfacce
+-----
+enums
+Tipi enumerati
+-----
+optionals_and_errors 
+Tipi opzionali e trattamento degli errori
+-----
+generics
+Tipi generici
+-----
+concurrency
+Concorrenza
+-----
+decoding_json 
+Decodifica JSON
+-----
+testing
+Attività di test
+-----
+memory_management 
+Gestione della memoria
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
