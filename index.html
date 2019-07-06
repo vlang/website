@@ -410,19 +410,14 @@ fn main() {
 	<div class='row'>
 <div class='feature first'>
 	<h2>%fast_compilation</h2>
-	V compiles ≈1.2 million lines of code per second per CPU core.
-<span style='font-size:70%'>(Intel i5-7500 @ 3.40GHz, SM0256L SSD, no optimization) </span> 
-<p>Such speed is achieved by direct machine code generation <span class='wip'>wip</span> and a strong modularity.</p> 
+	%fast_comp1 
+	<span style='font-size:70%'>(Intel i5-7500 @ 3.40GHz, SM0256L SSD, no optimization) </span> 
+	<p>{{ raw (T "fast_comp2") }}</p> 
 <!--
        <a href='/compilation_speed'>Compilation speed benchmark</a> 
-	   -->
-	   <p>
-	   V compiles itself in 0.3 - 0.6 seconds.
-	   <p>
-	   V can also emit C, then the compilation speed drops to ≈100k lines/second/CPU.
-	   <!--
-<a style='font-size:140%' href='#' onclick='comp_note()'>*</a> )
 -->
+	<p>%fast_comp3</p> 
+	<p>%fast_comp4</p> 
 <p>
 <i class='note'>Direct machine code generation is at a very early stage. Right now only x64/Mach-O is supported.
 
