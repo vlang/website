@@ -23,7 +23,7 @@ includes_binaries
 includes binaries for 3 systems
 -----
 install_source 
-Or install V from source 
+ソースコードからVをインストール
 -----
 couple_seconds 
 これには数秒かかります
@@ -54,7 +54,7 @@ simple_language_for_maintainable_programs
 保守性に優れたプログラムを構築するためのシンプルな言語
 -----
 zero_deps 
-400 KB compiler with zero dependencies
+依存性0で400 KBのコンパイラ
 -----
 c_translation 
 C/C++への変換
