@@ -26,13 +26,14 @@ install_source
 Oder installiere V aus dem Source Code
 -----
 couple_seconds
-dauert ein paar Sekunden
+dauert ein paar Sekunden 
 -----
 wip_info
 V ist eine aktiv entwickelte Sprache in einer frühen Stadium.
-Features, an denen noch gearbeitet wird sind mit $wip markiert
-
-Alles andere auf dieser Seite und die Dokumentation wurde implementiert und ist Open Source
+Features, an denen noch gearbeitet wird sind mit $wip markiert. 
+<br> 
+Alles andere auf dieser Seite und die Dokumentation wurde implementiert und ist Open Source. 
+<p> 
 Zum Zeitpunkt der Veröffentlichung, die für den Dezember 2019 geplant ist, wird es keine $wip's mehr geben.
 -----
 forum

@@ -397,12 +397,8 @@ fn main() {
 <div class='center'>
 	<div class='row'>
 <div class='feature first'>
-	<br>
-	V is an actively developed language at an early stage. Features that are still being worked on are marked with
-	<span class='wip'>wip</span> <br>Everything else on this page and the docs has been implemented and open-sourced.
-	<p>
-	By the time of the V 1.0 release planned for December 2019, there will be no <span class='wip'>wip</span>'s left.
-
+	<br> 
+	{{ raw (T "wip_info") }} 
 </div>
 	</div>
 </div>
@@ -417,16 +413,6 @@ fn main() {
 	V compiles ≈1.2 million lines of code per second per CPU core.
 <span style='font-size:70%'>(Intel i5-7500 @ 3.40GHz, SM0256L SSD, no optimization) </span> 
 <p>Such speed is achieved by direct machine code generation <span class='wip'>wip</span> and a strong modularity.</p> 
-<!--
-	<pre>
-wc -l doom3.v     # 458 713
-time v doom3.v    # 0.5s <a style='font-size:140%' href='#' onclick='comp_note()'>*</a></pre> 
--->
-<!--
-	<pre>
-cd doom/ && wc -l *.v     # 80 120
-time v .                  # 0.7s <a style='font-size:140%' href='#' onclick='comp_note()'>*</a></pre> 
--->
 <!--
        <a href='/compilation_speed'>Compilation speed benchmark</a> 
 	   -->
