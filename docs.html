@@ -12,23 +12,13 @@ h2 {
 	padding-top: 10px;
 }
 
-str {
-color: brown; 
-	font-family: 'Roboto Mono';
- 
-} 
-key {
-	color: rgb(74,103,154); 
-	font-family: 'Roboto Mono';
- 
-} 
+
 
 code {
 	font-family: 'Roboto Mono';
 	background-color: #f0f0f0;
 	padding: 1px 3px 1px 3px;
 }
-
 
 </style>
 
@@ -42,53 +32,57 @@ $(document).ready(function() {
 }); 
 </script> 
 
-<div class='sep'></div> 
+<div class='sep' style='padding:0'></div> 
 
 <div class='center'>
 
 
 
 <div class='toc'> 
-<a href='#introduction'>Introduction</a> 
+<a href='#introduction'>%introduction</a> 
 <a href='#hello'>Hello World</a> 
-<a href='#comments'>Comments</a> 
-<a href='#fns'>Functions</a> 
-<a href='#vars'>Variables</a> 
-<a href='#btypes'>Basic Types</a> 
-<a href='#strings'>Strings</a> 
-<a href='#arrays'>Arrays</a> 
-<a href='#maps'>Maps</a> 
+<a href='#comments'>%comments</a> 
+<a href='#fns'>%functions</a> 
+<a href='#vars'>%variables</a> 
+<a href='#btypes'>%basic_types</a> 
+<a href='#strings'>%strings</a> 
+<a href='#arrays'>%arrays</a> 
+<a href='#maps'>%maps</a> 
 <a href='#if'>If</a> 
-<a href='#in'>In Operator</a> 
-<a href='#for'>For Loop</a> 
-<a href='#switch'>Switch</a>
-<a href='#structs'>Structs</a>
-<a href='#mod'>Access Modifiers</a>
-<a href='#methods'>Methods</a>
-<a href='#recvs'>Pure Functions</a>
-<a href='#consts'>Constants</a> 
-<a href='#modules'>Modules</a> 
-<a href='#interfaces'>Interfaces</a>
-<a href='#enums'>Enums</a>
-<a href='#option'>Option Types & Error Handling</a>
-<a href='#generics'>Generics</a> 
-<a href='#concurrency'>Concurrency</a> 
-<a href='#json'>Decoding JSON</a>
-<a href='#testing'>Testing</a>
-<a href='#memory'>Memory Management</a>
+<a href='#in'>%in_op</a> 
+<a href='#for'>%for_loop</a> 
+<a href='#switch'>%switch</a>
+<a href='#structs'>%structs</a>
+<a href='#mod'>%access_mod</a>
+<a href='#methods'>%methods</a>
+<a href='#recvs'>%pure_fns</a>
+<a href='#highfns'>%high_fns</a>
+<a href='#consts'>%constants</a> 
+<a href='#modules'>%modules</a> 
+<a href='#interfaces'>%interfaces</a>
+<a href='#enums'>%enums</a>
+<a href='#option'>%optionals_and_errors</a>
+<a href='#generics'>%generics</a> 
+<a href='#concurrency'>%concurrency</a> 
+<a href='#json'>%decoding_json</a>
+<a href='#testing'>%testing</a>
+<a href='#memory'>%memory_management</a>
+<a href='#defer'>Defer</a>
+<a href='#vfmt'>vfmt</a>
 <br> 
 Advanced Topics
 
 <br>
 <br>
-<a href='#calling_c'>Calling C Functions from V</a>
-<a href='#comp_if'>Compile Time If</a>
-<a href='#codegen'>Reflection via Codegen</a>
-<a href='#op'>Limited Operator Overloading</a>
+<a href='#calling_c'>Calling C functions from V</a>
+<a href='#comp_if'>Compile time if</a>
+<a href='#codegen'>Reflection via codegen</a>
+<a href='#op'>Limited operator overloading</a>
+<a href='#asm'>Inline assembly</a>
 <a href='#cpp'>Translating C/C++ to V</a>
-<a href='#hot'>Hot Code Reloading</a>
-<a href='#cross'>Cross Compilation</a>
-<a href='#bash'>Cross-Platform Shell Scripts in V</a>
+<a href='#hot'>Hot code reloading</a>
+<a href='#cross'>Cross compilation</a>
+<a href='#bash'>Cross-platform shell scripts in V</a>
 <br> 
 <a href='#keywords'>Appendix I: Keywords</a>
 <a href='#operators'>Appendix II: Operators</a> 
@@ -97,15 +91,15 @@ Advanced Topics
 
 
 <div class='docs'>
-<h2 id=introduction style='border:0; margin-top:0; padding-top:20px;'>Introduction</h2> 
+<h2 id=introduction style='border:0; margin-top:0; padding-top:20px;'>%introduction</h2> 
 V is a statically typed compiled programming language designed for building maintainable software. 
 
 <p> 
-It's similar to Go and is also influenced by Oberon, Rust, and Swift. 
+It's similar to Go and is also influenced by Oberon, Rust, Swift. 
 
 <p> 
 V is a very simple language. Going through this documentation will take you about half an hour,
-and by the end of it you will have learned pretty much the entire language. 
+and by the end of it you will learn pretty much the entire language. 
 
 <p> 
 Despite being simple, it gives a lot of power to the developer. Anything you can do in other languages,
@@ -156,7 +150,7 @@ println(<str>'hello world'</str>)
 <input class='run' type='button' value='Run'> 
 
 
-<h2 id=comments>Comments</h2>
+<h2 id=comments>%comments</h2>
 
 <pre>
 <comment>// This is a single line comment.
@@ -166,7 +160,7 @@ println(<str>'hello world'</str>)
 */</comment></pre>
 
 
-<h2 id=fns>Functions</h2>
+<h2 id=fns>%functions</h2>
 <pre>
 <key>fn </key>main() {
 	println(add(77, 33))
@@ -204,7 +198,7 @@ This is true for all declarations in V and eliminates the need of header files
 or thinking about the order of files and declarations.
 
 
- <h2 id=vars>Variables</h2>
+ <h2 id=vars>%variables</h2>
 <pre>
 name := <str>'Bob'</str> 
 age := 20
@@ -221,7 +215,7 @@ way to declare variables in V. This means that variables always have an initial
 value.
 
 <p>
-The variable's type is inferred from the value on the right-hand side.
+The variable's type is inferred from the value on the right hand side.
 To force a different type, use type conversion: 
 the expression <code>T(v)</code> converts the value <code>v</code> to the
  type <code>T</code>.
@@ -294,29 +288,33 @@ This code will not compile either, because unused variables result in a compilat
 Unlike most languages, variable shadowing is not allowed. Declaring a variable with a name that is already
 used in a parent scope will result in a compilation error. 
 
-<h2 id=btypes>Basic Types</h2>
+<h2 id=btypes>%basic_types</h2>
 
 <pre>
 bool
 
 string
 
-i8  i16  i32  i64
-u8  u16  u32  u64 
+i8  i16  i32  i64      i128 (soon)
+u8  u16  u32  u64      u128 (soon) 
 
 byte <comment>// alias for u8 </comment> 
 int  <comment>// alias for i32 </comment> 
 rune <comment>// alias for i32, represents a Unicode code point </comment> 
 
 f32 f64
+
+byteptr
+voidptr
 </pre>
 
 Please note that unlike C and Go, <code>int</code> is always a 32 bit integer.
 
 
+
  
 
-<h2 id=strings>Strings</h2>
+<h2 id=strings>%strings</h2>
 <pre>
 name := <str>'Bob'</str> 
 println(<str>'Hello, </str>$name<str>!'</str>)  <comment>// `$` is used for string interpolation</comment> 
@@ -362,22 +360,29 @@ or simply pass a second argument to <code>println</code>:
 
 
 
-<h2 id=arrays>Arrays</h2>
+<h2 id=arrays>%arrays</h2>
 <pre>
-nums := [1, 2, 3]
-println(nums)
-println(nums[1]) <comment>// ==> "2"</comment> 
+<key>mut</key> nums := [1, 2, 3]
+println(nums) <comment>// "[1, 2, 3]"</comment>
+println(nums[1]) <comment>// "2"</comment> 
+
+nums << 4
+println(nums) <comment>// "[1, 2, 3, 4]"</comment>
+
+
+nums << [5, 6, 7]
+println(nums) <comment>// "[1, 2, 3, 4, 5, 6, 7]"</comment>
 
 <key>mut</key> names := [<str>'John'</str>]
 names << <str>'Peter'</str> 
 names << <str>'Sam'</str> 
 <comment>// names << 10  <-- This will not compile. `names` is an array of strings.</comment> 
-println(names.len) <comment>// ==> "3"</comment> 
-println(<str>'Alex'</str> <key>in</key> names) <comment>// ==> "false"</comment> 
+println(names.len) <comment>// "3"</comment> 
+println(<str>'Alex'</str> <key>in</key> names) <comment>// "false"</comment> 
 
 <comment>// We can also preallocate a certain amount of elements.</comment> 
 nr_ids := 50
-mut ids := [0 ; nr_ids] <comment>// This creates an array with 50 zeroes</comment> 
+ids := [0 ; nr_ids] <comment>// This creates an array with 50 zeroes</comment> 
 <!-- 
 	for i := 0; i < nr_ids; i++ {
 		ids[i] = i <comment>// This is more efficient than </comment> 
@@ -399,6 +404,7 @@ All elements must have the same type. <code>[1, 'a']</code> will not compile.
 
 <p>
 <code>&lt;&lt;</code> is an operator that appends a value to the end of the array. 
+It can also append an entire array.
 
 <p><code>.len</code> field returns the length of the array. Note, that it's a read-only field,
 and it can't be modified by the user. All exported fields are read-only by default in V. 
@@ -457,7 +463,7 @@ println(s) <comment>// ==> "odd"</comment>
 
 
 
-<h2 id=in>In Operator</h2>
+<h2 id=in>%in_op</h2>
 
 <code>in</code> allows to check whether an array contains an element.
 
@@ -465,7 +471,7 @@ println(s) <comment>// ==> "odd"</comment>
 println(1 <key>in</key> nums) <comment>// ==> true</comment> 
 </pre> 
 
-It's also useful for writing more clear and compact Boolean expressions: 
+It's also useful for writing more clear and compact boolean expressions: 
 
 <pre><key>if</key> parser.token == .plus || parser.token == .minus || parser.token == .div || parser.token == .mult {
 	... 
@@ -483,7 +489,7 @@ no arrays are created.
 
 
 
-<h2 id=for>For Loop</h2>
+<h2 id=for>%for_loop</h2>
 V has only one looping construct: <code>for</code>.
 
 <pre>
@@ -493,16 +499,28 @@ numbers := [1, 2, 3, 4, 5]
 }
 names := [<str>'Sam'</str>, <str>'Peter'</str>]
 <key>for</key> i, name <key>in</key> names {
-	println(<str>'$i) $name'</str>)  // Output: 0) Sam
-}                             //         1) Peter
+	println(<str>'$i) $name'</str>)  <comment>// Output: 0) Sam</comment>
+}                             <comment>//         1) Peter</comment>
 </pre>
 <input class='run' type='button' value='Run'> 
 
 <p> 
 
-The <code>for .. in</code> loop is used for going through elements of an array.
+The <code>for value in</code> loop is used for going through elements of an array.
 
 If an index is required, an alternative form <code>for index, value in</code> can be used.
+
+<p>
+Note, that the value is read-only. If you need to modify the array while looping,
+you have to use indexing:
+
+<pre>
+<key>mut</key> numbers := [1, 2, 3, 4, 5]
+<key>for</key> i, num <key>in</key> numbers {
+	println(num)
+	numbers[i] = 0
+}
+</pre>
 
 <p>&nbsp;</p>
 
@@ -521,7 +539,7 @@ println(sum) // ==> "5050"
 This form of the loop is similar to <code>while</code>
 loops in other languages.
 <p>
-The loop will stop iterating once the Boolean condition evaluates to false.
+The loop will stop iterating once the boolean condition evaluates to false.
 
 <p>
 Again, there are no parentheses surrounding the 
@@ -587,7 +605,7 @@ A switch statement is a shorter way to write a sequence of <code>if - else</code
 Unlike C, <code>break</code> statement is not needed at the end of every block.
 
 
-<h2 id=structs>Structs</h2>
+<h2 id=structs>%structs</h2>
 
 <pre>
 <key>struct</key> Point {
@@ -622,7 +640,7 @@ V doesn't have subclassing, but it supports embedded structs:
 
 
 <pre>
-<comment>// TODO: this will be implemented later in June</comment>
+<comment>// TODO: this will be implemented later in July</comment>
 <key>struct</key> Button {
 	Widget
 	title string
@@ -635,7 +653,7 @@ button.set_pos(x, y)
 button.widget.set_pos(x,y)
 </pre>
 
-<h2 id=mod>Access Modifiers</h2>
+<h2 id=mod>Access modifiers</h2>
 <p> 
 Struct fields are private and immutable by default (making structs immutable as well).
 Their access modifiers can be changed with
@@ -647,7 +665,7 @@ Their access modifiers can be changed with
 	b int     <comment>// private mutable</comment> 
 	c int     <comment>// (you can list multiple fields with the same access modifier) </comment>  
 <key>pub</key>: 
-	d int     <comment>// public immutable (readonly)</comment> 
+	d int     <comment>// public immmutable (readonly)</comment> 
 <key>pub mut</key>: 
 	e int     <comment>// public, but mutable only in parent module </comment> 
 <key>pub mut mut</key>: 
@@ -693,7 +711,7 @@ The byte pointer with the string data is not accessible outside <code>builtin</c
 
 
 
-<h2 id=methods>Methods</h2>
+<h2 id=methods>%methods</h2>
 <!-- 
 <pre>
 import math
@@ -748,7 +766,7 @@ named <code>u</code>.  The convention is not to use receiver names like <code>se
 <code>this</code>, but a short, preferably one letter long, name. 
 
 
-<h2 id=recvs>Pure Functions by Default</h2> 
+<h2 id=recvs>Pure functions by default</h2> 
 V functions are pure by default, meaning that their return values are only determined by 
 their arguments, and their evaluation has no side effects.
 <p>
@@ -761,6 +779,7 @@ by using the same keyword <code>mut</code>:
 
 
 <pre><key>struct</key> User {
+<key>mut</key>:
 	is_registered bool 
 } 
 
@@ -768,7 +787,7 @@ by using the same keyword <code>mut</code>:
 	u.is_registered = true 
 } 
 
-mut user := User{} 
+<key>mut</key> user := User{} 
 println(user.is_registered) <comment>// ==> "false" </comment> 
 user.register() 
 println(user.is_registered) <comment>// ==> "true" </comment> 
@@ -819,7 +838,7 @@ Use <code>user.register()</code> or <code>user = register(user)</code>
 instead of <code>register(mut user)</code>.
 
 <p>
-V makes it easy to return a modified version of an object: <br>
+V makes it easy to return a modifed version of an an object: <br>
 <pre>
 <key>fn </key>register(u User) User { 
 	return { u | is_registered: true } 
@@ -827,6 +846,10 @@ V makes it easy to return a modified version of an object: <br>
 
 user = register(user) 
 </pre> 
+
+<h2 id=highfns> High order functions</h2>
+
+TODO
 
 
 <h2 id=consts>Constants</h2>
@@ -1002,10 +1025,11 @@ println(color) <comment>// ==> "1"  TODO: print "green"? </comment>
 </pre> 
 <input class='run' type='button' value='Run'> 
 
-<h2 id=option>Option/Result Types & Error Handling</h2> 
+<h2 id=option>Option/Result types & error handling</h2> 
 
 <pre><key>struct</key> User {
 	id int 
+	name string
 } 
 
 <key>struct</key> Repo {
@@ -1013,13 +1037,12 @@ println(color) <comment>// ==> "1"  TODO: print "green"? </comment>
 } 
 
 <key>fn </key>new_repo() Repo {
-        user := User{id:10}
-        return Repo {
-                users: [user]
-        }
+	return Repo {
+		users: [User{1, 'Andrew'}, User {2, 'Bob'}, User {10, 'Charles'}]
+	}
 } 
 
-<key>fn </key>(r Repo) find_user_by_id(id int) User? { 
+<key>fn </key>(r Repo) find_user_by_id(id int) ?User { 
 	for user in r.users {
 		<key>if </key>user.id == id {
 			<comment>// V automatically wraps this into an option type </comment> 
@@ -1029,11 +1052,14 @@ println(color) <comment>// ==> "1"  TODO: print "green"? </comment>
 	return error(<str>'User </str>$id<str> not found'</str>) 
 } 
 
-repo := new_repo() 
-user := repo.find_user_by_id(10) or { <comment>// Option types must be handled by `or` blocks </comment> 
-	return  // <comment>`or` block must end with `return`, `break`, or `continue` </comment> 
-} 
-println(user.id) // <comment>==> "10" </comment> 
+fn main() {
+	repo := new_repo() 
+	user := repo.find_user_by_id(10) or { <comment>// Option types must be handled by `or` blocks </comment> 
+		return  // <comment>`or` block must end with `return`, `break`, or `continue` </comment> 
+	} 
+	println(user.id) // <comment>==> "10" </comment> 
+	println(user.name) // <comment>==> 'Charles'</comment>
+}
 </pre> 
 <!-- 
 		eprintln(err) 
@@ -1045,7 +1071,7 @@ println(user.id) // <comment>==> "10" </comment>
 The amount of work required to "upgrade" a function to an optional function is minimal:
 you have to add a <code>?</code> to the return type and return an error when something goes wrong. 
 <p>
-If you don't need to return an error, you can simply <code>return None</code>. (TODO: <code>None</code> is 
+If you don't need to return an error, you can simply <code>return none</code>. (TODO: <code>none</code> is 
 not implemented yet). 
 <p>
 This is the primary way of handling errors in V. They are still values, like in Go,
@@ -1060,7 +1086,8 @@ println(resp.body)
 </pre>
 
 <code>http.get</code> returns <code>?http.Response</code>. It was called with 
-<code>?</code>, so the error is propagated to the calling function or in case of
+<code>?</code>, so the error is propagated to the calling function 
+(which must return an optional)  or in case of
 <code>main</code> leads to a panic.
 
 <p>Basically the code above is a shorter version of
@@ -1071,6 +1098,10 @@ resp := http.get(url) or {
 }
 println(resp.body)
 </pre>
+
+<p>
+V does not have a way to force unwrap an optional (like Rust's <code>unwrap()</code>
+or Swift's <code>!</code>). You have to use <code>or { panic(err) }</code> instead.
 
 
 
@@ -1161,7 +1192,7 @@ To run the tests do <code>v hello_test.v</code>. To test an entire module, do
 
 
 
-<h2 id=memory>Memory Management</h2>
+<h2 id=memory>Memory management</h2>
 
 There's no garbage collection or reference counting. V cleans up what it can
 during compilation. For example:
@@ -1201,9 +1232,15 @@ numbers := [0; 1000000]
 ...
 numbers.free()
 </pre> 
+
+<h2 id=defer>Defer</h2>
+
+TODO
  
 
+<h2 id=vfmt>vfmt </h2>
 
+TODO
 
 
 <h1>Advanced Topics</h1> 
@@ -1214,7 +1251,7 @@ numbers.free()
 
 
 
-<h2 id=calling_c>Calling C Functions from V</h2>
+<h2 id=calling_c>Calling C functions from V</h2>
 <pre>
 #flag -lsqlite3
 
@@ -1240,10 +1277,18 @@ struct C.sqlite3_stmt
 } 
 </pre> 
 
+<p>
+C strings can be converted to V strings with <code>string(cstring)</code>.
+
+<p>
+Check out socket.v for an example of calling C code from V:
+
+<a target=_blank href='https://github.com/vlang/v/blob/master/vlib/net/socket.v'>https://github.com/vlang/v/blob/master/vlib/net/socket.v</a>
 
 
 
-<h2 id=comp_if>Compile Time If</h2> 
+
+<h2 id=comp_if>Compile time if</h2> 
 <pre><key>$if</key> windows {
 	println('Windows')  
 }  
@@ -1258,31 +1303,26 @@ struct C.sqlite3_stmt
 Compile time <code>if</code> starts with a <code>$</code>. Right now it can only be used to detect
 an OS. 
 
-<h2 id=codegen>Reflection via Codegen</h2> 
+<h2 id=codegen>Reflection via codegen</h2> 
 Having built-in JSON support is nice, but V also allows you to create efficient 
-serializers for anything, using compile-time <key>if</key> and <key>for</key>:
+serializers for anything:
 
 <pre>
-<pre><key>struct</key> User {
-	name string
-	age  int 
-}
- 
-<comment>// TODO: planned in June</comment>
+<comment>// TODO: planned in July</comment>
 <key>fn</key> decode&lt;T>(data string) T {
         mut result := T{}
-        $for field in T.fields {
-                $if field is string {
+        for field in T.fields {
+                if field.typ == <str>'string'</str> {
                         result.$field = get_string(data, field.name)
-                } else $if field is int {
+                } else if field.typ == <str>'int'</str> {
                         result.$field = get_int(data, field.name)
                 }
         }
         return result
 }
 
-<comment>// decode&lt;User> generates:</comment>
-<key>fn</key> decode_User(data string) User {
+<comment>// generates to:</comment>
+fn decode_User(data string) User {
         mut result := User{}
         result.name = get_string(data, 'name')
         result.age = get_int(data, 'age')
@@ -1292,7 +1332,7 @@ serializers for anything, using compile-time <key>if</key> and <key>for</key>:
 
 
 
-<h2 id=op>Limited Operator Overloading</h2> 
+<h2 id=op> Limited operator overloading</h2> 
 
 <pre><key>struct</key> Vec {
 	x int
@@ -1347,6 +1387,22 @@ To improve safety and maintainability, operator overloading has several limitati
 
 
 
+<h2 id=asm> Inline assembly</h2> 
+
+TODO: not implemented yet
+
+<pre>
+fn main() {
+	a := 10
+	asm x64 {
+		mov eax, [a]
+		add eax, 10
+		mov [a], eax
+	}
+}
+</pre>
+
+
 
 
 
@@ -1357,7 +1413,7 @@ To improve safety and maintainability, operator overloading has several limitati
 
 <h2 id=cpp>Translating C/C++ to V</h2>
 
-TODO: translating C to V will be available in June. C++ to V will be available later this year. 
+TODO: translating C to V will be available in July. C++ to V will be available later this year. 
 <p> 
 
 V can translate your C/C++ code to human readable V code. 
@@ -1409,10 +1465,10 @@ Translating it to V gives you several advantages:
 - No more build flags and include files either. 
 
 
-<h2 id=hot>Hot Code Reloading</h2>
+<h2 id=hot>Hot code reloading</h2>
 TODO
 
-<h2 id=cross>Cross Compilation</h2>
+<h2 id=cross>Cross compilation</h2>
 To cross compile your project simply run
 
 <pre>
@@ -1432,10 +1488,14 @@ If you don't have any C dependencies, that's all you need to do. This works even
 when compiling GUI apps using the <code>ui</code> module or graphical apps using
 <code>gg</code>.
 
+<p>
+You will need to install Clang, LLD linker, and download a zip file with 
+libraries and include files for Windows and Linux. V will provide you with a link.
 
-<h2 id=bash>Cross-Platform Shell Scripts in V</h2> 
 
-(Coming later in June.) 
+<h2 id=bash>Cross-platform shell scripts in V</h2> 
+
+(Coming later in July.) 
 
 <p>
 V can be used as an alternative to Bash to write deployment scripts, build scripts,
@@ -1498,8 +1558,7 @@ goto
 if
 import
 in 
-interface
-is 
+interface 
 match 
 module 
 mut 
@@ -1538,7 +1597,6 @@ Precedence    Operator
 Assignment Operators 
 +=   -=   *=   /=   %=
 &=   |=   ^=
-&&=  ||=
 >>=  <<= 
 </pre> 
 
