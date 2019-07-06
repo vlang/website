@@ -1,0 +1,163 @@
+examples
+Przykłady
+-----
+documentation
+Dokumentacja
+-----
+modules
+Moduły
+-----
+faq
+FAQ
+-----
+built_in_v
+Stworzone w V
+-----
+the_v_lang
+Język programowania V
+-----
+v_slogan
+Łatwy, szybki, bezpieczny i kompilowany język programowania do tworzenia rozszerzalnego oprogramowania
+-----
+includes_binaries 
+zawiera pliki wykonywalne dla 3 systemów
+-----
+install_source 
+Lub zainstaluj V ze źródła
+-----
+couple_seconds 
+zajmie to tylko kilka sekund
+-----
+wip_info
+V jest aktywnie tworzonym językiem we wczesnym stadium.
+Funkcje, nad którymi nadal trwają prace są oznaczone znakiem $wip
+<br> 
+Wszystko inne na tej stronie, jak i dokumentacja jest już zaimplementowana i otwarto-źródłowa.
+<p> 
+Do czasu wydanie wersji 1.0 V, zaplanowanej na grudzień 2019, nie będzie zostawionego żadnego znaku $wip.
+-----
+forum
+Forum
+-----
+blog
+Blog 
+-----
+fast_compilation
+Szybka kompilacja
+-----
+safety
+Bezpieczeństwo
+-----
+performance 
+Wydajność
+-----
+simple_language_for_maintainable_programs
+Prosty język do budowania rozszerzalnych programów
+-----
+zero_deps 
+Kompilator ważący 400 KB bez zależności
+-----
+c_translation 
+Tłumaczenie C/C++
+-----
+introduction
+Wprowadzenie
+-----
+comments
+Komentarze
+-----
+functions
+Funkcje
+-----
+variables
+Zmienne
+-----
+basic_types 
+Podstawowe typy
+-----
+strings
+Ciągi znaków
+-----
+arrays
+Tablice
+-----
+maps
+Mapy
+-----
+if
+Instrukcja warunkowa
+-----
+in_op 
+Operator in
+-----
+for_loop 
+Pętla for
+-----
+switch 
+Switch 
+-----
+structs 
+Struktury
+-----
+access_mod 
+Modyfikatory dostępu
+-----
+methods
+Metody
+-----
+pure_fns 
+Funkcje czyste
+-----
+high_fns 
+High order functions 
+-----
+constants 
+Stałe
+-----
+modules
+Moduły
+-----
+interfaces
+Interfejsy
+-----
+enums
+Enumy
+-----
+optionals_and_errors 
+Typy option i wychwytywanie błędów
+-----
+generics
+Typy generalne (Lipiec)
+-----
+concurrency
+Wielozadaniowość
+-----
+decoding_json 
+Dekodowanie formatu JSON
+-----
+testing
+Testowanie
+-----
+memory_management 
+Zarządzanie pamięcią
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+
+
