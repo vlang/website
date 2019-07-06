@@ -8,7 +8,7 @@ modules
 模块
 -----
 faq
-常问问题
+常见问题
 -----
 built_in_v
 Built in V
@@ -29,11 +29,9 @@ couple_seconds
 这将花费几秒钟
 -----
 wip_info
-V 正处于被积极开发的早期阶段。
-仍处于开发过程中的特性都会被标记为 $wip。
+V 正处于被积极开发的早期阶段，仍在开发过程中的特性都会被标记为 $wip。本页面及文档中的其他未被标记的描述，都已被实现并且开源。
 
-本页面及文档中的其他未被标记的描述，都已被实现并且开源。
-V 1.0 计划于2019年12月发布，届时将不会再有任何 $wip 标记。
+V 1.0 计划于2019年12月发布，届时将不会遗留任何 $wip 标记。
 -----
 forum
 论坛
@@ -54,15 +52,91 @@ simple_language_for_maintainable_programs
 用于构建可维护程序的简洁语言
 -----
 zero_deps 
-400 KB compiler with zero dependencies
-编译器仅 400 KB，零依赖
+编译器仅 400 KB 且零依赖
 -----
 c_translation 
 C/C++ 转写 
 -----
+introduction
+介绍 
 -----
+comments
+注释 
 -----
+functions
+函数 
 -----
+variables
+变量 
+-----
+basic_types 
+基本类型 
+-----
+strings
+字符串
+-----
+arrays
+数组 
+-----
+maps
+Maps 
+-----
+if
+If 
+-----
+in_op 
+In 操作 
+-----
+for_loop 
+For 循环 
+-----
+switch 
+Switch 
+-----
+structs 
+结构体 
+-----
+access_mod 
+访问修饰符 
+-----
+methods
+方法
+-----
+pure_fns 
+纯函数 
+-----
+high_fns 
+高阶函数 
+-----
+constants 
+常量 
+-----
+modules
+模块 
+-----
+interfaces
+接口 
+-----
+enums
+枚举 
+-----
+optionals_and_errors 
+Option 类型 & 错误处理 
+-----
+generics
+泛型 
+-----
+concurrency
+并发 
+-----
+decoding_json 
+JSON 解析 
+-----
+testing
+测试 
+-----
+memory_management 
+内存管理 
 -----
 -----
 
