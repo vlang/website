@@ -146,16 +146,23 @@ the playground has been disabled until a more stable release and an updated docu
 
 </div> 
 <div class='center'>
-<div class='controls'> 
+<div class='controls' style='height:100px'> 
+<!--
 <button id=btnRun onclick='run()' >Run</button> 
 <span style='font-size:80%; margin-left:10px; color:#444;'> 
 (or press Ctrl + Enter to run the program) 
+-->
+The playground is temporarily offline. It will be back soon. <br> In the meantime you can install V on your machine in a couple of seconds.
+<br>
+Or use an alternative playground Judge0: <a target=_blank href='https://vlang.ide.judge0.com'>https://vlang.ide.judge0.com</a>.
 </span> 
 <!-- 
 The playground will be back today (moving to a new server) 
 --> 
+<!--
 <span style='float:right; font-size:80%;line-height:40px'>Your code will be formatted automatically</span> 
 </div> 
+--> 
 
 
 <div style='float:right; width:210px; margin-top:20px' class='buttons'> 
@@ -174,7 +181,7 @@ The playground will be back today (moving to a new server)
 
 <div style='height:505px; max-height:505px;'> 
 <textarea id='code' autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false">fn main() {
-	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI']
+	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI', 'mobile']
         for area in areas {
                 println('Hello, $area developers!')
         }
@@ -183,7 +190,7 @@ The playground will be back today (moving to a new server)
 </div> 
 
 <span class='example' id='ex0' >fn main() { 
-	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI']
+	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI', 'mobile']
         for area in areas {
                 println('Hello, $area developers!')
         }
@@ -283,7 +290,7 @@ struct Repo {
 
 fn new_repo() Repo {
 	return Repo {
-		users: [User{1, 'Andrew'}, User{2, 'Bob'}, User{10, 'Charles'}]
+		users: [User{1, 'Andrew'}, User {2, 'Bob'}, User {10, 'Charles'}]
 	}
 }
 
@@ -379,6 +386,8 @@ fn main() {
 fn main() { 
 	user1 := User{'Bob', 20} 
 	user2 := { user1 | name: 'Peter' } 
+	println(user1.name)
+	println(user1.age)
 	println(user2.name) 
 	println(user2.age)
 } 

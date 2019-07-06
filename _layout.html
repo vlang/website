@@ -15,7 +15,22 @@
 <link href="//fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet"> 
 --> 
 	<title>The V Programming Language</title> 
-	@css "main.css?19"   
+	@css "main.css?2"    
+
+	<script>
+	function showtg() {
+		document.getElementById('tg0').style.display = 'none';
+		document.getElementById('tg1').style.display = 'block';
+		document.getElementById('tg2').style.display = 'block';
+		document.getElementById('tg3').style.display = 'block';
+		return false
+	}
+
+	function set_lang(lang) {
+		document.cookie = 'lang=' + lang + '; expires=Fri, 19 Jun 2020 20:47:11 UTC; path=/' 
+		window.location.reload() 
+	} 
+	</script>
 </head>
 <body>
 
@@ -23,16 +38,14 @@
 
 <div class='menu' style='width:auto !important;'>
 	<div class='center' style='text-align:center'> 
-	<a target=_blank href='https://github.com/vlang/V/tree/master/examples'>Examples</a>
-	<a href='/docs'>Documentation</a>
-	<a href='/modules'>Modules</a>
-	<a href='/play'>Playground</a>
+	<a target=_blank href='https://github.com/vlang/V/tree/master/examples'>%examples</a>
+	<a href='/docs'>%documentation</a>
+	<a href='/modules'>%modules</a>
 <!-- 
-	<a href='//forum.vlang.io'>Forum</a> 
-	<a href='//blog.vlang.io'>Blog</a> 
+	<a href='/play'>Playground</a>
 --> 
-	<a href='/#faq'>FAQ</a>
-	<a href='/#software'>Built in V</a>
+	<a href='/#faq'>%faq</a>
+	<a href='/#software'>%built_in_v</a>
 	</div> 
 </div> 
 
@@ -50,20 +63,48 @@
 	
 
 
+<div id='social1'>
 	<a target=_blank 
 href='https://twitter.com/v_language'><img 
 src='/img/twitter.png'><span class='social-text'>&#64;v_language</span></a>
+<!--
 
 	<a target=_blank 
 href='https://join.slack.com/t/vlang-io/shared_invite/enQtNTQ4NDk4OTE1NTM2LWQ4YmU2YjgzYWIxMzg5NzVjY2RiNGZiNTY2YmU2MjE4MGM1NzhhZTY4MmNkYTRhYmUxY2Q4OTM0OTdiOTY5Yzc'><img width=30 
-src='/img/slack.png'><span class='social-text'>Discuss on Slack</span></a>
+src='/img/slack.png'><span class='social-text'>Slack</span></a>
+-->
 	
 
-	<a href='//blog.vlang.io'><img src='/img/blog.png'><span class='social-text'>Blog</span></a> 
-	<a href='//forum.vlang.io/forum'><img src='/img/chat.png'><span class='social-text'>Forum</span></a> 
-	<a target=_blank href='https://old.reddit.com/r/vlang'><img 
-src='/img/reddit.png'><span class='social-text'>/r/vlang</span></a>
+	<a href='https://discord.gg/n7c74HM' target=_blank><img src='/img/discord.png'><span class='social-text'>Discord</span>  <span id='git-btn'>864</span></a> 
+	<a href='//blog.vlang.io'><img src='/img/blog.png'><span class='social-text'>%blog</span></a> 
+	<a href='//forum.vlang.io/forum'><img src='/img/chat.png'><span class='social-text'>%forum</span></a> 
+	<!--
+	<a target=_blank href='https://old.reddit.com/r/vlang'><img src='/img/reddit.png'><span class='social-text'>/r/vlang</span></a>
+	-->
+	<a target=_blank href='https://t.me/vlang_en' id=tg0 onclick='return showtg()'><img 
+src='/img/telegram.png'><span class='social-text'>Telegram</span></a>
+
+	<a target=_blank href='https://t.me/vlang_en' id=tg1 style='display:none'><img src='/img/telegram.png'><span class='social-text'>vlang_en</span></a>
+	<a target=_blank href='https://t.me/vlang_ru' id=tg2 style='display:none'><img src='/img/telegram.png'><span class='social-text'>vlang_ru</span></a>
+	<a target=_blank href='https://t.me/vlang_zh' id=tg3 style='display:none'><img src='/img/telegram.png'><span class='social-text'>vlang_zh</span></a>
+</div>
+
+<div id='lang-links'> 
+<div onclick='set_lang("en")'> English</div> 
+<div onclick='set_lang("de")'> Deutsch</div> 
+<div onclick='set_lang("es")'> Español</div> 
+<div onclick='set_lang("fr")'> Français</div> 
+<div onclick='set_lang("ru")'>Русский </div> 
+<div onclick='set_lang("zh")'>中文 </div> 
+<div onclick='set_lang("ja")'>日本語</div> 
+<div style='margin-top:10px'>
+<a target=_blank style='font-size:80%; ' href=
+'https://github.com/vlang/v/wiki/Helping-to-translate-the-V-website'>fix an error/help translate</a> 
 </div> 
+ 
+</div> 
+</div> 
+
 	
 	<!-- 
 	<a target=_blank href='https://groups.google.com/forum/#!forum/vlang'><img width=30 src='img/gmail.png'>V mailing list</a>
@@ -71,25 +112,27 @@ src='/img/reddit.png'><span class='social-text'>/r/vlang</span></a>
 
 
 <div style='flex-grow:1'>
-	<h1>		<a href='/' style='color:black'> The V Programming Language</a>	</h1>
+	<h1>		<a href='/' style='color:black'> %the_v_lang</a>	</h1>
 
-	<div style='font-size:12px; text-align:center; position: relative; top:-10px;'>
+	<div style='font-size:18px; text-align:center; position: relative; top:-10px; font-weight:300'>
 
-	Simple, fast, safe language created for developing
+	%v_slogan
+	<!--
  <a target=_blank href='https://volt-app.com'>Volt</a>, 
 	soon available for everyone.
 	<br><br>
 	Open source release on June 20, 2019. 
 <a target=_blank href='https://www.patreon.com/vlang'>Early access</a> since April 15.
+-->
 
 
-	<br><br>
 
-	<a target=_blank href='https://github.com/vlang/v' style='font-size:16px'><img 
+	<a target=_blank href='https://github.com/vlang/v' style='font-size:16px;     display: block; margin-top: 17px;'><img 
 style='width:30px; position: relative; top:10px'  
-src='/img/github.png'> github.com/vlang/v <span id='git-btn'>3.1k</span></a> 
+src='/img/github.png'> github.com/vlang/v <span id='git-btn'>9.3k</span></a> 
 
 </div>
+
 
 
 	<div id='install'>
