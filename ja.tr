@@ -1,5 +1,5 @@
 examples
-例
+実装例
 -----
 documentation
 ドキュメント
@@ -14,26 +14,24 @@ built_in_v
 Built in V
 -----
 the_v_lang
-Vプログラミング言語
+プログラミング言語V
 -----
 v_slogan
-保守性に優れたソフトウェアを開発するためのシンプルで、高速な、安全なコンパイラ言語
+保守性に優れたソフトウェアを開発するための、シンプル・高速・安全なコンパイラ型言語
 -----
 includes_binaries 
-includes binaries for 3 systems
+3つのOS向けのバイナリがあります
 -----
 install_source 
-ソースコードからVをインストール
+またはVをソースコードからインストール
 -----
 couple_seconds 
 これには数秒かかります
 -----
 wip_info
-V is an actively developed language at an early stage.
-Features that are still being worked on are marked with $wip
+Vは活発に開発が行われていますが、開発の初期段階にある言語です。まだ開発中の機能には $wip タグがついています。このページ内で $wip タグのないものは全て実装されておりオープンソース化されています。
 
-Everything else on this page and the docs has been implemented and open-sourced.
-By the time of the V 1.0 release planned for December 2019, there will be no $wip's left.
+V 1.0の公開は2019年12月に予定されており、 その頃には $wip タグは全て取り除かれる予定です。
 -----
 forum
 フォーラム
@@ -60,7 +58,7 @@ c_translation
 C/C++への変換
 -----
 introduction
-イントロダクション
+はじめに
 -----
 comments
 コメント
@@ -84,7 +82,7 @@ maps
 マップ
 -----
 if
-If
+If条件分岐
 -----
 in_op
 In演算子
@@ -120,16 +118,16 @@ interfaces
 インターフェース
 -----
 enums
-Enums
+列挙型
 -----
 optionals_and_errors
-Option型とエラーハンドリング
+Optional型とエラーハンドリング
 -----
 generics
 ジェネリクス
 -----
 concurrency
-並行性
+並列処理
 -----
 decoding_json
 JSONのデコード
