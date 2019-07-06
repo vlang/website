@@ -17,23 +17,23 @@ the_v_lang
 V编程语言
 -----
 v_slogan
-Simple, fast, safe, compiled language for developing maintainable software
+简洁、快速、安全的编译型语言，用于开发易维护的软件
 -----
 includes_binaries 
-includes binaries for 3 systems
+包括3种操作系统的二进制文件
 -----
 install_source 
-Or install V from source 
+或者从源码安装 V
 -----
 couple_seconds 
 这将花费几秒钟
 -----
 wip_info
-V is an actively developed language at an early stage.
-Features that are still being worked on are marked with $wip
+V 正处于被积极开发的早期阶段。
+仍处于开发过程中的特性都会被标记为 $wip。
 
-Everything else on this page and the docs has been implemented and open-sourced.
-By the time of the V 1.0 release planned for December 2019, there will be no $wip's left.
+本页面及文档中的其他未被标记的描述，都已被实现并且开源。
+V 1.0 计划于2019年12月发布，届时将不会再有任何 $wip 标记。
 -----
 forum
 论坛
@@ -51,13 +51,14 @@ performance
 性能
 -----
 simple_language_for_maintainable_programs
-Simple language for building  maintainable programs 
+用于构建可维护程序的简洁语言
 -----
 zero_deps 
 400 KB compiler with zero dependencies
+编译器仅 400 KB，零依赖
 -----
 c_translation 
-C/C++ translation 
+C/C++ 转写 
 -----
 -----
 -----
