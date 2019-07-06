@@ -26,7 +26,7 @@ padding: 5px;
 
 <div class='center'>
 
-<h2>Comparison of V and other languages</h2> 
+<h2>Comparison of V and Other Languages</h2> 
 
 <p>
 
@@ -34,13 +34,13 @@ I created V because none of the existing languages had all of the following
 features:
 
 <table>
-<tr><td style='width:300px'>Fast compilation<td style='width:200px'> Go, Delphi 
+<tr><td style='width:300px'>Fast compilation<td style='width:200px'> D, Go, Delphi 
 <tr><td>Simplicity & maintainability<td>Go
-<tr><td>Great performance on par with C and <br>zero cost C interop<td> C, C++, Delphi, Rust, Nim, Zig
+<tr><td>Great performance on par with C and <br>zero cost C interop<td> C, C++, D, Delphi, Rust, Nim, Zig
 <tr><td>Safety (immutability, no null, option types, free from data races)<td> Rust 
 <tr><td>Easy concurrency<td> Go 
 <tr><td>Easy cross compilation<td>Go
-<tr><td>Compile time code generation<td>Zig
+<tr><td>Compile time code generation<td>D, Zig
 <tr><td>Small compiler with zero dependencies<td>-
 <tr><td>No global state<td>-
 <tr><td>Hot code reloading<td>-
@@ -111,7 +111,7 @@ V is very similar to Go, and these are the things it improves upon:
 - No GC 
 
 <p>
-- Much faster serialization using codegen and no reflection
+- Much faster serialization using codegen and no runtime reflection
 
 <p>
 - Precompiled HTML templates unlike <code>html/template</code>s that have to be parsed on every request 
@@ -180,7 +180,7 @@ fn read_username_from_file() ?string {
 
 
 <br> 
-<h3>V vs Rust vs Go: example</h3> 
+<h3>V vs Rust vs Go: Example</h3> 
 <p> 
 
 Since V's domain is close to both Go and Rust, I decided to use a simple example to compare the three. 
