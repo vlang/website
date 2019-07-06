@@ -1,5 +1,5 @@
-
-$mob-max: 1230px;
+//$mob-max: 1230px;
+$mob-max: 1030px;
 @mixin mobile {
 	@media (max-width: $mob-max) {
 		@content;
@@ -11,7 +11,7 @@ $mob-max: 1230px;
 	}
 }
 body {
-	margin:0;
+	margin: 0;
 }
 * {
 	font-family: "Roboto", "Helvetica Neue";
@@ -28,28 +28,56 @@ p {
 	}
 }
 .br {
-	width:100%;
+	width: 100%;
 }
 .content {
 	display: flex;
 	flex-wrap: wrap;
 }
+#downloads {
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: center;
+	flex-grow: 1;
+	div.v-link {
+		//width: 31%;
+		display: inline-block;
+		text-align: center;
+		div {
+			font-weight: 300;
+		}
+	}
+	h2 {
+		margin-top: 10px;
+	}
+	a {
+		font-size: 130%;
+		font-weight: 300;
+	}
+}
+
+#sizes {
+	span {
+		width: 100px;
+		margin-right: 60px;
+	}
+}
 pre {
 	font-family: "Roboto Mono", "Courier New", Menlo;
 	@include mobile {
 		overflow: scroll;
-		font-size: 12px;
+		font-size: 11px;
 	}
 }
 #donate {
 	@include mobile {
-		width:100%;
-		text-align:center;
+		width: 100%;
+		text-align: center;
 		order: 10;
-		margin-bottom:60px ;
+		margin-bottom: 60px;
 		//margin-top:-30px;
 		img {
-			margin-bottom:10px;
+			margin-bottom: 10px;
 		}
 	}
 	@include desktop {
@@ -63,15 +91,16 @@ pre {
 	}
 }
 #sub-form {
-	clear:both; font-size:12px;
-	margin-top:40px;
-	margin-right:10px;
+	clear: both;
+	font-size: 12px;
+	margin-top: 40px;
+	margin-right: 10px;
 	@include mobile {
 		display: none;
 	}
 	input, div {
-		display:block;
-		margin-bottom:10px;
+		display: block;
+		margin-bottom: 10px;
 	}
 }
 #home-examples {
@@ -87,35 +116,35 @@ pre {
 	}
 }
 .hello_devs {
-	margin:0 auto;
+	margin: 0 auto;
 	@include desktop {
-		width:750px;
-		margin-top:40px;
+		width: 750px;
+		margin-top: 40px;
 		display: table-cell;
 	}
-	background-color: #f9f9f9;
+	//background-color: #f9f9f9;
 	@include mobile {
-display:none;
+		display: none;
 		width: 70%;
 		max-width: 70%;
-		margin-top:10px;
-		overflow-x:scroll;
+		margin-top: 10px;
+		overflow-x: scroll;
 		//background-color: yellow;
 	}
 	padding: 5px;
-	border: 1px solid #dfdfdf;
+	//border: 1px solid #dfdfdf;
 }
 select {
 	@include mobile {
-display:none;
-}
+		display: none;
+	}
 
 }
 #install {
 	float: right;
 	position: relative;
 	left: 240px;
-	display:none;
+	display: none;
 }
 .row {
 	@include desktop {
@@ -127,8 +156,7 @@ display:none;
 		display: block;
 	}
 }
-.col {
-}
+.col {}
 .center {
 	margin: 0 auto;
 	@include mobile {
@@ -141,18 +169,22 @@ display:none;
 }
 .menu {
 	width: 100%;
-	flex-grow:1;
+	flex-grow: 1;
 	border-bottom: 1px solid #dfdfdf;
-	padding-bottom:10px;
+	padding-bottom: 10px;
 	@include desktop {
 		height: 60px;
 		padding-left: 180px;
 	}
+
+	@media (max-width: 1500px) {
+		padding-left: 0;
+	}
 	a {
-		&:hover{
-			color:#333;
+		&:hover {
+			color: #333;
 		}
-		color:#777 ;
+		color:#777;
 		padding-right: 18px;
 		padding-left: 18px;
 		//margin-right: 37px;
@@ -168,13 +200,13 @@ display:none;
 }
 .sep {
 	width: 100%;
-	flex-grow:1;
+	flex-grow: 1;
 	border-bottom: 1px solid #dfdfdf;
-	padding-bottom:30px;
+	padding-bottom: 30px;
 }
 .noborder {
-	border:0;
-	padding:0;
+	border: 0;
+	padding: 0;
 }
 #social {
 	//float: left;
@@ -189,7 +221,7 @@ display:none;
 	}
 	@include mobile {
 		width: 100%;
-		text-align:center;
+		text-align: center;
 	}
 }
 #social a {
@@ -198,7 +230,7 @@ display:none;
 	}
 	margin-bottom:10px;
 	//@include mobile {
-		//text-align:center;
+	//text-align:center;
 	//}
 }
 #social img {
@@ -213,12 +245,39 @@ display:none;
 		margin-left: 15px;
 		margin-right: 0;
 	}
+
+}
+#social1 {
+	float: left;
+}
+#social2 {
+	float: left;
+	margin-left: 30px;
 }
 .social-text {
 	@include mobile {
 		display: none;
 	}
 }
+#lang-links {
+//position: relative; top: 50px; 
+//margin-bottom:-170px; 
+@include desktop { 
+    margin-bottom: -285px;
+    margin-top: 190px; 
+} 
+div {
+//font-size: 130%; 
+margin-top: 8px; 
+cursor: pointer; 
+//font-weight: 300; 
+
+		&:hover {
+			color: #333;
+		}
+		color:#777;
+} 
+} 
 h1 {
 	display: block;
 	text-align: center;
@@ -289,24 +348,22 @@ td {
 		float: left;
 		position: sticky;
 		top: 20px;
-		margin-top:20px;
+		margin-top: 20px;
 		height: calc(100vh - 300px);
+		width: 250px; 
 		overflow-y: auto;
-
-		width: 250px;
-
 	}
 	@include mobile {
 		padding: 10px;
 	}
 	a {
 		display: block;
-		width: 90%;
+		width: 90%; 
 	}
 }
-.docs{
+.docs {
 	@include desktop {
-		margin-left:270px;
+		margin-left: 270px;
 	}
 	@include mobile {
 		padding: 10px;
@@ -315,21 +372,31 @@ td {
 code {
 	font-family: 'Roboto Mono';
 	background-color: #f0f0f0;
-	color: black;
 	padding: 1px 3px 1px 3px;
 }
 comment {
 	font-family: 'Roboto Mono';
 	color: #777;
 }
+
+str {
+	color: brown;
+	font-family: 'Roboto Mono';
+
+}
+key {
+	color: rgb(74, 103, 154);
+	font-family: 'Roboto Mono';
+
+}
 .next {
 	display: table-cell;
-	cursor:pointer;
+	cursor: pointer;
 	vertical-align: middle;
 	font-size: 170%;
-	padding:10px;
+	padding: 10px;
 	@include mobile {
-		display:none;
+		display: none;
 	}
 }
 .question {
@@ -341,7 +408,7 @@ comment {
 	}
 	margin-bottom:50px;
 	@include mobile {
-		margin-bottom:10px;
+		margin-bottom: 10px;
 	}
 }
 #git-btn {
@@ -356,7 +423,7 @@ comment {
 	font-size: 13px;
 	line-height: 18px;
 	border-radius: 4px;
-	margin-left:5px;
+	margin-left: 5px;
 }
 /*
 #git-btn:before {
@@ -396,6 +463,44 @@ video {
 	position: relative;
 	top: -5px;
 }
-input[type=button] {
-	font-size: 20px;
+
+#social-extra {
+	@include desktop {
+		position: relative;
+		top: 80px;
+		margin-bottom: -80px;
+	}
+	//@media (max-width: 1450px) {
+	//display:none;
+	//} 
 }
+#btnRun {
+	//@media (max-width: 1200px) {
+	//margin-left: 220px; 
+	//}
+}
+.wip {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-color: purple;
+	color: white;
+	font-size: 8px;
+	border-radius: 10px;
+	position: relative;
+	padding-left: 5p;
+	top: -3px;
+	line-height: 16px;
+	text-align: center;
+
+}
+#doompic {
+	@include desktop { 
+	width: 350px !important;
+} 
+	@include mobile {
+		display: block; 
+		width: 100% !important; 
+	}
+}
+
