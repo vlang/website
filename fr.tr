@@ -23,7 +23,7 @@ includes_binaries
 comprend les binaires pour 3 systèmes
 -----
 install_source 
-ou installer V depuis les sources
+Ou installer V depuis les sources
 -----
 couple_seconds 
 cela prendra quelques secondes
@@ -31,8 +31,9 @@ cela prendra quelques secondes
 wip_info
 V est un langage à un stade précoce de son développement.
 Les fonctionnalités en cours de développement sont marquées par $wip
-
+<br>
 Tout le reste de cette page et de la documentation a été implémenté et est open-source.
+<p>
 Au moment de la sortie de la version V 1.0, prévue pour décembre 2019, il n'y aura plus de $wip.
 -----
 forum
@@ -51,7 +52,7 @@ performance
 Performance 
 -----
 simple_language_for_maintainable_programs
-Un langage simple pour faire des programmes durables
+Un langage simple pour faire des programmes maintenables
 -----
 zero_deps 
 Un compilateur de 400 Ko avec aucune dépendance
