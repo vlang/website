@@ -1,0 +1,162 @@
+examples
+예제
+-----
+documentation
+문서
+-----
+modules
+모듈
+-----
+faq
+FAQ
+-----
+built_in_v
+V 내장
+-----
+the_v_lang
+V 프로그래밍 언어
+-----
+v_slogan
+유지보수가 가능한 소프트웨어를 개발하기 위한 간단하고 빠르고 안전한 컴파일 언어
+-----
+includes_binaries 
+3가지 시스템에 대한 바이너리 파일을 포함합니다.
+-----
+install_source 
+아니며 소스코드에서 V 설치 
+-----
+couple_seconds 
+this will take a couple of seconds
+-----
+wip_info
+V is an actively developed language at an early stage.
+Features that are still being worked on are marked with $wip
+<br> 
+Everything else on this page and the docs has been implemented and open-sourced.
+<p> 
+By the time of the V 1.0 release planned for December 2019, there will be no $wip's left.
+-----
+forum
+Forum
+-----
+blog
+Blog 
+-----
+fast_compilation
+Fast compilation
+-----
+safety
+Safety
+-----
+performance 
+Performance 
+-----
+simple_language_for_maintainable_programs
+Simple language for building  maintainable programs 
+-----
+zero_deps 
+400 KB compiler with zero dependencies
+-----
+c_translation 
+C/C++ translation 
+-----
+introduction
+Introduction 
+-----
+comments
+Comments 
+-----
+functions
+Functions 
+-----
+variables
+Variables 
+-----
+basic_types 
+Basic types 
+-----
+strings
+Strings
+-----
+arrays
+Arrays 
+-----
+maps
+Maps 
+-----
+if
+If 
+-----
+in_op 
+In operator 
+-----
+for_loop 
+For loop 
+-----
+switch 
+Switch 
+-----
+structs 
+Structs 
+-----
+access_mod 
+Access modifiers 
+-----
+methods
+Methods
+-----
+pure_fns 
+Pure functions 
+-----
+high_fns 
+High order functions 
+-----
+constants 
+Constants 
+-----
+modules
+Modules 
+-----
+interfaces
+Interfaces 
+-----
+enums
+Enums 
+-----
+optionals_and_errors 
+Option types & error handling 
+-----
+generics
+Generics 
+-----
+concurrency
+Concurrency 
+-----
+decoding_json 
+Decoding JSON 
+-----
+testing
+Testing 
+-----
+memory_management 
+Memory management 
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+
