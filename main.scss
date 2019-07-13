@@ -35,7 +35,7 @@ p {
 	flex-wrap: wrap;
 }
 #downloads {
-	max-width: 800px;
+	max-width: 340px;
 	margin: 0 auto;
 	text-align: center;
 	flex-grow: 1;
@@ -216,7 +216,8 @@ select {
 		//top: 70px;
 		//margin-top: 70px;
 		//margin-top: -120px;
-		margin-top: 10px;
+		font-size: 90%;
+		margin-top: 5px;
 		margin-left: 20px;
 	}
 	@include mobile {
@@ -260,24 +261,24 @@ select {
 	}
 }
 #lang-links {
-//position: relative; top: 50px; 
-//margin-bottom:-170px; 
-@include desktop { 
-    margin-bottom: -285px;
-    margin-top: 190px; 
-} 
-div {
-//font-size: 130%; 
-margin-top: 8px; 
-cursor: pointer; 
-//font-weight: 300; 
+	//position: relative; top: 50px; 
+	//margin-bottom:-170px; 
+	@include desktop {
+		margin-bottom: -285px;
+		margin-top: 190px;
+	}
+	div {
+		//font-size: 130%; 
+		margin-top: 8px;
+		cursor: pointer;
+		//font-weight: 300; 
 
 		&:hover {
 			color: #333;
 		}
 		color:#777;
-} 
-} 
+	}
+}
 h1 {
 	display: block;
 	text-align: center;
@@ -350,7 +351,7 @@ td {
 		top: 20px;
 		margin-top: 20px;
 		height: calc(100vh - 300px);
-		width: 250px; 
+		width: 250px;
 		overflow-y: auto;
 	}
 	@include mobile {
@@ -358,7 +359,7 @@ td {
 	}
 	a {
 		display: block;
-		width: 90%; 
+		width: 90%;
 	}
 }
 .docs {
@@ -495,12 +496,11 @@ video {
 
 }
 #doompic {
-	@include desktop { 
-	width: 350px !important;
-} 
+	@include desktop {
+		width: 350px !important;
+	}
 	@include mobile {
-		display: block; 
-		width: 100% !important; 
+		display: block;
+		width: 100% !important;
 	}
 }
-
