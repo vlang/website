@@ -11,7 +11,7 @@ faq
 常见问题
 -----
 built_in_v
-Built in V
+用V构建的作品
 -----
 the_v_lang
 V编程语言
@@ -80,19 +80,19 @@ arrays
 数组 
 -----
 maps
-Maps 
+集合 
 -----
 if
-If 
+If 语句 
 -----
 in_op 
-In 操作 
+In 运算符 
 -----
 for_loop 
 For 循环 
 -----
 switch 
-Switch 
+Switch 语句 
 -----
 structs 
 结构体 
