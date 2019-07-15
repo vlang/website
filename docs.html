@@ -1228,7 +1228,23 @@ numbers.free()
 
 <h2 id=defer>Defer</h2>
 
-TODO
+<pre>
+<key>fn</key> read_log() {
+	f := os.open(<str>'log.txt'</str>)
+	<key>defer</key> { f.close() }
+	...
+	<key>if</key> !ok {
+		<comment>// defer statement will be called here, the file will be closed</comment>
+		<key>return</key>
+	}
+	...
+	<comment>// defer statement will be called here, the file will be closed</comment>
+}
+</pre>
+
+
+
+
  
 
 <h2 id=vfmt>vfmt </h2>
