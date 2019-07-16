@@ -844,7 +844,20 @@ user = register(user)
 
 <h2 id=highfns> High order functions</h2>
 
-TODO
+<pre>
+fn sqr(n int) int {
+        return n * n
+}
+
+fn run(value int, op fn(int) int) int {
+        return op(value)
+}
+
+fn main()  {
+        println(run(5, sqr)) <comment>// "25"</comment>
+}
+</pre>
+
 
 
 <h2 id=consts>Constants</h2>
@@ -1127,7 +1140,7 @@ post := posts_repo.find_by_id(1)?
 <h2 id=concurrency>Concurrency</h2> 
 The concurrency model is very similar to Go. To run <code>foo()</code> concurrently, just
 call it with <code>go foo()</code>. Right now, it launches the function in a new system
-thread. Soon goroutines and the scheduler will be implemented.
+thread. Soon coroutines and the scheduler will be implemented.
 
 
 
