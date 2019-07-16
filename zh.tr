@@ -140,5 +140,14 @@ memory_management
 内存管理 
 -----
 -----
-
-
+V_is_a_statically_typed_compiled_programming_language_designed_for_building_maintainable_software.
+V是一种静态类型的编译型编程语言，它被设计用来构建可维护的软件。
+-----
+It's_similar_to_Go_and_is_also_influenced_by_Oberon,_Rust,_Swift.
+它很像Go，并且也受到Oberon，Rust，Swift等的影响。
+-----
+V_is_a_very_simple_language._Going_through_this_documentation_will_take_you_about_half_an_hour,_and_by_the_end_of_it_you_will_learn_pretty_much_the_entire_language.
+V是一种非常简单的语言。浏览这个文档大约会花费你半个小时的时间，而且在读完后，你将差不多学习了整个语言。
+-----
+Despite_being_simple,_it_gives_a_lot_of_power_to_the_developer._Anything_you_can_do_in_other_languages,_you_can_do_in_V.
+虽然很简单，但它却给开发者提供了很多强大的功能。所有其它语言能做的事情，你都可以用V来做。
