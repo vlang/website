@@ -864,11 +864,11 @@ fn main()  {
 
 <pre>
 <key>const</key> (
-	PI    = 3.14
+	Pi    = 3.14
 	World = <str>'世界'</str>
 ) 
 
-println(PI)
+println(Pi)
 println(World)
 </pre>
 <input class='run' type='button' value='Run'> 
@@ -878,7 +878,20 @@ Constants are declared with <code>const</code>. They can only be defined
 at the module level (outside of functions).
 
 <p>
-Constant names must be capitalized. This helps distinguish them from variables.
+When naming constants, PascalCase must be used. This helps distinguish them from variables.
+Many people prefer all caps consts: <code>TOP_CITIES</code>. This wouldn't work
+well in V, because consts are a lot more powerful than in other languages.
+They can represent complex structures, and this is used quite often since there
+are no globals:
+
+<pre>
+println(<str>'Top cities: $TOP_CITIES.filter(.usa)'</str>)
+vs
+println(<str>'Top cities: $TopCities.filter(.usa)'</str>)
+</pre>
+
+
+<p>&nbsp;
 
 <p>
 Constant values can never be changed.
