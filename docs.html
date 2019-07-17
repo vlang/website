@@ -410,9 +410,9 @@ and it can't be modified by the user. All exported fields are read-only by defau
 <pre>
 <key>mut</key> m := map[string]int{} <comment>// Only maps with string keys are allowed for now </comment> 
 m[<str>'one'</str>] = 1
-println(m[<str>'one'</str>]) <comment>// ==> "1" </comment> 
-println(m[<str>'bad_key'</str>]) <comment>// ==> "0" </comment> 
-<comment>// TODO: implement a way to check if the key exists</comment> 
+println(m[<str>'one'</str>]) <comment>// "1" </comment> 
+println(m[<str>'bad_key'</str>]) <comment>// "0" </comment> 
+println(m.exists(<str>'bad_key'</str>)) <comment>// "false" </comment> 
 
 numbers := { <comment>// TODO: this syntax is not implemented yet </comment> 
 	<str>'one'</str>: 1,
@@ -578,19 +578,15 @@ Here <code>i</code> doesn't need to be declared with <code>mut</code> since it's
 
 
 
-<h2 id=switch>Switch</h2>
+<h2 id=switch>Match</h2>
 <pre>
 os := 'windows' 
 print('V is running on ')
-switch os {
-case 'darwin':
-	println('macOS.')
-case 'linux':
-	println('Linux.')
-default:
-	println(os) 
+match os {
+match 'darwin' => println('macOS.')
+match 'linux' => println('Linux.')
+else => println(os) 
 }
-<comment>// TODO: replace with match expressions</comment> 
 </pre>
 <input class='run' type='button' value='Run'> 
 <p> 
@@ -1040,7 +1036,7 @@ is_green := color == .green
 } 
 
 <key>mut</key> color := Color.red
-<comment>// V knows that `color` is a `Color`. No need to use `Color.green` here.</comment>
+<comment>// V knows that `color` is a `Color`. No need to use `color = Color.green` here.</comment>
 color = .green 
 println(color) <comment>// ==> "1"  TODO: print "green"? </comment> 
 </pre> 
@@ -1501,7 +1497,39 @@ Translating it to V gives you several advantages:
 
 
 <h2 id=hot>Hot code reloading</h2>
-TODO
+<pre>
+module main
+
+import time
+import os
+
+[live]
+fn print_message() {
+	println('Hello! Modify this message while the program is running.')
+}
+
+fn main() {
+	for {
+		print_message()
+		time.sleep_ms(500)
+	}
+}
+
+</pre>
+
+Build this example with <code>v -live message.v</code>.
+<p>
+Functions that you want to be reloaded must have <code>[live]</code> attribute
+before their definition.
+
+<p>
+Right now it's not possible to modify types while the program is running.
+
+<p>
+More examples, including a graphical application:
+
+<a target=_blank href='https://github.com/vlang/v/tree/master/examples/hot_code_reloading'
+>github.com/vlang/v/tree/master/examples/hot_code_reloading</a>.
 
 <h2 id=cross>Cross compilation</h2>
 To cross compile your project simply run
