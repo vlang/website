@@ -1096,6 +1096,15 @@ not implemented yet).
 This is the primary way of handling errors in V. They are still values, like in Go,
 but the advantage is that errors can't be unhandled, and handling them is a lot less verbose.
 <p>
+<code>err</code> is defined inside an <code>or</code> block and is set to the string message passed
+to the <code>error()</code> function. <code>err</code> is empty if <code>none</code> was returned.
+<pre>
+user := repo.find_user_by_id(7) or {
+	println(err) <comment>// "User 7 not found"</comment>
+	return
+}
+</pre>
+<p>
 
 You can also propagate errors:
 
