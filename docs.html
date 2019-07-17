@@ -51,7 +51,7 @@ $(document).ready(function() {
 <a href='#if'>If</a> 
 <a href='#in'>%in_op</a> 
 <a href='#for'>%for_loop</a> 
-<a href='#switch'>%switch</a>
+<a href='#match'>%match</a>
 <a href='#structs'>%structs</a>
 <a href='#mod'>%access_mod</a>
 <a href='#methods'>%methods</a>
@@ -561,6 +561,10 @@ The condition can be omitted, this results in an infinite loop.
 <p>&nbsp;</p>
 <pre>
 for i := 0; i < 10; i++ {
+	<comment>// Don't print 6</comment>
+	if i == 6 {
+		continue
+	}
 	println(i)
 }
 </pre>
@@ -578,22 +582,20 @@ Here <code>i</code> doesn't need to be declared with <code>mut</code> since it's
 
 
 
-<h2 id=switch>Match</h2>
+<h2 id=match>Match</h2>
 <pre>
 os := 'windows' 
 print('V is running on ')
 match os {
-match 'darwin' => println('macOS.')
-match 'linux' => println('Linux.')
-else => println(os) 
+	'darwin' => println('macOS.')
+	'linux' => println('Linux.')
+	else => println(os) 
 }
 </pre>
 <input class='run' type='button' value='Run'> 
 <p> 
 
 A switch statement is a shorter way to write a sequence of <code>if - else</code> statements. It runs the first case whose value is equal to the condition expression.
-<p>
-Unlike C, <code>break</code> statement is not needed at the end of every block.
 
 
 <h2 id=structs>%structs</h2>
