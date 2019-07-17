@@ -184,6 +184,10 @@ Or build V from source with a C compiler:
 <pre>(coming on June 22)</pre>
 -->
 </div>
+
+
+
+
 </div>
 
 <div class='sep' style='padding:0'></div> 
@@ -424,19 +428,16 @@ fn main() {
 <div class='center'>
 	<div class='row'>
 <div class='feature first'>
-	<h2>%fast_compilation</h2>
-	%fast_comp1 
-	<span style='font-size:70%'>(Intel i5-7500 @ 3.40GHz, SM0256L SSD, no optimization) </span> 
-	<p>{{ raw (T "fast_comp2") }}</p> 
-<!--
-       <a href='/compilation_speed'>Compilation speed benchmark</a> 
--->
-	<p>%fast_comp3</p> 
-	<p>%fast_comp4</p> 
-<p>
-<i class='note'>Direct machine code generation is at a very early stage. Right now only x64/Mach-O is supported.
 
-This means that for now emitting C has to be used. By the end of this year x64 generation should be stable enough.</i>
+<h2>%simple_language_for_maintainable_programs</h2> 
+<p> 
+You can learn the entire language by going through the 
+<a target=_blank href='/docs'>documentation</a> in half an hour, and in most cases there's only one way to do something.
+<p>
+This results in simple, readable, and maintainable code.
+<p> 
+Despite being simple, V gives a lot of power to the developer. Anything you can do in other languages, you can do in V. 
+
 
 </div>
 
@@ -477,12 +478,20 @@ This means that for now emitting C has to be used. By the end of this year x64 g
 </div>
 <div class='feature'>
 
-<h2>%simple_language_for_maintainable_programs</h2> 
-<p> 
-You can learn the entire language by going through the 
-<a target=_blank href='/docs'>documentation</a> in half an hour. 
-<p> 
-Despite being simple, it gives a lot of power to the developer. Anything you can do in other languages, you can do in V. 
+	<h2>%fast_compilation</h2>
+	%fast_comp1 
+	<span style='font-size:70%'>(Intel i5-7500 @ 3.40GHz, SM0256L SSD, no optimization) </span> 
+	<p>{{ raw (T "fast_comp2") }}</p> 
+<!--
+       <a href='/compilation_speed'>Compilation speed benchmark</a> 
+-->
+	<p>%fast_comp3</p> 
+	<p>%fast_comp4</p> 
+<p>
+<i class='note'>Direct machine code generation is at a very early stage. Right now only x64/Mach-O is supported.
+
+This means that for now emitting C has to be used. By the end of this year x64 generation should be stable enough.</i>
+
 
 </div> 
 </div>
@@ -500,13 +509,13 @@ Despite being simple, it gives a lot of power to the developer. Anything you can
 <div class='feature first'> 
 
 <h2>
+Small and easy to build compiler
 <!-- 
-400 KB compiler 
-with zero <span class='wip'>wip</span> dependencies  
+%zero_deps
 --> 
-%zero_deps</h2>
+</h2>
 <p>
-The entire language and its standard library are less than 400 KB. 
+The entire language and its standard library are less than 1 MB.
 V is written in V, and you can build it in 0.4 seconds. 
 <p>
 (By the end of this year this number will drop to ≈0.15 seconds.)
@@ -525,13 +534,13 @@ For comparison:
 <tr><td>Swift</td><td>70 GB 
 <a target=_blank class='sidenote' href='https://github.com/apple/swift#getting-started'>[1]</a>
 </td><td>90m</td></tr>
-<tr><td>V</td><td>0.4 MB</td><td>0.4s</td></tr>
+<tr><td>V</td><td>< 1 MB</td><td>0.4s</td></tr>
 </table>
 
 <p>
 <i class='note'>
 
-Right now V does have one dependency: a C compiler. But  if you are doing development, you already have a C compiler installed. 
+V has only one dependency: a C compiler. And if you are doing development, you already have a C compiler installed. 
 <p>
 It's a small dependency, and it's not going to be needed once x64 generation is mature enough.</i> 
 
@@ -631,6 +640,9 @@ Get your changes instantly without recompiling.
 get to the state you are working on after every compilation, this can save a lot of 
 precious minutes of your development time.
 </p>
+<p>
+<a target=_blank href='https://github.com/vlang/v/tree/master/examples/hot_code_reloading'
+>github.com/vlang/v/tree/master/examples/hot_code_reloading</a>
 
 </div>
 
