@@ -1091,8 +1091,7 @@ The amount of work required to "upgrade" a function to an optional function is m
 you have to add a <code>?</code> to the return type and return an error when something goes wrong. 
 <p>
 If you don't need to return an error, you can simply <code>return none</code>. (TODO: <code>none</code> is 
-not implemented yet). Comparing an optional with <code>none</code> is true if the optional contains an
-error or <code>none</code>.
+not implemented yet).
 <p>
 This is the primary way of handling errors in V. They are still values, like in Go,
 but the advantage is that errors can't be unhandled, and handling them is a lot less verbose.
@@ -1105,7 +1104,6 @@ fn wrap_get(url string) ?string {
 	resp := http.get(url)?
 	return resp.body
 }
-assert wrap_get('') == none
 </pre>
 
 <code>http.get</code> returns <code>?http.Response</code>. It was called with 
