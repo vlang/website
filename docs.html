@@ -69,6 +69,7 @@ $(document).ready(function() {
 <a href='#memory'>%memory_management</a>
 <a href='#defer'>Defer</a>
 <a href='#vfmt'>vfmt</a>
+<a href='#writing_docs'>%writing_documentation</a>
 <br> 
 Advanced Topics
 
@@ -412,7 +413,7 @@ and it can't be modified by the user. All exported fields are read-only by defau
 m[<str>'one'</str>] = 1
 println(m[<str>'one'</str>]) <comment>// "1" </comment> 
 println(m[<str>'bad_key'</str>]) <comment>// "0" </comment> 
-println(m.exists(<str>'bad_key'</str>)) <comment>// "false" </comment> 
+println(<str>'bad_key'</str> <key>in</key> m) <comment>// Use `in` to detect whether such key exists</comment> 
 
 numbers := { <comment>// TODO: this syntax is not implemented yet </comment> 
 	<str>'one'</str>: 1,
@@ -1282,8 +1283,54 @@ A defer statement defers the execution of a block of statements until the surrou
 
 <h2 id=vfmt>vfmt </h2>
 
-TODO
+You don't need to worry about formatting your code or style guidelines.
+vfmt takes care of that:
 
+<pre>
+v fmt file.v
+</pre>
+
+<p>
+It's recommended to set up your editor, so that vfmt runs on every save.
+
+<p>
+Always run vfmt before pushing your code.
+
+
+<h2 id=writing_docs>%writing_documentation</h2>
+
+The way it works is very similar to Go. It's very simlple: there's no need to 
+write documentation for your code, vdoc will generate it from the source code.
+
+<p>
+Documentation for each function/type/const must be placed right before the declaration:
+
+<pre>
+// clearall clears all bits in the array
+fn clearall() {
+}
+</pre>
+
+<p>
+The comment must start with the name of the definition.
+
+<p>
+An overview of the module must be placed in the first comment right after the module's name.
+
+<p>
+To generate documentation, run <code>v doc path/to/module</code> (TODO this is 
+temporarily disabled).
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
 
 <h1>Advanced Topics</h1> 
 
