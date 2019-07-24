@@ -29,8 +29,8 @@ couple_seconds
 це займе пару секунд 
 -----
 wip_info
-V is an actively developed language at an early stage.
-Features that are still being worked on are marked with $wip
+V - активно розвывающася мова на ранній стадії.
+Особливості, якi на данний момент не працють, але будуть працювати, позначені $wip
 
 Everything else on this page and the docs has been implemented and open-sourced.
 By the time of the V 1.0 release planned for December 2019, there will be no $wip's left.
@@ -109,7 +109,7 @@ pure_fns
 Чисті функції
 -----
 high_fns 
-High order functions 
+Функції високого пріоритету
 -----
 constants 
 Константи 
@@ -141,4 +141,17 @@ testing
 memory_management 
 Управління пам'яттю 
 -----
-
+fast_comp1
+V компілюється зі швидкістю ≈1.2 мільйона рядків коду в секунду на кожне ядро процесора.
+-----
+fast_comp2
+Така швидкість досягається за рахунок прямого генерації машинного коду $wip та сильної модульності коду.
+-----
+fast_comp3
+V збирає сам себе за 0,3 - 0,6 секунд.
+-----
+fast_comp4
+V також може випромінювати C, тоді швидкість компіляції падає до ≈100k ліній / секунду / CPU.
+-----
+no_null
+No null 
