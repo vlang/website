@@ -29,11 +29,11 @@ couple_seconds
 это займет пару секунд 
 -----
 wip_info
-V is an actively developed language at an early stage.
-Features that are still being worked on are marked with $wip
+V является активно развивающимся языком на ранней стадии.
+Функции над которыми еще ведется работа, отмечены знаком $wip
 
-Everything else on this page and the docs has been implemented and open-sourced.
-By the time of the V 1.0 release planned for December 2019, there will be no $wip's left.
+Всё остальное на этой странице и в документах было реализовано с открытым исходным кодом.
+К моменту выхода V 1.0, запланированному на декабрь 2019 года, не останется $wip.
 -----
 forum
 Форум 
@@ -109,7 +109,7 @@ pure_fns
 Чистые функции 
 -----
 high_fns 
-High order functions 
+Функции высокого приоритета
 -----
 constants 
 Константы 
@@ -144,4 +144,14 @@ memory_management
 fast_comp1
 V компилирует ≈1.2 миллиона строк кода в секунду на одном ядре.
 -----
-
+fast_comp2
+Такая скорость достигается за счет прямой генерации в машинный (нативный) код $wip и сильной модульности кода.
+-----
+fast_comp3
+V компилирует сам себя за 0.3 - 0.6 seconds.
+-----
+fast_comp4
+V также может использовать C, тогда скорость компиляции падает до ≈100k строк/сек/CPU.
+-----
+no_null
+Нет нулевых указателей
