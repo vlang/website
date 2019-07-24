@@ -141,10 +141,20 @@ Tests Unitaires
 memory_management 
 Gestion de la mémoire
 -----
+fast_comp1
+V compile ≈1.2 millions de lignes de code par secondes par cœur. 
 -----
+fast_comp2
+De telles vitesses sont atteintes à l'aide de la génération de langage machine direct $wip ainsi qu'une forte modularité.
 -----
+fast_comp3
+V se compile lui-même en 0.3 - 0.6 secondes.
 -----
+fast_comp4
+V peut aussi émettre du C, dans ce cas, la vitesse de compilation baisse à ≈100k lignes de code par secondes par CPU.
 -----
+no_null
+Non nul.
 -----
 -----
 -----
