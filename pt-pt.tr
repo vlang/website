@@ -1,0 +1,173 @@
+examples
+Exemplos
+-----
+documentation
+Documentação
+-----
+modules
+Módulos
+-----
+faq
+FAQ
+-----
+built_in_v
+Construído com V
+-----
+the_v_lang
+A Linguagem de Programação V
+-----
+v_slogan
+Uma linguagem simples, rápida, compilada e segura para desenvolvimento de software sustentável
+-----
+includes_binaries 
+Binários incluídos para 3 sistemas
+-----
+install_source 
+Ou instale V a partir da fonte
+-----
+couple_seconds 
+isto demorará alguns segundos
+-----
+wip_info
+V é uma linguagem prematura em desenvolvimento contínuo.
+Funcionalidades que ainda estão a ser desenvolvidas estão marcadas com $wip
+<br>
+Todo o restante conteúdo desta página está implementado e é open-source. 
+<p> 
+Não existirão $wip aquando da data planeada para o lançamento de V 1.0, em dezembro de 2019.
+-----
+forum
+Fórum
+-----
+blog
+Blog 
+-----
+fast_compilation
+Compilação rápida
+-----
+safety
+Segurança
+-----
+performance 
+Performance 
+-----
+simple_language_for_maintainable_programs
+Linguagem simples para construír programas sustentáveis
+-----
+zero_deps 
+Compilador de 400 KB com zero dependências
+-----
+c_translation
+Tradução C/C++ 
+-----
+introduction
+Introdução
+-----
+comments
+Comentários 
+-----
+functions
+Funções
+-----
+variables
+Variáveis
+-----
+basic_types 
+Tipos básicos
+-----
+strings
+Strings
+-----
+arrays
+Arrays 
+-----
+maps
+Maps 
+-----
+if
+If (Se)
+-----
+in_op 
+Operador In (Em) 
+-----
+for_loop 
+Loop For (Para) 
+-----
+switch 
+Switch 
+-----
+structs 
+Estruturas
+-----
+access_mod 
+Modificadores de Acesso 
+-----
+methods
+Métodos
+-----
+pure_fns 
+Funções puras
+-----
+high_fns 
+Funções de alta ordem
+-----
+constants 
+Constantes 
+-----
+modules
+Módulos 
+-----
+interfaces
+Interfaces 
+-----
+enums
+Enumeradores
+-----
+optionals_and_errors 
+Tipos de opções e tratamento de erros
+-----
+generics
+Genericos 
+-----
+concurrency
+Concurrência
+-----
+decoding_json 
+Decodificando JSON
+-----
+testing
+Testando
+-----
+memory_management 
+Gestão de memória
+-----
+fast_comp1
+V compila ≈1.2 milhões de linhas de código por núcleo do CPU.
+-----
+fast_comp2
+Tal velocidade é alcançada pela geração de código de máquina $wip e uma forte modularidade.
+-----
+fast_comp3
+V compila-se em 0.3 - 0.6 segundos.
+-----
+fast_comp4
+V também pode emitir C, pelo que a velocidade de compilação desce para ≈100k linhas/segundo/CPU.
+-----
+no_null
+Não nulo
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+
+
