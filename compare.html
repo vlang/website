@@ -239,72 +239,58 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"net/http"
-	"sync"
 )
 
-const STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json" 
-const ITEM_URL_BASE = "https://hacker-news.firebaseio.com/v0/item" 
-
-type Story struct {
-	Title string
-}
+const STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json"
+const ITEM_URL_BASE = "https://hacker-news.firebaseio.com/v0/item"
 
 func main() {
-	rsp, err := http.Get(STORIES_URL) 
+	rsp, err := http.Get(STORIES_URL)
 	if err != nil {
 		panic(err)
 	}
 	defer rsp.Body.Close()
-	data, err := ioutil.ReadAll(rsp.Body)
-	if err != nil {
-		panic(err)
-	}
-	var ids []int
-	if err := json.Unmarshal(data, &ids); err != nil {
-		panic(err)
-	}
-	var cursor int
-	var mutex sync.Mutex
-	next := func() int {
-		mutex.Lock()
-		defer mutex.Unlock()
-		temp := cursor
-		cursor++
-		return temp
-	}
-	wg := sync.WaitGroup{}
-	for i := 0; i < 8; i++ {
-		wg.Add(1)
-		go func() {
-			for cursor := next(); cursor < len(ids); cursor = next() {
-				url := fmt.Sprintf(
-					"&percnt;s/&percnt;d.json",
-                                         ITEM_URL_BASE, 
-					ids[cursor],
-				)
-				rsp, err := http.Get(url)
-				if err != nil {
-					panic(err)
-				}
-				defer rsp.Body.Close()
 
-				data, err := ioutil.ReadAll(rsp.Body)
-				if err != nil {
-					panic(err)
-				}
-				var story Story
-				if err := json.Unmarshal(data, &story); err != nil {
-					panic(err)
-				}
-				fmt.Println(story.Title)
+	var ids []int
+	if err := json.NewDecoder(rsp.Body).Decode(&ids); err != nil {
+		panic(err)
+	}
+
+	cursor := make(chan string)
+	go func() {
+		for _, id := range ids {
+			cursor <- fmt.Sprintf("&percnt;s/&percnt;d.json", ITEM_URL_BASE, id)
+		}
+		close(cursor)
+	}()
+
+	titles := make(chan string)
+	for i := 0; i < 8; i++ {
+		go func() {
+			for url := range cursor {
+				func() { // anon func so inner defer allows connection reuse
+					rsp, err := http.Get(url)
+					if err != nil {
+						panic(err)
+					}
+					defer rsp.Body.Close()
+
+					var story struct{ Title string }
+					if err := json.NewDecoder(rsp.Body).Decode(&story); err != nil {
+						panic(err)
+					}
+					titles <- story.Title
+				}()
 			}
-			wg.Done()
 		}()
 	}
-	wg.Wait()
+
+	for range ids {
+		fmt.Println(<-titles) // Outside goroutines, presuming Println not thread safe
+	}
 }
+                                        
 </pre> 
  
 <b>V</b>  <br> 
