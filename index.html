@@ -206,6 +206,11 @@ Or build V from source with a C compiler:
 	><img src='/img/vim.png' width=35> <br>V for Vim </a>
 	</div>
 
+	<div class='editor'>
+	<a target=_blank href='https://github.com/vlang/vid'
+	><img src='/img/vid.png' width=35> <br>Vid Editor</a>
+	</div>
+
 </div>
 
 
@@ -247,11 +252,12 @@ Or build V from source with a C compiler:
 <key>import</key> http
 
 <key>fn</key> main() {
-        data := http.get(<str>'https://vlang.io/utc_now'</str>) or {
-                println(<str>'failed to fetch data from the server'</str>)
-        }
-        t := time.unix(data)
-        println(t.clean()) <comment>// 27 Jun 2019 14:32</comment>
+	resp := http.get(<str>'https://vlang.io/utc_now'</str>) or {
+		println(<str>'failed to fetch data from the server'</str>)
+		return
+	}
+	t := time.unix(resp.text.int())
+	println(t.format()) <comment>// 27 Jun 2019 14:32</comment>
 }
 </pre>
 
@@ -467,7 +473,7 @@ Despite being simple, V gives a lot of power to the developer. Anything you can 
 	<li>No variable shadowing
 	<li>Bounds checking
 	<li><a target=_blank href='/docs#option'>Option/Result types</a> 
-	<li> <a target=_blank href='/docs#generics'>Generics</a> <span class='wip'>wip</span>
+	<li> <a target=_blank href='/docs#generics'>Generics</a>
 	<li><a target=_blank href='/docs#vars'>Immutable variables by default</a> 
 	<li><a target=_blank href='/docs#recvs'>Pure functions by default</a> 
 	<li><a target=_blank href='/docs#mod'>Immutable structs by default</a> 
@@ -780,7 +786,7 @@ that is guaranteed to work on all operating systems (provided you cross compile)
 without any dependencies. <a href='#' onclick='alert("Of course, if you use C libraries, things get trickier.\n\nThis can be solved by translating C to V.")'>*</a>
 
 <p>
-Installing new libraries is as simple as <code>v get sqlite</code> <span class='wip'>wip</span>.
+Installing new libraries is as simple as <code>v install sqlite</code>.
 </div>
 
 
@@ -821,7 +827,7 @@ mv('*.exe', 'build/')
 
 v run deploy.v 
 	</pre> 
-<a target=_blank href='/docs#bash'>Read more about V script...</a> 
+<a target=_blank href='/docs#bash'>Read more about V script</a> 
 </div>
 </div> 
 
@@ -833,8 +839,10 @@ v run deploy.v
 
 	<div class='row'>
 <div class='feature first'>
+	<h2>Powerful built-in web framework</h2>
+<a target=_blank href='https://github.com/vlang/v/tree/master/vlib/vweb'
+>github.com/vlang/v/tree/master/vlib/vweb</a> 
 
-	<h2>Powerful built-in web framework <span class='wip'>wip</span></h2>
 	<pre>
 <comment>['/post/:id']</comment>
 <key>fn</key> (b Blog) show_post(id int) vweb.Result {
@@ -939,11 +947,16 @@ For others, manual memory management is required for now. Read more:
 </div> 
 
 <div class='question'> 
-<b> Is there going to be a package manager? </b> 
+<b> Is there a package manager? </b> 
 <p> 
 Yes! V is a very modular language and encourages creation of modules that are easy to reuse.
-There will be a central package manager, and installing modules will be as easy as 
-<pre>v get sqlite</pre> 
+<p>
+<a target=_blank href='https://vpm.vlang.io'>vpm.vlang.io</a>.
+<p>
+Submitting your V module takes a couple of seconds.
+<p>
+Installing modules is as easy as
+<pre>v install sqlite</pre> 
 </div> 
 
 

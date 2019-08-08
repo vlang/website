@@ -320,7 +320,13 @@ bobby := name + <str>'by'</str> <comment>// + is used to concatenate strings</co
 println(bobby) <comment>// ==> "Bobby" </comment> 
 
 println(bobby.substr(1, 3)) <comment>// ==> "ob" </comment> 
-<comment>// println(bobby[1:3]) // This syntax will most likely replace the substr() method  </comment> 
+<comment>// println(bobby[1..3]) // This syntax will most likely replace the substr() method  </comment> 
+
+<key>mut</key> s := <str>'hello '</str>
+s += <str>'world'</str> <comment>// `+=` is used to append to a string</comment>
+println(s) <comment>// "hello world" </comment>
+
+
 </pre> 
 <input class='run' type='button' value='Run'> 
 
@@ -420,7 +426,7 @@ println(m[<str>'one'</str>]) <comment>// "1" </comment>
 println(m[<str>'bad_key'</str>]) <comment>// "0" </comment> 
 println(<str>'bad_key'</str> <key>in</key> m) <comment>// Use `in` to detect whether such key exists</comment> 
 
-numbers := { <comment>// TODO: this syntax is not implemented yet </comment> 
+numbers := { 
 	<str>'one'</str>: 1,
 	<str>'two'</str>: 2,
 } 
@@ -1348,27 +1354,25 @@ temporarily disabled).
 <h2 id=calling_c>Calling C functions from V</h2>
 <pre>
 #flag -lsqlite3
-
 #include "sqlite3.h"
 
-struct C.sqlite3 
-struct C.sqlite3_stmt 
+struct C.sqlite3
+struct C.sqlite3_stmt
 
-<key>fn </key>C.sqlite3_column_int(C.sqlite_stmt, int) int 
+fn C.sqlite3_column_int(stmt C.sqlite3_stmt, n int) int
 
-<key>fn </key>main() {
-	path := 'sqlite3_users.db' 
-	db := &C.sqlite3{} 
-	C.sqlite3_open(path.cstr(), &db)
-
-	query := 'select count(*) from users' 
-	stmt := &C.sqlite3_stmt{} 
-	C.sqlite3_prepare_v2(db, query.cstr(), - 1, &stmt, 0)
-	C.sqlite3_step(stmt) 
-	nr_users := C.sqlite3_column_int(res, 0)
-	C.sqlite3_finalize(res)
-	println(nr_users) 
-} 
+fn main() {
+        path := 'users.db'
+        db := &C.sqlite3{!}
+        C.sqlite3_open(path.str, &db)
+        query := 'select count(*) from users'
+        stmt := &C.sqlite3_stmt{!}
+        C.sqlite3_prepare_v2(db, query.str, - 1, &stmt, 0)
+        C.sqlite3_step(stmt)
+        nr_users := C.sqlite3_column_int(stmt, 0)
+        C.sqlite3_finalize(stmt)
+        println(nr_users)
+}
 </pre> 
 
 <p>
