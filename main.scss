@@ -263,6 +263,7 @@ select {
 #lang-links {
 	//position: relative; top: 50px; 
 	//margin-bottom:-170px; 
+	@include mobile { display: none; } 
 	@include desktop {
 		margin-bottom: -285px;
 		margin-top: 225px;
