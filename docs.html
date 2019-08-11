@@ -68,6 +68,7 @@ $(document).ready(function() {
 <a href='#testing'>%testing</a>
 <a href='#memory'>%memory_management</a>
 <a href='#defer'>Defer</a>
+<a href='#orm'>ORM</a>
 <a href='#vfmt'>vfmt</a>
 <a href='#writing_docs'>%writing_documentation</a>
 <br> 
@@ -1286,6 +1287,59 @@ A defer statement defers the execution of a block of statements until the surrou
 	<comment>// defer statement will be called here, the file will be closed</comment>
 }
 </pre>
+
+
+<h2 id=orm>ORM</h2>
+
+(alpha)
+<p>
+
+V has a built-in ORM that supports Postgres, and will soon support MySQL and SQLite.
+
+<p>
+The benefits of V ORM
+
+<li>One syntax for all SQL dialects. Migrating to a different database becomes
+much easier.
+<li>Queries are constructed with V syntax.
+<li>Safety. It's impossible to construct a SQL query with an injection.
+<li> Compile time checks. No more typos that can only be caught at runtime.
+<li> Readability and simplicity. You don't need to manually parse the results
+and construct objects.
+
+
+<pre>
+struct Customer { <comment>// struct name has to be the same as the table name for now</comment>
+	id int <comment>// an integer id must be the first field</comment>
+	name string
+	nr_orders int
+	country string
+}
+
+db := pg.connect(db_name, db_user)
+
+<comment>// select count(*) from Customer</comment>
+nr_customers := db.select count from Customer
+println('number of all customers: $nr_customers')
+
+<comment>// V syntax can be used to build queries
+// db.select returns an array</comment>
+uk_customers = db.select from Customer where country == 'uk' && nr_orders > 0
+println(uk_customers.len)
+for customer in uk_customers {
+	println('$customer.id - $customer.name')
+}
+
+<comment>// by adding `limit 1` we tell V that there will be only one object</comment>
+customer = db.select from Customer where id == 1 limit 1
+println('$customer.id - $customer.name')
+
+<comment>// insert a new customer</comment>
+new_customer := Customer{name: 'Bob', nr_orders: 10}
+db.insert(new_customer)
+</pre>
+
+
 
 
 
