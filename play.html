@@ -196,14 +196,14 @@ The playground will be back today (moving to a new server)
 </textarea> 
 </div> 
 
-<span class='example' id='ex0' >fn main() { 
+<pre class='example' id='ex0' >fn main() { 
 	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI', 'mobile']
         for area in areas {
                 println('Hello, $area developers!')
         }
 } 
-</span> 
-<span class='example' id='ex1'>fn fib(n int) int {
+</pre> 
+<pre class='example' id='ex1'>fn fib(n int) int {
         if n <= 1 {
                 return n
         }
@@ -215,8 +215,8 @@ fn main() {
                 println(fib(i))
         }
 }
-</span> 
-<span class='example' id=ex2>const (
+</pre> 
+<pre class='example' id=ex2>const (
         MAX = 15 
 )
 
@@ -243,9 +243,9 @@ fn main() {
                 println(fib.calc(i))
         }
 }
-</span> 
+</pre> 
 
-<span class='example' id=ex3>import json
+<pre class='example' id=ex3>import json
 
 struct User {
 	name          string
@@ -284,9 +284,9 @@ fn (u User) can_register() bool {
 fn (u mut User) register() {
         u.is_registered = true
 }
-</span> 
+</pre> 
 
-<span class='example' id=ex4>struct User {
+<pre class='example' id=ex4>struct User {
 	id   int
 	name string
 }
@@ -322,9 +322,9 @@ fn main() {
 	println(user.id) // ==> '10'
 	println(user.name) // ==> 'Charles'
 }
-</span> 
+</pre> 
 
-<span class='example' id=ex5>struct Color {
+<pre class='example' id=ex5>struct Color {
         r int
         g int
         b int
@@ -350,10 +350,10 @@ fn main() {
         println(RED)
         println(BLUE)
 }  
-</span> 
+</pre> 
 
 
-<span class='example' id=ex6>struct Vec {
+<pre class='example' id=ex6>struct Vec {
 	x int
 	y int
 }
@@ -382,10 +382,10 @@ fn main() {
 	println(a + b) 
 	println(a - b) 
 }
-</span> 
+</pre> 
 
 
-<span class='example' id=ex7>struct User {
+<pre class='example' id=ex7>struct User {
 	name string
 	age  int	 
 } 
@@ -398,7 +398,7 @@ fn main() {
 	println(user2.name) 
 	println(user2.age)
 } 
-</span> 
+</pre> 
 
 <pre class='output'> 
 Current version: V @.
