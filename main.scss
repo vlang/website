@@ -1,4 +1,5 @@
 //$mob-max: 1230px;
+
 $mob-max: 1030px;
 @mixin mobile {
 	@media (max-width: $mob-max) {
@@ -351,7 +352,7 @@ td {
 		position: sticky;
 		top: 20px;
 		margin-top: 20px;
-		height: calc(100vh - 300px);
+		height: calc(100vh - 100px);
 		width: 250px;
 		overflow-y: auto;
 	}
