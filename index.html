@@ -257,7 +257,7 @@ Or build V from source with a C compiler:
 		return
 	}
 	t := time.unix(resp.text.int())
-	println(t.format()) <comment>// 27 Jun 2019 14:32</comment>
+	println(t.format()) <comment>// 2019-08-16 17:48</comment>
 }
 </pre>
 
@@ -810,9 +810,10 @@ V can call C code, and calling V code is possible in any language that has C int
 	<h2>REPL</h2>
 	<pre>
  v
- >> data := http.get('https://vlang.io/utc_now')? 
- >> data 
- '1551205308' 
+ >>> import http 
+ >>> data := http.get('https://vlang.io/utc_now') or { panic(err) }
+ >>> data.text
+ 1565977541
 	</pre> 
 </div>
 
