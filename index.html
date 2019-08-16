@@ -309,7 +309,7 @@ Or build V from source with a C compiler:
 
 <pre class='hello_devs' id=ex5 style='display:none'>
 struct Customer {
-	id int <comment>
+	id int
 	name string
 	nr_orders int
 	country string
@@ -894,6 +894,39 @@ v run deploy.v
 <a target=_blank href='//blog.vlang.io/forum'>V forum</a> and 
  <a target=_blank href='//blog.vlang.io'>V blog</a> are built with vweb/vtalk.
 
+</div>
+
+
+<div class='feature'>
+	<h2>Built-in ORM</h2>
+
+<pre>
+struct Customer {
+	id int
+	name string
+	nr_orders int
+	country string
+}
+
+db := pg.connect(db_name, db_user)
+
+nr_customers := db.select count from Customer
+println('number of all customers: $nr_customers')
+
+<comment>// V syntax can be used to build queries</comment>
+uk_customers = db.select from Customer where country == 'uk' && nr_orders > 0
+for customer in uk_customers {
+	println('$customer.id - $customer.name')
+}
+
+<comment>// by adding `limit 1` we tell V that there will be only one object</comment>
+customer = db.select from Customer where id == 1 limit 1
+println(customer.name)
+
+<comment>// insert a new customer</comment>
+new_customer := Customer{name: 'Bob', nr_orders: 10}
+db.insert(new_customer)
+</pre>
 </div>
 
 
