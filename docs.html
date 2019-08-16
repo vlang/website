@@ -1459,10 +1459,15 @@ Check out socket.v for an example of calling C code from V:
 <key>$if</key> mac {
 	println('macOS') 
 } 
+
+<comment>// If compile with `-debug` option
+<key>$if</key> debug {
+	println('your debug message') 
+}
 </pre> 
 
 Compile time <code>if</code> starts with a <code>$</code>. Right now it can only be used to detect
-an OS. 
+an OS or compile option <code>-debug</code>.
 
 <h2 id=codegen>Reflection via codegen</h2> 
 Having built-in JSON support is nice, but V also allows you to create efficient 
