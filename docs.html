@@ -654,7 +654,7 @@ V doesn't have subclassing, but it supports embedded structs:
 
 
 <pre>
-<comment>// TODO: this will be implemented later in July</comment>
+<comment>// TODO: this will be implemented later in August</comment>
 <key>struct</key> Button {
 	Widget
 	title string
@@ -1106,7 +1106,7 @@ fn main() {
 --> 
 <input class='run' type='button' value='Run'> 
 
-<p>V combines Option and Result into one type, so you don't need to decide which one to use.
+<p>V combines <code>Option</code> and <code>Result</code> into one type, so you don't need to decide which one to use.
 <p> 
 The amount of work required to "upgrade" a function to an optional function is minimal:
 you have to add a <code>?</code> to the return type and return an error when something goes wrong. 
@@ -1156,7 +1156,7 @@ or Swift's <code>!</code>). You have to use <code>or { panic(err) }</code> inste
 
  
 
-<h2 id=generics>Generics (July)</h2> 
+<h2 id=generics>Generics</h2> 
 <pre><key>struct</key> Repo&lt;T> {
 	db DB
 }
@@ -1460,21 +1460,20 @@ Check out socket.v for an example of calling C code from V:
 	println('macOS') 
 } 
 
-<comment>// If compile with `-debug` option
 <key>$if</key> debug {
-	println('your debug message') 
+	println('debugging') 
 }
 </pre> 
 
 Compile time <code>if</code> starts with a <code>$</code>. Right now it can only be used to detect
-an OS or compile option <code>-debug</code>.
+an OS or a <code>-debug</code> compilation option.
 
 <h2 id=codegen>Reflection via codegen</h2> 
 Having built-in JSON support is nice, but V also allows you to create efficient 
 serializers for anything:
 
 <pre>
-<comment>// TODO: planned in July</comment>
+<comment>// TODO: planned in August</comment>
 <key>fn</key> decode&lt;T>(data string) T {
         mut result := T{}
         for field in T.fields {
@@ -1579,7 +1578,7 @@ fn main() {
 
 <h2 id=cpp>Translating C/C++ to V</h2>
 
-TODO: translating C to V will be available in July. C++ to V will be available later this year. 
+TODO: translating C to V will be available in August. C++ to V will be available later this year. 
 <p> 
 
 V can translate your C/C++ code to human readable V code. 
@@ -1693,7 +1692,7 @@ libraries and include files for Windows and Linux. V will provide you with a lin
 
 <h2 id=bash>Cross-platform shell scripts in V</h2> 
 
-(Coming later in July.) 
+(Coming later in August.) 
 
 <p>
 V can be used as an alternative to Bash to write deployment scripts, build scripts,
