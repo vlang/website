@@ -1333,14 +1333,14 @@ println('number of all customers: $nr_customers')
 
 <comment>// V syntax can be used to build queries
 // db.select returns an array</comment>
-uk_customers = db.select from Customer where country == 'uk' && nr_orders > 0
+uk_customers := db.select from Customer where country == 'uk' && nr_orders > 0
 println(uk_customers.len)
 for customer in uk_customers {
 	println('$customer.id - $customer.name')
 }
 
 <comment>// by adding `limit 1` we tell V that there will be only one object</comment>
-customer = db.select from Customer where id == 1 limit 1
+customer := db.select from Customer where id == 1 limit 1
 println('$customer.id - $customer.name')
 
 <comment>// insert a new customer</comment>
