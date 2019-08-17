@@ -430,8 +430,9 @@ with <code>s := arr.str()</code>.
 
 <h2 id=maps>Maps</h2>
 <pre>
-<key>mut</key> m := map[string]int{} <comment>// Only maps with string keys are allowed for now </comment> 
+<key>mut</key> m := map[string]int<comment> // Only maps with string keys are allowed for now </comment> 
 m[<str>'one'</str>] = 1
+m[<str>'two'</str>] = 2
 println(m[<str>'one'</str>]) <comment>// "1" </comment> 
 println(m[<str>'bad_key'</str>]) <comment>// "0" </comment> 
 println(<str>'bad_key'</str> <key>in</key> m) <comment>// Use `in` to detect whether such key exists</comment> 
