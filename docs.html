@@ -1187,7 +1187,10 @@ thread. Soon coroutines and the scheduler will be implemented.
 
 <h2 id=json>Decoding JSON</h2> 
 
-<pre><key>struct</key> User {
+<pre>
+<key>import</key> json
+
+<key>struct</key> User {
 	name string
 	age  int 
 	foo  Foo    [skip]  <comment>// Use `skip` attribute to skip certain fields</comment> 
