@@ -1442,7 +1442,7 @@ fn main() {
 </pre> 
 
 <p>
-C strings can be converted to V strings with <code>string(cstring)</code>.
+C strings can be converted to V strings with <code>string(cstring)</code>. When calling a C function you must pass a C string, V strings have a <key>.str</key> filed which points to the underlying C string.
 
 <p>
 Check out socket.v for an example of calling C code from V:
