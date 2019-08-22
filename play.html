@@ -10,7 +10,7 @@ display: none;
 textarea {
 width: 85% !important; 
 //width:400px !important; 
-height: 500px; 
+height: calc(100vh - 300px); // 500px; 
 font-family: 'Roboto Mono'; 
 font-size:13px; 
 //margin-top:20px; 
@@ -175,7 +175,7 @@ back soon
 <a target=_blank href='/docs'>Check out the docs for more examples</a> 
 </div> 
 
-<div style='height:505px; max-height:505px;'> 
+<div style='height:calc(100vh - 295px); max-height:calc(100vh - 295px);'> 
 <textarea id='code' autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false">fn main() {
 	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI', 'mobile']
         for area in areas {
