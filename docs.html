@@ -62,6 +62,7 @@ $(document).ready(function() {
 <a href='#methods'>%methods</a>
 <a href='#recvs'>%pure_fns</a>
 <a href='#highfns'>%high_fns</a>
+<a href='#refs'>%references</a> 
 <a href='#consts'>%constants</a> 
 <a href='#modules'>%modules</a> 
 <a href='#interfaces'>%interfaces</a>
@@ -640,12 +641,17 @@ println(p.x) <comment>// Struct fields are accessed using a dot</comment>
 
 <p>
 Structs are allocated on the stack. To allocate a struct on the heap and get
-a pointer to it, use the <code>&</code> prefix:
+a reference to it, use the <code>&</code> prefix:
 
 <pre>
-pointer := &Point{10, 10}  <comment>// Alternative initialization syntax for structs with 3 fields or fewer</comment>
-println(pointer.x) <comment>// Pointers have the same syntax for accessing fields </comment> 
+p := &Point{10, 10}  <comment>// Alternative initialization syntax for structs with 3 fields or fewer</comment>
+println(p.x) <comment>// References have the same syntax for accessing fields </comment> 
 </pre> 
+
+<p>
+The type of <code>p</code> is <code>&Point</code>. It's a reference to 
+<code>Point</code>. References are similar
+to Go pointers and C++ references.
 
 <p> &nbsp;
 
@@ -877,6 +883,49 @@ fn main()  {
         println(run(5, sqr)) <comment>// "25"</comment>
 }
 </pre>
+
+
+<h2 id=refs>References</h2>
+<pre>
+fn (f Foo) bar() {
+	...
+}
+</pre>
+
+If the receiver is immutable like <code>foo</code> in the example above,
+V can pass it by value or by reference internally. The decision is made 
+by the compiler, and the developer doesn't need to think about it.
+
+<p>
+You no longer need to remember whether you should pass the struct by value
+or by reference.
+
+<p>
+However, there's a way to ensure that the struct is always passed by reference by
+adding <code>&</code>:
+
+<pre>
+fn (f &Foo) bar() {
+	println(f.abc)
+}
+</pre>
+
+<p>
+&nbsp;
+
+<p>
+In general, V references are similar to Go pointers and C++ references. 
+So a tree structure definition would look like this:
+</p>
+
+<pre>
+struct Node&lt;T> {
+	val   T
+	left  &Node
+	right &Node
+}
+</pre>
+
 
 
 
@@ -1443,7 +1492,19 @@ fn main() {
 </pre> 
 
 <p>
-C strings can be converted to V strings with <code>string(cstring)</code>.
+C strings can be converted to V strings with 
+<code>string(cstring)</code> or
+<code>string(cstring, len)</code>.
+
+<p>
+V uses <code>voidptr</code> for C's <code>void*</code> and 
+ <code>byteptr</code> for C's <code>byte*</code> or <code>char*</code>.
+
+<p>
+To cast <code>voidptr</code> to V references use <code>user := &User(user_void_ptr)</code>.
+
+<p>
+<code>voidptr</code> can also be dereferenced to V structs by casting: <code>user := User(user_void_ptr)</code>.
 
 <p>
 Check out socket.v for an example of calling C code from V:
