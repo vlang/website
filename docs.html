@@ -892,8 +892,8 @@ fn (f Foo) bar() {
 }
 </pre>
 
-If the receiver is immutable like <code>foo</code> in the example above,
-V can pass it by value or by reference internally. The decision is made 
+If a function argument is immutable like <code>foo</code> in the example above,
+V can pass it by value or by reference. The decision is made 
 by the compiler, and the developer doesn't need to think about it.
 
 <p>
@@ -901,21 +901,25 @@ You no longer need to remember whether you should pass the struct by value
 or by reference.
 
 <p>
-However, there's a way to ensure that the struct is always passed by reference by
+There's a way to ensure that the struct is always passed by reference by
 adding <code>&</code>:
 
 <pre>
-fn (f &Foo) bar() {
-	println(f.abc)
+fn (foo &Foo) bar() {
+	println(foo.abc)
 }
 </pre>
+
+<p>
+<code>foo</code> is still immutable and can't be changed. For that, 
+<code>(foo mut Foo)</code> has to be used.
 
 <p>
 &nbsp;
 
 <p>
 In general, V references are similar to Go pointers and C++ references. 
-So a tree structure definition would look like this:
+For example, a tree structure definition would look like this:
 </p>
 
 <pre>
@@ -1019,7 +1023,7 @@ vim mymodule/mymodule.v
 You can have as many .v files in <code>mymodule/</code> as you want.
 
 <p>
-Build it with <code>v -lib ~/code/modules/mymodule</code>.
+Build it with <code>v build module ~/code/modules/mymodule</code>.
 
 <p>
 That's it, you can now use it in your code:
