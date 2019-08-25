@@ -327,13 +327,13 @@ bobby := name + <str>'by'</str> <comment>// + is used to concatenate strings</co
 println(bobby) <comment>// ==> "Bobby" </comment> 
 
 println(bobby.substr(1, 3)) <comment>// ==> "ob" </comment> 
-<comment>// println(bobby[1..3]) // This syntax will most likely replace the substr() method  </comment> 
-
+<comment>
+// This syntax will most likely replace the substr() method
+// println(bobby[1..3]) 
+</comment>
 <key>mut</key> s := <str>'hello '</str>
 s += <str>'world'</str> <comment>// `+=` is used to append to a string</comment>
 println(s) <comment>// "hello world" </comment>
-
-
 </pre> 
 <input class='run' type='button' value='Run'> 
 
@@ -437,6 +437,7 @@ m[<str>'two'</str>] = 2
 println(m[<str>'one'</str>]) <comment>// "1" </comment> 
 println(m[<str>'bad_key'</str>]) <comment>// "0" </comment> 
 println(<str>'bad_key'</str> <key>in</key> m) <comment>// Use `in` to detect whether such key exists</comment> 
+m.delete(<str>'two'</str>)
 
 numbers := { 
 	<str>'one'</str>: 1,
@@ -492,7 +493,8 @@ println(1 <key>in</key> nums) <comment>// ==> true</comment>
 
 It's also useful for writing more clear and compact boolean expressions: 
 
-<pre><key>if</key> parser.token == .plus || parser.token == .minus || parser.token == .div || parser.token == .mult {
+<pre><key>if</key> parser.token == .plus || parser.token == .minus || 
+	parser.token == .div || parser.token == .mult {
 	... 
 } 
 
@@ -644,8 +646,10 @@ Structs are allocated on the stack. To allocate a struct on the heap and get
 a reference to it, use the <code>&</code> prefix:
 
 <pre>
-p := &Point{10, 10}  <comment>// Alternative initialization syntax for structs with 3 fields or fewer</comment>
-println(p.x) <comment>// References have the same syntax for accessing fields </comment> 
+<comment> // Alternative initialization syntax for structs with 3 fields or fewer</comment>
+p := &Point{10, 10}  
+<comment>// References have the same syntax for accessing fields </comment> 
+println(p.x) 
 </pre> 
 
 <p>

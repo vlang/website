@@ -142,16 +142,14 @@ memory_management
 Memory management 
 -----
 fast_comp1
-V compiles ≈1.2 million lines of code per second per CPU core. 
+V compiles between ≈100k and 1.2 million lines of code per second per CPU core. 
 -----
 fast_comp2
-Such speed is achieved by direct machine code generation $wip and a strong modularity. 
+V compiles itself in 0.15 - 0.6 seconds.
 -----
 fast_comp3
-V compiles itself in 0.3 - 0.6 seconds.
 -----
 fast_comp4
-V can also emit C, then the compilation speed drops to ≈100k lines/second/CPU.
 -----
 no_null
 No null 
