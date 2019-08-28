@@ -583,15 +583,12 @@ Small and easy to build compiler
 </h2>
 <p>
 The entire language and its standard library are less than 1 MB.
-V is written in V, and you can build it in 0.4 seconds. 
-<p>
-(By the end of this year this number will drop to ≈0.15 seconds.)
-</p>
+V is written in V, and can be built in 0.15 - 0.6 seconds. 
 <p>
 For comparison:
 </p>
 <table>
-<tr><td></td><td>Space required</td><td>Build time</td></tr>
+<tr><td></td><td>Space required &nbsp;&nbsp;</td><td>Build time</td></tr>
 <tr><td>Go</td><td>525 MB</td><td>1m 33s</td></tr>
 <tr><td>Rust</td><td>30 GB</td><td>45m</td></tr>
 <tr><td>GCC</td><td>8 GB</td><td>50m</td></tr>
@@ -601,13 +598,14 @@ For comparison:
 <tr><td>Swift</td><td>70 GB 
 <a target=_blank class='sidenote' href='https://github.com/apple/swift#getting-started'>[1]</a>
 </td><td>90m</td></tr>
-<tr><td>V</td><td>< 1 MB</td><td>0.4s</td></tr>
+<tr><td>V</td><td>< 1 MB</td><td>0.15s - 0.6s</td></tr>
 </table>
 
 <p>
 <i class='note'>
 
-V has only one dependency: a C compiler. And if you are doing development, you already have a C compiler installed. 
+V has only one dependency: a C compiler. If you are doing development, most
+likely you already have a C compiler installed. 
 <p>
 It's a small dependency, and it's not going to be needed once x64 generation is mature enough.</i> 
 
