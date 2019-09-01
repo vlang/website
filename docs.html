@@ -1251,15 +1251,21 @@ thread. Soon coroutines and the scheduler will be implemented.
 <key>struct</key> User {
 	name string
 	age  int 
-	foo  Foo    [skip]  <comment>// Use `skip` attribute to skip certain fields</comment> 
+
+	<comment>// Use the `skip` attribute to skip certain fields</comment> 
+	foo Foo <str>[skip]  </str>
+
+	<comment>// If the field name is different in JSON, it can be specified</comment> 
+	last_name string <str>[json:lastName]  </str>
 } 
 
-data := <str>'{ "name": "Frodo", "age": 25 }'</str>
+data := <str>'{ "name": "Frodo", "lastName": "Baggins", "age": 25 }'</str>
 user := json.decode(User, data) <key>or</key> {
 	eprintln(<str>'Failed to decode json'</str>)
 	return 
 } 
 println(user.name)
+println(user.last_name)
 println(user.age) 
 </pre> 
 <input class='run' type='button' value='Run'> 
