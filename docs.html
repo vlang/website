@@ -298,12 +298,10 @@ bool
 
 string
 
-i8  i16  i32  i64      i128 (soon)
-u8  u16  u32  u64      u128 (soon) 
+i8    i16  int  i64      i128 (soon)
+byte  u16  u32  u64      u128 (soon) 
 
-byte <comment>// alias for u8 </comment> 
-int  <comment>// alias for i32 </comment> 
-rune <comment>// alias for i32, represents a Unicode code point </comment> 
+rune <comment>// represents a Unicode code point </comment> 
 
 f32 f64
 
@@ -863,7 +861,7 @@ Use <code>user.register()</code> or <code>user = register(user)</code>
 instead of <code>register(mut user)</code>.
 
 <p>
-V makes it easy to return a modifed version of an an object: <br>
+V makes it easy to return a modifed version of an object: <br>
 <pre>
 <key>fn </key>register(u User) User { 
 	return { u | is_registered: true } 
@@ -891,12 +889,16 @@ fn main()  {
 
 <h2 id=refs>References</h2>
 <pre>
-fn (f Foo) bar() {
+fn (foo Foo) bar_method() {
+	...
+}
+
+fn bar_function(foo Foo) {
 	...
 }
 </pre>
 
-If a function argument is immutable like <code>foo</code> in the example above,
+If a function argument is immutable like <code>foo</code> in the examples above,
 V can pass it by value or by reference. The decision is made 
 by the compiler, and the developer doesn't need to think about it.
 

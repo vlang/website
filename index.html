@@ -136,7 +136,7 @@ By the end of this year x64 generation should be mature enough to compile DOOM i
 
 <div class='sep' style='padding:0'></div> 
 
-<div id='lang-links'>
+<div id='lang-links' style='width:100px'>
 </div>
 
 <div id='downloads' style='margin-top:20px; '>
@@ -231,7 +231,7 @@ Or build V from source with a C compiler:
 	<pre class='hello_devs' id=ex1>
 <key>fn</key> main() {
 	areas := [<str>'game'</str>, <str>'web'</str>, <str>'tools'</str>, <str>'science'</str>, <str>'systems'</str>,
-	          <str>'embedded'</str>, <str>'GUI'</str>, <str>'mobile'</str>] 
+	          <str>'embedded'</str>, <str>'drivers'</str>, <str>'GUI'</str>, <str>'mobile'</str>] 
 	<key>for</key> area <key>in</key> areas {
 		println(<str>'Hello, </str>$area <str>developers!'</str>)
 	}
@@ -854,7 +854,8 @@ V can call C code, and calling V code is possible in any language that has C int
 	<pre>
  v
  >>> import http 
- >>> data := http.get('https://vlang.io/utc_now') or { panic(err) }
+ >>> data := http.get('https://vlang.io/utc_now') 
+ 		or { panic(err) }
  >>> data.text
  1565977541
 	</pre> 
