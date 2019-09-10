@@ -64,6 +64,7 @@ $(document).ready(function() {
 <a href='#highfns'>%high_fns</a>
 <a href='#refs'>%references</a> 
 <a href='#consts'>%constants</a> 
+<a href='#println'>%println</a> 
 <a href='#modules'>%modules</a> 
 <a href='#interfaces'>%interfaces</a>
 <a href='#enums'>%enums</a>
@@ -1004,6 +1005,25 @@ println(Blue)
 
 <p> 
 Global variables are not allowed, so this can be really useful. 
+
+<h2 id=println>println</h2>
+<p>
+<code>println</code> is a simple yet powerful builtin function. It can print anything:
+strings, numbers, arrays, maps, structs.
+
+<pre>
+println(1) <comment>// "1"</comment>
+println('hi') <comment>// "hi"</comment>
+println([1,2,3]) <comment>// "[1, 2, 3]"</comment>
+println(User{name:'Bob', age:20}) <comment>// "User{name:'Bob', age:20}"</comment>
+</pre>
+
+If you want to define a custom print value for your type, simply define a
+<code>.str() string</code> method.
+
+<p>
+If you don't want to print a newline, use <code>print()</code> instead.
+
 
 <h2 id=modules>Modules</h2>
 V is a very modular language. Creating reusable modules is encouraged and is
