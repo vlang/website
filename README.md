@@ -1,4 +1,4 @@
-This projects hold the contents for V website hosted at vlang.io.
+This projects hold the contents for V website hosted at [vlang.io](https://vlang.io).
 
 ## Contributing
 
