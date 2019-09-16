@@ -408,7 +408,7 @@ println(<str>'Alex'</str> <key>in</key> names) <comment>// "false"</comment>
 
 <comment>// We can also preallocate a certain amount of elements.</comment> 
 nr_ids := 50
-ids := [0 ; nr_ids] <comment>// This creates an array with 50 zeroes</comment> 
+ids := [0].repeat(50) <comment>// This creates an array with 50 zeroes</comment> 
 <!-- 
 	for i := 0; i < nr_ids; i++ {
 		ids[i] = i <comment>// This is more efficient than </comment> 
@@ -1380,7 +1380,7 @@ fixed  soon.
 an array, use the <code>free()</code> method:
 
 <pre>
-numbers := [0; 1000000] 
+numbers := [0].repeat(1000000) 
 ...
 numbers.free()
 </pre> 
