@@ -12,4 +12,4 @@ Now you're ready to make your changes! Once you're done with your changes, push 
 
 ## License
 
-* The available docs are licensed under the same license as the [V projects](https://github.com/vlang/v).
+This code is free to use under the terms of the MIT license.
