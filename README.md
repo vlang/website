@@ -10,6 +10,10 @@ This projects hold the contents for V website hosted at [vlang.io](https://vlang
 
 Now you're ready to make your changes! Once you're done with your changes, push those changes to your fork and then [submit a **pull request**](https://help.github.com/articles/using-pull-requests/).
 
+#### 3. Locales
+
+If your locale doesn't already exist, create it in the root directory. Please check the [en.tr](https://github.com/vlang/website/blob/master/en.tr) out and make sure to keep your new locale consistent.
+
 ## License
 
 This code is free to use under the terms of the MIT license.
