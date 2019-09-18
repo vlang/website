@@ -1207,8 +1207,7 @@ fn main() {
 The amount of work required to "upgrade" a function to an optional function is minimal:
 you have to add a <code>?</code> to the return type and return an error when something goes wrong. 
 <p>
-If you don't need to return an error, you can simply <code>return none</code>. (TODO: <code>none</code> is 
-not implemented yet). 
+If you don't need to return an error, you can simply <code>return none</code>.  
 <p>
 This is the primary way of handling errors in V. They are still values, like in Go,
 but the advantage is that errors can't be unhandled, and handling them is a lot less verbose.
@@ -1856,7 +1855,7 @@ Or just run it more like a traditional bash script:
 
 <h2 id=keywords>Appendix I: Keywords</h2>
 
-V has 22 keywords: 
+V has 23 keywords: 
 
 <pre>
 break 
@@ -1876,6 +1875,7 @@ interface
 match 
 module 
 mut 
+none
 or 
 pub 
 return
