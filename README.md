@@ -12,7 +12,7 @@ Now you're ready to make your changes! Once you're done with your changes, push 
 
 #### 3. Locales
 
-If your locale doesn't already exist, create it in the root directory. Please check the [en.tr](https://github.com/vlang/website/blob/master/en.tr) out and make sure to keep your new locale consistent.
+If your locale doesn't already exist, create it in the root directory. Please check [en.tr](https://github.com/vlang/website/blob/master/en.tr) out and make sure to keep your new locale consistent.
 
 ## License
 
