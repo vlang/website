@@ -628,9 +628,9 @@ Here <code>i</code> doesn't need to be declared with <code>mut</code> since it's
 os := 'windows' 
 print('V is running on ')
 match os {
-	'darwin' => println('macOS.')
-	'linux' => println('Linux.')
-	else => println(os) 
+	'darwin' => { println('macOS.') }
+	'linux' => { println('Linux.') }
+	else => { println(os) }
 }
 </pre>
 <input class='run' type='button' value='Run'> 
