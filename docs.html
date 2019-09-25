@@ -1335,8 +1335,12 @@ performance.
 
 All test functions have to be placed in <code>*_test.v</code> files and begin with <code>test_</code>. 
 
+<p>
 To run the tests do <code>v hello_test.v</code>. To test an entire module, do
 <code>v test mymodule</code>. 
+
+<p>
+<code>assert</code> keyword can be used outside of tests as well.
 
 
 
@@ -1344,8 +1348,13 @@ To run the tests do <code>v hello_test.v</code>. To test an entire module, do
 
 <h2 id=memory>Memory management</h2>
 
-There's no garbage collection or reference counting. V cleans up what it can
-during compilation. For example:
+(Work in progress)
+
+There's no garbage collection or reference counting. V cleans everything up 
+during compilation. If your V program compiles, it's guaranteed that it's going 
+to be leak free.
+
+For example:
 
 <pre>
 <key>fn</key> draw_text(s string, x, y int) {
@@ -1369,19 +1378,21 @@ In fact, the first two calls won't result in any allocations at all.
 These two strings are small, 
 V will use a preallocated buffer for them.
 
-
 <p>
-For more complex cases manual memory management is required. This will be 
-fixed  soon.
-
-<p>V will detect memory leaks at runtime and report them. To clean up, for example,
-an array, use the <code>free()</code> method:
-
 <pre>
-numbers := [0].repeat(1000000) 
-...
-numbers.free()
-</pre> 
+<key>fn</key> test() []int {
+	number := 7 // stack variable
+	user := User{} // struct allocated on stack
+	numbers := [1, 2, 3] // array allocated on heap, will be freed as the function exits
+	println(number)
+	println(user)
+	println(numbers)
+	numbers2 := [4, 5, 6] // array that's being returned, won't be freed here
+	return numbers2
+}
+</pre>
+
+
 
 <h2 id=defer>Defer</h2>
 A defer statement defers the execution of a block of statements until the surrounding function returns.
