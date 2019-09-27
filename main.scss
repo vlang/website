@@ -64,10 +64,10 @@ p {
 	}
 }
 pre {
-	font-family: "Roboto Mono", "Courier New", Menlo;
+	font-family: "Roboto Mono", "Courier New", Menlo, "DejaVu Sans Mono", Monaco, Courier, monospace;
 	@include mobile {
 		overflow: scroll;
-		font-size: 11px;
+		font-size: 12px;
 	}
 }
 #donate {
