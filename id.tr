@@ -1,0 +1,169 @@
+examples
+Contoh
+-----
+documentation
+Dokumentasi
+-----
+modules
+Modul
+-----
+faq
+FAQ
+-----
+built_in_v
+Bawaan di V
+-----
+the_v_lang
+Bahasa Pemrograman V
+-----
+v_slogan
+Sederhana, cepat, aman, bahasa yang dikompilasi untuk mengembangkan perangkat lunak yang dapat terpelihara
+-----
+includes_binaries 
+termasuk binari untuk 3 sistem
+-----
+install_source 
+Atau instal V dari kode sumber
+-----
+couple_seconds 
+ini akan memakan waktu beberapa detik
+-----
+wip_info
+V adalah bahasa pemrograman yang dikembangkan secara aktif dan masih pada tahap awal.
+Fitur yang sedang dikerjakan akan ditandai dengan $wip
+<br> 
+Segala sesuatu yang ada pada halaman ini dan dokumentasu telah diimplementasikan dan bersumber terbuka.
+<p> 
+Pada saat rilis V 1.0 yang direncanakan pada Desember 2019, tidak akan ada lagi $wip.
+-----
+forum
+Forum
+-----
+blog
+Blog 
+-----
+fast_compilation
+Kompilasi yang cepat
+-----
+safety
+Keamanan
+-----
+performance 
+Performa 
+-----
+simple_language_for_maintainable_programs
+Bahasa pemrograman sederhana untuk membangun program yang dapat dipelihara
+-----
+zero_deps 
+400 KB compiler with zero dependencies
+-----
+c_translation 
+C/C++ translation 
+-----
+introduction
+Perkenalan 
+-----
+comments
+Komentar 
+-----
+functions
+Fungsi 
+-----
+variables
+Variabel 
+-----
+basic_types 
+Basic types 
+-----
+strings
+Strings
+-----
+arrays
+Arrays 
+-----
+maps
+Maps 
+-----
+if
+If 
+-----
+in_op 
+In operator 
+-----
+for_loop 
+For loop 
+-----
+switch 
+Switch 
+-----
+structs 
+Structs 
+-----
+access_mod 
+Access modifiers 
+-----
+methods
+Methods
+-----
+pure_fns 
+Pure functions 
+-----
+high_fns 
+High order functions 
+-----
+constants 
+Constants 
+-----
+modules
+Modules 
+-----
+interfaces
+Interfaces 
+-----
+enums
+Enums 
+-----
+optionals_and_errors 
+Option types & error handling 
+-----
+generics
+Generics 
+-----
+concurrency
+Concurrency 
+-----
+decoding_json 
+Decoding JSON 
+-----
+testing
+Testing 
+-----
+memory_management 
+Memory management 
+-----
+fast_comp1
+V compiles between ≈100k and 1.2 million lines of code per second per CPU core. 
+-----
+fast_comp2
+V compiles itself in 0.15 - 0.6 seconds.
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+No null 
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
