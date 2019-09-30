@@ -15,7 +15,7 @@
 <link href="//fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet"> 
 --> 
 	<title>The V Programming Language</title> 
-	@css "main.css?9"    
+	@css "main.css?10"    
 
 	<script>
 	function showtg() {
@@ -101,6 +101,16 @@ src='/img/telegram.png'><span class='social-text'>Telegram</span></a>
 </div>
 
 <div id='lang-links'> 
+<select onchange='alert(1)'>
+<option onclick='set_lang("en")'> English</option> 
+<option onclick='alert(1) set_lang("de")'> Deutsch</option> 
+<option onclick='set_lang("es")'> Español</option> 
+<option onclick='set_lang("fr")'> Français</option> 
+<option onclick='set_lang("ru")'>Русский </option> 
+<option onclick='set_lang("zh")'>中文 </option> 
+<option onclick='set_lang("ja")'>日本語</option> 
+</select>
+<!--
 <div onclick='set_lang("en")'> English</div> 
 <div onclick='set_lang("de")'> Deutsch</div> 
 <div onclick='set_lang("es")'> Español</div> 
@@ -108,10 +118,13 @@ src='/img/telegram.png'><span class='social-text'>Telegram</span></a>
 <div onclick='set_lang("ru")'>Русский </div> 
 <div onclick='set_lang("zh")'>中文 </div> 
 <div onclick='set_lang("ja")'>日本語</div> 
+-->
+<!--
 <div style='margin-top:10px'>
 <a target=_blank style='font-size:80%; ' href=
 'https://github.com/vlang/v/wiki/Helping-to-translate-the-V-website'>fix an error/<br>help translate</a> 
 </div> 
+-->
  
 </div> 
 </div> 
@@ -140,7 +153,7 @@ src='/img/telegram.png'><span class='social-text'>Telegram</span></a>
 
 	<a target=_blank href='https://github.com/vlang/v' style='font-size:16px;     display: block; margin-top: 17px;'><img 
 style='width:30px; position: relative; top:10px'  
-src='/img/github.png'> github.com/vlang/v <span id='git-btn'>11k</span></a> 
+src='/img/github.png'> github.com/vlang/v <span id='git-btn'>12k</span></a> 
 
 </div>
 
