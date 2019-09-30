@@ -271,7 +271,7 @@ select {
 	@include mobile { display: none; }
 	@include desktop {
 		margin-bottom: -285px;
-		margin-top: 215px;
+		margin-top: 183px;
 	}
 	div {
 		//font-size: 130%;
@@ -513,6 +513,7 @@ video {
 #editors {
 margin-left: 10px ;
 margin-top: 10px;
+font-size: 14px;
 }
 .editor {
 	margin-bottom: 30px;
