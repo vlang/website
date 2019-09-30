@@ -101,14 +101,14 @@ src='/img/telegram.png'><span class='social-text'>Telegram</span></a>
 </div>
 
 <div id='lang-links'> 
-<select onchange='alert(1)'>
-<option onclick='set_lang("en")'> English</option> 
-<option onclick='alert(1) set_lang("de")'> Deutsch</option> 
-<option onclick='set_lang("es")'> Español</option> 
-<option onclick='set_lang("fr")'> Français</option> 
-<option onclick='set_lang("ru")'>Русский </option> 
-<option onclick='set_lang("zh")'>中文 </option> 
-<option onclick='set_lang("ja")'>日本語</option> 
+<select id='select_lang' onchange='var s = document.getElementById("select_lang"); set_lang(s.options[s.selectedIndex].value);'>
+<option value='en'> English</option> 
+<option value="de"> Deutsch</option> 
+<option value="es"> Español</option> 
+<option value="fr"> Français</option> 
+<option value="ru">Русский </option> 
+<option value="zh">中文 </option> 
+<option value="ja">日本語</option> 
 </select>
 <!--
 <div onclick='set_lang("en")'> English</div> 
