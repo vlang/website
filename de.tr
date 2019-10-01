@@ -141,10 +141,18 @@ Testen
 memory_management
 Speicherverwaltung
 -----
+fast_comp1
+V kompiliert zwischen ≈100k und 1.2 Mio. Zeilen Code pro Sekunde und pro CPU-Kern. 
 -----
+fast_comp2
+V kompiliert sich selbst in 0.15 - 0.6 Sekunden.
 -----
+fast_comp3
 -----
+fast_comp4
 -----
+no_null
+Keine null
 -----
 -----
 -----
