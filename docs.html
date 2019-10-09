@@ -203,6 +203,20 @@ unlike C, Python, F#
 This is true for all declarations in V and eliminates the need of header files
 or thinking about the order of files and declarations.
 
+<p>&nbsp;
+
+<pre><key>fn </key>foo() (int, int) {
+	return 2, 3
+}
+
+a, b := foo()
+println(a) // 2
+println(b) // 3
+</pre>
+<p>
+Functions can return multiple values.
+	
+
 
  <h2 id=vars>%variables</h2>
 <pre>
