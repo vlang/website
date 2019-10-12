@@ -1103,14 +1103,34 @@ which module is being called. Especially in large code bases.
 <p>
 Module names should be short, under 10 characters. Circular imports are not allowed.
 
-
 <p>
-
 You can create modules anywhere. 
 
 <p>
 All modules are compiled statically into a single executable.
 
+<p>
+If you want to write a module, that will *automatically* call some
+setup/initialization code when imported (perhaps you want to call 
+some C library functions), write a module *init* function inside the module. 
+
+<p>
+It should look like this:
+<pre>
+<key>fn </key>init() int {
+	// your setup code here ...
+	return 1
+}
+</pre>
+
+<p>
+NB: The init function should NOT be public. It would be called
+automatically by V itself. 
+
+<p>
+If you want the module users to also be able to call an initializer
+function, just name it something different than init(), for example 
+`pub setup()` or pub `init_modulename()` .
 
 
 <h2 id=interfaces>Interfaces</h2> 
