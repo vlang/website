@@ -544,7 +544,11 @@ V has only one looping construct: <code>for</code>.
 <pre>
 numbers := [1, 2, 3, 4, 5]
 <key>for</key> num <key>in</key> numbers {
-	println(num)
+	println(num) <comment>// 12345 </comment>
+}
+<key>for</key> num <key>in</key> 0..5 {
+	print(num) <comment>// 12345 </comment>
+
 }
 names := [<str>'Sam'</str>, <str>'Peter'</str>]
 <key>for</key> i, name <key>in</key> names {
