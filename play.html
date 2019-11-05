@@ -10,7 +10,8 @@
   textarea {
     width: 85% !important;
     /* width: 400px !important; */
-    height: calc(100vh - 300px); /* 500px; */
+    height: calc(100vh - 300px);
+    /* 500px; */
     font-family: "Roboto Mono";
     font-size: 13px;
     /* margin-top:20px; */
@@ -19,6 +20,7 @@
     outline: none;
     background-color: #f5f5f5;
   }
+
   /* .menu {
     height: auto;
   } */
@@ -26,16 +28,20 @@
     width: 100px;
     font-size: 20px;
   }
+
   .controls {
     padding-top: 20px;
     height: 40px;
   }
+
   .example {
     display: none;
   }
+
   .center {
     max-width: 1070px !important;
   }
+
   #status {
     color: #777;
     font-size: 80%;
@@ -53,6 +59,7 @@
     margin-bottom: 10px;
     width: 100%;
   }
+
   .lines {
     /* position:relative; */
     padding-top: 5px;
@@ -62,6 +69,7 @@
     text-align: right;
     background-color: #f5f5f5;
   }
+
   /* .lines div {} */
 
   @media (max-width: 1500px) {
@@ -86,7 +94,7 @@
       http = "http://";
     }
     console.log(http + ip + "/compile");
-    $.post(http + ip + "/compile", { body: body }, function(resp) {
+    $.post(http + ip + "/compile", { body: body }, function (resp) {
       console.log(resp);
       var vals = resp.split("==vmft:");
       console.log(vals);
@@ -107,7 +115,7 @@
     $("textarea").val(text);
   }
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     $("a:contains(Playground)").css("font-weight", "500");
     $("#code").linedtextarea();
 
@@ -129,29 +137,19 @@
 
 <div class="center">
   <p>
-    <!-- 
-Due to inconsitencies between the documentation and this pre-alpha build,
-the playground has been disabled until a more stable release and an updated documentation. 
--->
+    <!-- Due to inconsitencies between the documentation and this pre-alpha build,
+    the playground has been disabled until a more stable release and an updated documentation. -->
   </p>
-
   <p></p>
 </div>
 
 <div class="center">
   <div class="controls">
-    <!--
-<button id=btnRun onclick='run()' >Run</button> 
-<span style='font-size:80%; margin-left:10px; color:#444;'> 
-(or press Ctrl + Enter) 
--->
-    <!--
-WebAssembly playground coming today
--->
-    V.js playground will be out soon
-    <span style="float:right; font-size:80%;line-height:40px"
->Your code will be formatted automatically</span
-    >
+    <button id=btnRun onclick='run()'>Run</button>
+    <span style='font-size:80%; margin-left:10px; color:#444;'> (or press Ctrl + Enter)
+      <!-- WebAssembly playground coming today -->
+      V.js playground will be out soon
+      <span style="float:right; font-size:80%;line-height:40px">Your code will be formatted automatically</span>
   </div>
 
   <div style="float:right; width:250px; margin-top:20px" class="buttons">
@@ -163,53 +161,43 @@ WebAssembly playground coming today
     <button onclick="select_ex(5)">Advanced consts</button>
     <button onclick="select_ex(6)">Basic operator overloading</button>
     <button onclick="select_ex(7)">An updated copy of a struct</button>
-
     <br />
     <a target="_blank" href="/docs">Check out the docs for more examples</a>
   </div>
 
   <div style="height:calc(100vh - 295px); max-height:calc(100vh - 295px);">
-    <textarea
-      id="code"
-      autocorrect="off"
-      autocomplete="off"
-      autocapitalize="off"
-      spellcheck="false"
-    >
-fn main() {
-	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI', 'mobile']
+    <textarea id="code" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false">
+      fn main() {
+        areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI', 'mobile']
         for area in areas {
-                println('Hello, $area developers!')
+          println('Hello, $area developers!')
         }
-} 
-</textarea
-    >
+      }
+    </textarea>
   </div>
-<pre class="example" id="ex0">
-fn main() { 
-	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI', 'mobile']
-        for area in areas {
-                println('Hello, $area developers!')
-        }
-} 
-</pre
-  >
+  <pre class="example" id="ex0">
+    fn main() { 
+      areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI', 'mobile']
+      for area in areas {
+        println('Hello, $area developers!')
+      }
+    }
+  </pre>
   <pre class="example" id="ex1">
-fn fib(n int) int {
-        if n <= 1 {
-                return n
-        }
-        return fib(n - 1) + fib(n - 2)
-}
-
-fn main() {
-        for i := 0; i < 10; i++ {
-                println(fib(i))
-        }
-}
-</pre
-  >
-  <pre class="example" id="ex2">
+    fn fib(n int) int {
+      if n <= 1 {
+        return n
+      }
+      return fib(n - 1) + fib(n - 2)
+    }
+    
+    fn main() {
+      for i := 0; i < 10; i++ {
+        println(fib(i))
+      }
+    }
+  </pre>
+<pre class="example" id="ex2">
 const (
 	MAX = 15 
 )
@@ -237,10 +225,9 @@ fn main() {
 		println(fib.calc(i))
 	}
 }
-</pre
-  >
+</pre>
 
-  <pre class="example" id="ex3">
+<pre class="example" id="ex3">
 import json
 
 struct User {
@@ -280,10 +267,9 @@ fn (u User) can_register() bool {
 fn (u mut User) register() {
 	u.is_registered = true
 }
-</pre
-  >
+</pre>
 
-  <pre class="example" id="ex4">
+<pre class="example" id="ex4">
 struct User {
 	id   int
 	name string
@@ -320,10 +306,9 @@ fn main() {
 	println(user.id) // ==> '10'
 	println(user.name) // ==> 'Charles'
 }
-</pre
-  >
+</pre>
 
-  <pre class="example" id="ex5">
+<pre class="example" id="ex5">
 struct Color {
 	r int
 	g int
@@ -349,10 +334,9 @@ fn main() {
 	println(RED)
   println(BLUE)
 }  
-</pre
-  >
+</pre>
 
-  <pre class="example" id="ex6">
+<pre class="example" id="ex6">
 struct Vec {
 	x int
 	y int
@@ -382,10 +366,9 @@ fn main() {
 	println(a + b) 
 	println(a - b) 
 }
-</pre
-  >
+</pre>
 
-  <pre class="example" id="ex7">
+<pre class="example" id="ex7">
 struct User {
 	name string
 	age  int	 
@@ -399,17 +382,12 @@ fn main() {
 	println(user2.name) 
 	println(user2.age)
 } 
-</pre
-  >
+</pre>
 
-<pre class="output"> 
-This is an alpha stage, please report all issues via GitHub. 
-
-<!--
-For security reasons, imports are temporarily disabled, the size of the program
-is limited, and your program can't run for more than 1 second. 
--->
-
+<pre class="output">
+  This is an alpha stage, please report all issues via GitHub. 
+  <!-- For security reasons, imports are temporarily disabled, the size of the program
+  is limited, and your program can't run for more than 1 second.  -->
 </pre>
 <span id="status"></span>
 </div>
