@@ -79,6 +79,7 @@
   }
 </style>
 
+
 <script src="/js/jquery.min.js"></script>
 <script src="/js/jquery-linedtextarea.js"></script>
 
@@ -239,7 +240,7 @@ mut:
 
 fn main() {
 	s := '[{ "name":"Frodo", "age":25}, {"name":"Bobby", "age":10}]'
-	users := json.decode( []User, s) or {
+	mut users := json.decode( []User, s) or {
 		eprintln('Failed to parse json')
 		return 
 	}
@@ -285,7 +286,7 @@ fn new_repo() Repo {
 	}
 }
 
-fn (r Repo) find_user_by_id(id int) User? {
+fn (r Repo) find_user_by_id(id int) ?User {
 	for user in r.users {
 		if user.id == id {
 			// V automatically wraps this into an option type
@@ -381,7 +382,7 @@ fn main() {
 	println(user1.age)
 	println(user2.name) 
 	println(user2.age)
-} 
+}
 </pre>
 
 <pre class="output">

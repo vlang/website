@@ -44,6 +44,7 @@ p {
 		//width: 31%;
 		display: inline-block;
 		text-align: center;
+		margin-right:30px;
 		div {
 			font-weight: 300;
 		}
@@ -64,10 +65,10 @@ p {
 	}
 }
 pre {
-	font-family: "Roboto Mono", "Courier New", Menlo;
+	font-family: "Roboto Mono", "Courier New", Menlo, "DejaVu Sans Mono", Monaco, Courier, monospace;
 	@include mobile {
 		overflow: scroll;
-		font-size: 11px;
+		font-size: 12px;
 	}
 }
 #donate {
@@ -271,7 +272,7 @@ select {
 	@include mobile { display: none; }
 	@include desktop {
 		margin-bottom: -285px;
-		margin-top: 215px;
+		margin-top: 183px;
 	}
 	div {
 		//font-size: 130%;
@@ -513,6 +514,7 @@ video {
 #editors {
 margin-left: 10px ;
 margin-top: 10px;
+font-size: 14px;
 }
 .editor {
 	margin-bottom: 30px;
