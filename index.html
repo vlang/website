@@ -141,21 +141,19 @@ By the end of this year x64 generation should be mature enough to compile DOOM i
 
 
 <div id='downloads' style='margin-top:20px; '>
-<!--
 	<div class='v-link'> 
-			<a href='#'>Linux</a>
+			<a href='https://github.com/vlang/v/releases/download/0.1.21/v_linux.zip'>Linux</a>
 
-			<div>180 KB</div>
+			<div>2.5 MB</div>
 	</div>
 	<div class='v-link'> 
-			<a href='https://github.com/vlang/v/releases/download/0.1.21/v_macos.zip'>macOS</a>
-			<div>201 KB</div>
+			<a href='#'>macOS</a>
+			<div>soon</div>
 	</div>
 	<div class='v-link'> 
 			<a href='#'>Windows</a>
-			<div>210 KB</div>
+			<div>soon</div>
 	</div>
-	-->
 
 <!--
 	<div class='v-link'> 
@@ -183,9 +181,11 @@ By the end of this year x64 generation should be mature enough to compile DOOM i
 	<div style='font-size:80%; font-weight: 300'>
 		%couple_seconds 
 	</div>
+	<!--
 <pre style='text-align:center'>git clone https://github.com/vlang/v
 cd v
 make</pre>
+-->
 
 		<div>
 			<img src='/img/linux.png' width=31 title='Linux'>
@@ -216,7 +216,7 @@ Or build V from source with a C compiler:
 
 <div id='changelog'>
 <a target=_blank href='https://github.com/vlang/v/blob/master/CHANGELOG.md'
->V 0.1.20 Changelog</a>
+>V 0.1.22 Changelog</a>
 </div>
 
 <div class='sep' style='padding:0'></div> 
@@ -348,7 +348,8 @@ nr_customers := db.select count from Customer
 println('number of all customers: $nr_customers')
 
 <comment>// V syntax can be used to build queries</comment>
-uk_customers = db.select from Customer where country == 'uk' && nr_orders > 0
+uk_customers = db.select from Customer where
+	country == 'ukk' && nr_orders > 0
 for customer in uk_customers {
 	println('$customer.id - $customer.name')
 }
@@ -503,7 +504,10 @@ fn main() {
 	<div class='row'>
 <div class='feature first'>
 	<br> 
-	{{ raw (T "wip_info") }} 
+	<i class='note'>
+	V is an actively developed language at an early stage.
+	It will stabilize by the time of the 0.2 release planned for November 2019.
+	</i>
 </div>
 	</div>
 </div>
@@ -603,7 +607,7 @@ Small and easy to build compiler
 </h2>
 <p>
 The entire language and its standard library are less than 1 MB.
-V is written in V, and can be built in 0.15 - 0.6 seconds. 
+V is written in V, and can be built in 0.09 - 0.6 seconds. 
 <p>
 For comparison:
 </p>
@@ -657,8 +661,8 @@ row {
 <div class='center'>
 
 <div class='feature first'>
-	<h2 id=ctranslation>%c_translation</h2>
-	V can translate your entire C or C++ <span class='wip'>wip</span> project and offer you the safety, simplicity, and up to 400x compilation speed-up.
+	<h2 id=ctranslation>C translation</h2>
+	V can translate your entire C <span class='wip'>wip</span> project and offer you the safety, simplicity, and 10-25x compilation speed-up.
 	<br>
 	<pre style='float:left; font-size:80%;'>
 std::vector&lt;std::string> s;
@@ -686,8 +690,11 @@ std::cout << s.size(); </pre>
 
 <p>
 <i class='note'>
+C++ to V translation is at an early stage.
+<!--
 Almost the entire C standard is supported right now, but C++ translation is at an early stage. The example above works,
 but more complicated code won't. C++ is a very complex language, hopefully the project will be finished by the end of this year.
+-->
 </i>
 
 
@@ -750,7 +757,7 @@ precious minutes of your development time.
 <div class='feature first'>
 <h2>Powerful graphics libraries</h2> 
 Cross-platform drawing library built on top of GDI+/Cocoa Drawing, and an OpenGL based graphics library
-for more complex 2D/3D applications, that also has the following features:
+for more complex 2D/3D applications, that will also have the following features:
 <br> 
 <br> 
 - Loading complex 3D objects with textures <span class='wip'>wip</span> <br> 
@@ -883,15 +890,14 @@ V can call C code, and calling V code is possible in any language that has C int
 
 
 <div class='feature'>
-	<h2>V Script <span class='wip'>wip</span></h2>
+	<h2>V Script</h2>
 	<pre>
-#v 
 for file in ls('build/') {
 	rm(file) 
 }  
-mv('*.exe', 'build/') 
+mv('v.exe', 'build/') 
 
-v run deploy.v 
+v run deploy.vsh 
 	</pre> 
 <a target=_blank href='/docs#bash'>Read more about V script</a> 
 </div>
@@ -943,12 +949,14 @@ nr_customers := db.select count from Customer
 println('number of all customers: $nr_customers')
 
 <comment>// V syntax can be used to build queries</comment>
-uk_customers = db.select from Customer where country == 'uk' && nr_orders > 0
+uk_customers = db.select from Customer where
+	country == 'uk' && nr_orders > 0
 for customer in uk_customers {
 	println('$customer.id - $customer.name')
 }
 
-<comment>// by adding `limit 1` we tell V that there will be only one object</comment>
+<comment>// by adding `limit 1` we tell V that there will be
+// only one object</comment>
 customer = db.select from Customer where id == 1 limit 1
 println(customer.name)
 

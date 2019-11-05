@@ -3,7 +3,7 @@
 
 <style>
 
-#social, #sub-form, #main-header {
+#social, #sub-form, #main-header, #logo {
 display: none;
 }
 
@@ -28,7 +28,7 @@ width: 100px;
 font-size:20px; 
 } 
 .controls {
-padding-top:20px ; 
+//padding-top:20px ; 
 height:40px; 
 } 
 .example {
@@ -151,16 +151,16 @@ the playground has been disabled until a more stable release and an updated docu
 </div> 
 <div class='center'>
 <div class='controls'> 
-<!--
 <button id=btnRun onclick='run()' >Run</button> 
 <span style='font-size:80%; margin-left:10px; color:#444;'> 
-(or press Ctrl + Enter) 
--->
+(<!--or press -->Ctrl + Enter) 
 <!--
 WebAssembly playground coming today
 -->
+<!--
 V.js playground will be out soon
 <span style='float:right; font-size:80%;line-height:40px'>Your code will be formatted automatically</span> 
+-->
 </div> 
 
 
@@ -229,7 +229,7 @@ fn (fib mut Fib) calc(n int) int {
 
 fn main() {
         mut fib := Fib {
-                nums: [0; MAX]
+                nums: [0].repeat(MAX)
         }
         for i := 0; i < MAX; i++ {
                 println(fib.calc(i))
@@ -248,7 +248,7 @@ mut:
 
 fn main() {
 	s := '[{ "name":"Frodo", "age":25}, {"name":"Bobby", "age":10}]'
-	users := json.decode( []User, s) or {
+	mut users := json.decode( []User, s) or {
 		eprintln('Failed to parse json')
 		return 
 	}
@@ -293,7 +293,7 @@ fn new_repo() Repo {
 	}
 }
 
-fn (r Repo) find_user_by_id(id int) User? {
+fn (r Repo) find_user_by_id(id int) ?User {
 	for user in r.users {
 		if user.id == id {
 			// V automatically wraps this into an option type
@@ -393,7 +393,7 @@ fn main() {
 </pre> 
 
 <pre class='output'> 
-This is an alpha stage, please report all issues via GitHub. 
+This is an alpha stage, please <a style='font-family:Roboto-Mono,Menlo,Monospace,Courier New;' target=_blank href='https://github.com/vlang/v/issues/new?assignees=&labels=bug&template=bug_report.md&title='>report all issues via GitHub</a>. 
 
 <!--
 For security reasons, imports are temporarily disabled, the size of the program

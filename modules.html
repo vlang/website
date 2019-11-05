@@ -1,0 +1,130 @@
+@t header
+
+<style>
+.pkg-link {
+width: 150px; 
+float: left; 
+clear: left; 
+margin-top: 10px; 
+} 
+.pkg-desc {
+margin-top: 10px; 
+float:left; 
+} 
+
+.pkg-link2 {
+width: 110px; 
+float: left; 
+clear: left; 
+margin-top: 10px; 
+padding-left: 40px;
+} 
+#social, #sub-form, #main-header, #logo {
+display: none;
+}
+
+
+</style> 
+
+<script  src="/js/jquery.min.js"></script> 
+<script>
+$(document).ready(function() { 
+	$("a:contains(Modules)").css('font-weight', '500')
+	$('pkg-link > a').attr('href', '#')
+})
+</script> 
+
+<div class='center'>
+
+<!-- 
+<h1>Modules Documentation</h1> 
+--> 
+
+<p>
+This page is work in progress, none of the links work.
+
+<p>
+For now you can generate module docs locally:
+
+
+
+
+<pre>
+v doc os
+v doc http
+...
+</pre>
+
+<br> 
+
+<div class='pkg-link'> <a href='/pkg/builtin'>builtin</a></div>
+<div class='pkg-desc'> V's predeclared functions and types (including strings, arrays, maps) </div>  
+
+<br><br> 
+
+<div class='pkg-link'> <a href='/pkg/benchmark'>benchmark</a></div>
+<div class='pkg-desc'> Simple benchmarking</div> 
+
+
+
+<div class='pkg-link'> <a href='/pkg/bitfield'>bitfield</a></div>
+<div class='pkg-desc'> Manipulating array of bits</div> 
+
+<div class='pkg-link'> <a href='/pkg/compiler'>compiler</a></div>
+<div class='pkg-desc'> V compiler as a module</div> 
+
+<!----------------------------------------------->
+
+<div class='pkg-link'> <a href='/pkg/crypto'>crypto</a></div>
+
+<div class='pkg-link2'> <a href='/pkg/crypto.aes'>aes</a></div>
+<div class='pkg-desc'> AES encryption (formerly Rijndael), as defined in U.S. Federal Information Processing Standards Publication 197</div> 
+
+<div class='pkg-link2'> <a href='/pkg/crypto.cipher'>cipher</a></div>
+<div class='pkg-desc'> Standard block cipher modes that can be wrapped around low-level block cipher implementations</div>
+<!----------------------------------------------->
+
+<div class='pkg-link'> <a href='/pkg/base64'>encoding</a></div>
+
+<div class='pkg-link2'> <a href='/pkg/base64'>base64</a></div>
+<div class='pkg-desc'> Encoding and decoding of base64 as  defined in RFC 4648 </div> 
+<div class='pkg-link2'> <a href='/pkg/encoding.binary'>binary</a></div>
+<div class='pkg-desc'> Simple translation between numbers and byte sequences and encoding and decoding of varints</div> 
+
+<div class='pkg-link2'> <a href='/pkg/encoding.csv'>csv</a></div>
+<div class='pkg-desc'> Reads and writes comma-separated values (CSV) files</div> 
+
+<div class='pkg-link'> <a href='/pkg/gg'>gg</a></div>
+<div class='pkg-desc'> Hardware accelerated Graphics library using OpenGL (DirectX, Vulkan, Metal support soon) </div> 
+
+
+<div class='pkg-link'> <a href='/pkg/gl'>gl</a></div>
+<div class='pkg-desc'> OpenGL wrapper </div> 
+
+<div class='pkg-link'> <a href='/pkg/gx'>gx</a></div>
+<div class='pkg-desc'> Constants and helpers for drawing </div> 
+
+
+<div class='pkg-link'> <a href='/pkg/json'>json</a></div>
+<div class='pkg-desc'>  Encoding and decoding of JSON as defined in RFC 7159 </div> 
+
+
+<div class='pkg-link'> <a href='/pkg/math'>math</a></div>
+<div class='pkg-desc'> Basic constants and mathematical functions </div> 
+
+<div class='pkg-link'> <a href='/pkg/os'>os</a></div>
+<div class='pkg-desc'> Platform-independent interface to operating system functionality </div> 
+
+<div class='pkg-link'> <a href='/pkg/rand'>rand</a></div>
+<div class='pkg-desc'> Pseudo-random number generators </div> 
+
+<div class='pkg-link'> <a href='/pkg/time'>time</a></div>
+<div class='pkg-desc'> Measuring and displaying time </div> 
+
+<div class='pkg-link'> <a href='/pkg/ui'>ui</a></div>
+<div class='pkg-desc'> Cross-platform UI library </div> 
+
+
+
+</div> 
+
