@@ -1442,9 +1442,10 @@ To run the tests do <code>v hello_test.v</code>. To test an entire module, do
 
 (Work in progress)
 
-There's no garbage collection or reference counting. V cleans everything up
-during compilation. If your V program compiles, it's guaranteed that it's going
-to be leak free.
+There's no garbage collection and (in most cases) no reference counting. V cleans everything up
+during compilation using lifetime analysis (which <a href="https://aardappel.github.io/lobster/memory_management.html">
+eliminates 95% of runtime reference count operations</a>).
+If your V program compiles, it's guaranteed that it's going to be leak free.
 
 For example:
 
