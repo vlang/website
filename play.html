@@ -188,7 +188,7 @@ V.js playground will be out soon
 </div> 
 
 <div style='height:calc(100vh - 295px); max-height:calc(100vh - 295px);'> 
-<textarea id='code' autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false">fn main() {
+<textarea id='code' autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">fn main() {
 	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI', 'mobile']
         for area in areas {
                 println('Hello, $area developers!')
@@ -325,7 +325,9 @@ fn main() {
 }
 </pre> 
 
-<pre class='example' id=ex5>struct Color {
+<pre class='example' id=ex5>import strings
+
+struct Color {
         r int
         g int
         b int
@@ -402,6 +404,9 @@ fn main() {
 </pre> 
 
 <pre class='output'> 
+The playground is running the latest version of V, updated multiple times per
+day.
+
 This is an alpha stage, please <a style='font-family:Roboto-Mono,Menlo,Monospace,Courier New;' target=_blank href='https://github.com/vlang/v/issues/new?assignees=&labels=bug&template=bug_report.md&title='>report all issues via GitHub</a>. 
 
 <!--
