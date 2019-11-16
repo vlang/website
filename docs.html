@@ -715,6 +715,27 @@ s := match number {
 
 A match statement is a shorter way to write a sequence of <code>if - else</code> statements. When a matching branch is found, the following statement block will be run, and the final expression will be returned. The else branch will be evaluated when no other branches match.
 
+<pre>
+enum Color {
+	red
+	blue
+	green
+}
+
+fn is_red_or_blue(c Color) bool {
+	return match c {
+		.red { true }
+		.blue { true }
+		else { false }
+	}
+}
+</pre>
+<input class='run' type='button' value='Run'>
+
+<p>
+A match statement can also be used to branch on the variants of an <code>enum</code> by using the shorthand <code>.variant_here</code> syntax.
+
+
 <h2 id=structs>%structs</h2>
 
 <pre>
