@@ -211,10 +211,14 @@ or thinking about the order of files and declarations.
 	return 2, 3
 }
 
-a, b := foo()
-println(a) // 2
-println(b) // 3
+fn main() {
+	a, b := foo()
+	println(a) // 2
+	println(b) // 3
+}
 </pre>
+<input class='run' type='button' value='Run'>
+
 <p>
 Functions can return multiple values.
 
@@ -503,7 +507,9 @@ words := ['hello', 'world']
 upper := words.map(it.to_upper())
 println(upper) // ['HELLO', 'WORLD']
 </pre>
+<input class='run' type='button' value='Run'>
 
+<p>
 <code>it</code> is a special variable that refers to an element in filter/map 
 methods.
 
@@ -525,6 +531,7 @@ numbers := {
 	<str>'two'</str>: 2,
 }
 </pre>
+<input class='run' type='button' value='Run'>
 
 <h2 id=if>If</h2>
 <pre>
@@ -561,6 +568,7 @@ s := <key>if</key> num % 2 == 0 {
 }
 println(s) <comment>// "odd"</comment>
 </pre>
+<input class='run' type='button' value='Run'>
 
 
 
@@ -574,7 +582,9 @@ println(1 <key>in</key> nums) <comment>// true</comment>
 m := {'one': 1, 'two': 2}
 println('one' <key>in</key> m) <comment>// true</comment>
 </pre>
+<input class='run' type='button' value='Run'>
 
+<p>
 It's also useful for writing more clear and compact boolean expressions:
 
 <pre><key>if</key> parser.token == .plus || parser.token == .minus ||
@@ -626,6 +636,7 @@ you have to use indexing:
 	numbers[i] = 0
 }
 </pre>
+<input class='run' type='button' value='Run'>
 
 <p>&nbsp;</p>
 
@@ -702,14 +713,13 @@ match os {
 	else     { println(os) }
 }
 
+number := 2
 s := match number {
 	1    { 'one' }
 	2    { 'two' }
-	else { 
-		println('this works too')
-		'many' 
-	}
+	else { 'many' }
 }
+println(s)
 </pre>
 <input class='run' type='button' value='Run'>
 <p>
@@ -724,11 +734,14 @@ A match statement is a shorter way to write a sequence of <code>if - else</code>
 	y int
 }
 
-p := Point{
-	x: 10
-	y: 20
+fn main() {
+	p := Point{
+		x: 10
+		y: 20
+	}
+
+	println(p.x) <comment>// Struct fields are accessed using a dot</comment>
 }
-println(p.x) <comment>// Struct fields are accessed using a dot</comment>
 </pre>
 <input class='run' type='button' value='Run'>
 
@@ -857,11 +870,13 @@ struct User {
 	return u.age > 16
 }
 
-user := User{age: 10}
-println(user.can_register()) <comment>// "false" </comment>
+fn main() {
+	user := User{age: 10}
+	println(user.can_register()) <comment>// "false" </comment>
 
-user2 := User{age: 20}
-println(user2.can_register()) <comment>// "true" </comment>
+	user2 := User{age: 20}
+	println(user2.can_register()) <comment>// "true" </comment>
+}
 </pre>
 <input class='run' type='button' value='Run'>
 
@@ -905,10 +920,12 @@ by using the same keyword <code>mut</code>:
 	u.is_registered = true
 }
 
-<key>mut</key> user := User{}
-println(user.is_registered) <comment>// "false" </comment>
-user.register()
-println(user.is_registered) <comment>// "true" </comment>
+fn main() {
+	<key>mut</key> user := User{}
+	println(user.is_registered) <comment>// "false" </comment>
+	user.register()
+	println(user.is_registered) <comment>// "true" </comment>
+}
 </pre>
 <input class='run' type='button' value='Run'>
 
@@ -925,10 +942,13 @@ The same works with non-receiver arguments:
 	}
 }
 
-<key>mut</key> nums := [1, 2, 3]
-multiply_by_2(<key>mut</key> nums)
-println(nums) <comment>// "[2, 4, 6]"
+fn main() {
+	<key>mut</key> nums := [1, 2, 3]
+	multiply_by_2(<key>mut</key> nums)
+	println(nums) <comment>// "[2, 4, 6]"
+}
 </pre>
+<input class='run' type='button' value='Run'>
 
 <p>
 Note, that you have to add <code>mut</code> before <code>nums</code> when calling this function. This makes
@@ -980,6 +1000,7 @@ fn main()  {
         println(run(5, sqr)) <comment>// "25"</comment>
 }
 </pre>
+<input class='run' type='button' value='Run'>
 
 
 <h2 id=refs>References</h2>
@@ -1042,8 +1063,10 @@ struct Node&lt;T> {
 	world = <str>'世界'</str>
 )
 
-println(pi)
-println(world)
+fn main() {
+	println(pi)
+	println(world)
+}
 </pre>
 <input class='run' type='button' value='Run'>
 
@@ -1075,9 +1098,11 @@ V constants are more flexible than in most languages. You can assign more comple
         blue = rgb(0, 0, 255)
 )
 
-println(numbers)
-println(red)
-println(blue)
+fn main() {
+	println(numbers)
+	println(red)
+	println(blue)
+}
 </pre>
 <input class='run' type='button' value='Run'>
 
@@ -1108,12 +1133,19 @@ println(<str>'Top cities: $top_cities.filter(.usa)'</str>)
 strings, numbers, arrays, maps, structs.
 
 <pre>
+struct User {
+	name string
+	age int
+}
+
 println(1) <comment>// "1"</comment>
 println('hi') <comment>// "hi"</comment>
 println([1,2,3]) <comment>// "[1, 2, 3]"</comment>
 println(User{name:'Bob', age:20}) <comment>// "User{name:'Bob', age:20}"</comment>
 </pre>
+<input class='run' type='button' value='Run'>
 
+<p>
 If you want to define a custom print value for your type, simply define a
 <code>.str() string</code> method.
 
@@ -1245,10 +1277,12 @@ is_green := color == .green
 	red green blue
 }
 
-<key>mut</key> color := Color.red
-<comment>// V knows that `color` is a `Color`. No need to use `color = Color.green` here.</comment>
-color = .green
-println(color) <comment>// "1"  TODO: print "green"? </comment>
+fn main() {
+	<key>mut</key> color := Color.red
+	<comment>// V knows that `color` is a `Color`. No need to use `color = Color.green` here.</comment>
+	color = .green
+	println(color) <comment>// "1"  TODO: print "green"? </comment>
+}
 </pre>
 <input class='run' type='button' value='Run'>
 
@@ -1376,6 +1410,8 @@ thread. Soon coroutines and the scheduler will be implemented.
 <pre>
 <key>import</key> json
 
+<key>struct</key> Foo {}
+
 <key>struct</key> User {
 	name string
 	age  int
@@ -1387,14 +1423,16 @@ thread. Soon coroutines and the scheduler will be implemented.
 	last_name string <str>[json:lastName]  </str>
 }
 
-data := <str>'{ "name": "Frodo", "lastName": "Baggins", "age": 25 }'</str>
-user := json.decode(User, data) <key>or</key> {
-	eprintln(<str>'Failed to decode json'</str>)
-	return
+fn main() {
+	data := <str>'{ "name": "Frodo", "lastName": "Baggins", "age": 25 }'</str>
+	user := json.decode(User, data) <key>or</key> {
+		eprintln(<str>'Failed to decode json'</str>)
+		return
+	}
+	println(user.name)
+	println(user.last_name)
+	println(user.age)
 }
-println(user.name)
-println(user.last_name)
-println(user.age)
 </pre>
 <input class='run' type='button' value='Run'>
 
