@@ -793,6 +793,21 @@ button.set_pos(x, y)
 button.widget.set_pos(x,y)
 </pre>
 
+<p> &nbsp;
+<p>
+Structs can have default values:
+<pre>
+struct Foo {
+  a int
+  b int = 10
+}
+
+foo := Foo{}
+assert foo.a == 0
+assert foo.b == 10
+</pre>
+
+
 <h2 id=mod>Access modifiers</h2>
 <p>
 Struct fields are private and immutable by default (making structs immutable as well).
@@ -1514,7 +1529,7 @@ V will use a preallocated buffer for them.
 
 
 <h2 id=defer>Defer</h2>
-A defer statement defers the execution of a block of statements until the surrounding function returns.
+A defer statement defers the execution of a block of statements until the end of scope or until surrounding function returns.
 
 <pre>
 <key>fn</key> read_log() {
