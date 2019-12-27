@@ -36,9 +36,9 @@ code {
 $(document).ready(function() {
 	$('.run').click(function() {
 		var text = $(this).prev('pre').text()
-		if (text.indexOf('fn main') == -1) {
-			text = 'fn main() {\n' + text + '\n}'
-		}
+		//if (text.indexOf('fn main') == -1) {
+			//text = 'fn main() {\n' + text + '\n}'
+		//}
 		localStorage.setItem('play', text)
 		window.open('/play')
 	});
@@ -1269,27 +1269,20 @@ V interfaces are very efficient. There's no dynamic dispatch.
 -->
 
 <h2 id=enums>Enums</h2>
-<!--
-<pre>
-enum Color {
-	red, green, blue
-}
-
-mut color := Color.red
-println(color) // "red"
-color = .green
-is_green := color == .green
-</pre>
--->
 <pre>
 <key>enum</key> Color {
 	red green blue
 }
 
-<key>mut</key> color := Color.red
-<comment>// V knows that `color` is a `Color`. No need to use `color = Color.green` here.</comment>
-color = .green
-println(color) <comment>// "1"  TODO: print "green"? </comment>
+fn main() {
+	<key>mut</key> color := Color.red
+	<comment>// V knows that `color` is a `Color`. No need to use `color = Color.green` here.</comment>
+	color = .green
+	println(color) <comment>// "1"  TODO: print "green"? </comment>
+	if color == .green {
+		println("it's green")
+	}
+}
 </pre>
 <input class='run' type='button' value='Run'>
 
