@@ -109,6 +109,9 @@ pure_fns
 high_fns 
 高阶函数 
 -----
+references
+引用
+-----
 constants 
 常量 
 -----
@@ -139,6 +142,79 @@ testing
 memory_management 
 内存管理 
 -----
+defer
+延迟执行
 -----
+orm
+对象关系表映射
+-----
+vfmt
+格式化
+-----
+writing_documentation
+书写文档
+-----
+advanced_topics
+高级特性
+-----
+calling_c_func_from_v
+从V语言调用C函数
+-----
+compile_time_if
+条件编译
+-----
+refl_via_codegen
+通过codegen的反射
+-----
+limited_operator_overloading
+有限制的算符重载
+-----
+inline_assembly
+内联汇编
+-----
+trans_cxx_to_v
+把C/C++代码转成V
+-----
+hot_code_reloading
+代码热替换
+-----
+cross_compile
+交叉编译
+-----
+cross_scripts_in_v
+跨平台的V脚本Cross-platform shell scripts in V
+-----
+appd_1_keywords
+附录 I: 关键字
+-----
+appd_2_operators
+附录 II: 操作符
+-----
+intro_details
+V语言是一种静态类型的编译语言。设计用于构建可维护软件的。
 
+<p>
+它和Go语言很类似，并且受到了Oberon, Rust和Swift语言的影响。
 
+<p>
+V是非常简单的语言. 阅读本文档将花费您大约半小时, 阅读后您将学到几乎所有的语言特性。
+
+<p>
+尽管它很简单, 但是它可以给开发者很多的能力。通过其它语言可以做的事，通过V一样可以做到。
+-----
+fn_intro
+<p>
+函数通过<code>fn</code>声明。返回值的类型在函数名之后。在<code>main</code>函数这个例子中没有返回值，所以类型可以省略。
+
+<p>
+和C语言以及其它语言一样，, <code>main</code>函数是程序入口。
+
+<p>
+<code>println</code>是一个内置函数。它会打印到标准输出。
+
+在单文件的程序中，<p><code>fn main()</code>函数的声明可以省略。
+在写很小的程序或者脚本，或者是学习语言的时候，这一点非常有用。为了更加简洁, 本文档省略<code>fn main()</code>。
+
+<p>
+这意味这"hello world"程序可以简写为
+-----

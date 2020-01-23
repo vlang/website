@@ -81,45 +81,34 @@ $(document).ready(function() {
 <a href='#json'>%decoding_json</a>
 <a href='#testing'>%testing</a>
 <a href='#memory'>%memory_management</a>
-<a href='#defer'>Defer</a>
-<a href='#orm'>ORM</a>
-<a href='#vfmt'>vfmt</a>
+<a href='#defer'>%defer</a>
+<a href='#orm'>%orm</a>
+<a href='#vfmt'>%vfmt</a>
 <a href='#writing_docs'>%writing_documentation</a>
 <br>
-Advanced Topics
+%advanced_topics
 
 <br>
 <br>
-<a href='#calling_c'>Calling C functions from V</a>
-<a href='#comp_if'>Compile time if</a>
-<a href='#codegen'>Reflection via codegen</a>
-<a href='#op'>Limited operator overloading</a>
-<a href='#asm'>Inline assembly</a>
-<a href='#cpp'>Translating C/C++ to V</a>
-<a href='#hot'>Hot code reloading</a>
-<a href='#cross'>Cross compilation</a>
-<a href='#bash'>Cross-platform shell scripts in V</a>
+<a href='#calling_c'>%calling_c_func_from_v</a>
+<a href='#comp_if'>%compile_time_if</a>
+<a href='#codegen'>%refl_via_codegen</a>
+<a href='#op'>%limited_operator_overloading</a>
+<a href='#asm'>%inline_assembly</a>
+<a href='#cpp'>%trans_cxx_to_v</a>
+<a href='#hot'>%hot_code_reloading</a>
+<a href='#cross'>%cross_compile</a>
+<a href='#bash'>%cross_scripts_in_v</a>
 <br>
-<a href='#keywords'>Appendix I: Keywords</a>
-<a href='#operators'>Appendix II: Operators</a>
+<a href='#keywords'>%appd_1_keywords</a>
+<a href='#operators'>%appd_2_operators</a>
 
 </div>
 
 
 <div class='docs'>
 <h2 id=introduction style='border:0; margin-top:0; padding-top:20px;'>%introduction</h2>
-V is a statically typed compiled programming language designed for building maintainable software.
-
-<p>
-It's similar to Go and is also influenced by Oberon, Rust, Swift.
-
-<p>
-V is a very simple language. Going through this documentation will take you about half an hour,
-and by the end of it you will learn pretty much the entire language.
-
-<p>
-Despite being simple, it gives a lot of power to the developer. Anything you can do in other languages,
-you can do in V.
+%intro_details
 
 <!--
 <p>
@@ -134,26 +123,7 @@ V is very strict. It helps with safety, readability, and maintainability.
 }</pre>
 
 <input class='run' type='button' value='Run'>
-
-<p>
-Functions are declared with <code>fn</code>. Return type goes after the function
-name. In this case <code>main</code> doesn't return anything, so the type is
-omitted.
-
-<p>
-Just like in C and all related languages, <code>main</code> is an entry point.
-
-<p>
-<code>println</code> is one of the few built-in functions. It prints the value
-to standard output.
-
-<p><code>fn main()</code> declaration can be skipped in one file programs.
-This is useful when writing small programs, "scripts", or just learning
-the language. For brevity, <code>fn main()</code> will be skipped in this
-tutorial.
-
-<p>
-This means that a "hello world" program can be as simple as
+%fn_intro
 
 <pre>
 println(<str>'hello world'</str>)

@@ -154,18 +154,90 @@ fast_comp4
 no_null
 No null 
 -----
+references
+References
 -----
+defer
+Defer
 -----
+orm
+ORM
 -----
+vfmt
+vfmt
 -----
+writing_documentation
+Writing documentation
 -----
+advanced_topics
+Advanced Topics
 -----
+calling_c_func_from_v
+Calling C functions from V
 -----
+compile_time_if
+Compile time if
 -----
+refl_via_codegen
+Reflection via codegen
 -----
+limited_operator_overloading
+Limited operator overloading
 -----
+inline_assembly
+Inline assembly
 -----
+trans_cxx_to_v
+Translating C/C++ to V
 -----
+hot_code_reloading
+Hot code reloading
 -----
+cross_compile
+Cross compilation
+-----
+cross_scripts_in_v
+Cross-platform shell scripts in V
+-----
+appd_1_keywords
+Appendix I: Keywords
+-----
+appd_2_operators
+Appendix II: Operators
+-----
+intro_details
+V is a statically typed compiled programming language designed for building maintainable software.
 
+<p>
+It's similar to Go and is also influenced by Oberon, Rust, Swift.
+
+<p>
+V is a very simple language. Going through this documentation will take you about half an hour,
+and by the end of it you will learn pretty much the entire language.
+
+<p>
+Despite being simple, it gives a lot of power to the developer. Anything you can do in other languages,
+you can do in V.
+-----
+fn_intro
+<p>
+Functions are declared with <code>fn</code>. Return type goes after the function
+name. In this case <code>main</code> doesn't return anything, so the type is
+omitted.
+
+<p>
+Just like in C and all related languages, <code>main</code> is an entry point.
+
+<p>
+<code>println</code> is one of the few built-in functions. It prints the value
+to standard output.
+
+<p><code>fn main()</code> declaration can be skipped in one file programs.
+This is useful when writing small programs, "scripts", or just learning
+the language. For brevity, <code>fn main()</code> will be skipped in this
+tutorial.
+
+<p>
+This means that a "hello world" program can be as simple as
+-----
 
