@@ -333,7 +333,7 @@ struct Color {
         b int
 }
 
-fn (c Color) str() string {
+pub fn (c Color) str() string {
 	return '{$c.r, $c.g, $c.b}' 
 } 
 
