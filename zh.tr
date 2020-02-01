@@ -142,15 +142,6 @@ testing
 memory_management 
 内存管理 
 -----
-defer
-延迟执行
------
-orm
-对象关系表映射
------
-vfmt
-格式化
------
 writing_documentation
 书写文档
 -----
