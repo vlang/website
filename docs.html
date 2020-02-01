@@ -35,8 +35,11 @@ code {
 <script>
 $(document).ready(function() {
 	$('.run').click(function() {
-		var pre = $(this).prev('pre')
-		localStorage.setItem('play', pre.text())
+		var text = $(this).prev('pre').text()
+		//if (text.indexOf('fn main') == -1) {
+			//text = 'fn main() {\n' + text + '\n}'
+		//}
+		localStorage.setItem('play', text)
 		window.open('/play')
 	});
 });
@@ -364,11 +367,7 @@ println(name.len)
 bobby := name + <str>'by'</str> <comment>// + is used to concatenate strings</comment>
 println(bobby) <comment>// "Bobby" </comment>
 
-println(bobby.substr(1, 3)) <comment>// "ob" </comment>
-<comment>
-// This syntax will most likely replace the substr() method
-// println(bobby[1..3])
-</comment>
+println(bobby[1..3]) <comment>// "ob" </comment>
 <key>mut</key> s := <str>'hello '</str>
 s += <str>'world'</str> <comment>// `+=` is used to append to a string</comment>
 println(s) <comment>// "hello world" </comment>
@@ -450,6 +449,8 @@ names << <str>'Sam'</str>
 <comment>// names << 10  <-- This will not compile. `names` is an array of strings.</comment>
 println(names.len) <comment>// "3"</comment>
 println(<str>'Alex'</str> <key>in</key> names) <comment>// "false"</comment>
+
+names = [] <comment>// The array is now empty</comment>
 
 <comment>// We can also preallocate a certain amount of elements.</comment>
 ids := [0].repeat(50) <comment>// This creates an array with 50 zeros</comment>
@@ -716,6 +717,27 @@ s := match number {
 
 A match statement is a shorter way to write a sequence of <code>if - else</code> statements. When a matching branch is found, the following statement block will be run, and the final expression will be returned. The else branch will be evaluated when no other branches match.
 
+<pre>
+enum Color {
+	red
+	blue
+	green
+}
+
+fn is_red_or_blue(c Color) bool {
+	return match c {
+		.red { true }
+		.blue { true }
+		else { false }
+	}
+}
+</pre>
+<input class='run' type='button' value='Run'>
+
+<p>
+A match statement can also be used to branch on the variants of an <code>enum</code> by using the shorthand <code>.variant_here</code> syntax.
+
+
 <h2 id=structs>%structs</h2>
 
 <pre>
@@ -758,7 +780,7 @@ V doesn't have subclassing, but it supports embedded structs:
 
 
 <pre>
-<comment>// TODO: this will be implemented later in August</comment>
+<comment>// TODO: this will be implemented later</comment>
 <key>struct</key> Button {
 	Widget
 	title string
@@ -770,6 +792,21 @@ button.set_pos(x, y)
 <comment>// Without embedding we'd have to do</comment>
 button.widget.set_pos(x,y)
 </pre>
+
+<p> &nbsp;
+<p>
+Structs can have default values:
+<pre>
+struct Foo {
+  a int
+  b int = 10
+}
+
+foo := Foo{}
+assert foo.a == 0
+assert foo.b == 10
+</pre>
+
 
 <h2 id=mod>Access modifiers</h2>
 <p>
@@ -786,9 +823,10 @@ Their access modifiers can be changed with
 	d int     <comment>// public immmutable (readonly)</comment>
 <key>pub mut</key>:
 	e int     <comment>// public, but mutable only in parent module </comment>
-<key>pub mut mut</key>:
+<key>__global</key>:
 	f int 	  <comment>// public and mutable both inside and outside parent module </comment>
-}                 <comment>// (not recommended to use, that's why it's so verbose)</comment>
+}                 <comment>// (not recommended to use, that's why the 'global' keyword 
+                  // starts with __)</comment>
 </pre>
 
 <p> &nbsp;
@@ -810,7 +848,7 @@ For example, here's the <code>string</code> type defined in the <code>builtin</c
 
 <p>
 The byte pointer with the string data is not accessible outside <code>builtin</code> at all.
-<code>len</code> field is public, but not mutable.
+<code>len</code> field is public, but not mutable:
 
 
 <pre>
@@ -947,6 +985,10 @@ never be modified by the function.
 <p>It is preferable to return values instead of modifying arguments.
 Modifying arguments should only be done in performance-critical parts of your application
 to reduce allocations and copying.
+
+<p>
+For this reason V doesn't allow to modify primitive args like integers, only
+complex types like arrays and maps.
 
 
 
@@ -1182,9 +1224,8 @@ setup/initialization code when imported (perhaps you want to call
 some C library functions), write a module <code>init</code> function inside the module:
 
 <pre>
-<key>fn </key>init() int {
+<key>fn </key>init() {
 	// your setup code here ...
-	return 1
 }
 </pre>
 
@@ -1228,27 +1269,20 @@ V interfaces are very efficient. There's no dynamic dispatch.
 -->
 
 <h2 id=enums>Enums</h2>
-<!--
-<pre>
-enum Color {
-	red, green, blue
-}
-
-mut color := Color.red
-println(color) // "red"
-color = .green
-is_green := color == .green
-</pre>
--->
 <pre>
 <key>enum</key> Color {
 	red green blue
 }
 
-<key>mut</key> color := Color.red
-<comment>// V knows that `color` is a `Color`. No need to use `color = Color.green` here.</comment>
-color = .green
-println(color) <comment>// "1"  TODO: print "green"? </comment>
+fn main() {
+	<key>mut</key> color := Color.red
+	<comment>// V knows that `color` is a `Color`. No need to use `color = Color.green` here.</comment>
+	color = .green
+	println(color) <comment>// "1"  TODO: print "green"? </comment>
+	if color == .green {
+		println("it's green")
+	}
+}
 </pre>
 <input class='run' type='button' value='Run'>
 
@@ -1487,7 +1521,7 @@ V will use a preallocated buffer for them.
 
 
 <h2 id=defer>Defer</h2>
-A defer statement defers the execution of a block of statements until the surrounding function returns.
+A defer statement defers the execution of a block of statements until the end of scope or until surrounding function returns.
 
 <pre>
 <key>fn</key> read_log() {
@@ -1718,7 +1752,7 @@ Having built-in JSON support is nice, but V also allows you to create efficient
 serializers for anything:
 
 <pre>
-<comment>// TODO: planned in August</comment>
+<comment>// TODO: not implemented yet</comment>
 <key>fn</key> decode&lt;T>(data string) T {
         mut result := T{}
         for field in T.fields {

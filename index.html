@@ -141,18 +141,22 @@ By the end of this year x64 generation should be mature enough to compile DOOM i
 
 
 <div id='downloads' style='margin-top:20px; '>
-	<div class='v-link'> 
-			<a href='https://github.com/vlang/v/releases/download/0.1.21/v_linux.zip'>Linux</a>
+	<div style='font-weight:300'>Download a prebuilt V package</div>
 
-			<div>2.5 MB</div>
-	</div>
 	<div class='v-link'> 
-			<a href='#'>macOS</a>
-			<div>soon</div>
+			<a href='https://github.com/vlang/v/releases/latest/download/v_linux.zip'>Linux</a>
+
+			<div>1.0 MB</div>
 	</div>
+
 	<div class='v-link'> 
-			<a href='#'>Windows</a>
-			<div>soon</div>
+			<a href='https://github.com/vlang/v/releases/latest/download/v_macos.zip'>macOS</a>
+			<div>1.03 MB</div>
+	</div>
+
+	<div class='v-link'> 
+			<a href='https://github.com/vlang/v/releases/latest/download/v_windows.zip'>Windows</a>
+			<div>1.02 MB</div>
 	</div>
 
 <!--
@@ -171,7 +175,7 @@ By the end of this year x64 generation should be mature enough to compile DOOM i
 	</div> 
 	-->
 	
-<div style='margin-top:10px'>
+<div style='margin-top:20px'>
 
 <!--
 <pre>wget https://vlang.io/v.c && cc -std=gnu11 -w -o v v.c</pre>
@@ -216,7 +220,12 @@ Or build V from source with a C compiler:
 
 <div id='changelog'>
 <a target=_blank href='https://github.com/vlang/v/blob/master/CHANGELOG.md'
->V 0.1.22 Changelog</a>
+>V 0.1.23 Changelog</a>
+
+<br><br>
+
+<a target=_blank href='https://fast.vlang.io'
+>Is V still fast?</a>
 </div>
 
 <div class='sep' style='padding:0'></div> 
@@ -490,9 +499,7 @@ fn main() {
 -->
 </select> 
 <br>
-<!--
 <input type='button' style='margin-top:15px' onclick='window.location="/play"' value='Run'> 
--->
 </div> 
 
 </div> 
@@ -506,7 +513,7 @@ fn main() {
 	<br> 
 	<i class='note'>
 	V is an actively developed language at an early stage.
-	It will stabilize by the time of the 0.2 release planned for November 2019.
+	It will stabilize by the time of the 0.2 release planned for December 2019.
 	</i>
 </div>
 	</div>
@@ -606,8 +613,8 @@ Small and easy to build compiler
 --> 
 </h2>
 <p>
-The entire language and its standard library are less than 1 MB.
-V is written in V, and can be built in 0.09 - 0.6 seconds. 
+The entire language and its standard library are less than 2 MB.
+V is written in V, and can be built in 0.09 - 1 seconds. 
 <p>
 For comparison:
 </p>
@@ -622,7 +629,7 @@ For comparison:
 <tr><td>Swift</td><td>70 GB 
 <a target=_blank class='sidenote' href='https://github.com/apple/swift#getting-started'>[1]</a>
 </td><td>90m</td></tr>
-<tr><td>V</td><td>< 1 MB</td><td>0.15s - 0.6s</td></tr>
+<tr><td>V</td><td>< 2 MB</td><td>0.09s - 1s</td></tr>
 </table>
 
 <p>
@@ -926,8 +933,10 @@ v run deploy.vsh
 
 </pre>
 <p>
-<a target=_blank href='//blog.vlang.io/forum'>V forum</a> and 
+<a target=_blank href='//forum.vlang.io'>V forum</a> <!--and 
  <a target=_blank href='//blog.vlang.io'>V blog</a> are built with vweb/vtalk.
+ -->
+ is running on Vorum (built with V/vweb).
 
 </div>
 
@@ -981,6 +990,8 @@ db.insert(new_customer)
 	<a target=_blank href='https://offscale.io/'><img style='width:300px' src='/img/sponsor1.png'></a>
 	-->
 
+	<a target=_blank href='https://data.mx.com/'><img style='height:250px' src='/img/sponsor_mx.png'></a>
+
 	<br><br>
 	<center>
 	<a target=_blank href='https://patreon.com/vlang'>Become a sponsor</a>
@@ -1017,13 +1028,21 @@ V. The compiler can compile itself. The original version was written in Go.
 <div class='question'> 
 <b>Does V use LLVM? </b> 
 <p>
-No. V compiles directly to machine code. It's one of the main reasons it's so light and fast. 
+No. V uses C as its backend and will compile directly to machine code by the time of the 1.0 release. 
+
+<p>
+<a target=_blank href="https://github.com/vlang/v/wiki/On-the-benefits-of-using-C-as-a-language-backend">On the benefits of using C as a language backend.</a>
+
+
+<!--
+It's one of the main reasons it's so light and fast. 
 Right now only x64 architecture/Mach-O format are supported.  Once V is open-sourced,
 other architectures and formats should be implemented relatively quickly. 
 </p>
 <p>
 V can also emit human readable C, which can then be compiled to run on any platform. 
 This way the compilation speed is about 10 times slower (≈100k lines/second).   
+-->
 </p>
 </div> 
 
@@ -1079,19 +1098,21 @@ the scheduler will be implemented.
 
 
 <div class='question'> 
-<b>Will I be able to build V programs without libc?</b> 
+<b>Does V run on bare metal?</b> 
 <p> 
-Yes! 
+Yes! Simply run with <code>-freestanding</code> to exclude libc and vlib. <a target=_blank 
+href='https://twitter.com/v_language/status/1194895149249236992'>See an example here</a>.
 </p> 
 </div> 
 
 <div class='question'> 
 <b>Will I be able to use a custom allocator?</b> 
 <p> 
-Yes. This hasn't been implemented yet, but it will be soon after the release in June. 
+Yes. This hasn't been implemented yet. 
 </p> 
 </div> 
 
+<!--
 <div class='question'> 
 <b> Is V going to change a lot before v1.0?</b> 
 <p> 
@@ -1106,26 +1127,38 @@ Even if something does change, vfmt will take care of it automatically.
 The same will be true after v1.0 is released. 
 </p> 
 </div> 
+-->
 
 <div class='question'> 
-<b> When is v1.0 happening?</b> 
+<b>Is V going to change a lot? When is v1.0 happening?</b> 
+<p>
+Right now V is under heavy development, lots of things change.
 <p> 
-The plan is to launch v1.0 by the end of 2019.
-
-<p> 
-This may sound ambitious, but V is a very small and simple language. Most of it has been figured out
-already.
-
+A stable 0.2 version will be released in early December 2019. 
+<p>
+1.0 is going to have forward compatibility, meaning that 
+ V 1.0 programs will continue to compile and run without change.
 <p>
 It's very important to give developers certainty and stability, and not to be in beta for years. 
+
+This means that we need to be careful with the 1.0 release. It's going to happen
+in early 2020.
+
+<!--
+<p> 
+This may sound ambitious, but V is a very small and simple language. Most of it has been figured out
+
+already.
+-->
 </div> 
+
 
  
 
 <div class='question'> 
 <b> What operating systems are supported?</b> 
 <p> 
-Windows, macOS, Linux, *BSD. 
+Windows, macOS, Linux, FreeBSD, OpenBSD, NetBSD, DragonflyBSD, Solaris, Android (Termux).
 <p>
 Android and iOS later this year. 
 </p> 
@@ -1134,7 +1167,8 @@ Android and iOS later this year.
 <div class='question'> 
 <b>Who's behind V? </b> 
 <p> 
-<a target=_blank href='https://github.com/medvednikov'>Just me.</a> 
+<a target=_blank href='https://github.com/medvednikov'>Me </a> and 
+<a target=_blank href='https://github.com/vlang/v/graphs/contributors'>150+ open source contributors</a>.
 </p> 
 </div> 
 
@@ -1168,6 +1202,9 @@ It's a simple name that reflects the simplicity of the language, and it's easy t
 world. 
 <p>
 Please note that the name of the language is "V", not "Vlang" or "V-Lang" etc. 
+<p>The name is not very searchable (like Go), so use 
+<a target=_blank href='https://twitter.com/search?q=%23vlang'>#vlang</a> on Twitter, 
+<a target=_blank href='https://www.google.com/search?q=vlang'>vlang</a> on Google etc.
 </div> 
 
 <div class='question'> 
@@ -1256,9 +1293,10 @@ MIT.
 Open-source light and fast alternative to GitHub/GitLab. 
 	</div>
 	<div class='feature'>
-	<h2><a href='//blog.vlang.io'>V blog</a></h2>
-	Right now it's powered by very basic blogging software, but in the future it will be a full featured
+	<h2><a href='https://github.com/vlang/vorum'>Vorum</a></h2>
+	Right now it's very basic forum/blogging software, but in the future it will be a full featured
 light alternative to Discourse. 
+<p>The V forum runs on Vorum.
 	</div>
 </div>
 
