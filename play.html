@@ -333,7 +333,7 @@ struct Color {
         b int
 }
 
-fn (c Color) str() string {
+pub fn (c Color) str() string {
 	return '{$c.r, $c.g, $c.b}' 
 } 
 
@@ -361,7 +361,7 @@ fn main() {
 	y int
 }
 
-fn (a Vec) str() string {
+pub fn (a Vec) str() string {
 	return '{$a.x, $a.y}'
 }
 
