@@ -17,42 +17,42 @@ the_v_lang
 Мова програмування V
 -----
 v_slogan
-Простий, швидкий, безпечна мова програмування для розробки легко підтримуваних додатків
+Проста, швидка та безпечна мова програмування для розробки легко підтримуваних додатків
 -----
 includes_binaries 
-включае в себя бінарні файли для 3 систем 
+включає в себя бінарні файли для 3 систем 
 -----
 install_source 
-або встановіть V з програмного коду 
+або встановіть V з програмного коду
 -----
 couple_seconds 
 це займе пару секунд 
 -----
 wip_info
-V is an actively developed language at an early stage.
-Features that are still being worked on are marked with $wip
-
-Everything else on this page and the docs has been implemented and open-sourced.
-By the time of the V 1.0 release planned for December 2019, there will be no $wip's left.
+V активно розвивається та знаходиться на ранній стадії розробки.
+Особливості, над якими все ще ведеться розробка, позначено $wip
+<br>
+Все інше на цій сторінці та в документації вже працює та має відкритий код.
+<p>
+V 1.0 заплановано на грудень 2019, до цього часу не повинно залишитись жодного $wip.
 -----
 forum
 Форум 
 -----
 blog
-Блог 
------
+Блог
 -----
 fast_compilation
-Швидка компіляция
+Швидка компіляція
 -----
 safety
-Безпечність 
+Безпечність
 -----
 performance 
 Продуктивність
 -----
 simple_language_for_maintainable_programs
-Простота 
+Проста мова для довгопідтримуваних програм
 -----
 zero_deps
 400 KB компілятор без залежностей 
@@ -109,7 +109,7 @@ pure_fns
 Чисті функції
 -----
 high_fns 
-High order functions 
+Функції з високом приорітетом
 -----
 constants 
 Константи 
@@ -121,19 +121,19 @@ interfaces
 Інтерфейси 
 -----
 enums
-Перерахування 
+Перерахунки
 -----
 optionals_and_errors 
-Опц. типи та обрабока помилок 
+Опц. типи та обробка помилок 
 -----
 generics
-Generics 
+Узагальнення типів
 -----
 concurrency
-Concurrency 
+Одночасне виконання
 -----
 decoding_json 
-Работа с JSON 
+Робота з JSON 
 -----
 testing
 Тестування 
@@ -141,4 +141,15 @@ testing
 memory_management 
 Управління пам'яттю 
 -----
-
+fast_comp1
+V компілює 0.1 - 1.2 мільйонів рядків коду за секунду на ядро процесора. 
+-----
+fast_comp2
+V збирає себе за 0.15 - 0.6 секунди.
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+Немає null
