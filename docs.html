@@ -1679,14 +1679,24 @@ fn main() {
 </pre>
 
 <p>&nbsp;
+
 <p>
 Add <code>#flag</code> directives to the top of your V files
-to provide C compilation flags like <code>-l</code> for
-linking, <code>-I</code> for adding include files locations, <code>-D</code>
-for setting compile time variables, etc.
+to provide C compilation flags like
+<ul>
+<li><code>-I</code> for adding C include files search paths</li>
+<li><code>-l</code> for adding C library names that you want to get linked</li>
+<li><code>-L</code> for adding C library files search paths</li>
+<li><code>-D</code> for setting compile time variables</li>
+</ul>
 
-<p>You can use different flags for different targets. Right now, <code>linux</code> ,
-<code>darwin</code> , and <code>windows</code> are supported.
+<p>
+You can use different flags for different targets. 
+Right now, 
+<code>linux</code> ,
+<code>darwin</code> , 
+<code>freebsd</code> and 
+<code>windows</code> are supported.
 
 <p>
 For now you have to use one flag per line:
@@ -1699,16 +1709,45 @@ For now you have to use one flag per line:
 #flag linux -DIMGUI_IMPL_API=
 </pre>
 
+<p>
+You can also add C code, in your V module 
+(lets say that it is located in a folder named 'c' inside your module folder), by using:
+<code>#flag @VMODULE/c/implementation.o</code> 
+This will make V look for an compiled .o file in your module folder/c/implementation.o . 
+If V finds it, the .o file will get linked to the main executable, that used the module.
+If it does not find it, V assumes that there is a <code>@VMODULE/c/implementation.c</code> file, 
+and tries to compile it to a .o file, then will use that.
+This allows you to have C code, that is contained in a V module, so that its distribution is easier.
+You can see a complete example here:
+<br/><a href="https://github.com/vlang/v/tree/master/vlib/compiler/tests/project_with_c_code">A
+minimal V project, that has a module, which contains C code</a>
+
+<p> 
+You can use <code>-cflags</code> to pass custom flags to the backend C
+compiler. You can also use <code>-cc</code> to change the default C
+backend compiler. Example: <code>-cc gcc-9 -cflags -fsanitize=thread</code> .
 
 <p>&nbsp;
-<p>
-C strings can be converted to V strings with
-<code>string(cstring)</code> or
-<code>string(cstring, len)</code>.
 
 <p>
-V uses <code>voidptr</code> for C's <code>void*</code> and
- <code>byteptr</code> for C's <code>byte*</code> or <code>char*</code>.
+Ordinary zero terminated C strings can be converted to V strings with
+<code>string(cstring)</code> or
+<code>string(cstring, len)</code>. 
+
+<p>
+NB: string/1 and string/2 do NOT create a copy of the cstring, so you should NOT free it after calling string().
+If you need to make a copy of the C string (some libc APIs like getenv/1 pretty much require that, since they
+return pointers to internal libc memory), you can use: <code>cstring_to_vstring(cstring)</code>
+
+<p>
+On Windows, C APIs often return so called wide strings (utf16 encoding). 
+These can be converted to V strings with <code>string_from_wide(&u16(cwidestring))</code> .
+
+<p>
+V uses 
+<code>voidptr</code> for C's <code>void*</code>,
+<code>byteptr</code> for C's <code>byte*</code>, and 
+<code>charptr</code> for C's <code>char*</code>.
 
 <p>
 To cast <code>voidptr</code> to V references use <code>user := &User(user_void_ptr)</code>.
@@ -1718,14 +1757,25 @@ To cast <code>voidptr</code> to V references use <code>user := &User(user_void_p
 
 <p>
 Check out socket.v for an example of calling C code from V:
-
+<br/>
 <a target=_blank href='https://github.com/vlang/v/blob/master/vlib/net/socket.v'>https://github.com/vlang/v/blob/master/vlib/net/socket.v</a>
 
 <p>
-To debug issues with the C code, <code>v -show_c_cmd .</code> is useful. It prints the 
-C command that is used to build the program.
+To debug issues with the generated C code, you can pass these flags:
+<ul>
+<li><code>-show_c_cmd</code> - prints the C command that is used to build the program. </li>
+<li><code>-cg</code> - produces a less optimized executable with more debug information in it.</li>
+<li><code>-keep_c</code> - keep the generated C file, so your debugger can also use it.</li>
+<li><code>-pretty_c</code> - run clang-format over the generated C file, so it looks nicer and is easier to read.</li>
+</ul>
 
+<p>
+For best debugging experience, you can pass all of them at the same time: <code>v -show_c_cmd -cg -keep_c -pretty_c yourfile.v</code> .
 
+<p>
+If you just want to inspect the generated C code, without compiling it
+further, you can use: <code>-o file.c</code>. This will make V produce
+the <code>file.c</code> then stop.
 
 
 <h2 id=comp_if>Compile time if</h2>
