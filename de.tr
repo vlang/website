@@ -14,7 +14,7 @@ built_in_v
 Mit V erstellt
 -----
 the_v_lang
-The V Programming Language
+Die V Programmiersprache
 -----
 v_slogan
 Einfache, schnelle und sichere kompilierte Sprache zur Entwicklung von wartbarer Software
@@ -23,16 +23,16 @@ includes_binaries
 mit Binaries für 3 Systeme
 -----
 install_source
-Oder installiere V aus dem Source Code
+Oder installiere V aus dem Quellcode
 -----
 couple_seconds
-dauert ein paar Sekunden 
+dies dauert ein paar Sekunden 
 -----
 wip_info
-V ist eine aktiv entwickelte Sprache in einer frühen Stadium.
-Features, an denen noch gearbeitet wird sind mit $wip markiert. 
+V ist eine aktiv entwickelte Sprache in einem frühen Stadium.
+Features, an denen noch gearbeitet wird, sind mit $wip markiert. 
 <br> 
-Alles andere auf dieser Seite und die Dokumentation wurde implementiert und ist Open Source. 
+Alles andere auf dieser Seite und in der Dokumentation wurde implementiert und ist Open Source. 
 <p> 
 Zum Zeitpunkt der Veröffentlichung, die für den Dezember 2019 geplant ist, wird es keine $wip's mehr geben.
 -----
@@ -106,7 +106,7 @@ methods
 Methoden
 -----
 pure_fns
-Pure Funktionen
+Reine Funktionen
 -----
 high_fns
 Funktionen höherer Ordnung
@@ -141,6 +141,18 @@ Testen
 memory_management
 Speicherverwaltung
 -----
+fast_comp1
+V kompiliert zwischen ≈100 Tausend und 1.2 Millionen Codezeilen pro Sekunde pro CPU Kern. 
+-----
+fast_comp2
+V kompiliert sich selbst in 0.15 - 0.6 Sekunden.
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+Kein null
 -----
 -----
 -----
