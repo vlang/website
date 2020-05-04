@@ -1,0 +1,170 @@
+examples
+Ví dụ
+-----
+documentation
+Tài liệu
+-----
+modules
+Modules
+-----
+faq
+FAQ
+-----
+built_in_v
+Được xây dựng bằng V
+-----
+the_v_lang
+Ngôn ngữ lập trình V
+-----
+v_slogan
+Ngôn ngữ được biên dịch đơn giản, nhanh chóng, an toàn để phát triển các phần mềm có thể bảo trì dễ dàng 
+-----
+includes_binaries 
+Bao gồm các file nhị phân cho cả 3 hệ điều hành
+-----
+install_source 
+Hoặc cài đặt V từ mã nguồn 
+-----
+couple_seconds 
+Điều này sẽ mất một vài giây
+-----
+wip_info
+V là một ngôn ngữ được phát triển tích cực ở giai đoạn đầu.
+Các chức năng còn đang trong giai đoạn phát triển sẽ được đánh dấu $wip
+<br> 
+Mọi thứ khác trên trang này và trên các trang tài liệu đều đã được triển khai và là mã nguồn mở.
+<p> 
+Vào thời điểm phát hành phiên bản V 1.0 (dự kiến vào tháng 12 năm 2019), sẽ không còn dấu $wip's nữa.
+-----
+forum
+Forum
+-----
+blog
+Blog 
+-----
+fast_compilation
+Biên dịch nhanh chóng
+-----
+safety
+An toàn
+-----
+performance 
+Hiệu năng 
+-----
+simple_language_for_maintainable_programs
+Ngôn ngữ đơn giản để xây dựng các chương trình dễ bảo trì  
+-----
+zero_deps 
+Trình biên dịch kích thước 400KB và không phụ thuộc 
+-----
+c_translation 
+Chuyển đổi mã C/C++ 
+-----
+introduction
+Giới thiệu 
+-----
+comments
+Chú thích 
+-----
+functions
+Hàm 
+-----
+variables
+Biến 
+-----
+basic_types 
+Kiểu dữ liệu cơ bản 
+-----
+strings
+Chuỗi
+-----
+arrays
+Mảng 
+-----
+maps
+Maps 
+-----
+if
+If 
+-----
+in_op 
+Toán tử in 
+-----
+for_loop 
+Vòng lặp for 
+-----
+switch 
+Switch 
+-----
+structs 
+Cấu trúc structs 
+-----
+access_mod 
+Sửa đổi truy cập 
+-----
+methods
+Các phương thức
+-----
+pure_fns 
+Hàm thuần túy    
+-----
+high_fns 
+Hàm có độ ưu tiên cao
+-----
+constants 
+Hằng số 
+-----
+modules
+Modules 
+-----
+interfaces
+Giao diện 
+-----
+enums
+Enums 
+-----
+optionals_and_errors 
+Các kiểu tùy chọn và xử lý lỗi
+-----
+generics
+Không cần định nghĩa trước các kiểu dữ liệu
+-----
+concurrency
+Xử lý đồng thời 
+-----
+decoding_json 
+Giải mã JSON 
+-----
+testing
+Kiểm tra 
+-----
+memory_management 
+Quản lí bộ nhớ
+-----
+fast_comp1
+với mỗi lõi của CPU, V có thể biên dịch từ ≈100 nghìn đến 1,2 triệu dòng mã mỗi giây.
+-----
+fast_comp2
+V tự biên dịch trong 0,15 - 0,6 giây.
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+Không có giá trị null 
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+
