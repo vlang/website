@@ -153,13 +153,13 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
   <div>
   <div class="section">
     <div class="block">
-		<h2>%simple_language_for_maintainable_programs</h2> 
-		<p> 
-		You can learn the entire language by going through the 
+		<h2>%simple_language_for_maintainable_programs</h2>
+		<p>
+		You can learn the entire language by going through the
 		<a target=_blank href='/docs'>documentation</a> in half an hour, and in most cases there's only one way to do something.
 		<p>
 		This results in simple, readable, and maintainable code.
-		<p> 
+		<p>
 		Despite being simple, V gives a lot of power to the developer and can be used in pretty much every field, including systems programming, webdev, gamedev, GUI, mobile (wip), science, embedded, etc.
 		</p>
     </div>
@@ -362,10 +362,10 @@ You can follow the progress and read translated code here:
     <div class="block">
       <h2>REPL</h2>
       <pre style="margin-right: 36px">v
->>> import http
+>>> import net.http
 >>> data := http.get('https://vlang.io/utc_now') or {
-	panic(err)
-}
+...	panic(err)
+... }
 >>> data.text
 1565977541</pre>
     </div>
