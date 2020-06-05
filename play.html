@@ -8,47 +8,47 @@ display: none;
 }
 
 textarea {
-width: 85% !important; 
-//width:400px !important; 
-height: calc(100vh - 300px); // 500px; 
-font-family: 'Roboto Mono'; 
-font-size:13px; 
-//margin-top:20px; 
-padding: 5px; 
+width: 85% !important;
+//width:400px !important;
+height: calc(100vh - 300px); // 500px;
+font-family: 'Roboto Mono';
+font-size:13px;
+//margin-top:20px;
+padding: 5px;
     border: none;
-    outline: none; 
+    outline: none;
 
-background-color:#f5f5f5; 
-} 
+background-color:#f5f5f5;
+}
 .menu {
-//height: auto; 
-} 
+//height: auto;
+}
 button {
-width: 100px; 
-font-size:20px; 
-} 
+width: 100px;
+font-size:20px;
+}
 .controls {
-//padding-top:20px ; 
-height:40px; 
+//padding-top:20px ;
+height:40px;
 
-} 
+}
 .example {
-display:none; 
-} 
+display:none;
+}
 .center {
-max-width:1070px !important; 
-} 
+max-width:1070px !important;
+}
 #status {
-color:#777; 
-font-size: 80%; 
-font-family: 'Roboto Mono'; 
-margin-top: 10px; 
-} 
+color:#777;
+font-size: 80%;
+font-family: 'Roboto Mono';
+margin-top: 10px;
+}
 
 .output {
-font-family: 'Roboto Mono'; 
- 
-} 
+font-family: 'Roboto Mono';
+
+}
 
 @@media (max-width: 1030px) {
 	.buttons {
@@ -57,153 +57,153 @@ font-family: 'Roboto Mono';
 }
 
 .buttons button {
-height: 30px; 
-font-size:14px; 
-margin-bottom:10px; 
-width: 100%; 
-} 
+height: 30px;
+font-size:14px;
+margin-bottom:10px;
+width: 100%;
+}
 .lines {
 //position:relative;
-padding-top:5px; 
-float:left; 
+padding-top:5px;
+float:left;
 font-size:13px;
-color:#aaa; 
-text-align:right; 
-background-color:#f5f5f5; 
-} 
-.lines div { 
-} 
+color:#aaa;
+text-align:right;
+background-color:#f5f5f5;
+}
+.lines div {
+}
 
 	@@media (max-width: 1500px) {
 #social-extra {
-display:none !important; 
-} 
+display:none !important;
+}
 
-} 
+}
 
 
-</style> 
+</style>
 
-<script  src="/js/jquery.min.js"></script> 
-<script src="/js/jquery-linedtextarea.js"></script> 
+<script  src="/js/jquery.min.js"></script>
+<script src="/js/jquery-linedtextarea.js"></script>
 
 
 <script>
 
 
-var ip = 'play.vlang.io' 
+var ip = 'play.vlang.io'
 function run() {
-	var body = $('textarea').val(); 
-	$('.controls').css('visibility', 'hidden'); 
-	$('.output').text('Waiting for remote server...') 
-	$('#status').text('') 
+	var body = $('textarea').val();
+	$('.controls').css('visibility', 'hidden');
+	$('.output').text('Waiting for remote server...')
+	$('#status').text('')
 	var http = 'https://';
 	if (!ip.includes('play')) {
-		http = 'http://'; 
-	} 
-	console.log(http + ip + '/compile') 
+		http = 'http://';
+	}
+	console.log(http + ip + '/compile')
 	$.post(http + ip + '/compile', {body:body}, function(resp) {
-		console.log(resp) 
-		var vals = resp.split('==vmft:') 
-		console.log(vals) 
-		$('.output').text(vals[0]); 
-	$('.controls').css('visibility', 'visible'); 
-		if (vals.length > 1){ 
-		var fmt = vals[1]; 
-		if (fmt != '') { 
-			$('textarea').val(fmt); 
-		} 
-		$('#status').text('Program exited.') 
-	} 
-} ); 
- 
-} 
+		console.log(resp)
+		var vals = resp.split('==vmft:')
+		console.log(vals)
+		$('.output').text(vals[0]);
+	$('.controls').css('visibility', 'visible');
+		if (vals.length > 1){
+		var fmt = vals[1];
+		if (fmt != '') {
+			$('textarea').val(fmt);
+		}
+		$('#status').text('Program exited.')
+	}
+} );
 
-function select_ex(id ) { 
+}
+
+function select_ex(id ) {
 	var text = $('#ex' + id).text()
-	$('textarea').val(text) 
-} 
+	$('textarea').val(text)
+}
 
 $(document).ready(function() {
-$("a:contains(Playground)").css('font-weight', '500') 
+$("a:contains(Playground)").css('font-weight', '500')
 			$('#code').linedtextarea();
 
-	var s = localStorage.getItem('play') 
-	if (s != '') { 
-		$('textarea').val(s) 
-		localStorage.setItem('play', '') 
-	} 
+	var s = localStorage.getItem('play')
+	if (s != '') {
+		$('textarea').val(s)
+		localStorage.setItem('play', '')
+	}
 
-	document.addEventListener('keyup', doc_keyUp, false); 
+	document.addEventListener('keyup', doc_keyUp, false);
 
-}); 
+});
 
 
 function doc_keyUp(e) {
     if (e.ctrlKey && e.keyCode == 13) {
-	run() 
+	run()
     }
 }
 
-</script> 
+</script>
 
 
 
-<div class='center'> 
-<p> 
-<!-- 
-Due to inconsitencies between the documentation and this pre-alpha build,
-the playground has been disabled until a more stable release and an updated documentation. 
---> 
-<p> 
-
-</div> 
 <div class='center'>
-<div class='controls'> 
-<button id=btnRun onclick='run()' >Run</button> 
-<span style='font-size:80%; margin-left:10px; color:#444;'> 
-(<!--or press -->Ctrl + Enter) 
+<p>
+<!--
+Due to inconsitencies between the documentation and this pre-alpha build,
+the playground has been disabled until a more stable release and an updated documentation.
+-->
+<p>
+
+</div>
+<div class='center'>
+<div class='controls'>
+<button id=btnRun onclick='run()' >Run</button>
+<span style='font-size:80%; margin-left:10px; color:#444;'>
+(<!--or press -->Ctrl + Enter)
 <!--
 WebAssembly playground coming today
 -->
 <!--
 V.js playground will be out soon
-<span style='float:right; font-size:80%;line-height:40px'>Your code will be formatted automatically</span> 
+<span style='float:right; font-size:80%;line-height:40px'>Your code will be formatted automatically</span>
 -->
-</div> 
+</div>
 
 
-<div style='float:right; width:250px; margin-top:20px' class='buttons'> 
-<button onclick='select_ex(0)'>Hello world</button> 
-<button onclick='select_ex(1)'>Fibonacci</button> 
-<button onclick='select_ex(2)'>Fibonacci + memoization</button> 
-<button onclick='select_ex(3)'>JSON decoding/encoding</button> 
-<button onclick='select_ex(4)'>Users repo + option types</button> 
-<button onclick='select_ex(5)'>Advanced consts</button> 
-<button onclick='select_ex(6)'>Basic operator overloading</button> 
-<button onclick='select_ex(7)'>An updated copy of a struct</button> 
+<div style='float:right; width:250px; margin-top:20px' class='buttons'>
+<button onclick='select_ex(0)'>Hello world</button>
+<button onclick='select_ex(1)'>Fibonacci</button>
+<button onclick='select_ex(2)'>Fibonacci + memoization</button>
+<button onclick='select_ex(3)'>JSON decoding/encoding</button>
+<button onclick='select_ex(4)'>Users repo + option types</button>
+<button onclick='select_ex(5)'>Advanced consts</button>
+<button onclick='select_ex(6)'>Basic operator overloading</button>
+<button onclick='select_ex(7)'>An updated copy of a struct</button>
 
-<br> 
-<a target=_blank href='/docs'>Check out the docs for more examples</a> 
-</div> 
+<br>
+<a target=_blank href='/docs'>Check out the docs for more examples</a>
+</div>
 
-<div style='height:calc(100vh - 295px); max-height:calc(100vh - 295px);'> 
+<div style='height:calc(100vh - 295px); max-height:calc(100vh - 295px);'>
 <textarea id='code' autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">fn main() {
 	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI', 'mobile']
         for area in areas {
                 println('Hello, $area developers!')
         }
-} 
-</textarea> 
-</div> 
+}
+</textarea>
+</div>
 
-<pre class='example' id='ex0' >fn main() { 
+<pre class='example' id='ex0' >fn main() {
 	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI', 'mobile']
         for area in areas {
                 println('Hello, $area developers!')
         }
-} 
-</pre> 
+}
+</pre>
 <pre class='example' id='ex1'>fn fib(n int) int {
         if n <= 1 {
                 return n
@@ -216,9 +216,9 @@ fn main() {
                 println(fib(i))
         }
 }
-</pre> 
+</pre>
 <pre class='example' id=ex2>const (
-        MAX = 15 
+        max = 15
 )
 
 struct Fib {
@@ -226,7 +226,7 @@ mut:
         nums []int
 }
 
-fn (fib mut Fib) calc(n int) int {
+fn (mut fib Fib) calc(n int) int {
         if n <= 1 {
                 return n
         }
@@ -239,20 +239,20 @@ fn (fib mut Fib) calc(n int) int {
 
 fn main() {
         mut fib := Fib {
-                nums: [0].repeat(MAX)
+                nums: [0].repeat(max)
         }
-        for i := 0; i < MAX; i++ {
+        for i := 0; i < max; i++ {
                 println(fib.calc(i))
         }
 }
-</pre> 
+</pre>
 
 <pre class='example' id=ex3>import json
 
 struct User {
 	name          string
 	age           int
-mut: 
+mut:
 	is_registered bool
 }
 
@@ -260,7 +260,7 @@ fn main() {
 	s := '[{ "name":"Frodo", "age":25}, {"name":"Bobby", "age":10}]'
 	mut users := json.decode( []User, s) or {
 		eprintln('Failed to parse json')
-		return 
+		return
 	}
 	for user in users {
 		println('$user.name: $user.age')
@@ -270,9 +270,9 @@ fn main() {
 		println('$i) $user.name')
 		if !user.can_register() {
 			println('Cannot register $user.name, they are too young')
-			continue 
+			continue
 		}
-		users[i].register() // `user` is immutable, we have to modify the array 
+		users[i].register() // `user` is immutable, we have to modify the array
 	}
 	// Let's encode users again just for fun
 	println('')
@@ -283,10 +283,10 @@ fn (u User) can_register() bool {
         return u.age >= 16
 }
 
-fn (u mut User) register() {
+fn (mut u User) register() {
         u.is_registered = true
 }
-</pre> 
+</pre>
 
 <pre class='example' id=ex4>struct User {
 	id   int
@@ -324,37 +324,35 @@ fn main() {
 	println(user.id) // ==> '10'
 	println(user.name) // ==> 'Charles'
 }
-</pre> 
+</pre>
 
-<pre class='example' id=ex5>import strings
-
-struct Color {
+<pre class='example' id=ex5>struct Color {
         r int
         g int
         b int
 }
 
 pub fn (c Color) str() string {
-	return '{$c.r, $c.g, $c.b}' 
-} 
+	return '{$c.r, $c.g, $c.b}'
+}
 
-fn rgb(r, g, b int) Color { 
+fn rgb(r, g, b int) Color {
 	return Color{r: r, g: g, b: b}
-} 
+}
 
 const (
-        NUMBERS = [1, 2, 3]
+        numbers = [1, 2, 3]
 
-        RED  = Color{r: 255, g: 0, b: 0}
-        BLUE = rgb(0, 0, 255)
+        red  = Color{r: 255, g: 0, b: 0}
+        blue = rgb(0, 0, 255)
 )
 
 fn main() {
-        println(NUMBERS)
-        println(RED)
-        println(BLUE)
-}  
-</pre> 
+        println(numbers)
+        println(red)
+        println(blue)
+}
+</pre>
 
 
 <pre class='example' id=ex6>struct Vec {
@@ -383,45 +381,44 @@ fn (a Vec) - (b Vec) Vec {
 fn main() {
 	a := Vec{2, 3}
 	b := Vec{4, 5}
-	println(a + b) 
-	println(a - b) 
+	println(a + b)
+	println(a - b)
 }
-</pre> 
+</pre>
 
 
 <pre class='example' id=ex7>struct User {
 	name string
-	age  int	 
-} 
+	age  int
+}
 
-fn main() { 
-	user1 := User{'Bob', 20} 
-	user2 := { user1 | name: 'Peter' } 
+fn main() {
+	user1 := User{'Bob', 20}
+	user2 := { user1 | name: 'Peter' }
 	println(user1.name)
 	println(user1.age)
-	println(user2.name) 
+	println(user2.name)
 	println(user2.age)
-} 
-</pre> 
+}
+</pre>
 
-<pre class='output'> 
+<pre class='output'>
 The playground is running the latest version of V, updated multiple times per
 day.
 
-This is an alpha stage, please <a style='font-family:Roboto-Mono,Menlo,Monospace,Courier New;' target=_blank href='https://github.com/vlang/v/issues/new?assignees=&labels=bug&template=bug_report.md&title='>report all issues via GitHub</a>. 
+This is an alpha stage, please <a style='font-family:Roboto-Mono,Menlo,Monospace,Courier New;' target=_blank href='https://github.com/vlang/v/issues/new?assignees=&labels=bug&template=bug_report.md&title='>report all issues via GitHub</a>.
 
 <!--
 For security reasons, imports are temporarily disabled, the size of the program
-is limited, and your program can't run for more than 1 second. 
+is limited, and your program can't run for more than 1 second.
 -->
 
 
 
 
 
-</pre> 
-<span id='status'></span> 
-</div> 
+</pre>
+<span id='status'></span>
+</div>
 
 @t footer
-
