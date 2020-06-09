@@ -218,7 +218,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
     <div class="block">
       <h2>Small and easy to build compiler</h2>
       <p>
-      The entire language and its standard library are less than 2 MB. V can be bootstrapped in under a second by compiling its code translated to C with a simple <pre>cc v.c</pre>No libraries or dependencies needed.
+      V can be bootstrapped in under a second by compiling its code translated to C with a simple <pre>cc v.c</pre>No libraries or dependencies needed.
       <br /><br />
       For comparison:
       </p>
@@ -233,7 +233,9 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
       <tr><td>Swift</td><td>70 GB
       <a target="_blank" class="sidenote" href="https://github.com/apple/swift#getting-started">[1]</a>
       </td><td>90m</td></tr>
-      <tr><td>V</td><td>&lt; 2 MB</td><td><1s</td></tr>
+      <tr><td>V</td><td>&lt; 2 MB
+      <a target="_blank" class="sidenote" href="https://github.com/vlang/vc/blob/master/v.c">[2]</a>
+	  </td><td><1s</td></tr>
       </tbody></table>
     </div>
     <div class="block">
@@ -375,7 +377,7 @@ You can follow the progress and read translated code here:
     <div class="block">
       <h2>REPL</h2>
       <pre style="margin-right: 36px">v
->>> import http
+>>> import net.http
 >>> data := http.get('https://vlang.io/utc_now')?
 >>> data.text
 1565977541</pre>
