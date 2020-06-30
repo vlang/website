@@ -104,17 +104,9 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
 <a target=_blank href='https://github.com/ollykel/v-vim'><img width=27 src='/img/vim.png'></a>
 <a target=_blank href='https://github.com/oversoul/vlang-sublime'><img width=27 src='/img/sublime.png'></a>
 
-
-
 </div>
     </div>
     <div class='examples'>
-
-
-
-
-
-
 
 <div class='codeblock' id="codeblock_99404097">
 
@@ -146,7 +138,6 @@ function tokenize_codeblock_99404097 (e) {
       .map(function(token) { return `<span class='${token.type}'>${token.value}</span>` })
       .join('')
   })
-
 }
 document.getElementById("codeblock_ta_39322469").oninput = tokenize_codeblock_99404097
 tokenize_codeblock_99404097({target:{value: document.getElementById("codeblock_ta_39322469").value}})
@@ -157,7 +148,6 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
   if (location.pathname === '/play') e.preventDefault()
   var codeblock_value = document.getElementById("codeblock_ta_39322469").value
   localStorage.setItem('sandbox-code', codeblock_value)
-
 }
 
 </script>
@@ -394,7 +384,6 @@ v run deploy.vsh</pre>
     </div>
   </div>
 
-
   <div class="section">
     <div class="block">
       <h2>Code formatting with vfmt for consistent style</h2>
@@ -444,17 +433,10 @@ v run deploy.vsh</pre>
 
   </div>
 
-
   <div class="section">
     <div class="block">
       <h2>Powerful built-in web framework</h2>
       <p><a href="https://github.com/vlang/v/tree/master/vlib/vweb">github.com/vlang/v/tree/master/vlib/vweb</a></p>
-
-
-
-
-
-
 
 <div class='codeblock' id="codeblock_12828032">
 
@@ -486,7 +468,6 @@ function tokenize_codeblock_12828032 (e) {
       .map(function(token) { return `<span class='${token.type}'>${token.value}</span>` })
       .join('')
   })
-
 }
 document.getElementById("codeblock_ta_15447927").oninput = tokenize_codeblock_12828032
 tokenize_codeblock_12828032({target:{value: document.getElementById("codeblock_ta_15447927").value}})
@@ -497,7 +478,6 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
   if (location.pathname === '/play') e.preventDefault()
   var codeblock_value = document.getElementById("codeblock_ta_15447927").value
   localStorage.setItem('sandbox-code', codeblock_value)
-
 }
 
 </script>
@@ -508,11 +488,6 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
       <h2>Built-in ORM</h2>
       <p>
 
-
-
-
-
-
 <div class='codeblock' id="codeblock_63253338">
 
   <div class='titlebar separator'>
@@ -520,57 +495,89 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
     <a href="/play" class='play-btn' id='codeblock_rb_61993869'><svg class="svg-inline--fa fa-play fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg> Run</a>
   </div>
 
-  <pre><div id="codeblock_hl_69524066">struct Customer {
+  <pre><div id="codeblock_hl_69524066">import sqlite
+
+struct Customer {
   id int
   name string
   nr_orders int
   country string
 }
 
-db := pg.connect(db_name, db_user)
+fn main() {
+  db := sqlite.connect(&#39;example.sqlite&#39;) or {
+    panic(&#39;could not create/find example.sqlite&#39;)
+  }
 
-nr_customers := db.select count from Customer
-println(&#39;number of all customers: $nr_customers&#39;)
+  nr_customers := sql db {
+    select count from Customer
+  }
+  println(&#39;number of all customers: $nr_customers&#39;)
 
-// V syntax can be used to build queries
-uk_customers = db.select from Customer where country == &#39;uk&#39; &amp;&amp; nr_orders &gt; 0
-for customer in uk_customers {
-  println(&#39;$customer.id - $customer.name&#39;)
+  // V syntax can be used to build queries
+  uk_customers := sql db {
+    select from Customer where country == &#39;uk&#39; &amp;&amp; nr_orders > 0
+  }
+
+  for customer in uk_customers {
+    println(&#39;$customer.id - $customer.name&#39;)
+  }
+
+  // by adding `limit 1` we tell V that there will be
+  // only one object
+  customer := sql db {
+    select from Customer where id == 1 limit 1
+  }
+  println(customer.name)
+
+  // insert a new customer
+  new_customer := Customer{name: &#39;Bob&#39;, nr_orders: 10}
+  sql db {
+    insert new_customer into Customer
+  }
 }
+    </div><textarea spellCheck="false" id="codeblock_ta_60982598" class="">import sqlite
 
-// by adding `limit 1` we tell V that there will be
-// only one object
-customer = db.select from Customer where id == 1 limit 1
-println(customer.name)
-
-// insert a new customer
-new_customer := Customer{name: &#39;Bob&#39;, nr_orders: 10}
-db.insert(new_customer)</div><textarea spellCheck="false" id="codeblock_ta_60982598" class="">struct Customer {
+struct Customer {
   id int
   name string
   nr_orders int
   country string
 }
 
-db := pg.connect(db_name, db_user)
+fn main() {
+  db := sqlite.connect(&#39;example.sqlite&#39;) or {
+    panic(&#39;could not create/find example.sqlite&#39;)
+  }
 
-nr_customers := db.select count from Customer
-println(&#39;number of all customers: $nr_customers&#39;)
+  nr_customers := sql db {
+    select count from Customer
+  }
+  println(&#39;number of all customers: $nr_customers&#39;)
 
-// V syntax can be used to build queries
-uk_customers = db.select from Customer where country == &#39;uk&#39; &amp;&amp; nr_orders &gt; 0
-for customer in uk_customers {
-  println(&#39;$customer.id - $customer.name&#39;)
+  // V syntax can be used to build queries
+  uk_customers := sql db {
+    select from Customer where country == &#39;uk&#39; &amp;&amp; nr_orders > 0
+  }
+
+  for customer in uk_customers {
+    println(&#39;$customer.id - $customer.name&#39;)
+  }
+
+  // by adding `limit 1` we tell V that there will be
+  // only one object
+  customer := sql db {
+    select from Customer where id == 1 limit 1
+  }
+  println(customer.name)
+
+  // insert a new customer
+  new_customer := Customer{name: &#39;Bob&#39;, nr_orders: 10}
+  sql db {
+    insert new_customer into Customer
+  }
 }
-
-// by adding `limit 1` we tell V that there will be
-// only one object
-customer = db.select from Customer where id == 1 limit 1
-println(customer.name)
-
-// insert a new customer
-new_customer := Customer{name: &#39;Bob&#39;, nr_orders: 10}
-db.insert(new_customer)</textarea></pre>
+</textarea></pre>
 </div>
 
 <script>
@@ -581,7 +588,6 @@ function tokenize_codeblock_63253338 (e) {
       .map(function(token) { return `<span class='${token.type}'>${token.value}</span>` })
       .join('')
   })
-
 }
 document.getElementById("codeblock_ta_60982598").oninput = tokenize_codeblock_63253338
 tokenize_codeblock_63253338({target:{value: document.getElementById("codeblock_ta_60982598").value}})
@@ -592,7 +598,6 @@ document.getElementById("codeblock_rb_61993869").onclick = function(e) {
   if (location.pathname === '/play') e.preventDefault()
   var codeblock_value = document.getElementById("codeblock_ta_60982598").value
   localStorage.setItem('sandbox-code', codeblock_value)
-
 }
 
 </script>
