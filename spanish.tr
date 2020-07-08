@@ -140,3 +140,9 @@ Pruebas
 memory_management 
 Manejo de memoria
 -----
+fast_comp1
+V compila entre ≈100k y 1.2 millones de lineas de código cada segundo por núcleo de CPU
+-----
+fast_comp2
+V se compila a si mismo entre 0.15 - 0.6 segundos
+-----
