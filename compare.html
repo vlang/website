@@ -4,169 +4,162 @@ h2 {
 	padding-top: 10px;
 }
 pre {
-font-size:80%; 
-} 
+font-size:80%;
+}
 
 comment {
-font-family: 'Roboto Mono'; 
+font-family: 'Roboto Mono';
 color: #777;
 }
 table,td {
-border-collapse: collapse; 
-border: 1px solid #dfdfdf; 
-} 
+border-collapse: collapse;
+border: 1px solid #dfdfdf;
+}
 td {
-padding: 5px; 
-} 
+padding: 5px;
+}
 </style>
 
-<div class='sep'></div> 
+<div class='sep'></div>
 <div class='center'>
-<h2>Comparison of V and Other Languages</h2> 
+<h2>Comparison of V and Other Languages</h2>
 
 <p>
-
-I created V because none of the existing languages had all of the following 
+I created V because none of the existing languages had all of the following
 features:
-
+</p>
 <table>
-<tr><td style='width:300px'>Fast compilation<td style='width:200px'> D, Go, Delphi 
+<tr><td style='width:300px'>Fast compilation<td style='width:200px'> D, Go, Delphi
 <tr><td>Simplicity & maintainability<td>Go
 <tr><td>Great performance on par with C and <br>zero cost C interop<td> C, C++, D, Delphi, Rust
-<tr><td>Safety (immutability, no null, option types, free from data races)<td> Rust 
-<tr><td>Easy concurrency<td> Go 
+<tr><td>Safety (immutability, no null, option types, free from data races)<td> Rust
+<tr><td>Easy concurrency<td> Go
 <tr><td>Easy cross compilation<td>Go
 <tr><td>Compile time code generation<td>D
 <tr><td>Small compiler with zero dependencies<td>-
 <tr><td>No global state<td>-
 <tr><td>Hot code reloading<td>-
-</table> 
+</table>
 
-<p> 
-
+<p>
 Initially I was going to compare V to all major languages, but it got repetitive pretty quickly.
-
+</p>
 <p>
 The table above and the list of the features on the home page should give you a pretty good picture.
-
+</p>
 <p>
-For example, it's pretty obvious that compared to C++, V is much much simpler. It offers up to 400 times faster compilation, 
+For example, it's pretty obvious that compared to C++, V is much much simpler. It offers up to 400 times faster compilation,
 safety, lack of undefined behavior, easy concurrency, compile time code generation, etc.
-
+</p>
 <p>
 Compared to Python, it's much faster, simpler, safer, more maintainable, etc.
-
+</p>
 <p>
 You can use this formula for any language.
-
+</p>
 <p>
 Syntax comparison:
+</p>
 <p>
-
-<a target=_blank href='https://github.com/vlang/v/wiki/V-for-Go-developers'
->V for Go developers</a>
+<a target=_blank href='https://github.com/vlang/v/wiki/V-for-Go-developers'>V for Go developers</a>
+</p>
 <p>
-<a target=_blank href='https://github.com/vlang/v/wiki/V-for-Cpp-developers'
->V for C++ developers</a>
-
-<p> 
+<a target=_blank href='https://github.com/vlang/v/wiki/V-for-Cpp-developers'>V for C++ developers</a>
+</p>
+<p>
 Since V is very similar to Go, and its domain is similar to Rust's, I left a comparison with these two languages.
- 
-<br><br> 
+</p>
 
-<h3 id=go>Go</h3> 
+<h3 id=go>Go</h3>
 
-<p> 
-V is very similar to Go, and these are the things it improves upon: 
-
-<p> 
-- No global state <br> 
-
-<p> 
+<p>
+V is very similar to Go, and these are the things it improves upon:
+</p>
+<p>
+- No global state <br>
+</p>
+<p>
 - No null
-
-<p> 
+</p>
+<p>
 - No undefined values
-
-<p> 
+</p>
+<p>
 - No <code>err != nil</code> checks (replaced by option types)
-
-<p> 
+</p>
+<p>
 - Immutability by default
-
-<p> 
+</p>
+<p>
 - Only one declaration style (<code>a := 0</code>)
-
-<p> 
+</p>
+<p>
 - Much smaller runtime
-
+</p>
 <p>
-- Much smaller binaries (a simple web server written in V is 65 KB vs 7 MB in Go) 
-
-<p> 
-- Zero cost C interop 
-
+- Much smaller binaries (a simple web server written in V is 65 KB vs 7 MB in Go)
+</p>
 <p>
-- No GC 
-
+- Zero cost C interop
+</p>
+<p>
+- No GC
+</p>
 <p>
 - Much faster serialization using codegen and no runtime reflection
-
+</p>
 <p>
-- Precompiled HTML templates unlike <code>html/template</code>s that have to be parsed on every request 
-
+- Precompiled HTML templates unlike <code>html/template</code>s that have to be parsed on every request
+</p>
 <p>
 - Fearless concurrency (no data race guarantee at compilation)  <span class='wip'>wip</span>
-
+</p>
 <p>
-- Enums 
-
+- Enums
+</p>
 <p>
 - Generics
-
-<p> 
-- String interpolation: <code>println('$foo: $bar.baz')</code> 
-
-<p> 
-- Stricter vfmt to ensure one coding style 
-
+</p>
+<p>
+- String interpolation: <code>println('$foo: $bar.baz')</code>
+</p>
+<p>
+- Stricter vfmt to ensure one coding style
+</p>
 <p>
 - Centralised package manager
+</p>
+<p>
+<br>
+<h3> Rust</h3>
 
-<p> 
-<br> 
-<h3> Rust</h3> 
-
-Rust has a very different philosophy.<!-- It's a very powerful language with a growing set of features.  --> 
-
-<p> 
-It is a complex language with a growing set of features and a steep learning curve. No doubt, once you learn and understand the language,
-it becomes a very powerful tool for developing safe, fast, and stable software. But the complexity is 
-still there. 
-
-
-<p>V's goal is to allow building maintainable and predictable software.   That's why the language
-is so simple and maybe even boring for some. The good thing is, you can jump into any part of the project 
-and understand what's going on, feel like it was you who wrote it, because the language is simple and
- there's only one way of doing things. 
-
-<p> 
-Rust's compilation speed is slow, on par with C++.  V compiles 1.2 million lines of code per cpu per second. 
-</p> 
-
-<br> 
-<h3>V vs Rust vs Go: Example</h3> 
-<p> 
-
-Since V's domain is close to both Go and Rust, I decided to use a simple example to compare the three. 
+Rust has a very different philosophy.<!-- It's a very powerful language with a growing set of features.  -->
 
 <p>
-
-It's a simple program that fetches top Hacker News stories concurrently. 
-
-<p> 
-<b>Rust</b> 
-
+It is a complex language with a growing set of features and a steep learning curve. No doubt, once you learn and understand the language,
+it becomes a very powerful tool for developing safe, fast, and stable software. But the complexity is
+still there.
+</p>
+<p>
+V's goal is to allow building maintainable and predictable software.   That's why the language
+is so simple and maybe even boring for some. The good thing is, you can jump into any part of the project
+and understand what's going on, feel like it was you who wrote it, because the language is simple and
+ there's only one way of doing things.
+</p>
+<p>
+Rust's compilation speed is slow, on par with C++.  V compiles 1.2 million lines of code per cpu per second.
+</p>
+<br>
+<h3>V vs Rust vs Go: Example</h3>
+<p>
+Since V's domain is close to both Go and Rust, I decided to use a simple example to compare the three.
+</p>
+<p>
+It's a simple program that fetches top Hacker News stories concurrently.
+</p>
+<p>
+<b>Rust</b>
+</p>
 <pre>use serde::Deserialize;
 use std::sync::{Arc, Mutex};
 
@@ -203,10 +196,10 @@ fn main() {
     for handle in handles {
         handle.join().unwrap();
     }
-} 
-</pre> 
+}
+</pre>
 
-<b>Go</b> 
+<b>Go</b>
 
 <pre>
 package main
@@ -222,8 +215,12 @@ import (
 const STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json"
 const ITEM_URL_BASE = "https://hacker-news.firebaseio.com/v0/item"
 
+type Story struct {
+	Title string
+}
+
 func main() {
-	rsp, err := http.Get(STORIES_URL) 
+	rsp, err := http.Get(STORIES_URL)
 	if err != nil {
 		panic(err)
 	}
@@ -233,42 +230,50 @@ func main() {
 		panic(err)
 	}
 	var ids []int
-	if err := json.NewDecoder(rsp.Body).Decode(&ids); err != nil {
+	if err := json.Unmarshal(data, &ids); err != nil {
 		panic(err)
 	}
-	cursor := make(chan string)
-	go func() {
-		for _, id := range ids {
-			cursor <- fmt.Sprintf("&percnt;s/&percnt;d.json", ITEM_URL_BASE, id)
-		}
-		close(cursor)
-	}()
-	titles := make(chan string)
+	var cursor int
+	var mutex sync.Mutex
+	next := func() int {
+		mutex.Lock()
+		defer mutex.Unlock()
+		temp := cursor
+		cursor++
+		return temp
+	}
+	wg := sync.WaitGroup{}
 	for i := 0; i < 8; i++ {
 		wg.Add(1)
 		go func() {
-			for url := range cursor {
-				func() { // anon func so inner defer allows connection reuse
-					rsp, err := http.Get(url)
-					if err != nil {
-						panic(err)
-					}
-					defer rsp.Body.Close()
+			for cursor := next(); cursor < len(ids); cursor = next() {
+				url := fmt.Sprintf(
+					"&percnt;s/&percnt;d.json",
+					ITEM_URL_BASE,
+					ids[cursor],
+				)
+				rsp, err := http.Get(url)
+				if err != nil {
+					panic(err)
+				}
+				defer rsp.Body.Close()
 
-					var story struct{ Title string }
-					if err := json.NewDecoder(rsp.Body).Decode(&story); err != nil {
-						panic(err)
-					}
-					titles <- story.Title
-				}()
+				data, err := ioutil.ReadAll(rsp.Body)
+				if err != nil {
+					panic(err)
+				}
+				var story Story
+				if err := json.Unmarshal(data, &story); err != nil {
+					panic(err)
+				}
+				fmt.Println(story.Title)
 			}
+			wg.Done()
 		}()
 	}
-	for range ids {
-		fmt.Println(<-titles) // Outside goroutines, presuming Println not thread safe
-	}
+	wg.Wait()
 }
-</pre> 
+</pre>
 
 <b>V</b><br>
 
@@ -283,29 +288,29 @@ struct Story {
 }
 
 fn main() {
-    resp := http.get(StoriesUrl)? 
-    ids := json.decode([]int, resp.body)? 
+    resp := http.get(StoriesUrl)?
+    ids := json.decode([]int, resp.body)?
     mut cursor := 0
     for _ in 0..8 {
         go fn() {
             for {
-                lock { 
+                lock {
                     if cursor >= ids.len {
                         break
                     }
                     id := ids[cursor]
                     cursor++
                 }
-                resp := http.get('$ItemUrlBase/$id.json')? 
+                resp := http.get('$ItemUrlBase/$id.json')?
                 story := json.decode(Story, resp.body)?
                 println(story.title)
             }
         }()
     }
-    runtime.wait() 
-}  
-</pre> 
-</div> 
+    runtime.wait()
+}
+</pre>
+</div>
 </div>
 </body>
 </html>
