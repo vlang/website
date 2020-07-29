@@ -1,0 +1,156 @@
+examples
+Contoh
+-----
+documentation
+Dokumentasi
+-----
+modules
+Modul
+-----
+faq
+FAQ
+-----
+built_in_v
+Dibangun dengan V
+-----
+the_v_lang
+Bahasa Pemrograman V
+-----
+v_slogan
+Sederhana, cepat, aman, bahasa yang dikompilasi untuk mengembangkan perangkat lunak yang mudah dipelihara
+-----
+includes_binaries 
+Sudah termasuk binari untuk 3 sistem
+-----
+install_source 
+Atau install V langsung dari sumber
+-----
+couple_seconds 
+Ini akan memakan waktu beberapa saat
+-----
+wip_info
+V adalah bahasa yang dikembangkan yang masih dalam tahap awal.
+Fitur-fitur yang masih dikerjakan ditandai dengan $wip
+<br> 
+Seluruh yang ada di halaman ini dan di dokumentasi telah di implementasikan dan bersifat terbuka.
+<p> 
+Rilis V 1.0 akan direncanakan pada Desember 2019, dimana tidak akan ada lagi $wip.
+-----
+forum
+Forum
+-----
+blog
+Blog 
+-----
+fast_compilation
+Fast compilation
+-----
+safety
+Keamanan
+-----
+performance 
+Performa
+-----
+simple_language_for_maintainable_programs
+Bahasa yang mudah untuk membangun program yang mudah dipelihara
+-----
+zero_deps 
+400 KB compiler tanpa dependencies
+-----
+c_translation 
+C/C++ translation 
+-----
+introduction
+Perkenalan 
+-----
+comments
+Komentar 
+-----
+functions
+Fungsi 
+-----
+variables
+Variabel
+-----
+basic_types 
+Tipe Dasar
+-----
+strings
+Strings
+-----
+arrays
+Arrays 
+-----
+maps
+Maps 
+-----
+if
+If 
+-----
+in_op 
+In operator 
+-----
+for_loop 
+For loop 
+-----
+switch 
+Switch 
+-----
+structs 
+Structs 
+-----
+access_mod 
+Access modifiers 
+-----
+methods
+Methods
+-----
+pure_fns 
+Pure functions 
+-----
+high_fns 
+High order functions 
+-----
+constants 
+Constants 
+-----
+modules
+Modules 
+-----
+interfaces
+Interfaces 
+-----
+enums
+Enums 
+-----
+optionals_and_errors 
+Option types & error handling 
+-----
+generics
+Generics 
+-----
+concurrency
+Concurrency 
+-----
+decoding_json 
+Decoding JSON 
+-----
+testing
+Testing 
+-----
+memory_management 
+Memory management 
+-----
+fast_comp1
+V dicompile sekitar =100k dan 1.2 juta baris kode per detik per CPU core.
+-----
+fast_comp2
+V dicompile sendiri pada 0.15 - 0.6 detik.
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+No null 
+-----
