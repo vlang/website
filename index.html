@@ -1,5 +1,10 @@
 @t header
 
+<!--
+BUILTIN TESTING
+V LANGUAGE SERVER
+-->
+
 <div class='content landing'>
   <div class='hero'>
     <div class='info'>
@@ -109,7 +114,9 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
 <div class='codeblock' id="codeblock_99404097">
   <div class='titlebar separator'>
     <div class='flex'></div>
+	<!--
     <a href="https://v-wasm.now.sh" class='play-btn' id='codeblock_rb_13318017'><svg class="svg-inline--fa fa-play fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg> Run</a>
+	-->
   </div>
   <pre><div id="codeblock_hl_04227451">fn main() {
   areas := [&#39;game&#39;, &#39;web&#39;, &#39;tools&#39;, &#39;science&#39;, &#39;systems&#39;,
@@ -157,7 +164,11 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 		<p>
 		This results in simple, readable, and maintainable code.
 		<p> 
-		Despite being simple, V gives a lot of power to the developer and can be used in pretty much every field, including systems programming, webdev, gamedev, GUI, mobile (wip), science, embedded, etc.
+		Despite being simple, V gives a lot of power to the developer and can be used in pretty much every field, including systems programming, webdev, gamedev, GUI, mobile (wip), science, embedded, tooling, etc.
+		</p>
+		<p>
+		V is very similar to Go. If you know Go, you already know ≈80% of V.
+		Things V improves on Go: <a target=_blank href='https://vlang.io/compare#go'>vlang.io/compare#go</a>.
 		</p>
     </div>
     <div class="block">
@@ -231,7 +242,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 
   <div class="section">
     <div class="block">
-      <h2>C translation</h2>
+      <h2>C translation (wip)</h2>
       <p>V can translate your entire C wip project and offer you the safety, simplicity, and 10-25x compilation speed-up. </p>
       <div style="display: flex">
         <pre style="margin-right: 36px">std::vector<std::string> s;
