@@ -1,0 +1,157 @@
+examples
+Primjeri
+-----
+documentation
+Dokumentacija
+-----
+modules
+Moduli
+-----
+faq
+FAQ
+-----
+built_in_v
+Kreirano sa V-om
+-----
+the_v_lang
+V programski jezik
+-----
+v_slogan
+Jednostavan, brz, siguran kompajliran jezik za kreiranje održivog softvera
+-----
+includes_binaries 
+koristi binarne verzije za 3 sistema
+-----
+install_source 
+Ili instaliraj V kompajliranjem izvornog koda
+-----
+couple_seconds 
+ovo će trajati par sekundi
+-----
+wip_info
+V je aktivan jezik koji je u ranoj fazi razvoja
+Značajke koje su još u izradi označene su sa $wip
+<br> 
+Sve na ovoj stranici i dokumentacija su implementirani i otvorenog su koda.
+<p> 
+Do vremena izlazka V 1.0 koji je planiran za decembar 2019, neće više biti $wip za završiti. 
+By the time of the V 1.0 release planned for December 2019, there will be no $wip's left.
+-----
+forum
+Forum
+-----
+blog
+Blog 
+-----
+fast_compilation
+Brza kompilacija
+-----
+safety
+Sigurnost
+-----
+performance 
+Performanse 
+-----
+simple_language_for_maintainable_programs
+Jednostavan jezik za kreiranje održivih programa
+-----
+zero_deps 
+400 KB-ni kompajler sa nula ovisnih komponenti
+-----
+c_translation 
+C/C++ prijevod
+-----
+introduction
+Uvod
+-----
+comments
+Komentari
+-----
+functions
+Funkcije
+-----
+variables
+Varijable
+-----
+basic_types 
+Jednostavni tipovi
+-----
+strings
+Stringovi
+-----
+arrays
+Nizovi 
+-----
+maps
+Mape 
+-----
+if
+If 
+-----
+in_op 
+In operator 
+-----
+for_loop 
+For petlja
+-----
+switch 
+Switch 
+-----
+structs 
+Struktovi
+-----
+access_mod 
+Pristupni modifikatori
+-----
+methods
+Metode
+-----
+pure_fns 
+Čiste funkcije
+-----
+high_fns 
+Funkcije višeg stepena
+-----
+constants 
+Konstante
+-----
+modules
+Moduli
+-----
+interfaces
+Interfejsi
+-----
+enums
+Enumi
+-----
+optionals_and_errors 
+Vrste opcija i rukovanje greškama
+-----
+generics
+Generički tipovi
+-----
+concurrency
+Konkurencija
+-----
+decoding_json 
+Dekodiranje JSON-a
+-----
+testing
+Testiranje
+-----
+memory_management 
+Rukovanje memorijom
+-----
+fast_comp1
+V kompajlira između ≈100 hiljada i 1.2 miliona linija koda na sekundu po jezgri procesora.
+-----
+fast_comp2
+V kompajlira sebe za 0.15 - 0.6 sekundi.
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+Nije null
+-----
