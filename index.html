@@ -423,16 +423,21 @@ v run deploy.vsh</pre>
 
   <div class="section">
     <div class="block">
-      <h2>Run V in your browser</h2>
+      <h2>JavaScript and WASM backends</h2>
       <p>
-      V programs can be compiled to JavaScript and WASM (for now with Emscripten).
+      V programs can be translated to JavaScript:
       </p>
+      <pre>v -o hello.js hello.v</pre>
       <p>
+	  They can also be compiled to and WASM (for now with Emscripten).
       V compiler compiled to WASM and running V programs by translating them to JavaScript:
       </p>
       <p>
       <a target=_blank href='https://v-wasm.now.sh/'>v-wasm.now.sh</a>
       </p>
+	  <p>A game written using V's graphical backend and compiled to WASM:</p>
+	  <a target=_blank href='https://v2048.vercel.app/'>v2048</a>
+
       </div>
       <div class="block">
     <h2>Automatic documentation</h2>
