@@ -11,7 +11,7 @@ faq
 FAQ
 -----
 built_in_v
-Built in V
+Built-in V
 -----
 the_v_lang
 The V Programming Language
@@ -30,9 +30,9 @@ this will take a couple of seconds
 -----
 wip_info
 V is an actively developed language at an early stage.
-Features that are still being worked on are marked with $wip
+Features that are still being worked on and marked with $wip
 <br> 
-Everything else on this page and the docs has been implemented and open-sourced.
+Everything else on this page and the docs have been implemented and open-sourced.
 <p> 
 By the time of the V 1.0 release planned for December 2019, there will be no $wip's left.
 -----
