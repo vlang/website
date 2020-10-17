@@ -449,6 +449,37 @@ v run deploy.vsh</pre>
 	</div>
 </div>
 
+  <div class="section">
+    <div class="block">
+      <h2>Built-in testing framework</h2>
+	  <p>
+	  Writing tests is very easy: just start your test function with <code>test_</code>
+	  <pre>
+fn get_string() string { return 'hello' }
+
+fn test_get_string() {
+  assert get_string() == 'hello'
+}
+      <p>
+      </div>
+
+      <div class="block">
+    <h2>Friendly error messages</h2>
+    <p>
+	Helpful error messages make learning the language and fixing errors simpler:
+
+    </p>
+    <pre>
+user.v:8:14: error: `update_user` parameter `user` is mutable, you need to provide `mut`: `update_user(mut user)`
+
+    7 |     mut user := User{}
+    8 |     update_user(user)
+      |                 ~~~~
+    9 | }
+	</pre>
+	</div>
+</div>
+
 <div class="section">
   <div class="block">
     <h2>Powerful built-in web framework</h2>
