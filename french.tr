@@ -76,7 +76,7 @@ basic_types
 Types de base 
 -----
 strings
-Chaînes
+Chaînes de caractères
 -----
 arrays
 Tableaux 
@@ -109,7 +109,7 @@ pure_fns
 Fonctions pures 
 -----
 high_fns 
-Fonctions de grand ordre 
+Fonctions d'ordre supérieur
 -----
 constants 
 Constantes 
