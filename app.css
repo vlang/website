@@ -173,7 +173,7 @@ textarea:focus {
 	line-height: 1.2;
 	font-family: "Roboto Mono", "Courier New", Menlo, "DejaVu Sans Mono", Monaco, Courier, monospace;
 	position: absolute;
-	top: 48px;
+	top: 25px;
 	left: 10px;
 	height: calc(100% - 48px);
 	width: calc(100% - 22px);
