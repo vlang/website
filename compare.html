@@ -18,14 +18,20 @@ border: 1px solid #dfdfdf;
 td {
 padding: 5px;
 }
+.center{
+	    margin: 0 auto;
+    max-width: 700px;
+}
 </style>
+
+<div class='content landing'>
 
 <div class='sep'></div>
 <div class='center'>
-<h2>Comparison of V and Other Languages</h2>
+<h2>Comparison of V and other languages</h2>
 
 <p>
-I created V because none of the existing languages had all of the following
+V was created because none of the existing languages had all of the following
 features:
 </p>
 <table>
@@ -48,7 +54,7 @@ Initially I was going to compare V to all major languages, but it got repetitive
 The table above and the list of the features on the home page should give you a pretty good picture.
 </p>
 <p>
-For example, it's pretty obvious that compared to C++, V is much much simpler. It offers up to 400 times faster compilation,
+For example, it's pretty obvious that compared to C++, V is much simpler. It offers signicantly faster compilation speed,
 safety, lack of undefined behavior, easy concurrency, compile time code generation, etc.
 </p>
 <p>
@@ -85,13 +91,28 @@ V is very similar to Go, and these are the things it improves upon:
 - No undefined values
 </p>
 <p>
+- No variable shadowing
+</p>
+<p>
 - No <code>err != nil</code> checks (replaced by option types)
 </p>
 <p>
 - Immutability by default
 </p>
 <p>
-- Only one declaration style (<code>a := 0</code>)
+- Enums
+</p>
+<p>
+- Generics
+</p>
+<p>
+- Sum types (<code>type Expr = IfExpr | StringLiteral | IntLiteral | ...</code>)
+</p>
+<p>
+- String interpolation: <code>println('$foo: $bar.baz')</code>
+</p>
+<p>
+- Only one declaration style: <code>a := 0</code>
 </p>
 <p>
 - Much smaller runtime
@@ -109,28 +130,19 @@ V is very similar to Go, and these are the things it improves upon:
 - Much faster serialization using codegen and no runtime reflection
 </p>
 <p>
-- Precompiled HTML templates unlike <code>html/template</code>s that have to be parsed on every request
+- Precompiled text/HTML templates unlike <code>html/template</code>s that have to be parsed on every request
 </p>
 <p>
 - Fearless concurrency (no data race guarantee at compilation)  <span class='wip'>wip</span>
 </p>
 <p>
-- Enums
-</p>
-<p>
-- Generics
-</p>
-<p>
-- Sum types (<code>type Expr = IfExpr | StringLiteral | IntLiteral | ...</code>)
-</p>
-<p>
-- String interpolation: <code>println('$foo: $bar.baz')</code>
-</p>
-<p>
 - Stricter vfmt to ensure one coding style
 </p>
 <p>
-- Centralised package manager
+- Centralized package manager: vpm.vlang.io (<code>v install ...</code>)
+</p>
+<p>
+- Much simpler and less verbose testing, <code>assert</code>.
 </p>
 <p>
 <br>
@@ -401,10 +413,6 @@ NTI_m9aGbgPB3gZgFcKcDkjg9a8g_.flags = 2;
 </pre>
 
 <p>
-This must be  one of the reasons it compiles almost <a target=_blank href='/compilation_speed'>100
-times slower</a> than V.
-</p>
-<p>
 V can emit native code directly, Nim can only emit C and JavaScript. It's also possible to embed C code
 in Nim, which reduces safety and portability.
 </p>
@@ -423,30 +431,7 @@ V is not going to change much, if at all.
 <p>Again, I'm not saying it's a worse language. It's a very different language that offers a lot of
 options and features. Many developers prefer this approach. And that's ok.
 </p>
-<!--
-<br>
-<br>
-<br>
-<h3>Zig</h3>
-
-Zig's goals are similar.
-The things V improves upon:
-<p>- Simplicity
-<p>- Strings
-<p>- No globals
-<p>- Easier allocations
-<p>- Automatic memory management
-<p>- No LLVM dependency
-<p>- Hot reloading
-<p>- <a href='/compilation_speed'>Faster compilation</a>
-
-<br>
-<br>
-More languages coming soon...
--->
 
 </div>
 </div>
-</body>
-</html>
 @t footer
