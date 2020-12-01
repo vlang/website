@@ -112,8 +112,17 @@ V is very similar to Go, and these are the things it improves upon:
 - String interpolation: <code>println('$foo: $bar.baz')</code>
 </p>
 <p>
+- If and match expressions (including sum type matches)
+</p>
+<p>
 - Only one declaration style: <code>a := 0</code>
 </p>
+<p>
+- Warnings for unused imports and vars for quicker development without annoying
+interruptions. But only in development/debugging mode.
+<br>
+Making a production build still requires fixing all of them, thus enforcing
+clean code.
 <p>
 - Much smaller runtime
 </p>
