@@ -219,6 +219,50 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 
   <div class="section">
     <div class="block">
+      <h2>Innovative memory management</h2>
+	  <p>
+	  	V avoids doing unnecessary allocations in the first place
+		by using value types, string buffers, promoting a simple abstraction-free code style.
+	  </p>
+	  <p>
+	   Most objects (~90-100%) are freed by V's autofree engine:
+	  the compiler inserts necessary free calls automatically during compilation. 
+	    Remaining small percentage of objects is freed via reference counting.
+	  </p>
+	  <p>
+	    The developer doesn't need to change anything in their code. "It just works",
+		like in Python, Go, or Java, except there's no heavy GC tracing everything
+		or expensive RC for each object.
+	  </p>
+	  <p>
+	    For developers willing to have more low level control, autofree can be disabled
+		with <code>-noautofree</code>.
+	  </p>
+	  <p>
+	    <i>Note: right now autofree is hidden behind the -autofree flag.
+		It will be enabled by default in V 0.3.</i>
+	  </p>
+
+
+
+	</div>
+    <div class="block">
+	<p>
+	V's compile-time memory management demo. All objects are freed during compilation. Running the Ved editor on an 8 MB file with 0 leaks:
+	</p>
+
+		<iframe width="448" height="252" src="https://www.youtube.com/embed/gmB8ea8uLsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+  </div>
+
+
+
+	  
+
+
+
+  <div class="section">
+    <div class="block">
       <h2>Small and easy to build compiler</h2>
       <p>
       V can be bootstrapped in under a second by compiling its code translated to C with a simple <pre>cc v.c</pre>No libraries or dependencies needed.
