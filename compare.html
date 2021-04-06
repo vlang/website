@@ -188,7 +188,7 @@ It's a simple program that fetches top Hacker News stories concurrently.
 <p>
 <b>Rust</b>
 </p>
-<pre>use serde::Deserialize;
+<pre class="compare-code">use serde::Deserialize;
 use std::sync::{Arc, Mutex};
 
 const STORIES_URL: &str = "https://hacker-news.firebaseio.com/v0/topstories.json";
@@ -229,7 +229,7 @@ fn main() {
 
 <b>Go</b>
 
-<pre>
+<pre class="compare-code">
 package main
 
 import (
@@ -305,7 +305,7 @@ func main() {
 
 <b>V</b>
 
-<pre>
+<pre class="compare-code">
 const (
 	StoriesUrl = 'https://hacker-news.firebaseio.com/v0/topstories.json'
 	ItemUrlBase = 'https://hacker-news.firebaseio.com/v0/item'
@@ -365,7 +365,7 @@ a <code>ref</code> argument.
 about the power of immutable strings.</p>
 
 <p>Unlike V, Nim generates unreadable C code with lots of extra bloat. For example:</p>
-<pre>
+<pre class="compare-code">
 var users = [
     User(name: "Carl", last_name: "Black", age: 22),
     User(name: "Sam", last_name: "Johnson", age: 23)
@@ -374,7 +374,7 @@ var users = [
 
 If we build this with <code>nim c -d:release test.nim</code>, we get
 
-<pre>
+<pre class="compare-code">
 STRING_LITERAL(TM_R8RUzYq41iOx0I9bZH5Nyrw_5, "Carl", 4);
 STRING_LITERAL(TM_R8RUzYq41iOx0I9bZH5Nyrw_6, "Black", 5);
 STRING_LITERAL(TM_R8RUzYq41iOx0I9bZH5Nyrw_7, "Sam", 3);

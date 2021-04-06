@@ -34,7 +34,7 @@ Features that are still being worked on are marked with $wip
 <br> 
 Everything else on this page and the docs has been implemented and open-sourced.
 <p> 
-By the time of the V 1.0 release planned for December 2019, there will be no $wip's left.
+By the time of the V 1.0 release, there will be no $wip's left.
 -----
 forum
 Forum
@@ -55,7 +55,7 @@ simple_language_for_maintainable_programs
 Simple language for building  maintainable programs 
 -----
 zero_deps 
-400 KB compiler with zero dependencies
+5 MB compiler with zero dependencies
 -----
 c_translation 
 C/C++ translation 
@@ -146,10 +146,6 @@ V compiles between ≈100k and 1.2 million lines of code per second per CPU core
 -----
 fast_comp2
 V compiles itself in 0.15 - 0.6 seconds.
------
-fast_comp3
------
-fast_comp4
 -----
 no_null
 No null 

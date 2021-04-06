@@ -92,7 +92,7 @@ body {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 72px 1fr;
-	grid-template-areas: "header" "content";
+	grid-template-areas: "header""content";
 	width: 100%
 }
 
@@ -339,9 +339,11 @@ textarea:focus {
 		overflow-y: visible;
 		padding-right: 0
 	}
+
 	.documentation .markdown {
 		margin-left: 8px
 	}
+
 	.documentation .toc {
 		margin-right: 0;
 		margin-bottom: 32px
@@ -397,32 +399,36 @@ textarea:focus {
 	color: #222b38
 }
 
-	.header .donate-button .paypal {
-		width: 80px;
-		height: 33px;
-		background: #3b7bbf;
-		margin-bottom: 3px;
-		border-radius: 3px;
-		color: #fff;
-		text-align: center;
-		line-height: 32px;
-		font-size: 15px
-		margin-left: 10px;
-	}
+.header .donate-button .paypal {
+	width: 80px;
+	height: 33px;
+	background: #3b7bbf;
+	margin-bottom: 3px;
+	border-radius: 3px;
+	color: #fff;
+	text-align: center;
+	line-height: 32px;
+	font-size: 15px;
+	margin-left: 10px;
+}
+
 @media (max-width:1100px) {
 	.header {
 		position: static;
 		flex-direction: column
 	}
+
 	.header .donate-button {
 		flex-direction: row;
 		margin-top: 8px;
-		//margin-left: 0;
+		margin-left: 0;
 		margin-bottom: 8px
 	}
+
 	.header .donate-button .patreon {
 		margin-right: 12px
 	}
+
 	/*
 	.header .donate-button .paypal {
 		width: 168px;
@@ -494,6 +500,7 @@ textarea:focus {
 	border: 1px solid #eee;
 	right: 0;
 	top: 54px;
+	z-index: 1;
 	box-sizing: border-box;
 	border-radius: 6px;
 	opacity: 0;
@@ -612,7 +619,7 @@ textarea:focus {
 }
 
 .landing .hero .examples .menu button i {
-	font-size: 32px!important;
+	font-size: 32px !important;
 	color: #333
 }
 
@@ -750,31 +757,39 @@ textarea:focus {
 		margin: 32px 0;
 		flex-direction: column
 	}
+
 	.landing .hero .info {
 		margin-bottom: 32px;
 		text-align: center
 	}
+
 	.landing .hero .info .button {
 		text-align: left
 	}
+
 	.landing .hero .info .button:last-child {
 		margin-right: 0
 	}
+
 	.landing .hero .info .links,
 	.landing .hero .info .social {
 		margin-right: 0
 	}
+
 	.landing .hero .info .social {
 		margin-top: 16px
 	}
+
 	.landing .hero .info .social i {
 		font-size: 28px;
 		margin-left: 6px;
 		margin-right: 6px
 	}
+
 	.landing .hero .examples {
-		margin: 0 8px 0 8px!important
+		margin: 0 8px 0 8px !important
 	}
+
 	.landing .editors {
 		margin-right: 0
 	}
@@ -811,6 +826,7 @@ textarea:focus {
 	.playground .editor {
 		flex-direction: column
 	}
+
 	.playground .editor .codeblock {
 		max-width: calc(100vw - 36px)
 	}
@@ -898,14 +914,30 @@ textarea:focus {
 	.built-in-v {
 		grid-template-columns: 1fr
 	}
+
 	.built-in-v .first,
 	.built-in-v .second {
 		grid-column-start: 1
 	}
 }
 
-.landing .hero .button .options-container .options:focus, .landing .hero .button .options-container .options:hover {
-    opacity: 1;
-    pointer-events: all !important;
-    transform: translateY(0)
+.landing .hero .button .options-container .options:focus,
+.landing .hero .button .options-container .options:hover {
+	opacity: 1;
+	pointer-events: all !important;
+	transform: translateY(0)
+}
+
+.compare-code {
+	background: white;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 0 0 1px grey;
+}
+
+code {
+	background: white;
+	padding: 2px;
+	box-shadow: 0 0 1px grey;
+	border-radius: 2px;
 }
