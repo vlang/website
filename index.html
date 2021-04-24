@@ -63,6 +63,20 @@ Source code: <a target=blank href='https://github.com/vlang/v/blob/master/cmd/to
 	</tr>
 
 <tr>
+		<td>2021-04-24 10:32</td>
+		<td><a target=_blank href="https://github.com/vlang/v/commit/b506d8fc">b506d8fc</a></td>
+		<td>os: use C.getlogin for os.loginname, instead of C.getlogin_r (C.getlogin_r absent on Android)</td>
+		<td>580ms</td>
+		<td>756ms</td>
+		<td>0ms</td>
+		<td>465ms</td>
+		<td>3817 KB</td>
+		<td>112ms</td>
+		<td>122ms</td>
+		<td>238ms</td>
+		<td>55ms</td>
+	</tr>
+<tr>
 		<td>2021-04-24 10:22</td>
 		<td><a target=_blank href="https://github.com/vlang/v/commit/187895c9">187895c9</a></td>
 		<td>os: use GetComputerNameW to retrieve hostname on Windows (#9861)</td>
