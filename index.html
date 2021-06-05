@@ -224,7 +224,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 	  <p>
 	   Most objects (~90-100%) are freed by V's autofree engine:
 	  the compiler inserts necessary free calls automatically during compilation. 
-	    Remaining small percentage of objects is freed via reference counting.
+	    Remaining small percentage of objects is freed via GC.
 	  </p>
 	  <p>
 	    The developer doesn't need to change anything in their code. "It just works",
@@ -234,6 +234,12 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 	  <p>
 	    For developers willing to have more low level control, autofree can be disabled
 		with <code>-noautofree</code>.
+	  </p>
+	  <p>
+	    There's also an option to use GC for everything via <code>v -gc boehm</code>.
+	  </p>
+	  <p>
+	    Arena allocation is available via <code>v -prealloc</code>.
 	  </p>
 	  <p>
 	    <i>Note: right now autofree is hidden behind the -autofree flag.
@@ -248,7 +254,13 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 	V's compile-time memory management demo. All objects are freed during compilation. Running the Ved editor on an 8 MB file with 0 leaks:
 	</p>
 
+	<a href='https://www.youtube.com/watch?v=gmB8ea8uLsM' target=_blank>
+	 <img  style="width: 90%; margin-left: 0" src='/img/youtube_compile_speed.png'>
+	</a>
+	 <!--
+
 		<iframe width="448" height="252" src="https://www.youtube.com/embed/gmB8ea8uLsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		-->
 	</div>
   </div>
 
@@ -284,8 +296,13 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
     </div>
     <div class="block">
       <p>Building V in 0.3 seconds and then using the resulting binary to build itself again:</p>
+		<a href='https://www.youtube.com/watch?v=pvP6wmcl_Sc' target=_blank>
+		 <img  style="width: 90%; margin-left: 0" src='/img/youtube_comp_speed.png'>
+		</a>
 
+<!--
 		<iframe width="448" height="252" src="https://www.youtube.com/embed/pvP6wmcl_Sc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		-->
 	  <!--
       <video looping="true" autoPlay muted src="/img/buildv.mp4" style="width: 80%; margin-left: 10%"></video>
 	  -->
