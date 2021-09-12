@@ -397,10 +397,10 @@ textarea:focus {
 	color: #222b38
 }
 
-	.header .donate-button .paypal {
+	.header .donate-button {
 		width: 80px;
 		height: 33px;
-		background: #3b7bbf;
+		background: #5d87bf;
 		margin-bottom: 3px;
 		border-radius: 3px;
 		color: #fff;
@@ -423,20 +423,6 @@ textarea:focus {
 	.header .donate-button .patreon {
 		margin-right: 12px
 	}
-	/*
-	.header .donate-button .paypal {
-		width: 168px;
-		height: 33px;
-		background: #3b7bbf;
-		margin-bottom: 3px;
-		margin-left: 10px;
-		border-radius: 3px;
-		color: #fff;
-		text-align: center;
-		line-height: 32px;
-		font-size: 15px
-	}
-	*/
 	.header .logo {
 		width: 42px;
 		margin-top: 8px;
