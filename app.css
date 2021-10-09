@@ -452,7 +452,7 @@ textarea:focus {
 	width: calc(100% - 32px);
 	max-width: 1200px;
 	color: #444;
-	margin: 32px 0;
+	margin: 64px 0;
 }
 
 .landing .hero .info {
@@ -595,7 +595,9 @@ textarea:focus {
 	margin-right: 32px;
 	display: flex;
 	flex-direction: column;
-	align-items: center
+	align-items: center;
+	position:relative;
+	top: -30px;
 }
 
 .landing .hero .examples .menu {
