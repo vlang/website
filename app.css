@@ -384,6 +384,10 @@ textarea:focus {
 	justify-content: center
 }
 
+.header .nav a:hover {
+	color:#333;
+}
+
 .header .nav .item {
 	color: #777;
 	text-decoration: none;
