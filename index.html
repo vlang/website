@@ -155,7 +155,7 @@ for line in lines {
 </pre>
   <pre class="hello_devs" id=ex3 style='display:none'>
 import time
-import http
+import net.http
 resp := http.get('https://vlang.io/utc_now') or {
     println('failed to fetch data from the server')
     return
