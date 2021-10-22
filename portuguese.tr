@@ -1,0 +1,156 @@
+examples
+Exemplos
+-----
+documentation
+Documentação
+-----
+modules
+Módulos
+-----
+faq
+Perguntas Frequentes
+-----
+built_in_v
+Criado com V
+-----
+the_v_lang
+A linguagem de programação V
+-----
+v_slogan
+Linguagem simples, rápida, segura e compilada para desenvolver software manutenível
+-----
+includes_binaries 
+inclui os binários para os 3 sistemas
+-----
+install_source 
+Ou instale V a partir do código fonte
+-----
+couple_seconds 
+isso levará alguns segundos
+-----
+wip_info
+V é uma linguagem em desenvolvimento ativo, em early stage.
+Features marcadas com $wip ainda estão sendo desenvolvidas
+<br>
+Todo o resto nesta página e na documentação já foi implementada e é Open Source.
+<p>
+O release 1.0 de V está planejado para Dezembro de 2019 e não haverá mais $wip.
+-----
+forum
+Fórum
+-----
+blog
+Blog 
+-----
+fast_compilation
+Compilação rápida
+-----
+safety
+Segurança
+-----
+performance 
+Performance 
+-----
+simple_language_for_maintainable_programs
+Linguagem simples para escrever programas manuteníveis
+-----
+zero_deps 
+Compilador de 400 KB sem dependências
+-----
+c_translation 
+Tradução para C/C++
+-----
+introduction
+Introdução
+-----
+comments
+Comentários
+-----
+functions
+Funções
+-----
+variables
+Variáveis
+-----
+basic_types 
+Tipos básicos
+-----
+strings
+Strings
+-----
+arrays
+Arrays 
+-----
+maps
+Mapas
+-----
+if
+If 
+-----
+in_op 
+In
+-----
+for_loop 
+For
+-----
+switch 
+Switch 
+-----
+structs 
+Structs 
+-----
+access_mod 
+Modificadores de acesso
+-----
+methods
+Métodos
+-----
+pure_fns 
+Funções puras
+-----
+high_fns 
+Funções alta-ordem
+-----
+constants 
+Constantes
+-----
+modules
+Módulos
+-----
+interfaces
+Interfaces 
+-----
+enums
+Enums 
+-----
+optionals_and_errors 
+tipos Option & tratamento de erros
+-----
+generics
+Genéricos
+-----
+concurrency
+Concorrência
+-----
+decoding_json 
+Deserializando JSON
+-----
+testing
+Testando
+-----
+memory_management 
+Gerenciamento de memória
+-----
+fast_comp1
+V compila algo entre 100 mil e 1.2 milhão de linhas de código por segundo por core.
+-----
+fast_comp2
+V compila a si mesma em algo em torno de 0.15 - 0.6 segundos.
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+Sem null
+-----
