@@ -111,6 +111,7 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
 	<!--
     <a target=_blank href='https://github.com/oversoul/vlang-sublime'><img width=27 src='/img/sublime.png'></a>
 	-->
+    <a target=_blank href='https://github.com/elliotchance/vlang-sublime'><img width=27 src='/img/sublime.png'></a>
 
   </div>
   <div style='margin:12px'>
@@ -209,12 +210,14 @@ fn (mut u User) register() {
   </pre>
 </div>
 
-<select id="select" onchange="change_ex()">
+<select id="select" onchange="change_ex()" style="margin-top:5px">
 <option value="1">Hello world</option>
 <option value="2">Filter log file</option>
 <option value="3">HTTP + time</option>
 <option value="4">JSON encoding/decoding</option>
+<!--
 <option value="5">Built-in ORM</option>
+-->
 </select>
 
 <script>
