@@ -610,14 +610,19 @@ v install ui
 1565977541</pre>
     </div>
     <div class="block">
-      <h2>V Script</h2>
+      <h2>Cross-platform shell scripts in V</h2>
+	  <p>
+	  V can be used as an alternative to Bash to write deployment scripts, build scripts, etc.
+
+The advantage of using V for this is the simplicity and predictability of the language, and cross-platform support. "V scripts" run on Unix-like systems as well as on Windows.
+</p>
       <pre style="margin-right: 36px">for file in ls('build/') {
   rm(file)
 }
 mv('v.exe', 'build/')
 
 v run deploy.vsh</pre>
-      <p><a href="/docs#bash">Read more about V script</a></p>
+      <p><a href="https://github.com/vlang/v/blob/master/doc/docs.md#cross-platform-shell-scripts-in-v">Read more about V script</a></p>
     </div>
   </div>
 
