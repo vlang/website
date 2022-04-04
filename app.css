@@ -915,3 +915,13 @@ textarea:focus {
     pointer-events: all !important;
     transform: translateY(0)
 }
+.book {
+position:absolute; right:0px; top:50px; text-align:center; display:block; width:155px; font-size:12px;
+}
+@media (max-width:800px) {
+.book {
+	display:none;
+
+}
+}
+
