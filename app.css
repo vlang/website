@@ -410,7 +410,7 @@ textarea:focus {
 		color: #fff;
 		text-align: center;
 		line-height: 32px;
-		font-size: 15px
+		font-size: 15px;
 		margin-left: 10px;
 	}
 @media (max-width:1100px) {
@@ -421,7 +421,7 @@ textarea:focus {
 	.header .donate-button {
 		flex-direction: row;
 		margin-top: 8px;
-		//margin-left: 0;
+		margin-left: 0;
 		margin-bottom: 8px
 	}
 	.header .donate-button .patreon {
