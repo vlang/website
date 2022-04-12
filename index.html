@@ -65,6 +65,22 @@ Source code: <a target=blank href='https://github.com/vlang/v/blob/master/cmd/to
 	</tr>
 
 <tr>
+		<td>2022-04-12 08:47</td>
+		<td><a target=_blank href="https://github.com/vlang/v/commit/9b43713e">9b43713e</a></td>
+		<td>net: simplify TcpListener.accept, use `C.accept(l.sock.handle, 0, 0)`, since we do not care about the local address of the accepted connection</td>
+		<td>412ms</td>
+		<td>494ms</td>
+		<td>0ms</td>
+		<td>133ms</td>
+		<td>488 KB</td>
+		<td>117ms</td>
+		<td>117ms</td>
+		<td>22ms</td>
+		<td>41ms</td>
+		<td>81759</td>
+		<td>198444</td>
+	</tr>
+<tr>
 		<td>2022-04-12 06:38</td>
 		<td><a target=_blank href="https://github.com/vlang/v/commit/716cb17a">716cb17a</a></td>
 		<td>math.big: wrap all asserts in module code (not in tests) in `$if debug {}` (#14012)</td>
