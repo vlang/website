@@ -82,78 +82,78 @@ Since V is very similar to Go, and its domain is similar to Rust's, I left a com
 V is very similar to Go, and these are the things it improves upon:
 </p>
 <p>
-- No null
+— No null
 </p>
 <p>
-- No <code>err != nil</code> checks (replaced by option types)
+— No <code>err != nil</code> checks (replaced by option types)
 </p>
 <p>
-- No undefined values
+— No undefined values
 </p>
 <p>
-- No variable shadowing
+— No variable shadowing
 </p>
 <p>
-- Immutability by default
+— Immutability by default
 </p>
 <p>
-- Enums
+— Enums
 </p>
 <p>
-- Sum types (<code>type Expr = IfExpr | StringLiteral | IntLiteral | ...</code>)
+— Sum types (<code>type Expr = IfExpr | StringLiteral | IntLiteral | ...</code>)
 </p>
 <p>
-- String interpolation: <code>println('$foo: $bar.baz')</code>
+— String interpolation: <code>println('$foo: $bar.baz')</code>
 </p>
 <p>
-- If and match expressions (including sum type matches)
+— If and match expressions (including sum type matches)
 </p>
 <p>
-- No global state <i>(globals can be enabled for low level applications like kernels via a command line flag)</i> <br>
+— No global state <i>(globals can be enabled for low level applications like kernels via a command line flag)</i> <br>
 </p>
 <p>
-- A simple way to check whether an array contains an element: <code>if elem in arr {</code>.
+— A simple way to check whether an array contains an element: <code>if elem in arr {</code>.
 <p>
-- Only one declaration style: <code>a := 0</code>
+— Only one declaration style: <code>a := 0</code>
 </p>
 <p>
-- Warnings for unused imports and vars for quicker development without annoying
+— Warnings for unused imports and vars for quicker development without annoying
 interruptions. But only in development/debugging mode.
 <br>
 Making a production build still requires fixing all of them, thus enforcing
 clean code.
 <p>
-- Much smaller runtime
+— Much smaller runtime
 </p>
 <p>
-- Much smaller binaries (a simple web server written in V is 65 KB vs 7 MB in Go)
+— Much smaller binaries (a simple web server written in V is 65 KB vs 7 MB in Go)
 </p>
 <p>
-- Zero cost C interop
+— Zero cost C interop
 </p>
 <p>
-- GC is optional
+— GC is optional
 </p>
 <p>
-- Much faster serialization using codegen and no runtime reflection
+— Much faster serialization using codegen and no runtime reflection
 </p>
 <p>
-- Precompiled text and HTML templates unlike Go's html/templates that have to be parsed on every request
+— Precompiled text and HTML templates unlike Go's html/templates that have to be parsed on every request
 </p>
 <p>
-- Fearless concurrency (no data race guarantee at compilation)  <span class='wip'>wip</span>
+— Fearless concurrency (no data race guarantee at compilation)  <span class='wip'>wip</span>
 </p>
 <p>
-- Stricter vfmt to ensure one coding style
+— Stricter vfmt to ensure one coding style
 </p>
 <p>
-- Centralized package manager: vpm.vlang.io (<code>v install ...</code>)
+— Centralized package manager: vpm.vlang.io (<code>v install ...</code>)
 </p>
 <p>
-- Much simpler and less verbose testing, <code>assert</code>.
+— Much simpler and less verbose testing, <code>assert</code>.
 </p>
 <p>
-- Primitive types can have methods resulting in less verbose code: <code>strings.Replace(strings.Replace(s, "a", "A", -1), "b", "B", -1)</code> =>
+— Primitive types can have methods resulting in less verbose code: <code>strings.Replace(strings.Replace(s, "a", "A", -1), "b", "B", -1)</code> =>
 <br> <code>s.replace('a', 'A').replace('b', 'B')</code>
 </p>
 <p>
