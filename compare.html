@@ -103,9 +103,6 @@ V is very similar to Go, and these are the things it improves upon:
 - Enums
 </p>
 <p>
-- Generics
-</p>
-<p>
 - Sum types (<code>type Expr = IfExpr | StringLiteral | IntLiteral | ...</code>)
 </p>
 <p>
@@ -135,13 +132,13 @@ clean code.
 - Zero cost C interop
 </p>
 <p>
-- No GC
+- GC is optional
 </p>
 <p>
 - Much faster serialization using codegen and no runtime reflection
 </p>
 <p>
-- Precompiled text/HTML templates unlike <code>html/template</code>s that have to be parsed on every request
+- Precompiled text and HTML templates unlike Go's html/templates that have to be parsed on every request
 </p>
 <p>
 - Fearless concurrency (no data race guarantee at compilation)  <span class='wip'>wip</span>
