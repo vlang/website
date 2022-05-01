@@ -305,36 +305,46 @@ func main() {
 <b>V</b>
 
 <pre>
+import net.http
+import json
+
 const (
-	StoriesUrl = 'https://hacker-news.firebaseio.com/v0/topstories.json'
-	ItemUrlBase = 'https://hacker-news.firebaseio.com/v0/item'
+	stories_url   = 'https://hacker-news.firebaseio.com/v0/topstories.json'
+	item_base_url = 'https://hacker-news.firebaseio.com/v0/item'
 )
 
 struct Story {
-    title string
+	title string
+}
+
+struct Cursor {
+mut:
+	pos int
 }
 
 fn main() {
-    resp := http.get(StoriesUrl)?
-    ids := json.decode([]int, resp.body)?
-    mut cursor := 0
-    for _ in 0..8 {
-        go fn() {
-            for {
-                lock {
-                    if cursor >= ids.len {
-                        break
-                    }
-                    id := ids[cursor]
-                    cursor++
-                }
-                resp := http.get('$ItemUrlBase/$id.json')?
-                story := json.decode(Story, resp.body)?
-                println(story.title)
-            }
-        }()
-    }
-    runtime.wait()
+	resp := http.get(stories_url) ?
+	ids := json.decode([]int, resp.text) ?
+	shared cursor := Cursor{}
+	mut threads := []thread{}
+
+	for _ in 0 .. 8 {
+		threads << go fn (ids []int, shared cursor Cursor) {
+			for {
+				id := lock cursor {
+					if cursor.pos >= ids.len {
+						break
+					}
+					cursor.pos++
+					ids[cursor.pos - 1]
+				}
+				resp := http.get('$item_base_url/${id}.json') or { panic(err) }
+				story := json.decode(Story, resp.text) or { panic(err) }
+				println(story.title)
+			}
+		}(ids, shared cursor)
+	}
+	threads.wait()
 }
 </pre>
 
