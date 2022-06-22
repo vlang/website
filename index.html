@@ -384,56 +384,6 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
     </div>
   </div>
 
-  <div class="section" id="memory">
-    <div class="block">
-      <h2>Innovative and flexible memory management</h2>
-	  <p>
-	  	V avoids doing unnecessary allocations in the first place
-		by using value types, string buffers, promoting a simple abstraction-free code style.
-	  </p>
-	  <p>
-	    Right now allocations are handled by a GC until V's autofree engine is production ready.
-	  <p>
-	   Autofree takes care of most objects (~90-100%):
-	  the compiler inserts necessary free calls automatically during compilation. 
-	    Remaining small percentage of objects is freed via GC.
-	    The developer doesn't need to change anything in their code. "It just works",
-		like in Python, Go, or Java, except there's no heavy GC tracing everything
-		or expensive RC for each object.
-	  </p>
-	  <p>
-	    For developers willing to have more low level control, memory can be managed manually
-		<!--
-		autofree can be disabled
-		-->
-		with <code>-gc none</code>.
-	  </p>
-	  <!--
-	  <p>
-	    There's also an option to use GC for everything via <code>v -gc boehm</code>.
-	  </p>
-	  -->
-	  <p>
-	    Arena allocation is available via <code>v -prealloc</code>.
-	  </p>
-
-
-
-	</div>
-    <div class="block">
-	<p>
-	V's autofree demo. All objects are freed during compilation. Running the Ved editor on an 8 MB file with 0 leaks:
-	</p>
-
-	<a href='https://www.youtube.com/watch?v=gmB8ea8uLsM' target=_blank>
-	 <img  style="width: 90%; margin-left: 0" src='/img/youtube_compile_speed.png'>
-	</a>
-	 <!--
-
-		<iframe width="448" height="252" src="https://www.youtube.com/embed/gmB8ea8uLsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		-->
-	</div>
-  </div>
 
 
 
@@ -478,6 +428,59 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
       <video looping="true" autoPlay muted src="/img/buildv.mp4" style="width: 80%; margin-left: 10%"></video>
 	  -->
     </div>
+  </div>
+
+
+
+  <div class="section" id="memory">
+    <div class="block">
+      <h2>Innovative and flexible memory management</h2>
+	  <p>
+	  	V avoids doing unnecessary allocations in the first place
+		by using value types, string buffers, promoting a simple abstraction-free code style.
+	  </p>
+	  <p>
+	    Right now allocations are handled by a minimal and well performing GC until V's autofree engine is production ready.
+	  <p>
+	   Autofree can be enabled with <code>-autofree</code>. It takes care of most objects (~90-100%):
+	  the compiler inserts necessary free calls automatically during compilation. 
+	    Remaining small percentage of objects is freed via GC.
+	    The developer doesn't need to change anything in their code. "It just works",
+		like in Python, Go, or Java, except there's no heavy GC tracing everything
+		or expensive RC for each object.
+	  </p>
+	  <p>
+	    For developers willing to have more low level control, memory can be managed manually
+		<!--
+		autofree can be disabled
+		-->
+		with <code>-gc none</code>.
+	  </p>
+	  <!--
+	  <p>
+	    There's also an option to use GC for everything via <code>v -gc boehm</code>.
+	  </p>
+	  -->
+	  <p>
+	    Arena allocation is available via <code>v -prealloc</code>.
+	  </p>
+
+
+
+	</div>
+    <div class="block">
+	<p>
+	V's autofree demo. All objects are freed during compilation. Running the Ved editor on an 8 MB file with 0 leaks:
+	</p>
+
+	<a href='https://www.youtube.com/watch?v=gmB8ea8uLsM' target=_blank>
+	 <img  style="width: 90%; margin-left: 0" src='/img/youtube_compile_speed.png'>
+	</a>
+	 <!--
+
+		<iframe width="448" height="252" src="https://www.youtube.com/embed/gmB8ea8uLsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		-->
+	</div>
   </div>
 
   <div class="section">
