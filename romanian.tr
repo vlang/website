@@ -1,0 +1,152 @@
+examples
+Exemple
+-----
+documentation
+Documentație
+-----
+modules
+Module
+-----
+faq
+FAQ
+-----
+built_in_v
+Construit cu V
+-----
+the_v_lang
+Limbajul the programare V
+-----
+v_slogan
+Limbaj simplu, rapid, sigur, compilat, pentru dezvoltarea de software mentenabil
+-----
+includes_binaries
+Include fișiere binare pentru 3 sisteme
+-----
+install_source
+Sau instalați V de la sursă
+-----
+couple_seconds
+acest lucru va dura câteva secunde
+-----
+wip_info
+V este un limbaj într-un stadiu incipient, dar în dezvoltare activă.
+Funcțiile la care încă se lucrează sunt marcate cu $wip. 
+<br> 
+Restul funcțiilor de pe această pagină și din documente au fost deja implementate și sunt Open Source.
+<p> 
+Până la lansarea V 1.0 care este planificată pentru decembrie 2019, nu vor mai rămâne $wip.
+-----
+forum
+Forum
+-----
+blog
+Blog
+-----
+fast_compilation
+Compilare rapidă
+-----
+safety
+Siguranță
+-----
+performance
+Performanţă
+-----
+simple_language_for_maintainable_programs
+Limbaj simplu pentru crearea de programe mentenabile
+-----
+zero_deps
+Compilator de 400KB cu zero dependențe
+-----
+c_translation
+traducere C / C++
+-----
+introduction
+Introducere
+-----
+comments
+Comentare
+-----
+functions
+Funcţii
+-----
+variables
+Variabile
+-----
+basic_types
+Tipuri de bază
+-----
+strings
+Șiruri
+-----
+arrays
+Matrice
+-----
+maps
+Hărți
+-----
+if
+Dacă
+-----
+in_op
+Operator în
+-----
+for_loop
+For-loop
+-----
+switch
+Switch
+-----
+structs
+Structs
+-----
+access_mod
+Modificatori de acces
+-----
+methods
+Metode
+-----
+pure_fns
+Funcții pure
+-----
+high_fns
+Funcții de ordin înalt
+-----
+constants
+Constante
+-----
+modules
+Module
+-----
+interfaces
+Interfețe
+-----
+enums
+Enums
+-----
+optionals_and_errors
+Tipuri de opțiuni și gestionarea erorilor
+-----
+generics
+Generice
+-----
+concurrency
+Parallelitate
+-----
+decoding_json
+Decodarea JSON
+-----
+testing
+Testarea
+-----
+memory_management
+Gestionarea memoriei
+-----
+fast_comp1
+V compilează între ≈100k și 1,2 milioane de linii de cod pe secundă per nucleu de procesor.
+-----
+fast_comp2
+V se compilează singur în 0,15 - 0,6 secunde.
+-----
+no_null
+Fără nul
+-----
