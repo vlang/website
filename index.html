@@ -324,17 +324,17 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
     <div class="block">
       <h2>Safety</h2>
       <ul>
-        <li>No null</li>
+        <li>Bounds checking</li>
         <li>No undefined values</li>
         <li>No undefined behavior</li>
         <li>No variable shadowing</li>
-        <li>Bounds checking</li>
         <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#variables">Immutable variables by default</a></li>
         <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#access-modifiers">Immutable structs by default</a></li>
         <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#optionresult-types-and-error-handling">Option/Result and mandatory error checks</a></li>
         <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#sum-types">Sum types</a></li>
         <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#generics">Generics</a></li>
-        <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#pure-functions-by-default">Immutable function args by default, mutable args have to be marked on call</a></li>
+        <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#immutable-function-args-by-default">Immutable function args by default, mutable args have to be marked on call</a></li>
+        <li>No null <i>(allowed in unsafe code)</i></li>
         <li>No global variables <i>(can be enabled for low level applications like kernels via a command line flag)</i></li>
       </ul>
     </div>
@@ -488,9 +488,9 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
       <h2>C translation</h2>
       <p>V can translate your entire C project and offer you the safety, simplicity, and compilation speed-up (via modules). </p>
       <div style="display: flex">
-        <pre style="margin-right: 36px">std::vector<std::string> s;
-v translate file.c
+        <pre style="margin-right: 36px">v translate file.c
 
+std::vector<std::string> s;
 s.push_back("V is ");
 s.push_back("awesome");
 std::cout << s.size();</pre>
@@ -512,7 +512,7 @@ println(s.len)</pre>
     <a target=_blank href='https://www.youtube.com/watch?v=6oXrz3oRoEg'><img src="/img/doom.png" style="width: 80%; margin-left: 0"></a>
 
 <p>
-You can follow the progress and read translated code here:
+You can read translated code here:
 <a target=_blank href='https://github.com/vlang/doom'>github.com/vlang/doom</a>
 </p>
     </div>
@@ -930,8 +930,8 @@ document.getElementById("codeblock_rb_61993869").onclick = function(e) {
       </div>
 
       <div class="first">
-        <h2>C to V translator</h2>
-        <p>This tool already supports C and will soon support the latest standard of notoriously complex C++. It does full automatic conversion to human readable code.</p>
+        <a target=_blank href="https://github.com/vlang/c2v"><h2>C to V translator</h2></a>
+        <p>This tool can already translate entire original DOOM. C++ support is planned as well. It does full automatic conversion to human readable code.</p>
       </div>
       <div class="second">
         <a href="https://github.com/vlang/ui"><h2>V UI</h2></a>
