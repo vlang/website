@@ -456,7 +456,7 @@ textarea:focus {
 	width: calc(100% - 32px);
 	max-width: 1200px;
 	color: #444;
-	margin: 64px 0;
+	margin: 32px 0;
 }
 
 .landing .hero .info {
@@ -923,5 +923,16 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
 	display:none;
 
 }
+}
+.news {
+	font-size: 80%;
+	margin-top: 0 !important;
+}
+.news_header{
+	display: block !important;
+	text-align: center;
+}
+.news_date {
+	font-weight: bold;
 }
 
