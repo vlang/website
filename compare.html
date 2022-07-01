@@ -82,10 +82,7 @@ Since V is very similar to Go, and its domain is similar to Rust's, I left a com
 V is very similar to Go, and these are the things it improves upon:
 </p>
 <p>
-— No null
-</p>
-<p>
-— No <code>err != nil</code> checks (replaced by option types)
+— No <code>err != nil</code> checks (replaced by result types)
 </p>
 <p>
 — No undefined values
@@ -142,6 +139,9 @@ clean code.
 </p>
 <p>
 — Fearless concurrency (no data race guarantee at compilation)  <span class='wip'>wip</span>
+</p>
+<p>
+— No null (null is only allowed in usafe code)
 </p>
 <p>
 — Stricter vfmt to ensure one coding style
