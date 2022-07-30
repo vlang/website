@@ -1,0 +1,155 @@
+examples
+Contoh-contoh
+-----
+documentation
+Dokumentasi
+-----
+modules
+Modul-modul
+-----
+faq
+FAQ
+-----
+built_in_v
+Dibuat dengan V
+-----
+the_v_lang
+Bahasa Pemrograman V
+-----
+v_slogan
+Bahasa yang simple, cepat, aman, dan terkompilasi untuk mengembangkan perangkat lunak yang mudah dipelihara
+-----
+includes_binaries 
+termasuk biner-biner untuk 3 sistem
+-----
+install_source 
+Atau unduh V dari sumber
+-----
+couple_seconds 
+proses ini akan membutuhkan beberapa detik
+-----
+wip_info
+V adalah bahasa pemrograman baru yang masih terus-menerus dikembangkan. Fitur-fitur yang masih dalam proses pengembangan ditandai dengan $wip
+<br> 
+Segala hal yang ada di halaman ini dan dokumentasi sudah diimplementasi dan open-source.
+<p> 
+Sejak V 1.0 yang direncanakan akan rilis pada Desember 2019, tidak akan ada lagi $wip.
+-----
+forum
+Forum
+-----
+blog
+Blog 
+-----
+fast_compilation
+Kompilasi yang cepat
+-----
+safety
+Keamanan
+-----
+performance 
+Performa
+-----
+simple_language_for_maintainable_programs
+Bahasa simple untuk membuat program yang dapat dipelihara
+-----
+zero_deps 
+Compiler 400 KB tanpa dependensi
+-----
+c_translation 
+Terjemahan C/C++
+-----
+introduction
+Pengantar
+-----
+comments
+Komentar
+-----
+functions
+Fungsi 
+-----
+variables
+Variabel
+-----
+basic_types 
+Tipe-tipe Dasar
+-----
+strings
+Strings
+-----
+arrays
+Arrays 
+-----
+maps
+Maps 
+-----
+if
+If 
+-----
+in_op 
+Operator In
+-----
+for_loop 
+Looping For
+-----
+switch 
+Switch 
+-----
+structs 
+Structs 
+-----
+access_mod 
+Pengubah akses
+-----
+methods
+Metode
+-----
+pure_fns 
+Fungsi murni
+-----
+high_fns 
+Fungsi tingkat tinggi
+-----
+constants 
+Konstanta 
+-----
+modules
+Modul
+-----
+interfaces
+Antarmuka
+-----
+enums
+Enums 
+-----
+optionals_and_errors 
+Jenis opsi & penanganan kesalahan 
+-----
+generics
+Generics 
+-----
+concurrency
+Konkurensi
+-----
+decoding_json 
+Decoding JSON 
+-----
+testing
+Pengujian 
+-----
+memory_management 
+Manajemen memori
+-----
+fast_comp1
+V mengkompilasi sekitar 100 ribu sampai 1.2 juta baris kode per detik per inti CPU.
+-----
+fast_comp2
+V mengkompilasi sendiri dalam waktu 0.15 - 0.6 detik.
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+Tidak ada null
+-----
