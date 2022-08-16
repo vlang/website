@@ -387,7 +387,6 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
       <ul>
         <li>Bounds checking</li>
         <li>No undefined values</li>
-        <li>No undefined behavior</li>
         <li>No variable shadowing</li>
         <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#variables">Immutable variables by default</a></li>
         <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#access-modifiers">Immutable structs by default</a></li>
@@ -396,7 +395,8 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
         <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#generics">Generics</a></li>
         <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#immutable-function-args-by-default">Immutable function args by default, mutable args have to be marked on call</a></li>
         <li>No null <i>(allowed in unsafe code)</i></li>
-        <li>No global variables <i>(can be enabled for low level applications like kernels via a command line flag)</i></li>
+        <li>No undefined behavior (wip, some overflowing can still result in UB)</li>
+        <li>No global variables <i>(can be enabled for low level apps like kernels via a flag)</i></li>
       </ul>
     </div>
   </div>
@@ -491,6 +491,14 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 	  <!--
       <video looping="true" autoPlay muted src="/img/buildv.mp4" style="width: 80%; margin-left: 10%"></video>
 	  -->
+	  <p>
+	  Try it yourself:
+	  </p>
+	  <code>
+	  wget https://github.com/vlang/v/releases/latest/download/v_linux.zip <br>
+	  unzip v_linux && cd v <br>
+	  time ./v self
+	  </code>
     </div>
   </div>
 
