@@ -1,0 +1,156 @@
+examples
+Eksempler
+-----
+documentation
+Dokumentasjon
+-----
+modules
+Moduler
+-----
+faq
+Ofte stilte spørsmål
+-----
+built_in_v
+Skapt i V
+-----
+the_v_lang
+Dataprogrammeringsspråket V
+-----
+v_slogan
+Enkelt, raskt, sikkert, kompilert programmeringsspråk for vedlikeholdbar programvarers utvikling
+-----
+includes_binaries 
+inkluderer programstøtte for 3 ulike operativsystemer
+-----
+install_source 
+Eller installer V fra kildekode
+-----
+couple_seconds 
+dette vil ta noen få sekunder
+-----
+wip_info
+V er et aktivt utviklet programmeringsspråk i sin tidlige fase.
+Funksjonaliteter som det fortsatt jobbes på er markert med $wip merknaden
+<br> 
+Alt some står på denne siden og i dokumentasjonen er implementert og åpen kildekode.
+<p> 
+Når vi lanserer V 1.0 i desember 2019 vil det ikke lenger være noen $wip merknader igjen.
+-----
+forum
+Nettforum
+-----
+blog
+Blogg
+-----
+fast_compilation
+Rask kompilering
+-----
+safety
+Sikkerhet
+-----
+performance 
+Ytelse
+-----
+simple_language_for_maintainable_programs
+Enkelt programmeringsspråk for utvikling av vedlikeholdbar programvare
+-----
+zero_deps 
+400 KB kompilator helt uavhengig andre biblioteker
+-----
+c_translation 
+C/C++ oversettelse 
+-----
+introduction
+Innledning 
+-----
+comments
+Kommentarer 
+-----
+functions
+Funksjoner 
+-----
+variables
+Variabler 
+-----
+basic_types 
+Enkle basistyper 
+-----
+strings
+Teksttyper
+-----
+arrays
+Matriser 
+-----
+maps
+Kart 
+-----
+if
+If 
+-----
+in_op 
+In operatoren 
+-----
+for_loop 
+For løkker
+-----
+switch 
+Brytere
+-----
+structs 
+Strukter 
+-----
+access_mod 
+Tilgangsmodifikatorer
+-----
+methods
+Metoder
+-----
+pure_fns 
+Enkle funksjoner
+-----
+high_fns 
+Høytnivåsprogrammering
+-----
+constants 
+Konstanter
+-----
+modules
+Moduler
+-----
+interfaces
+Interfacer
+-----
+enums
+Enumer
+-----
+optionals_and_errors 
+Valgtyper og behandling av programfeil
+-----
+generics
+Generikk
+-----
+concurrency
+Samtidighet 
+-----
+decoding_json 
+JSON dekoding
+-----
+testing
+Feilsøking
+-----
+memory_management 
+Minnehåndtering
+-----
+fast_comp1
+V kompilerer mellom ≈100k og 1.2 millioner kodelinjer hvert sekund per prosessorkjerne. 
+-----
+fast_comp2
+V kompilerer seg selv på 0.15 til 0.6 sekunder.
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+Ingen null
+-----
