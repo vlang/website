@@ -1,0 +1,156 @@
+examples
+Exemples
+-----
+documentation
+Documentació
+-----
+modules
+Mòduls
+-----
+faq
+FAQ
+-----
+built_in_v
+Creat amb V
+-----
+the_v_lang
+The V Programming Language
+-----
+v_slogan
+Un llenguatge senzill, ràpid, segur i compilat per desenvolupar programari mantenible
+-----
+includes_binaries
+inclou binaris per 3 sistemes
+-----
+install_source
+O instal·la V des del codi font
+-----
+couple_seconds
+això pot trigar un parell de segons
+-----
+wip_info
+V és un llenguatge desenvolupat activament en una etapa inicial.
+Les característiques en que encara s’està treballant estan marcades amb $wip
+<br>
+Tota la resta d’aquesta pàgina i els documents s’han implementat i de codi obert.
+<p>
+En el moment de la versió V 1.0 prevista per al desembre de 2019, ja no quedaran més $wip.
+-----
+forum
+Fòrum
+-----
+blog
+Bloc
+-----
+fast_compilation
+Compilació ràpida
+-----
+safety
+Seguretat
+-----
+performance
+Rendiment
+-----
+simple_language_for_maintainable_programs
+Llenguatge senzill per crear programes mantenibles
+-----
+zero_deps
+Compilador de 400 KB sense dependències
+-----
+c_translation
+Traducció C/C++
+-----
+introduction
+Introducció
+-----
+comments
+Comentaris
+-----
+functions
+Funcions
+-----
+variables
+Variables
+-----
+basic_types 
+Tipus bàsics
+-----
+strings
+Strings
+-----
+arrays
+Arrays
+-----
+maps
+Maps
+-----
+if
+If
+-----
+in_op
+Operador In
+-----
+for_loop
+Bucle for
+-----
+switch
+Switch
+-----
+structs
+Structs
+-----
+access_mod
+Modificadors d’accés
+-----
+methods
+Mètodes
+-----
+pure_fns
+Funcions pures
+-----
+high_fns
+Funcions d’ordre superior
+-----
+constants
+Constants
+-----
+modules
+Mòduls
+-----
+interfaces
+Interfícies
+-----
+enums
+Enums
+-----
+optionals_and_errors
+Tipus opcionals i control d’errors
+-----
+generics
+Genèrics
+-----
+concurrency
+Concurrència
+-----
+decoding_json
+Descodificació de JSON
+-----
+testing
+Testing
+-----
+memory_management
+Control de memòria
+-----
+fast_comp1
+V compila entre ≈100k y 1.2 milions de línies de codi per segon i per nucli de CPU
+-----
+fast_comp2
+V es compila a si mateix en 0.15 - 0.6 segons
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+Sense null
+-----
