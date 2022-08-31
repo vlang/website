@@ -1,0 +1,157 @@
+examples
+Exemplos
+-----
+documentation
+Documentação
+-----
+modules
+Módulos
+-----
+faq
+FAQ
+-----
+built_in_v
+Feito em V
+-----
+the_v_lang
+A Linguagem de Programação V
+-----
+v_slogan
+Linguagem compilada simples, rápida e segura para o desenvolvimento de software sustentável
+-----
+includes_binaries 
+inclui binários para 3 sistemas
+-----
+install_source 
+Ou instale V pelo código fonte
+-----
+couple_seconds 
+isso pode demorar um pouco
+-----
+wip_info
+V é uma linguagem ativamente desenvolvida em estágio inicial.
+Os recursos que ainda estão sendo trabalhados estão marcados com $wip
+<br>
+Todo o resto nesta página e nos documentos foram implementados e são de código aberto.
+<p>
+No momento do lançamento da V1.0 planejado para dezembro de 2019, não haverá mais $wip.
+-----
+forum
+Fórum
+-----
+blog
+Blog 
+-----
+fast_compilation
+Compilação rápida
+-----
+safety
+Segurança
+-----
+performance 
+Performance 
+-----
+simple_language_for_maintainable_programs
+Linguagem simples para construir programas sustentáveis
+-----
+zero_deps 
+Compilador de 400KB com zero dependências
+-----
+c_translation 
+Tradução de C/C++
+-----
+introduction
+Introdução
+-----
+comments
+Comentários 
+-----
+functions
+Funções 
+-----
+variables
+Variáveis 
+-----
+basic_types 
+Tipos básicos
+-----
+strings
+Strings
+-----
+arrays
+Arrays 
+-----
+maps
+Maps 
+-----
+if
+If
+-----
+in_op 
+Operador in
+-----
+for_loop 
+Laço for
+-----
+switch 
+Switch 
+-----
+structs 
+Structs 
+-----
+access_mod 
+Modificadores de acesso
+-----
+methods
+Métodos
+-----
+pure_fns 
+Funções puras
+-----
+high_fns 
+Funções de ordem superior 
+-----
+constants 
+Constantes 
+-----
+modules
+Módulos 
+-----
+interfaces
+Interfaces 
+-----
+enums
+Enums 
+-----
+optionals_and_errors 
+Tipos opcionais e tratamento de erros
+-----
+generics
+Generics 
+-----
+concurrency
+Concorrência
+-----
+decoding_json 
+Decodificação JSON 
+-----
+testing
+Teste
+-----
+memory_management 
+Gerenciamento de memória
+-----
+fast_comp1
+V compila entre ≈100k e 1.2 milhões de linhas de código por segundo por núcleo de CPU.
+-----
+fast_comp2
+V se compila em 0.15 - 0.6 segundos.
+-----
+fast_comp3
+Essa velocidade é alcançada devido à geração direta de $wip em código nativo e forte modularidade do código.
+-----
+fast_comp4
+-----
+no_null
+Sem ponteiros nulos
+-----
