@@ -14,10 +14,10 @@ built_in_v
 Skapt i V
 -----
 the_v_lang
-Dataprogrammeringsspråket V
+Programmeringsspråket V
 -----
 v_slogan
-Enkelt, raskt, sikkert, kompilert programmeringsspråk for vedlikeholdbar programvarers utvikling
+Enkelt, raskt, sikkert, kompilert programmeringsspråk for vedlikeholdbar programvare utvikling
 -----
 includes_binaries 
 inkluderer programstøtte for 3 ulike operativsystemer
@@ -32,9 +32,9 @@ wip_info
 V er et aktivt utviklet programmeringsspråk i sin tidlige fase.
 Funksjonaliteter som det fortsatt jobbes på er markert med $wip merknaden
 <br> 
-Alt some står på denne siden og i dokumentasjonen er implementert og åpen kildekode.
+Alt some står på denne siden og i dokumentasjonen er implementert og har åpen kildekode.
 <p> 
-Når vi lanserer V 1.0 i desember 2019 vil det ikke lenger være noen $wip merknader igjen.
+Når vi lanserer V 1.0 i desember 2019, vil det ikke lenger være noen $wip merknader igjen.
 -----
 forum
 Nettforum
@@ -55,7 +55,7 @@ simple_language_for_maintainable_programs
 Enkelt programmeringsspråk for utvikling av vedlikeholdbar programvare
 -----
 zero_deps 
-400 KB kompilator helt uavhengig andre biblioteker
+400 KB kompilator, helt uavhengig andre biblioteker
 -----
 c_translation 
 C/C++ oversettelse 
