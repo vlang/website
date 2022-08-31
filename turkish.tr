@@ -1,0 +1,156 @@
+examples
+Örnekler
+-----
+documentation
+Dökümantasyon
+-----
+modules
+Modüller
+-----
+faq
+SSS
+-----
+built_in_v
+V ile build edildi
+-----
+the_v_lang
+The V Programlama Dili
+-----
+v_slogan
+Bakımı kolay yazılım geliştirmek için basit, hızlı, güvenli, derlenmiş dil
+-----
+includes_binaries 
+3 sistem için binary dosyalarını içerir
+-----
+install_source 
+Ya da kaynak koddan V yükle
+-----
+couple_seconds 
+Birkaç saniye alacak
+-----
+wip_info
+V, erken bir aşamada aktif olarak geliştirilmiş bir dildir.
+Hala üzerinde çalışılan özellikler $wip ile işaretlenmiştir
+<br>
+Bu sayfadaki ve dokümanlardaki diğer her şey implemente edildi ve açık kaynaklıdır.
+<p>
+Aralık 2019 için planlanan V 1.0 sürümüne kadar artık $wip kalmayacak.
+-----
+forum
+Forum
+-----
+blog
+Blog 
+-----
+fast_compilation
+Hızlı derleme
+-----
+safety
+Güvenlik
+-----
+performance 
+Performans
+-----
+simple_language_for_maintainable_programs
+Sürdürülebilir programlar oluşturmak için basit dil
+-----
+zero_deps 
+Sıfır bağımlılığa sahip 400 KB derleyici
+-----
+c_translation 
+C/C++ çeviri 
+-----
+introduction
+Talimat 
+-----
+comments
+Yorumlar 
+-----
+functions
+Fonksiyonlar 
+-----
+variables
+Değişkenler 
+-----
+basic_types 
+Basit tipler
+-----
+strings
+Stringler
+-----
+arrays
+Diziler 
+-----
+maps
+Mapler
+-----
+if
+If 
+-----
+in_op 
+In operatörü 
+-----
+for_loop 
+For döngüsü 
+-----
+switch 
+Switch 
+-----
+structs 
+Struct
+-----
+access_mod 
+Erişim niteleyicileri
+-----
+methods
+Metotlar
+-----
+pure_fns 
+Saf fonksiyonlar
+-----
+high_fns 
+Yüksek dereceli fonksiyonlar
+-----
+constants 
+Sabitler 
+-----
+modules
+Modüller 
+-----
+interfaces
+Arayüzler 
+-----
+enums
+Enumlar
+-----
+optionals_and_errors 
+Option tipleri & hata işleme
+-----
+generics
+Jenerikler 
+-----
+concurrency
+Eşzamanlılık 
+-----
+decoding_json 
+JSON çözme
+-----
+testing
+Testing 
+-----
+memory_management 
+Bellek yönetimi 
+-----
+fast_comp1
+V, CPU çekirdeği başına saniyede ≈100k ila 1.2 milyon satır kod derler.
+-----
+fast_comp2
+V kendini 0.15 - 0.6 saniye içinde derler.
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+Null yok 
+-----
