@@ -927,12 +927,19 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
 .news {
 	font-size: 80%;
 	margin-top: 0 !important;
+	flex-direction: column;
+}
+.news .container {
+	display: flex
 }
 .news_header{
-	display: block !important;
-	text-align: center;
+	text-align:center;
+	padding-top: 1rem;
 }
 .news_date {
 	font-weight: bold;
 }
 
+.text-center {
+	text-align: center;
+}
