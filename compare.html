@@ -330,7 +330,7 @@ mut:
 
 fn main() {
 	resp := http.get(stories_url) ?
-	ids := json.decode([]int, resp.text) ?
+	ids := json.decode([]int, resp.body) ?
 	shared cursor := Cursor{}
 	mut threads := []thread{}
 
@@ -345,7 +345,7 @@ fn main() {
 					ids[cursor.pos - 1]
 				}
 				resp := http.get('$item_base_url/${id}.json') or { panic(err) }
-				story := json.decode(Story, resp.text) or { panic(err) }
+				story := json.decode(Story, resp.body) or { panic(err) }
 				println(story.title)
 			}
 		}(ids, shared cursor)
