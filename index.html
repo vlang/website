@@ -65,6 +65,22 @@ Source code: <a target=blank href='https://github.com/vlang/v/blob/master/cmd/to
 	</tr>
 
 	<tr>
+		<td>2022-09-15 11:59</td>
+		<td><a target=_blank href="https://github.com/vlang/v/commit/7e69619a">7e69619a</a></td>
+		<td>builtin, compiler: replace isnil(x) calls with `x == unsafe { nil }` (a little faster without -prod) (#15759)</td>
+		<td>574ms</td>
+		<td>898ms</td>
+		<td>0ms</td>
+		<td>144ms</td>
+		<td>4350 KB</td>
+		<td>124ms</td>
+		<td>130ms</td>
+		<td>160ms</td>
+		<td>39ms</td>
+		<td>87148</td>
+		<td>151825</td>
+	</tr>
+<tr>
 		<td>2022-09-15 09:43</td>
 		<td><a target=_blank href="https://github.com/vlang/v/commit/f09197b9">f09197b9</a></td>
 		<td>cgen: fix printing and dumping of struct having referenced interface as field (#15765)</td>
