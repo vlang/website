@@ -1,0 +1,156 @@
+examples
+Przykłady
+-----
+documentation
+Dokumentacja
+-----
+modules
+Moduły
+-----
+faq
+FAQ
+-----
+built_in_v
+Wbudowany V
+-----
+the_v_lang
+Język programowania V
+-----
+v_slogan
+Prosty, szybki, bezpieczny, skompilowany język do tworzenia oprogramowania, które można konserwować
+-----
+includes_binaries 
+zawiera binaria dla 3 systemów
+-----
+install_source 
+Lub zainstaluj V ze źródła
+-----
+couple_seconds 
+zajmie to kilka sekund
+-----
+wip_info
+V jest językiem rozwijanym aktywnie na wczesnym etapie.
+Funkcje, nad którymi wciąż trwają prace, są oznaczone $wip
+<br> 
+Cała reszta na tej stronie i w dokumentach została zaimplementowana i udostępniona jako open source.
+<p> 
+Do czasu wydania V 1.0 planowanego na grudzień 2019 r. nie pozostanie już $wip.
+-----
+forum
+Forum
+-----
+blog
+Blog 
+-----
+fast_compilation
+Szybka kompilacja
+-----
+safety
+Bezpieczeństwo
+-----
+performance 
+Wydajność 
+-----
+simple_language_for_maintainable_programs
+Prosty język do budowania programów, które można konserwować
+-----
+zero_deps 
+Kompilator 400 KB z zerowymi zależnościami
+-----
+c_translation 
+Tłumaczenie C/C++
+-----
+introduction
+Wstęp
+-----
+comments
+Uwagi
+-----
+functions
+Funkcje
+-----
+variables
+Zmienne
+-----
+basic_types 
+podstawoweTypy
+-----
+strings
+Smyczki
+-----
+arrays
+Tablice 
+-----
+maps
+Mapy 
+-----
+if
+Jeśli 
+-----
+in_op 
+W operator 
+-----
+for_loop 
+Do pętla 
+-----
+switch 
+Przełącznik 
+-----
+structs 
+Struktury 
+-----
+access_mod 
+Dostęp modyfikatory 
+-----
+methods
+Metody
+-----
+pure_fns 
+Czysty Funkcje 
+-----
+high_fns 
+Wysoki zamówienie Funkcje 
+-----
+constants 
+Stałe 
+-----
+modules
+Moduły 
+-----
+interfaces
+Interfejsy 
+-----
+enums
+enums 
+-----
+optionals_and_errors 
+Rodzaje opcji i obsługa błędów
+-----
+generics
+Generyczne 
+-----
+concurrency
+Konkurencja 
+-----
+decoding_json 
+Rozszyfrowanieojsone json 
+-----
+testing
+Testowanienie 
+-----
+memory_management 
+Pamięć kierownictwowo 
+-----
+fast_comp1
+v kompilujeepomiędzyzy ≈100orazraz 1milionolinieizzkod na sekundę zapprocesorerdzeńrdzeń. 
+-----
+fast_comp2
+v kompilujeesamoww.15 - 0.6 sesekundy
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+No null 
+-----
