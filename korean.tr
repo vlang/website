@@ -1,0 +1,156 @@
+examples
+예제
+-----
+documentation
+문서
+-----
+modules
+모듈
+-----
+faq
+자주하는 질문
+-----
+built_in_v
+V 언어 빌트인
+-----
+the_v_lang
+V 프로그래밍 언어
+-----
+v_slogan
+유지보수가 가능한 소프트웨어 개발을 위해 만들어진 간결하며, 빠르고, 안전한 컴파일 언어
+-----
+includes_binaries 
+세 가지 운영체제를 위한 바이너리 파일이 포함된다
+-----
+install_source 
+혹은 소스코드를 통해 V설치
+-----
+couple_seconds 
+몇초가 걸린다
+-----
+wip_info
+V 언어는 활발한 개발이 이루어지고 있는 초기단계이며,
+현재 개발 중인 기능은 $wip 로 표시된다
+<br> 
+본 페이지와 문서에 표기되지 않은 내용은 모두 구현되어 오픈소스로 제공되고 있다
+<p> 
+V 1.0 은 2019년 12월에 공개될 것이며, 모든 $wip 표시는 남지 않을 것이다
+-----
+forum
+포럼
+-----
+blog
+블로그
+-----
+fast_compilation
+빠른 컴파일
+-----
+safety
+안전
+-----
+performance 
+성능
+-----
+simple_language_for_maintainable_programs
+유지보수 가능한 프로그램 개발에 사용되는 간결한 언어
+-----
+zero_deps 
+종속성이 없는 400KB 컴파일러
+-----
+c_translation 
+C/C++ 번역 
+-----
+introduction
+소개 
+-----
+comments
+주석 
+-----
+functions
+함수 
+-----
+variables
+변수 
+-----
+basic_types 
+기본 타입 
+-----
+strings
+문자열
+-----
+arrays
+배열 
+-----
+maps
+집합 
+-----
+if
+If 문 
+-----
+in_op 
+In 연산자 
+-----
+for_loop 
+For 문 
+-----
+switch 
+Switch 문 
+-----
+structs 
+구조체 
+-----
+access_mod 
+접근 제어자 
+-----
+methods
+함수
+-----
+pure_fns 
+순수 함수 
+-----
+high_fns 
+고차 함수 
+-----
+constants 
+상수 
+-----
+modules
+모듈 
+-----
+interfaces
+인터페이스 
+-----
+enums
+열거형 
+-----
+optionals_and_errors 
+Option 타입과 에러 핸들링
+-----
+generics
+제네릭 
+-----
+concurrency
+동시성 
+-----
+decoding_json 
+JSON 파싱 
+-----
+testing
+테스트 
+-----
+memory_management 
+메모리 관리 
+-----
+fast_comp1
+V 언어의 각 CPU 코어는 초당 ≈10만 에서 120만 줄의 코드를 컴파일 한다
+-----
+fast_comp2
+V 언어 자체 컴파일은 0.15 - 0.6 초 내로 완성된다
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+null 이 존재하지 않는다
+-----
