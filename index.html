@@ -887,7 +887,7 @@ fn main() {
   nr_customers := sql db {
     select count from Customer
   }
-  println(&#39;number of all customers: $nr_customers&#39;)
+  println(&#39;number of all customers: {nr_customers}&#39;)
 
   // V syntax can be used to build queries
   uk_customers := sql db {
@@ -895,7 +895,7 @@ fn main() {
   }
 
   for customer in uk_customers {
-    println(&#39;$customer.id - $customer.name&#39;)
+    println(&#39;{customer.id} - {customer.name}&#39;)
   }
 
   // by adding `limit 1` we tell V that there will be
@@ -928,7 +928,7 @@ fn main() {
   nr_customers := sql db {
     select count from Customer
   }
-  println(&#39;number of all customers: $nr_customers&#39;)
+  println(&#39;number of all customers: {nr_customers}&#39;)
 
   // V syntax can be used to build queries
   uk_customers := sql db {
@@ -936,7 +936,7 @@ fn main() {
   }
 
   for customer in uk_customers {
-    println(&#39;$customer.id - $customer.name&#39;)
+    println(&#39;{customer.id} - {customer.name}&#39;)
   }
 
   // by adding `limit 1` we tell V that there will be
