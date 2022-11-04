@@ -147,7 +147,7 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
     areas := [&#39;game&#39;, &#39;web&#39;, &#39;tools&#39;, &#39;science&#39;, &#39;systems&#39;,
               &#39;embedded&#39;, &#39;drivers&#39;, &#39;GUI&#39;, &#39;mobile&#39;]
     for area in areas {
-        println(&#39;Hello, $area developers!&#39;)
+        println(&#39;Hello, {area} developers!&#39;)
     }
 }</pre>
 <pre class="hello_devs" id=ex2 style='display:none'>
@@ -158,7 +158,7 @@ import os
 text := os.read_file('app.log') or {
     // `err` is a special variable that contains the error
     // in `or {}` blocks
-    eprintln('failed to read the file: $err')
+    eprintln('failed to read the file: {err}')
     return
 }
 
@@ -196,13 +196,13 @@ fn main() {
         return
     }
     for user in users {
-        println('$user.name: $user.age')
+        println('{user.name}: {user.age}')
     }
     println('')
     for i, mut user in users {
-        println('$i) $user.name')
+        println('{i}) {user.name}')
         if !user.can_register() {
-            println('Cannot register $user.name, they are too young')
+            println('Cannot register {user.name}, they are too young')
             continue
         }
 		// `user` is declared as `mut` in the for loop,
