@@ -11,6 +11,9 @@
 	.st5{fill:url(#SVGID_8_);}
 	.st6{fill:url(#SVGID_9_);}
 	.st7{fill:#1D1D1B;}
+
+	
+	@media (prefers-color-scheme: dark) {.st7{fill: white;}}
 </style>
 <g>
 	
