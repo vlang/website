@@ -915,31 +915,57 @@ textarea:focus {
     pointer-events: all !important;
     transform: translateY(0)
 }
+
 .book {
-position:absolute; right:0px; top:50px; text-align:center; display:block; width:155px; font-size:12px;
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    text-align: center;
+    display: block;
+    max-width: 155px;
+    font-size: 12px;
 }
-@media (max-width:800px) {
-.book {
-	display:none;
+
+@media (max-width:1380px) {
+    .book {
+        display: none;
+
+    }
+}
+
+.news {
+    font-size: 80%;
+    margin-top: 0 !important;
+}
+
+
+.section.news {
+    flex-wrap: wrap;
+    display: flex;
 
 }
-}
-.news {
-	font-size: 80%;
-	margin-top: 0 !important;
-	flex-direction: column;
-}
+
 .news .container {
-	display: flex
+    display: flex;
+    flex-direction: row;
 }
-.news_header{
-	text-align:center;
-	padding-top: 1rem;
+
+@media (max-width: 920px) {
+    .news .container {
+        flex-direction: column;
+    }
 }
+
+.news_header {
+    text-align: center;
+    padding-top: 1rem;
+    width: 100%;
+}
+
 .news_date {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .text-center {
-	text-align: center;
+    text-align: center;
 }
