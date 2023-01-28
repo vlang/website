@@ -454,11 +454,14 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
     <div class="block">
       <h2>Performance</h2>
       <ul>
-        <li>As fast as C <i>(V's main backend compiles to human readable C)</i></li>
         <li>C interop without any costs</li>
         <li>Minimal amount of allocations</li>
         <li>Built-in serialization without runtime reflection</li>
-        <li>Compiles to native binaries without any dependencies: a simple web server is only 65 KB</li>
+        <li>Compiles to native binaries without any dependencies: a simple web server is only about 250 KB</li>
+        <li>As fast as C (V's main backend compiles to human readable C),
+		with equivalent code.
+		<br><i>V does introduce some overhead for safety (such as array bounds checking, GC free), but these features can be disabled/bypassed when performance is more important.</i>
+		</li>
       </ul>
     </div>
     <div class="block">
