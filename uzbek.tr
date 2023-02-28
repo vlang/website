@@ -23,17 +23,14 @@ includes_binaries
 3 sistema uchun binar fayllarni o'z ichiga oladi
 -----
 install_source 
-Or install V from source 
 Yoki Vni manba kodi orqali o'rnating
 -----
 couple_seconds 
 bir necha soniya vaqt oladi
 -----
 wip_info
-V - erta bosqichda faol rivojlanayotgan til.
 Hali ustida ishlanayotgan funksiyalar $wip bilan belgilangan
 <br> 
-Everything else on this page and the docs has been implemented and open-sourced.
 Ushbu sahifadagi va hujjatlardai barcha narsalar ochiq kodli qilib qo'yilgan
 <p> 
 2019-yil dekabriga rejalashtirilgan V 1.0 versiyasini chiqarish vaqtiga kelib, hech qanday $wip qolmaydi.
@@ -57,7 +54,6 @@ simple_language_for_maintainable_programs
 Saqlanadigan dasturlarni yaratish uchun oddiy til 
 -----
 zero_deps 
-400 KB compiler with zero dependencies
 Bog'lanmalar siz 400 KB hajmli kompilyator
 -----
 c_translation 
@@ -148,7 +144,6 @@ fast_comp1
 V har bir protsessor yadrosi uchun soniyasiga ≈100k va 1,2 million qator kodlarni kompilyatsiya qiladi.
 -----
 fast_comp2
-V compiles itself in 0.15 - 0.6 seconds.
 V o'zini 0.15 - 0.6 soniya ichida kompilyatsiya qiladi
 -----
 fast_comp3
