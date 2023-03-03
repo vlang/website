@@ -31,7 +31,7 @@
                 <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#generics">Generics</a></li>
                 <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#immutable-function-args-by-default">Immutable function args by default, mutable args have to be marked on call</a></li>
                 <li>No null <i>(allowed in unsafe code)</i></li>
-                <li>No undefined behavior <i>(wip, some overflowing can still result in UB)</i></li>
+                <li>No undefined behavior <i>(wip, e.g. overflowing can still result in UB)</i></li>
                 <li>No global variables <i>(can be enabled for low level apps like kernels via a flag)</i></li>
             </ul>
         </div>
@@ -140,10 +140,16 @@
                 by using value types, string buffers, promoting a simple abstraction-free code style.
             </p>
             <p>
-                Right now allocations are handled by a minimal and well performing GC until V's autofree engine is production ready.
+                There are 4 ways to manage memory in V.
             </p>
             <p>
-                Autofree can be enabled with <code>-autofree</code>. It takes care of most objects (~90-100%):
+                The default is a minimal and a well performing tracing GC.
+                <!--
+                until V's autofree engine is production ready.
+                -->
+            </p>
+            <p>
+                The second way is autofree, it can be enabled with <code>-autofree</code>. It takes care of most objects (~90-100%):
                 the compiler inserts necessary free calls automatically during compilation.
                 Remaining small percentage of objects is freed via GC.
                 The developer doesn't need to change anything in their code. "It just works",
