@@ -1,0 +1,64 @@
+{% from "./download-versions.njk" import lin_size, mac_size, win_size, version %}
+<div class='button' style="background: #4a607e">
+    <a id="dl-a" href="https://github.com/vlang/v/releases/download/{{version}}/v_windows.zip" style="display: flex; color: #eee">
+        {% include "../icons/windows.html" %}
+        <div class='text'>
+            <span class='link' id='dl-name'>Download for Windows</span>
+            <span class='details' id='dl-size'>v0.3.x - 14.3MB</span>
+        </div>
+    </a>
+    <div class='options-container' tabindex="0">
+        <img class='right-icon' src='/media/down.png' />
+        <div class='options'>
+            <a href="https://github.com/vlang/v/releases/download/{{version}}/v_linux.zip" class='dl-option'>
+                {% include "../icons/linux.html" %}
+                <span class='name'>Linux</span>
+                <span class='size'>{{lin_size}}</span>
+            </a>
+            <a href="https://github.com/vlang/v/releases/download/{{version}}/v_macos.zip" class='dl-option'>
+                {% include "../icons/apple.html" %}
+                <span class='name'>macOS</span>
+                <span class='size'>{{mac_size}}</span>
+            </a>
+            <a href="https://github.com/vlang/v/releases/download/{{version}}/v_windows.zip" class='dl-option'>
+                {% include "../icons/windows.html" %}
+                <span class='name'>Windows</span>
+                <span class='size'>{{win_size}}</span>
+            </a>
+            <a href="https://github.com/vlang/v/blob/master/doc/docs.md#install-from-source" class="dl-option">
+                <svg class="svg-inline--fa fa-windows fa-w-14" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="windows" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""></svg>
+                <span class="name">Build from source</span>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+var dlname = document.getElementById('dl-name')
+var dlicon = dlname.parentElement.parentElement.children[0]
+var dlsize = document.getElementById('dl-size')
+var dla = document.getElementById('dl-a')
+
+var ua = window.navigator.userAgent,
+    platform = window.navigator.platform,
+    macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+    windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+    iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+    os = null
+if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !== -1) {
+    dlname.innerText = 'Download for macOS'
+    dlsize.innerText = 'v0.3.x - '+'{{mac_size}}'
+    console.log('hello', dlicon)
+    dlicon.outerHTML = '{% include "../icons/apple.html" %}'
+    dla.href = "https://github.com/vlang/v/releases/download/{{version}}/v_macos.zip"
+} else if (windowsPlatforms.indexOf(platform) !== -1 || /Android/.test(ua)) {
+    dlname.innerText = 'Download for Windows'
+    dlsize.innerText = 'v0.3.x - '+'{{win_size}}'
+    dlicon.outerHTML = '{% include "../icons/windows.html" %}'
+    dla.href = "https://github.com/vlang/v/releases/download/{{version}}/v_windows.zip"
+} else if (!os && /Linux/.test(platform)) {
+    dlname.innerText = 'Download for Linux'
+    dlsize.innerText = 'v0.3.x - '+'{{lin_size}}'
+    dlicon.outerHTML = '{% include "../icons/linux.html" %}'
+    dla.href = "https://github.com/vlang/v/releases/download/{{version}}/v_linux.zip"
+}
+</script>

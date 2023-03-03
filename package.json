@@ -1,0 +1,27 @@
+{
+  "name": "vlangio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build-pages.js",
+  "dependencies": {
+    "markdown-it": "^13.0.1",
+    "markdown-it-toc-and-anchor": "^4.2.0",
+    "markdown-toc": "^1.2.0",
+    "ncp": "^2.0.0",
+    "node-fetch": "^2.6.0",
+    "nunjucks": "^3.2.3",
+    "serve-static": "^1.15.0",
+    "serve": "^14.2.0",
+    "uslug": "^1.0.4"
+  },
+  "devDependencies": {
+    "clean-css": "^4.2.3",
+    "node-sass": "^8.0.0",
+    "sass": "^1.57.1"
+  },
+  "scripts": {
+    "build": "node build-pages.js && npx serve -s build"
+  },
+  "author": "",
+  "license": "ISC"
+}

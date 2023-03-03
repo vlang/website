@@ -1,0 +1,65 @@
+$small-screen-width: 1135px
+
+body, html
+  height: 100%
+
+body
+  margin: 0px
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+
+.content
+  grid-area: content
+  height: 100%
+  width: 100%
+
+#app
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: 72px 1fr
+  grid-template-areas: "header" "content"
+  width: 100%
+
+a
+  color: #4078C0
+  text-decoration: none
+
+.flex
+  flex: 1
+
+input:focus, button:focus, textarea:focus
+  outline: none
+
+.faq
+  max-width: 900px
+  margin-left: auto
+  margin-right: auto
+  margin-bottom: 64px
+  #faq
+    text-align: center
+    font-weight: 500
+  .question
+    margin-bottom: 46px
+  table
+    border-collapse: collapse
+  td
+    border: 1px solid #dfdfdf
+    padding: 8px 12px
+@media (max-width: $small-screen-width)
+  #app
+    grid-template-rows: auto 1fr
+    
+#overflowing
+    word-wrap: break-word
+
+@import "./styles/customselect.css"
+@import "./styles/codeblock.sass"
+@import "./styles/documentation.sass"
+@import "./styles/header.sass"
+@import "./styles/hero.sass"
+@import "./styles/landing.sass"
+@import "./styles/playground.sass"
+@import "./styles/editors.sass"
+@import "./styles/built-in-v.sass"
+@import "./styles/icons.css"
+@import "./styles/news.sass"
+@import "./styles/book.sass"

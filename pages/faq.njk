@@ -1,0 +1,165 @@
+{% set active_page = 'faq' %} 
+{% set page_title = 'The V FAQ' %} 
+{% include "./components/head.njk" %}
+{% include "./components/nav.njk" %}
+
+<div class="faq">
+<h1 id="faq">FAQ</h1>
+<div class="question">
+<b>Why create V when there are already so many languages? Why not use Go, Rust, C++, Python etc?</b>
+<p>
+<a href="/compare">Detailed comparison of V and other languages.</a>
+</p>
+</div>
+<div class="question">
+<b>What language is V written in? </b>
+<p>
+V. The compiler can compile itself. The original version was written in Go.
+</p>
+</div>
+<div class="question">
+<b>Does V use LLVM? </b>
+<p>
+No. V uses C as its backend and will compile directly to machine code by the time of the 1.0 release.
+</p><p>
+<a target="_blank" href="https://github.com/vlang/v/wiki/On-the-benefits-of-using-C-as-a-language-backend">On the benefits of using C as a language backend.</a>
+</p>
+</div>
+<div class="question">
+<b> What about optimization? </b>
+<p>
+For now V emits C and uses GCC/Clang for optimized production builds.
+This way you get access to sophisticated optimization.
+</p><p>
+Such builds are compiled ≈150 times slower than V development builds (but are still
+an order of magnitude
+faster than C++ production builds).
+</p><p>
+This can be a problem for industries where optimization is required during development (for example AAA
+games). In this case, hot code reloading can be used.
+</p>
+<p>
+In the future V will have its own optimizer.
+</p>
+</div>
+<div class="question">
+<b> Is there garbage collection? </b>
+<p>
+No. V manages memory at compilation, like Rust: 
+<a target="_blank" href="/docs#memory-management">vlang.io/docs#memory-management</a>
+</p>
+</div>
+<div class="question">
+<b> Is there a package manager? </b>
+<p>
+Yes! V is a very modular language and encourages creation of modules that are easy to reuse.
+</p><p>
+<a target="_blank" href="https://vpm.vlang.io">vpm.vlang.io</a>.
+</p><p>
+Submitting your V module takes a couple of seconds.
+</p><p>
+Installing modules is as easy as
+</p><pre>v install sqlite</pre>
+</div>
+<div class="question">
+<b> What about concurrency? </b>
+<p>
+It's going to be the same as in Go. To run <code>foo()</code> concurrently, just call it with
+<code>go foo()</code>. Right now it launches the function in a new system thread. Soon coroutines and
+the scheduler will be implemented.
+</p>
+</div>
+<div class="question">
+<b>Does V run on bare metal?</b>
+<p>
+Yes! Simply run with <code>-freestanding</code> to exclude libc and vlib. <a target="_blank" href="https://twitter.com/v_language/status/1194895149249236992">See an example here</a>.
+</p>
+</div>
+<div class="question">
+<b>Will I be able to use a custom allocator?</b>
+<p>
+Yes. This hasn't been implemented yet.
+</p>
+</div>
+<div class="question">
+<b>Is V going to change a lot? When is v1.0 happening?</b>
+<p>
+Right now V is under heavy development, lots of things change.
+</p><p>
+A stable 0.2 version will be released in early December 2019.
+</p><p>
+1.0 is going to have forward compatibility, meaning that
+V 1.0 programs will continue to compile and run without change.
+</p><p>
+It's very important to give developers certainty and stability, and not to be in beta for years.
+This means that we need to be careful with the 1.0 release. It's going to happen
+in early 2020.
+</p></div>
+<div class="question">
+<b> What operating systems are supported?</b>
+<p>
+Windows, macOS, Linux, FreeBSD, OpenBSD, NetBSD, DragonflyBSD, Solaris, Android (Termux).
+</p><p>
+Android and iOS later this year.
+</p>
+</div>
+<div class="question">
+<b>Who's behind V? </b>
+<p>
+<a target="_blank" href="https://github.com/medvednikov">Me </a> and
+<a target="_blank" href="https://github.com/vlang/v/graphs/contributors">150+ open source contributors</a>.
+</p>
+</div>
+<div class="question">
+<b id="cppinfo">How can it translate C++? It's impossible for one person to write a C++ parser.</b>
+<p>
+Clang parser is used for translating C/C++ to V.
+</p>
+</div>
+<div class="question">
+<b>What about editor support?</b>
+<p>
+There are basic plugins for <a target="_blank" href="https://github.com/0x9ef/vscode-vlang">VS Code</a> and
+<a target="_blank" href="https://github.com/ollykel/v-vim">Vim</a>. Also check out the <a target="_blank" href="https://github.com/medvednikov/vid">Vid editor</a>, which is written in V.
+It has V support built in.
+</p><p>
+Plugins for Emacs, and other popular editors will be available soon.
+</p><p>
+V is a small and simple language, it doesn't need a powerful IDE.
+</p></div>
+<div class="question">
+<b> Why "V"? </b>
+<p>
+Initially the language had the same name as the product it was created for: Volt. The extension was ".v",
+I didn't want to mess up git history, so I decided to name it V :)
+</p><p>
+It's a simple name that reflects the simplicity of the language, and it's easy to pronounce for everyone in the
+world.
+</p><p>
+Please note that the name of the language is "V", not "Vlang" or "V-Lang" etc.
+</p><p>The name is not very searchable (like Go), so use
+<a target="_blank" href="https://twitter.com/search?q=23vlang">#vlang</a> on Twitter,
+<a target="_blank" href="https://www.google.com/search?q=vlang">vlang</a> on Google etc.
+</p></div>
+<div class="question">
+<b>Any plans to implement macros?</b>
+<p>
+No, sorry. Macros can be really useful, but they complicate the code significantly.
+Every company, team, developer can extend the language, and it's no longer
+possible to jump into a new codebase and immediately understand what's going on.
+</p><p>
+V will have sophisticated code generation.
+</p><p>
+</p></div>
+<div class="question">
+<b>Under which license is V published?</b>
+<p>
+MIT.
+</p><p>
+</p></div>
+<div class="center" style="text-align:center">
+Have an unanswered question?
+<a href="mailto:alexander@medvednikov.com">Contact me.</a>
+</div>
+</div>
+{% include "./components/foot.njk" %}

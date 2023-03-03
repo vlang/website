@@ -1,0 +1,97 @@
+<section class="section news">
+    <header class="news_header">
+        <h1>Latest news</h1>
+    </header>
+    <div class="actual_news">
+        <img src="/media/arrow-left.png" class="left" onclick="leftScroll()">
+        <div class="container">
+            <div class="block">
+                <div class="news_date">
+                    January 30, 2023
+                </div>
+                <div>
+                    <a target="_blank" href="https://github.com/vlang/v/releases/tag/0.3.3">V 0.3.3 is out!</a>
+                </div>
+            </div>
+            <div class="block">
+                <div class="news_date">
+                    January 2, 2023
+                </div>
+                <div>
+                    <a target="_blank" href="https://intellij-v.github.io/">IntelliJ V public beta!</a>
+                </div>
+            </div>
+            <div class="block">
+                <div class="news_date">
+                    October 31, 2022
+                </div>
+                <div>
+                    <a target="_blank" href="https://github.com/vlang/v/releases/tag/0.3.2">V 0.3.2 is out!</a>
+                </div>
+            </div>
+            <div class="block">
+                <div class="news_date">
+                    August 31, 2022
+                </div>
+                <div>
+                    <a target="_blank" href="https://github.com/vlang/v/releases/tag/0.3.1">V 0.3.1 is out!</a>
+                </div>
+            </div>
+            <div class="block">
+                <div class="news_date">
+                    June 30, 2022
+                </div>
+                <div>
+                    <a target="_blank" href="https://github.com/vlang/v/discussions/14895">V 0.3 is out!</a>
+                </div>
+            </div>
+            <div class="block">
+                <div class="news_date">
+                    June 22, 2022
+                </div>
+                <div>
+                    C2V is out! Demo video:
+                    <a target="_blank" href="https://www.youtube.com/watch?v=6oXrz3oRoEg">
+                        translating DOOM from C to V, building it under a second and running it!</a>
+                </div>
+            </div>
+            <div class="block">
+                <div class="news_date">
+                    June 10, 2022
+                </div>
+                <div>
+                    V has appeared on
+                    <a target="_blank" href="https://twitter.com/v_language/status/1535291800717500416">RedMonk Q122 Programming Language Rankings</a>.
+                </div>
+            </div>
+            <div class="block">
+                <div class="news_date">
+                    June 9, 2022
+                </div>
+                <div>
+                    As of today, programs built with the V compiler no longer leak memory by default.
+                </div>
+            </div>
+            <div class="block">
+                <div class="news_date">
+                    May 29, 2022
+                </div>
+                <div>
+                    7000 pull requests have been merged!
+                </div>
+            </div>
+            <img src="/media/arrow-right.png" class="right" onclick="rightScroll()">
+        </div>
+    </div>
+</section>
+<script>
+function leftScroll() {
+    const left = document.querySelector(".news .container");
+    left.scrollBy(-290, 0);
+}
+
+function rightScroll() {
+    const right = document.querySelector(".news .container");
+    right.scrollBy(290, 0);
+}
+</script>

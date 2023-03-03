@@ -1,0 +1,457 @@
+ 
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="app.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/media/v-logo.png">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,100,200,500,700|Roboto+Mono:400,300,100,200,500" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,100,200,500,700|Roboto+Mono:400,300,100,200,500"></noscript>
+  <script src="tokenizer.js"></script>
+  <title>The V Comparison</title>
+</head>
+<body>
+<div id='app'>
+<div class='header'>
+  <div class='flex'></div>
+  <a href='/'><img src='/media/v-logo.png' class='logo' /></a>
+
+  <div class='nav'>
+    <a href='https://github.com/vlang/V/tree/master/examples' class='item'>Examples</a>
+    <a href='https://github.com/vlang/v/blob/master/doc/docs.md' class='item'>Documentation</a>
+    <a href='https://github.com/vlang/v/tree/master/tutorials' class='item'>Tutorials</a>
+    <a href='https://modules.vlang.io/' class='item'>Stdlib Docs</a>
+    <a href='https://vpm.vlang.io/' class='item'>vpm</a>
+    <a href='https://github.com/vlang/v/discussions' class='item'>Forum</a>
+    <a href='https://blog.vlang.io/' class='item'>Blog</a>
+    <a href='https://play.vlang.io/' class='item'>Playground</a>
+  </div>
+  <div class="donate-button">
+      <a target="_blank" href='https://patreon.com/vlang' class='patreon'><img src='/media/patreon.png' /></a>
+      <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=HRGVJ2LA2LKJ8&item_name=Support+V+development&currency_code=USD&source=url&lc=US" class="paypal">PayPal</a>
+      <a target="_blank" href="https://github.com/sponsors/medvednikov" class="github">GitHub $</a>
+    </div>
+  <div class='flex'></div>
+</div>
+
+<div class='content landing'>
+<div class="faq">
+<h2>Comparison of V and other languages</h2>
+<p>
+V was created because none of the existing languages had all of the following
+features:
+</p>
+<table>
+<tbody><tr><td style="width:300px">Fast compilation</td><td style="width:200px"> D, Go, Delphi
+</td></tr><tr><td>Simplicity &amp; maintainability</td><td>Go
+</td></tr><tr><td>Great performance on par with C and <br>zero cost C interop</td><td> C, C++, D, Delphi, Rust
+</td></tr><tr><td>Safety (immutability, no null, option types, free from data races)</td><td> Rust
+</td></tr><tr><td>Easy concurrency</td><td> Go
+</td></tr><tr><td>Easy cross compilation</td><td>Go
+</td></tr><tr><td>Compile time code generation</td><td>D
+</td></tr><tr><td>Small compiler with zero dependencies</td><td>-
+</td></tr><tr><td>No global state</td><td>-
+</td></tr><tr><td>Hot code reloading</td><td>C# (.NET 6+), Dart
+</td></tr></tbody></table>
+<p>
+Initially I was going to compare V to all major languages, but it got repetitive pretty quickly.
+</p>
+<p>
+The table above and the list of the features on the home page should give you a pretty good picture.
+</p>
+<p>
+For example, it's pretty obvious that compared to C++, V is much simpler. It offers significantly faster compilation speed,
+safety, lack of undefined behavior, easy concurrency, compile time code generation, etc.
+</p>
+<p>
+Compared to Python, it's much faster, simpler, safer, more maintainable, etc.
+</p>
+<p>
+You can use this formula for any language.
+</p>
+<p>
+Syntax comparison:
+</p>
+<p>
+<a target="_blank" href="https://github.com/vlang/v/wiki/V-for-Go-developers">V for Go developers</a>
+</p>
+<p>
+<a target="_blank" href="https://github.com/vlang/v/wiki/V-for-Cpp-developers">V for C++ developers</a>
+</p>
+<p>
+Since V is very similar to Go, and its domain is similar to Rust's, I left a comparison with these two languages.
+</p>
+<h3 id="go">Go</h3>
+<p>
+V is very similar to Go, and these are the things it improves upon:
+</p>
+<p>
+— No <code>err != nil</code> checks (replaced by result types)
+</p>
+<p>
+— No undefined values
+</p>
+<p>
+— No variable shadowing
+</p>
+<p>
+— Immutability by default
+</p>
+<p>
+— Enums
+</p>
+<p>
+— Sum types (<code>type Expr = IfExpr | StringLiteral | IntLiteral | ...</code>)
+</p>
+<p>
+— String interpolation: <code>println('$foo: $bar.baz')</code>
+</p>
+<p>
+— If and match expressions (including sum type matches)
+</p>
+<p>
+— No global state <i>(globals can be enabled for low level applications like kernels via a command line flag)</i> <br>
+</p>
+<p>
+— A simple way to check whether an array contains an element: <code>if elem in arr {</code>.
+</p><p>
+— Only one declaration style: <code>a := 0</code>
+</p>
+<p>
+— Warnings for unused imports and vars for quicker development without annoying
+interruptions. But only in development/debugging mode.
+<br>
+Making a production build still requires fixing all of them, thus enforcing
+clean code.
+</p><p>
+— Much smaller runtime
+</p>
+<p>
+— Much smaller binaries (a simple web server written in V is 65 KB vs 7 MB in Go)
+</p>
+<p>
+— Zero cost C interop
+</p>
+<p>
+— GC is optional
+</p>
+<p>
+— Much faster serialization using codegen and no runtime reflection
+</p>
+<p>
+— Precompiled text and HTML templates unlike Go's html/templates that have to be parsed on every request
+</p>
+<p>
+— Fearless concurrency (no data race guarantee at compilation) <span class="wip">wip</span>
+</p>
+<p>
+— No null (null is only allowed in unsafe code)
+</p>
+<p>
+— Stricter vfmt to ensure one coding style
+</p>
+<p>
+— Centralized package manager: vpm.vlang.io (<code>v install ...</code>)
+</p>
+<p>
+— Much simpler and less verbose testing, <code>assert</code>.
+</p>
+<p>
+— Primitive types can have methods resulting in less verbose code: <code>strings.Replace(strings.Replace(s, "a", "A", -1), "b", "B", -1)</code> =&gt;
+<br> <code>s.replace('a', 'A').replace('b', 'B')</code>
+</p>
+<p>
+<br>
+</p><h3> Rust</h3>
+Rust has a very different philosophy.
+<p>
+It is a complex language with a growing set of features and a steep learning curve. No doubt, once you learn and understand the language,
+it becomes a very powerful tool for developing safe, fast, and stable software. But the complexity is
+still there.
+</p>
+<p>
+V's goal is to allow building maintainable and predictable software. That's why the language
+is so simple and maybe even boring for some. The good thing is, you can jump into any part of the project
+and understand what's going on, feel like it was you who wrote it, because the language is simple and
+there's only one way of doing things.
+</p>
+<p>
+Rust's compilation speed is slow, on par with C++. V compiles 1.2 million lines of code per cpu per second.
+</p>
+<br>
+<h3>V vs Rust vs Go: Example</h3>
+<p>
+Since V's domain is close to both Go and Rust, I decided to use a simple example to compare the three.
+</p>
+<p>
+It's a simple program that fetches top Hacker News stories concurrently.
+</p>
+<p>
+<b>Rust</b>
+</p>
+<pre>use serde::Deserialize;
+use std::sync::{Arc, Mutex};
+
+const STORIES_URL: &amp;str = "https://hacker-news.firebaseio.com/v0/topstories.json";
+const ITEM_URL_BASE: &amp;str = "https://hacker-news.firebaseio.com/v0/item";
+
+#[derive(Deserialize)]
+struct Story {
+    title: String,
+}
+
+fn main() {
+    let story_ids: Arc&lt;Vec&lt;u64&gt;&gt; = Arc::new(reqwest::get(STORIES_URL).unwrap().json().unwrap());
+    let cursor = Arc::new(Mutex::new(0));
+    let mut handles = Vec::new();
+    for _ in 0..8 {
+        let cursor = cursor.clone();
+        let story_ids = story_ids.clone();
+        handles.push(std::thread::spawn(move || loop {
+            let index = {
+                let mut cursor_guard = cursor.lock().unwrap();
+                let index = *cursor_guard;
+                if index &gt;= story_ids.len() {
+                    return;
+                }
+                *cursor_guard += 1;
+                index
+            };
+            let story_url = format!("{}/{}.json", ITEM_URL_BASE, story_ids[index]);
+            let story: Story = reqwest::get(&amp;story_url).unwrap().json().unwrap();
+            println!("{}", story.title);
+        }));
+    }
+    for handle in handles {
+        handle.join().unwrap();
+    }
+}
+</pre>
+<b>Go</b>
+<pre>package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+	"sync"
+)
+
+const STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json"
+const ITEM_URL_BASE = "https://hacker-news.firebaseio.com/v0/item"
+
+type Story struct {
+	Title string
+}
+
+func main() {
+	rsp, err := http.Get(STORIES_URL)
+	if err != nil {
+		panic(err)
+	}
+	defer rsp.Body.Close()
+	data, err := ioutil.ReadAll(rsp.Body)
+	if err != nil {
+		panic(err)
+	}
+	var ids []int
+	if err := json.Unmarshal(data, &amp;ids); err != nil {
+		panic(err)
+	}
+	var cursor int
+	var mutex sync.Mutex
+	next := func() int {
+		mutex.Lock()
+		defer mutex.Unlock()
+		temp := cursor
+		cursor++
+		return temp
+	}
+	wg := sync.WaitGroup{}
+	for i := 0; i &lt; 8; i++ {
+		wg.Add(1)
+		go func() {
+			for cursor := next(); cursor &lt; len(ids); cursor = next() {
+				url := fmt.Sprintf(
+					"%s/%d.json",
+					ITEM_URL_BASE,
+					ids[cursor],
+				)
+				rsp, err := http.Get(url)
+				if err != nil {
+					panic(err)
+				}
+				defer rsp.Body.Close()
+
+				data, err := ioutil.ReadAll(rsp.Body)
+				if err != nil {
+					panic(err)
+				}
+				var story Story
+				if err := json.Unmarshal(data, &amp;story); err != nil {
+					panic(err)
+				}
+				fmt.Println(story.Title)
+			}
+			wg.Done()
+		}()
+	}
+	wg.Wait()
+}
+</pre>
+<b>V</b>
+<pre>import net.http
+import json
+
+const (
+	stories_url   = 'https://hacker-news.firebaseio.com/v0/topstories.json'
+	item_base_url = 'https://hacker-news.firebaseio.com/v0/item'
+)
+
+struct Story {
+	title string
+}
+
+struct Cursor {
+mut:
+	pos int
+}
+
+fn main() {
+	resp := http.get(stories_url) ?
+	ids := json.decode([]int, resp.text) ?
+	shared cursor := Cursor{}
+	mut threads := []thread{}
+
+	for _ in 0 .. 8 {
+		threads &lt;&lt; go fn (ids []int, shared cursor Cursor) {
+			for {
+				id := lock cursor {
+					if cursor.pos &gt;= ids.len {
+						break
+					}
+					cursor.pos++
+					ids[cursor.pos - 1]
+				}
+				resp := http.get('$item_base_url/${id}.json') or { panic(err) }
+				story := json.decode(Story, resp.text) or { panic(err) }
+				println(story.title)
+			}
+		}(ids, shared cursor)
+	}
+	threads.wait()
+}
+</pre>
+<b>Nim</b>
+<p>
+V and Nim are very different. One of V's main philosophies is "there must be only one way of doing things".
+This results in predictable, simple, and maintainable code.
+</p>
+<p>
+Nim gives a lot of options and freedom to developers. For example, in V you would write
+<code>foo.bar_baz()</code>,
+but in Nim all of these are valid: <code>foo.barBaz()</code>, <code>foo.bar_baz()</code>,
+<code>bar_baz(foo)</code>, <code>barBaz(foo)</code>,
+<code>barbaz(foo)</code> etc.
+</p>
+<p>
+In V there's only one way to return a value from a function: <code>return value</code>. In Nim you can do
+<code>return value</code>, <code>result = value</code>, <code>value</code> (final expression), or modify
+a <code>ref</code> argument.
+</p>
+<p>Features like macros and OOP offer multiple ways to solve problems and increase complexity.</p>
+<p>Nim's strings are mutable, in my opinion this is a huge drawback. I'll post a detailed article
+about the power of immutable strings.</p>
+<p>Unlike V, Nim generates unreadable C code with lots of extra bloat. For example:</p>
+<pre>var users = [
+    User(name: "Carl", last_name: "Black", age: 22),
+    User(name: "Sam", last_name: "Johnson", age: 23)
+]
+</pre>
+If we build this with <code>nim c -d:release test.nim</code>, we get
+<pre>STRING_LITERAL(TM_R8RUzYq41iOx0I9bZH5Nyrw_5, "Carl", 4);
+STRING_LITERAL(TM_R8RUzYq41iOx0I9bZH5Nyrw_6, "Black", 5);
+STRING_LITERAL(TM_R8RUzYq41iOx0I9bZH5Nyrw_7, "Sam", 3);
+STRING_LITERAL(TM_R8RUzYq41iOx0I9bZH5Nyrw_8, "Johnson", 7);
+NIM_CONST tyArray_m9aGbgPB3gZgFcKcDkjg9a8g TM_R8RUzYq41iOx0I9bZH5Nyrw_4 = { { ((NimStringDesc*) &amp;TM_R8RUzYq41iOx0I9bZH5Nyrw_5), ((NimStringDesc*) &amp;TM_R8RUzY
+q41iOx0I9bZH5Nyrw_6), ((NI) 22)},
+
+{((NimStringDesc*) &amp;TM_R8RUzYq41iOx0I9bZH5Nyrw_7), ((NimStringDesc*) &amp;TM_R8RUzYq41iOx0I9bZH5Nyrw_8), ((NI) 23)}}
+;
+
+N_LIB_PRIVATE N_NIMCALL(void, NimMainModule)(void) {
+{
+        TFrame FR_; FR_.len = 0;
+}
+nimRegisterGlobalMarker(TM_R8RUzYq41iOx0I9bZH5Nyrw_3);
+        genericAssign((void*)users_oOczRkVOc3qtKT8rsAJzaw, (void*)TM_R8RUzYq41iOx0I9bZH5Nyrw_4, (&amp;NTI_m9aGbgPB3gZgFcKcDkjg9a8g_));
+}
+
+N_LIB_PRIVATE N_NIMCALL(void, aDatInit000)(void) {
+static TNimNode* TM_R8RUzYq41iOx0I9bZH5Nyrw_2[3];
+static TNimNode TM_R8RUzYq41iOx0I9bZH5Nyrw_0[4];
+NTI_Qp0mfNOzxWdmSSWLHA9cnZQ_.size = sizeof(tyObject_User_Qp0mfNOzxWdmSSWLHA9cnZQ);
+NTI_Qp0mfNOzxWdmSSWLHA9cnZQ_.kind = 18;
+NTI_Qp0mfNOzxWdmSSWLHA9cnZQ_.base = 0;
+NTI_Qp0mfNOzxWdmSSWLHA9cnZQ_.flags = 2;
+TM_R8RUzYq41iOx0I9bZH5Nyrw_2[0] = &amp;TM_R8RUzYq41iOx0I9bZH5Nyrw_0[1];
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[1].kind = 1;
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[1].offset = offsetof(tyObject_User_Qp0mfNOzxWdmSSWLHA9cnZQ, name);
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[1].typ = (&amp;NTI_77mFvmsOLKik79ci2hXkHEg_);
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[1].name = "name";
+TM_R8RUzYq41iOx0I9bZH5Nyrw_2[1] = &amp;TM_R8RUzYq41iOx0I9bZH5Nyrw_0[2];
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[2].kind = 1;
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[2].offset = offsetof(tyObject_User_Qp0mfNOzxWdmSSWLHA9cnZQ, last_name);
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[2].typ = (&amp;NTI_77mFvmsOLKik79ci2hXkHEg_);
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[2].name = "last_name";
+TM_R8RUzYq41iOx0I9bZH5Nyrw_2[2] = &amp;TM_R8RUzYq41iOx0I9bZH5Nyrw_0[3];
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[3].kind = 1;
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[3].offset = offsetof(tyObject_User_Qp0mfNOzxWdmSSWLHA9cnZQ, age);
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[3].typ = (&amp;NTI_rR5Bzr1D5krxoo1NcNyeMA_);
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[3].name = "age";
+TM_R8RUzYq41iOx0I9bZH5Nyrw_0[0].len = 3; TM_R8RUzYq41iOx0I9bZH5Nyrw_0[0].kind = 2; TM_R8RUzYq41iOx0I9bZH5Nyrw_0[0].sons = &amp;TM_R8RUzYq41iOx0I9bZH5Nyrw_2[0]
+;
+NTI_Qp0mfNOzxWdmSSWLHA9cnZQ_.node = &amp;TM_R8RUzYq41iOx0I9bZH5Nyrw_0[0];
+NTI_m9aGbgPB3gZgFcKcDkjg9a8g_.size = sizeof(tyArray_m9aGbgPB3gZgFcKcDkjg9a8g);
+NTI_m9aGbgPB3gZgFcKcDkjg9a8g_.kind = 16;
+NTI_m9aGbgPB3gZgFcKcDkjg9a8g_.base = (&amp;NTI_Qp0mfNOzxWdmSSWLHA9cnZQ_);
+NTI_m9aGbgPB3gZgFcKcDkjg9a8g_.flags = 2;
+}
+</pre>
+<p>
+V can emit native code directly, Nim can only emit C and JavaScript. It's also possible to embed C code
+in Nim, which reduces safety and portability.
+</p>
+<p>Nim allows importing functions into global namespace. This becomes a huge problem when working on large
+code bases. Explicit imports that V, Go, Oberon have are much more practical: <code>pkg.function()</code> vs
+<code>function()</code>.
+</p>
+<p>V's syntax is cleaner with fewer rules. Lack of significant whitespace improves
+readability and maintainability of large code bases and makes generating code much easier.
+From my experience of working with a huge Python code base, moving large blocks of code in whitespace sensitive
+languages is scary.
+</p>
+<p>The list can go on and on. Nim is a language with a lot of features, still developing and changing.
+V is not going to change much, if at all.
+</p>
+<p>Again, I'm not saying it's a worse language. It's a very different language that offers a lot of
+options and features. Many developers prefer this approach. And that's ok.
+</p>
+</div>
+</pre>
+<div class="thanks" style="justify-content: center; display: flex;flex-direction: column;margin-top: 48px;">
+    <i style="margin-bottom: 8px; margin-top: 10px;">Web design by <a href="https://github.com/hex2f">Leah</a>.</i>
+    <i>
+        <img src="/media/v-logo.png" style="width:15px; top: 3px;position: relative;">
+        logo by <a href="https://github.com/sonovice/">Sonovice</a> and <a href="https://github.com/dhonx">Don</a>.
+    </i>
+</div>
+</div>
+
+</div>
+</body>
+</html>
+</div>

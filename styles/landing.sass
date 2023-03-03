@@ -1,0 +1,88 @@
+.landing
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+  background: linear-gradient(168deg, white 800px, #f6f9fc 800px)
+  padding-bottom: 32px
+  .section
+    display: flex
+    max-width: 1100px
+    width: calc(100vw - 32px)
+    justify-content: space-around
+    margin-top: 32px
+    background: #fff
+    color: #222
+    border-radius: 12px
+    border: 1px solid #efefef
+    h2, h1
+      font-weight: 300
+      margin: 0px
+    .block
+      flex: 1
+      padding: 18px 16px
+      margin: 12px
+      border-radius: 12px
+      td
+        width: 120px
+        line-height: 1.5
+        .sidenote
+          font-size: 75%
+          position: relative
+          top: -5px
+      pre
+        white-space: pre-wrap
+        word-break: break-word
+    // added by me
+    img
+      max-width: 100%
+    code
+      overflow-wrap: break-word
+    a
+      overflow-wrap: break-word
+          // till here
+  ul
+    padding-inline-start: 22px
+  i
+    max-width: calc(100vw - 64px)
+    text-align: center
+    font-size: 14px
+        
+
+@media (max-width: 1500px)
+  .landing
+    .hero
+      .examples
+        .codeblock
+          min-width: auto
+
+@media (max-width: 1380px)
+  .landing
+    .hero
+      margin: 32px 0px
+      flex-direction: column
+      .info
+        margin-bottom: 32px
+        text-align: center
+        .button
+          text-align: left
+          &:last-child
+            margin-right: 0px
+        .links, .social
+          margin-right: 12px
+        .social
+          margin-top: 16px
+          i
+            font-size: 28px
+            margin-left: 6px
+            margin-right: 6px
+      .examples
+        margin: 0px 8px 0px 8px !important
+    .editors
+      margin-right: 0px
+
+@media (max-width: 750px)
+  .landing
+    .section
+      flex-direction: column
+      

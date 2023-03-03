@@ -1,0 +1,78 @@
+$code-font: "Roboto Mono", "Courier New", Menlo, "DejaVu Sans Mono", Monaco, Courier, monospace
+.codeblock
+  background: #333344
+  padding: 12px 12px 4px 12px
+  max-width: calc(100vw - 56px)
+  border-radius: 8px
+  margin: 0px
+  color: #c9c5c4
+  font-size: 15px
+  position: relative
+  font-family: $code-font
+
+  .play-btn-fixed
+    position: absolute
+    top: 10px
+    right: 10px
+
+  pre
+    overflow-x: auto
+    overflow-y: hidden
+    line-height: 1.2
+    font-family: $code-font
+    white-space: pre-wrap
+
+  textarea
+    font-size: 15px
+    line-height: 1.2
+    font-family: $code-font
+    position: absolute
+    top: 49px
+    left: 10px
+    height: calc(100% - 48px)
+    width: calc(100% - 22px)
+    caret-color: #fff
+    color: transparent
+    background: transparent
+    overflow: hidden
+    border: none
+    resize: none
+    &.no-header
+      top: 25px
+  .titlebar
+    display: flex
+    align-items: center
+    margin-bottom: 6px
+    position: relative
+    top: -2px
+  .play-btn
+    background: transparent
+    border: none
+    margin: 0px
+    background: #ffffff33
+    color: #ffeeeecf
+    border-radius: 4px
+    padding: 4px 12px
+    font-size: 12px
+    z-index: 10
+    cursor: pointer
+    svg
+      height: 1.1em
+    &:hover
+      background: #ffffff55
+      color: #ffeeeedd
+
+  .keyword
+    color: #dcd02d
+  .return
+    color: #ea3b7b
+  .key
+    color:#5f84ba
+  .string
+    color: #ca763c
+  .number
+    color: #b068e7
+  .separator, .comment
+    color: #9e9795
+  .definition, .type
+    color: #c5ac41

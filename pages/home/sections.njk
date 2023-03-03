@@ -1,0 +1,594 @@
+<div>
+    <div class="section">
+        <div class="block">
+            <h2>
+                Simple language for building maintainable programs</h2>
+            <p>
+                You can learn the entire language by going through the
+                <a target="_blank" href="https://github.com/vlang/v/blob/master/doc/docs.md">documentation</a> over a weekend, and in most cases there's only one way to do something.
+            </p>
+            <p>
+                This results in simple, readable, and maintainable code.
+            </p>
+            <p>
+                Despite being simple, V gives a lot of power to the developer and can be used in pretty much every field, including systems programming, webdev, gamedev, GUI, mobile, science, embedded, tooling, etc.
+            </p>
+            <p>
+                V is very similar to Go. If you know Go, you already know ≈80% of V.
+                Things V improves on Go: <a target="_blank" href="/compare#go">vlang.io/compare#go</a>.
+            </p>
+        </div>
+        <div class="block">
+            <h2>Safety</h2>
+            <ul>
+                <li>Bounds checking</li>
+                <li>No undefined values</li>
+                <li>No variable shadowing</li>
+                <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#variables">Immutable variables by default</a></li>
+                <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#access-modifiers">Immutable structs by default</a></li>
+                <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#optionresult-types-and-error-handling">Option/Result and mandatory error checks</a></li>
+                <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#sum-types">Sum types</a></li>
+                <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#generics">Generics</a></li>
+                <li><a href="https://github.com/vlang/v/blob/master/doc/docs.md#immutable-function-args-by-default">Immutable function args by default, mutable args have to be marked on call</a></li>
+                <li>No null <i>(allowed in unsafe code)</i></li>
+                <li>No undefined behavior <i>(wip, some overflowing can still result in UB)</i></li>
+                <li>No global variables <i>(can be enabled for low level apps like kernels via a flag)</i></li>
+            </ul>
+        </div>
+    </div>
+    {% include "./sponsors.njk" %}
+    <div class="section">
+        <div class="block">
+            <h2>Performance</h2>
+            <ul>
+                <li>C interop without any costs</li>
+                <li>Minimal amount of allocations</li>
+                <li>Built-in serialization without runtime reflection</li>
+                <li>Compiles to native binaries without any dependencies: a simple web server is only about 250 KB</li>
+                <li>As fast as C (V's main backend compiles to human readable C),
+                    with equivalent code.
+                    <br><i>V does introduce some overhead for safety (such as array bounds checking, GC free), but these features can be disabled/bypassed when performance is more important.</i>
+                </li>
+            </ul>
+        </div>
+        <div class="block">
+            <h2>Fast compilation</h2>
+            <p>
+                V compiles ≈110k (Clang backend) and ≈500k (x64 and tcc backends) lines of code per second. <br><i>(Intel i5-7500, SM0256L SSD, no optimization)</i><br><br>
+                V is written in V and compiles itself in under a second.
+            </p>
+            <p>
+                Most of the compiler is still single threaded, so it's going to be 2-3x faster in the future!
+            </p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="block">
+            <h2>Small and easy to build compiler</h2>
+            <p>
+                V can be bootstrapped in under a second by compiling its code translated to C with a simple </p>
+            <pre>cc v.c</pre>No libraries or dependencies needed.
+            <br><br>
+            For comparison, space and time required to build each compiler:
+            <p></p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>Space&nbsp;&nbsp;</td>
+                        <td>Build time</td>
+                    </tr>
+                    <tr>
+                        <td>Go</td>
+                        <td>525 MB</td>
+                        <td>1m 33s</td>
+                    </tr>
+                    <tr>
+                        <td>Rust</td>
+                        <td>30 GB</td>
+                        <td>45m</td>
+                    </tr>
+                    <tr>
+                        <td>GCC</td>
+                        <td>8 GB</td>
+                        <td>50m</td>
+                    </tr>
+                    <tr>
+                        <td>Clang</td>
+                        <td>90 GB
+                            <a target="_blank" class="sidenote" href="https://lists.llvm.org/pipermail/llvm-dev/2019-April/132028.html">[0]</a>
+                        </td>
+                        <td>60m</td>
+                    </tr>
+                    <tr>
+                        <td>Swift</td>
+                        <td>70 GB
+                            <a target="_blank" class="sidenote" href="https://github.com/apple/swift/blob/1f9da381dcdef98df2a7313d8729750cbac54f45/README.md#getting-started">[1]</a>
+                        </td>
+                        <td>90m</td>
+                    </tr>
+                    <tr>
+                        <td>V</td>
+                        <td>&lt; 10 MB
+                            <a target="_blank" class="sidenote" href="https://github.com/vlang/vc/blob/master/v.c">[2]</a>
+                        </td>
+                        <td>&lt;1s</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="block">
+            <p>Building V in 0.3 seconds and then using the resulting binary to build itself again:</p>
+            <a href="https://www.youtube.com/watch?v=pvP6wmcl_Sc" target="_blank">
+                <img style="width: 90%; margin-left: 0" src="/media/youtube_comp_speed.png">
+            </a>
+            <p>
+                Try it yourself:
+            </p>
+            <code>
+                wget https://github.com/vlang/v/releases/latest/download/v_linux.zip <br>
+                unzip v_linux &amp;&amp; cd v <br>
+                time ./v self
+            </code>
+        </div>
+    </div>
+    <div class="section" id="memory">
+        <div class="block">
+            <h2>Innovative and flexible memory management</h2>
+            <p>
+                V avoids doing unnecessary allocations in the first place
+                by using value types, string buffers, promoting a simple abstraction-free code style.
+            </p>
+            <p>
+                Right now allocations are handled by a minimal and well performing GC until V's autofree engine is production ready.
+            </p>
+            <p>
+                Autofree can be enabled with <code>-autofree</code>. It takes care of most objects (~90-100%):
+                the compiler inserts necessary free calls automatically during compilation.
+                Remaining small percentage of objects is freed via GC.
+                The developer doesn't need to change anything in their code. "It just works",
+                like in Python, Go, or Java, except there's no heavy GC tracing everything
+                or expensive RC for each object.
+            </p>
+            <p>
+                For developers willing to have more low level control, memory can be managed manually
+                with <code>-gc none</code>.
+            </p>
+            <p>
+                Arena allocation is available via <code>v -prealloc</code>.
+            </p>
+        </div>
+        <div class="block">
+            <p>
+                V's autofree demo. All objects are freed during compilation. Running the Ved editor on an 8 MB file with 0 leaks:
+            </p>
+            <a href="https://www.youtube.com/watch?v=gmB8ea8uLsM" target="_blank">
+                <img style="width: 90%; margin-left: 0" src="/media/youtube_compile_speed.png">
+            </a>
+        </div>
+    </div>
+    <div class="section">
+        <div class="block">
+            <h2>C translation</h2>
+            <p>V can translate your entire C project and offer you the safety, simplicity, and compilation speed-up (via modules). </p>
+            <div style="display: flex">
+                <pre style="margin-right: 36px">v translate file.c
+
+std::vector<std::string> s;
+s.push_back("V is ");
+s.push_back("awesome");
+std::cout &lt;&lt; s.size();</std::string></pre>
+                <pre>mut s := []
+s &lt;&lt; 'V is '
+s &lt;&lt; 'awesome'
+println(s.len)</pre>
+            </div>
+            <p>
+                A blog post about translating DOOM will be published.<br><br>
+                <i>C++ to V translation is at an early stage.</i>
+            </p>
+        </div>
+        <div class="block">
+            <p>
+                Translating DOOM from C to V and building it in under a second:
+            </p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=6oXrz3oRoEg"><img src="/media/doom.png" style="width: 80%; margin-left: 0"></a>
+            <p>
+                You can read translated code here:
+                <a target="_blank" href="https://github.com/vlang/doom">github.com/vlang/doom</a>
+            </p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="block">
+            <h2>Hot code reloading</h2>
+            <p>
+                Get your changes instantly without recompiling.
+                <br><br>
+                Since you also don't have to get to the state you are working on after every compilation, this can save a lot of precious minutes of your development time.
+            </p>
+            <a href="https://github.com/vlang/v/tree/master/examples/hot_reload">github.com/.../examples/hot_reload</a>
+        </div>
+        <div class="block">
+            <video looping="true" autoplay="" muted="" src="/media/hot.mp4" style="width: 80%; margin-left: 10%"></video>
+        </div>
+    </div>
+    <div class="section">
+        <div class="block">
+            <h2>Powerful graphics libraries</h2>
+            <p>
+                Cross-platform drawing library built on top of GDI+/Cocoa Drawing, and an OpenGL based graphics library for more complex 2D/3D applications, that will also have the following features:
+            </p>
+            <ul>
+                <li>Loading complex 3D objects with textures</li>
+                <li>Camera (moving, looking around)</li>
+                <li>Skeletal animation</li>
+            </ul>
+            <p>DirectX, Vulkan, and Metal support is planned.</p>
+            <p>A simple example of the graphics library in action is <a href="https://github.com/vlang/v/blob/master/examples/tetris">tetris.v</a>.</p>
+        </div>
+        <div class="block">
+            <img src="/media/gg.png" style="width: 60%; margin-left: 20%">
+        </div>
+    </div>
+    <div class="section">
+        <div class="block">
+            <h2>Light and fast cross-platform GUI library</h2>
+            <p>
+                Build native UI apps with V UI. You no longer need to embed a browser to develop cross-platform apps quickly.<br><br>
+                V has a UI module that uses custom drawing, similar to Qt and Flutter, but with as much similarity to the native GUI toolkit as possible.
+            </p>
+            <p>
+                It has a declarative API similar to SwiftUI and React Native and runs on Windows, Linux, macOS, and Android.
+            </p>
+            <p>
+                Coming soon:
+            </p>
+            <ul>
+                <li>a Delphi-like visual editor for building native GUI apps</li>
+                <li>iOS support</li>
+            </ul>
+            <p><a href="https://github.com/vlang/ui">github.com/vlang/ui</a></p>
+        </div>
+        <div class="block">
+            <p>
+                Volt, a 300 KB Slack client built with V and V ui:
+
+            </p>
+            <a href="https://volt-app.com">https://volt-app.com</a>
+            <a href="https://volt-app.com">
+            <img src="/media/screen3.png" style="width: 100%">
+            </a>
+
+        </div>
+    </div>
+    <div class="section">
+        <div class="block">
+            <h2>Easy cross compilation</h2>
+            <p>
+                To cross compile your software simply run <code>v -os windows</code> or <code>v -os linux</code>. No extra steps required, even for GUI and graphical apps!<br><br>
+                (Compiling macOS software only works on macOS for now.)
+            </p>
+        </div>
+        <div class="block">
+            <p>
+                Building V for Windows using V for macOS, and then testing resulting v.exe on a Windows VM:
+            </p>
+            <video looping="true" autoPlay muted src="/media/vwin.mp4" style="width: 100%"></img>
+        </div>
+    </div>
+    <div class="section">
+        <div class="block">
+            <h2>Painless deployments and dependency management</h2>
+            <p>
+                To build your project, no matter how big, all you need to do is run
+                <pre>v .
+</pre><br />
+                No build environments, makefiles, headers, virtual environments, etc.<br />
+                You get a single statically linked binary that is guaranteed to work on all operating systems (provided you cross compile) without any dependencies.<br /><br />
+                Installing new libraries via vpm, a centralized package manager written in V, is as simple as
+                <pre>v install ui
+    </pre>
+            </p>
+        </div>
+        <div class="block">
+            <h2>Run everywhere</h2>
+            <p>
+                V can emit (human readable) C, so you get the great platform support and optimization of GCC and Clang. (Use <code>v -prod .</code> to make optimized builds.)<br /><br />
+                Emitting C will always be an option, even after direct machine code generation matures.<br /><br />
+                V can call C code, and calling V code is possible in any language that has C interop.
+            </p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="block">
+            <h2>REPL</h2>
+            <pre style="margin-right: 36px">v
+>>> import net.http
+>>> data := http.get('https://vlang.io/utc_now')?
+>>> data.text
+1565977541</pre>
+        </div>
+        <div class="block">
+            <h2>Cross-platform shell scripts in V</h2>
+            <p>
+                V can be used as an alternative to Bash to write deployment scripts, build scripts, etc.
+                The advantage of using V for this is the simplicity and predictability of the language, and cross-platform support. "V scripts" run on Unix-like systems as well as on Windows.
+            </p>
+            <pre style="margin-right: 36px">for file in ls('build/') {
+  rm(file)
+}
+mv('v.exe', 'build/')
+
+v run deploy.vsh</pre>
+            <p><a href="https://github.com/vlang/v/blob/master/doc/docs.md#cross-platform-shell-scripts-in-v">Read more about V script</a></p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="block">
+            <h2>Code formatting with vfmt for consistent style</h2>
+            <p>
+                No more arguments about coding styles. There's one official coding style
+                enforced by the vfmt formatter.
+            </p>
+            <p>
+                All V code bases are guaranteed to use
+                the same style, making it easier to read and change code written by
+                other developers.
+            </p>
+            <pre>v fmt -w hello.v</pre>
+        </div>
+        <div class="block">
+            <h2>A built-in code profiler</h2>
+            <p>
+                Build and run your program with
+                <pre>v -profile profile.txt x.v && ./x</pre> and
+                you'll get a detailed list for all function calls: number of calls, average time per
+                call, total time per call.
+            </p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="block">
+            <h2>JavaScript and WASM backends</h2>
+            <p>
+                V programs can be translated to JavaScript:
+            </p>
+            <pre>v -o hello.js hello.v</pre>
+            <p>
+                They can also be compiled to WASM (for now with Emscripten).
+                V compiler compiled to WASM and running V programs by translating them to JavaScript:
+            </p>
+            <p>
+                <a target=_blank href='https://v-wasm.vercel.app/'>v-wasm.vercel.app</a>
+            </p>
+            <p>A game written using V's graphical backend and compiled to WASM:</p>
+            <a target=_blank href='https://v2048.vercel.app/'>v2048</a>
+        </div>
+        <div class="block">
+            <h2>Automatic documentation</h2>
+            <p>
+                Use vdoc to get instant documentation generated directly from
+                the module's source code. No need to keep and update separate documentation.
+            </p>
+            <pre>v doc os</pre>
+        </div>
+    </div>
+    <div class="section">
+        <div class="block">
+            <h2>Built-in testing framework</h2>
+            <p>
+                Writing tests is very easy: just start your test function with <code>test_</code>
+                <pre>fn get_string() string { return 'hello' }
+
+fn test_get_string() {
+  assert get_string() == 'hello'
+}
+      <p>
+      </div>
+
+      <div class="block">
+    <h2>Friendly error messages</h2>
+    <p>
+  Helpful error messages make learning the language and fixing errors simpler:
+
+    </p>
+    <pre>user.v:8:14: error: `update_user` parameter `user` is mutable, you need to provide `mut`: `update_user(mut user)`
+
+    7 |     mut user := User{}
+    8 |     update_user(user)
+      |                 ~~~~
+    9 | }
+  </pre>
+        </div>
+    </div>
+    <div class="section">
+        <div class="block">
+            <h2>Powerful built-in web framework</h2>
+            <p><a href="https://github.com/vlang/v/tree/master/vlib/vweb">github.com/vlang/v/tree/master/vlib/vweb</a></p>
+            <div class="codeblock" id="codeblock_12828032">
+                <div class="titlebar separator">
+                    <div class="flex"></div>
+                    <a href="https://v-wasm.vercel.app" class="play-btn" id="codeblock_rb_06463216"><svg class="svg-inline--fa fa-play fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+                            <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+                        </svg> Run</a>
+                </div>
+                <pre><div id="codeblock_hl_93987704">['/post/:id']
+fn (b Blog) show_post(id int) vweb.Result {
+  post := b.posts_repo.retrieve(id) or {
+    return vweb.not_found()
+  }
+  return vweb.view(post)
+}</div><textarea spellcheck="false" id="codeblock_ta_15447927" class="">['/post/:id']
+fn (b Blog) show_post(id int) vweb.Result {
+  post := b.posts_repo.retrieve(id) or {
+    return vweb.not_found()
+  }
+  return vweb.view(post)
+}</textarea></pre>
+            </div>
+            <script>
+            function tokenize_codeblock_12828032(e) {
+                Tokenizer(e.target.value).then(function(tokens) {
+                    document.getElementById("codeblock_hl_93987704").innerHTML = tokens
+                        .map(function(token) { return `<span class='${token.type}'>${token.value}</span>` })
+                        .join('')
+                })
+            }
+            document.getElementById("codeblock_ta_15447927").oninput = tokenize_codeblock_12828032
+            tokenize_codeblock_12828032({ target: { value: document.getElementById("codeblock_ta_15447927").value } })
+            document.getElementById("codeblock_rb_06463216").onauxclick = function(e) {
+                localStorage.setItem('sandbox-code', document.getElementById("codeblock_ta_15447927").value)
+            }
+            document.getElementById("codeblock_rb_06463216").onclick = function(e) {
+                if (location.pathname === 'https://v-wasm.vercel.app') e.preventDefault()
+                var codeblock_value = document.getElementById("codeblock_ta_15447927").value
+                localStorage.setItem('sandbox-code', codeblock_value)
+            }
+            </script>
+            <p><a href="https://github.com/vlang/gitly">Gitly</a>, a light and fast alternative to GitHub/GitLab is built in V and vweb.</p>
+        </div>
+        <div class="block">
+            <h2>Built-in ORM</h2>
+            <p>
+            </p>
+            <div class="codeblock" id="codeblock_63253338">
+                <div class="titlebar separator">
+                    <div class="flex"></div>
+                    <a href="https://v-wasm.vercel.app" class="play-btn" id="codeblock_rb_61993869"><svg class="svg-inline--fa fa-play fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+                            <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+                        </svg> Run</a>
+                </div>
+                <pre><div id="codeblock_hl_69524066">import sqlite
+
+struct Customer {
+  id int
+  name string
+  nr_orders int
+  country string
+}
+
+fn main() {
+  db := sqlite.connect('example.sqlite') or {
+    panic('could not create/find example.sqlite')
+  }
+
+  nr_customers := sql db {
+    select count from Customer
+  }
+  println('number of all customers: ${nr_customers}')
+
+  // V syntax can be used to build queries
+  uk_customers := sql db {
+    select from Customer where country == 'uk' &amp;&amp; nr_orders &gt; 0
+  }
+
+  for customer in uk_customers {
+    println('${customer.id} - ${customer.name}')
+  }
+
+  // by adding `limit 1` we tell V that there will be
+  // only one object
+  customer := sql db {
+    select from Customer where id == 1 limit 1
+  }
+  println(customer.name)
+
+  // insert a new customer
+  new_customer := Customer{name: 'Bob', nr_orders: 10}
+  sql db {
+    insert new_customer into Customer
+  }
+}
+</div><textarea spellcheck="false" id="codeblock_ta_60982598" class="">import sqlite
+
+struct Customer {
+  id int
+  name string
+  nr_orders int
+  country string
+}
+
+fn main() {
+  db := sqlite.connect('example.sqlite') or {
+    panic('could not create/find example.sqlite')
+  }
+
+  nr_customers := sql db {
+    select count from Customer
+  }
+  println('number of all customers: ${nr_customers}')
+
+  // V syntax can be used to build queries
+  uk_customers := sql db {
+    select from Customer where country == 'uk' &amp;&amp; nr_orders &gt; 0
+  }
+
+  for customer in uk_customers {
+    println('${customer.id} - ${customer.name}')
+  }
+
+  // by adding `limit 1` we tell V that there will be
+  // only one object
+  customer := sql db {
+    select from Customer where id == 1 limit 1
+  }
+  println(customer.name)
+
+  // insert a new customer
+  new_customer := Customer{name: 'Bob', nr_orders: 10}
+  sql db {
+    insert new_customer into Customer
+  }
+}
+</textarea></pre>
+            </div>
+            <script>
+            function tokenize_codeblock_63253338(e) {
+                Tokenizer(e.target.value).then(function(tokens) {
+                    document.getElementById("codeblock_hl_69524066").innerHTML = tokens
+                        .map(function(token) { return `<span class='${token.type}'>${token.value}</span>` })
+                        .join('')
+                })
+            }
+            document.getElementById("codeblock_ta_60982598").oninput = tokenize_codeblock_63253338
+            tokenize_codeblock_63253338({ target: { value: document.getElementById("codeblock_ta_60982598").value } })
+            document.getElementById("codeblock_rb_61993869").onauxclick = function(e) {
+                localStorage.setItem('sandbox-code', document.getElementById("codeblock_ta_60982598").value)
+            }
+            document.getElementById("codeblock_rb_61993869").onclick = function(e) {
+                if (location.pathname === 'https://v-wasm.vercel.app') e.preventDefault()
+                var codeblock_value = document.getElementById("codeblock_ta_60982598").value
+                localStorage.setItem('sandbox-code', codeblock_value)
+            }
+            </script>
+            <p></p>
+        </div>
+    </div>
+    {% set code = "struct Customer {\
+    id int\
+    name string\
+    nr_orders int\
+    country string\
+    }\
+    \
+    db := pg.connect(db_name, db_user)\
+    \
+    nr_customers := db.select count from Customer\
+    println('number of all customers: $nr_customers')\
+    \
+    // V syntax can be used to build queries\
+    uk_customers = db.select from Customer where country == 'uk' && nr_orders > 0\
+    for customer in uk_customers {\
+    println('$customer.id - $customer.name')\
+    }\
+    \
+    // by adding \`limit 1\` we tell V that there will be\
+    // only one object\
+    customer = db.select from Customer where id == 1 limit 1\
+    println(customer.name)\
+    \
+    // insert a new customer\
+    new_customer := Customer{name: 'Bob', nr_orders: 10}\
+    db.insert(new_customer)" %}
+</div>

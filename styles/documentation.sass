@@ -1,0 +1,61 @@
+.documentation
+  display: flex
+  justify-content: center
+  max-width: 1200px
+  height: calc(100vh - 72px)
+  padding-right: 6px
+  margin-left: auto
+  margin-right: auto
+  overflow-y: scroll
+  .toc
+    margin-right: 32px
+    ul
+      padding-inline-start: 24px
+  .markdown
+    margin-left: 32px
+    padding-bottom: 64px
+    max-width: calc(100vw - 24px)
+    h1, h2, h3
+      font-weight: normal
+    h1
+      margin: 12px 0px
+    h2
+      margin: 32px 0px 8px 0px
+    h3
+      margin: 8px 0px
+    a
+      word-break: break-word
+    p
+      margin: 8px 0px
+      code
+        background: #eee
+        padding: 2px 6px
+        border-radius: 5px
+        font-size: 14px
+    .markdownIt-Anchor
+      color: #c3cad6
+      &:hover
+        color: #4078c0
+    .codeblock
+      margin-bottom: 4px
+
+@media (max-width: 1100px)
+  .documentation
+    height: calc(100vh - 143px)
+
+@media (max-width: 845px)
+  .documentation
+    height: calc(100vh - 154px)
+
+@media (max-width: 800px)
+  .documentation
+    flex-direction: column
+    align-items: center
+    height: 100%
+    overflow-y: visible
+    padding-right: 0px
+    .markdown
+      margin-left: 8px
+    .toc
+      margin-right: 0px
+      margin-bottom: 32px

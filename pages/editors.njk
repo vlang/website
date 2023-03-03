@@ -1,0 +1,26 @@
+{% set active_page = 'editors' %} 
+{% set page_title = 'The V Editors' %} 
+{% include "./components/head.njk" %}
+{% include "./components/nav.njk" %}
+
+<div class="editors-info">
+  <h1>The V Editors</h1>
+  <p>V has extensive editor integration, provided by our amazing community ❤️</p>
+</div>
+
+<div class='editors'>
+  <a class='editor' href="https://marketplace.visualstudio.com/items?itemName=0x9ef.vscode-vlang&ssr=false">
+    <img src="/media/vscode.png"/>
+    V for VS Code
+  </a>
+  <a class='editor' href="https://github.com/ollykel/v-vim">
+    <img src="/media/vim.png"/>
+    V for Vim
+  </a>
+  <a class='editor' href="https://github.com/vlang/vid">
+    <img src="/media/vid.png"/>
+    Vid Editor
+  </a>
+</div>
+
+{% include "./components/foot.njk" %}

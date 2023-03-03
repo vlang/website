@@ -1,0 +1,84 @@
+.landing
+  .hero
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+    width: calc(100% - 32px)
+    max-width: 1200px
+    color: #444
+    margin: 34px 0px
+    .info
+      max-width: 500px
+      h1
+        font-weight: 300
+        margin: 0px 0px 0px -2px
+      p
+        margin: 4px 0px
+      //added
+      .button
+        align-items: normal
+      // till here
+
+
+    @import "./download-button.sass"
+
+    .examples
+      margin-right: 32px
+      display: flex
+      flex-direction: column
+      align-items: center
+      .codeblock,.menu
+        margin-top: 12px
+        display: flex
+        justify-content: center
+        align-items: center
+        
+        button
+          background: transparent
+          border: none
+          cursor: pointer
+          i
+            font-size: 32px !important
+            color: #333
+
+        select
+          font-size: 18px
+        .select
+          margin: 0px 16px
+          width: 200px
+  .social
+    margin-top: 16px
+    padding: 9px 12px
+    border-radius: 6px
+    margin-right: 38px
+    text-align: center
+    p
+      color: #444
+    svg
+      font-size: 28px
+      margin: 0px 12px 0px 0px
+      cursor: pointer
+      color: #949fad
+      pointer: cursor
+      &:hover
+        opacity: 0.8
+    .fa-telegram
+      color: #0088cc
+    .fa-youtube
+      color: #ff0000
+    .fa-discord
+      color: #7289da
+    .fa-twitter
+      color: #00acee
+  .links
+    margin-top: 12px
+    margin-right: 38px
+    margin-left: 10px
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-between
+    font-size: 18px
+    a
+      &:hover
+        opacity: 0.9

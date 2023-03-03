@@ -1,0 +1,57 @@
+{%- macro random_int(len) -%}
+  {%- for _ in range(len) -%}
+    {{ range(10) | random }}
+  {%- endfor -%}
+{%- endmacro -%}
+
+{% set pgid = "playground_" + random_int(8) %}
+{% set slid = "playground_select_" + random_int(8) %}
+{% set opid = "playground_output_" + random_int(8) %}
+<div class='playground'>
+  <style>
+    body {background: #2b2b35;}
+    .header .nav .item {color: #cacaca;}
+    .header .nav .item.active {color: #c2dcff;}
+    .header {background: #2b2b35; }
+    #app { height: 100%; }
+  </style>
+  <div class='examples select'>
+    <select id='{{slid}}'>
+      <option value="" disabled selected>Load an example</option>
+      <option value='hello'>Hello world</option>
+      <option value='fib'>Fibonacci</option>
+      <option value='fibmem'>Fibonacci + memoization</option>
+      <option value='json'>JSON decoding/encoding</option>
+      <option value='users'>Users repo + option types</option>
+      <option value='consts'>Advanced consts</option>
+      <option value='op_overload'>Basic operator overloading</option>
+      <option value='copy_struct'>An updated copy of a struct</option>
+    </select>
+    <div class='select_arrow'></div>
+  </div>
+  <div class='editor'>
+    {% set filename = "V Playground - v0.1.24" %}
+    {% set output_to = opid %}
+    {% set setter = pgid  %}
+    {% include '../components/codeblock.njk' %}
+    
+    {% set setter = "" %}
+    {% set output_to = "" %}
+    <div class='codeblock'>
+      <div class="titlebar separator">
+        <span>Program Output</span>
+      </div>
+      <pre><span id="{{opid}}"></span></pre>
+    </div>
+  </div>
+</div>
+<script>
+{{pgid}}(localStorage.getItem('sandbox-code') || "println('Hello World!')")
+document.getElementById('{{slid}}').oninput = function(e) {
+  fetch(`/examples/${e.target.value}.v`)
+    .then(res => res.text())
+    .then(res => {
+      {{pgid}}(res)
+    })
+}
+</script>

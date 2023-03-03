@@ -1,0 +1,51 @@
+.news 
+    font-size: 80%
+    margin-top: 0 !important
+    flex-direction: column
+
+.news .container 
+    display: flex
+    overflow-x: auto
+    scroll-behavior: smooth
+    -webkit-overflow-scrolling: touch
+
+.news .block
+    min-width: 89.5px
+
+.news_header
+    text-align: center
+    padding-top: 1rem
+
+.news_date 
+    font-weight: bold
+
+.text-center 
+    text-align: center
+
+@media (max-width: 920px) 
+    .news .container 
+        flex-direction: column
+    .left
+        display: none
+    .right
+        display: none
+    
+.left 
+  position: absolute
+  left: 5px
+  top: 50%
+  transform: translateY(-50%)
+  height: 40px
+  width: 20px
+
+.right 
+  position: absolute
+  right: 5px
+  top: 50%
+  transform: translateY(-50%)
+  height: 40px
+  width: 20px
+
+.actual_news
+  padding: 0px 40px
+  position: relative

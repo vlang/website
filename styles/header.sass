@@ -1,0 +1,105 @@
+$small-screen-width: 1100px
+  
+.header
+  grid-area: header
+  height: 100%
+  width: 100%
+  position: sticky
+  background: #fff
+  z-index: 100
+  top: 0px
+  display: flex
+  align-items: center
+
+  .logo
+    width: 32px
+    margin-bottom: -3px
+    margin-right: 16px
+    margin-left: 16px
+
+  .nav
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    .item
+      color: #777
+      text-decoration: none
+      padding-right: 18px
+      padding-left: 18px
+      font-size: 22px
+      font-weight: 300
+      &.active
+        color: #222b38
+
+  .donate-button
+    display: flex
+    align-items: center
+    margin-top: 2px
+    margin-left: 12px
+
+    .patreon img
+      width: 168px
+      height: 33px
+      margin-left: 10px
+    .paypal
+      width: 80px
+      height: 33px
+      background: #3b7bbf
+      margin-bottom: 3px
+      border-radius: 3px
+      color: #fff
+      text-align: center
+      line-height: 32px
+      font-size: 15px
+      margin-left: 10px
+
+    .github
+      width: 80px
+      height: 33px
+      background: #3b7bbf
+      margin-bottom: 3px
+      border-radius: 3px
+      color: #fff
+      text-align: center
+      line-height: 32px
+      font-size: 15px
+      margin-left: 10px
+
+
+
+@media (max-width: $small-screen-width)
+  .header
+    position: static
+    flex-direction: column
+    .donate-button
+      flex-direction: row
+      margin-top: 8px
+      margin-left: 0px
+      margin-bottom: 8px
+      .patreon
+        margin-right: 12px
+      .paypal
+        width: 168px
+        height: 33px
+        background: #3b7bbf
+        margin-bottom: 3px
+        border-radius: 3px
+        color: #fff
+        text-align: center
+        line-height: 32px
+        font-size: 15px
+      .github
+        width: 168px
+        height: 33px
+        background: #3b7bbf
+        margin-bottom: 3px
+        border-radius: 3px
+        color: #fff
+        text-align: center
+        line-height: 32px
+        font-size: 15px
+    .logo
+      width: 42px
+      margin-top: 8px
+      margin-bottom: 12px
+      margin-right: 0px

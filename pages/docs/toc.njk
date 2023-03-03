@@ -1,0 +1,308 @@
+<ul>
+<li><a href="#v-documentation">V Documentation</a>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#installing-v-from-source">Installing V from source</a></li>
+<li><a href="#upgrading-v-to-latest-version">Upgrading V to latest version</a></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#hello-world">Hello World</a></li>
+<li><a href="#running-a-project-folder-with-several-files">Running a project folder with several files</a></li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#functions">Functions</a>
+<ul>
+<li><a href="#hoistings">Hoistings</a></li>
+<li><a href="#returning-multiple-values">Returning multiple values</a></li>
+</ul>
+</li>
+<li><a href="#symbol-visibility">Symbol visibility</a></li>
+<li><a href="#variables">Variables</a>
+<ul>
+<li><a href="#mutable-variables">Mutable variables</a></li>
+<li><a href="#initialization-vs-assignment">Initialization vs assignment</a></li>
+<li><a href="#declaration-errors">Declaration errors</a></li>
+</ul>
+</li>
+<li><a href="#v-types">V Types</a>
+<ul>
+<li><a href="#primitive-types">Primitive types</a></li>
+<li><a href="#strings">Strings</a>
+<ul>
+<li><a href="#string-interpolation">String interpolation</a></li>
+<li><a href="#string-operators">String operators</a></li>
+</ul>
+</li>
+<li><a href="#runes">Runes</a></li>
+<li><a href="#numbers">Numbers</a></li>
+<li><a href="#arrays">Arrays</a>
+<ul>
+<li><a href="#array-fields">Array Fields</a></li>
+<li><a href="#array-initialization">Array Initialization</a></li>
+<li><a href="#array-types">Array Types</a></li>
+<li><a href="#multidimensional-arrays">Multidimensional Arrays</a></li>
+<li><a href="#array-methods">Array methods</a>
+<ul>
+<li><a href="#sorting-arrays">Sorting Arrays</a></li>
+</ul>
+</li>
+<li><a href="#array-slices">Array Slices</a>
+<ul>
+<li><a href="#slices-with-negative-indexes">Slices with negative indexes</a></li>
+</ul>
+</li>
+<li><a href="#array-method-chaining">Array method chaining</a></li>
+</ul>
+</li>
+<li><a href="#fixed-size-arrays">Fixed size arrays</a></li>
+<li><a href="#maps">Maps</a></li>
+</ul>
+</li>
+<li><a href="#module-imports">Module imports</a>
+<ul>
+<li><a href="#selective-imports">Selective imports</a></li>
+<li><a href="#module-import-aliasing">Module import aliasing</a></li>
+</ul>
+</li>
+<li><a href="#statements-expressions">Statements &amp; expressions</a>
+<ul>
+<li><a href="#if">If</a>
+<ul>
+<li><a href="#type-checks-and-casts">Type checks and casts</a></li>
+</ul>
+</li>
+<li><a href="#match">Match</a></li>
+<li><a href="#in-operator">In operator</a></li>
+<li><a href="#for-loop">For loop</a>
+<ul>
+<li><a href="#forin"><code>for</code>/<code>in</code></a>
+<ul>
+<li><a href="#array-for">Array <code>for</code></a></li>
+<li><a href="#custom-iterators">Custom iterators</a></li>
+<li><a href="#map-for">Map <code>for</code></a></li>
+<li><a href="#range-for">Range <code>for</code></a></li>
+</ul>
+</li>
+<li><a href="#condition-for">Condition <code>for</code></a></li>
+<li><a href="#bare-for">Bare <code>for</code></a></li>
+<li><a href="#c-for">C <code>for</code></a></li>
+<li><a href="#labelled-break-continue">Labelled break &amp; continue</a></li>
+</ul>
+</li>
+<li><a href="#defer">Defer</a></li>
+<li><a href="#goto">Goto</a></li>
+</ul>
+</li>
+<li><a href="#structs">Structs</a>
+<ul>
+<li><a href="#heap-structs">Heap structs</a></li>
+<li><a href="#default-field-values">Default field values</a></li>
+<li><a href="#required-fields">Required fields</a></li>
+<li><a href="#short-struct-literal-syntax">Short struct literal syntax</a></li>
+<li><a href="#struct-update-syntax">Struct update syntax</a></li>
+<li><a href="#trailing-struct-literal-arguments">Trailing struct literal arguments</a></li>
+<li><a href="#access-modifiers">Access modifiers</a></li>
+<li><a href="#anonymous-structs">Anonymous structs</a></li>
+<li><a href="#noinit-structs"><code>[noinit]</code> structs</a></li>
+<li><a href="#methods">Methods</a></li>
+<li><a href="#embedded-structs">Embedded structs</a></li>
+</ul>
+</li>
+<li><a href="#unions">Unions</a></li>
+<li><a href="#functions-2">Functions 2</a>
+<ul>
+<li><a href="#immutable-function-args-by-default">Immutable function args by default</a></li>
+<li><a href="#mutable-arguments">Mutable arguments</a></li>
+<li><a href="#variable-number-of-arguments">Variable number of arguments</a></li>
+<li><a href="#anonymous-higher-order-functions">Anonymous &amp; higher order functions</a></li>
+<li><a href="#closures">Closures</a></li>
+<li><a href="#parameter-evaluation-order">Parameter evaluation order</a></li>
+</ul>
+</li>
+<li><a href="#references">References</a></li>
+<li><a href="#constants">Constants</a>
+<ul>
+<li><a href="#required-module-prefix">Required module prefix</a></li>
+</ul>
+</li>
+<li><a href="#builtin-functions">Builtin functions</a>
+<ul>
+<li><a href="#println">println</a></li>
+<li><a href="#printing-custom-types">Printing custom types</a></li>
+<li><a href="#dumping-expressions-at-runtime">Dumping expressions at runtime</a></li>
+</ul>
+</li>
+<li><a href="#modules">Modules</a>
+<ul>
+<li><a href="#create-modules">Create modules</a></li>
+<li><a href="#init-functions"><code>init</code> functions</a></li>
+</ul>
+</li>
+<li><a href="#type-declarations">Type Declarations</a>
+<ul>
+<li><a href="#type-aliases">Type aliases</a></li>
+<li><a href="#enums">Enums</a></li>
+<li><a href="#function-types">Function Types</a></li>
+<li><a href="#interfaces">Interfaces</a>
+<ul>
+<li><a href="#implement-an-interface">Implement an interface</a></li>
+<li><a href="#casting-an-interface">Casting an interface</a></li>
+<li><a href="#interface-method-definitions">Interface method definitions</a></li>
+<li><a href="#embedded-interface">Embedded interface</a></li>
+</ul>
+</li>
+<li><a href="#sum-types">Sum types</a>
+<ul>
+<li><a href="#dynamic-casts">Dynamic casts</a></li>
+<li><a href="#smart-casting">Smart casting</a></li>
+<li><a href="#matching-sum-types">Matching sum types</a></li>
+</ul>
+</li>
+<li><a href="#optionresult-types-and-error-handling">Option/Result types and error handling</a>
+<ul>
+<li><a href="#handling-optionsresults">Handling options/results</a></li>
+</ul>
+</li>
+<li><a href="#custom-error-types">Custom error types</a></li>
+<li><a href="#generics">Generics</a></li>
+</ul>
+</li>
+<li><a href="#concurrency">Concurrency</a>
+<ul>
+<li><a href="#spawning-concurrent-tasks">Spawning Concurrent Tasks</a></li>
+<li><a href="#channels">Channels</a>
+<ul>
+<li><a href="#syntax-and-usage">Syntax and Usage</a></li>
+<li><a href="#channel-select">Channel Select</a></li>
+<li><a href="#special-channel-features">Special Channel Features</a></li>
+</ul>
+</li>
+<li><a href="#shared-objects">Shared Objects</a></li>
+</ul>
+</li>
+<li><a href="#json">JSON</a>
+<ul>
+<li><a href="#decoding-json">Decoding JSON</a></li>
+<li><a href="#encoding-json">Encoding JSON</a></li>
+</ul>
+</li>
+<li><a href="#testing">Testing</a>
+<ul>
+<li><a href="#asserts">Asserts</a></li>
+<li><a href="#asserts-with-an-extra-message">Asserts with an extra message</a></li>
+<li><a href="#asserts-that-do-not-abort-your-program">Asserts that do not abort your program</a></li>
+<li><a href="#test-files">Test files</a></li>
+<li><a href="#running-tests">Running tests</a></li>
+</ul>
+</li>
+<li><a href="#memory-management">Memory management</a>
+<ul>
+<li><a href="#control">Control</a></li>
+<li><a href="#stack-and-heap">Stack and Heap</a>
+<ul>
+<li><a href="#stack-and-heap-basics">Stack and Heap Basics</a></li>
+<li><a href="#vs-default-approach">V's default approach</a></li>
+<li><a href="#manual-control-for-stack-and-heap">Manual Control for Stack and Heap</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orm">ORM</a></li>
+<li><a href="#writing-documentation">Writing Documentation</a>
+<ul>
+<li><a href="#newlines-in-documentation-comments">Newlines in Documentation Comments</a></li>
+</ul>
+</li>
+<li><a href="#tools">Tools</a>
+<ul>
+<li><a href="#v-fmt">v fmt</a>
+<ul>
+<li><a href="#disabling-the-formatting-locally">Disabling the formatting locally</a></li>
+</ul>
+</li>
+<li><a href="#v-shader">v shader</a></li>
+<li><a href="#profiling">Profiling</a></li>
+</ul>
+</li>
+<li><a href="#package-management">Package management</a>
+<ul>
+<li><a href="#package-commands">Package commands</a></li>
+<li><a href="#publish-package">Publish package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#advanced-topics">Advanced Topics</a>
+<ul>
+<li><a href="#attributes">Attributes</a></li>
+<li><a href="#conditional-compilation">Conditional compilation</a>
+<ul>
+<li><a href="#compile-time-pseudo-variables">Compile time pseudo variables</a></li>
+<li><a href="#compile-time-reflection">Compile-time reflection</a></li>
+<li><a href="#compile-time-code">Compile time code</a>
+<ul>
+<li><a href="#if-condition"><code>$if</code> condition</a></li>
+<li><a href="#embed_file"><code>$embed_file</code></a></li>
+<li><a href="#tmpl-for-embedding-and-parsing-v-template-files"><code>$tmpl</code> for embedding and parsing V template files</a></li>
+<li><a href="#env"><code>$env</code></a></li>
+<li><a href="#compile_error-and-compile_warn"><code>$compile_error</code> and <code>$compile_warn</code></a></li>
+</ul>
+</li>
+<li><a href="#environment-specific-files">Environment specific files</a></li>
+</ul>
+</li>
+<li><a href="#memory-unsafe-code">Memory-unsafe code</a></li>
+<li><a href="#structs-with-reference-fields">Structs with reference fields</a></li>
+<li><a href="#sizeof-and-__offsetof">sizeof and __offsetof</a></li>
+<li><a href="#limited-operator-overloading">Limited operator overloading</a>
+<ul>
+<li><a href="#implicitly-generated-overloads">Implicitly generated overloads</a></li>
+<li><a href="#restriction">Restriction</a>
+<ul>
+<li><a href="#type-restrictions">Type restrictions</a></li>
+<li><a href="#other-restrictions">Other restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#performance-tuning">Performance tuning</a></li>
+<li><a href="#atomics">Atomics</a></li>
+<li><a href="#global-variables">Global Variables</a></li>
+<li><a href="#cross-compilation">Cross compilation</a></li>
+<li><a href="#debugging">Debugging</a>
+<ul>
+<li><a href="#c-backend-binaries-default">C Backend binaries (Default)</a></li>
+<li><a href="#native-backend-binaries">Native Backend binaries</a></li>
+<li><a href="#javascript-backend">Javascript Backend</a></li>
+</ul>
+</li>
+<li><a href="#v-and-c">V and C</a>
+<ul>
+<li><a href="#calling-c-from-v">Calling C from V</a></li>
+<li><a href="#calling-v-from-c">Calling V from C</a></li>
+<li><a href="#passing-c-compilation-flags">Passing C compilation flags</a></li>
+<li><a href="#pkgconfig">#pkgconfig</a></li>
+<li><a href="#including-c-code">Including C code</a></li>
+<li><a href="#c-types">C types</a></li>
+<li><a href="#c-declarations">C Declarations</a></li>
+<li><a href="#export-to-shared-library">Export to shared library</a></li>
+<li><a href="#translating-c-to-v">Translating C to V</a></li>
+<li><a href="#working-around-c-issues">Working around C issues</a></li>
+</ul>
+</li>
+<li><a href="#other-v-features">Other V Features</a>
+<ul>
+<li><a href="#inline-assembly">Inline assembly</a></li>
+<li><a href="#hot-code-reloading">Hot code reloading</a></li>
+<li><a href="#cross-platform-shell-scripts-in-v">Cross-platform shell scripts in V</a></li>
+<li><a href="#vsh-scripts-with-no-extension">Vsh scripts with no extension</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#appendices">Appendices</a>
+<ul>
+<li><a href="#appendix-i-keywords">Appendix I: Keywords</a></li>
+<li><a href="#appendix-ii-operators">Appendix II: Operators</a></li>
+</ul>
+</li>
+</ul>

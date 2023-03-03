@@ -1,0 +1,65 @@
+{%- macro random_int(len) -%}
+{%- for _ in range(len) -%}
+{{ range(10) | random }}
+{%- endfor -%}
+{%- endmacro -%}
+
+{% set cbid = "codeblock_" + random_int(8) %}
+{% set hlid = "codeblock_hl_" + random_int(8) %}
+{% set taid = "codeblock_ta_" + random_int(8) %}
+{% set rbid = "codeblock_rb_" + random_int(8) %}
+
+<div class='codeblock' id="{{cbid}}">
+  {% if noheader %}
+
+  {% else %}
+  <div class='titlebar separator'>
+    <span>{{filename}}</span>
+    <div class='flex'></div>
+    <a href="/play" class='play-btn' id='{{rbid}}'>{% include "../icons/play.html" %} Run</a>
+  </div>
+  {% endif %}
+  <pre><div id="{{hlid}}">{{code}}</div><textarea spellCheck="false" id="{{taid}}" class="{% if noheader %}no-header{% endif %}">{{code}}</textarea></pre>
+</div>
+
+<script>
+{% if setter.length > 0 %}
+function {{setter}}(value) {
+  document.getElementById("{{taid}}").value = value
+  tokenize_{{cbid}}({target:{value}})
+}
+{% endif %}
+function tokenize_{{cbid}} (e) {
+  Tokenizer(e.target.value).then(function(tokens) {
+    document.getElementById("{{hlid}}").innerHTML = tokens
+      .map(function(token) { return `<span class='${token.type}'>${token.value}</span>` })
+      .join('')
+  })
+    
+}
+document.getElementById("{{taid}}").oninput = tokenize_{{cbid}}
+tokenize_{{cbid}}({target:{value: document.getElementById("{{taid}}").value}})
+document.getElementById("{{rbid}}").onauxclick = function(e) {
+  localStorage.setItem('sandbox-code', document.getElementById("{{taid}}").value)
+}
+document.getElementById("{{rbid}}").onclick = function(e) {
+  if (location.pathname === '/play') e.preventDefault()
+  var codeblock_value = document.getElementById("{{taid}}").value
+  localStorage.setItem('sandbox-code', codeblock_value)
+  {% if output_to.length > 0 %}
+  document.getElementById("{{output_to}}").innerText = 'Waiting for server...'
+  fetch("https://play.vlang.io/compile", {
+    headers: {
+      "content-type":"application/x-www-form-urlencoded; charset=UTF-8"
+    },
+    body:`body=${encodeURIComponent(codeblock_value)}`,
+    method:"POST"
+  })
+    .then(function(res) { return res.text() })
+    .then(function(res) {
+      document.getElementById("{{output_to}}").innerText = res.lastIndexOf('==vmft:') > 0 ? res.substr(0, res.lastIndexOf('==vmft:')) : res
+    })
+  {% endif %}
+}
+
+</script>

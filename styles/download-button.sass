@@ -1,0 +1,91 @@
+.button
+  background: #222
+  color: #fff
+  margin-top: 16px
+  margin-right: 8px
+  padding: 7px 14px 6px 8px
+  border-radius: 6px
+  display: inline-flex
+  align-items: center
+  cursor: pointer
+  position: relative
+  .svg-inline--fa
+    width: 32px
+    height: 32px
+    margin-right: 4px
+  .options-container
+    .options
+      position: absolute
+      background: white
+      color: #333
+      border: 1px solid #eee
+      right: 0px
+      top: 54px
+      box-sizing: border-box
+      border-radius: 6px
+      opacity: 0
+      pointer-events: none
+      transform: translateY(-12px)
+      transition: all 0.2s cubic-bezier(0.67, 0.16, 0.4, 1)
+      .dl-option
+        display: flex
+        padding: 8px 8px 8px 6px
+        align-items: center
+        color: #333
+        .name
+          flex: 1
+          margin-right: 32px
+        .size
+          color: #818e9c
+          font-size: 15px
+        svg
+          margin-right: 6px
+          width: 22px
+          height: 22px
+        &:hover
+          background: #f7f7f7
+    &:focus
+      outline: none
+      .options
+        opacity: 1
+        pointer-events: all
+        transform: translateY(0px)
+    &:active
+      .right-icon
+        transform: translateY(3px)
+    .right-icon
+      width: 18px
+      padding: 12px 2px
+      cursor: pointer
+      transition: transform 0.1s
+
+  .text
+    display: flex
+    flex-direction: column
+    margin-right: 10px
+    .link
+      margin: 0px 4px 0px 8px
+      font-size: 15px
+    .details
+      color: #ddd
+      padding: 0px 4px
+      font-size: 13px
+      line-height: 18px
+      border-radius: 4px
+      margin-left: 5px
+      svg
+        fill: #ddd
+        position: relative
+        top: 2px
+        left: -1px
+
+  .fast, .changelog
+    position: absolute
+    bottom: -24px
+    left: 0px
+    color: #333
+    text-decoration: none
+
+  .changelog
+    left: auto
+    right: 0px
