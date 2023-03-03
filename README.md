@@ -23,12 +23,13 @@ Use the `english.tr` in the ``translations`` folder as a reference to add your t
 
 The website is built via Nunjucks templates. By using ``npm run build`` the ``build-pages.js`` script creates pages from njk files (templates), converts sass to css, minifies it, and runs the page on ``localhost:3000`` via **serve**.
 
-If you only want to build pages and not run them via ``serve`` then delete ``npx serve -s build`` from line 23 of ``package.json``.
+If you only want to build pages and not run them via ``serve`` then delete ``&& serve build/`` from line 23 of ``package.json``.
 
 To build:
 ```
 git clone https://github.com/vlang/website
 cd website
 npm install
+npm install --global serve
 npm run build
 ```

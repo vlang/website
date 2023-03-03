@@ -20,7 +20,7 @@
     "sass": "^1.57.1"
   },
   "scripts": {
-    "build": "node build-pages.js && npx serve -s build"
+    "build": "node build-pages.js && serve build/"
   },
   "author": "",
   "license": "ISC"

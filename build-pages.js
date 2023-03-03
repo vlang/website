@@ -88,7 +88,7 @@ async function compile() { //this is supposed to build docs but it doesnt work a
     console.log('Copying res')
     ncp('./res', './build')
     console.log('Building successfully finished!')
-    console.log('Serving page on localhost:3000 via serve cause of "&& npx serve -s build" from line 23 of package.json')
+    console.log('Serving page on localhost:3000 via serve cause of "&& serve build/" from line 23 of package.json')
 }
 
 compile()
