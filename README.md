@@ -27,7 +27,7 @@ If you only want to build pages and not run them via ``serve`` then delete ``npx
 
 To build:
 ```
-git clone https://github.com/vlang/vlang.io
+git clone https://github.com/vlang/website
 cd vlang.io
 npm install
 npm run build
