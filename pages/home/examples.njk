@@ -91,24 +91,19 @@ fn (mut u User) register() {
     <script>
     var ex_id = 1;
     const nr_exs = 5;
-
     function prev() {
         ex_id--;
         if (ex_id < 1) ex_id = nr_exs;
         update_ex()
     }
-
     function next() {
-
         ex_id++;
         if (ex_id > nr_exs) ex_id = 1;
         update_ex()
     }
-
     function update_ex() {
         var elems = document.querySelectorAll('.hello_devs');
         for (var index = 0; index < elems.length; index++) {
-
             elems[index].style.display = 'none';
         }
         document.getElementById('ex' + ex_id).style.display = 'table-cell';
@@ -117,25 +112,15 @@ fn (mut u User) register() {
         } else {
             document.getElementById('ex' + ex_id).style.fontSize = '80%';
         }
-
-
         var select = document.getElementById("select");
         select.value = ex_id;
-
         getAjax('/next')
-
-
     }
-
     function change_ex() {
         var select = document.getElementById("select");
         ex_id = select.value - 1;
-
         next();
-
     }
-
-
     function tokenize_codeblock_99404097(e) {
         Tokenizer(e.target.value).then(function(tokens) {
             document.getElementById("codeblock_hl_04227451").innerHTML = tokens
