@@ -106,7 +106,7 @@ V is very similar to Go, and these are the things it improves upon:
 — Sum types (<code>type Expr = IfExpr | StringLiteral | IntLiteral | ...</code>)
 </p>
 <p>
-— String interpolation: <code>println('$foo: $bar.baz')</code>
+— String interpolation: <code>println('${foo}: ${bar.baz}')</code>
 </p>
 <p>
 — If and match expressions (including sum type matches)
@@ -129,7 +129,7 @@ clean code.
 — Much smaller runtime
 </p>
 <p>
-— Much smaller binaries (a simple web server written in V is 65 KB vs 7 MB in Go)
+— Much smaller binaries (a simple web server written in V is ~600 KB vs ~7 MB in Go)
 </p>
 <p>
 — Zero cost C interop
@@ -141,7 +141,9 @@ clean code.
 — Much faster serialization using codegen and no runtime reflection
 </p>
 <p>
-— Precompiled text and HTML templates unlike Go's html/templates that have to be parsed on every request
+— Precompiled text and HTML templates unlike Go's html/templates that have to
+  be parsed on every request (or pre-cached and executed on every request) and
+  have to be deployed with the app's binary.
 </p>
 <p>
 — Fearless concurrency (no data race guarantee at compilation)  <span class='wip'>wip</span>
