@@ -857,7 +857,6 @@ user.v:8:14: error: `update_user` parameter `user` is mutable, you need to provi
     <div class='codeblock' id="codeblock_12828032">
       <div class='titlebar separator'>
         <div class='flex'></div>
-          <a href="https://v-wasm.vercel.app" class='play-btn' id='codeblock_rb_06463216'><svg class="svg-inline--fa fa-play fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg> Run</a>
         </div>
 
         <pre><div id="codeblock_hl_93987704">[&#39;/post/:id&#39;]
@@ -905,10 +904,9 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
 
   <div class='titlebar separator'>
     <div class='flex'></div>
-    <a href="https://v-wasm.vercel.app" class='play-btn' id='codeblock_rb_61993869'><svg class="svg-inline--fa fa-play fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg> Run</a>
   </div>
 
-  <pre><div id="codeblock_hl_69524066">import sqlite
+  <pre><div id="codeblock_hl_69524066">import db.sqlite
 
 struct Customer {
   id int
@@ -924,13 +922,13 @@ fn main() {
 
   nr_customers := sql db {
     select count from Customer
-  }
+  }!
   println(&#39;number of all customers: ${nr_customers}&#39;)
 
   // V syntax can be used to build queries
   uk_customers := sql db {
     select from Customer where country == &#39;uk&#39; &amp;&amp; nr_orders > 0
-  }
+  }!
 
   for customer in uk_customers {
     println(&#39;${customer.id} - ${customer.name}&#39;)
@@ -940,57 +938,17 @@ fn main() {
   // only one object
   customer := sql db {
     select from Customer where id == 1 limit 1
-  }
+  }!
   println(customer.name)
 
   // insert a new customer
   new_customer := Customer{name: &#39;Bob&#39;, nr_orders: 10}
   sql db {
     insert new_customer into Customer
-  }
+  }!
 }
-</div><textarea spellCheck="false" id="codeblock_ta_60982598" class="">import sqlite
-
-struct Customer {
-  id int
-  name string
-  nr_orders int
-  country string
-}
-
-fn main() {
-  db := sqlite.connect(&#39;example.sqlite&#39;) or {
-    panic(&#39;could not create/find example.sqlite&#39;)
-  }
-
-  nr_customers := sql db {
-    select count from Customer
-  }
-  println(&#39;number of all customers: ${nr_customers}&#39;)
-
-  // V syntax can be used to build queries
-  uk_customers := sql db {
-    select from Customer where country == &#39;uk&#39; &amp;&amp; nr_orders > 0
-  }
-
-  for customer in uk_customers {
-    println(&#39;${customer.id} - ${customer.name}&#39;)
-  }
-
-  // by adding `limit 1` we tell V that there will be
-  // only one object
-  customer := sql db {
-    select from Customer where id == 1 limit 1
-  }
-  println(customer.name)
-
-  // insert a new customer
-  new_customer := Customer{name: &#39;Bob&#39;, nr_orders: 10}
-  sql db {
-    insert new_customer into Customer
-  }
-}
-</textarea></pre>
+</div>
+</pre>
 </div>
 
 <script>

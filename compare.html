@@ -61,7 +61,7 @@ The table above and the list of the features on the home page should give you a 
 </p>
 <p>
 For example, it's pretty obvious that compared to C++, V is much simpler. It offers significantly faster compilation speed,
-safety, lack of undefined behavior, easy concurrency, compile time code generation, etc.
+safety, lack of undefined behavior (wip, e.g. overflowing can still result in UB), easy concurrency, compile time code generation, etc.
 </p>
 <p>
 Compared to Python, it's much faster, simpler, safer, more maintainable, etc.
@@ -190,7 +190,7 @@ Rust's compilation speed is slow, on par with C++.  V compiles 1.2 million lines
 Since V's domain is close to both Go and Rust, I decided to use a simple example to compare the three.
 </p>
 <p>
-It's a simple program that fetches top Hacker News stories concurrently.
+It's a simple program that fetches top Hacker News stories concurrently. (Note, that all examples only use stdlib, no external libs.)
 </p>
 <p>
 <b>Rust</b>
@@ -443,7 +443,8 @@ NTI_m9aGbgPB3gZgFcKcDkjg9a8g_.flags = 2;
 </pre>
 
 <p>
-V can emit native code directly, Nim can only emit C and JavaScript. It's also possible to embed C code
+V can emit native code directly (V's native backend is not as complete as the C backend yet though),
+Nim can only emit C and JavaScript. It's also possible to embed C code
 in Nim, which reduces safety and portability.
 </p>
 <p>Nim allows importing functions into global namespace. This becomes a huge problem when working on large
