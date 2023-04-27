@@ -1,0 +1,155 @@
+examples
+Misol
+-----
+documentation
+Qo'llanma
+-----
+modules
+Modullar
+-----
+faq
+FAQ
+-----
+built_in_v
+V yordamida yasalgan
+-----
+the_v_lang
+V dasturlash tili
+-----
+v_slogan
+Saqlanishi mumkin bo'lgan dasturiy ta'minot uchun sodda, tez, xavfsiz, kompilyatsion dasturlash tili.
+-----
+includes_binaries
+3 sistema uchun binar fayllarni o'z ichiga oladi
+-----
+install_source 
+Yoki Vni manba kodi orqali o'rnating
+-----
+couple_seconds 
+bir necha soniya vaqt oladi
+-----
+wip_info
+Hali ustida ishlanayotgan funksiyalar $wip bilan belgilangan
+<br> 
+Ushbu sahifadagi va hujjatlardai barcha narsalar ochiq kodli qilib qo'yilgan
+<p> 
+2019-yil dekabriga rejalashtirilgan V 1.0 versiyasini chiqarish vaqtiga kelib, hech qanday $wip qolmaydi.
+-----
+forum
+Forum
+-----
+blog
+Blog 
+-----
+fast_compilation
+Tez kompilyatsiya
+-----
+safety
+Xavfsizlik
+-----
+performance 
+Mahsuldorlik 
+-----
+simple_language_for_maintainable_programs
+Saqlanadigan dasturlarni yaratish uchun oddiy til 
+-----
+zero_deps 
+Bog'lanmalar siz 400 KB hajmli kompilyator
+-----
+c_translation 
+C/C++ tarjima 
+-----
+introduction
+Kirish 
+-----
+comments
+Izoxlar 
+-----
+functions
+Funksiyalar 
+-----
+variables
+O'zgaruvchilar 
+-----
+basic_types 
+Asosiy turlar 
+-----
+strings
+Matnlar
+-----
+arrays
+Massivlar 
+-----
+maps
+Maps 
+-----
+if
+If 
+-----
+in_op 
+In operatori 
+-----
+for_loop 
+For sikli 
+-----
+switch 
+Switch 
+-----
+structs 
+Strukturalar 
+-----
+access_mod 
+Kirish modifikatorlari
+-----
+methods
+Metodlar
+-----
+pure_fns 
+Sof funksiyalar 
+-----
+high_fns 
+Yuqori tartibli funksiyalar
+-----
+constants 
+O'zgarmaslar 
+-----
+modules
+Modullar 
+-----
+interfaces
+Interfeyslar 
+-----
+enums
+Enums 
+-----
+optionals_and_errors 
+Option turlari & error handling 
+-----
+generics
+Generics 
+-----
+concurrency
+Concurrency 
+-----
+decoding_json 
+JSON bilan ishlash
+-----
+testing
+Testlash 
+-----
+memory_management 
+Xotira boshqaruvi 
+-----
+fast_comp1
+V har bir protsessor yadrosi uchun soniyasiga ≈100k va 1,2 million qator kodlarni kompilyatsiya qiladi.
+-----
+fast_comp2
+V o'zini 0.15 - 0.6 soniya ichida kompilyatsiya qiladi
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+Null turi yo'q 
+-----
