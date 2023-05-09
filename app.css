@@ -713,8 +713,9 @@ textarea:focus {
 
 .landing .section h1,
 .landing .section h2 {
-	font-weight: 300;
-	margin: 0
+	font-weight: 900;
+	margin: 0;
+	font-size: 2rem;
 }
 
 .landing .section .block {
@@ -723,8 +724,8 @@ textarea:focus {
 	margin: 12px;
 	border-radius: 6px;
 	width: 225px;
-	border: 1px solid #DCDCDC;
-	background-color: #F8F8F8;
+	border: 1px solid #9b9b9b;
+	background-color: #dfdede;
 }
 
 .landing .section .block td {
