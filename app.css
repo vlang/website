@@ -707,10 +707,8 @@ textarea:focus {
 	width: calc(100vw - 32px);
 	justify-content: space-around;
 	margin-top: 32px;
-	background: #fff;
-	color: #222;
+	color: #000;
 	border-radius: 6px;
-	border: 1px solid #efefef
 }
 
 .landing .section h1,
@@ -724,6 +722,9 @@ textarea:focus {
 	padding: 18px 16px;
 	margin: 12px;
 	border-radius: 6px;
+	width: 225px;
+	border: 1px solid #DCDCDC;
+	background-color: #F8F8F8;
 }
 
 .landing .section .block td {
