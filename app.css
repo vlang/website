@@ -1,3 +1,8 @@
+:root {
+	color: #000;
+	font-weight: 500;
+}
+
 .select {
 	position: relative;
 	display: inline-block;
@@ -97,8 +102,7 @@ body {
 }
 
 a {
-	color: #4078c0;
-	text-decoration: none
+	color: #000;
 }
 
 .flex {
@@ -148,7 +152,7 @@ textarea:focus {
 	max-width: calc(100vw - 56px);
 	border-radius: 6px;
 	margin: 0;
-	color: #c9c5c4;
+	color: #ffffff;
 	font-size: 15px;
 	position: relative;
 	font-family: "Roboto Mono", "Courier New", Menlo, "DejaVu Sans Mono", Monaco, Courier, monospace
@@ -165,7 +169,8 @@ textarea:focus {
 	overflow-y: hidden;
 	line-height: 1.2;
 	font-family: "Roboto Mono", "Courier New", Menlo, "DejaVu Sans Mono", Monaco, Courier, monospace;
-	white-space: pre-wrap
+	white-space: pre-wrap;
+	font-weight: 400;
 }
 
 .codeblock textarea {
@@ -353,15 +358,17 @@ textarea:focus {
 	height: 100%;
 	width: 100%;
 	position: sticky;
-	background: #fff;
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
 	z-index: 100;
 	top: 0;
 	display: flex;
-	align-items: center
+	align-items: center;
+	color: #000;
 }
 
 .header .logo {
-	width: 32px;
+	width: 40px;
 	margin-bottom: -3px;
 	margin-right: 16px
 }
@@ -385,7 +392,7 @@ textarea:focus {
 }
 
 .header .nav a:hover {
-	color:#333;
+	color:#000;
 }
 
 .header .nav .item {
@@ -943,3 +950,30 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
 .text-center {
 	text-align: center;
 }
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+
+  .navDropdown:hover .dropdown-content {
+	display: block;
+  }
+
+  .navDropdown {
+	position: relative;
+	display: inline-block;
+  }
+
+  .dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+
+  .dropdown-content a:hover {background-color: #f1f1f1}
