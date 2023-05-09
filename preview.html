@@ -503,7 +503,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 
 
   <div class="section">
-    <div class="block">
+    <div class="" style="width: 75%; margin-right: 20px;">
       <h2>Small and easy to build compiler</h2>
       <p>
       V can be bootstrapped in under a second by compiling its code translated to C with a simple <pre>cc v.c</pre>No libraries or dependencies needed.
@@ -526,7 +526,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 	  </td><td><1s</td></tr>
       </tbody></table>
     </div>
-    <div class="block">
+    <div class="">
       <p>Building V in 0.3 seconds and then using the resulting binary to build itself again:</p>
 		<a href='https://www.youtube.com/watch?v=pvP6wmcl_Sc' target=_blank>
 		 <img  style="width: 90%; margin-left: 0" src='/img/youtube_comp_speed.png'>
@@ -544,7 +544,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 
 
   <div class="section" id="memory">
-    <div class=""  style="width: 75%; margin-right: 20px;">
+    <div class="" style="width: 75%; margin-right: 20px;">
       <h2>Innovative and flexible memory management</h2>
 	  <p>
 	  	V avoids doing unnecessary allocations in the first place
@@ -645,7 +645,7 @@ You can read translated code here:
   </div>
 
   <div class="section">
-    <div class="block">
+    <div class="" style="width: 75%; margin-right: 20px;">
       <h2>Powerful graphics libraries</h2>
       <p>
         Cross-platform drawing library built on top of GDI+/Cocoa Drawing, and an OpenGL based graphics library for more complex 2D/3D applications, that will also have the following features:
@@ -658,13 +658,13 @@ You can read translated code here:
       <p>DirectX, Vulkan, and Metal support is planned.</p>
       <p>A simple example of the graphics library in action is <a href="https://github.com/vlang/v/blob/master/examples/tetris">tetris.v</a>.</p>
     </div>
-    <div class="block">
+    <div class="">
       <img src="/img/gg.png" style="width: 60%; margin-left: 20%"></img>
     </div>
   </div>
 
   <div class="section">
-    <div class="block">
+    <div class="" style="width: 75%; margin-right: 20px;">
       <h2>Native cross-platform GUI library</h2>
       <p>
         Build native apps with native controls. You no longer need to embed a browser to develop cross-platform apps quickly.<br /><br />
@@ -678,23 +678,23 @@ You can read translated code here:
       </ul>
       <p><a href="https://github.com/vlang/ui">github.com/vlang/ui</a></p>
     </div>
-    <div class="block">
+    <div class="">
       <p>
         Volt, a 300 KB Slack client built with V and V ui:
       </p>
-      <img src="https://volt-app.com/img/screen3.png" style="width: 100%"></img>
+      <img src="https://volt-app.com/img/screen3.png" style="width: 75%;"></img>
     </div>
   </div>
 
   <div class="section">
-    <div class="block">
+    <div class="" style="width: 75%; margin-right: 20px;">
       <h2>Easy cross compilation</h2>
       <p>
         To cross compile your software simply run v -os windows. or v -os linux. No extra steps required, even for GUI and graphical apps!<br/><br/>
         (Compiling macOS software only works on macOS for now.)
       </p>
     </div>
-    <div class="block">
+    <div class="">
       <p>
         Building V for Windows using V for macOS, and then testing resulting v.exe on a Windows VM:
       </p>
@@ -848,7 +848,7 @@ user.v:8:14: error: `update_user` parameter `user` is mutable, you need to provi
           <a href="https://v-wasm.vercel.app" class='play-btn' id='codeblock_rb_06463216'><svg class="svg-inline--fa fa-play fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg> Run</a>
         </div>
 
-        <pre><div id="codeblock_hl_93987704">[&#39;/post/:id&#39;]
+        <pre style="background-color: transparent; border: none;"><div id="codeblock_hl_93987704">[&#39;/post/:id&#39;]
 fn (b Blog) show_post(id int) vweb.Result {
   post := b.posts_repo.retrieve(id) or {
     return vweb.not_found()
@@ -896,7 +896,7 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
     <a href="https://v-wasm.vercel.app" class='play-btn' id='codeblock_rb_61993869'><svg class="svg-inline--fa fa-play fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg> Run</a>
   </div>
 
-  <pre><div id="codeblock_hl_69524066">import sqlite
+  <pre style="background-color: transparent; border: none;"><div id="codeblock_hl_69524066" style="background-color: transparent;">import sqlite
 
 struct Customer {
   id int
