@@ -90,7 +90,7 @@ body {
 .content {
 	grid-area: content;
 	height: 100%;
-	width: 100%
+	width: 100%;
 }
 
 #app {
@@ -523,7 +523,7 @@ textarea:focus {
 	display: flex;
 	padding: 8px 8px 8px 6px;
 	align-items: center;
-	color: #333
+	color: #000000
 }
 
 .landing .hero .button .options-container .options .dl-option .name {
@@ -532,7 +532,7 @@ textarea:focus {
 }
 
 .landing .hero .button .options-container .options .dl-option .size {
-	color: #818e9c;
+	color: #000000;
 	font-size: 15px
 }
 
@@ -703,8 +703,9 @@ textarea:focus {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	background: linear-gradient(168deg, #fff 800px, #f6f9fc 800px);
-	padding-bottom: 32px
+	padding-bottom: 32px;
+background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, transparent 0.5px);
+background-size: 20px 20px;
 }
 
 .landing .section {
@@ -728,13 +729,15 @@ textarea:focus {
 	flex: 1;
 	padding: 18px 16px;
 	margin: 12px;
-	border-radius: 6px;
+	border-radius: 15px;
 	width: 225px;
 	/* border: 1px solid #9b9b9b; */
 	/* background-color: #d2d2d26d; */
 	background-color: transparent;
 	/*  A somewhat big shadow */
 	box-shadow: 0 0 15px 0 rgba(0, 0, 0, .2);
+	/* background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px);
+	background-size: 10px 10px; */
 }
 
 .landing .section .block td {
@@ -771,7 +774,8 @@ textarea:focus {
 
 @media (max-width:1500px) {
 	.landing .hero .examples .codeblock {
-		min-width: auto
+		min-width: auto;
+		max-width: 100%
 	}
 }
 
@@ -829,7 +833,7 @@ textarea:focus {
 .playground .editor .codeblock,
 .playground .editor .output {
 	flex: 1;
-	margin: 6px
+	margin: 6px;
 }
 
 .playground .select {
@@ -1027,9 +1031,9 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
   }
 
   .link .block {
-	background-color: #d2d2d26d;
-	border: 1px solid #9b9b9b;
-	border-radius: 6px;
+	background-color: #5D87BF;
+	color: white;
+	border-radius: 10px;
 	padding: 18px 16px;
 	margin: 12px;
 	width: auto;
