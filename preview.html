@@ -83,7 +83,7 @@
       document.getElementsByClassName("subTitle")[0].style.color = "#ffffff";
       localStorage.setItem("theme", "dark");
     } else {
-      document.getElementsByClassName("dark-mode-button")[0].innerHTML = "🌑";
+      document.getElementsByClassName("dark-mode-button")[0].innerHTML = "🌙";
       document.getElementsByClassName("landing")[0].style.backgroundColor = "#ffffff";
       let blocks = document.getElementsByClassName("block");
       for (let i = 0; i < blocks.length; i++) {
@@ -115,7 +115,7 @@
 
   <!-- a dark and light mode switch -->
   <div class="dark-mode-switch">
-    <button onclick="toggleTheme()" class="dark-mode-button" style="font-size: x-large; background-color: transparent; border: none; padding-bottom: 5px;">🌑</button>
+    <button onclick="toggleTheme()" class="dark-mode-button" style="font-size: x-large; background-color: transparent; border: none; padding-bottom: 5px;">🌙</button>
   </div>
 
 <!--
