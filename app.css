@@ -102,7 +102,7 @@ body {
 }
 
 a {
-	color: #483bfa;
+	color: #5D87BF;
 	text-decoration: none
 }
 
@@ -730,8 +730,11 @@ textarea:focus {
 	margin: 12px;
 	border-radius: 6px;
 	width: 225px;
-	border: 1px solid #9b9b9b;
-	background-color: #d2d2d26d;
+	/* border: 1px solid #9b9b9b; */
+	/* background-color: #d2d2d26d; */
+	background-color: transparent;
+	/*  A somewhat big shadow */
+	box-shadow: 0 0 15px 0 rgba(0, 0, 0, .2);
 }
 
 .landing .section .block td {
