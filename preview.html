@@ -49,6 +49,73 @@
     <a target=_blank href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=HRGVJ2LA2LKJ8&item_name=Support+V+development&currency_code=USD&source=url&lc=US" class="paypal">PayPal</a> &nbsp;
 <a target=_blank href='https://github.com/sponsors/medvednikov' class="paypal">GitHub $</a> &nbsp;
 
+<script>
+  // a function to toggle dark mode
+  function toggleTheme() {
+    let currTheme = localStorage.getItem("theme");
+    if (localStorage.getItem("theme")) {
+      currTheme = localStorage.getItem("theme");
+      
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+    if (localStorage.getItem("theme")=="light") {
+      document.getElementsByClassName("dark-mode-button")[0].innerHTML = "Light";
+      // loop over all the block elements and change their text color
+      let blocks = document.getElementsByClassName("block");
+      for (let i = 0; i < blocks.length; i++) {
+        blocks[i].style.color = "#ffffff";
+        // change the box shadow to make the blocks stand out
+        blocks[i].style.boxShadow = "0 0 30px 0 #5D87BF";
+      }
+      // loop over all the section elements and change their text color
+      let sections = document.getElementsByClassName("section");
+      for (let i = 0; i < sections.length; i++) {
+        sections[i].style.color = "#ffffff";
+      }
+      document.getElementsByClassName("landing")[0].style.backgroundColor = "#000000";
+      // change the text color of nav items
+      let navItems = document.getElementsByClassName("item");
+      for (let i = 0; i < navItems.length; i++) {
+        navItems[i].style.color = "#ffffff";
+      }
+      document.getElementsByClassName("header")[0].style.backgroundColor = "#000000";
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.getElementsByClassName("dark-mode-button")[0].innerHTML = "Dark";
+      document.getElementsByClassName("landing")[0].style.backgroundColor = "#ffffff";
+      let blocks = document.getElementsByClassName("block");
+      for (let i = 0; i < blocks.length; i++) {
+        blocks[i].style.color = "#000000";
+        blocks[i].style.boxShadow = "0 0 20px 0 rgba(0, 0, 0, 0.192)";
+      }
+      let sections = document.getElementsByClassName("section");
+      for (let i = 0; i < sections.length; i++) {
+        sections[i].style.color = "#000000";
+      }
+      let navItems = document.getElementsByClassName("item");
+      for (let i = 0; i < navItems.length; i++) {
+        navItems[i].style.color = "#000000";
+      }
+      document.getElementsByClassName("header")[0].style.backgroundColor = "#ffffff";
+      localStorage.setItem("theme", "light");
+    }
+
+    // as soon ask the user leaves the page, save the theme to local storage
+    window.onbeforeunload = function() {
+      localStorage.setItem("theme", currTheme);
+    }
+  }
+
+  toggleTheme()
+
+</script>
+
+  <!-- a dark and light mode switch -->
+  <div class="dark-mode-switch">
+    <button onclick="toggleTheme()" class="dark-mode-button">Theme</button>
+  </div>
+
 <!--
 <a target=_blank href='#' class="paypal" id='btc' onclick="document.getElementById('btcaddr').style.display='inline'; document.getElementById('btc').style.display='none'; return false;">BTC</a>
 <span id='btcaddr' style='display:none'>
@@ -683,7 +750,7 @@ You can read translated code here:
       <p>A simple example of the graphics library in action is <a href="https://github.com/vlang/v/blob/master/examples/tetris">tetris.v</a>.</p>
     </div>
     <div class="">
-      <img src="/img/gg.png" style="width: 60%; margin-left: 20%"></img>
+      <img src="/img/gg.png" style="width: 60%; margin-left: 20%; border-radius: 10px;"></img>
     </div>
   </div>
 
@@ -1075,6 +1142,6 @@ document.getElementById("codeblock_rb_61993869").onclick = function(e) {
     logo by <a href="https://github.com/sonovice/">Sonovice</a> and <a href="https://github.com/donnisnoni">Don</a>.
   </i>
 </div>
-
+</div>
 </body>
 </html>

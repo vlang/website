@@ -704,10 +704,10 @@ textarea:focus {
 	justify-content: flex-start;
 	align-items: center;
 	padding-bottom: 32px;
-background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, transparent 0.5px);
-background-size: 20px 20px;
-/* make the backgoud image static */
-background-attachment: fixed;
+	background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, transparent 0.5px);
+	background-size: 20px 20px;
+	/* make the backgoud image static */
+	background-attachment: fixed;
 }
 
 .landing .section {
@@ -760,7 +760,8 @@ background-attachment: fixed;
 	padding: 12px;
 	max-width: calc(100vw - 56px);
 	border-radius: 6px;
-	margin: 0;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	color: #ffffff;
 }
 
@@ -982,6 +983,8 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
 	margin: 12px;
 	border-radius: 6px;
 	width: 225px;
+	/* make the box have no shadow and make it !important so it overrides the default */
+	box-shadow: none !important;
 }
 
 .news_header{
@@ -1032,10 +1035,12 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
 
   .link .block {
 	background-color: #5D87BF;
-	color: white;
+	color: white !important;
 	border-radius: 5px;
 	padding: 15px;
 	margin: 12px;
 	width: auto;
 	background: linear-gradient(to right, rgb(0, 13, 255), rgb(28, 40, 150));
+	/* apply no shadow to the element and make it !important */
+	box-shadow: none !important;
   }
