@@ -728,14 +728,14 @@ background-size: 20px 20px;
 .landing .section .block {
 	flex: 1;
 	padding: 18px 16px;
-	margin: 12px;
+	margin: 20px;
 	border-radius: 15px;
 	width: 225px;
 	/* border: 1px solid #9b9b9b; */
 	/* background-color: #d2d2d26d; */
 	background-color: transparent;
 	/*  A somewhat big shadow */
-	box-shadow: 0 0 15px 0 rgba(0, 0, 0, .2);
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.192);
 	/* background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px);
 	background-size: 10px 10px; */
 }
@@ -980,8 +980,6 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
 	margin: 12px;
 	border-radius: 6px;
 	width: 225px;
-	border: 1px solid #9b9b9b;
-	background-color: #d2d2d26d;
 }
 
 .news_header{
@@ -1033,8 +1031,9 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
   .link .block {
 	background-color: #5D87BF;
 	color: white;
-	border-radius: 10px;
-	padding: 18px 16px;
+	border-radius: 5px;
+	padding: 15px;
 	margin: 12px;
 	width: auto;
+	background: linear-gradient(to right, rgb(0, 13, 255), rgb(60, 0, 128));
   }
