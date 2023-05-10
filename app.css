@@ -414,18 +414,18 @@ textarea:focus {
 	color: #222b38
 }
 
-	.header .donate-button .paypal {
-		width: 80px;
-		height: 33px;
-		background: #3b7bbf;
-		margin-bottom: 3px;
-		border-radius: 3px;
-		color: #fff;
-		text-align: center;
-		line-height: 32px;
-		font-size: 15px;
-		margin-left: 10px;
-	}
+.header .donate-button .paypal {
+	width: 80px;
+	height: 33px;
+	background: #3b7bbf;
+	margin-bottom: 3px;
+	border-radius: 3px;
+	color: #fff;
+	text-align: center;
+	line-height: 32px;
+	font-size: 15px;
+	margin-left: 10px;
+}
 @media (max-width:1100px) {
 	.header {
 		position: static;
@@ -731,7 +731,7 @@ textarea:focus {
 	border-radius: 6px;
 	width: 225px;
 	border: 1px solid #9b9b9b;
-	background-color: #dfdede;
+	background-color: #d2d2d26d;
 }
 
 .landing .section .block td {
@@ -955,6 +955,7 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
 	grid-template-columns: auto auto auto;
 	overflow-x: scroll;
 	overflow-y: hidden;
+}
 
 @media (min-width: 800px) {
 	.news {
