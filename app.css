@@ -102,7 +102,13 @@ body {
 }
 
 a {
-	color: #000;
+	color: #483bfa;
+	text-decoration: none
+}
+
+a:hover {
+	text-decoration: underline;
+	transition: all .2s ease-in-out;
 }
 
 .flex {
@@ -945,8 +951,17 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
 .news {
 	font-size: 80%;
 	margin-top: 0 !important;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	overflow-x: scroll;
+	overflow-y: hidden;
+
+@media (min-width: 800px) {
+	.news {
+		grid-template-columns: auto auto;
+	}
 }
+
 .news .container {
 	display: flex
 }
@@ -987,4 +1002,6 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
 	display: block;
   }
 
-  .dropdown-content a:hover {background-color: #f1f1f1}
+  .dropdown-content a:hover {
+  background-color: #f1f1f1;
+  }
