@@ -733,10 +733,7 @@ textarea:focus {
 	margin: 20px;
 	border-radius: 15px;
 	width: 225px;
-	/* border: 1px solid #9b9b9b; */
-	/* background-color: #d2d2d26d; */
 	background-color: transparent;
-	/*  A somewhat big shadow */
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.192);
 	/* background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px);
 	background-size: 10px 10px; */
