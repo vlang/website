@@ -738,6 +738,12 @@ textarea:focus {
 	border: 2.5px solid #5e5e5e5d;
 }
 
+@media (max-width: 600px) {
+	.landing .section .block {
+		width: 75vw;
+	}
+}
+
 .landing .section .block td {
 	width: 120px;
 	line-height: 1.5
@@ -773,8 +779,7 @@ textarea:focus {
 
 @media (max-width:1500px) {
 	.landing .hero .examples .codeblock {
-		min-width: auto;
-		max-width: 100%
+		width: 100%
 	}
 }
 
@@ -1027,6 +1032,7 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
   .link {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
   }
 
   .link .block {
