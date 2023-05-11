@@ -67,19 +67,19 @@
       for (let i = 0; i < blocks.length; i++) {
         blocks[i].style.color = "#ffffff";
         // change the box shadow to make the blocks stand out
-        blocks[i].style.boxShadow = "0 0 90px -15px #5058fc86 ";
+        // blocks[i].style.boxShadow = "0 0 90px -15px #5058fc86 ";
       }
       // get all the heading tags and change their text color
       let headings = document.getElementsByTagName("h1");
       for (let i = 0; i < headings.length; i++) {
-        headings[i].style.color = "#ffffff";
+        headings[i].style.color = "#fff";
       }
       // loop over all the section elements and change their text color
       let sections = document.getElementsByClassName("section");
       for (let i = 0; i < sections.length; i++) {
         sections[i].style.color = "#ffffff";
       }
-      document.getElementsByClassName("landing")[0].style.backgroundColor = "#000000";
+      document.getElementsByClassName("landing")[0].style.backgroundColor = "#101010";
       // change the text color of nav items
       let navItems = document.getElementsByClassName("item");
       for (let i = 0; i < navItems.length; i++) {
@@ -94,7 +94,7 @@
       let blocks = document.getElementsByClassName("block");
       for (let i = 0; i < blocks.length; i++) {
         blocks[i].style.color = "#000000";
-        blocks[i].style.boxShadow = "0 0 20px 0 rgba(0, 0, 0, 0.192)";
+        blocks[i].style.boxShadow = "0 0 20px 0 rgba(0, 0, 0, 0.169)";
       }
       let headings = document.getElementsByTagName("h1");
       for (let i = 0; i < headings.length; i++) {
@@ -139,7 +139,7 @@ V LANGUAGE SERVER
 <div class='content landing'>
   <div class='hero'>
     <div class='info'>
-      <h1 style="background: linear-gradient(90deg, #5D87BF 0%, #536B8A 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent; font-weight: 900; font-size: 2.5rem;" class='extrabold'><strong>The V Programming Language 0.3</strong></h1>
+      <h1 style="background: linear-gradient(90deg, #65a3f5 0%, #536B8A 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent; font-weight: 900; font-size: 2.5rem;" class='extrabold'><strong><img src="./img/v-logo.png" style=" width: 50px; height: 50px;"> Programming Language</strong></h1>
       <p style="font-size:larger;" class="subTitle">“simple, fast, safe, compiled language for developing maintainable software”</p>
       <a class='button' target=_blank  href="https://github.com/vlang/v" style="background-color: #000;">
         <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
@@ -253,7 +253,7 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
   <div style="width: 100%; overflow-x: hidden; margin-bottom: -22px;">
    <a target=_blank href='https://my-store-7564322.creator-spring.com/'><img style="width: 200px; margin:0; padding: 0; float: right; right: -20px; z-index: 2; position: relative;" src="/img/veasel.png"></a>
  </div>
-<div class='codeblock' id="codeblock_99404097" style="   box-shadow: 10px 10px 5px 5px rgba(176, 176, 176, 0.337); overflow-y: scroll; height: 15rem; width: 30rem;">
+<div class='codeblock' id="codeblock_99404097" style="   box-shadow: 10px 10px 10px 4px rgba(48, 48, 48, 0.593); overflow-y: scroll; height: 15rem; width: 30rem;">
  <div class='titlebar separator'>
    <div class='flex'></div>
  </div>
@@ -427,7 +427,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
   <a class="block" target=_blank href='https://github.com/vlang/rfcs'>RFCs</a>
 </div>
 
-<b style="font-size: xx-large; font-weight: 900; margin-top: 40px;">Latest news</b><br>
+<h1 style="font-size: xx-large; font-weight: 900; margin-top: 40px;">Latest news</h1><br>
 <!--  a 3x3 grid of blocks -->
 <div class="news">
 <div class="block">
@@ -606,17 +606,23 @@ v run deploy.vsh</pre>
       <table>
       <tbody><tr><td></td><td>Space&nbsp;&nbsp;</td><td>Build time</td></tr>
       <tr><td>Go</td><td>525 MB</td><td>1m 33s</td></tr>
+      <tr><td><div style="width: 50px; height: 5px; border-radius: 4px; background-color: #4693fe;"></div></td></tr>
       <tr><td>Rust</td><td>30 GB</td><td>45m</td></tr>
+      <tr><td><div style="width: 100px; height: 5px; border-radius: 4px; background-color: #4693fe;"></div></td></tr>
       <tr><td>GCC</td><td>8 GB</td><td>50m</td></tr>
+      <tr><td><div style="width: 60px; height: 5px; border-radius: 4px; background-color: #4693fe;"></div></td></tr>
       <tr><td>Clang</td><td>90 GB
       <a target="_blank" class="sidenote" href="https://lists.llvm.org/pipermail/llvm-dev/2019-April/132028.html">[0]</a>
       </td><td>60m</td></tr>
+      <tr><td><div style="width: 200px; height: 5px; border-radius: 4px; background-color: #4693fe;"></div></td></tr>
       <tr><td>Swift</td><td>70 GB
       <a target="_blank" class="sidenote" href="https://github.com/apple/swift/blob/1f9da381dcdef98df2a7313d8729750cbac54f45/README.md#getting-started">[1]</a>
       </td><td>90m</td></tr>
+      <tr><td><div style="width: 170px; height: 5px; border-radius: 4px; background-color: #4693fe;"></div></td></tr>
       <tr><td>V</td><td>&lt; 10 MB
       <a target="_blank" class="sidenote" href="https://github.com/vlang/vc/blob/master/v.c">[2]</a>
 	  </td><td><1s</td></tr>
+    <tr><td><div style="width: 20px; height: 5px; border-radius: 4px; background-color: #4693fe;"></div></td></tr>
       </tbody></table>
     </div>
     <div class="">

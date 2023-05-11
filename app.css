@@ -717,7 +717,7 @@ textarea:focus {
 	width: calc(100vw - 32px);
 	justify-content: space-around;
 	margin-top: 32px;
-	color: #000;
+	color: #101010;
 	border-radius: 6px;
 }
 
@@ -735,7 +735,7 @@ textarea:focus {
 	border-radius: 15px;
 	width: 225px;
 	background-color: transparent;
-	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.192);
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.169);
 	/* background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px);
 	background-size: 10px 10px; */
 }
