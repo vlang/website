@@ -704,10 +704,10 @@ textarea:focus {
 	justify-content: flex-start;
 	align-items: center;
 	padding-bottom: 32px;
-	background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, transparent 0.5px);
+	/* background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, transparent 0.5px);
 	background-size: 20px 20px;
-	/* make the backgoud image static */
-	background-attachment: fixed;
+	make the backgoud image static 
+	background-attachment: fixed; */
 }
 
 .landing .section {
