@@ -404,14 +404,15 @@ textarea:focus {
 .header .nav .item {
 	color: #000;
 	text-decoration: none;
-	padding-right: 18px;
-	padding-left: 18px;
+	padding: 10px;
 	font-size: 22px;
 	font-weight: 900;
+	margin-right: 10px;
 }
 
-.header .nav .item.active {
-	color: #222b38
+.header .nav .item:hover {
+	background-color: #9c9c9c7a;
+	border-radius: 8px;
 }
 
 .header .donate-button .paypal {
@@ -730,7 +731,7 @@ textarea:focus {
 .landing .section .block {
 	flex: 1;
 	padding: 18px 16px;
-	margin: 20px;
+	margin: 40px;
 	border-radius: 15px;
 	width: 225px;
 	background-color: transparent;
@@ -1010,8 +1011,7 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
   }
 
   .navDropdown {
-	position: relative;
-	display: inline-block;
+	margin-top: 10px;
   }
 
   .dropdown-content a {
@@ -1037,7 +1037,7 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
 	padding: 15px;
 	margin: 12px;
 	width: auto;
-	background: linear-gradient(to right, rgb(0, 13, 255), rgb(28, 40, 150));
+	background-color: #3b7bbf;
 	/* apply no shadow to the element and make it !important */
 	box-shadow: none !important;
   }
