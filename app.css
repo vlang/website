@@ -402,12 +402,12 @@ textarea:focus {
 }
 
 .header .nav .item {
-	color: #777;
+	color: #000;
 	text-decoration: none;
 	padding-right: 18px;
 	padding-left: 18px;
 	font-size: 22px;
-	font-weight: 300
+	font-weight: 900;
 }
 
 .header .nav .item.active {
@@ -1015,7 +1015,7 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
   }
 
   .dropdown-content a {
-	color: black;
+	color: black !important;
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
@@ -1040,4 +1040,9 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
 	background: linear-gradient(to right, rgb(0, 13, 255), rgb(28, 40, 150));
 	/* apply no shadow to the element and make it !important */
 	box-shadow: none !important;
+  }
+
+  .link .block:hover {
+	/*  animate the box to slightly move up */
+	transform: translateY(-6px);
   }
