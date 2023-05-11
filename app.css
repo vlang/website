@@ -98,7 +98,7 @@ body {
 	grid-template-columns: 1fr;
 	grid-template-rows: 72px 1fr;
 	grid-template-areas: "header" "content";
-	width: 100%
+	width: 100%;
 }
 
 a {
@@ -406,7 +406,7 @@ textarea:focus {
 	text-decoration: none;
 	padding: 10px;
 	font-size: 22px;
-	font-weight: 900;
+	font-weight: 400;
 	margin-right: 10px;
 }
 
@@ -735,9 +735,7 @@ textarea:focus {
 	border-radius: 15px;
 	width: 225px;
 	background-color: transparent;
-	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.169);
-	/* background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px);
-	background-size: 10px 10px; */
+	border: 2.5px solid #5e5e5e5d;
 }
 
 .landing .section .block td {
@@ -1012,6 +1010,7 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
 
   .navDropdown {
 	margin-top: 10px;
+	font-weight: 400 !important;
   }
 
   .dropdown-content a {
