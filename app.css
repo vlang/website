@@ -203,9 +203,7 @@ textarea:focus {
 .codeblock .titlebar {
 	display: flex;
 	align-items: center;
-	margin-bottom: 6px;
 	position: relative;
-	top: -2px
 }
 
 .codeblock .play-btn {
@@ -777,10 +775,20 @@ textarea:focus {
 	font-size: 14px
 }
 
-@media (max-width:1500px) {
+@media (max-width:800px) {
 	.landing .hero .examples .codeblock {
-		width: 100%
+		width: 100%;
+		height: 10rem;
+		overflow-y: scroll;
+		white-space: pre-wrap;
 	}
+}
+
+.landing .hero .examples .codeblock {
+	width: 35rem;
+	height: 10rem;
+	overflow-y: scroll;
+	white-space: pre-wrap;
 }
 
 @media (max-width:1200px) {
