@@ -154,7 +154,7 @@ textarea:focus {
 
 .codeblock {
 	background: #334;
-	padding: 12px 12px 4px 12px;
+	padding: 12px;
 	max-width: calc(100vw - 56px);
 	border-radius: 6px;
 	margin: 0;
@@ -786,7 +786,7 @@ textarea:focus {
 
 .landing .hero .examples .codeblock {
 	width: 35rem;
-	height: 10rem;
+	height: 15rem;
 	overflow-y: scroll;
 	white-space: pre-wrap;
 }
