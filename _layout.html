@@ -16,45 +16,123 @@
 <body>
 <div id='app'>
 
-<div class='header'>
-  <div class='flex'></div>
-  <a href='/'><img src='/img/v-logo.png' class='logo' /></a>
-
-  <div class='nav'>
-    <a target=_blank href='https://github.com/vlang/V/tree/master/examples' class='item'>%examples</a>
-    <a target=_blank href='https://github.com/vlang/v/blob/master/doc/docs.md' class='item'>%documentation</a>
-    <a target=_blank href='https://github.com/vlang/v/blob/master/tutorials' class='item'>Tutorials</a>
-    <a target=_blank href='https://modules.vlang.io' class='item'>Stdlib Docs</a>
-    <a target=_blank href='https://vpm.vlang.io/' class='item'>vpm</a>
-    <a target=_blank href='https://github.com/vlang/v/discussions' class='item'>Forum</a>
-    <a target=_blank href='https://github.com/vlang/v/discussions/categories/blog' class='item'>Blog</a>
-    <a target=_blank href='https://play.vlang.io' class='item'>Playground</a>
-	<!--
-    <a target=_blank href='https://v-wasm.now.sh' class='item'>Playground</a>
-    <a href='/#builtinv' class='item'>Built in V</a>
-	-->
-	<!--
-    <a target=_blank href='https://github.com/vlang/v/wiki/FAQ' class='item'>%faq</a>
-    <a target=_blank href='https://github.com/vlang/v/wiki/Backers' class='item'>Backers</a>
-	-->
+  <div class='header'>
+    <div class='flex'></div>
+    <a href='/'><img src='/img/v-logo.png' class='logo' /></a>
+  
+    <div class='nav'>
+      <div class="navDropdown">
+        <div class="dropbtn" style="background-color: transparent; outline: none; border: none; cursor: pointer;">   
+          <a target=_blank href='https://github.com/vlang/v/blob/master/doc/docs.md' class='item' style="	font-size: 22px;
+          font-weight: 400;">%documentation</a> 
+          <i class="fa fa-caret-down"></i>
+        </div>
+        <div class="dropdown-content">
+          <a target=_blank href='https://github.com/vlang/V/tree/master/examples' class='item'>%examples</a>
+          <a target=_blank href='https://github.com/vlang/v/discussions' class='item'>Forum</a>
+          <a target=_blank href='https://github.com/vlang/v/blob/master/tutorials' class='item'>Tutorials</a>
+        </div>
+      </div> 
+      <a target=_blank href='https://modules.vlang.io' class='item'>Stdlib Docs</a>
+      <a target=_blank href='https://vpm.vlang.io/' class='item'>vpm</a>
+      <a target=_blank href='https://blog.vlang.io' class='item'>Blog</a>
+    
+      <!-- <a target=_blank href='https://v-wasm.now.sh' class='item'>Playground</a> -->
+      <a target=_blank href='https://play.vlang.io' class='item'>Playground</a>
+      <!-- <a href='/#builtinv' class='item'>Built in V</a> -->
+  
+    <!--
+      <a target=_blank href='https://github.com/vlang/v/wiki/FAQ' class='item'>%faq</a>
+      <a target=_blank href='https://github.com/vlang/v/wiki/Backers' class='item'>Backers</a>
+    -->
+    </div>
+    <div class="donate-button">
+      <a target=_blank  href='https://patreon.com/vlang' class='patreon'><img src='/img/patreon.png' /></a> &nbsp;
+      <a target=_blank href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=HRGVJ2LA2LKJ8&item_name=Support+V+development&currency_code=USD&source=url&lc=US" class="paypal">PayPal</a> &nbsp;
+  <a target=_blank href='https://github.com/sponsors/medvednikov' class="paypal">GitHub $</a> &nbsp;
+  
+  <script>
+    // a function to toggle dark mode
+    function toggleTheme() {
+      let currTheme = localStorage.getItem("theme");
+      if (localStorage.getItem("theme")) {
+        currTheme = localStorage.getItem("theme");
+        
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+      if (localStorage.getItem("theme")=="light") {
+        document.getElementsByClassName("dark-mode-button")[0].innerHTML = "☀️";
+        // loop over all the block elements and change their text color
+        let blocks = document.getElementsByClassName("block");
+        for (let i = 0; i < blocks.length; i++) {
+          blocks[i].style.color = "#ffffff";
+          // change the box shadow to make the blocks stand out
+          // blocks[i].style.boxShadow = "0 0 90px -15px #5058fc86 ";
+        }
+        // get all the heading tags and change their text color
+        let headings = document.getElementsByTagName("h1");
+        for (let i = 0; i < headings.length; i++) {
+          headings[i].style.color = "#fff";
+        }
+        // loop over all the section elements and change their text color
+        let sections = document.getElementsByClassName("section");
+        for (let i = 0; i < sections.length; i++) {
+          sections[i].style.color = "#ffffff";
+        }
+        document.getElementsByClassName("landing")[0].style.backgroundColor = "#101010";
+        document.getElementById("app").style.backgroundColor = "#101010";
+        // change the text color of nav items
+        let navItems = document.getElementsByClassName("item");
+        for (let i = 0; i < navItems.length; i++) {
+          navItems[i].style.color = "#ffffff";
+        }
+        // document.getElementsByClassName("header")[0].style.backgroundColor = "#000000";
+        document.getElementsByClassName("subTitle")[0].style.color = "#ffffff";
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.getElementsByClassName("dark-mode-button")[0].innerHTML = "🌙";
+        document.getElementsByClassName("landing")[0].style.backgroundColor = "#ffffff";
+        document.getElementById("app").style.backgroundColor = "#ffffff";
+        let blocks = document.getElementsByClassName("block");
+        for (let i = 0; i < blocks.length; i++) {
+          blocks[i].style.color = "#000000";
+          // blocks[i].style.boxShadow = "0 0 20px 0 rgba(0, 0, 0, 0.169)";
+        }
+        let headings = document.getElementsByTagName("h1");
+        for (let i = 0; i < headings.length; i++) {
+          headings[i].style.color = "#000000";
+        }
+        let sections = document.getElementsByClassName("section");
+        for (let i = 0; i < sections.length; i++) {
+          sections[i].style.color = "#000000";
+        }
+        let navItems = document.getElementsByClassName("item");
+        for (let i = 0; i < navItems.length; i++) {
+          navItems[i].style.color = "#000000";
+        }
+        // document.getElementsByClassName("header")[0].style.backgroundColor = "#ffffff";
+        document.getElementsByClassName("subTitle")[0].style.color = "#000000";
+        localStorage.setItem("theme", "light");
+      }
+  
+      // as soon ask the user leaves the page, save the theme to local storage
+      window.onbeforeunload = function() {
+        localStorage.setItem("theme", currTheme);
+      }
+    }
+  
+    toggleTheme()
+  
+  </script>
+  
+    <!-- a dark and light mode switch -->
+    <div class="dark-mode-switch">
+      <button onclick="toggleTheme()" class="dark-mode-button" style="font-size: x-large; background-color: transparent; border: none; padding-bottom: 5px;">🌙</button>
+    </div>
+    </div>
+    <div class='flex'></div>
   </div>
-  <div class="donate-button">
-    <a target=_blank  href='https://patreon.com/vlang' class='patreon'><img src='/img/patreon.png' /></a> &nbsp;
-    <a target=_blank href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=HRGVJ2LA2LKJ8&item_name=Support+V+development&currency_code=USD&source=url&lc=US" class="paypal">PayPal</a> &nbsp;
-<a target=_blank href='https://github.com/sponsors/medvednikov' class="paypal">GitHub $</a> &nbsp;
-
-<!--
-<a target=_blank href='#' class="paypal" id='btc' onclick="document.getElementById('btcaddr').style.display='inline'; document.getElementById('btc').style.display='none'; return false;">BTC</a>
-<span id='btcaddr' style='display:none'>
-1HZiH6MXkVpaWFwiGVCLAr8WQDBQCMnW3v
-</span>
--->
-	<!--
-	<a target=_blank href='https://github.com/sponsors/medvednikov'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="93" height="20"><linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="r"><rect width="93" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#r)"><rect width="72" height="20" fill="#555"/><rect x="72" width="21" height="20" fill="#9f9f9f"/><rect width="93" height="20" fill="url(#s)"/></g><g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="110"><image x="5" y="3" width="14" height="14" xlink:href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSJ3aGl0ZXNtb2tlIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+R2l0SHViIGljb248L3RpdGxlPjxwYXRoIGQ9Ik0xMiAuMjk3Yy02LjYzIDAtMTIgNS4zNzMtMTIgMTIgMCA1LjMwMyAzLjQzOCA5LjggOC4yMDUgMTEuMzg1LjYuMTEzLjgyLS4yNTguODItLjU3NyAwLS4yODUtLjAxLTEuMDQtLjAxNS0yLjA0LTMuMzM4LjcyNC00LjA0Mi0xLjYxLTQuMDQyLTEuNjFDNC40MjIgMTguMDcgMy42MzMgMTcuNyAzLjYzMyAxNy43Yy0xLjA4Ny0uNzQ0LjA4NC0uNzI5LjA4NC0uNzI5IDEuMjA1LjA4NCAxLjgzOCAxLjIzNiAxLjgzOCAxLjIzNiAxLjA3IDEuODM1IDIuODA5IDEuMzA1IDMuNDk1Ljk5OC4xMDgtLjc3Ni40MTctMS4zMDUuNzYtMS42MDUtMi42NjUtLjMtNS40NjYtMS4zMzItNS40NjYtNS45MyAwLTEuMzEuNDY1LTIuMzggMS4yMzUtMy4yMi0uMTM1LS4zMDMtLjU0LTEuNTIzLjEwNS0zLjE3NiAwIDAgMS4wMDUtLjMyMiAzLjMgMS4yMy45Ni0uMjY3IDEuOTgtLjM5OSAzLS40MDUgMS4wMi4wMDYgMi4wNC4xMzggMyAuNDA1IDIuMjgtMS41NTIgMy4yODUtMS4yMyAzLjI4NS0xLjIzLjY0NSAxLjY1My4yNCAyLjg3My4xMiAzLjE3Ni43NjUuODQgMS4yMyAxLjkxIDEuMjMgMy4yMiAwIDQuNjEtMi44MDUgNS42MjUtNS40NzUgNS45Mi40Mi4zNi44MSAxLjA5Ni44MSAyLjIyIDAgMS42MDYtLjAxNSAyLjg5Ni0uMDE1IDMuMjg2IDAgLjMxNS4yMS42OS44MjUuNTdDMjAuNTY1IDIyLjA5MiAyNCAxNy41OTIgMjQgMTIuMjk3YzAtNi42MjctNS4zNzMtMTItMTItMTIiLz48L3N2Zz4="/><text x="455" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="450">Sponsor</text><text x="455" y="140" transform="scale(.1)" textLength="450">Sponsor</text><text x="815" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="110">❤</text><text x="815" y="140" transform="scale(.1)" textLength="110">❤</text></g></svg></a>
-	-->
-  </div>
-  <div class='flex'></div>
-</div>
 @end
 
 @define "footer"
