@@ -1,6 +1,6 @@
 :root {
 	color: #000;
-	font-weight: 500;
+	/* font-weight: 500; */
 }
 
 .select {
@@ -721,9 +721,8 @@ textarea:focus {
 
 .landing .section h1,
 .landing .section h2 {
-	font-weight: 900;
-	margin: 0;
-	font-size: 2rem;
+	font-weight: 300;
+	margin: 0
 }
 
 .landing .section .block {
@@ -733,7 +732,8 @@ textarea:focus {
 	border-radius: 15px;
 	width: 225px;
 	background-color: transparent;
-	border: 2.5px solid #5e5e5e5d;
+	border: 0.2px solid #5e5e5e25;
+	
 }
 
 @media (max-width: 600px) {
