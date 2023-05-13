@@ -10,7 +10,7 @@
   <!--
   <script src="tokenizer.js"></script>
   -->
-  <title>The V Programming Language</title>
+<title>The V Programming Language</title>
 </head>
 <body>
 <div id='app'>
@@ -20,18 +20,26 @@
   <a href='/'><img src='/img/v-logo.png' class='logo' /></a>
 
   <div class='nav'>
-    <a target=_blank href='https://github.com/vlang/V/tree/master/examples' class='item'>%examples</a>
-    <a target=_blank href='https://github.com/vlang/v/blob/master/doc/docs.md' class='item'>%documentation</a>
-    <a target=_blank href='https://github.com/vlang/v/blob/master/tutorials' class='item'>Tutorials</a>
-    <a target=_blank href='https://modules.vlang.io' class='item'>Standard Library Docs</a>
+    <div class="navDropdown">
+      <div class="dropbtn" style="background-color: transparent; outline: none; border: none; cursor: pointer;">   
+        <a target=_blank href='https://github.com/vlang/v/blob/master/doc/docs.md' class='item' style="	font-size: 22px;
+        font-weight: 400;">%documentation</a> 
+        <i class="fa fa-caret-down"></i>
+      </div>
+      <div class="dropdown-content">
+        <a target=_blank href='https://github.com/vlang/V/tree/master/examples' class='item'>%examples</a>
+        <a target=_blank href='https://github.com/vlang/v/discussions' class='item'>Forum</a>
+        <a target=_blank href='https://github.com/vlang/v/blob/master/tutorials' class='item'>Tutorials</a>
+      </div>
+    </div> 
+    <a target=_blank href='https://modules.vlang.io' class='item'>Stdlib Docs</a>
     <a target=_blank href='https://vpm.vlang.io/' class='item'>vpm</a>
-    <a target=_blank href='https://github.com/vlang/v/discussions' class='item'>Forum</a>
     <a target=_blank href='https://blog.vlang.io' class='item'>Blog</a>
-	<!--
-    <a target=_blank href='https://v-wasm.now.sh' class='item'>Playground</a>
+	
+    <!-- <a target=_blank href='https://v-wasm.now.sh' class='item'>Playground</a> -->
     <a target=_blank href='https://play.vlang.io' class='item'>Playground</a>
-    <a href='/#builtinv' class='item'>Built in V</a>
-	-->
+    <!-- <a href='/#builtinv' class='item'>Built in V</a> -->
+
 	<!--
     <a target=_blank href='https://github.com/vlang/v/wiki/FAQ' class='item'>%faq</a>
     <a target=_blank href='https://github.com/vlang/v/wiki/Backers' class='item'>Backers</a>
@@ -42,15 +50,88 @@
     <a target=_blank href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=HRGVJ2LA2LKJ8&item_name=Support+V+development&currency_code=USD&source=url&lc=US" class="paypal">PayPal</a> &nbsp;
 <a target=_blank href='https://github.com/sponsors/medvednikov' class="paypal">GitHub $</a> &nbsp;
 
-<!--
-<a target=_blank href='#' class="paypal" id='btc' onclick="document.getElementById('btcaddr').style.display='inline'; document.getElementById('btc').style.display='none'; return false;">BTC</a>
-<span id='btcaddr' style='display:none'>
-1HZiH6MXkVpaWFwiGVCLAr8WQDBQCMnW3v
-</span>
--->
-	<!--
-	<a target=_blank href='https://github.com/sponsors/medvednikov'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="93" height="20"><linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="r"><rect width="93" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#r)"><rect width="72" height="20" fill="#555"/><rect x="72" width="21" height="20" fill="#9f9f9f"/><rect width="93" height="20" fill="url(#s)"/></g><g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="110"><image x="5" y="3" width="14" height="14" xlink:href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSJ3aGl0ZXNtb2tlIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+R2l0SHViIGljb248L3RpdGxlPjxwYXRoIGQ9Ik0xMiAuMjk3Yy02LjYzIDAtMTIgNS4zNzMtMTIgMTIgMCA1LjMwMyAzLjQzOCA5LjggOC4yMDUgMTEuMzg1LjYuMTEzLjgyLS4yNTguODItLjU3NyAwLS4yODUtLjAxLTEuMDQtLjAxNS0yLjA0LTMuMzM4LjcyNC00LjA0Mi0xLjYxLTQuMDQyLTEuNjFDNC40MjIgMTguMDcgMy42MzMgMTcuNyAzLjYzMyAxNy43Yy0xLjA4Ny0uNzQ0LjA4NC0uNzI5LjA4NC0uNzI5IDEuMjA1LjA4NCAxLjgzOCAxLjIzNiAxLjgzOCAxLjIzNiAxLjA3IDEuODM1IDIuODA5IDEuMzA1IDMuNDk1Ljk5OC4xMDgtLjc3Ni40MTctMS4zMDUuNzYtMS42MDUtMi42NjUtLjMtNS40NjYtMS4zMzItNS40NjYtNS45MyAwLTEuMzEuNDY1LTIuMzggMS4yMzUtMy4yMi0uMTM1LS4zMDMtLjU0LTEuNTIzLjEwNS0zLjE3NiAwIDAgMS4wMDUtLjMyMiAzLjMgMS4yMy45Ni0uMjY3IDEuOTgtLjM5OSAzLS40MDUgMS4wMi4wMDYgMi4wNC4xMzggMyAuNDA1IDIuMjgtMS41NTIgMy4yODUtMS4yMyAzLjI4NS0xLjIzLjY0NSAxLjY1My4yNCAyLjg3My4xMiAzLjE3Ni43NjUuODQgMS4yMyAxLjkxIDEuMjMgMy4yMiAwIDQuNjEtMi44MDUgNS42MjUtNS40NzUgNS45Mi40Mi4zNi44MSAxLjA5Ni44MSAyLjIyIDAgMS42MDYtLjAxNSAyLjg5Ni0uMDE1IDMuMjg2IDAgLjMxNS4yMS42OS44MjUuNTdDMjAuNTY1IDIyLjA5MiAyNCAxNy41OTIgMjQgMTIuMjk3YzAtNi42MjctNS4zNzMtMTItMTItMTIiLz48L3N2Zz4="/><text x="455" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="450">Sponsor</text><text x="455" y="140" transform="scale(.1)" textLength="450">Sponsor</text><text x="815" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="110">❤</text><text x="815" y="140" transform="scale(.1)" textLength="110">❤</text></g></svg></a>
-	-->
+<script>
+  // a function to toggle dark mode
+  function toggleTheme() {
+    let currTheme = localStorage.getItem("theme");
+    if (localStorage.getItem("theme")) {
+      currTheme = localStorage.getItem("theme");
+      
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+    if (localStorage.getItem("theme")=="light") {
+      document.getElementsByClassName("dark-mode-button")[0].innerHTML = "☀️";
+      // loop over all the block elements and change their text color
+      let blocks = document.getElementsByClassName("block");
+      for (let i = 0; i < blocks.length; i++) {
+        blocks[i].style.color = "#ffffff";
+        // change the box shadow to make the blocks stand out
+        // blocks[i].style.boxShadow = "0 0 90px -15px #5058fc86 ";
+      }
+      // get all the heading tags and change their text color
+      let headings = document.getElementsByTagName("h1");
+      for (let i = 0; i < headings.length; i++) {
+        headings[i].style.color = "#fff";
+      }
+      // loop over all the section elements and change their text color
+      let sections = document.getElementsByClassName("section");
+      for (let i = 0; i < sections.length; i++) {
+        sections[i].style.color = "#ffffff";
+      }
+      document.getElementsByClassName("landing")[0].style.backgroundColor = "#101010";
+      document.getElementById("app").style.backgroundColor = "#101010";
+      // change the text color of nav items
+      let navItems = document.getElementsByClassName("item");
+      for (let i = 0; i < navItems.length; i++) {
+        navItems[i].style.color = "#ffffff";
+      }
+      // get the version and change its color
+      document.getElementsByClassName("version")[0].style.color = "#ffffff";
+      // document.getElementsByClassName("header")[0].style.backgroundColor = "#000000";
+      document.getElementsByClassName("subTitle")[0].style.color = "#ffffff";
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.getElementsByClassName("dark-mode-button")[0].innerHTML = "🌙";
+      document.getElementsByClassName("landing")[0].style.backgroundColor = "#ffffff";
+      document.getElementById("app").style.backgroundColor = "#ffffff";
+      let blocks = document.getElementsByClassName("block");
+      for (let i = 0; i < blocks.length; i++) {
+        blocks[i].style.color = "#000000";
+        // blocks[i].style.boxShadow = "0 0 20px 0 rgba(0, 0, 0, 0.169)";
+      }
+      let headings = document.getElementsByTagName("h1");
+      for (let i = 0; i < headings.length; i++) {
+        headings[i].style.color = "#000000";
+      }
+      let sections = document.getElementsByClassName("section");
+      for (let i = 0; i < sections.length; i++) {
+        sections[i].style.color = "#000000";
+      }
+      let navItems = document.getElementsByClassName("item");
+      for (let i = 0; i < navItems.length; i++) {
+        navItems[i].style.color = "#000000";
+      }
+      document.getElementsByClassName("version")[0].style.color = "#000000";
+      // document.getElementsByClassName("header")[0].style.backgroundColor = "#ffffff";
+      document.getElementsByClassName("subTitle")[0].style.color = "#000000";
+      localStorage.setItem("theme", "light");
+    }
+
+    // as soon ask the user leaves the page, save the theme to local storage
+    window.onbeforeunload = function() {
+      localStorage.setItem("theme", currTheme);
+    }
+  }
+
+  toggleTheme()
+
+</script>
+
+  <!-- a dark and light mode switch -->
+  <div class="dark-mode-switch">
+    <button onclick="toggleTheme()" class="dark-mode-button" style="font-size: x-large; background-color: transparent; border: none; padding-bottom: 5px;">🌙</button>
+  </div>
   </div>
   <div class='flex'></div>
 </div>
@@ -63,9 +144,9 @@ V LANGUAGE SERVER
 <div class='content landing'>
   <div class='hero'>
     <div class='info'>
-      <h1>The V Programming Language 0.3</h1>
-      <p>Simple, fast, safe, compiled. For developing maintainable software.</p>
-      <a class='button' target=_blank  href="https://github.com/vlang/v">
+      <h1 style="font-weight: 900; font-size: 2.5rem; color: black;" class='extrabold'><strong><img src="./img/v-logo.png" style=" width: 50px; height: 50px;"> Programming Language</strong></h1>
+      <p style="font-size:larger;" class="subTitle">“simple, fast, safe, compiled language for developing maintainable software”</p>
+      <a class='button' target=_blank  href="https://github.com/vlang/v" style="background-color: #000;">
         <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
         <div class='text'>
           <span class='link'>github.com/vlang/v</span>
@@ -74,7 +155,7 @@ V LANGUAGE SERVER
       </a>
 
 
-<div class='button' style="background: #4a607e">
+<div class='button' style="background: #4693fe">
   <a id="dl-a" href="https://github.com/vlang/v/releases/latest/download/v_linux.zip" style="display: flex; color: #eee">
     <svg class="svg-inline--fa fa-windows fa-w-14" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="windows" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"></path></svg>
     <div class='text'>
@@ -107,6 +188,8 @@ V LANGUAGE SERVER
     </div>
   </div>
 </div>
+<p class='version' style="text-align: center; padding-top: 4px;">V version: 0.3x beta</p>
+
 <script>
 var dlname = document.getElementById('dl-name')
 var dlicon = dlname.parentElement.parentElement.children[0]
@@ -141,13 +224,6 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
   dla.href = "https://github.com/vlang/v/releases/latest/download/v_linux.zip"
 }
 </script>
-  <div class='links'>
-    <a target=_blank href="https://fast.vlang.io/">Is V still fast?</a>
-    <a target=_blank href="https://github.com/vlang/v/wiki/FAQ">FAQ</a>
-    <a target=_blank href="https://github.com/vlang/v/blob/master/CHANGELOG.md">Changelog</a>
-    <a href='/#builtinv'>Built in V</a>
-    <a target=_blank href='https://github.com/vlang/rfcs'>RFCs</a>
-  </div>
   <div class='social'>
     <a target=_blank href='https://twitter.com/v_language'><svg class="svg-inline--fa fa-twitter fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></a>
     <a target=_blank href='https://discord.gg/vlang'><svg class="svg-inline--fa fa-discord fa-w-14" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="discord" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z"></path></svg></a>
@@ -172,38 +248,25 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
 
   </div>
   <div style='margin:12px'>
-
-
-<a target=_blank href='https://twitter.com/v_language'>
-	<img src='https://camo.githubusercontent.com/711d2ed47f8b819c9ca3832eba4272a1eac09ba376febac3b965cdb8c891611f/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f666f6c6c6f772f765f6c616e67756167652e7376673f7374796c653d666c61746c266c6162656c3d466f6c6c6f77266c6f676f3d74776974746572266c6f676f436f6c6f723d776869746526636f6c6f723d316461316632'>
-	</a>
-
-<a target=_blank href='https://discord.gg/vlang'>
-	<img src='https://camo.githubusercontent.com/6c33b3fd882c28b844cc7970053244660b857100/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3539323130333634353833353832313036383f6c6162656c3d446973636f7264266c6f676f3d646973636f7264266c6f676f436f6c6f723d7768697465'>
-	</a>
 	</div>
 </div>
 
 
-<a class='book' href='https://www.amazon.com/gp/product/1839213434' target='_blank'>
+<!-- <a class='book' href='https://www.amazon.com/gp/product/1839213434' target='_blank'>
 	 <img style='width:155px' src='/img/book.jpg'> <br>
 	 The first printed book on V!
-	 </a>
-
-<div class='examples'>
-	 <div style="width: 100%; overflow-x: hidden; margin-bottom: -22px;">
-		<a target=_blank href='https://my-store-7564322.creator-spring.com/'><img style="width: 200px; margin:0; padding: 0; float: right; right: -20px; z-index: 2; position: relative" src="/img/veasel.png"></a>
-	</div>
+</a> -->
+<div class='examples' >
+  <div style="width: 100%; overflow-x: hidden; margin-bottom: -22px;">
+   <a target=_blank href='https://my-store-7564322.creator-spring.com/'><img style="width: 200px; margin:0; padding: 0; float: right; right: -20px; z-index: 2; position: relative;" src="/img/veasel.png"></a>
+ </div>
 <div class='codeblock' id="codeblock_99404097">
-  <div class='titlebar separator'>
-    <div class='flex'></div>
-  </div>
-  <pre class="hello_devs" id=ex1>fn main() {
-    areas := [&#39;game&#39;, &#39;web&#39;, &#39;tools&#39;, &#39;science&#39;, &#39;systems&#39;,
-              &#39;embedded&#39;, &#39;drivers&#39;, &#39;GUI&#39;, &#39;mobile&#39;]
-    for area in areas {
-        println(&#39;Hello, $area developers!&#39;)
-    }
+ <pre class="hello_devs" id=ex1>fn main() {
+   areas := [&#39;game&#39;, &#39;web&#39;, &#39;tools&#39;, &#39;science&#39;, &#39;systems&#39;,
+             &#39;embedded&#39;, &#39;drivers&#39;, &#39;GUI&#39;, &#39;mobile&#39;]
+   for area in areas {
+       println(&#39;Hello, $area developers!&#39;)
+   }
 }</pre>
 <pre class="hello_devs" id=ex2 style='display:none'>
 // Print file lines that start with "DEBUG:"
@@ -211,76 +274,75 @@ import os
 
 // `read_file` returns an optional (`?string`), it must be checked
 text := os.read_file('app.log') or {
-    // `err` is a special variable that contains the error
-    // in `or {}` blocks
-    eprintln('failed to read the file: $err')
-    return
+   // `err` is a special variable that contains the error
+   // in `or {}` blocks
+   eprintln('failed to read the file: $err')
+   return
 }
 
 lines := text.split_into_lines()
 for line in lines {
-    if line.starts_with('DEBUG:') {
-        println(line)
-    }
+   if line.starts_with('DEBUG:') {
+       println(line)
+   }
 }
 </pre>
-  <pre class="hello_devs" id=ex3 style='display:none'>
+ <pre class="hello_devs" id=ex3 style='display:none'>
 import time
 import net.http
 resp := http.get('https://vlang.io/utc_now') or {
-    println('failed to fetch data from the server')
-    return
+   println('failed to fetch data from the server')
+   return
 }
 t := time.unix(resp.text.int())
 println(t.format()) // 2019-08-16 17:48
 </pre>
-  <pre class="hello_devs" id=ex4 style='display:none'>
+ <pre class="hello_devs" id=ex4 style='display:none'>
 import json
 
 struct User {
-    name string
-    age  int
+   name string
+   age  int
 mut:
-    is_registered bool
+   is_registered bool
 }
 
 fn main() {
-    s := '[{"name":"Frodo", "age":25}, {"name":"Bobby", "age":10}]'
-    mut users := json.decode([]User, s) or {
-        eprintln('Failed to parse json')
-        return
-    }
-    for user in users {
-        println('$user.name: $user.age')
-    }
-    println('')
-    for i, mut user in users {
-        println('$i) $user.name')
-        if !user.can_register() {
-            println('Cannot register $user.name, they are too young')
-            continue
-        }
-		// `user` is declared as `mut` in the for loop,
-		// modifying it will modify the array
-        user.register()
-    }
-    // Let's encode users again just for fun
-    println('')
-    println(json.encode(users))
+   s := '[{"name":"Frodo", "age":25}, {"name":"Bobby", "age":10}]'
+   mut users := json.decode([]User, s) or {
+       eprintln('Failed to parse json')
+       return
+   }
+   for user in users {
+       println('$user.name: $user.age')
+   }
+   println('')
+   for i, mut user in users {
+       println('$i) $user.name')
+       if !user.can_register() {
+           println('Cannot register $user.name, they are too young')
+           continue
+       }
+   // `user` is declared as `mut` in the for loop,
+   // modifying it will modify the array
+       user.register()
+   }
+   // Let's encode users again just for fun
+   println('')
+   println(json.encode(users))
 }
 
 fn (u User) can_register() bool {
-    return u.age >= 16
+   return u.age >= 16
 }
 
 fn (mut u User) register() {
-    u.is_registered = true
+   u.is_registered = true
 }
 
-  </pre>
+ </pre>
 </div>
-
-<select id="select" onchange="change_ex()" style="margin-top:5px">
+<select id="select" onchange="change_ex()" style="margin-top:30px; background-color: rgb(221, 221, 221); font-size: medium; padding: 5px; border-radius: 5px; border: 1px solid #ccc;">
 <option value="1">Hello world</option>
 <option value="2">Filter log file</option>
 <option value="3">HTTP + time</option>
@@ -310,10 +372,10 @@ update_ex()
 
 function update_ex() {
 var elems = document.querySelectorAll('.hello_devs');
-    for (var index = 0 ; index < elems.length; index++) {
+   for (var index = 0 ; index < elems.length; index++) {
 
-        elems[index].style.display = 'none';
-    }
+       elems[index].style.display = 'none';
+   }
 document.getElementById('ex' + ex_id).style.display = 'table-cell';
 if (ex_id <= 3) {
 document.getElementById('ex' + ex_id).style.fontSize = '100%';
@@ -341,85 +403,91 @@ next();
 
 
 function tokenize_codeblock_99404097 (e) {
-  Tokenizer(e.target.value).then(function(tokens) {
-    document.getElementById("codeblock_hl_04227451").innerHTML = tokens
-      .map(function(token) { return `<span class='${token.type}'>${token.value}</span>` })
-      .join('')
-  })
+ Tokenizer(e.target.value).then(function(tokens) {
+   document.getElementById("codeblock_hl_04227451").innerHTML = tokens
+     .map(function(token) { return `<span class='${token.type}'>${token.value}</span>` })
+     .join('')
+ })
 }
 document.getElementById("codeblock_ta_39322469").oninput = tokenize_codeblock_99404097
 tokenize_codeblock_99404097({target:{value: document.getElementById("codeblock_ta_39322469").value}})
 document.getElementById("codeblock_rb_13318017").onauxclick = function(e) {
-  localStorage.setItem('sandbox-code', document.getElementById("codeblock_ta_39322469").value)
+ localStorage.setItem('sandbox-code', document.getElementById("codeblock_ta_39322469").value)
 }
 document.getElementById("codeblock_rb_13318017").onclick = function(e) {
-  if (location.pathname === 'https://v-wasm.vercel.app') e.preventDefault()
-  var codeblock_value = document.getElementById("codeblock_ta_39322469").value
-  localStorage.setItem('sandbox-code', codeblock_value)
+ if (location.pathname === 'https://v-wasm.vercel.app') e.preventDefault()
+ var codeblock_value = document.getElementById("codeblock_ta_39322469").value
+ localStorage.setItem('sandbox-code', codeblock_value)
 }
 </script>
 </div>
 </div>
-  <div>
-
-  <div class="section news">
-  	  <div class='news_header'>
-	  <b>Latest news</b><br>
-	  </div>
-
-    <div class="block">
-	  <div class='news_date'>
-		  June 30, 2022
-	  </div>
-	  <div>
-	    <a target=_blank href='https://github.com/vlang/v/discussions/14895'>V 0.3 is out!</a>
-
-	  </div>
-	</div>
-
-    <div class="block">
-	  <div class='news_date'>
-		  June 22, 2022
-	  </div>
-	  <div>
-	  	C2V is out! Demo video:
-
-		<a target=_blank href='https://www.youtube.com/watch?v=6oXrz3oRoEg'>
-		translating DOOM from C to V, building it under a second and running it!</a>
-
-	  </div>
-	</div>
-    <div class="block">
-	  <div class='news_date'>
-		  June 10, 2022
-	  </div>
-	  <div>
-	  V has appeared on 
-	  <a target=_blank href="https://twitter.com/v_language/status/1535291800717500416">RedMonk Q122 Programming Language Rankings</a>.
-	  </div>
-	 </div>
-
-    <div class="block">
-	  <div class='news_date'>
-		  June 9, 2022
-	  </div>
-	  <div>
-	   As of today, programs built with the V compiler no longer leak memory by default.
-	  </div>
-	</div>
 
 
-    <div class="block">
-	  <div class='news_date'>
-		  May 29, 2022
-	  </div>
-	  <div>
-		7000 pull requests have been merged!
-		</div>
-	</div>
+
+<h1 style="font-size: xx-large; font-weight: 900; margin-top: 40px;">Latest news</h1><br>
+<!--  a 3x3 grid of blocks -->
+<div class="news">
+<div class="block">
+<div class='news_date'>
+  June 30, 2022
+</div>
+<div>
+  <a target=_blank href='https://github.com/vlang/v/discussions/14895'>V 0.3 is out!</a>
+
+</div>
+</div>
 
 
-  </div>
+<div class="block">
+<div class='news_date'>
+  June 22, 2022
+</div>
+<div>
+  C2V is out! Demo video:
+
+<a target=_blank href='https://www.youtube.com/watch?v=6oXrz3oRoEg'>
+translating DOOM from C to V, building it under a second and running it!</a>
+
+</div>
+</div>
+<div class="block">
+<div class='news_date'>
+  June 10, 2022
+</div>
+<div>
+V has appeared on 
+<a target=_blank href="https://twitter.com/v_language/status/1535291800717500416">RedMonk Q122 Programming Language Rankings</a>.
+</div>
+</div>
+<div class="block">
+<div class='news_date'>
+  June 9, 2022
+</div>
+<div>
+ As of today, programs built with the V compiler no longer leak memory by default.
+</div>
+</div>
+<div class="block">
+<div class='news_date'>
+  May 29, 2022
+</div>
+<div>
+7000 pull requests have been merged!
+</div>
+</div>
+</div>
+
+<div class='link' style='margin-top: 40px;'>
+  <a class="block" target=_blank href="https://fast.vlang.io/">Is V still fast?</a>
+  <a class="block" target=_blank href="https://github.com/vlang/v/wiki/FAQ">FAQ</a>
+  <a class="block" target=_blank href="https://github.com/vlang/v/blob/master/CHANGELOG.md">Changelog</a>
+  <a class="block" href='/#builtinv'>Built in V</a>
+  <a class="block" target=_blank href='https://github.com/vlang/rfcs'>RFCs</a>
+</div>
+
+<h1 style="margin-top: 40px; margin-bottom: 0px; font-size: 40px; font-weight: 900; text-align: center; color: rgb(0, 0, 0);">Why V?</h1>
+<div id="mainBody">
 
   <div class="section">
     <div class="block">
@@ -453,260 +521,6 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
         <li>No null <i>(allowed in unsafe code)</i></li>
         <li>No global variables <i>(can be enabled for low level applications like kernels via a command line flag)</i></li>
       </ul>
-    </div>
-  </div>
-
-
-  <div class="section" style="flex-direction: column">
-  <div class="block">
-    <h1>Sponsors</h1>
-    <div style="margin-top: 16px">
-      <a target=_blank href="https://threefold.io/">
-        <img style="height: 200px" src="/img/sponsor_threefold.svg" />
-      </a>
-      <a target=_blank href="https://data.mx.com/">
-        <img style="height: 200px" src="/img/sponsor_mx.png" />
-      </a>
-      <a target=_blank href="https://syndica.io/">
-        <img style="height:200px; margin-left: 20px;" src="/img/sponsor_syndica.jpg?1" />
-      </a>
-      <a target=_blank href="https://chipnetics.com/">
-        <img style="height: 200px" src="/img/sponsor_chipnetics.svg" />
-      </a>
-    </div>
-  </div>
-  <a href="https://github.com/sponsors/medvednikov" target=_blank style="margin: 0 0px 32px 0px; text-align: center">
-    Become a sponsor via GitHub Sponsors
-  </a>
-</div>
-
-  <div class="section">
-    <div class="block">
-      <h2>Performance</h2>
-      <ul>
-        <li>As fast as C <i>(V's main backend compiles to human readable C)</i></li>
-        <li>C interop without any costs</li>
-        <li>Minimal amount of allocations</li>
-        <li>Built-in serialization without runtime reflection</li>
-        <li>Compiles to native binaries without any dependencies: a simple web server is only 65 KB</li>
-      </ul>
-    </div>
-    <div class="block">
-      <h2>Fast compilation</h2>
-      <p>
-        V compiles ≈110k (Clang backend) and ≈500k (x64 and tcc backends) lines of code per second. <br><i>(Intel i5-7500, SM0256L SSD, no optimization)</i><br/><br/>
-        V is written in V and compiles itself in under a second.
-      </p>
-	  <p>
-	    Most of the compiler is still single threaded, so it's going to be 2-3x faster in the future!
-	  </p>
-    </div>
-  </div>
-
-
-
-
-	  
-
-
-
-  <div class="section">
-    <div class="block">
-      <h2>Small and easy to build compiler</h2>
-      <p>
-      V can be bootstrapped in under a second by compiling its code translated to C with a simple <pre>cc v.c</pre>No libraries or dependencies needed.
-      <br /><br />
-      For comparison, space and time required to build each compiler:
-      </p>
-      <table>
-      <tbody><tr><td></td><td>Space&nbsp;&nbsp;</td><td>Build time</td></tr>
-      <tr><td>Go</td><td>525 MB</td><td>1m 33s</td></tr>
-      <tr><td>Rust</td><td>30 GB</td><td>45m</td></tr>
-      <tr><td>GCC</td><td>8 GB</td><td>50m</td></tr>
-      <tr><td>Clang</td><td>90 GB
-      <a target="_blank" class="sidenote" href="https://lists.llvm.org/pipermail/llvm-dev/2019-April/132028.html">[0]</a>
-      </td><td>60m</td></tr>
-      <tr><td>Swift</td><td>70 GB
-      <a target="_blank" class="sidenote" href="https://github.com/apple/swift/blob/1f9da381dcdef98df2a7313d8729750cbac54f45/README.md#getting-started">[1]</a>
-      </td><td>90m</td></tr>
-      <tr><td>V</td><td>&lt; 10 MB
-      <a target="_blank" class="sidenote" href="https://github.com/vlang/vc/blob/master/v.c">[2]</a>
-	  </td><td><1s</td></tr>
-      </tbody></table>
-    </div>
-    <div class="block">
-      <p>Building V in 0.3 seconds and then using the resulting binary to build itself again:</p>
-		<a href='https://www.youtube.com/watch?v=pvP6wmcl_Sc' target=_blank>
-		 <img  style="width: 90%; margin-left: 0" src='/img/youtube_comp_speed.png'>
-		</a>
-
-<!--
-		<iframe width="448" height="252" src="https://www.youtube.com/embed/pvP6wmcl_Sc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		-->
-	  <!--
-      <video looping="true" autoPlay muted src="/img/buildv.mp4" style="width: 80%; margin-left: 10%"></video>
-	  -->
-    </div>
-  </div>
-
-
-
-  <div class="section" id="memory">
-    <div class="block">
-      <h2>Innovative and flexible memory management</h2>
-	  <p>
-	  	V avoids doing unnecessary allocations in the first place
-		by using value types, string buffers, promoting a simple abstraction-free code style.
-	  </p>
-	  <p>
-	    Right now allocations are handled by a minimal and well performing GC until V's autofree engine is production ready.
-	  <p>
-	   Autofree can be enabled with <code>-autofree</code>. It takes care of most objects (~90-100%):
-	  the compiler inserts necessary free calls automatically during compilation. 
-	    Remaining small percentage of objects is freed via GC.
-	    The developer doesn't need to change anything in their code. "It just works",
-		like in Python, Go, or Java, except there's no heavy GC tracing everything
-		or expensive RC for each object.
-	  </p>
-	  <p>
-	    For developers willing to have more low level control, memory can be managed manually
-		<!--
-		autofree can be disabled
-		-->
-		with <code>-gc none</code>.
-	  </p>
-	  <!--
-	  <p>
-	    There's also an option to use GC for everything via <code>v -gc boehm</code>.
-	  </p>
-	  -->
-	  <p>
-	    Arena allocation is available via <code>v -prealloc</code>.
-	  </p>
-
-
-
-	</div>
-    <div class="block">
-	<p>
-	V's autofree demo. All objects are freed during compilation. Running the Ved editor on an 8 MB file with 0 leaks:
-	</p>
-
-	<a href='https://www.youtube.com/watch?v=gmB8ea8uLsM' target=_blank>
-	 <img  style="width: 90%; margin-left: 0" src='/img/youtube_compile_speed.png'>
-	</a>
-	 <!--
-
-		<iframe width="448" height="252" src="https://www.youtube.com/embed/gmB8ea8uLsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		-->
-	</div>
-  </div>
-
-  <div class="section">
-    <div class="block">
-      <h2>C translation</h2>
-      <p>V can translate your entire C project and offer you the safety, simplicity, and compilation speed-up (via modules). </p>
-      <div style="display: flex">
-        <pre style="margin-right: 36px">v translate file.c
-
-std::vector<std::string> s;
-s.push_back("V is ");
-s.push_back("awesome");
-std::cout << s.size();</pre>
-
-<pre>mut s := []
-s << 'V is '
-s << 'awesome'
-println(s.len)</pre>
-      </div>
-      <p>
-        A blog post about translating DOOM will be published.<br/><br/>
-        <i>C++ to V translation is at an early stage.</i>
-      </p>
-    </div>
-    <div class="block">
-      <p>
-	  Translating DOOM from C to V and building it in under a second:
-	  </p>
-    <a target=_blank href='https://www.youtube.com/watch?v=6oXrz3oRoEg'><img src="/img/doom.png" style="width: 80%; margin-left: 0"></a>
-
-<p>
-You can read translated code here:
-<a target=_blank href='https://github.com/vlang/doom'>github.com/vlang/doom</a>
-</p>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="block">
-      <h2>Hot code reloading</h2>
-      <p>
-        Get your changes instantly without recompiling.
-        <br /><br />
-        Since you also don't have to get to the state you are working on after every compilation, this can save a lot of precious minutes of your development time.
-      </p>
-      <a href="https://github.com/vlang/v/tree/master/examples/hot_reload">github.com/.../examples/hot_reload</a>
-    </div>
-    <div class="block">
-      <video looping="true" autoPlay muted src="/img/hot.mp4" style="width: 80%; margin-left: 10%"></video>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="block">
-      <h2>Powerful graphics libraries</h2>
-      <p>
-        Cross-platform drawing library built on top of GDI+/Cocoa Drawing, and an OpenGL based graphics library for more complex 2D/3D applications, that will also have the following features:
-      </p>
-      <ul>
-        <li>Loading complex 3D objects with textures</li>
-        <li>Camera (moving, looking around)</li>
-        <li>Skeletal animation</li>
-      </ul>
-      <p>DirectX, Vulkan, and Metal support is planned.</p>
-      <p>A simple example of the graphics library in action is <a href="https://github.com/vlang/v/blob/master/examples/tetris">tetris.v</a>.</p>
-    </div>
-    <div class="block">
-      <img src="/img/gg.png" style="width: 60%; margin-left: 20%"></img>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="block">
-      <h2>Native cross-platform GUI library</h2>
-      <p>
-        Build native apps with native controls. You no longer need to embed a browser to develop cross-platform apps quickly.<br /><br />
-        V has a ui module that uses native GUI toolkits: WinAPI/GDI+ on Windows, Cocoa on macOS. On Linux custom drawing is used.<br /><br />
-        Coming soon:
-      </p>
-      <ul>
-        <li>a Delphi-like visual editor for building native GUI apps</li>
-        <li>iOS/Android support with native controls</li>
-        <li>a declarative API similar to SwiftUI and React Native</li>
-      </ul>
-      <p><a href="https://github.com/vlang/ui">github.com/vlang/ui</a></p>
-    </div>
-    <div class="block">
-      <p>
-        Volt, a 300 KB Slack client built with V and V ui:
-      </p>
-      <img src="https://volt-app.com/img/screen3.png" style="width: 100%"></img>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="block">
-      <h2>Easy cross compilation</h2>
-      <p>
-        To cross compile your software simply run v -os windows. or v -os linux. No extra steps required, even for GUI and graphical apps!<br/><br/>
-        (Compiling macOS software only works on macOS for now.)
-      </p>
-    </div>
-    <div class="block">
-      <p>
-        Building V for Windows using V for macOS, and then testing resulting v.exe on a Windows VM:
-      </p>
-      <video looping="true" autoPlay muted src="/img/vwin.mp4" style="width: 100%"></img>
     </div>
   </div>
 
@@ -761,6 +575,237 @@ v run deploy.vsh</pre>
       <p><a href="https://github.com/vlang/v/blob/master/doc/docs.md#cross-platform-shell-scripts-in-v">Read more about V script</a></p>
     </div>
   </div>
+
+  <div class="section">
+    <div class="block">
+      <h2>Performance</h2>
+      <ul>
+        <li>As fast as C <i>(V's main backend compiles to human readable C)</i></li>
+        <li>C interop without any costs</li>
+        <li>Minimal amount of allocations</li>
+        <li>Built-in serialization without runtime reflection</li>
+        <li>Compiles to native binaries without any dependencies: a simple web server is only 65 KB</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h2>Fast compilation</h2>
+      <p>
+        V compiles ≈110k (Clang backend) and ≈500k (x64 and tcc backends) lines of code per second. <br><i>(Intel i5-7500, SM0256L SSD, no optimization)</i><br/><br/>
+        V is written in V and compiles itself in under a second.
+      </p>
+	  <p>
+	    Most of the compiler is still single threaded, so it's going to be 2-3x faster in the future!
+	  </p>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <div class="" style="width: 75%; margin-right: 20px; align-self: center; margin-right: auto; margin-left: auto;">
+      <h2> Small and easy to build compiler</h2>
+      <p>
+      V can be bootstrapped in under a second by compiling its code translated to C with a simple <pre>cc v.c</pre>No libraries or dependencies needed.
+      <br /><br />
+      For comparison, space and time required to build each compiler. The lines show the amount of time that it takes to build:
+      </p>
+      <table>
+      <tbody><tr><td></td><td>Space&nbsp;&nbsp;</td><td>Build time</td></tr>
+      <tr><td>Go</td><td>525 MB</td><td>1m 33s</td></tr>
+      <tr><td><div style="width: 30px; height: 5px; border-radius: 4px; background-color: #368cfd ;"></div></td></tr>
+      <tr><td>Rust</td><td>30 GB</td><td>45m</td></tr>
+      <tr><td><div style="width: 80px; height: 5px; border-radius: 4px; background-color: #368cfd ;"></div></td></tr>
+      <tr><td>GCC</td><td>8 GB</td><td>50m</td></tr>
+      <tr><td><div style="width: 70px; height: 5px; border-radius: 4px; background-color: #368cfd ;"></div></td></tr>
+      <tr><td>Clang</td><td>90 GB
+      <a target="_blank" class="sidenote" href="https://lists.llvm.org/pipermail/llvm-dev/2019-April/132028.html">[0]</a>
+      </td><td>60m</td></tr>
+      <tr><td><div style="width: 170px; height: 5px; border-radius: 4px; background-color: #368cfd ;"></div></td></tr>
+      <tr><td>Swift</td><td>70 GB
+      <a target="_blank" class="sidenote" href="https://github.com/apple/swift/blob/1f9da381dcdef98df2a7313d8729750cbac54f45/README.md#getting-started">[1]</a>
+      </td><td>90m</td></tr>
+      <tr><td><div style="width: 200px; height: 5px; border-radius: 4px; background-color: #368cfd ;"></div></td></tr>
+      <tr><td>V</td><td>&lt; 10 MB
+      <a target="_blank" class="sidenote" href="https://github.com/vlang/vc/blob/master/v.c">[2]</a>
+	  </td><td>1s</td></tr>
+    <tr><td><div style="width: 10px; height: 5px; border-radius: 4px; background-color: #368cfd ;"></div></td></tr>
+      </tbody></table>
+    </div>
+    <div class="">
+      <p>Building V in 0.3 seconds and then using the resulting binary to build itself again:</p>
+		<a href='https://www.youtube.com/watch?v=pvP6wmcl_Sc' target=_blank>
+		 <img  style="width: 90%; margin-left: 0" src='/img/youtube_comp_speed.png'>
+		</a>
+
+<!--
+		<iframe width="448" height="252" src="https://www.youtube.com/embed/pvP6wmcl_Sc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		-->
+	  <!--
+      <video looping="true" autoPlay muted src="/img/buildv.mp4" style="width: 80%; margin-left: 10%"></video>
+	  -->
+    </div>
+  </div>
+
+
+
+  <div class="section" id="memory">
+    <div class="" style="width: 75%; margin-right: 20px; align-self: center; margin-right: auto; margin-left: auto;">
+      <h2>Innovative and flexible memory management</h2>
+	  <p>
+	  	V avoids doing unnecessary allocations in the first place
+		by using value types, string buffers, promoting a simple abstraction-free code style.
+	  </p>
+	  <p>
+	    Right now allocations are handled by a minimal and well performing GC until V's autofree engine is production ready.
+	  <p>
+	   Autofree can be enabled with <code>-autofree</code>. It takes care of most objects (~90-100%):
+	  the compiler inserts necessary free calls automatically during compilation. 
+	    Remaining small percentage of objects is freed via GC.
+	    The developer doesn't need to change anything in their code. "It just works",
+		like in Python, Go, or Java, except there's no heavy GC tracing everything
+		or expensive RC for each object.
+	  </p>
+	  <p>
+	    For developers willing to have more low level control, memory can be managed manually
+		<!--
+		autofree can be disabled
+		-->
+		with <code>-gc none</code>.
+	  </p>
+	  <!--
+	  <p>
+	    There's also an option to use GC for everything via <code>v -gc boehm</code>.
+	  </p>
+	  -->
+	  <p>
+	    Arena allocation is available via <code>v -prealloc</code>.
+	  </p>
+
+
+
+	</div>
+    <div>
+	<p>
+	V's autofree demo. All objects are freed during compilation. Running the Ved editor on an 8 MB file with 0 leaks:
+	</p>
+
+	<a href='https://www.youtube.com/watch?v=gmB8ea8uLsM' target=_blank>
+	 <img  style="width: 90%; margin-left: 0" src='/img/youtube_compile_speed.png'>
+	</a>
+	 <!--
+
+		<iframe width="448" height="252" src="https://www.youtube.com/embed/gmB8ea8uLsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		-->
+	</div>
+  </div>
+
+  <div class="section">
+    <div class="" style="width: 70%; align-self: center; margin-right: auto; margin-left: auto;">
+      <h2>C translation</h2>
+      <p>V can translate your entire C project and offer you the safety, simplicity, and compilation speed-up (via modules). </p>
+      <div style="display: flex">
+        <pre style="margin-right: 36px">v translate file.c
+
+std::vector<std::string> s;
+s.push_back("V is ");
+s.push_back("awesome");
+std::cout << s.size();</pre>
+
+<pre>mut s := []
+s << 'V is '
+s << 'awesome'
+println(s.len)</pre>
+      </div>
+      <p>
+        A blog post about translating DOOM will be published.<br/><br/>
+        <i>C++ to V translation is at an early stage.</i>
+      </p>
+    </div>
+    <div class="" style="width: 80%; margin-left: 0; align-self: center; margin-right: auto; margin-left: auto;">
+      <p>
+	  Translating DOOM from C to V and building it in under a second:
+	  </p>
+    <a target=_blank href='https://www.youtube.com/watch?v=6oXrz3oRoEg'><img src="/img/doom.png" style="width: 80%; margin-left: 0"></a>
+
+<p>
+You can read translated code here:
+<a target=_blank href='https://github.com/vlang/doom'>github.com/vlang/doom</a>
+</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="" style="width: 80%; margin-left: 0; align-self: center; margin-right: auto; margin-left: auto;">
+      <h2>Hot code reloading</h2>
+      <p>
+        Get your changes instantly without recompiling.
+        <br /><br />
+        Since you also don't have to get to the state you are working on after every compilation, this can save a lot of precious minutes of your development time.
+      </p>
+      <a href="https://github.com/vlang/v/tree/master/examples/hot_reload">github.com/.../examples/hot_reload</a>
+    </div>
+    <div class=""style="width: 80%; margin-left: 0">
+      <video looping="true" autoPlay muted src="/img/hot.mp4" style="width: 80%; margin-left: 10%"></video>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="" style="width: 75%; margin-right: 20px; align-self: center; margin-right: auto; margin-left: auto;">
+      <h2>Powerful graphics libraries</h2>
+      <p>
+        Cross-platform drawing library built on top of GDI+/Cocoa Drawing, and an OpenGL based graphics library for more complex 2D/3D applications, that will also have the following features:
+      </p>
+      <ul>
+        <li>Loading complex 3D objects with textures</li>
+        <li>Camera (moving, looking around)</li>
+        <li>Skeletal animation</li>
+      </ul>
+      <p>DirectX, Vulkan, and Metal support is planned.</p>
+      <p>A simple example of the graphics library in action is <a href="https://github.com/vlang/v/blob/master/examples/tetris">tetris.v</a>.</p>
+    </div>
+    <div class="">
+      <img src="/img/gg.png" style="width: 60%; margin-left: 20%; border-radius: 10px;"></img>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="" style="width: 75%; margin-right: 20px; align-self: center; margin-right: auto; margin-left: auto;">
+      <h2>Native cross-platform GUI library</h2>
+      <p>
+        Build native apps with native controls. You no longer need to embed a browser to develop cross-platform apps quickly.<br /><br />
+        V has a ui module that uses native GUI toolkits: WinAPI/GDI+ on Windows, Cocoa on macOS. On Linux custom drawing is used.<br /><br />
+        Coming soon:
+      </p>
+      <ul>
+        <li>a Delphi-like visual editor for building native GUI apps</li>
+        <li>iOS/Android support with native controls</li>
+        <li>a declarative API similar to SwiftUI and React Native</li>
+      </ul>
+      <p><a href="https://github.com/vlang/ui">github.com/vlang/ui</a></p>
+    </div>
+    <div class=""style="width: 70%; margin-left: 10%">
+      <p>
+        Volt, a 300 KB Slack client built with V and V ui:
+      </p>
+      <img src="https://volt-app.com/img/screen3.png" style="width: 100%;"></img>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="" style="width: 75%; margin-right: 20px; align-self: center; margin-right: auto; margin-left: auto;">
+      <h2>Easy cross compilation</h2>
+      <p>
+        To cross compile your software simply run v -os windows. or v -os linux. No extra steps required, even for GUI and graphical apps!<br/><br/>
+        (Compiling macOS software only works on macOS for now.)
+      </p>
+    </div>
+    <div class="">
+      <p>
+        Building V for Windows using V for macOS, and then testing resulting v.exe on a Windows VM:
+      </p>
+      <video looping="true" autoPlay muted src="/img/vwin.mp4" style="width: 75%; margin-left: 20%;"></video>
+    </div>
+  </div>
+
 
   <div class="section">
     <div class="block">
@@ -846,9 +891,10 @@ user.v:8:14: error: `update_user` parameter `user` is mutable, you need to provi
 </div>
 
 <div class="section">
-  <div class="block">
+  <div class="" style="width: 75%; margin-right: 20px; align-self: center; margin-right: auto; margin-left: auto;">
     <h2>Powerful built-in web framework</h2>
-    <p><a href="https://github.com/vlang/v/tree/master/vlib/vweb">github.com/vlang/v/tree/master/vlib/vweb</a></p>
+    <p>A simple yet powerful web server with built-in routing, parameter handling, templating, and other features.</p>
+    <p><a href="https://github.com/vlang/v/tree/master/vlib/vweb">Lean More Here</a></p>
 
     <div class='codeblock' id="codeblock_12828032">
       <div class='titlebar separator'>
@@ -856,7 +902,7 @@ user.v:8:14: error: `update_user` parameter `user` is mutable, you need to provi
           <a href="https://v-wasm.vercel.app" class='play-btn' id='codeblock_rb_06463216'><svg class="svg-inline--fa fa-play fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg> Run</a>
         </div>
 
-        <pre><div id="codeblock_hl_93987704">[&#39;/post/:id&#39;]
+        <pre style="background-color: transparent; border: none;"><div id="codeblock_hl_93987704">[&#39;/post/:id&#39;]
 fn (b Blog) show_post(id int) vweb.Result {
   post := b.posts_repo.retrieve(id) or {
     return vweb.not_found()
@@ -869,7 +915,6 @@ fn (b Blog) show_post(id int) vweb.Result {
   }
   return vweb.view(post)
 }</textarea></pre>
-</div>
 
 <script>
 function tokenize_codeblock_12828032 (e) {
@@ -890,131 +935,156 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
   localStorage.setItem('sandbox-code', codeblock_value)
 }
 </script>
-      <p><a href="https://github.com/vlang/gitly">Gitly</a>, a light and fast alternative to GitHub/GitLab is built in V and vweb.</p>
     </div>
+    <p><a href="https://github.com/vlang/gitly">Gitly</a>, a light and fast alternative to GitHub/GitLab is built in V and vweb.</p>
+</div>
+<img src="/img/gitly.png" style="width: 100%; max-width: 600px; margin: 0 auto; display: block; border-radius: 10px; margin-left: 60px;">
+</div>
+</div>
 
-    <div class="block">
-      <h2>Built-in ORM</h2>
-      <p>
+<div class="block" style="margin-top: 50px;">
+  <h1 style="text-align: center;">Built-in ORM</h1>
+  <p>
 
-<div class='codeblock' id="codeblock_63253338">
+<div class='codeblock' id="codeblock_63253338" style="width: 75vw; height: 60vh; overflow-y: scroll; align-self: center; margin: 0 auto;">
 
-  <div class='titlebar separator'>
-    <div class='flex'></div>
-    <a href="https://v-wasm.vercel.app" class='play-btn' id='codeblock_rb_61993869'><svg class="svg-inline--fa fa-play fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg> Run</a>
-  </div>
+<div class='titlebar separator'>
+<div class='flex'></div>
+<a href="https://v-wasm.vercel.app" class='play-btn' id='codeblock_rb_61993869'><svg class="svg-inline--fa fa-play fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg> Run</a>
+</div>
 
-  <pre><div id="codeblock_hl_69524066">import sqlite
+<pre style="background-color: transparent; border: none;"><div id="codeblock_hl_69524066" style="background-color: transparent; width: 50vw;">import sqlite
 
 struct Customer {
-  id int
-  name string
-  nr_orders int
-  country string
+id int
+name string
+nr_orders int
+country string
 }
 
 fn main() {
-  db := sqlite.connect(&#39;example.sqlite&#39;) or {
-    panic(&#39;could not create/find example.sqlite&#39;)
-  }
+db := sqlite.connect(&#39;example.sqlite&#39;) or {
+panic(&#39;could not create/find example.sqlite&#39;)
+}
 
-  nr_customers := sql db {
-    select count from Customer
-  }
-  println(&#39;number of all customers: $nr_customers&#39;)
+nr_customers := sql db {
+select count from Customer
+}
+println(&#39;number of all customers: $nr_customers&#39;)
 
-  // V syntax can be used to build queries
-  uk_customers := sql db {
-    select from Customer where country == &#39;uk&#39; &amp;&amp; nr_orders > 0
-  }
+// V syntax can be used to build queries
+uk_customers := sql db {
+select from Customer where country == &#39;uk&#39; &amp;&amp; nr_orders > 0
+}
 
-  for customer in uk_customers {
-    println(&#39;$customer.id - $customer.name&#39;)
-  }
+for customer in uk_customers {
+println(&#39;$customer.id - $customer.name&#39;)
+}
 
-  // by adding `limit 1` we tell V that there will be
-  // only one object
-  customer := sql db {
-    select from Customer where id == 1 limit 1
-  }
-  println(customer.name)
+// by adding `limit 1` we tell V that there will be
+// only one object
+customer := sql db {
+select from Customer where id == 1 limit 1
+}
+println(customer.name)
 
-  // insert a new customer
-  new_customer := Customer{name: &#39;Bob&#39;, nr_orders: 10}
-  sql db {
-    insert new_customer into Customer
-  }
+// insert a new customer
+new_customer := Customer{name: &#39;Bob&#39;, nr_orders: 10}
+sql db {
+insert new_customer into Customer
+}
 }
 </div><textarea spellCheck="false" id="codeblock_ta_60982598" class="">import sqlite
 
 struct Customer {
-  id int
-  name string
-  nr_orders int
-  country string
+id int
+name string
+nr_orders int
+country string
 }
 
 fn main() {
-  db := sqlite.connect(&#39;example.sqlite&#39;) or {
-    panic(&#39;could not create/find example.sqlite&#39;)
-  }
+db := sqlite.connect(&#39;example.sqlite&#39;) or {
+panic(&#39;could not create/find example.sqlite&#39;)
+}
 
-  nr_customers := sql db {
-    select count from Customer
-  }
-  println(&#39;number of all customers: $nr_customers&#39;)
+nr_customers := sql db {
+select count from Customer
+}
+println(&#39;number of all customers: $nr_customers&#39;)
 
-  // V syntax can be used to build queries
-  uk_customers := sql db {
-    select from Customer where country == &#39;uk&#39; &amp;&amp; nr_orders > 0
-  }
+// V syntax can be used to build queries
+uk_customers := sql db {
+select from Customer where country == &#39;uk&#39; &amp;&amp; nr_orders > 0
+}
 
-  for customer in uk_customers {
-    println(&#39;$customer.id - $customer.name&#39;)
-  }
+for customer in uk_customers {
+println(&#39;$customer.id - $customer.name&#39;)
+}
 
-  // by adding `limit 1` we tell V that there will be
-  // only one object
-  customer := sql db {
-    select from Customer where id == 1 limit 1
-  }
-  println(customer.name)
+// by adding `limit 1` we tell V that there will be
+// only one object
+customer := sql db {
+select from Customer where id == 1 limit 1
+}
+println(customer.name)
 
-  // insert a new customer
-  new_customer := Customer{name: &#39;Bob&#39;, nr_orders: 10}
-  sql db {
-    insert new_customer into Customer
-  }
+// insert a new customer
+new_customer := Customer{name: &#39;Bob&#39;, nr_orders: 10}
+sql db {
+insert new_customer into Customer
+}
 }
 </textarea></pre>
 </div>
 
 <script>
 function tokenize_codeblock_63253338 (e) {
-  Tokenizer(e.target.value).then(function(tokens) {
-    document.getElementById("codeblock_hl_69524066").innerHTML = tokens
-      .map(function(token) { return `<span class='${token.type}'>${token.value}</span>` })
-      .join('')
-  })
+Tokenizer(e.target.value).then(function(tokens) {
+document.getElementById("codeblock_hl_69524066").innerHTML = tokens
+  .map(function(token) { return `<span class='${token.type}'>${token.value}</span>` })
+  .join('')
+})
 }
 document.getElementById("codeblock_ta_60982598").oninput = tokenize_codeblock_63253338
 tokenize_codeblock_63253338({target:{value: document.getElementById("codeblock_ta_60982598").value}})
 document.getElementById("codeblock_rb_61993869").onauxclick = function(e) {
-  localStorage.setItem('sandbox-code', document.getElementById("codeblock_ta_60982598").value)
+localStorage.setItem('sandbox-code', document.getElementById("codeblock_ta_60982598").value)
 }
 document.getElementById("codeblock_rb_61993869").onclick = function(e) {
-  if (location.pathname === 'https://v-wasm.vercel.app') e.preventDefault()
-  var codeblock_value = document.getElementById("codeblock_ta_60982598").value
-  localStorage.setItem('sandbox-code', codeblock_value)
+if (location.pathname === 'https://v-wasm.vercel.app') e.preventDefault()
+var codeblock_value = document.getElementById("codeblock_ta_60982598").value
+localStorage.setItem('sandbox-code', codeblock_value)
 }
 </script>
-      </p>
+  </p>
+</div>
+
+<div class="section" style="flex-direction: row">
+  <div class="block">
+    <h1>Sponsors</h1>
+    <div style="margin-top: 16px">
+      <a target=_blank href="https://threefold.io/">
+        <img style="height: 200px" src="/img/sponsor_threefold.svg" />
+      </a>
+      <a target=_blank href="https://data.mx.com/">
+        <img style="height: 200px" src="/img/sponsor_mx.png" />
+      </a>
+      <a target=_blank href="https://syndica.io/">
+        <img style="height:200px; margin-left: 20px;" src="/img/sponsor_syndica.jpg?1" />
+      </a>
+      <a target=_blank href="https://chipnetics.com/">
+        <img style="height: 200px" src="/img/sponsor_chipnetics.svg" />
+      </a>
     </div>
   </div>
 </div>
+<a href="https://github.com/sponsors/medvednikov" target=_blank style=" text-align: center">
+  Become a sponsor via GitHub Sponsors
+</a>
   <div id='builtinv' class="section" style="flex-direction: column">
-  <div class="block">
-    <h1>Built in V</h1>
+  <div class="block" style=" padding: 20px; width: auto;">
+    <h1 style="text-align: center; font-size: 2.5rem; font-weight: 900;">Built in <span>V</span></h1>
     <div class="built-in-v">
       <div class="first">
         <h2>V</h2>
@@ -1082,12 +1152,12 @@ document.getElementById("codeblock_rb_61993869").onclick = function(e) {
   </div>
 </div>
 
-  <i style="margin-top: 48px; margin-bottom: 8px">Web design by <a href="https://twitter.com/leahlundqvist">Leah</a>.</i>
+  <i style="margin-top: 48px; margin-bottom: 8px">Web design by <a href="https://twitter.com/leahlundqvist">Leah </a> <a href="https://github.com/RangerDevv">RangerDevv</a>.</i>
   <i>
     <img src="/img/v-logo.png" style="width:15px;position: relative; top: 3px;">
     logo by <a href="https://github.com/sonovice/">Sonovice</a> and <a href="https://github.com/donnisnoni">Don</a>.
   </i>
 </div>
-
+</div>
 </body>
 </html>
