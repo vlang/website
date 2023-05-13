@@ -87,6 +87,8 @@
         for (let i = 0; i < navItems.length; i++) {
           navItems[i].style.color = "#ffffff";
         }
+        // get the version and change its color
+        document.getElementsByClassName("version")[0].style.color = "#ffffff";
         // document.getElementsByClassName("header")[0].style.backgroundColor = "#000000";
         document.getElementsByClassName("subTitle")[0].style.color = "#ffffff";
         localStorage.setItem("theme", "dark");
@@ -111,6 +113,7 @@
         for (let i = 0; i < navItems.length; i++) {
           navItems[i].style.color = "#000000";
         }
+        document.getElementsByClassName("version")[0].style.color = "#000000";
         // document.getElementsByClassName("header")[0].style.backgroundColor = "#ffffff";
         document.getElementsByClassName("subTitle")[0].style.color = "#000000";
         localStorage.setItem("theme", "light");
