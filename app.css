@@ -730,9 +730,14 @@ textarea:focus {
 	top: -5px
 }
 
-.landing .section .block pre {
+.landing .section .block pre,
+.landing .section .block code {
 	white-space: pre-wrap;
 	word-break: break-word
+}
+
+.landing .section .block img {
+	max-width: 100%
 }
 
 .landing ul {
@@ -930,7 +935,8 @@ position:absolute; right:0px; top:50px; text-align:center; display:block; width:
 	flex-direction: column;
 }
 .news .container {
-	display: flex
+	display: flex;
+	flex-wrap: wrap
 }
 .news_header{
 	text-align:center;
