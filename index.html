@@ -58,6 +58,17 @@ var dlicon = dlname.parentElement.parentElement.children[0]
 var dlsize = document.getElementById('dl-size')
 var dla = document.getElementById('dl-a')
 
+function leftScroll() {
+    const left = document.querySelector(".news .container");
+    left.scrollBy(-290, 0);
+}
+
+function rightScroll() {
+    const right = document.querySelector(".news .container");
+    right.scrollBy(290, 0);
+}
+
+
 var ua = window.navigator.userAgent,
   platform = window.navigator.platform,
   macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
@@ -316,6 +327,11 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
       <h1>Latest news</h1>
     </header>
 
+
+        <div class="actual_news">
+            <img src="/img/arrow-left.png" class="left" onclick="leftScroll()">
+
+
     <div class="container">
 
     <div class="block">
@@ -405,7 +421,6 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 	  </div>
 	</div>
 
-<!--
 
     <div class="block">
 	  <div class='news_date'>
@@ -415,9 +430,12 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 		7000 pull requests have been merged!
 		</div>
 	</div>
-	-->
+
+	  <img src="/img/arrow-right.png" class="right" onclick="rightScroll()">
+
 
     </div>
+	</div>
 
   </section>
 
