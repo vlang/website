@@ -337,28 +337,28 @@ mut:
 }
 
 fn main() {
-	resp := http.get(stories_url) ?
-	ids := json.decode([]int, resp.text) ?
-	shared cursor := Cursor{}
-	mut threads := []thread{}
+	resp := http.get(stories_url)!
+    ids := json.decode([]int, resp.body)!
+    shared cursor := Cursor{}
+    mut threads := []thread{}
 
-	for _ in 0 .. 8 {
-		threads << go fn (ids []int, shared cursor Cursor) {
-			for {
-				id := lock cursor {
-					if cursor.pos >= ids.len {
-						break
-					}
-					cursor.pos++
-					ids[cursor.pos - 1]
-				}
-				resp := http.get('$item_base_url/${id}.json') or { panic(err) }
-				story := json.decode(Story, resp.text) or { panic(err) }
-				println(story.title)
-			}
-		}(ids, shared cursor)
-	}
-	threads.wait()
+    for _ in 0 .. 8 {
+        threads << go fn (ids []int, shared cursor Cursor) {
+            for {
+                id := lock cursor {
+                    if cursor.pos >= ids.len {
+                        break
+                    }
+                    cursor.pos++
+                    ids[cursor.pos - 1]
+                }
+                resp := http.get('$item_base_url/${id}.json') or { panic(err) }
+                story := json.decode(Story, resp.body) or { panic(err) }
+                println(story.title)
+            }
+        }(ids, shared cursor)
+    }
+    threads.wait()
 }
 </pre>
 
