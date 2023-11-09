@@ -238,6 +238,13 @@ fn (mut u User) register() {
 }
 
   </pre>
+
+<pre class="hello_devs" id=ex5 style='display:none'>
+keys := ['accept', 'Accept', 'ACCEPT', 'Content-Type', 'content-type']
+unique_lowercase_keys := arrays.uniq(keys.map(it.to_lower()))
+println(unique_lowercase_keys) // ['accept', 'content-type']
+</pre>
+
 </div>
 
 <select id="select" onchange="change_ex()" style="margin-top:5px">
@@ -245,6 +252,7 @@ fn (mut u User) register() {
 <option value="2">Filter log file</option>
 <option value="3">HTTP + time</option>
 <option value="4">JSON encoding/decoding</option>
+<option value="5">Unique lowercase HTTP keys (map + uniq demo)</option>
 <!--
 <option value="5">Built-in ORM</option>
 -->
@@ -253,7 +261,7 @@ fn (mut u User) register() {
 <script>
 
 var ex_id = 1;
-const nr_exs = 5;
+const nr_exs = 6;
 
 function prev() {
 ex_id--;
