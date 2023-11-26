@@ -574,8 +574,8 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
     <div class="block">
       <h2>Fast compilation</h2>
       <p>
-        V compiles ≈110k (Clang backend) and ≈500k (x64 and tcc backends) lines of code per second. <br><i>(Intel i5-7500, SM0256L SSD, no optimization)</i><br/><br/>
-        V is written in V and compiles itself in under a second.
+        V compiles ≈80k (Clang backend) and ≈400k (x64 and tcc backends) lines of code per second. <br><i>(Apple M2, no optimization)</i><br/><br/>
+        V is written in V and compiles itself in under a second (<a target=_blank href='https://twitter.com/v_language/status/1728100507506602332'>0.45s on Mac mini M2</a>). 
       </p>
 	  <p>
 	    Most of the compiler is still single threaded, so it's going to be 2-3x faster in the future!
@@ -660,7 +660,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 	    Remaining small percentage of objects is freed via GC.
 	    The developer doesn't need to change anything in their code. "It just works",
 		like in Python, Go, or Java, except there's no heavy GC tracing everything
-		or expensive RC for each object.
+		or expensive RC for each object. Autofree is still experimental and not production ready yet. That's planned for V 1.0.
 	  </p>
 	  <p>
 	    For developers willing to have more low level control, memory can be managed manually
