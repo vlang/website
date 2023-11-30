@@ -78,6 +78,22 @@ Older stats: <a href="2023.html">2023</a>, <a href="2022.html">2022</a>, <a href
 
 
 	<tr>
+		<td>2023-11-30 21:16</td>
+		<td><a target=_blank href="https://github.com/vlang/v/commit/0c4abf0c">0c4abf0c</a></td>
+		<td>ci: skip the cmd/tools/vpm/ tests on the fsanitize_memory jobs, because of the handshake code in net.mbedtls, which uses assembly, that is known to sporadically fail the sanitizer</td>
+		<td>917ms</td>
+		<td>1266ms</td>
+		<td>0ms</td>
+		<td>94ms</td>
+		<td>5508 KB</td>
+		<td>165ms</td>
+		<td>227ms</td>
+		<td>234ms</td>
+		<td>49ms</td>
+		<td>102616</td>
+		<td>111904</td>
+	</tr>
+<tr>
 		<td>2023-11-30 21:04</td>
 		<td><a target=_blank href="https://github.com/vlang/v/commit/afaeb742">afaeb742</a></td>
 		<td>os: create the folder described by `XDG_CACHE_HOME`, *if it is non empty, and it does not exist yet*, when calling `os.cache_dir()` (#20046)</td>
