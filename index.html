@@ -127,7 +127,9 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
     &nbsp; &nbsp; &nbsp;
 
     <a target=_blank href='https://marketplace.visualstudio.com/items?itemName=vlanguage.vscode-vlang'><img width=27 src='/img/vscode.png'></a>
+	<!--
     <a target=_blank href='https://intellij-v.github.io/'><img width=27 src='/img/intellij.png'></a>
+	-->
     <a target=_blank href='https://github.com/ollykel/v-vim'><img width=27 src='/img/vim.png'></a>
     <a target=_blank href='https://github.com/damon-kwok/v-mode'><img width=27 src='/img/emacs.png'></a>
 	<!--
@@ -144,7 +146,10 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
 	</a>
 
 <a target=_blank href='https://discord.gg/vlang'>
+	<img src='https://img.shields.io/discord/592103645835821068?logo=discord&label=Discord'>
+	<!--
 	<img src='https://camo.githubusercontent.com/6c33b3fd882c28b844cc7970053244660b857100/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3539323130333634353833353832313036383f6c6162656c3d446973636f7264266c6f676f3d646973636f7264266c6f676f436f6c6f723d7768697465'>
+	-->
 	</a>
 	</div>
 </div>
@@ -245,6 +250,7 @@ fn (mut u User) register() {
   </pre>
 
 <pre class="hello_devs" id=ex5 style='display:none'>
+import arrays
 keys := ['accept', 'Accept', 'ACCEPT', 'Content-Type', 'content-type']
 unique_lowercase_keys := arrays.uniq(keys.map(it.to_lower()))
 println(unique_lowercase_keys) // ['accept', 'content-type']
