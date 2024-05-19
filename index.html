@@ -2,7 +2,7 @@
 
 <style>
 .vreview {
- max-height: 130px;
+ max-height: 160px;
   overflow: hidden;
   position: relative;
 	min-width: 290px !important;
@@ -11,6 +11,29 @@
 .vreview a {
 	line-height:40px;
 }
+/*
+.vreview::after {
+  content: '...';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: white;
+  padding-left: 5px;
+  display: block;
+}
+*/
+
+/*.vreview:hover,*/
+.vreview:focus {
+  max-height: none;
+  overflow: visible;
+}
+
+/*.vreview:hover::after,*/
+.vreview:focus::after {
+  display: none;
+}
+
 </style>
 
 <!--
@@ -85,6 +108,16 @@ function rightScroll() {
     const right = document.querySelector(".news .container");
     right.scrollBy(290, 0);
 }
+function leftScrollReviews() {
+    const left = document.querySelector(".vreviews_news .container");
+    left.scrollBy(-345*3, 0);
+}
+
+function rightScrollReviews() {
+    const right = document.querySelector(".vreviews_news .container");
+    right.scrollBy(345*3, 0);
+}
+
 
 
 var ua = window.navigator.userAgent,
@@ -140,9 +173,7 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
     &nbsp; &nbsp; &nbsp;
 
     <a target=_blank href='https://marketplace.visualstudio.com/items?itemName=vlanguage.vscode-vlang'><img width=27 src='/img/vscode.png'></a>
-	<!--
-    <a target=_blank href='https://intellij-v.github.io/'><img width=27 src='/img/intellij.png'></a>
-	-->
+    <a target=_blank href='https://plugins.jetbrains.com/plugin/24183-vlang'><img width=27 src='/img/intellij.png'></a>
     <a target=_blank href='https://github.com/ollykel/v-vim'><img width=27 src='/img/vim.png'></a>
     <a target=_blank href='https://github.com/damon-kwok/v-mode'><img width=27 src='/img/emacs.png'></a>
 	<!--
@@ -546,7 +577,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 
 
 
-  <section class="section news" style="margin-top:25px !important;">
+  <section id='reviews' class="section news vreviews_news" style="margin-top:25px !important;">
 
     <header class="news_header">
       <h1>What developers say about V</h1>
@@ -554,7 +585,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 
 
         <div class="actual_news">
-            <img src="/img/arrow-left.png" class="left" onclick="leftScroll()">
+            <img src="/img/arrow-left.png" class="left" onclick="leftScrollReviews()">
 
 
     <div class="container">
@@ -570,10 +601,17 @@ Thanks for that! 😄
 	</div>
 
     <div class="block vreview">
-<!--	Since you are contemplating picking up a compiled language, I'll briefly share my experience. -->Been programming for around 30 years. Have done some C/C++, Visual Basic, and lots of Delphi years ago. Then PHP and Ruby for over 15 years. Also a good bit of Bash, Python too. Recently I've wanted to start using a compiled language for reasons, and have looked at Rust, Go, Nim, and a couple others. I stumbled upon V a few weeks ago and have been very surprised by how easy it is to pick up. I am really enjoying writing V and feel like I am already productive. Even to the point I've made a feature request and am looking at making a small contribution to the language, something I've never done before (to an actual language project). IMO, learning  V was a great decision.
+<!--	Since you are contemplating picking up a compiled language, I'll briefly share my experience. -->Been programming for around 30 years. Have done some C/C++, VB, and lots of Delphi years ago. Then PHP/Ruby for over 15 years. Bash, Python too. Recently I've wanted to start using a compiled language for reasons, and have looked at Rust, Go, and a couple others. I stumbled upon V a few weeks ago and have been very surprised by how easy it is to pick up. I am really enjoying writing V and feel like I am already productive. Even to the point I'm now looking at making a small ... <!-- contribution to the language, something I've never done before. IMO, learning  V was a great decision.-->
 		
 	  <div>
 	    <a target=_blank href='https://discord.com/channels/592103645835821068/592106336838352923/1144221785592709181'>FlibbyJibbit</a>
+	  </div>
+	</div>
+
+    <div class="block vreview">
+	Really like the direction of V, been wondering when this kind of language would pop up. 
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/592106336838352923/660514891010015263'>pbarker</a>
 	  </div>
 	</div>
 
@@ -595,18 +633,20 @@ Go concurrency model
 	</div>
 
     <div class="block vreview">
+	I come from a strong Java and Go background and have been playing with Rust.
+V looks pretty amazing in terms of readability.
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/592106336838352923/765085510988333086'>Hoss</a>
+	  </div>
+	</div>
+
+    <div class="block vreview">
 	V is amazingly simple!
 	  <div>
 	    <a target=_blank href='https://discord.com/channels/592103645835821068/592842126304477184/1124867320108564533'>devsou.com</a>
 	  </div>
 	</div>
 
-    <div class="block vreview">
-	Really like the direction of V, been wondering when this kind of language would pop up. 
-	  <div>
-	    <a target=_blank href='https://discord.com/channels/592103645835821068/592106336838352923/660514891010015263'>pbarker</a>
-	  </div>
-	</div>
 
     <div class="block vreview">
 	Gotta say that V's syntax is amazing (especially the error handling aspect for me since I strongly dislike Go's error handling approach but liked its other aspects).
@@ -616,19 +656,20 @@ Go concurrency model
 	</div>
 
     <div class="block vreview">
+	 After V, developing a kernel in C results in more bugs, honestly more so because V catches a set of bugs and memory leakage that C simply doesn't.
+	  <div>
+	    mint, maintainer of Vinix
+	  </div>
+	</div>
+
+
+    <div class="block vreview">
 	Just want to say thank you for continuing to improve the language. Adding the GC was very nice and I find V my all-time favorite language. Using V is fun due to great syntax and tooling but also makes you a better developer as you try to understand how things work underneath.
 	  <div>
 	    <a target=_blank href='https://discord.com/channels/592103645835821068/592106336838352923/831533549617807440'>laotzu</a>
 	  </div>
 	</div>
 
-    <div class="block vreview">
-	I come from a strong Java and Go background and have been playing with Rust.
-V looks pretty amazing in terms of readability.
-	  <div>
-	    <a target=_blank href='https://discord.com/channels/592103645835821068/592106336838352923/765085510988333086'>Hoss</a>
-	  </div>
-	</div>
 
     <div class="block vreview">
 	Just wanted to say thank you to everyone contributing to V! Before September 2023 I never really coded nor completed any project as the tools I had were less than ideal. In September I started learning V and now I have a really good prototype and a professional developer even reached out to me saying my code was really good! That's why I wanted to thank V and all the contributors 🥰
@@ -638,7 +679,7 @@ V looks pretty amazing in terms of readability.
 	</div>
 
     <div class="block vreview">
-	It's obvious that Alex was able to bring his experience of many other programming languages to V, giving the language a very solid foundation.
+	It's obvious that Alex was able to bring his experience of many other languages to V, giving the language a very solid foundation.
 It's difficult for me to list all the positive qualities I like about V because I'm sure I'll forget some. I'll try it anyway.
 
 <li>compilation speed
@@ -646,7 +687,10 @@ It's difficult for me to list all the positive qualities I like about V because 
 <li>readability & maintainability
 <li>execution performance
 <li>cross compilation
+...
+<!--
 <li>builtin safety features
+
 <li>multithreading like go
 <li>small compiler with builtin tools for profiling and testing
 <li>small executables
@@ -656,6 +700,7 @@ It's difficult for me to list all the positive qualities I like about V because 
 <li>easy and obvious syntax in most cases
 <li>achieve as much as possible with as little but at the same time readable code as possible
 Thanks again to Alex and the whole team for the hard work and the very impressive result so far. I really hope V gets all the support I think it deserves. In any case, the language is already very powerful and it's fun to develop with it.
+-->
 	  <div>
 	    <a target=_blank href='https://github.com/vlang/v/discussions/7610#discussioncomment-5352952'>InspColumbo</a>
 	  </div>
@@ -687,7 +732,7 @@ When I stumbled across V, it just 'felt right'.
 
 
 
-	  <img src="/img/arrow-right.png" class="right" onclick="rightScroll()">
+	  <img src="/img/arrow-right.png" class="right" onclick="rightScrollReviews()">
 
 
     </div>
