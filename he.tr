@@ -1,0 +1,176 @@
+examples
+דוגמאות
+-----
+documentation
+דוקומנטציה
+-----
+modules
+ספריות
+-----
+faq
+שאלות נפוצות
+-----
+built_in_v
+נבנה עם וי
+-----
+the_v_lang
+שפת התכנות וי
+-----
+v_slogan
+Simple, fast, safe, compiled language for developing maintainable software
+עם שפה מהודרת, פשוטה, מהירה ובטוחה כמו וי, זה קל לבנות תוכנה, ועוד יותר קל לתחזק אותה
+-----
+includes_binaries 
+קבצי הרצה (בינאריים) כלולים לשלוש מערכות ההפעלה
+-----
+install_source 
+או התקן את וי מהמקור 
+-----
+couple_seconds 
+זה ייקח כמה שניות
+-----
+wip_info
+וי מפותחת באופן פעיל והיא בשלביה המוקדמים.
+פיצ'רים לא גמורים מסומנים ב$wip
+<br> 
+הדוקומנטציה וכל שאר הדברים בעמוד זה מומשו ועכשיו הם קוד פתוח
+<p> 
+By the time of the V 1.0 release planned for December 2019, there will be no $wip's left.
+עד שחרור וי 1.0 המתוכנן לדצמבר 2019, לא יישארו עוד $wips
+-----
+forum
+פורום
+-----
+blog
+בלוג
+-----
+fast_compilation
+הידור מהיר
+-----
+safety
+בטיחות
+-----
+performance 
+ביצועים 
+-----
+simple_language_for_maintainable_programs
+Simple language for building  maintainable programs
+שפה פשוטה לתכנות מתוחזק
+-----
+zero_deps 
+מהדר השוקל 400 קילובייט בלבד ואינו בעל תלות בתוכנות אחרות.
+-----
+c_translation 
+תרגום לשפות C ו-C++
+-----
+introduction
+הקדמה 
+-----
+comments
+הערות 
+-----
+functions
+פונקציות 
+-----
+variables
+משתנים 
+-----
+basic_types 
+טיפוסים בסיסיים 
+-----
+strings
+מחרוזות
+-----
+arrays
+מערכים 
+-----
+maps
+מפות 
+-----
+if
+אם 
+-----
+in_op 
+אופרטור in 
+-----
+for_loop 
+לולאת פור 
+-----
+switch 
+סוויטץ' 
+-----
+structs 
+מבנים 
+-----
+access_mod 
+משני גישה 
+-----
+methods
+מתודות
+-----
+pure_fns 
+פונקציות טהורות 
+-----
+high_fns 
+פונקציות בעלות עדיפות גבוהה 
+-----
+constants 
+קבועים 
+-----
+modules
+מודולים 
+-----
+interfaces
+ממשק 
+-----
+enums
+אינומים
+-----
+optionals_and_errors 
+Option types & error handling
+טיפוסים לבחירה & טיפול בשגיאות
+-----
+generics
+גנריים 
+-----
+concurrency
+בו זמניות 
+-----
+decoding_json 
+פענוח JSON 
+-----
+testing
+בדיקה 
+-----
+memory_management 
+ניהול זכרון 
+-----
+fast_comp1
+וי מהדרת בערך ביו 100 אלף ל-1.2 מיליון שורות קוד פר שנייה פר מעבד
+-----
+fast_comp2
+V compiles itself in 0.15 - 0.6 seconds.
+וי מהדרת את עצמה במהירות גבוהה מאוד - בין 150 ל-600 מאיות
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+לא ריק 
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+-----
+
+
