@@ -1272,10 +1272,10 @@ user.v:8:14: error: `update_user` parameter `user` is mutable, you need to provi
 
 <div class="section">
   <div class="block">
-    <h2>Powerful built-in web framework Vweb</h2>
-	<p>Vweb is very fast, it compiles into a single binary (html templates are also compiled), supports hot code reloading
+    <h2>Powerful built-in web framework Veb</h2>
+	<p>Veb is very fast (built on top of pico.v which has been at the top of TechEmpower benchmark), it compiles into a single binary (html templates are also compiled), supports hot code reloading
 	(the website is automatically updated in the browser once you change any .v/.html file).
-    <p><a href="https://github.com/vlang/v/tree/master/vlib/vweb">github.com/vlang/v/tree/master/vlib/vweb</a></p>
+    <p><a href="https://github.com/vlang/v/tree/master/vlib/veb">github.com/vlang/v/tree/master/vlib/veb</a></p>
 
     <div class='codeblock' id="codeblock_12828032">
       <div class='titlebar separator'>
@@ -1283,17 +1283,17 @@ user.v:8:14: error: `update_user` parameter `user` is mutable, you need to provi
         </div>
 
         <pre><div id="codeblock_hl_93987704">[&#39;/post/:id&#39;]
-fn (b Blog) show_post(id int) vweb.Result {
+fn (b &Blog) show_post(id int) veb.Result {
   post := b.posts_repo.retrieve(id) or {
-    return vweb.not_found()
+    return veb.not_found()
   }
-  return vweb.view(post)
+  return veb.view(post)
 }</div><textarea spellCheck="false" id="codeblock_ta_15447927" class="">[&#39;/post/:id&#39;]
-fn (b Blog) show_post(id int) vweb.Result {
+fn (b &Blog) show_post(id int) veb.Result {
   post := b.posts_repo.retrieve(id) or {
-    return vweb.not_found()
+    return veb.not_found()
   }
-  return vweb.view(post)
+  return veb.view(post)
 }</textarea></pre>
 </div>
 
@@ -1316,7 +1316,7 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
   localStorage.setItem('sandbox-code', codeblock_value)
 }
 </script>
-      <p><a href="https://github.com/vlang/gitly">Gitly</a>, a light and fast alternative to GitHub/GitLab is built in V and vweb.</p>
+      <p><a href="https://github.com/vlang/gitly">Gitly</a>, a light and fast alternative to GitHub/GitLab is built in V and Veb.</p>
     </div>
 
     <div class="block">
