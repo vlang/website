@@ -1075,9 +1075,9 @@ You can read translated code here:
     <div class="block">
       <h2>A powerful graphics library</h2>
       <p>
-        Cross-platform drawing library, using OpenGL/Metal/DirectX 11 for rendering 2D/3D applications.
+        Cross-platform drawing library <code>gg</code>, using OpenGL/Metal/DirectX 11 for rendering 2D applications.
 	  <p>
-		The following features are planned:
+	    There's also a 3D engine in development with the following features already available:
       </p>
       <ul>
         <li>Loading complex 3D objects with textures</li>
@@ -1088,7 +1088,7 @@ You can read translated code here:
 	  <p>For 3D examples, check out <a href="https://github.com/vlang/v/tree/master/examples/sokol" target=_blank>this</a>.</p>
     </div>
     <div class="block">
-      <img src="/img/gg.png" style="width: 60%; margin-left: 20%"></img>
+      <a target=_blank href='https://x.com/v_language/status/1830269654214099049'><img src="/img/engine_screenshot.png" style="width: 60%; margin-left: 20%"></a>
     </div>
   </div>
 
@@ -1113,9 +1113,9 @@ You can read translated code here:
     </div>
     <div class="block">
       <p>
-        Volt, a 300 KB Slack client built with V and V UI:
+        Volt, a 3 MB Slack/Discord client built with V and V UI:
       </p>
-      <img src="https://volt-app.com/img/screen3.png" style="width: 100%"></img>
+      <a target=_blank href='https://volt-app.com'><img src="https://volt-app.com/img/screen3.png" style="width: 100%"></a>
     </div>
   </div>
 
@@ -1215,11 +1215,12 @@ v run deploy.vsh</pre>
     <div class="block">
       <h2>JavaScript and WASM backends</h2>
       <p>
-      V programs can be translated to JavaScript:
+      V programs can be translated to JavaScript (WIP):
       </p>
       <pre>v -o hello.js hello.v</pre>
+	  <p><i>The JS backend is at an early stage.</i></p>
       <p>
-	  They can also be compiled to WASM (for now with Emscripten).
+	  They can also be compiled to WASM (for now with Emscripten, but native WASM support is planned).
       V compiler compiled to WASM and running V programs by translating them to JavaScript:
       </p>
       <p>
@@ -1320,7 +1321,14 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
     </div>
 
     <div class="block">
+		<a target=_blank href='https://github.com/vlang/gitly'><img style='width:500px' src='https://user-images.githubusercontent.com/687996/85933714-b195fe80-b8da-11ea-9ddd-09cadc2103e4.png'></a>
+	</div>
+
+</div>
+<div class="section">
+    <div class="block">
       <h2>Built-in ORM</h2>
+
       <p>
 
 <div class='codeblock' id="codeblock_63253338">
@@ -1346,7 +1354,7 @@ fn main() {
   nr_customers := sql db {
     select count from Customer
   }!
-  println(&#39;number of all customers: ${nr_customers}&#39;)
+  println(<span class='string'>&#39;number of customers: ${nr_customers}&#39;</span>)
 
   // V syntax can be used to build queries
   uk_customers := sql db {
@@ -1369,9 +1377,7 @@ fn main() {
   sql db {
     insert new_customer into Customer
   }!
-}
-</div>
-</pre>
+}</div></pre>
 </div>
 
 <script>
@@ -1402,7 +1408,7 @@ document.getElementById("codeblock_rb_61993869").onclick = function(e) {
     <h1>Built in V</h1>
     <div class="built-in-v">
       <div class="first">
-        <h2>V</h2>
+        <h2>The V Compiler</h2>
         <p>V itself is written in V.</p>
       </div>
       <div class="second">
