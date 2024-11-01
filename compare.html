@@ -141,6 +141,9 @@ clean code.
 — Much faster serialization using codegen and no runtime reflection
 </p>
 <p>
+— Simpler local modules: `import internal.css_lexer ` instead of `import "github.com/evanw/esbuild/internal/css_lexer"`
+</p>
+<p>
 — Precompiled text and HTML templates unlike Go's html/templates that have to
   be parsed on every request (or pre-cached and executed on every request) and
   have to be deployed with the app's binary.
