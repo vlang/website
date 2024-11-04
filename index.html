@@ -1337,71 +1337,54 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
     <div class='flex'></div>
   </div>
 
-  <pre><div id="codeblock_hl_69524066">import db.sqlite
+  <pre><div id="codeblock_hl_69524066">
+  <span class="keyword">import</span> db.sqlite
 
-struct Customer {
-  id int
-  name string
-  nr_orders int
-  country string
+<span class="keyword">struct</span> Customer {
+  id <span class="keyword">int</span>
+  name <span class="keyword">string</span>
+  nr_orders <span class="keyword">int</span>
+  country <span class="keyword">string</span>
 }
 
-fn main() {
-  db := sqlite.connect(&#39;example.sqlite&#39;) or {
-    panic(&#39;could not create/find example.sqlite&#39;)
+<span class="keyword">fn</span> main() {
+  db := sqlite.connect(<span class="string">'example.sqlite'</span>) <span class="keyword">or</span> {
+    panic(<span class="string">'could not create/find example.sqlite'</span>)
   }
 
-  nr_customers := sql db {
-    select count from Customer
+  nr_customers := <span class="keyword">sql</span> db {
+    <span class="keyword">select</span> count <span class="keyword">from</span> Customer
   }!
-  println(<span class='string'>&#39;number of customers: ${nr_customers}&#39;</span>)
+  println(<span class="string">'number of customers: ${nr_customers}'</span>)
 
-  // V syntax can be used to build queries
-  uk_customers := sql db {
-    select from Customer where country == &#39;uk&#39; &amp;&amp; nr_orders > 0
+  <span class="comment">// V syntax can be used to build queries</span>
+  uk_customers := <span class="keyword">sql</span> db {
+    <span class="keyword">select</span> <span class="keyword">from</span> Customer <span class="keyword">where</span> country == <span class="string">'uk'</span> && nr_orders > 0
   }!
 
-  for customer in uk_customers {
-    println(&#39;${customer.id} - ${customer.name}&#39;)
+  <span class="keyword">for</span> customer <span class="keyword">in</span> uk_customers {
+    println(<span class="string">'${customer.id} - ${customer.name}'</span>)
   }
 
-  // by adding `limit 1` we tell V that there will be
-  // only one object
-  customer := sql db {
-    select from Customer where id == 1 limit 1
+  <span class="comment">// by adding `limit 1` we tell V that there will be</span>
+  <span class="comment">// only one object</span>
+  customer := <span class="keyword">sql</span> db {
+    <span class="keyword">select</span> <span class="keyword">from</span> Customer <span class="keyword">where</span> id == 1 <span class="keyword">limit</span> 1
   }!
   println(customer.name)
 
-  // insert a new customer
-  new_customer := Customer{name: &#39;Bob&#39;, nr_orders: 10}
-  sql db {
-    insert new_customer into Customer
+  <span class="comment">// insert a new customer</span>
+  new_customer := Customer{name: <span class="string">'Bob'</span>, nr_orders: 10}
+  <span class="keyword">sql</span> db {
+    <span class="keyword">insert</span> new_customer <span class="keyword">into</span> Customer
   }!
 }</div></pre>
+
+
 </div>
 
-<script>
-function tokenize_codeblock_63253338 (e) {
-  Tokenizer(e.target.value).then(function(tokens) {
-    document.getElementById("codeblock_hl_69524066").innerHTML = tokens
-      .map(function(token) { return `<span class='${token.type}'>${token.value}</span>` })
-      .join('')
-  })
-}
-document.getElementById("codeblock_ta_60982598").oninput = tokenize_codeblock_63253338
-tokenize_codeblock_63253338({target:{value: document.getElementById("codeblock_ta_60982598").value}})
-document.getElementById("codeblock_rb_61993869").onauxclick = function(e) {
-  localStorage.setItem('sandbox-code', document.getElementById("codeblock_ta_60982598").value)
-}
-document.getElementById("codeblock_rb_61993869").onclick = function(e) {
-  if (location.pathname === 'https://v-wasm.vercel.app') e.preventDefault()
-  var codeblock_value = document.getElementById("codeblock_ta_60982598").value
-  localStorage.setItem('sandbox-code', codeblock_value)
-}
-</script>
-      </p>
-    </div>
-  </div>
+</div>
+</div>
 </div>
   <div id='builtinv' class="section" style="flex-direction: column">
   <div class="block">
