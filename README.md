@@ -1,3 +1,11 @@
+the idea here was to take https://github.com/hex2f/vlang.io (the original version) and update it to match the actual (live) version of the website the way it was (with all the nunjucks and npm).
+i archieved it at the moment and pushed it here https://github.com/vlang/website/pull/242
+but sadly, "because of proprietary backend" (statistics, translations) and the fact that the origin had a lot of "hot fixes" on top of some other version of the original, it had lots of conflicts so it wasnt merged
+
+i later realised that the npm version is unnecessary and complex as the only JS that has to be used is to give a proper download link depending on user's OS so i tried to move everything to Hugo here https://github.com/t4wE/vlanghugo
+for some time i updated that repository to match current state of the website but later gave up (started to feel pointless as it likely would never get mered).
+
+-----------------------------------------------------------------------------------------------------------------------------
 # The V Programming Language Website
 
 https://vlang.io
