@@ -631,12 +631,21 @@ textarea:focus {
 	width: 200px
 }
 
+.landing .social,
+.landing .social a,
+.landing .social svg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .landing .social {
-	margin-top: 16px;
-	padding: 9px 12px;
-	border-radius: 6px;
-	margin-right: 38px;
-	text-align: center
+	padding: 25px 0;
+	gap: 10px;
+}
+
+.landing .social a {
+	width: 30px;
 }
 
 .landing .social p {
@@ -645,10 +654,9 @@ textarea:focus {
 
 .landing .social svg {
 	font-size: 28px;
-	margin: 0 12px 0 0;
 	cursor: pointer;
 	color: #949fad;
-	pointer: cursor
+	cursor: pointer;
 }
 
 .landing .social svg:hover {
