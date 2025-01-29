@@ -20,8 +20,8 @@ mut:
 enum Lang {
 	en
 	ru
+	es
 	// cn
-	// es
 	// pt
 	// fr
 	// jp
@@ -75,6 +75,7 @@ fn build_tr_menu(cur_lang Lang) string {
 	// TODO loop when >2 langs
 	s := '<select id=select_lang>' +
 		'<option value=en ${if cur_lang == .en { 'selected' } else { '' }}>English</option>' +
+		'<option value=en ${if cur_lang == .es { 'selected' } else { '' }}>Español</option>' +
 		'<option value=ru ${if cur_lang == .ru { 'selected' } else { '' }}>Русский</option></select>'
 	/*
 	s := match cur_lang {
