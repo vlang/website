@@ -1143,8 +1143,11 @@ You can read translated code here:
 		<pre>
 v .
 </pre><br/>
-        No build environments, makefiles, headers, virtual environments, etc.<br/>
-        You get a single statically linked binary that is guaranteed to work on all operating systems (provided you cross compile) without any dependencies.<br/><br/>
+        No build environments, makefiles, headers, virtual environments, etc.<br><br>
+        You get a single binary that is guaranteed to work on all operating systems (provided you cross compile) without any external dependencies.<br><br>
+		This binary is self-contained except for the OS-provided system library (libc), which is linked dynamically.<br><br>
+		To achieve fully static binaries on Linux, you can use <code>v -cc musl-gcc .</code><br><br>
+
         Installing new libraries via vpm, a centralized package manager written in V, is as simple as
 		<pre>
 v install ui
