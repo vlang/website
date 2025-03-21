@@ -1,0 +1,156 @@
+examples
+Příklady
+-----
+documentation
+Dokumentace
+-----
+modules
+Moduly
+-----
+faq
+FAQ
+-----
+built_in_v
+Napsáno ve V
+-----
+the_v_lang
+Programovací Jazyk V
+-----
+v_slogan
+Jednoduchý, rychlý a bezpečný kompilovaný jakzyk pro vývoj dobře udržovatelných programů
+-----
+includes_binaries 
+obsahuje binární soubory pro 3 systémy
+-----
+install_source 
+nebo nainstalujte V ze zdrojového kódu
+-----
+couple_seconds 
+bude to trvat několik vteřin
+-----
+wip_info
+V je aktivně vyvíjený jazyk v raném stádiu.
+Vlastnosti, na kterých se stále pracuje, jsou označeny $wip
+<br> 
+Všechno ostatní na této stránce a v dokumentaci bylo implementováno v otevřeném kódu.
+<p> 
+V době vydání V 1.0, které je plánováno na prosinec 2019, budou všechny $wip odstraněny.
+-----
+forum
+Fórum
+-----
+blog
+Blog 
+-----
+fast_compilation
+Rychlý překlad
+-----
+safety
+Bezpečnost
+-----
+performance 
+Výkon
+-----
+simple_language_for_maintainable_programs
+Jednoduchý jazyk pro vývoj dobře udržovatelných programů
+-----
+zero_deps 
+400 KB překladač bez vnějších závislostí
+-----
+c_translation 
+Překlad z C/C++
+-----
+introduction
+Úvod
+-----
+comments
+Komentáře
+-----
+functions
+Funkce 
+-----
+variables
+Proměnné
+-----
+basic_types 
+Základní typy
+-----
+strings
+Řetězce
+-----
+arrays
+Pole
+-----
+maps
+Mapy
+-----
+if
+Podmínka if 
+-----
+in_op 
+Operátor in
+-----
+for_loop 
+Smyčka for
+-----
+switch 
+Přepínač switch
+-----
+structs 
+Struktury
+-----
+access_mod 
+Modifikátory přistupu
+-----
+methods
+Metody
+-----
+pure_fns 
+Čisté funkce
+-----
+high_fns 
+Funkce vyššího řádu
+-----
+constants 
+Konstanty
+-----
+modules
+Moduly
+-----
+interfaces
+Rozhraní
+-----
+enums
+Vyčtové typy
+-----
+optionals_and_errors 
+Možné typy & zpracování chyb
+-----
+generics
+Generické typy
+-----
+concurrency
+Souběžné funkce
+-----
+decoding_json 
+Dekódování JSONu
+-----
+testing
+Testování
+-----
+memory_management 
+Správa paměti
+-----
+fast_comp1
+V překládá mezi 100 tisíc a 1.2 miliónem řádků zdrojového kódu za vteřinu na jednom jádru procesoru.
+-----
+fast_comp2
+V přeloží sám sebe za 0.15 - 0.6 vteřin.
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+Žádný ukazatel null
+-----
