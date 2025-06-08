@@ -33,7 +33,7 @@ ci vorranno pochi secondi
 -----
 wip_info
 V è un linguaggio attivamente sviluppato ad uno stato embrionale.
-Le funzionalità ancora in corso di sviluppo sono contrassegnate da $wip
+Le funzionalità ancora in fase di sviluppo sono contrassegnate da $wip
 <br> 
 La documentazione e tutto il resto su questa pagina è stato implementato e reso open-source.
 <p> 
@@ -185,7 +185,7 @@ latest_news
 Ultime notizie &
 -----
 what_developers_say
-quello che gli sviluppatori dicono su V
+quello che gli sviluppatori dicono di V
 -----
 v_review_1
 Il team di sviluppo di V fa un lavoro fantastico. Non ho mai visto un linguaggio evolvere così velocemente;
@@ -193,14 +193,14 @@ penso che voi neanche dormiate. Spero che V rimanga un linguaggio semplice e cle
 Grazie per tutto il vostro lavoro.
 -----
 v_review_2
-Sono principalmente sorpreso da come molte cose "funzionino già".
+Sono principalmente sorpreso da come molte cose "già funzionino".
 I channel e le closures rendono l'implementazione di callback asincroni per funzioni C una meraviglia.
 Grazie! 😄
 -----
 v_review_3
 Programmo da circa 30 anni. Ho programmato in C/C++, VB, e Delphi anni fa.
-Poi mi sono dato al PHP/Ruby per più di 15 years. Anche Bash e Python. Di recente ho voluto iniziare ad usare un linguaggio compilato per vari motivi, e ho dato un'occhiata a Rust, Go, e qualche altro. 
-Sono venuto a conoscenza di V qualche settimana fa e sono rimasto sorpreso da quanto fosse facile prenderci la mano. Mi sto trovando molto bene a scrivere in V e
+Poi mi sono dato al PHP/Ruby per più di 15 anni. Anche Bash e Python. Di recente ho voluto iniziare ad usare un linguaggio compilato per vari motivi, e ho dato un'occhiata a Rust, Go, e qualche altro. 
+Sono venuto a conoscenza di V qualche settimana fa e sono rimasto sorpreso da quanto fosse facile abituarcisi. Mi sto trovando molto bene a scrivere in V e
 sento di essere già produttivo. Fino al punto che adesso sto considerando di fare un piccolo ...
 -----
 partners_sponsors
