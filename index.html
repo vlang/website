@@ -36,6 +36,22 @@ Older stats: <a href="2024.html">2024</a>, <a href="2023.html">2023</a>, <a href
 
 
 	<tr>
+		<td>2025-07-29 04:37</td>
+		<td><a target=_blank href="https://github.com/vlang/v/commit/59d408f7">59d408f7</a></td>
+		<td>v: limit -div-by-zero-is-zero influence to just the integer types (for f32 and f64, / produces a +inf or -inf value, and the program continues to run)</td>
+		<td>1108ms</td>
+		<td>1499ms</td>
+		<td>0ms</td>
+		<td>101ms</td>
+		<td>6312 KB</td>
+		<td>251ms</td>
+		<td>238ms</td>
+		<td>240ms</td>
+		<td>58ms</td>
+		<td>125777</td>
+		<td>113517</td>
+	</tr>
+<tr>
 		<td>2025-07-28 07:41</td>
 		<td><a target=_blank href="https://github.com/vlang/v/commit/a5f9899a">a5f9899a</a></td>
 		<td>v: support `-div-by-zero-is-zero`, which allows for `x / 0 == 0` and `x % 0 == x`, avoiding division by zero traps/panics (#24981)</td>
