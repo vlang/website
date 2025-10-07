@@ -1,5 +1,41 @@
 @t header
 
+<style>
+.vreview {
+ max-height: 160px;
+  overflow: hidden;
+  position: relative;
+	min-width: 290px !important;
+	margin-top: 1px !important;
+}
+.vreview a {
+	line-height:40px;
+}
+/*
+.vreview::after {
+  content: '...';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: white;
+  padding-left: 5px;
+  display: block;
+}
+*/
+
+/*.vreview:hover,*/
+.vreview:focus {
+  max-height: none;
+  overflow: visible;
+}
+
+/*.vreview:hover::after,*/
+.vreview:focus::after {
+  display: none;
+}
+
+</style>
+
 <!--
 BUILTIN TESTING
 V LANGUAGE SERVER
@@ -14,7 +50,7 @@ V LANGUAGE SERVER
         <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
         <div class='text'>
           <span class='link'>github.com/vlang/v</span>
-          <span class='details'><svg viewBox='0 0 14 16' version='1.1' width='12' height='14' aria-hidden='true'><path fill-rule='evenodd' d='M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z' /></svg>35k</span>
+          <span class='details'><svg viewBox='0 0 14 16' version='1.1' width='12' height='14' aria-hidden='true'><path fill-rule='evenodd' d='M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z' /></svg>37k</span>
         </div>
       </a>
 
@@ -72,6 +108,16 @@ function rightScroll() {
     const right = document.querySelector(".news .container");
     right.scrollBy(290, 0);
 }
+function leftScrollReviews() {
+    const left = document.querySelector(".vreviews_news .container");
+    left.scrollBy(-345*3, 0);
+}
+
+function rightScrollReviews() {
+    const right = document.querySelector(".vreviews_news .container");
+    right.scrollBy(345*3, 0);
+}
+
 
 
 var ua = window.navigator.userAgent,
@@ -110,12 +156,13 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
     <a target=_blank href='https://github.com/vlang/rfcs'>RFCs</a>
   </div>
   <div class='social'>
-    <a target=_blank href='https://vlang.veery.cc'><img height=30 src='/img/veery.jpg'></a>
+    <a target=_blank href='https://vlang.veery.blog'><img height=30 src='/img/veery.jpg'></a>
   <!--
-    <a target=_blank href='https://twitter.com/v_language'><svg class="svg-inline--fa fa-twitter fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></a>
+    <a target=_blank href='https://x.com/v_language'><svg class="svg-inline--fa fa-twitter fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></a>
     <a target=_blank href='https://discord.gg/vlang'><svg class="svg-inline--fa fa-discord fa-w-14" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="discord" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z"></path></svg></a>
     <a target=_blank href='https://github.com/vlang/v/discussions'><svg class="svg-inline--fa fa-comments fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="comments" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M416 192c0-88.4-93.1-160-208-160S0 103.6 0 192c0 34.3 14.1 65.9 38 92-13.4 30.2-35.5 54.2-35.8 54.5-2.2 2.3-2.8 5.7-1.5 8.7S4.8 352 8 352c36.6 0 66.9-12.3 88.7-25 32.2 15.7 70.3 25 111.3 25 114.9 0 208-71.6 208-160zm122 220c23.9-26 38-57.7 38-92 0-66.9-53.5-124.2-129.3-148.1.9 6.6 1.3 13.3 1.3 20.1 0 105.9-107.7 192-240 192-10.8 0-21.3-.8-31.7-1.9C207.8 439.6 281.8 480 368 480c41 0 79.1-9.2 111.3-25 21.8 12.7 52.1 25 88.7 25 3.2 0 6.1-1.9 7.3-4.8 1.3-2.9.7-6.3-1.5-8.7-.3-.3-22.4-24.2-35.8-54.5z"></path></svg></a>
 	-->
+    <a target=_blank href='https://mas.to/@@vlang'><img height=28 src='/img/mastodon.png' style='position:relative;top:4px'></a>
     <a target=_blank href='https://www.youtube.com/c/VLang/videos'><svg class="svg-inline--fa fa-youtube fa-w-18" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></a>
     <a href='https://t.me/vlang_en'><svg class="svg-inline--fa fa-telegram fa-w-16 telegram" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path></svg></a>
 
@@ -127,9 +174,7 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
     &nbsp; &nbsp; &nbsp;
 
     <a target=_blank href='https://marketplace.visualstudio.com/items?itemName=vlanguage.vscode-vlang'><img width=27 src='/img/vscode.png'></a>
-	<!--
-    <a target=_blank href='https://intellij-v.github.io/'><img width=27 src='/img/intellij.png'></a>
-	-->
+    <a target=_blank href='https://plugins.jetbrains.com/plugin/24183-vlang'><img width=27 src='/img/intellij.png'></a>
     <a target=_blank href='https://github.com/ollykel/v-vim'><img width=27 src='/img/vim.png'></a>
     <a target=_blank href='https://github.com/damon-kwok/v-mode'><img width=27 src='/img/emacs.png'></a>
 	<!--
@@ -142,7 +187,7 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
 
 
 <a target=_blank href='https://twitter.com/v_language'>
-	<img src='https://camo.githubusercontent.com/94c8dbc619b6c99e6e3dde9ba8ce4550b1629324bb72d3acfd52c9ebf13cd967/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f666f6c6c6f772d253430765f6c616e67756167652d3144413146323f6c6f676f3d78267374796c653d666c6174266c6f676f436f6c6f723d776869746526636f6c6f723d316461316632'>
+	<img src='https://camo.githubusercontent.com/063317811c777f1a0288da7dc4e318c530ae06ed61d52055663913e187540294/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f666f6c6c6f772d253430765f5f6c616e67756167652d3144413146323f6c6f676f3d78267374796c653d666c6174266c6f676f436f6c6f723d7768697465'>
 	
 	<!--
 	<img src='https://camo.githubusercontent.com/b77ec1a4fee6dd92047824745e359f7544787c02a7fcfe34843d8a8e1e62794a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f666f6c6c6f772d253430765f6c616e67756167652d3144413146323f6c6f676f3d74776974746572267374796c653d666c6174266c6f676f436f6c6f723d776869746526636f6c6f723d316461316632'>
@@ -170,7 +215,7 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
 
 <div class='examples'>
 	 <div style="width: 100%; overflow-x: hidden; margin-bottom: -22px;">
-		<a target=_blank href='https://my-store-7564322.creator-spring.com/'><img style="width: 200px; margin:0; padding: 0; float: right; right: -20px; z-index: 2; position: relative" src="/img/veasel.png"></a>
+		<a target=_blank href='https://my-store-7564322.creator-spring.com/'><img style="width: 200px; margin:0; padding: 0; float: right; right: -20px; z-index: 2; position: relative" src="/img/veasel.png"><b style='display:block; position:relative;     left: 310px; width: 200px; float: right; top: 30px; font-size: 80%;'>V merch store</b></a>
 	</div>
 <div class='codeblock' id="codeblock_99404097">
   <div class='titlebar separator'>
@@ -343,7 +388,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
   <section class="section news">
 
     <header class="news_header">
-      <h1>Latest news & <a target=_blank href='https://vlang.veery.cc/blog'><img style='position:relative;top:5px' src='/img/veery.jpg' width=30></a> blog posts</h1>
+      <h1>Latest news & <a target=_blank href='https://vlang.veery.blog/blog'><img style='position:relative;top:5px' src='/img/veery.jpg' width=30></a> blog posts</h1>
 	  <div style='float:right; position: relative; top: -18px; padding-right:5px;'><a target=_blank href='https://github.com/vlang/v/blob/master/ROADMAP.md'>V 1.0 Roadmap &nbsp;</a></div>
     </header>
 
@@ -353,6 +398,71 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 
 
     <div class="container">
+
+    <div class="block">
+         <div class='news_date'>
+            Sep 19, 2025
+         </div>
+         <div>
+           <a target=_blank href='https://github.com/vlang/v/releases/tag/0.4.12'>V 0.4.12 is out!</a>
+         </div>
+    </div>
+
+    <div class="block">
+         <div class='news_date'>
+            Jun 19, 2025
+         </div>
+         <div>
+           <a target=_blank href='https://github.com/vlang/v/releases/tag/0.4.11'>V 0.4.11 is out!</a>
+         </div>
+    </div>
+
+    <div class="block">
+         <div class='news_date'>
+            Mar 20, 2025
+         </div>
+         <div>
+           <a target=_blank href='https://github.com/vlang/v/releases/tag/0.4.10'>V 0.4.10 is out!</a>
+         </div>
+    </div>
+
+
+
+    <div class="block">
+         <div class='news_date'>
+            Dec 22, 2024
+         </div>
+         <div>
+           <a target=_blank href='https://github.com/vlang/v/releases/tag/0.4.9'>V 0.4.9 is out!</a>
+         </div>
+    </div>
+
+    <div class="block">
+	  <div class='news_date'>
+		  Sep 28, 2024
+	  </div>
+	  <div>
+	    <a target=_blank href='https://github.com/vlang/v/releases/tag/0.4.8'>V 0.4.8 is out!</a>
+	  </div>
+	</div>
+
+    <div class="block">
+	  <div class='news_date'>
+		  Jul 26, 2024
+	  </div>
+	  <div>
+	    <a target=_blank href='https://github.com/vlang/v/releases/tag/0.4.7'>V 0.4.7 is out!</a>
+	  </div>
+	</div>
+
+    <div class="block">
+	  <div class='news_date'>
+		  May 20, 2024
+	  </div>
+	  <div>
+	    <a target=_blank href='https://github.com/vlang/v/releases/tag/0.4.6'>V 0.4.6 is out!</a>
+	  </div>
+	</div>
 
     <div class="block">
 	  <div class='news_date'>
@@ -405,7 +515,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 		  July 1, 2023
 	  </div>
 	  <div>
-	    <a target=_blank href='https://vlang.veery.cc/post/725/v-0.4-is-out'>V 0.4 is out!</a>
+	    <a target=_blank href='https://vlang.veery.blog/post/725/v-0.4-is-out'>V 0.4 is out!</a>
 	  </div>
 	</div>
 
@@ -432,7 +542,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 		  April 17, 2023
 	  </div>
 	  <div>
-	    <a target=_blank href='https://vlang.veery.cc/post/723/Getting-Started-with-V'>Getting Started with V</a>
+	    <a target=_blank href='https://vlang.veery.blog/post/723/Getting-Started-with-V'>Getting Started with V</a>
 	  </div>
 	</div>
 
@@ -522,6 +632,250 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 
   </section>
 
+
+
+  <section id='reviews' class="section news vreviews_news" style="margin-top:25px !important;">
+
+    <header class="news_header">
+      <h1>What developers say about V</h1>
+    </header>
+
+
+        <div class="actual_news">
+            <img src="/img/arrow-left.png" class="left" onclick="leftScrollReviews()">
+
+
+    <div class="container">
+
+    <div class="block vreview">
+The V development team does an amazing job. I've never seen a language evolve that fast; I suspect you guys never sleep. I hope V will remain a simple, clean language and have a bright future. Thanks for all your hard work.
+
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/592842126304477184/1290363788322799628'>BrunoVDR</a>
+	  </div>
+	</div>
+
+    <div class="block vreview">
+	I like V a lot. The abstraction over the syntax is so nice that made me enjoy writing the syntax as a whole.
+
+V has come a lot further than when I tried it in 2023. I’ll be actively using it from now on.
+		
+	  <div>
+	    <a target=_blank href='https://kristun.dev/posts/my-foray-into-vlang/'>Kris Tun</a>
+	  </div>
+	</div>
+
+    <div class="block vreview">
+	I'm mostly surprised by how many things "just work".
+Channels and closures made implementing asynchronous callbacks for C functions such a breeze.
+Thanks for that! 😄
+		
+	  <div>
+	    <a target=_blank href='https://github.com/vlang/v/discussions/7610#discussioncomment-9486329'>Joel L.</a>
+	  </div>
+	</div>
+
+    <div class="block vreview">
+		V is the most comfortable syntax I've encountered, so I look forward to 1.0.
+
+
+	  <div>
+	    <a target=_blank href='https://github.com/vlang/v/discussions/14222#discussioncomment-12507821'>hellolio</a>
+	  </div>
+	</div>
+
+    <div class="block vreview">
+<!--	Since you are contemplating picking up a compiled language, I'll briefly share my experience. -->Been programming for around 30 years. Have done some C/C++, VB, and lots of Delphi years ago. Then PHP/Ruby for over 15 years. Bash, Python too. Recently I've wanted to start using a compiled language for reasons, and have looked at Rust, Go, and a couple others. I stumbled upon V a few weeks ago and have been very surprised by how easy it is to pick up. I am really enjoying writing V and feel like I am already productive. Even to the point I'm now looking at making a small ... <!-- contribution to the language, something I've never done before. IMO, learning  V was a great decision.-->
+		
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/592106336838352923/1144221785592709181'>FlibbyJibbit</a>
+	  </div>
+	</div>
+
+    <div class="block vreview">
+	Really like the direction of V, been wondering when this kind of language would pop up. 
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/592106336838352923/660514891010015263'>pbarker</a>
+	  </div>
+	</div>
+
+    <div class="block vreview">
+	V is amazing.
+Things I like about it:
+<li>
+Flexibility for operator overloading. (it makes syntax intuitive)
+<li>
+Compiles directly to C, and I love C
+<li>
+Flexibility for having and not having garbage collection
+<li>
+Go concurrency model
+
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/630144782370471978/1191404948156596274'>visrut</a>
+	  </div>
+	</div>
+
+    <div class="block vreview">
+	I come from a strong Java and Go background and have been playing with Rust.
+V looks pretty amazing in terms of readability.
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/592106336838352923/765085510988333086'>Hoss</a>
+	  </div>
+	</div>
+
+    <div class="block vreview">
+	V is amazingly simple!
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/592842126304477184/1124867320108564533'>devsou.com</a>
+	  </div>
+	</div>
+
+    <div class="block vreview">
+	I buy my son's diaper with C#, but every project I start today is in V.
+Because every project in C# has an initial load of bureaucracy that in V I don't have to deal with at the beginning, and I can plug bureaucracy into the project throughout the creation process.
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/592842126304477184/1349392947602391110'>André L.</a>
+	  </div>
+	</div>
+
+
+    <div class="block vreview">
+	Gotta say that V's syntax is amazing (especially the error handling aspect for me since I strongly dislike Go's error handling approach but liked its other aspects).
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/713909145899630632/1064291940922818651'>Teddy</a>
+	  </div>
+	</div>
+
+    <div class="block vreview">
+	 After V, developing a kernel in C results in more bugs, honestly more so because V catches a set of bugs and memory leakage that C simply doesn't.
+	  <div>
+	  <br>
+	    mint, maintainer of Vinix
+	  </div>
+	</div>
+
+
+    <div class="block vreview">
+	Just want to say thank you for continuing to improve the language. Adding the GC was very nice and I find V my all-time favorite language. Using V is fun due to great syntax and tooling but also makes you a better developer as you try to understand how things work underneath.
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/592106336838352923/831533549617807440'>laotzu</a>
+	  </div>
+	</div>
+
+
+    <div class="block vreview">
+	Just wanted to say thank you to everyone contributing to V! Before September 2023 I never really coded nor completed any project as the tools I had were less than ideal. In September I started learning V and now I have a really good prototype and a professional developer even reached out to me saying my code was really good! That's why I wanted to thank V and all the contributors 🥰
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/592106336838352923/1241682701686145085'>Sh.a D'eau</a>
+	  </div>
+	</div>
+
+    <div class="block vreview">
+	It's obvious that Alex was able to bring his experience of many other languages to V, giving the language a very solid foundation.
+It's difficult for me to list all the positive qualities I like about V because I'm sure I'll forget some. I'll try it anyway.
+
+<li>compilation speed
+<li>simplicity (only a few keywords), yet powerful
+<li>readability & maintainability
+<li>execution performance
+<li>cross compilation
+...
+<!--
+<li>builtin safety features
+
+<li>multithreading like go
+<li>small compiler with builtin tools for profiling and testing
+<li>small executables
+<li>easy interoperability with C/C++
+<li>very good error management (much better than go)
+<li>only one way to write code philosophy
+<li>easy and obvious syntax in most cases
+<li>achieve as much as possible with as little but at the same time readable code as possible
+Thanks again to Alex and the whole team for the hard work and the very impressive result so far. I really hope V gets all the support I think it deserves. In any case, the language is already very powerful and it's fun to develop with it.
+-->
+	  <div>
+	    <a target=_blank href='https://github.com/vlang/v/discussions/7610#discussioncomment-5352952'>InspColumbo</a>
+	  </div>
+	</div>
+
+    <div class="block vreview">
+	Thanks to everyone who contributed to this project. The simplicity of language and the fact that it's compiled makes it number 1 where applicable.
+	  <div>
+	    <a target=_blank href='https://github.com/vlang/v/discussions/7610#discussioncomment-5672227'>TenTypekMatus</a>
+	  </div>
+	</div>
+
+
+<div class="block vreview">
+I think you do not get enough credit for the amazing language V is. Thank you for your time and effort.
+	  <div>
+	    <a target=_blank href='https://github.com/vlang/v/discussions/12970#discussioncomment-6396434'>mihaigalos</a>
+	  </div>
+	</div>
+
+
+<div class="block vreview">
+When I stumbled across V, it just 'felt right'.
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/630144782370471978/1196801467256950916'>chris_debian</a>
+	  </div>
+	</div>
+
+<div class="block vreview">
+Thank you very much to everyone contributing to V! It's been 1.5 years since I've discovered it. I really enjoy the kind and helping community, the simplicity philosophy and lots of other things.
+I was pleasantly surprised by the easiness of creating an HTTP server: just a few lines and then handling the request is very easy by following the example.
+A big thank you from the bottom of my heart ❤️
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/592106336838352923/1245483194636046487'>nopana</a>
+	  </div>
+	</div>
+
+
+<div class="block vreview">
+V is the better Go.
+
+I use V in production for my personal projects. It is such a joy to use.
+	  <div>
+	    <a target=_blank href='https://www.youtube.com/watch?v=cUv13In9RP4&lc=UgwnieH3wGoKBdnwZoN4AaABAg'>dovh49</a>
+	  </div>
+	</div>
+
+<div class="block vreview">
+When I stumbled across V, it just 'felt right'.
+
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/630144782370471978/1196801467256950916'>chris_debian</a>
+	  </div>
+	  </div>
+
+
+<div class="block vreview">
+I mastered Python when I worked as a Data Scientist a few years ago. Since I discovered V I stopped using Python almost entirely, and now I look back and... it's  awful. Never had so much fun programming as I am now.
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/713909145899630632/1283238558622285835'>rodabt</a>
+	  </div>
+	</div>
+
+<div class="block vreview">
+V is seriously impressive. After years of Go development, V brings the simplicity I love, but with true low-level control and raw speed — exactly what I’ve been missing. Looking forward digging deeper with this tech, just started ❤️
+	  <div>
+	    <a target=_blank href='https://discord.com/channels/592103645835821068/592294828432424960/1358793430670774352'>BadassBrah</a>
+	  </div>
+	</div>
+
+
+
+
+	  <img src="/img/arrow-right.png" class="right" onclick="rightScrollReviews()">
+
+
+    </div>
+	</div>
+
+  </section>
+
+
   <div class="section">
     <div class="block">
 		<h2>%simple_language_for_maintainable_programs</h2> 
@@ -562,17 +916,23 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
   <div class="block">
     <h1>Partners & Sponsors</h1>
     <div style="margin-top: 16px">
-      <a target=_blank href="https://whatlab.rip/">
-        <img style="height: 175px" src="/img/sponsor_whatlab.png" />
+      <a target=_blank href="https://huly.io/">
+        <img style="height:175px; margin-left: 20px;" src="/img/sponsor_huly.png?3" />
       </a>
       <a target=_blank href="https://threefold.io/">
         <img style="height: 175px" src="/img/sponsor_threefold.svg" />
       </a>
+      <a target=_blank href="https://syndica.io/">
+        <img style="height:175px; margin-left: 20px;" src="/img/sponsor_syndica.jpg?1" />
+      </a>
+      <a target=_blank href="https://www.octoberswimmer.com">
+        <img style="height:175px; margin-left: 20px;" src="/img/sponsor_octoberswimmer.png?3" />
+      </a>
       <a target=_blank href="https://mx.com/">
         <img style="height: 175px" src="/img/sponsor_mx.png" />
       </a>
-      <a target=_blank href="https://syndica.io/">
-        <img style="height:175px; margin-left: 20px;" src="/img/sponsor_syndica.jpg?1" />
+      <a target=_blank href="https://whatlab.rip/">
+        <img style="height: 175px; width:270px;" src="/img/sponsor_whatlab.png" />
       </a>
 	  <!--
       <a target=_blank href="https://chipnetics.com/">
@@ -604,7 +964,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
       <h2>Fast compilation</h2>
       <p>
         V compiles ≈80k (Clang backend) and ≈400k (x64 and tcc backends) lines of code per second. <br><i>(Apple M2, no optimization)</i><br/><br/>
-        V is written in V and compiles itself in under a second (<a target=_blank href='https://twitter.com/v_language/status/1728100507506602332'>0.45s on Mac mini M2</a>). 
+        V is written in V and compiles itself in under a second (<a target=_blank href='https://x.com/v_language/status/1802982846551773225'>0.33s on MacBook Air M3</a>). 
       </p>
 	  <p>
 	    Most of the compiler is still single threaded, so it's going to be 2-3x faster in the future!
@@ -743,7 +1103,7 @@ s << 'awesome'
 println(s.len)</pre>
       </div>
       <p>
-        A blog post about translating DOOM will be published.<br/><br/>
+        A <a target=_blank href='https://github.com/vlang/v/tree/master/tutorials/C2V_translating_simple_programs_and_DOOM'>blog post/tutorial</a> about translating DOOM is available.<br/><br/>
         <i>C++ to V translation is at an early stage.</i>
       </p>
     </div>
@@ -779,9 +1139,9 @@ You can read translated code here:
     <div class="block">
       <h2>A powerful graphics library</h2>
       <p>
-        Cross-platform drawing library, using OpenGL/Metal/DirectX 11 for rendering 2D/3D applications.
+        Cross-platform drawing library <code>gg</code>, using OpenGL/Metal/DirectX 11 for rendering 2D applications.
 	  <p>
-		The following features are planned:
+	    There's also a 3D engine in development with the following features already available:
       </p>
       <ul>
         <li>Loading complex 3D objects with textures</li>
@@ -792,7 +1152,7 @@ You can read translated code here:
 	  <p>For 3D examples, check out <a href="https://github.com/vlang/v/tree/master/examples/sokol" target=_blank>this</a>.</p>
     </div>
     <div class="block">
-      <img src="/img/gg.png" style="width: 60%; margin-left: 20%"></img>
+      <a target=_blank href='https://x.com/v_language/status/1830269654214099049'><img src="/img/engine_screenshot.png" style="width: 60%; margin-left: 20%"></a>
     </div>
   </div>
 
@@ -817,9 +1177,9 @@ You can read translated code here:
     </div>
     <div class="block">
       <p>
-        Volt, a 300 KB Slack client built with V and V UI:
+        Volt, a 3 MB Slack/Discord client built with V and V UI:
       </p>
-      <img src="https://volt-app.com/img/screen3.png" style="width: 100%"></img>
+      <a target=_blank href='https://volt-app.com'><img src="https://volt-app.com/img/screen3.png" style="width: 100%"></a>
     </div>
   </div>
 
@@ -847,8 +1207,11 @@ You can read translated code here:
 		<pre>
 v .
 </pre><br/>
-        No build environments, makefiles, headers, virtual environments, etc.<br/>
-        You get a single statically linked binary that is guaranteed to work on all operating systems (provided you cross compile) without any dependencies.<br/><br/>
+        No build environments, makefiles, headers, virtual environments, etc.<br><br>
+        You get a single binary that is guaranteed to work on all operating systems (provided you cross compile) without any external dependencies.<br><br>
+		This binary is self-contained except for the OS-provided system library (libc), which is linked dynamically.<br><br>
+		To achieve fully static binaries on Linux, you can use <code>v -cc musl-gcc .</code><br><br>
+
         Installing new libraries via vpm, a centralized package manager written in V, is as simple as
 		<pre>
 v install ui
@@ -870,8 +1233,8 @@ v install ui
       <h2>REPL</h2>
       <pre style="margin-right: 36px">v
 >>> import net.http
->>> data := http.get('https://vlang.io/utc_now')?
->>> data.text
+>>> data := http.get('https://vlang.io/utc_now')!
+>>> data.body
 1565977541</pre>
     </div>
     <div class="block">
@@ -919,11 +1282,12 @@ v run deploy.vsh</pre>
     <div class="block">
       <h2>JavaScript and WASM backends</h2>
       <p>
-      V programs can be translated to JavaScript:
+      V programs can be translated to JavaScript (WIP):
       </p>
       <pre>v -o hello.js hello.v</pre>
+	  <p><i>The JS backend is at an early stage.</i></p>
       <p>
-	  They can also be compiled to WASM (for now with Emscripten).
+	  They can also be compiled to WASM (for now with Emscripten, but native WASM support is planned).
       V compiler compiled to WASM and running V programs by translating them to JavaScript:
       </p>
       <p>
@@ -975,11 +1339,11 @@ user.v:8:14: error: `update_user` parameter `user` is mutable, you need to provi
 </div>
 
 <div class="section">
-  <div class="block" style="overflow: auto;">
-    <h2>Powerful built-in web framework Vweb</h2>
-	<p>Vweb is very fast, it compiles into a single binary (html templates are also compiled), supports hot code reloading
+  <div class="block">
+    <h2>Powerful built-in web framework Veb</h2>
+	<p>Veb is very fast (built on top of pico.v which has been at the top of TechEmpower benchmark), it compiles into a single binary (html templates are also compiled), supports hot code reloading
 	(the website is automatically updated in the browser once you change any .v/.html file).
-    <p><a href="https://github.com/vlang/v/tree/master/vlib/vweb">github.com/vlang/v/tree/master/vlib/vweb</a></p>
+    <p><a href="https://github.com/vlang/v/tree/master/vlib/veb">github.com/vlang/v/tree/master/vlib/veb</a></p>
 
     <div class='codeblock' id="codeblock_12828032">
       <div class='titlebar separator'>
@@ -987,17 +1351,17 @@ user.v:8:14: error: `update_user` parameter `user` is mutable, you need to provi
         </div>
 
         <pre style="font-size: 80%;"><code class="language-v"><div id="codeblock_hl_93987704">[&#39;/post/:id&#39;]
-fn (b Blog) show_post(id int) vweb.Result {
+fn (b &Blog) show_post(id int) veb.Result {
   post := b.posts_repo.retrieve(id) or {
-    return vweb.not_found()
+    return veb.not_found()
   }
-  return vweb.view(post)
-}</div></code><textarea spellCheck="false" id="codeblock_ta_15447927" class="">[&#39;/post/:id&#39;]
-fn (b Blog) show_post(id int) vweb.Result {
+  return veb.view(post)
+}</div><textarea spellCheck="false" id="codeblock_ta_15447927" class="">[&#39;/post/:id&#39;]
+fn (b &Blog) show_post(id int) veb.Result {
   post := b.posts_repo.retrieve(id) or {
-    return vweb.not_found()
+    return veb.not_found()
   }
-  return vweb.view(post)
+  return veb.view(post)
 }</textarea></pre>
 </div>
 
@@ -1020,11 +1384,18 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
   localStorage.setItem('sandbox-code', codeblock_value)
 }
 </script>
-      <p><a href="https://github.com/vlang/gitly">Gitly</a>, a light and fast alternative to GitHub/GitLab is built in V and vweb.</p>
+      <p><a href="https://github.com/vlang/gitly">Gitly</a>, a light and fast alternative to GitHub/GitLab is built in V and Veb.</p>
     </div>
 
     <div class="block" style="overflow: auto;">
+		<a target=_blank href='https://github.com/vlang/gitly'><img style='width:500px' src='https://user-images.githubusercontent.com/687996/85933714-b195fe80-b8da-11ea-9ddd-09cadc2103e4.png'></a>
+	</div>
+
+</div>
+<div class="section">
+    <div class="block">
       <h2>Built-in ORM</h2>
+
       <p>
 
 <div class='codeblock' id="codeblock_63253338">
@@ -1033,78 +1404,58 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
     <div class='flex'></div>
   </div>
 
-  <pre style="font-size: 80%;"><code class="language-v"><div id="codeblock_hl_69524066">import db.sqlite
+  <pre style="font-size: 80%;"><code class="language-v"><div id="codeblock_hl_69524066"><span class="keyword">import</span> db.sqlite
 
-struct Customer {
-  id int
-  name string
-  nr_orders int
-  country string
+<span class="keyword">struct</span> Customer {
+  id <span class="keyword">int</span>
+  name <span class="keyword">string</span>
+  nr_orders <span class="keyword">int</span>
+  country <span class="keyword">string</span>
 }
 
-fn main() {
-  db := sqlite.connect(&#39;example.sqlite&#39;) or {
-    panic(&#39;could not create/find example.sqlite&#39;)
+<span class="keyword">fn</span> main() {
+  db := sqlite.connect(<span class="string">'example.sqlite'</span>) <span class="keyword">or</span> {
+    panic(<span class="string">'could not create/find example.sqlite'</span>)
   }
 
-  nr_customers := sql db {
-    select count from Customer
+  nr_customers := <span class="keyword">sql</span> db {
+    <span class="keyword">select</span> count <span class="keyword">from</span> Customer
   }!
-  println(&#39;number of all customers: ${nr_customers}&#39;)
+  println(<span class="string">'number of customers: ${nr_customers}'</span>)
 
-  // V syntax can be used to build queries
-  uk_customers := sql db {
-    select from Customer where country == &#39;uk&#39; &amp;&amp; nr_orders > 0
+  <span class="comment">// V syntax can be used to build queries</span>
+  uk_customers := <span class="keyword">sql</span> db {
+    <span class="keyword">select</span> <span class="keyword">from</span> Customer <span class="keyword">where</span> country == <span class="string">'uk'</span> && nr_orders > 0
   }!
 
-  for customer in uk_customers {
-    println(&#39;${customer.id} - ${customer.name}&#39;)
+  <span class="keyword">for</span> customer <span class="keyword">in</span> uk_customers {
+    println(<span class="string">'${customer.id} - ${customer.name}'</span>)
   }
 
-  // by adding `limit 1` we tell V that there will be
-  // only one object
-  customer := sql db {
-    select from Customer where id == 1 limit 1
+  <span class="comment">// by adding `limit 1` we tell V that there will be</span>
+  <span class="comment">// only one object</span>
+  customer := <span class="keyword">sql</span> db {
+    <span class="keyword">select</span> <span class="keyword">from</span> Customer <span class="keyword">where</span> id == 1 <span class="keyword">limit</span> 1
   }!
   println(customer.name)
 
-  // insert a new customer
-  new_customer := Customer{name: &#39;Bob&#39;, nr_orders: 10}
-  sql db {
-    insert new_customer into Customer
+  <span class="comment">// insert a new customer</span>
+  new_customer := Customer{name: <span class="string">'Bob'</span>, nr_orders: 10}
+  <span class="keyword">sql</span> db {
+    <span class="keyword">insert</span> new_customer <span class="keyword">into</span> Customer
   }!
 }</div></code></pre>
 </div>
 
-<script>
-function tokenize_codeblock_63253338 (e) {
-  Tokenizer(e.target.value).then(function(tokens) {
-    document.getElementById("codeblock_hl_69524066").innerHTML = tokens
-      .map(function(token) { return `<span class='${token.type}'>${token.value}</span>` })
-      .join('')
-  })
-}
-document.getElementById("codeblock_ta_60982598").oninput = tokenize_codeblock_63253338
-tokenize_codeblock_63253338({target:{value: document.getElementById("codeblock_ta_60982598").value}})
-document.getElementById("codeblock_rb_61993869").onauxclick = function(e) {
-  localStorage.setItem('sandbox-code', document.getElementById("codeblock_ta_60982598").value)
-}
-document.getElementById("codeblock_rb_61993869").onclick = function(e) {
-  if (location.pathname === 'https://v-wasm.vercel.app') e.preventDefault()
-  var codeblock_value = document.getElementById("codeblock_ta_60982598").value
-  localStorage.setItem('sandbox-code', codeblock_value)
-}
-</script>
-      </p>
-    </div>
-  </div>
+</div>
+</div>
 </div>
   <div id='builtinv' class="section" style="flex-direction: column">
   <div class="block">
     <h1>Built in V</h1>
     <div class="built-in-v">
       <div class="first">
-        <h2>V</h2>
+        <h2>The V Compiler</h2>
         <p>V itself is written in V.</p>
       </div>
       <div class="second">
@@ -1118,7 +1469,7 @@ document.getElementById("codeblock_rb_61993869").onclick = function(e) {
         <p>Cross-platform file manager with Miller Columns and built-in selective sync with major cloud platforms.</p>
 		-->
         <a href="https://github.com/vlang/vinix"><h2>Vinix</h2></a>
-        <p>A minimalistic open-source OS that can already run Bash, GCC, and V.</p>
+        <p>A minimalistic open-source OS that can already run Bash, GCC, V, g++, GTK3.</p>
       </div>
       <div class="second">
         <a target=_blank href="https://github.com/vlang/ved"><h2>Ved</h2></a>
@@ -1130,6 +1481,8 @@ document.getElementById("codeblock_rb_61993869").onclick = function(e) {
         <p>An early stage HTML+CSS renderer which can already render sites like Hacker News 20x faster than Chrome while using 4x less RAM.</p>
       </div>
       <div class="second"> 
+        <a target=_blank href="https://volt.im"><h2>Volt.im instant messaging and social platform</h2></a>
+        <p>An upcoming open source alternative to Discord and Telegram that combines the best features of the two while being ultra fast and light.</p>
 
       </div>
 
@@ -1155,6 +1508,9 @@ document.getElementById("codeblock_rb_61993869").onclick = function(e) {
       <div class="first">
         <a target=_blank href="https://github.com/vlang/gitly"><h2>Gitly</h2></a>
         <p>Open-source light and fast alternative to GitHub/GitLab.</p>
+<p>
+<img src='/img/gitly.png' height=300>
+</p>
       </div>
       <div class="second">
         <a target=_blank href="https://github.com/vlang/vorum"><h2>Vorum</h2></a>
@@ -1180,6 +1536,19 @@ document.getElementById("codeblock_rb_61993869").onclick = function(e) {
 </h2></a>
         <p>A Scientific Library with a great variety of different modules.</p>
       </div>
+	  
+      <div class="first">
+        <a target=_blank href="https://github.com/tauraamui/lilly"><h2>Lilly</h2></a>
+        <p>A VIM-Like editor for your terminal
+</p>
+<p>
+        <a target=_blank href="https://github.com/tauraamui/lilly">
+<img src='/img/lilly.png' height=300>
+</a>
+</p>
+      </div>
+      <div class="second">
+      </div>
 
 
     </div>
@@ -1191,8 +1560,8 @@ document.getElementById("codeblock_rb_61993869").onclick = function(e) {
 
   <i style="margin-top: 48px; margin-bottom: 8px">Web design by <a href="https://twitter.com/leahlundqvist">Leah</a>.</i>
   <i>
-    <img src="/img/v-logo.png" style="width:15px;position: relative; top: 3px;">
-    logo by <a href="https://github.com/sonovice/">Sonovice</a> and <a href="https://github.com/donnisnoni">Don</a>.
+    <img alt="A stylized letter V made of two overlapping shapes representing the arms: a lighter blue on the left and a darker blue on the right" src="/img/v-logo.png" style="width:15px;position: relative; top: 3px;">
+    logo by <a href="https://github.com/sonovice/">Sonovice</a> and <a href="https://github.com/dhonx">Don</a>.
   </i>
 </div>
 

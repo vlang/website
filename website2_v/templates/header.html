@@ -1,4 +1,3 @@
-@define "header"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,6 @@
   <link rel="shortcut icon" href="/img/v-logo.png">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,100,200,500,700|Roboto+Mono:400,300,100,200,500" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,100,200,500,700|Roboto+Mono:400,300,100,200,500"></noscript>
   @css "app.css?43"
-  <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/themes/prism-okaidia.min.css">
   <!--
   <script src="tokenizer.js"></script>
   -->
@@ -21,15 +19,22 @@
   <div class='flex'></div>
   <a href='/'><img src='/img/v-logo.png' class='logo' /></a>
 
+  <div class='lang_select' onchange='change_lang(this)'>
+      @{veb.raw(build_tr_menu(ctx.lang))}
+  </div>
+
+
+
+
   <div class='nav'>
     <a target=_blank href='https://github.com/vlang/V/tree/master/examples' class='item'>%examples</a>
     <a target=_blank href='https://docs.vlang.io' class='item'>%documentation</a>
-    <a target=_blank href='https://github.com/vlang/v/blob/master/tutorials' class='item'>Tutorials</a>
+    <a target=_blank href='https://github.com/vlang/v/blob/master/tutorials' class='item'>%tutorials</a>
     <a target=_blank href='https://modules.vlang.io' class='item'>Stdlib Docs</a>
     <a target=_blank href='https://vpm.vlang.io/' class='item'>vpm</a>
-    <a target=_blank href='https://github.com/vlang/v/discussions' class='item'>Forum</a>
-    <a target=_blank href='https://vlang.veery.blog/blog' class='item'>Blog</a>
-    <a target=_blank href='https://play.vlang.io' class='item'>Playground</a>
+    <a target=_blank href='https://github.com/vlang/v/discussions' class='item'>%forum</a>
+    <a target=_blank href='https://vlang.veery.cc/blog' class='item'>%blog</a>
+    <a target=_blank href='https://play.vlang.io' class='item'>%playground</a>
 	<!--
     <a target=_blank href='https://v-wasm.now.sh' class='item'>Playground</a>
     <a href='/#builtinv' class='item'>Built in V</a>
@@ -56,11 +61,3 @@
   </div>
   <div class='flex'></div>
 </div>
-@end
-
-@define "footer"
-<script src="https://unpkg.com/prismjs@1.29.0/prism.js"></script>
-<script src="https://unpkg.com/prismjs@1.29.0/components/prism-v.min.js"></script>
-</body>
-</html>
-@end 

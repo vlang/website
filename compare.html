@@ -91,9 +91,6 @@ V is very similar to Go, and these are the things it improves upon:
 — No <code>err != nil</code> checks (replaced by result types)
 </p>
 <p>
-— No undefined values
-</p>
-<p>
 — No variable shadowing
 </p>
 <p>
@@ -117,7 +114,7 @@ V is very similar to Go, and these are the things it improves upon:
 <p>
 — A simple way to check whether an array contains an element: <code>if elem in arr {</code>.
 <p>
-— Only one declaration style: <code>a := 0</code>
+— Only one declaration style: <code>a := 0</code>, therefore no uninitialized variables.
 </p>
 <p>
 — Warnings for unused imports and vars for quicker development without annoying
@@ -142,6 +139,9 @@ clean code.
 </p>
 <p>
 — Much faster serialization using codegen and no runtime reflection
+</p>
+<p>
+— Simpler local modules: `import internal.css_lexer ` instead of `import "github.com/evanw/esbuild/internal/css_lexer"`
 </p>
 <p>
 — Precompiled text and HTML templates unlike Go's html/templates that have to

@@ -1,0 +1,224 @@
+examples
+Examples
+-----
+documentation
+Documentation
+-----
+modules
+Modules
+-----
+faq
+FAQ
+-----
+playground
+Playground
+-----
+built_in_v
+Built in V
+-----
+the_v_lang
+The V Programming Language
+-----
+v_slogan
+Simple, fast, safe, compiled language for developing maintainable software
+-----
+includes_binaries
+includes binaries for 3 systems
+-----
+install_source
+Or install V from source
+-----
+couple_seconds
+this will take a couple of seconds
+-----
+wip_info
+V is an actively developed language at an early stage.
+Features that are still being worked on are marked with $wip
+<br>
+Everything else on this page and the docs has been implemented and open-sourced.
+<p>
+By the time of the V 1.0 release planned for December 2019, there will be no $wip's left.
+-----
+forum
+Forum
+-----
+blog
+Blog
+-----
+fast_compilation
+Fast compilation
+-----
+safety
+Safety
+-----
+performance
+Performance
+-----
+simple_language_for_maintainable_programs
+Simple language for building  maintainable programs
+-----
+you_can_learn
+You can learn the entire language by going through the
+<a target=_blank href='https://github.com/vlang/v/blob/master/doc/docs.md'>documentation</a> over a
+weekend, and in most cases there's only one way to do something.
+-----
+this_results_in_simple
+This results in simple, readable, and maintainable code.
+-----
+despite_being_simple
+Despite being simple, V gives a lot of power to the developer and can be used in pretty much every field, including systems programming, webdev, gamedev, GUI, mobile, science, embedded, tooling, etc.
+-----
+v_is_similar_to_go
+V is very similar to Go. If you know Go, you already know ≈80% of V.
+Things V improves on Go: <a target=_blank href='https://vlang.io/compare#go'>vlang.io/compare#go</a>.
+-----
+download_for_macos
+Download for macOS
+-----
+download_for_windows
+Download for Windows
+-----
+download_for_linux
+Download for Linux
+-----
+zero_deps
+400 KB compiler with zero dependencies
+-----
+c_translation
+C/C++ translation
+-----
+introduction
+Introduction
+-----
+comments
+Comments
+-----
+functions
+Functions
+-----
+variables
+Variables
+-----
+basic_types
+Basic types
+-----
+strings
+Strings
+-----
+arrays
+Arrays
+-----
+maps
+Maps
+-----
+if
+If
+-----
+in_op
+In operator
+-----
+for_loop
+For loop
+-----
+switch
+Switch
+-----
+structs
+Structs
+-----
+access_mod
+Access modifiers
+-----
+methods
+Methods
+-----
+pure_fns
+Pure functions
+-----
+high_fns
+High order functions
+-----
+constants
+Constants
+-----
+modules
+Modules
+-----
+interfaces
+Interfaces
+-----
+enums
+Enums
+-----
+optionals_and_errors
+Option types & error handling
+-----
+generics
+Generics
+-----
+concurrency
+Concurrency
+-----
+decoding_json
+Decoding JSON
+-----
+testing
+Testing
+-----
+memory_management
+Memory management
+-----
+fast_comp1
+V compiles between ≈100k and 1.2 million lines of code per second per CPU core.
+-----
+fast_comp2
+V compiles itself in 0.15 - 0.6 seconds.
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+No null
+-----
+latest_news
+Latest news &
+-----
+what_developers_say
+What developers say about V
+-----
+v_review_1
+The V development team does an amazing job. I've never seen a language evolve that fast;
+I suspect you guys never sleep. I hope V will remain a simple, clean language and have a bright future.
+Thanks for all your hard work.
+-----
+v_review_2
+I'm mostly surprised by how many things "just work".
+Channels and closures made implementing asynchronous callbacks for C functions such a breeze.
+Thanks for that! 😄
+-----
+v_review_3
+Been programming for around 30 years. Have done some C/C++, VB, and lots of Delphi years ago.
+Then PHP/Ruby for over 15 years. Bash, Python too. Recently I've wanted to start using a compiled
+language for reasons, and have looked at Rust, Go, and a couple others. I stumbled upon V a few weeks
+ago and have been very surprised by how easy it is to pick up. I am really enjoying writing V and
+feel like I am already productive. Even to the point I'm now looking at making a small ...
+-----
+partners_sponsors
+Partners & Sponsors
+-----
+become_sponsor_via_github
+Become a sponsor via GitHub Sponsors
+-----
+is_v_still_fast
+Is V still fast?
+-----
+built_in_v
+Built in V
+-----
+book1
+The first printed book on V!
+-----
+book2
+The 2nd printed book on V!
+

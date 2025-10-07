@@ -1,0 +1,223 @@
+examples
+Ejemplos
+-----
+documentation
+Documentación
+-----
+modules
+Módulos
+-----
+faq
+Preguntas Frecuentes
+-----
+playground
+Probar V
+-----
+built_in_v
+Hecho con V
+-----
+the_v_lang
+El lenguage de programación V
+-----
+v_slogan
+Simple, fast, safe, compiled language for developing maintainable software
+Lenguaje compilado simple, rápido y seguro para desarrollar software mantenible
+-----
+includes_binaries
+incluye ejecutables para los 3 sistemas
+-----
+install_source
+o instala V desde código fuente
+-----
+couple_seconds
+esto tomará un par de segundos
+-----
+wip_info
+V está siendo desarrollado de manera activa en una etapa temprana.
+Las características que están siendo trabajadas están marcadas con $wip
+<br>
+Todo lo demás de esta página y los docs han sido implementados y dejados como código abierto
+<p>
+Para el momento en que la versión 1.0 de V sea lanzada, no quedarán $wip
+-----
+forum
+Foro
+-----
+blog
+Blog
+-----
+fast_compilation
+Rápida compilación
+-----
+safety
+Seguridad
+-----
+performance
+Desempeño
+-----
+simple_language_for_maintainable_programs
+Lenguaje simple para construir programas mantenibles
+-----
+you_can_learn
+Puedes aprender el lenguage completo en una semana a través de la  
+<a target=_blank href='https://github.com/vlang/v/blob/master/doc/docs.md'>documentación</a>
+y en muchos casos existe una sola manera de hacer algo.
+-----
+this_results_in_simple
+Esto da como resultado código simple, legible y mantanible.
+-----
+despite_being_simple
+A pesar de ser simple, V otorga gran potencialidad al desarrollador y puede ser usado en casi cualquier campo, programación de sistemas, desarrollo web, desarrollo de juegos, interfaces gráficas, mobile, ciencia, programas embebidos, herramientas, etc.
+-----
+v_is_similar_to_go
+V es muy similar a Go. Si conoces Go, sabrás cerca del 80% de V.
+Las cosas que V mejora sobre Go: <a target=_blank href='https://vlang.io/compare#go'>vlang.io/compare#go</a>.
+-----
+download_for_macos
+Desacargar para macOS
+-----
+download_for_windows
+Descargar para Windows
+-----
+download_for_linux
+Descargar para Linux
+-----
+zero_deps
+Compilador de 400 KB con cero dependencias
+-----
+c_translation
+Conversión C/C++
+-----
+introduction
+Introducción
+-----
+comments
+Comentarios
+-----
+functions
+Funciones
+-----
+variables
+Variables
+-----
+basic_types
+Tipos básicos
+-----
+strings
+Strings
+-----
+arrays
+Arrays
+-----
+maps
+Maps
+-----
+if
+If
+-----
+in_op
+Operador In
+-----
+for_loop
+Bucle For
+-----
+switch
+Switch
+-----
+structs
+Structs
+-----
+access_mod
+Modificadores de acceso
+-----
+methods
+Métodos
+-----
+pure_fns
+Funciones puras
+-----
+high_fns
+Funciones de alto nivel
+-----
+constants
+Constantes
+-----
+modules
+Módulos
+-----
+interfaces
+Interfaces
+-----
+enums
+Enums
+-----
+optionals_and_errors
+Tipos de datos para opciones y errores 
+-----
+generics
+Generics
+-----
+concurrency
+Concurrencia
+-----
+decoding_json
+Decodificación de JSON
+-----
+testing
+Testing
+-----
+memory_management
+Gestión de memoria
+-----
+fast_comp1
+V compila entre 100.000 y 1,2 millones de líneas de código por segundo por cada core de CPU.
+-----
+fast_comp2
+V mismo se compila en 0,15 - 0,6 segundos.
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+Sin null
+-----
+latest_news
+Últimas noticias &
+-----
+what_developers_say
+Que dicen los desarrolladores acerca de V
+-----
+v_review_1
+El equipo de desarrollo de V hace un trabajo increíble. Nunca he visto que un lenguaje evolucione tan rápido. 
+Sospecho que ustedes nunca duermen. Espero que V siga siendo un lenguaje simple y limpio y que tenga un futuro brillante. 
+Gracias por todo su arduo trabajo.
+-----
+v_review_2
+Me sorprende mucho la cantidad de cosas que "simplemente funcionan".
+Los channels y closures hicieron que la implementación del retorno de llamadas asincrónicas para funciones de C fuera muy sencilla.
+¡Gracias por eso! 😄
+-----
+v_review_3
+Llevo programando unos 30 años. Hace años trabajé con C/C++, VB y mucho Delphi.
+Luego, PHP/Ruby durante más de 15 años. Bash, Python también. Recientemente, quise comenzar a usar un lenguaje compilado 
+por "razones" y estudié Rust, Go y un par más. Me topé con V hace unas semanas y me sorprendió mucho lo fácil que es aprender a usarlo. 
+Realmente disfruto escribir en V y siento que ya soy productivo. Incluso ahora estoy pensando en hacer un pequeño...
+-----
+partners_sponsors
+Partners & Sponsors
+-----
+become_sponsor_via_github
+Conviértete en Sponsor a través del programa de Sponsors de Github
+-----
+is_v_still_fast
+¿Sigue siendo V rápido?
+-----
+built_in_v
+Desarrollado con V
+-----
+book1
+¡El primer libro impreso sobre V!
+-----
+book2
+¡El segundo libro impreso sobre V!
