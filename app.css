@@ -1,3 +1,48 @@
+:root {
+	--background-color-1: linear-gradient(168deg, #fff 800px, #f6f9fc 800px);
+	--background-color-2: #fff;
+	--foreground-color-1: #444;
+	--foreground-color-2: #222;
+	--foreground-color-3: #333;
+	--foreground-color-link: #4078c0;
+	--border-color-1: #efefef;
+	--background-header:#fff;
+	--background-codeblock: #334;
+	--foreground-codeblock: #c9c5c4;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background-color-1:#1A202C;
+		--border-color-1: #141922d9;
+		--background-color-2: #1B1E24;
+		--foreground-color-1: #ffffff;
+		--foreground-color-2: #f0f0f0;
+		--foreground-color-3: #c9c9c9;
+		--foreground-color-link: #77B5E9;
+		--background-codeblock: #232831;
+		--foreground-codeblock: #ffffff;
+    }
+
+	.left, .right {
+		border-radius: 6px;
+		filter: invert(100%);
+	}
+
+	#select, #select option {
+		background-color: var(--background-color-2);
+		color: var(--foreground-color-1);
+		padding: 5px;
+		border: 1px solid var(--foreground-color-3);
+		border-radius: 6px;
+	}
+
+}
+
+.block a img {
+	background-color: #fff;
+}
+
 .select {
 	position: relative;
 	display: inline-block;
@@ -74,7 +119,7 @@
 
 body,
 html {
-	height: 100%
+	height: 100%;
 }
 
 body {
@@ -93,11 +138,11 @@ body {
 	grid-template-columns: 1fr;
 	grid-template-rows: 72px 1fr;
 	grid-template-areas: "header" "content";
-	width: 100%
+	width: 100%;
 }
 
 a {
-	color: #4078c0;
+	color: var(--foreground-color-link);
 	text-decoration: none
 }
 
@@ -143,12 +188,12 @@ textarea:focus {
 }
 
 .codeblock {
-	background: #334;
+	background: var(--background-codeblock);
 	padding: 12px 12px 4px 12px;
 	max-width: calc(100vw - 56px);
 	border-radius: 6px;
 	margin: 0;
-	color: #c9c5c4;
+	color: var(--foreground-codeblock);
 	font-size: 15px;
 	position: relative;
 	font-family: "Roboto Mono", "Courier New", Menlo, "DejaVu Sans Mono", Monaco, Courier, monospace
@@ -353,7 +398,7 @@ textarea:focus {
 	height: 100%;
 	width: 100%;
 	position: sticky;
-	background: #fff;
+	background: var(--background-color-2);
 	z-index: 100;
 	top: 0;
 	display: flex;
@@ -385,11 +430,11 @@ textarea:focus {
 }
 
 .header .nav a:hover {
-	color:#333;
+	color:var(--foreground-color-3);
 }
 
 .header .nav .item {
-	color: #777;
+	color: var(--foreground-color-link);
 	text-decoration: none;
 	padding-right: 18px;
 	padding-left: 18px;
@@ -455,7 +500,7 @@ textarea:focus {
 	align-items: center;
 	width: calc(100% - 32px);
 	max-width: 1200px;
-	color: #444;
+	color: var(--foreground-color-1);
 	margin: 32px 0;
 }
 
@@ -493,8 +538,8 @@ textarea:focus {
 
 .landing .hero .button .options-container .options {
 	position: absolute;
-	background: #fff;
-	color: #333;
+	background: var(--background-color-2);
+	color: var(--foreground-color-3);
 	border: 1px solid #eee;
 	right: 0;
 	top: 54px;
@@ -586,7 +631,7 @@ textarea:focus {
 	position: absolute;
 	bottom: -24px;
 	left: 0;
-	color: #333;
+	color: var(--foreground-color-3);
 	text-decoration: none
 }
 
@@ -698,7 +743,7 @@ textarea:focus {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	background: linear-gradient(168deg, #fff 800px, #f6f9fc 800px);
+	background: var(--background-color-1);
 	padding-bottom: 32px
 }
 
@@ -708,10 +753,10 @@ textarea:focus {
 	width: calc(100vw - 32px);
 	justify-content: space-around;
 	margin-top: 32px;
-	background: #fff;
-	color: #222;
+	background: var(--background-color-2);
+	color: var(--foreground-color-2);
 	border-radius: 6px;
-	border: 1px solid #efefef
+	border: 1px solid var(--border-color-1);
 }
 
 .landing .section h1,
@@ -750,7 +795,8 @@ textarea:focus {
 .landing i {
 	max-width: calc(100vw - 64px);
 	text-align: center;
-	font-size: 14px
+	font-size: 14px;
+	color: var(--foreground-color-1);
 }
 
 @media (max-width:1500px) {
@@ -863,11 +909,11 @@ textarea:focus {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background: #fff;
+	background: var(--background-color-2);
 	color: #000;
 	height: 100px;
 	width: 125px;
-	border: 1px solid #efefef;
+	border: 1px solid var(--border-color-1);
 	border-radius: 6px;
 	text-decoration: none;
 	box-shadow: none;
