@@ -249,6 +249,17 @@ textarea:focus {
 	color: #c5ac41
 }
 
+.codeblock pre.language-v {
+	padding: 0;
+	background: #334;
+	padding-bottom: 10px;
+}
+
+.codeblock pre code.language-v {
+	display: block;
+	line-height: 1.2 !important;
+}
+
 .documentation {
 	display: flex;
 	justify-content: center;

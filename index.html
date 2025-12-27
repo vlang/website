@@ -221,15 +221,14 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
   <div class='titlebar separator'>
     <div class='flex'></div>
   </div>
-  <pre class="hello_devs" id=ex1>fn main() {
+  <pre class="hello_devs" id=ex1><code class="language-v">fn main() {
     areas := [&#39;game&#39;, &#39;web&#39;, &#39;tools&#39;, &#39;science&#39;, &#39;systems&#39;,
               &#39;embedded&#39;, &#39;drivers&#39;, &#39;GUI&#39;, &#39;mobile&#39;]
     for area in areas {
         println(&#39;Hello, ${area} developers!&#39;)
     }
-}</pre>
-<pre class="hello_devs" id=ex2 style='display:none'>
-// Print file lines that start with "DEBUG:"
+}</code></pre>
+<pre class="hello_devs" id=ex2 style='display:none'><code class="language-v">// Print file lines that start with "DEBUG:"
 import os
 
 // `read_file` returns an optional (`?string`), it must be checked
@@ -245,20 +244,16 @@ for line in lines {
     if line.starts_with('DEBUG:') {
         println(line)
     }
-}
-</pre>
-  <pre class="hello_devs" id=ex3 style='display:none'>
-import time
+}</code></pre>
+  <pre class="hello_devs" id=ex3 style='display:none'><code class="language-v">import time
 import net.http
 resp := http.get('https://vlang.io/utc_now') or {
     println('failed to fetch data from the server')
     return
 }
 t := time.unix(resp.body.int())
-println(t.format()) // 2019-08-16 17:48
-</pre>
-  <pre class="hello_devs" id=ex4 style='display:none'>
-import json
+println(t.format()) // 2019-08-16 17:48</code></pre>
+  <pre class="hello_devs" id=ex4 style='display:none'><code class="language-v">import json
 
 struct User {
     name string
@@ -283,8 +278,8 @@ fn main() {
             println('Cannot register ${user.name}, they are too young')
             continue
         }
-		// `user` is declared as `mut` in the for loop,
-		// modifying it will modify the array
+        // `user` is declared as `mut` in the for loop,
+        // modifying it will modify the array
         user.register()
     }
     // Let's encode users again just for fun
@@ -298,16 +293,12 @@ fn (u User) can_register() bool {
 
 fn (mut u User) register() {
     u.is_registered = true
-}
+}</code></pre>
 
-  </pre>
-
-<pre class="hello_devs" id=ex5 style='display:none'>
-import arrays
+<pre class="hello_devs" id=ex5 style='display:none'><code class="language-v">import arrays
 keys := ['accept', 'Accept', 'ACCEPT', 'Content-Type', 'content-type']
 unique_lowercase_keys := arrays.uniq(keys.map(it.to_lower()))
-println(unique_lowercase_keys) // ['accept', 'content-type']
-</pre>
+println(unique_lowercase_keys) // ['accept', 'content-type']</code></pre>
 
 </div>
 
@@ -1359,7 +1350,7 @@ user.v:8:14: error: `update_user` parameter `user` is mutable, you need to provi
         <div class='flex'></div>
         </div>
 
-        <pre><div id="codeblock_hl_93987704">[&#39;/post/:id&#39;]
+        <pre style="font-size: 80%;"><code class="language-v"><div id="codeblock_hl_93987704">[&#39;/post/:id&#39;]
 fn (b &Blog) show_post(id int) veb.Result {
   post := b.posts_repo.retrieve(id) or {
     return veb.not_found()
@@ -1396,7 +1387,7 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
       <p><a href="https://github.com/vlang/gitly">Gitly</a>, a light and fast alternative to GitHub/GitLab is built in V and Veb.</p>
     </div>
 
-    <div class="block">
+    <div class="block" style="overflow: auto;">
 		<a target=_blank href='https://github.com/vlang/gitly'><img style='width:500px' src='https://user-images.githubusercontent.com/687996/85933714-b195fe80-b8da-11ea-9ddd-09cadc2103e4.png'></a>
 	</div>
 
@@ -1413,7 +1404,7 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
     <div class='flex'></div>
   </div>
 
-  <pre><div id="codeblock_hl_69524066"><span class="keyword">import</span> db.sqlite
+  <pre style="font-size: 80%;"><code class="language-v"><div id="codeblock_hl_69524066"><span class="keyword">import</span> db.sqlite
 
 <span class="keyword">struct</span> Customer {
   id <span class="keyword">int</span>
@@ -1453,9 +1444,7 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
   <span class="keyword">sql</span> db {
     <span class="keyword">insert</span> new_customer <span class="keyword">into</span> Customer
   }!
-}</div></pre>
-
-
+}</div></code></pre>
 </div>
 
 </div>
