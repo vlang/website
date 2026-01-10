@@ -1,43 +1,43 @@
 examples
-Examples
+Örnekler
 -----
 documentation
-Documentation
+Dökümantasyon
 -----
 modules
-Modules
+Modüller
 -----
 faq
-FAQ
+SSS
 -----
 playground
 Playground
 -----
 built_in_v
-Built in V
+V ile Yapıldı
 -----
 the_v_lang
-The V Programming Language
+V Programlama Dili
 -----
 v_slogan
-Simple, fast, safe, compiled language for developing maintainable software
+Sürdürülebilir yazılımlar için basit, hızlı, güvenli, derlenen dil
 -----
 includes_binaries
-includes binaries for 3 systems
+3 sistem için binary'ler
 -----
 install_source
-Or install V from source
+Veya V'yi kaynağından indir
 -----
 couple_seconds
-this will take a couple of seconds
+birkaç saniye sürecek, lütfen bekleyin
 -----
 wip_info
-V is an actively developed language at an early stage.
-Features that are still being worked on are marked with $wip
+V, erken aşamada olan ve aktif olarak geliştirilen bir dildir.
+Henüz üzerinde çalışılan özellikler $wip ile işaretlenmiştir.
 <br>
-Everything else on this page and the docs has been implemented and open-sourced.
+Bu sayfadaki diğer herşey ve dökümentasyon dilde mevcuttur ve açık kaynak yapılmıştır.
 <p>
-By the time of the V 1.0 release planned for December 2019, there will be no $wip's left.
+Aralık 2019 için planlanan V 1.0 sürümü yayınlandığında, hiçbir $wip işareti kalmayacaktır.
 -----
 forum
 Forum
@@ -46,133 +46,133 @@ blog
 Blog
 -----
 fast_compilation
-Fast compilation
+Hızlı Derleme
 -----
 safety
-Safety
+Güvenlik
 -----
 performance
-Performance
+Performans
 -----
 simple_language_for_maintainable_programs
-Simple language for building  maintainable programs
+Sürdürülebilir yazılımlar için basit bir dil
 -----
 you_can_learn
-You can learn the entire language by going through the
-<a target=_blank href='https://github.com/vlang/v/blob/master/doc/docs.md'>documentation</a> over a
-weekend, and in most cases there's only one way to do something.
+Bütün dili
+<a target=_blank href='https://github.com/vlang/v/blob/master/doc/docs.md'>dökümantasyon'a</a> 2 gün gibi kısa bir sürede öğrenebilirsiniz.
+Ayrıca, çoğu şeyi yapmanın genelde tek bir yolu vardır.
 -----
 this_results_in_simple
-This results in simple, readable, and maintainable code.
+Bunun sayesinde basit, okunabilir ve sürdürülebilir kod yazabilirsiniz.
 -----
 despite_being_simple
-Despite being simple, V gives a lot of power to the developer and can be used in pretty much every field, including systems programming, webdev, gamedev, GUI, mobile, science, embedded, tooling, etc.
+Basit olmasının yanı sıra, V geliştiriciye üstün kontrol sağlar ve sistem programlama, web geliştirme, oyun geliştirme, GUI, mobil, bilim, gömülü sistem, araçlar gibi bir çok alanda kullanılabilir.
 -----
 v_is_similar_to_go
-V is very similar to Go. If you know Go, you already know ≈80% of V.
-Things V improves on Go: <a target=_blank href='https://vlang.io/compare#go'>vlang.io/compare#go</a>.
+V, Go'ya çok benzer. Eğer Go biliyorsunanız V'nin yaklaşık %80'i sizin için cepte demektir.
+Go'da olup V'nin çözdüğü sorunlar: <a target=_blank href='https://vlang.io/compare#go'>vlang.io/compare#go</a>.
 -----
 download_for_macos
-Download for macOS
+macOS için İndir
 -----
 download_for_windows
-Download for Windows
+Windows için İndir
 -----
 download_for_linux
-Download for Linux
+Linux İçin İndir
 -----
 zero_deps
-400 KB compiler with zero dependencies
+0 harici kütüphaneli 400 KB'lık derleyici
 -----
 c_translation
-C/C++ translation
+C/C++ çevirimi
 -----
 introduction
-Introduction
+Giriş
 -----
 comments
-Comments
+Yorumlar
 -----
 functions
-Functions
+Fonksiyonlar
 -----
 variables
-Variables
+Değişkenler
 -----
 basic_types
-Basic types
+Basit tipler
 -----
 strings
-Strings
+Dizeler (Strings)
 -----
 arrays
-Arrays
+Diziler (Arrays)
 -----
 maps
-Maps
+Mapler
 -----
 if
 If
 -----
 in_op
-In operator
+In operatörü
 -----
 for_loop
-For loop
+For döngüsü
 -----
 switch
 Switch
 -----
 structs
-Structs
+Yapılar (Structs)
 -----
 access_mod
-Access modifiers
+Erişim düzenleyicileri
 -----
 methods
-Methods
+Metotlar
 -----
 pure_fns
-Pure functions
+Saf (Pure) fonksiyonlar
 -----
 high_fns
-High order functions
+Yüksek seviyeli fonksiyonlar
 -----
 constants
-Constants
+Sabitler
 -----
 modules
-Modules
+Modüller
 -----
 interfaces
-Interfaces
+Arayüzler (Interfaces)
 -----
 enums
-Enums
+Enumlar
 -----
 optionals_and_errors
-Option types & error handling
+Opsiyonel tipler ve hata yönetimi
 -----
 generics
-Generics
+Jenerikler (Generics)
 -----
 concurrency
-Concurrency
+Eşzamanlılık (Concurrency)
 -----
 decoding_json
-Decoding JSON
+JSON çözme
 -----
 testing
 Testing
 -----
 memory_management
-Memory management
+Bellek yönetimi
 -----
 fast_comp1
-V compiles between ≈100k and 1.2 million lines of code per second per CPU core.
+V, CPU çekirdeği başına saniyede yaklaşık 100 bin ila 1.2 milyon satır arasında kod derler.
 -----
 fast_comp2
-V compiles itself in 0.15 - 0.6 seconds.
+V, kendini 0.15 ila 0.6 saniye arasında derleyebilir.
 -----
 fast_comp3
 -----
@@ -182,20 +182,24 @@ no_null
 No null
 -----
 latest_news
-Latest news &
+En son haberler &
 -----
 what_developers_say
-What developers say about V
+Geliştiriciler V hakkında ne diyor?
 -----
 v_review_1
-The V development team does an amazing job. I've never seen a language evolve that fast;
-I suspect you guys never sleep. I hope V will remain a simple, clean language and have a bright future.
-Thanks for all your hard work.
+V geliştirici ekibi harika işler çıkarıyor. Hiç bu kadar hızlı gelişen bir dil görmemiştim; sanırım
+hiç uyku uyumuyorlar. Umarım ki V hep basit ve geleceği parlak bir dil olur. 
+Bütün emekleriniz için teşekkürler.
 -----
 v_review_2
 I'm mostly surprised by how many things "just work".
 Channels and closures made implementing asynchronous callbacks for C functions such a breeze.
 Thanks for that! 😄
+
+Çoğu şeyin "direkt çalışması" beni şaşırttı.
+Kanallar (channels) ve closure'lar, C fonksiyonları için asenkron geri çağırmaları uygulamayı çok kolaylaştırdı.
+Bunun için teşekkürler! 😄
 -----
 v_review_3
 Been programming for around 30 years. Have done some C/C++, VB, and lots of Delphi years ago.
@@ -203,22 +207,28 @@ Then PHP/Ruby for over 15 years. Bash, Python too. Recently I've wanted to start
 language for reasons, and have looked at Rust, Go, and a couple others. I stumbled upon V a few weeks
 ago and have been very surprised by how easy it is to pick up. I am really enjoying writing V and
 feel like I am already productive. Even to the point I'm now looking at making a small ...
+
+Yaklaşık 30 yıldır programlama ile uğraşıyorum. Yıllarca C/C++, VB ve Delphi ile uğraştım.
+Ardından 15 yılı aşkın süredir PHP/Ruby kullandım. Bash ve Python da cabası. Son zamanlarda bazı nedenlerden
+dolayı derlenen bir dil kullanmak istedim ve Rust, Go ve birkaç diğerine göz gezdirdim. Birkaç hafta önce V ile karşılaştım
+ve öğreniminin ne kadar kolay olduğuna çok şaşırdım. V yazmaktan gerçekten keyif alıyorum ve şimdiden üretken olduğumu hissediyorum.
+Hatta küçük bir tane yapmayı düşünmeye başladım bile.
 -----
 partners_sponsors
-Partners & Sponsors
+Partnerler ve Sponsorlar
 -----
 become_sponsor_via_github
-Become a sponsor via GitHub Sponsors
+GitHub Sponsors ile Sponsor Ol
 -----
 is_v_still_fast
-Is V still fast?
+V hâlâ hızlı mı?
 -----
 built_in_v
-Built in V
+V ile yapıldı
 -----
 book1
-The first printed book on V!
+V üzerine yazılmış ilk kitap!
 -----
 book2
-The 2nd printed book on V!
+V üzerine yazılmış 2. kitap!
 
