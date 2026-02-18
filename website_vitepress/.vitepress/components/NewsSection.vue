@@ -22,24 +22,7 @@
 </template>
 
 <script setup lang="ts">
-const news = [
-  { version: 'V 0.5.0', date: 'Dec 31, 2025', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-  { version: 'V 0.4.12', date: 'Sep 2025', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-  { version: 'V 0.4.9', date: 'Jun 2025', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-  { version: 'V 0.4.8', date: 'Feb 2025', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-  { version: 'V 0.4.7', date: 'Oct 2024', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-  { version: 'V 0.4.6', date: 'Jun 2024', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-  { version: 'V 0.4.5', date: 'Mar 2024', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-  { version: 'V 0.4.4', date: 'Jan 2024', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-  { version: 'V 0.4.3', date: 'Nov 2023', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-  { version: 'V 0.4.2', date: 'Oct 2023', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-  { version: 'V 0.4.1', date: 'Sep 2023', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-  { version: 'V 0.4.0', date: 'Jul 2023', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-  { version: 'V 0.3.5', date: 'Mar 2023', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-  { version: 'V 0.3.4', date: 'Jan 2023', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-  { version: 'V 0.3.3', date: 'Oct 2022', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-  { version: 'V 0.3.2', date: 'Sep 2022', url: 'https://github.com/vlang/v/blob/master/CHANGELOG.md' },
-]
+import { data as news } from '../releases.data'
 </script>
 
 <style scoped>
