@@ -20,17 +20,34 @@
         <span class="dot yellow" />
         <span class="dot green" />
         <span class="filename">{{ tabs[activeTab].filename }}</span>
+        <div class="chrome-right">
+          <button class="copy-btn" :class="{ copied }" @click="copyCode" :aria-label="copied ? 'Copied!' : 'Copy code'">
+            <svg v-if="!copied" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            <svg v-else viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </button>
+        </div>
       </div>
-      <div class="code-body">
-        <pre class="code-pre"><code v-html="tabs[activeTab].html" /></pre>
+      <div class="code-panels" :style="{ height: panelsHeight }">
+        <div
+          v-for="(tab, i) in tabs"
+          :key="tab.id"
+          :ref="el => { if (el) panelEls[i] = el as HTMLElement }"
+          class="code-panel"
+          :class="{ active: activeTab === i }"
+        >
+          <pre class="code-pre"><code v-html="tab.html" /></pre>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
 // Hand-tokenised snippets — classes map to CSS vars defined in custom.css
 // We avoid depending on Shiki at runtime; simple span-based highlighting
 // matches the existing site's approach and avoids async loading flicker.
@@ -146,7 +163,32 @@ ${kw('fn')} ${fn_('main')}() {
   },
 ]
 
+import { ref, watch, nextTick, onMounted } from 'vue'
+
 const activeTab = ref(0)
+const copied = ref(false)
+const panelEls = ref<HTMLElement[]>([])
+const panelsHeight = ref('0px')
+
+function updateHeight() {
+  const el = panelEls.value[activeTab.value]
+  if (el) panelsHeight.value = el.scrollHeight + 'px'
+}
+
+onMounted(() => nextTick(updateHeight))
+watch(activeTab, () => nextTick(updateHeight))
+
+function plainText(html: string) {
+  const div = document.createElement('div')
+  div.innerHTML = html
+  return div.textContent ?? ''
+}
+
+async function copyCode() {
+  await navigator.clipboard.writeText(plainText(tabs[activeTab.value].html))
+  copied.value = true
+  setTimeout(() => (copied.value = false), 2000)
+}
 </script>
 
 <style scoped>
@@ -220,10 +262,63 @@ const activeTab = ref(0)
   color: #8b949e;
 }
 
+/* ── chrome right ── */
+.chrome-right {
+  margin-left: auto;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #8b949e;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.copy-btn:hover {
+  color: #c9d1d9;
+  border-color: #30363d;
+  background: #ffffff10;
+}
+
+.copy-btn.copied {
+  color: #28c840;
+  border-color: #28c840;
+}
+
+.copy-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
 /* ── code body ── */
-.code-body {
+.code-panels {
+  position: relative;
+  overflow: hidden;
+  transition: height 0.25s ease;
+}
+
+.code-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   padding: 24px;
+  visibility: hidden;
+  pointer-events: none;
   overflow-x: auto;
+}
+
+.code-panel.active {
+  position: relative;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .code-pre {
