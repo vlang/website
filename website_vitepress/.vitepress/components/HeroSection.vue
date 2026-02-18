@@ -43,6 +43,8 @@
         </div>
 
         <div class="hero-links">
+          <a href="https://fast.vlang.io/" target="_blank" rel="noopener">Is V still fast?</a>
+          <span class="dot">·</span>
           <a href="https://github.com/vlang/v/wiki/FAQ" target="_blank">FAQ</a>
           <span class="dot">·</span>
           <a href="/docs/">Docs</a>
@@ -50,6 +52,8 @@
           <a href="https://github.com/vlang/v/blob/master/CHANGELOG.md" target="_blank">Changelog</a>
           <span class="dot">·</span>
           <a href="/showcase">Built with V</a>
+          <span class="dot">·</span>
+          <a href="https://github.com/vlang/rfcs" target="_blank" rel="noopener">RFCs</a>
         </div>
       </div>
 
