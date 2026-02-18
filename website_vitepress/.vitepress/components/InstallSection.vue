@@ -10,6 +10,17 @@
           <span class="dot yellow" />
           <span class="dot green" />
           <span class="term-label">Terminal</span>
+          <div class="chrome-right">
+            <button class="copy-btn" :class="{ copied }" @click="copyCmd" :aria-label="copied ? 'Copied!' : 'Copy command'">
+              <svg v-if="!copied" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" />
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+              </svg>
+              <svg v-else viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </button>
+          </div>
         </div>
         <div class="term-body">
           <pre class="term-pre"><span class="prompt">$ </span><span class="cmd">git clone --depth=1 https://github.com/vlang/v &amp;&amp; cd v &amp;&amp; make</span></pre>
@@ -28,6 +39,19 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const copied = ref(false)
+const command = 'git clone --depth=1 https://github.com/vlang/v && cd v && make'
+
+async function copyCmd() {
+  await navigator.clipboard.writeText(command)
+  copied.value = true
+  setTimeout(() => (copied.value = false), 2000)
+}
+</script>
 
 <style scoped>
 .install-section {
@@ -72,6 +96,40 @@
   gap: 6px;
   padding: 10px 16px;
   background: #1a2130;
+}
+
+.chrome-right {
+  margin-left: auto;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #8b949e;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.copy-btn:hover {
+  color: #c9d1d9;
+  border-color: #30363d;
+  background: #ffffff10;
+}
+
+.copy-btn.copied {
+  color: #28c840;
+  border-color: #28c840;
+}
+
+.copy-btn svg {
+  width: 15px;
+  height: 15px;
 }
 
 .dot {
