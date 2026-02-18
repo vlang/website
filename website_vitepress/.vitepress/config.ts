@@ -18,7 +18,7 @@ export default defineConfig({
   ],
   themeConfig: {
     logo: '/img/v-logo.png',
-    siteTitle: false,
+    siteTitle: 'The V Programming Language',
     nav: [
       {
         text: 'Docs',

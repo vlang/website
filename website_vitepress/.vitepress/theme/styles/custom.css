@@ -50,10 +50,24 @@
 /* -------------------------------------------------------------------------- */
 :root {
   --vp-nav-logo-height: 36px;
+  --vp-nav-height: 64px;
 }
 
-.VPNav .VPNavBarTitle .title {
-  display: none;
+/* Ensure navbar sits above everything and spans full width */
+.VPNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* Sidebar must start below the navbar */
+.VPSidebar {
+  top: var(--vp-nav-height) !important;
+  height: calc(100vh - var(--vp-nav-height)) !important;
+  padding-top: 0 !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -61,11 +75,6 @@
 /* -------------------------------------------------------------------------- */
 .VPContent.is-home {
   padding: 0 !important;
-}
-
-/* make the nav bar slightly taller & bolder */
-.VPNavBar {
-  height: 64px;
 }
 
 /* -------------------------------------------------------------------------- */
