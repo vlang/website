@@ -38,7 +38,7 @@
               />
             </svg>
             GitHub
-            <span class="stars">★ 37k</span>
+            <span class="stars">★ {{ formattedStars }}</span>
           </a>
         </div>
 
@@ -62,8 +62,27 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, computed } from 'vue'
 import DownloadButton from './DownloadButton.vue'
 import CodeCarousel from './CodeCarousel.vue'
+
+const stars = ref<number | null>(null)
+
+const formattedStars = computed(() => {
+  if (stars.value === null) return ''
+  if (stars.value >= 1000) return `${(stars.value / 1000).toFixed(0)}k`
+  return String(stars.value)
+})
+
+onMounted(async () => {
+  try {
+    const res = await fetch('https://api.github.com/repos/vlang/v')
+    const data = await res.json()
+    stars.value = data.stargazers_count
+  } catch {
+    // silently fail; star count simply won't show
+  }
+})
 </script>
 
 <style scoped>
