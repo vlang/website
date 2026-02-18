@@ -2,7 +2,10 @@
   <footer class="v-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="/img/v-logo.png" alt="V logo" class="footer-logo" />
+        <div class="footer-brand-title">
+          <img src="/img/v-logo.png" alt="V logo" class="footer-logo" />
+          <span class="footer-brand-name">V Lang</span>
+        </div>
         <p class="footer-tagline">
           Simple, fast, safe, compiled.<br />
           © {{ year }} V Language Contributors.
@@ -100,6 +103,18 @@ const year = new Date().getFullYear()
   display: flex;
   flex-direction: column;
   gap: 14px;
+}
+
+.footer-brand-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-brand-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
 }
 
 .footer-logo {
