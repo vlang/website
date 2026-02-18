@@ -49,7 +49,7 @@
           <span class="dot">·</span>
           <a href="https://github.com/vlang/v/blob/master/CHANGELOG.md" target="_blank">Changelog</a>
           <span class="dot">·</span>
-          <a href="https://github.com/vlang/v/wiki/Built-with-V" target="_blank">Built with V</a>
+          <a href="/showcase">Built with V</a>
         </div>
       </div>
 

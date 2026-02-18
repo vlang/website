@@ -49,6 +49,10 @@ export default defineConfig({
         text: 'Forum',
         link: 'https://github.com/vlang/v/discussions',
       },
+      {
+        text: 'Showcase',
+        link: '/showcase',
+      },
     ],
     sidebar: {
       '/docs/': [
