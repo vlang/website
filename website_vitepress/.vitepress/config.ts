@@ -49,10 +49,6 @@ export default defineConfig({
         text: 'Forum',
         link: 'https://github.com/vlang/v/discussions',
       },
-      {
-        text: 'Blog',
-        link: 'https://vlang.veery.blog',
-      },
     ],
     sidebar: {
       '/docs/': [
