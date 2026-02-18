@@ -14,25 +14,17 @@
             @click="activeTab = tab.id; copied = false"
           >{{ tab.label }}</button>
         </div>
-        <div class="term-chrome">
-          <span class="dot red" />
-          <span class="dot yellow" />
-          <span class="dot green" />
-          <span class="term-label">Terminal</span>
-          <div class="chrome-right">
-            <button class="copy-btn" :class="{ copied }" @click="copyCmd" :aria-label="copied ? 'Copied!' : 'Copy command'">
-              <svg v-if="!copied" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="9" y="9" width="13" height="13" rx="2" />
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-              </svg>
-              <svg v-else viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
         <div class="term-body">
           <pre class="term-pre"><span class="prompt">$ </span><span class="cmd">{{ currentTab.command }}</span></pre>
+          <button class="copy-btn" :class="{ copied }" @click="copyCmd" :aria-label="copied ? 'Copied!' : 'Copy command'">
+            <svg v-if="!copied" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            <svg v-else viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -132,18 +124,6 @@ async function copyCmd() {
   border-bottom-color: var(--vp-c-brand-1);
 }
 
-.term-chrome {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 16px;
-  background: #1a2130;
-}
-
-.chrome-right {
-  margin-left: auto;
-}
-
 .copy-btn {
   display: flex;
   align-items: center;
@@ -174,27 +154,18 @@ async function copyCmd() {
   height: 15px;
 }
 
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-
-.dot.red    { background: #ff5f57; }
-.dot.yellow { background: #febc2e; }
-.dot.green  { background: #28c840; }
-
-.term-label {
-  margin-left: 8px;
-  font-size: 12px;
-  font-family: var(--vp-font-family-mono);
-  color: #8b949e;
-}
-
 .term-body {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   background: var(--v-code-bg);
   padding: 20px 24px;
   overflow-x: auto;
+}
+
+.term-pre {
+  flex: 1;
+  min-width: 0;
 }
 
 .term-pre {
