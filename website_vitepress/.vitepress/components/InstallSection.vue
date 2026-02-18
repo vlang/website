@@ -5,6 +5,15 @@
       <p class="install-sub">This will take a couple of seconds.</p>
 
       <div class="terminal">
+        <div class="term-tabs">
+          <button
+            v-for="tab in tabs"
+            :key="tab.id"
+            class="term-tab"
+            :class="{ active: activeTab === tab.id }"
+            @click="activeTab = tab.id; copied = false"
+          >{{ tab.label }}</button>
+        </div>
         <div class="term-chrome">
           <span class="dot red" />
           <span class="dot yellow" />
@@ -23,7 +32,7 @@
           </div>
         </div>
         <div class="term-body">
-          <pre class="term-pre"><span class="prompt">$ </span><span class="cmd">git clone --depth=1 https://github.com/vlang/v &amp;&amp; cd v &amp;&amp; make</span></pre>
+          <pre class="term-pre"><span class="prompt">$ </span><span class="cmd">{{ currentTab.command }}</span></pre>
         </div>
       </div>
 
@@ -41,13 +50,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
+const tabs = [
+  { id: 'unix', label: 'Linux & Mac', command: 'git clone --depth=1 https://github.com/vlang/v && cd v && make' },
+  { id: 'windows', label: 'Windows', command: 'git clone --depth=1 https://github.com/vlang/v && cd v && make.bat' },
+]
+
+const activeTab = ref('unix')
 const copied = ref(false)
-const command = 'git clone --depth=1 https://github.com/vlang/v && cd v && make'
+const currentTab = computed(() => tabs.find(t => t.id === activeTab.value)!)
 
 async function copyCmd() {
-  await navigator.clipboard.writeText(command)
+  await navigator.clipboard.writeText(currentTab.value.command)
   copied.value = true
   setTimeout(() => (copied.value = false), 2000)
 }
@@ -88,6 +103,33 @@ async function copyCmd() {
   overflow: hidden;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
   text-align: left;
+}
+
+.term-tabs {
+  display: flex;
+  background: #161b22;
+}
+
+.term-tab {
+  padding: 9px 18px;
+  font-size: 13px;
+  font-family: var(--vp-font-family-mono);
+  color: #8b949e;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.term-tab:hover {
+  color: #c9d1d9;
+}
+
+.term-tab.active {
+  color: #e6edf3;
+  border-bottom-color: var(--vp-c-brand-1);
 }
 
 .term-chrome {
