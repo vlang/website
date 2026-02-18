@@ -5,6 +5,7 @@
     <FeaturesGrid />
     <NewsSection />
     <TestimonialsSection />
+    <SponsorsSection />
     <FooterSection />
   </div>
 </template>
@@ -15,6 +16,7 @@ import InstallSection from './InstallSection.vue'
 import FeaturesGrid from './FeaturesGrid.vue'
 import NewsSection from './NewsSection.vue'
 import TestimonialsSection from './TestimonialsSection.vue'
+import SponsorsSection from './SponsorsSection.vue'
 import FooterSection from './FooterSection.vue'
 </script>
 
