@@ -43,7 +43,7 @@
         </div>
 
         <div class="hero-links">
-          <a href="https://github.com/vlang/v/blob/master/doc/faq.md" target="_blank">FAQ</a>
+          <a href="https://github.com/vlang/v/wiki/FAQ" target="_blank">FAQ</a>
           <span class="dot">·</span>
           <a href="/docs/">Docs</a>
           <span class="dot">·</span>
