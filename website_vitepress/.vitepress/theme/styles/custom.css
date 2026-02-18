@@ -1,0 +1,86 @@
+/* -------------------------------------------------------------------------- */
+/*  Fonts                                                                     */
+/* -------------------------------------------------------------------------- */
+:root {
+  --vp-font-family-base: 'Roboto', ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --vp-font-family-mono: 'Roboto Mono', 'Menlo', 'Monaco', 'Courier New',
+    Courier, monospace;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Brand / accent colours                                                    */
+/* -------------------------------------------------------------------------- */
+:root {
+  --vp-c-brand-1: #4078c0;
+  --vp-c-brand-2: #3567ad;
+  --vp-c-brand-3: #2a5694;
+  --vp-c-brand-soft: rgba(64, 120, 192, 0.14);
+
+  /* code block background (shared across hero + docs) */
+  --v-code-bg: #1e2530;
+  --v-code-text: #c9c5c4;
+
+  /* syntax token colours — match the existing site palette */
+  --v-token-keyword: #dcd02d;
+  --v-token-return:  #ea3b7b;
+  --v-token-string:  #ca763c;
+  --v-token-number:  #b068e7;
+  --v-token-comment: #9e9795;
+  --v-token-type:    #c5ac41;
+  --v-token-fn:      #5f84ba;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Override VitePress default code block colours                             */
+/* -------------------------------------------------------------------------- */
+:root {
+  --vp-code-block-bg: var(--v-code-bg);
+  --vp-code-color: var(--v-code-text);
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Navigation overrides                                                       */
+/* -------------------------------------------------------------------------- */
+:root {
+  --vp-nav-logo-height: 36px;
+}
+
+.VPNav .VPNavBarTitle .title {
+  display: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Home page — remove default VitePress padding around custom layouts        */
+/* -------------------------------------------------------------------------- */
+.VPContent.is-home {
+  padding: 0 !important;
+}
+
+/* make the nav bar slightly taller & bolder */
+.VPNavBar {
+  height: 64px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Docs page typography tweaks                                               */
+/* -------------------------------------------------------------------------- */
+.vp-doc h1 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.vp-doc a {
+  color: var(--vp-c-brand-1);
+}
+
+.vp-doc a:hover {
+  color: var(--vp-c-brand-2);
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Smooth scroll                                                              */
+/* -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
