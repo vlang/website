@@ -48,7 +48,6 @@
           <li><a href="https://github.com/vlang/v/discussions" target="_blank" rel="noopener">Forum</a></li>
           <li><a href="https://discord.gg/vlang" target="_blank" rel="noopener">Discord</a></li>
           <li><a href="https://t.me/vlanguage" target="_blank" rel="noopener">Telegram</a></li>
-          <li><a href="https://vlang.veery.blog" target="_blank" rel="noopener">Blog</a></li>
           <li><a href="https://www.youtube.com/@freedomvslavery" target="_blank" rel="noopener">YouTube</a></li>
         </ul>
       </div>
