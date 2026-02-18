@@ -28,12 +28,16 @@
         target="_blank"
         rel="noopener"
         class="project-card"
+        :class="{ 'has-screenshot': project.screenshot }"
       >
+        <div v-if="project.screenshot" class="card-screenshot">
+          <img :src="project.screenshot" :alt="project.name + ' screenshot'" />
+        </div>
+        <div class="card-body">
         <div class="card-top">
-          <span class="project-icon" aria-hidden="true">{{ project.icon }}</span>
+          <h3 class="project-name">{{ project.name }}</h3>
           <span class="project-category-badge">{{ project.category }}</span>
         </div>
-        <h3 class="project-name">{{ project.name }}</h3>
         <p class="project-desc">{{ project.desc }}</p>
         <div class="card-footer">
           <svg class="link-icon" viewBox="0 0 16 16" aria-hidden="true">
@@ -50,6 +54,7 @@
             />
           </svg>
           <span class="link-label">View on GitHub</span>
+        </div>
         </div>
       </a>
     </div>
@@ -74,101 +79,103 @@ import { ref, computed } from 'vue'
 interface Project {
   name: string
   desc: string
-  icon: string
   url: string
   category: string
+  screenshot?: string
 }
 
 const projects: Project[] = [
+  // Web
+  {
+    name: 'Gitly',
+    category: 'Web',
+    desc: 'A light and fast alternative to GitHub/GitLab written in V. A self-hostable git hosting platform built with V and Veb.',
+    url: 'https://github.com/vlang/gitly',
+  },
+  {
+    name: 'vex',
+    category: 'Web',
+    desc: 'An easy-to-use and modular web framework for V with middleware support, routing, and request handling.',
+    url: 'https://github.com/nedpals/vex',
+  },
   // Tools
   {
     name: 'vpm',
-    icon: '📦',
     category: 'Tools',
     desc: 'The official V package manager. Search, install and manage V modules from the command line.',
     url: 'https://github.com/vlang/vpm',
   },
   {
     name: 'vid',
-    icon: '✏️',
     category: 'Tools',
     desc: 'A fast, cross-platform text editor written in V, inspired by Vim. Runs on Linux, macOS, and Windows.',
     url: 'https://github.com/vlang/vid',
   },
   {
     name: 'v-analyzer',
-    icon: '🔍',
     category: 'Tools',
     desc: 'Language server (LSP) for V providing code completion, go-to-definition, hover info, and more for any editor.',
     url: 'https://github.com/vlang/v-analyzer',
   },
   {
     name: 'vls',
-    icon: '🛠️',
     category: 'Tools',
     desc: 'An earlier V Language Server implementation providing IDE-like features via the Language Server Protocol.',
     url: 'https://github.com/vlang/vls',
   },
-  // Web
   {
-    name: 'gitly',
-    icon: '🐙',
-    category: 'Web',
-    desc: 'A light and fast alternative to GitHub/GitLab written in V. Self-hostable git hosting platform.',
-    url: 'https://github.com/vlang/gitly',
-  },
-  {
-    name: 'vex',
-    icon: '🌐',
-    category: 'Web',
-    desc: 'An easy-to-use and modular web framework for V with middleware support, routing, and request handling.',
-    url: 'https://github.com/nedpals/vex',
+    name: 'Lilly',
+    category: 'Tools',
+    desc: 'A terminal text editor built in V. Clean, minimal, and keyboard-driven with a focus on simplicity.',
+    url: 'https://github.com/tauraamui/lilly',
   },
   // System
   {
     name: 'Vinix',
-    icon: '🐧',
     category: 'System',
     desc: 'A work-in-progress OS kernel and userspace written in V. Boots on x86-64 hardware and QEMU.',
     url: 'https://github.com/vlang/vinix',
   },
-  // Graphics & Games
+  // Games
+  {
+    name: 'DOOM',
+    category: 'Games',
+    desc: "The classic DOOM source code translated from C to V using the c2v tool. A showcase of V's C interoperability and translation capabilities.",
+    url: 'https://github.com/vlang/doom',
+    screenshot: '/img/doom.png',
+  },
+  // Graphics
+  {
+    name: 'V UI',
+    category: 'Graphics',
+    desc: 'A cross-platform UI toolkit written in V. Supports Linux, macOS, Windows, and Android with a native look and feel.',
+    url: 'https://github.com/vlang/ui',
+  },
   {
     name: 'vraylib',
-    icon: '🎮',
     category: 'Graphics',
     desc: 'V bindings for raylib — a simple and easy-to-use library for games and multimedia applications.',
     url: 'https://github.com/vlang/vraylib',
   },
+  // Libraries
   {
-    name: 'V-OGL',
-    icon: '🖼️',
-    category: 'Graphics',
-    desc: 'OpenGL bindings and graphics utilities for V, enabling hardware-accelerated rendering.',
-    url: 'https://github.com/vlang/v-opengl',
+    name: 'VSL',
+    category: 'Libraries',
+    desc: 'The V Scientific Library — a high-performance library with a wide variety of modules covering linear algebra, statistics, and more.',
+    url: 'https://github.com/vlang/vsl',
+  },
+  {
+    name: 'VTL',
+    category: 'Libraries',
+    desc: 'V Tensor Library — an n-dimensional tensor data structure with sophisticated reduction, elementwise, and accumulation operations.',
+    url: 'https://github.com/vlang/vtl',
   },
   // Apps
   {
     name: 'Volt',
-    icon: '💬',
     category: 'Apps',
     desc: 'A cross-platform Discord client built with V. Native performance with a clean user interface.',
     url: 'https://github.com/vlangapp/volt',
-  },
-  // Libraries
-  {
-    name: 'vsl',
-    icon: '🔢',
-    category: 'Libraries',
-    desc: 'V Scientific Library — a high-performance library for linear algebra, statistics, and scientific computing.',
-    url: 'https://github.com/vlang/vsl',
-  },
-  {
-    name: 'vtl',
-    icon: '📊',
-    category: 'Libraries',
-    desc: 'V Tensor Library — n-dimensional tensor operations inspired by NumPy for numerical computing in V.',
-    url: 'https://github.com/vlang/vtl',
   },
 ]
 
@@ -258,7 +265,7 @@ const filteredProjects = computed(() =>
   background: var(--vp-c-bg-alt);
   border: 1px solid var(--vp-c-divider);
   border-radius: 12px;
-  padding: 24px;
+  overflow: hidden;
   text-decoration: none;
   color: inherit;
   transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
@@ -270,18 +277,40 @@ const filteredProjects = computed(() =>
   transform: translateY(-2px);
 }
 
-.card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
+/* ---------- screenshot ---------- */
+.card-screenshot {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--vp-c-bg-elv);
+  flex-shrink: 0;
 }
 
-.project-icon {
-  font-size: 28px;
+.card-screenshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- card body ---------- */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px 24px;
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .project-category-badge {
+  flex-shrink: 0;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.4px;
@@ -291,15 +320,18 @@ const filteredProjects = computed(() =>
   border: 1px solid var(--vp-c-brand-1);
   border-radius: 20px;
   padding: 2px 9px;
+  line-height: 1.6;
+  white-space: nowrap;
 }
 
 .project-name {
   font-size: 17px;
   font-weight: 700;
   color: var(--vp-c-text-1);
-  margin: 0 0 8px;
+  margin: 0;
   border: none;
   padding: 0;
+  line-height: 1.3;
 }
 
 .project-desc {
@@ -314,7 +346,7 @@ const filteredProjects = computed(() =>
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-top: 20px;
+  margin-top: 18px;
   font-size: 13px;
   color: var(--vp-c-text-3);
 }
