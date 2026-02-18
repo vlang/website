@@ -6,7 +6,7 @@ V includes a built-in ORM that supports SQLite, PostgreSQL, MySQL, and MSSQL. No
 
 Use the `@[table: 'table_name']` attribute to map a struct to a database table:
 
-```go
+```v
 import db.sqlite
 import time
 
@@ -24,7 +24,7 @@ pub:
 
 V provides a clean SQL-like DSL for queries:
 
-```go
+```v
 import db.sqlite
 import time
 
@@ -72,7 +72,7 @@ fn main() {
 
 An alternative fluent query builder API is also available:
 
-```go
+```v
 import db.sqlite
 import orm
 
@@ -112,7 +112,7 @@ fn main() {
 
 ## PostgreSQL Example
 
-```go
+```v
 import db.pg
 
 fn main() {

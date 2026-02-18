@@ -6,7 +6,7 @@ V uses **Option** and **Result** types instead of exceptions. This makes error h
 
 An `?T` (option) holds either a value of type `T` or `none`:
 
-```go
+```v
 fn find_user(id int) ?string {
     users := {1: 'Alice', 2: 'Bob'}
     return users[id] or { return none }
@@ -25,7 +25,7 @@ fn main() {
 
 A `!T` (result) holds either a value of type `T` or an error:
 
-```go
+```v
 fn divide(a f64, b f64) !f64 {
     if b == 0.0 {
         return error('division by zero')
@@ -46,7 +46,7 @@ fn main() {
 
 The `or` block runs when the result is `none` or an error. Inside `or`, `err` holds the error value:
 
-```go
+```v
 import net.http
 
 fn main() {
@@ -62,7 +62,7 @@ fn main() {
 
 Adding `!` after a call propagates the error up to the caller (similar to `?` in Rust):
 
-```go
+```v
 fn read_config(path string) !string {
     content := os.read_file(path)!  // propagates if error
     return content
@@ -73,7 +73,7 @@ fn read_config(path string) !string {
 
 Implement the `IError` interface to create custom error types:
 
-```go
+```v
 struct DivisionError {
     msg  string
     code int
@@ -97,7 +97,7 @@ fn safe_divide(a f64, b f64) !f64 {
 
 ## Matching on Error Types
 
-```go
+```v
 import semver
 
 fn main() {
@@ -124,7 +124,7 @@ fn check_error(err IError) {
 
 Use `val?` inside an option context to unwrap or propagate `none`:
 
-```go
+```v
 fn get_name(users map[int]string, id int) ?string {
     return users[id]?
 }

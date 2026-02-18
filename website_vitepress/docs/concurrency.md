@@ -4,7 +4,7 @@ V uses lightweight threads (goroutines) to run work concurrently. The `spawn` ke
 
 ## Basic Spawning
 
-```go
+```v
 import time
 
 fn expensive_computing(id int, duration int) {
@@ -29,7 +29,7 @@ fn main() {
 
 Threads can return values. Calling `.wait()` on a `[]thread T` returns `[]T`:
 
-```go
+```v
 fn expensive_computing(i int) int {
     return i * i
 }
@@ -47,7 +47,7 @@ fn main() {
 
 ## Concurrent HTTP Requests
 
-```go
+```v
 import net.http
 import sync
 import time
@@ -79,7 +79,7 @@ fn main() {
 
 Channels allow safe communication between threads:
 
-```go
+```v
 fn producer(ch chan int) {
     for i in 1 .. 6 {
         ch <- i  // send to channel
@@ -101,7 +101,7 @@ fn main() {
 
 Use `sync.Mutex` to protect shared state:
 
-```go
+```v
 import sync
 
 struct Counter {
@@ -121,7 +121,7 @@ fn (mut c Counter) increment() {
 
 `defer` executes a statement when the surrounding function returns — useful for cleanup:
 
-```go
+```v
 import os
 
 fn process_file(path string) {

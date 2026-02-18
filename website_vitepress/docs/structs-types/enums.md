@@ -4,7 +4,7 @@ Enums define a type with a fixed set of named constants.
 
 ## Basic Enum
 
-```go
+```v
 enum Direction {
     north
     south
@@ -20,7 +20,7 @@ fn main() {
 
 ## Matching on Enums
 
-```go
+```v
 enum Color {
     red
     green
@@ -40,7 +40,7 @@ Notice the shorthand `.variant` syntax when the type can be inferred.
 
 ## Enums with Custom Values
 
-```go
+```v
 enum StatusCode {
     ok         = 200
     not_found  = 404
@@ -55,7 +55,7 @@ fn main() {
 
 ## Enum Methods
 
-```go
+```v
 enum Planet {
     mercury
     venus
@@ -73,7 +73,7 @@ fn (p Planet) is_inner() bool {
 
 ## Iterating Over Enums
 
-```go
+```v
 enum Season {
     spring
     summer
@@ -90,7 +90,7 @@ fn main() {
 
 ## Flag Enums (Bit Fields)
 
-```go
+```v
 @[flag]
 enum Permission {
     read

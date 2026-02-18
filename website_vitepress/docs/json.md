@@ -4,7 +4,7 @@ V has built-in JSON encoding and decoding in the `json` module — no external l
 
 ## Decoding JSON
 
-```go
+```v
 import json
 
 struct User {
@@ -30,7 +30,7 @@ fn main() {
 
 ## Encoding JSON
 
-```go
+```v
 import json
 
 struct Point {
@@ -49,7 +49,7 @@ fn main() {
 
 Use the `@[json: 'field_name']` attribute to map struct fields to different JSON keys:
 
-```go
+```v
 import json
 
 struct Config {
@@ -70,7 +70,7 @@ fn main() {
 
 Use `@[json: '-']` to exclude a field from JSON serialization:
 
-```go
+```v
 struct User {
     name     string
     email    string
@@ -82,7 +82,7 @@ struct User {
 
 Use option types for fields that may be absent in the JSON:
 
-```go
+```v
 import json
 
 struct Profile {
@@ -101,7 +101,7 @@ fn main() {
 
 ## Nested Structs
 
-```go
+```v
 import json
 
 struct Address {

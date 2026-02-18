@@ -2,7 +2,7 @@
 
 ## Basic Usage
 
-```go
+```v
 mut nums := [1, 2, 3]
 println(nums)        // [1, 2, 3]
 println(nums.len)    // 3
@@ -15,7 +15,7 @@ println(nums)        // [1, 20, 3]
 
 Array element types are inferred. You can also declare an empty array with an explicit type:
 
-```go
+```v
 mut names := []string{}
 names << 'Alice'
 names << 'Bob'
@@ -24,7 +24,7 @@ println(names) // ['Alice', 'Bob']
 
 ## Pre-allocated Arrays
 
-```go
+```v
 // array of 5 ints, all initialized to 0
 a := []int{len: 5}
 
@@ -36,7 +36,7 @@ b := []string{len: 3, init: 'x'}
 
 Use `<<` to append:
 
-```go
+```v
 mut a := [1, 2, 3]
 a << 4
 a << [5, 6]   // append another array
@@ -45,7 +45,7 @@ println(a)    // [1, 2, 3, 4, 5, 6]
 
 ## Slicing
 
-```go
+```v
 a := [1, 2, 3, 4, 5]
 b := a[1..3]  // [2, 3]  (from index 1, up to but not including 3)
 c := a[..2]   // [1, 2]  (from start to index 2)
@@ -54,7 +54,7 @@ d := a[3..]   // [4, 5]  (from index 3 to end)
 
 ## Iteration
 
-```go
+```v
 names := ['Alice', 'Bob', 'Carol']
 
 for name in names {
@@ -68,7 +68,7 @@ for i, name in names {
 
 ## Common Methods
 
-```go
+```v
 mut a := [3, 1, 4, 1, 5, 9, 2, 6]
 
 println(a.len)          // 8
@@ -90,7 +90,7 @@ println(mapped) // [18, 12, 10, 8, 6, 4, 2, 2]
 
 ## Multidimensional Arrays
 
-```go
+```v
 mut matrix := [][]int{len: 3, init: []int{len: 3}}
 matrix[0][0] = 1
 matrix[1][1] = 5
@@ -100,7 +100,7 @@ println(matrix) // [[1, 0, 0], [0, 5, 0], [0, 0, 9]]
 
 ## Fixed-size Arrays
 
-```go
+```v
 mut a := [5]int{}   // fixed array of 5 ints
 a[0] = 10
 println(a)          // [10, 0, 0, 0, 0]

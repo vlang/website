@@ -4,7 +4,7 @@ Structs are used to define custom data types with named fields.
 
 ## Basic Struct
 
-```go
+```v
 struct Point {
     x int
     y int
@@ -21,7 +21,7 @@ fn main() {
 
 Fields are immutable by default. Use `mut:` to declare mutable fields:
 
-```go
+```v
 struct User {
     name string
     age  int
@@ -40,7 +40,7 @@ fn main() {
 
 ## Access Modifiers
 
-```go
+```v
 struct Foo {
     a int         // private immutable (default)
 mut:
@@ -58,7 +58,7 @@ __global:
 
 Functions can be attached to structs:
 
-```go
+```v
 struct Rectangle {
     width  f64
     height f64
@@ -83,7 +83,7 @@ fn main() {
 
 Structs can embed other structs to inherit their fields and methods:
 
-```go
+```v
 struct Animal {
     name string
 }
@@ -110,7 +110,7 @@ fn main() {
 
 ## Default Field Values
 
-```go
+```v
 struct Config {
     host    string = 'localhost'
     port    int    = 8080
@@ -126,7 +126,7 @@ fn main() {
 
 ## JSON Example
 
-```go
+```v
 import json
 
 struct User {

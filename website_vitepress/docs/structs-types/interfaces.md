@@ -4,7 +4,7 @@ Interfaces define a contract — a set of methods that a type must implement. Th
 
 ## Defining an Interface
 
-```go
+```v
 interface Shape {
     area() f64
     perimeter() f64
@@ -15,7 +15,7 @@ interface Shape {
 
 Any struct that has the required methods automatically implements the interface:
 
-```go
+```v
 struct Circle {
     radius f64
 }
@@ -44,7 +44,7 @@ fn (r Rectangle) perimeter() f64 {
 
 ## Using Interfaces
 
-```go
+```v
 fn print_shape_info(s Shape) {
     println('Area:      ${s.area():.2f}')
     println('Perimeter: ${s.perimeter():.2f}')
@@ -67,7 +67,7 @@ fn main() {
 
 Interfaces can also require fields (not just methods):
 
-```go
+```v
 interface Named {
     name string
 }
@@ -88,7 +88,7 @@ fn main() {
 
 ## Type Checking with Interfaces
 
-```go
+```v
 fn describe(s Shape) {
     if s is Circle {
         println('Circle with radius ${s.radius}')

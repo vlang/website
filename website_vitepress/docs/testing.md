@@ -6,7 +6,7 @@ V has built-in testing support. No test framework or external library needed.
 
 Test functions must start with `test_` and live in files ending with `_test.v`:
 
-```go
+```v
 // math_test.v
 
 fn add(a int, b int) int {
@@ -36,7 +36,7 @@ v test .
 
 Use `assert` to check conditions. A failing assertion prints the values of both sides:
 
-```go
+```v
 fn test_string_ops() {
     s := 'Hello, World!'
     assert s.contains('World')
@@ -47,7 +47,7 @@ fn test_string_ops() {
 
 ## Test Setup and Teardown
 
-```go
+```v
 // Use testsuite_begin and testsuite_end for module-level setup/teardown
 fn testsuite_begin() {
     // runs once before all tests in the file
@@ -62,7 +62,7 @@ fn testsuite_end() {
 
 ## Testing Error Cases
 
-```go
+```v
 fn safe_divide(a f64, b f64) !f64 {
     if b == 0 {
         return error('division by zero')
@@ -98,7 +98,7 @@ v test -v .
 
 V doesn't have a built-in table-driven test helper, but you can do it manually:
 
-```go
+```v
 fn test_add_table() {
     cases := [
         [2, 3, 5],

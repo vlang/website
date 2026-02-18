@@ -2,7 +2,7 @@
 
 ## Basic Syntax
 
-```go
+```v
 a := 10
 
 if a < 10 {
@@ -18,7 +18,7 @@ if a < 10 {
 
 In V, `if` is an expression and can be used on the right side of an assignment:
 
-```go
+```v
 num := 7
 result := if num % 2 == 0 { 'even' } else { 'odd' }
 println(result) // odd
@@ -26,7 +26,7 @@ println(result) // odd
 
 ## Inline Short Form
 
-```go
+```v
 x := 42
 if x > 0 { println('positive') }
 ```
@@ -35,7 +35,7 @@ if x > 0 { println('positive') }
 
 You can initialize a variable inside an `if` condition:
 
-```go
+```v
 if val := some_function_returning_option() {
     println('got value: ${val}')
 } else {
@@ -47,7 +47,7 @@ if val := some_function_returning_option() {
 
 Use `in` to check membership in arrays or maps:
 
-```go
+```v
 nums := [1, 2, 3]
 if 2 in nums {
     println('found 2')
@@ -61,7 +61,7 @@ if 'a' in m {
 
 Use `!in` for the inverse:
 
-```go
+```v
 if 5 !in nums {
     println('5 is not in the array')
 }
@@ -69,7 +69,7 @@ if 5 !in nums {
 
 ## FizzBuzz Example
 
-```go
+```v
 for n in 1 .. 101 {
     println(match true {
         n % 15 == 0 { 'FizzBuzz' }

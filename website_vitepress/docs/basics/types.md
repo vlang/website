@@ -2,7 +2,7 @@
 
 ## Integer Types
 
-```go
+```v
 // Signed integers
 i8    // -128 to 127
 i16   // -32,768 to 32,767
@@ -24,14 +24,14 @@ usize // unsigned, size of a pointer
 
 ## Floating-Point Types
 
-```go
+```v
 f32   // single-precision (32-bit)
 f64   // double-precision (64-bit)
 ```
 
 ## Boolean
 
-```go
+```v
 is_ready := true
 is_done  := false
 ```
@@ -40,7 +40,7 @@ is_done  := false
 
 A `rune` represents a Unicode code point:
 
-```go
+```v
 letter := `A`        // rune literal uses backticks
 emoji  := `🌎`
 println(letter)      // A
@@ -51,7 +51,7 @@ println(int(letter)) // 65
 
 Small types are automatically promoted when combined with larger types on the same side of an operator:
 
-```go
+```v
 u := u16(12)
 v := 13 + u    // v is u16 — no promotion
 x := f32(45.6)
@@ -62,7 +62,7 @@ b := 14.7      // f64 (default for float literals)
 
 ## Numeric Literals
 
-```go
+```v
 n1 := 1_000_000      // underscores for readability
 n2 := 0xff           // hex
 n3 := 0o77           // octal
@@ -74,7 +74,7 @@ f1 := 3.14_159_265   // float with underscores
 
 A raw pointer type used mainly for C interoperability. Avoid in pure V code.
 
-```go
+```v
 // mostly for C interop
 p := voidptr(0)
 ```

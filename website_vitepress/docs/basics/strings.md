@@ -4,7 +4,7 @@ In V, strings are encoded in **UTF-8** and are **immutable** by default.
 
 ## Basic Usage
 
-```go
+```v
 s    := 'hello 🌎'
 name := 'Bob'
 
@@ -18,7 +18,7 @@ println(name[1..3])    // ob  (slicing returns a string)
 
 Use `${}` to embed expressions inside strings:
 
-```go
+```v
 name := 'Alice'
 age  := 30
 println('Hello, ${name}! You are ${age} years old.')
@@ -27,7 +27,7 @@ println('Is adult: ${age >= 18}')
 
 ## Multiline Strings
 
-```go
+```v
 text := 'line one
 line two
 line three'
@@ -37,14 +37,14 @@ line three'
 
 Prepend `r` to disable escape processing:
 
-```go
+```v
 s := r'hello\nworld'  // \n is kept as two characters
 println(s)            // hello\nworld
 ```
 
 ## String Methods
 
-```go
+```v
 s := 'Hello, World!'
 
 println(s.to_upper())      // HELLO, WORLD!
@@ -59,7 +59,7 @@ println(s.trim_space())    // Hello, World!  (removes leading/trailing whitespac
 
 ## Converting to Numbers
 
-```go
+```v
 s := '42'
 n := s.int()          // 42
 f := '3.14'.f64()     // 3.14
@@ -73,7 +73,7 @@ assert '0b1010'.int() == 10
 
 To work with Unicode characters rather than raw bytes, use `runes()`:
 
-```go
+```v
 mut s := 'hello 🌎'
 r := s.runes()
 println(r.len)    // 7  (7 Unicode code points, not 10 bytes)
@@ -84,7 +84,7 @@ println(r[6])     // 🌎
 
 For efficient string concatenation, use `strings.Builder`:
 
-```go
+```v
 import strings
 
 fn main() {

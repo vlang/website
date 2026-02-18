@@ -4,7 +4,7 @@
 
 ## Basic Usage
 
-```go
+```v
 x := 3
 
 match x {
@@ -17,7 +17,7 @@ match x {
 
 ## Match as an Expression
 
-```go
+```v
 name := 'Bob'
 greeting := match name {
     'Alice' { 'Hey Alice!' }
@@ -29,7 +29,7 @@ println(greeting)
 
 ## Matching Multiple Values
 
-```go
+```v
 n := 5
 match n {
     1, 3, 5, 7, 9 { println('odd') }
@@ -40,7 +40,7 @@ match n {
 
 ## Matching Ranges
 
-```go
+```v
 score := 72
 grade := match score {
     90..100 { 'A' }
@@ -56,7 +56,7 @@ println(grade) // C
 
 When matching on a sum type, V gives you access to the inner value with the correct type:
 
-```go
+```v
 type Shape = Circle | Rectangle
 
 struct Circle {
@@ -78,7 +78,7 @@ fn area(s Shape) f64 {
 
 ## FizzBuzz with Match
 
-```go
+```v
 for n in 1 .. 101 {
     println(match true {
         n % 15 == 0 { 'FizzBuzz' }

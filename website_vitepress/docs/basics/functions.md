@@ -2,7 +2,7 @@
 
 ## Basic Syntax
 
-```go
+```v
 fn main() {
     println(add(77, 33))
     println(sub(100, 50))
@@ -25,7 +25,7 @@ Functions can be used before they are declared. V hoists all declarations, so th
 
 ## Multiple Return Values
 
-```go
+```v
 fn foo() (int, int) {
     return 2, 3
 }
@@ -40,7 +40,7 @@ c, _ := foo() // ignore the second value with `_`
 
 Functions are **private** by default. Use `pub` to export them:
 
-```go
+```v
 pub fn public_function() {
 }
 
@@ -56,7 +56,7 @@ Functions cannot be overloaded. This keeps the code unambiguous and easy to read
 
 Functions can be attached to types:
 
-```go
+```v
 struct User {
     name string
     age  int
@@ -82,7 +82,7 @@ fn main() {
 
 Functions are first-class values and can be passed to other functions:
 
-```go
+```v
 fn apply(arr []int, f fn(int) int) []int {
     mut result := []int{}
     for x in arr {
@@ -104,7 +104,7 @@ fn main() {
 
 ## Anonymous Functions
 
-```go
+```v
 fn main() {
     double := fn (x int) int {
         return x * 2

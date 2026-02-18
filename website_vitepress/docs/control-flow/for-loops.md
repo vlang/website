@@ -6,7 +6,7 @@ V has a single looping keyword: `for`. It covers all iteration patterns.
 
 Iterate over a half-open range `start..end` (end is exclusive):
 
-```go
+```v
 for i in 0 .. 5 {
     println(i) // 0 1 2 3 4
 }
@@ -14,7 +14,7 @@ for i in 0 .. 5 {
 
 ## Iterating Over Arrays
 
-```go
+```v
 names := ['Alice', 'Bob', 'Carol']
 
 // value only
@@ -30,7 +30,7 @@ for i, name in names {
 
 ## Iterating Over Maps
 
-```go
+```v
 m := {'a': 1, 'b': 2, 'c': 3}
 
 for key, val in m {
@@ -40,7 +40,7 @@ for key, val in m {
 
 ## Classic C-style Loop
 
-```go
+```v
 for i := 0; i < 10; i++ {
     println(i)
 }
@@ -48,7 +48,7 @@ for i := 0; i < 10; i++ {
 
 ## Condition-only Loop (while equivalent)
 
-```go
+```v
 mut n := 0
 for n < 5 {
     println(n)
@@ -58,7 +58,7 @@ for n < 5 {
 
 ## Infinite Loop
 
-```go
+```v
 mut i := 0
 for {
     i++
@@ -68,7 +68,7 @@ for {
 
 ## `break` and `continue`
 
-```go
+```v
 for i in 0 .. 10 {
     if i == 3 { continue }  // skip 3
     if i == 7 { break }     // stop at 7
@@ -80,7 +80,7 @@ for i in 0 .. 10 {
 
 For nested loops, you can label and break/continue from an outer loop:
 
-```go
+```v
 outer: for i in 0 .. 3 {
     for j in 0 .. 3 {
         if j == 1 {
@@ -93,7 +93,7 @@ outer: for i in 0 .. 3 {
 
 ## Primes Example
 
-```go
+```v
 import math { log }
 
 n := 10

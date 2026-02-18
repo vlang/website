@@ -4,7 +4,7 @@
 
 Create a file named `hello.v`:
 
-```go
+```v
 fn main() {
     println('Hello, World!')
 }
@@ -27,7 +27,7 @@ v hello.v
 
 For single-file scripts, `fn main()` is optional:
 
-```go
+```v
 println('Hello, World!')
 ```
 
@@ -43,7 +43,7 @@ v run .
 
 ## Comments
 
-```go
+```v
 // This is a single line comment.
 /*
   This is a multiline comment.
@@ -53,7 +53,7 @@ v run .
 
 ## A Slightly Bigger Example
 
-```go
+```v
 // fibonacci.v — compute Fibonacci numbers up to a given rank
 const args = arguments()
 
