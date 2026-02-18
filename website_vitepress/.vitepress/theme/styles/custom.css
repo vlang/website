@@ -32,11 +32,17 @@
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Override VitePress default code block colours                             */
+/*  Code block colours — dark mode only                                       */
+/*  Light mode uses VitePress/Shiki defaults (github-light) automatically.    */
 /* -------------------------------------------------------------------------- */
-:root {
+.dark {
   --vp-code-block-bg: var(--v-code-bg);
   --vp-code-color: var(--v-code-text);
+}
+
+/* Light mode: give code blocks a clean subtle background */
+:root:not(.dark) {
+  --vp-code-block-bg: #f6f8fa;
 }
 
 /* -------------------------------------------------------------------------- */

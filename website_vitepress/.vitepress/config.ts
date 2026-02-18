@@ -121,6 +121,6 @@ export default defineConfig({
       light: 'github-light',
       dark: 'one-dark-pro',
     },
-    languages: ['go'],
+    languages: ['v'],
   },
 })
