@@ -94,7 +94,7 @@ onMounted(async () => {
 <style scoped>
 /* ── section shell ── */
 .hero {
-  background: #000;
+  background: #fff;
   padding: 88px 24px 80px;
   display: flex;
   flex-direction: column;
@@ -120,7 +120,7 @@ onMounted(async () => {
 .hero-name {
   font-size: 15px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(0, 0, 0, 0.55);
   letter-spacing: 0.2px;
 }
 
@@ -157,7 +157,7 @@ onMounted(async () => {
 }
 
 .motto-word {
-  color: #fff;
+  color: #0f0f0f;
   display: inline-block;
 }
 
@@ -170,12 +170,12 @@ onMounted(async () => {
 }
 
 .motto-word.muted {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(0, 0, 0, 0.35);
 }
 
 .hero-sub {
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
   margin: 0;
   font-weight: 400;
   letter-spacing: 0.1px;
@@ -196,9 +196,9 @@ onMounted(async () => {
   gap: 7px;
   padding: 11px 20px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.07);
-  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.8);
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
@@ -206,9 +206,9 @@ onMounted(async () => {
 }
 
 .btn-github:hover {
-  border-color: rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
+  border-color: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.08);
+  color: #000;
 }
 
 .github-icon {
@@ -219,7 +219,7 @@ onMounted(async () => {
 
 .stars {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(0, 0, 0, 0.4);
   margin-left: 2px;
 }
 
@@ -235,24 +235,73 @@ onMounted(async () => {
 }
 
 .hero-links a {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(0, 0, 0, 0.45);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
 }
 
 .hero-links a:hover {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(0, 0, 0, 0.85);
 }
 
 .dot {
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(0, 0, 0, 0.2);
 }
 
 /* ── carousel container ── */
 .hero-carousel {
   width: 100%;
   max-width: 1100px;
+}
+
+/* ── dark theme overrides ── */
+:global(.dark .hero) {
+  background: #000;
+}
+
+:global(.dark .hero-name) {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+:global(.dark .motto-word) {
+  color: #fff;
+}
+
+:global(.dark .motto-word.muted) {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+:global(.dark .hero-sub) {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+:global(.dark .btn-github) {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+:global(.dark .btn-github:hover) {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+:global(.dark .stars) {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+:global(.dark .hero-links a) {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+:global(.dark .hero-links a:hover) {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+:global(.dark .dot) {
+  color: rgba(255, 255, 255, 0.2);
 }
 
 /* ── responsive ── */
