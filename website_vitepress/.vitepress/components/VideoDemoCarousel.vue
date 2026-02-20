@@ -4,20 +4,30 @@
     <div class="vdc-stage">
       <div
         class="vdc-featured"
-        :style="{ backgroundImage: `url(${demos[active].thumbnail})` }"
+        :style="{ background: demos[active].gradient }"
         @click="openModal(active)"
       >
         <div class="vdc-featured-overlay">
-          <div class="vdc-play-ring">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <polygon points="5,3 19,12 5,21" />
-            </svg>
+          <!-- Billboard: identity + motto overlay (bottom-left) -->
+          <div v-if="$slots.billboard" class="vdc-billboard" @click.stop>
+            <slot name="billboard" />
           </div>
-          <div class="vdc-featured-meta">
-            <span class="vdc-tag">{{ demos[active].tag }}</span>
-            <h3 class="vdc-featured-title">{{ demos[active].title }}</h3>
-            <p class="vdc-featured-desc">{{ demos[active].desc }}</p>
-          </div>
+
+          <!-- Fallback centered meta when no billboard slot -->
+          <template v-else>
+            <!-- Play button: above the text -->
+            <button class="vdc-play-ring" @click.stop="openModal(active)" aria-label="Play video">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
+            </button>
+
+            <div class="vdc-featured-meta">
+              <span class="vdc-tag">{{ demos[active].tag }}</span>
+              <h3 class="vdc-featured-title">{{ demos[active].title }}</h3>
+              <p class="vdc-featured-desc">{{ demos[active].desc }}</p>
+            </div>
+          </template>
         </div>
       </div>
 
@@ -31,7 +41,12 @@
           @click="active = i"
           :aria-label="demo.title"
         >
-          <img :src="demo.thumbnail" :alt="demo.title" />
+          <div class="vdc-thumb-bg" :style="{ background: demo.gradient }" />
+          <div class="vdc-thumb-play">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <polygon points="5,3 19,12 5,21" />
+            </svg>
+          </div>
           <span class="vdc-thumb-label">{{ demo.title }}</span>
           <span class="vdc-thumb-indicator" />
         </button>
@@ -72,16 +87,15 @@ const demos = [
     tag: 'Overview',
     title: 'V in 100 Seconds',
     desc: 'A quick tour of V — syntax, speed, and what makes it different.',
-    // YouTube thumbnail for video ID Q8V5gu50HhE
-    thumbnail: 'https://i.ytimg.com/vi/Q8V5gu50HhE/maxresdefault.jpg',
+    gradient: 'linear-gradient(135deg, #0d1520 0%, #1a2d45 50%, #2a4878 100%)',
     videoId: 'Q8V5gu50HhE',
   },
   {
     id: 'vweb',
     tag: 'Web',
     title: 'Building a Web App',
-    desc: 'Create a full-stack web application with vweb — V\'s built-in HTTP framework.',
-    thumbnail: 'https://i.ytimg.com/vi/LFG4_2LSRMI/maxresdefault.jpg',
+    desc: "Create a full-stack web application with vweb — V's built-in HTTP framework.",
+    gradient: 'linear-gradient(135deg, #0f1825 0%, #1a2d4a 50%, #1e3d6e 100%)',
     videoId: 'LFG4_2LSRMI',
   },
   {
@@ -89,7 +103,7 @@ const demos = [
     tag: 'Performance',
     title: 'V vs C Benchmarks',
     desc: 'Comparing V compilation speed and runtime performance against C and Go.',
-    thumbnail: 'https://i.ytimg.com/vi/1rkp_nHAJPc/maxresdefault.jpg',
+    gradient: 'linear-gradient(135deg, #0d1218 0%, #162538 50%, #253d6b 100%)',
     videoId: '1rkp_nHAJPc',
   },
   {
@@ -97,7 +111,7 @@ const demos = [
     tag: 'Memory Safety',
     title: 'No GC, No Leaks',
     desc: 'How V achieves memory safety without a garbage collector.',
-    thumbnail: 'https://i.ytimg.com/vi/8yHlNTLoFiA/maxresdefault.jpg',
+    gradient: 'linear-gradient(135deg, #0a1018 0%, #152030 50%, #1c3260 100%)',
     videoId: '8yHlNTLoFiA',
   },
 ]
@@ -127,9 +141,7 @@ function closeModal() {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  background-size: cover;
-  background-position: center;
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -143,25 +155,46 @@ function closeModal() {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 0.65) 100%
+    160deg,
+    rgba(0, 0, 0, 0.08) 0%,
+    rgba(0, 0, 0, 0.5) 55%,
+    rgba(0, 0, 0, 0.82) 100%
   );
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: background 0.25s;
+  pointer-events: none;
 }
 
 .vdc-featured:hover .vdc-featured-overlay {
   background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.25) 0%,
-    rgba(0, 0, 0, 0.75) 100%
+    160deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.6) 55%,
+    rgba(0, 0, 0, 0.88) 100%
   );
 }
 
+/* Billboard slot: bottom-left text overlay */
+.vdc-billboard {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 28px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Re-enable pointer events for interactive elements inside billboard */
+.vdc-billboard :deep(a),
+.vdc-billboard :deep(button) {
+  pointer-events: auto;
+}
+
+/* Play button: centered via flex column */
 .vdc-play-ring {
   width: 72px;
   height: 72px;
@@ -173,9 +206,12 @@ function closeModal() {
   align-items: center;
   justify-content: center;
   color: #fff;
-  transition: background 0.2s, transform 0.2s;
+  cursor: pointer;
+  pointer-events: auto;
   flex-shrink: 0;
   margin-bottom: 24px;
+  z-index: 3;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .vdc-play-ring svg {
@@ -192,6 +228,7 @@ function closeModal() {
 .vdc-featured-meta {
   text-align: center;
   padding: 0 32px;
+  z-index: 2;
 }
 
 .vdc-tag {
@@ -226,7 +263,7 @@ function closeModal() {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  margin-top: 12px;
+  padding: 14px 0 4px;
 }
 
 .vdc-thumb {
@@ -245,18 +282,49 @@ function closeModal() {
   transform: scale(1.03);
 }
 
-.vdc-thumb img {
+.vdc-thumb-bg {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: brightness(0.5) saturate(0.8);
-  transition: filter 0.2s;
+  opacity: 0.55;
+  transition: opacity 0.2s;
 }
 
-.vdc-thumb.active img,
-.vdc-thumb:hover img {
-  filter: brightness(0.75) saturate(1);
+.vdc-thumb.active .vdc-thumb-bg,
+.vdc-thumb:hover .vdc-thumb-bg {
+  opacity: 0.8;
+}
+
+.vdc-thumb-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0.7;
+  transition: opacity 0.2s, background 0.2s;
+  pointer-events: none;
+}
+
+.vdc-thumb-play svg {
+  width: 12px;
+  height: 12px;
+  margin-left: 2px;
+}
+
+.vdc-thumb.active .vdc-thumb-play,
+.vdc-thumb:hover .vdc-thumb-play {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .vdc-thumb-label {
@@ -267,8 +335,7 @@ function closeModal() {
   padding: 8px;
   font-size: 11px;
   font-weight: 600;
-  color: rgba(255,255,255,0.85);
-  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);
+  color: rgba(255,255,255,0.9);
   pointer-events: none;
   line-height: 1.2;
 }
@@ -365,7 +432,10 @@ function closeModal() {
   .vdc-play-ring {
     width: 56px;
     height: 56px;
-    margin-bottom: 16px;
+  }
+
+  .vdc-billboard {
+    padding: 14px 16px;
   }
 }
 </style>
