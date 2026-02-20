@@ -1,66 +1,68 @@
 <template>
   <section class="hero">
-    <div class="hero-inner">
-      <!-- Left column -->
-      <div class="hero-info">
-        <div class="hero-brand">
-          <img src="/img/v-logo.png" alt="V logo" class="hero-logo" />
-          <div class="hero-title-block">
-            <h1 class="hero-title">The V Programming Language</h1>
-            <span class="version-badge">v0.5.0</span>
-          </div>
-        </div>
+    <!-- top identity row -->
+    <div class="hero-identity">
+      <img src="/img/v-logo.png" alt="V logo" class="hero-logo" />
+      <span class="hero-name">The V Programming Language</span>
+      <span class="version-badge">v0.5.0</span>
+    </div>
 
-        <p class="hero-tagline">
-          Simple, fast, safe, compiled.<br />
-          For developing maintainable software.
-        </p>
+    <!-- headline -->
+    <div class="hero-headline">
+      <h1 class="hero-motto">
+        <span class="motto-word">Simple.</span>
+        <span class="motto-word accent">Fast.</span>
+        <span class="motto-word">Safe.</span>
+        <span class="motto-word muted">Compiled.</span>
+      </h1>
+      <p class="hero-sub">For developing maintainable software.</p>
+    </div>
 
-        <div class="hero-actions">
-          <DownloadButton />
-          <a
-            class="btn-github"
-            href="https://github.com/vlang/v"
-            target="_blank"
-            rel="noopener"
-          >
-            <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true">
-              <path
-                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
-                   0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
-                   -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87
-                   2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
-                   0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21
-                   2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04
-                   2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82
-                   2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
-                   1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-              />
-            </svg>
-            GitHub
-            <span class="stars">★ {{ formattedStars }}</span>
-          </a>
-        </div>
+    <!-- action row -->
+    <div class="hero-actions">
+      <DownloadButton />
+      <a
+        class="btn-github"
+        href="https://github.com/vlang/v"
+        target="_blank"
+        rel="noopener"
+      >
+        <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true">
+          <path
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+               0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+               -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87
+               2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+               0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21
+               2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04
+               2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82
+               2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
+               1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+          />
+        </svg>
+        GitHub
+        <span class="stars">★ {{ formattedStars }}</span>
+      </a>
+    </div>
 
-        <div class="hero-links">
-          <a href="https://fast.vlang.io/" target="_blank" rel="noopener">Is V still fast?</a>
-          <span class="dot">·</span>
-          <a href="https://github.com/vlang/v/wiki/FAQ" target="_blank">FAQ</a>
-          <span class="dot">·</span>
-          <a href="/docs/">Docs</a>
-          <span class="dot">·</span>
-          <a href="https://github.com/vlang/v/blob/master/CHANGELOG.md" target="_blank">Changelog</a>
-          <span class="dot">·</span>
-          <a href="/showcase">Built with V</a>
-          <span class="dot">·</span>
-          <a href="https://github.com/vlang/rfcs" target="_blank" rel="noopener">RFCs</a>
-        </div>
-      </div>
+    <!-- quick links -->
+    <nav class="hero-links" aria-label="Quick links">
+      <a href="https://fast.vlang.io/" target="_blank" rel="noopener">Is V still fast?</a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="https://github.com/vlang/v/wiki/FAQ" target="_blank">FAQ</a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="/docs/">Docs</a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="https://github.com/vlang/v/blob/master/CHANGELOG.md" target="_blank">Changelog</a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="/showcase">Built with V</a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="https://github.com/vlang/rfcs" target="_blank" rel="noopener">RFCs</a>
+    </nav>
 
-      <!-- Right column: code carousel -->
-      <div class="hero-code">
-        <CodeCarousel />
-      </div>
+    <!-- video demo carousel -->
+    <div class="hero-carousel">
+      <VideoDemoCarousel />
     </div>
   </section>
 </template>
@@ -68,7 +70,7 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
 import DownloadButton from './DownloadButton.vue'
-import CodeCarousel from './CodeCarousel.vue'
+import VideoDemoCarousel from './VideoDemoCarousel.vue'
 
 const stars = ref<number | null>(null)
 
@@ -84,87 +86,109 @@ onMounted(async () => {
     const data = await res.json()
     stars.value = data.stargazers_count
   } catch {
-    // silently fail; star count simply won't show
+    // silently fail
   }
 })
 </script>
 
 <style scoped>
+/* ── section shell ── */
 .hero {
-  background: var(--vp-c-bg);
-  border-bottom: 1px solid var(--vp-c-divider);
-  padding: 72px 24px 64px;
+  background: #000;
+  padding: 88px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
 }
 
-.hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+/* ── identity row ── */
+.hero-identity {
   display: flex;
   align-items: center;
-  gap: 64px;
-}
-
-/* ---------- left column ---------- */
-.hero-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.hero-brand {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin-bottom: 48px;
 }
 
 .hero-logo {
-  width: 64px;
-  height: 64px;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
+  filter: brightness(0) invert(1);
 }
 
-.hero-title-block {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.hero-title {
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--vp-c-text-1);
-  margin: 0;
-  border: none;
-  padding: 0;
+.hero-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.2px;
 }
 
 .version-badge {
-  display: inline-block;
-  background: var(--vp-c-brand-soft);
-  color: var(--vp-c-brand-1);
-  border: 1px solid var(--vp-c-brand-1);
+  display: inline-flex;
+  align-items: center;
+  background: rgba(64, 120, 192, 0.18);
+  color: #7ab0f5;
+  border: 1px solid rgba(64, 120, 192, 0.45);
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  padding: 2px 10px;
+  padding: 2px 9px;
   letter-spacing: 0.5px;
-  width: fit-content;
 }
 
-.hero-tagline {
-  font-size: 18px;
-  color: var(--vp-c-text-2);
-  line-height: 1.65;
-  margin: 0 0 28px;
+/* ── headline ── */
+.hero-headline {
+  margin-bottom: 40px;
 }
 
-/* ---------- action row ---------- */
+.hero-motto {
+  margin: 0 0 20px;
+  padding: 0;
+  border: none;
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 0.25em;
+}
+
+.motto-word {
+  color: #fff;
+  display: inline-block;
+}
+
+.motto-word.accent {
+  color: #4078c0;
+  background: linear-gradient(135deg, #4078c0, #7ab0f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.motto-word.muted {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.hero-sub {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+}
+
+/* ── actions ── */
 .hero-actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  justify-content: center;
+  margin-bottom: 24px;
 }
 
 .btn-github {
@@ -173,9 +197,9 @@ onMounted(async () => {
   gap: 7px;
   padding: 11px 20px;
   border-radius: 8px;
-  border: 1px solid var(--vp-c-divider);
-  background: var(--vp-c-bg-alt);
-  color: var(--vp-c-text-1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
@@ -183,8 +207,9 @@ onMounted(async () => {
 }
 
 .btn-github:hover {
-  border-color: var(--vp-c-brand-1);
-  background: var(--vp-c-bg-elv);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
 }
 
 .github-icon {
@@ -195,59 +220,59 @@ onMounted(async () => {
 
 .stars {
   font-size: 12px;
-  color: var(--vp-c-text-3);
+  color: rgba(255, 255, 255, 0.4);
   margin-left: 2px;
 }
 
-/* ---------- quick links ---------- */
+/* ── quick links ── */
 .hero-links {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-  font-size: 14px;
+  justify-content: center;
+  font-size: 13px;
+  margin-bottom: 56px;
 }
 
 .hero-links a {
-  color: var(--vp-c-brand-1);
+  color: rgba(255, 255, 255, 0.45);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.2s;
 }
 
 .hero-links a:hover {
-  text-decoration: underline;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .dot {
-  color: var(--vp-c-text-3);
+  color: rgba(255, 255, 255, 0.2);
 }
 
-/* ---------- right column ---------- */
-.hero-code {
-  flex: 1;
-  min-width: 0;
+/* ── carousel container ── */
+.hero-carousel {
+  width: 100%;
+  max-width: 1100px;
 }
 
-/* ---------- responsive ---------- */
-@media (max-width: 900px) {
-  .hero-inner {
-    flex-direction: column;
-    gap: 40px;
-  }
-  .hero-code {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
+/* ── responsive ── */
+@media (max-width: 640px) {
   .hero {
-    padding: 48px 16px 40px;
+    padding: 64px 16px 56px;
   }
-  .hero-title {
-    font-size: 22px;
+
+  .hero-motto {
+    letter-spacing: -1px;
+    gap: 0 0.2em;
   }
-  .hero-tagline {
+
+  .hero-sub {
     font-size: 16px;
+  }
+
+  .hero-links {
+    margin-bottom: 40px;
   }
 }
 </style>
