@@ -37,6 +37,8 @@
         >download pre-built binaries</a>
         for Windows, macOS, and Linux.
       </p>
+
+      <a class="btn-getting-started" href="/docs/">Getting Started →</a>
     </div>
   </section>
 </template>
@@ -200,5 +202,26 @@ async function copyCmd() {
 
 .install-note a:hover {
   text-decoration: underline;
+}
+
+.btn-getting-started {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 24px;
+  padding: 11px 22px;
+  border-radius: 8px;
+  border: 1px solid rgba(64, 120, 192, 0.6);
+  background: rgba(64, 120, 192, 0.2);
+  color: var(--vp-c-brand-1);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.btn-getting-started:hover {
+  border-color: rgba(64, 120, 192, 0.9);
+  background: rgba(64, 120, 192, 0.35);
+  color: #fff;
 }
 </style>
