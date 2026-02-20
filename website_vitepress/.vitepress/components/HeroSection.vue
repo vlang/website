@@ -115,7 +115,6 @@ onMounted(async () => {
   width: 32px;
   height: 32px;
   flex-shrink: 0;
-  filter: brightness(0) invert(1);
 }
 
 .hero-name {
