@@ -1,43 +1,7 @@
-examples
-أمثلة
------
-documentation
-المرجع
------
-modules
-وحدات
------
-faq
-أسئلة متداولة
------
-built_in_v
-مبني فى لغة الفيي (V)
------
-the_v_lang
-لغة البرمجة فيي (V)
------
-v_slogan
-سهلة، سريعة، آمنة، و لغة (تجميع) لتطوير برامج قوية و مستدامة
------
-includes_binaries 
-تشمل الثنائيات لـ 3 أنظمة
------
-install_source 
-أو تثبيت لغة فيي من المصدر
------
-couple_seconds 
-هذا سيستغرق بضع ثوان
------
-wip_info
-فيي (V) هي لغة في مرحلة مبكرة من تطورها.
-الميزات التي لا تزال قيد العمل يتم تمييزها بـ $ wip
-<br>
-كل شئ في هذه الصفحة تم الانتهاء منه وهو مفتوح المصدر
-<p>
-بحلول وقت إصدار V 1.0 المخطط له في كانون الأول (ديسمبر) 2019 ، لن يتبقى أي ($wips)
------
-forum
-المنتدى
+<meta name="description" content="A basic HTML tutorial">
+<meta name="keywords" content="HTML,code,tags">
+<meta name="author" content="MakeUseOf">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">المنتدى
 -----
 blog
 مدونة 
