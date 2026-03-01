@@ -85,6 +85,7 @@ function getNav(): DefaultTheme.NavItem[] {
 export default defineConfig({
   title: 'The V Programming Language | Fast, Safe, Compiled & Maintainable',
   description: 'A simple, fast, safe, compiled language for developing maintainable software. Batteries included, cross-platform and open source.',
+  srcDir: './content',
   lang: 'en-US',
   appearance: 'dark',
   cleanUrls: true,
