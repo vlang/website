@@ -1,8 +1,8 @@
 # Hello World
 
-## Your First V Program
+## Vaš prvi V program
 
-Create a file named `hello.v`:
+Kreirajte datoteku pod nazivom `hello.v`:
 
 ```v
 fn main() {
@@ -10,51 +10,51 @@ fn main() {
 }
 ```
 
-Run it:
+Pokrenite je:
 
 ```bash
 v run hello.v
 ```
 
-Or compile and run separately:
+Ili kompajlirajte i pokrenite odvojeno:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-## Skipping `fn main()`
+## Preskakanje `fn main()`
 
-For single-file scripts, `fn main()` is optional:
+Za skripte s jednom datotekom, `fn main()` je opcionalan:
 
 ```v
 println('Hello, World!')
 ```
 
-This is useful for small programs and learning the language.
+Ovo je korisno za male programe i učenje jezika.
 
-## Running Multiple Files
+## Pokretanje više datoteka
 
-If your project has multiple `.v` files in a folder, run all of them at once:
+Ako vaš projekt ima više `.v` datoteka u folderu, pokrenite ih sve odjednom:
 
 ```bash
 v run .
 ```
 
-## Comments
+## Komentari
 
 ```v
-// This is a single line comment.
+// Ovo je jednolinjski komentar.
 /*
-  This is a multiline comment.
-  /* It can be nested. */
+  Ovo je višelinjski komentar.
+  /* Može biti ugniježđen. */
 */
 ```
 
-## A Slightly Bigger Example
+## Nešto veći primjer
 
 ```v
-// fibonacci.v — compute Fibonacci numbers up to a given rank
+// fibonacci.v — izračunava Fibonacci brojeve do zadanog ranga
 const args = arguments()
 
 fn main() {

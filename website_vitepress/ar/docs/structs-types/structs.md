@@ -1,8 +1,8 @@
-# Structs
+# البنيات (Structs)
 
-Structs are used to define custom data types with named fields.
+تُستخدم البنيات لتعريف أنواع بيانات مخصصة بحقول مُسمَّاة.
 
-## Basic Struct
+## البنية الأساسية
 
 ```v
 struct Point {
@@ -17,9 +17,9 @@ fn main() {
 }
 ```
 
-## Mutable Structs
+## البنيات القابلة للتغيير
 
-Fields are immutable by default. Use `mut:` to declare mutable fields:
+الحقول غير قابلة للتغيير بشكل افتراضي. استخدم `mut:` لإعلان الحقول القابلة للتغيير:
 
 ```v
 struct User {
@@ -38,7 +38,7 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## معدِّلات الوصول
 
 ```v
 struct Foo {
@@ -54,9 +54,9 @@ __global:
 }
 ```
 
-## Methods
+## الأساليب
 
-Functions can be attached to structs:
+يمكن ربط الدوال بالبنيات:
 
 ```v
 struct Rectangle {
@@ -79,9 +79,9 @@ fn main() {
 }
 ```
 
-## Embedding
+## التضمين (Embedding)
 
-Structs can embed other structs to inherit their fields and methods:
+يمكن للبنيات تضمين بنيات أخرى لوراثة حقولها وأساليبها:
 
 ```v
 struct Animal {
@@ -108,7 +108,7 @@ fn main() {
 }
 ```
 
-## Default Field Values
+## القيم الافتراضية للحقول
 
 ```v
 struct Config {
@@ -124,7 +124,7 @@ fn main() {
 }
 ```
 
-## JSON Example
+## مثال JSON
 
 ```v
 import json

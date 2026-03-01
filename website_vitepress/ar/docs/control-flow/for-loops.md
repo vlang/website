@@ -1,10 +1,10 @@
-# For Loops
+# حلقات For
 
-V has a single looping keyword: `for`. It covers all iteration patterns.
+تمتلك V كلمةً مفتاحيةً واحدة للتكرار: `for`. وهي تغطي جميع أنماط التكرار.
 
-## Range Loop
+## حلقة النطاق
 
-Iterate over a half-open range `start..end` (end is exclusive):
+التكرار على نطاق نصف مفتوح `start..end` (النهاية غير مشمولة):
 
 ```v
 for i in 0 .. 5 {
@@ -12,7 +12,7 @@ for i in 0 .. 5 {
 }
 ```
 
-## Iterating Over Arrays
+## التكرار على المصفوفات
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
@@ -28,7 +28,7 @@ for i, name in names {
 }
 ```
 
-## Iterating Over Maps
+## التكرار على الخرائط
 
 ```v
 m := {'a': 1, 'b': 2, 'c': 3}
@@ -38,7 +38,7 @@ for key, val in m {
 }
 ```
 
-## Classic C-style Loop
+## حلقة بأسلوب C الكلاسيكي
 
 ```v
 for i := 0; i < 10; i++ {
@@ -46,7 +46,7 @@ for i := 0; i < 10; i++ {
 }
 ```
 
-## Condition-only Loop (while equivalent)
+## حلقة بشرط فقط (مكافئ while)
 
 ```v
 mut n := 0
@@ -56,7 +56,7 @@ for n < 5 {
 }
 ```
 
-## Infinite Loop
+## الحلقة اللانهائية
 
 ```v
 mut i := 0
@@ -66,7 +66,7 @@ for {
 }
 ```
 
-## `break` and `continue`
+## `break` و`continue`
 
 ```v
 for i in 0 .. 10 {
@@ -76,9 +76,9 @@ for i in 0 .. 10 {
 }
 ```
 
-## Labeled Loops
+## الحلقات المُسمَّاة
 
-For nested loops, you can label and break/continue from an outer loop:
+بالنسبة للحلقات المتداخلة، يمكنك تسمية الحلقات والخروج/الاستمرار من حلقة خارجية:
 
 ```v
 outer: for i in 0 .. 3 {
@@ -91,7 +91,7 @@ outer: for i in 0 .. 3 {
 }
 ```
 
-## Primes Example
+## مثال الأعداد الأولية
 
 ```v
 import math { log }

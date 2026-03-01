@@ -1,6 +1,6 @@
-# Arrays
+# Nizovi
 
-## Basic Usage
+## Osnovna upotreba
 
 ```v
 mut nums := [1, 2, 3]
@@ -11,9 +11,9 @@ nums[1] = 20
 println(nums)        // [1, 20, 3]
 ```
 
-## Typed Arrays
+## Tipizirani nizovi
 
-Array element types are inferred. You can also declare an empty array with an explicit type:
+Tipovi elemenata niza se automatski određuju. Možete i deklarirati prazan niz s eksplicitnim tipom:
 
 ```v
 mut names := []string{}
@@ -22,37 +22,37 @@ names << 'Bob'
 println(names) // ['Alice', 'Bob']
 ```
 
-## Pre-allocated Arrays
+## Unaprijed alocirani nizovi
 
 ```v
-// array of 5 ints, all initialized to 0
+// niz od 5 integera, svi inicijalizirani na 0
 a := []int{len: 5}
 
-// array of 3 strings, all initialized to 'x'
+// niz od 3 stringa, svi inicijalizirani na 'x'
 b := []string{len: 3, init: 'x'}
 ```
 
-## Appending Elements
+## Dodavanje elemenata
 
-Use `<<` to append:
+Koristite `<<` za dodavanje:
 
 ```v
 mut a := [1, 2, 3]
 a << 4
-a << [5, 6]   // append another array
+a << [5, 6]   // dodaj još jedan niz
 println(a)    // [1, 2, 3, 4, 5, 6]
 ```
 
-## Slicing
+## Rezanje (Slicing)
 
 ```v
 a := [1, 2, 3, 4, 5]
-b := a[1..3]  // [2, 3]  (from index 1, up to but not including 3)
-c := a[..2]   // [1, 2]  (from start to index 2)
-d := a[3..]   // [4, 5]  (from index 3 to end)
+b := a[1..3]  // [2, 3]  (od indeksa 1, do ali ne uključujući 3)
+c := a[..2]   // [1, 2]  (od početka do indeksa 2)
+d := a[3..]   // [4, 5]  (od indeksa 3 do kraja)
 ```
 
-## Iteration
+## Iteracija
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
@@ -66,7 +66,7 @@ for i, name in names {
 }
 ```
 
-## Common Methods
+## Uobičajene metode
 
 ```v
 mut a := [3, 1, 4, 1, 5, 9, 2, 6]
@@ -88,7 +88,7 @@ mapped := a.map(it * 2)
 println(mapped) // [18, 12, 10, 8, 6, 4, 2, 2]
 ```
 
-## Multidimensional Arrays
+## Višedimenzionalni nizovi
 
 ```v
 mut matrix := [][]int{len: 3, init: []int{len: 3}}
@@ -98,12 +98,12 @@ matrix[2][2] = 9
 println(matrix) // [[1, 0, 0], [0, 5, 0], [0, 0, 9]]
 ```
 
-## Fixed-size Arrays
+## Nizovi fiksne veličine
 
 ```v
-mut a := [5]int{}   // fixed array of 5 ints
+mut a := [5]int{}   // fiksni niz od 5 integera
 a[0] = 10
 println(a)          // [10, 0, 0, 0, 0]
 ```
 
-Fixed arrays are stack-allocated and cannot be grown.
+Nizovi fiksne veličine se alociraju na stogu i ne mogu rasti.

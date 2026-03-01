@@ -1,67 +1,67 @@
-# Installation
+# Instal·lació
 
-## Install from Source
+## Instal·lar des del Codi Font
 
-The recommended way to install V is from source. It only takes a few seconds:
+La manera recomanada d'instal·lar V és des del codi font. Tan sols triga uns quants segons:
 
 ```bash
 git clone --depth=1 https://github.com/vlang/v && cd v && make
 ```
 
-On Windows, use `make.bat` instead of `make`.
+A Windows, usa `make.bat` en comptes de `make`.
 
-## Symlink V
+## Crear un Enllaç Simbòlic de V
 
-After building, you can symlink V so it's available everywhere:
+Després de compilar, pots crear un enllaç simbòlic de V perquè estigui disponible a tot arreu:
 
 ```bash
 sudo ./v symlink
 ```
 
-On Windows, run `v.exe symlink` from an elevated command prompt.
+A Windows, executa `v.exe symlink` des d'un símbol del sistema elevat.
 
-## Verify Installation
+## Verificar la Instal·lació
 
 ```bash
 v version
 ```
 
-You should see output like `V 0.5.0 ...`.
+Hauries de veure una sortida com `V 0.5.0 ...`.
 
-## Download Pre-built Binaries
+## Descarregar Binaris Precompilats
 
-Pre-built binaries are available for all major platforms on the
-[GitHub Releases](https://github.com/vlang/v/releases/latest) page:
+Hi ha binaris precompilats disponibles per a totes les plataformes principals a la pàgina de
+[GitHub Releases](https://github.com/vlang/v/releases/latest):
 
-| Platform | File |
+| Plataforma | Fitxer |
 | --- | --- |
 | Linux (x86_64) | `v_linux.zip` |
 | macOS (Apple Silicon) | `v_macos_arm64.zip` |
 | macOS (Intel) | `v_macos_x86_64.zip` |
 | Windows | `v_windows.zip` |
 
-## Upgrading V
+## Actualitzar V
 
-To upgrade V to the latest version, run:
+Per actualitzar V a l'última versió, executa:
 
 ```bash
 v up
 ```
 
-## Running a Program
+## Executar un Programa
 
 ```bash
 v run hello.v
 ```
 
-Or compile it:
+O compila'l:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-To run all `.v` files in a directory:
+Per executar tots els fitxers `.v` d'un directori:
 
 ```bash
 v run .

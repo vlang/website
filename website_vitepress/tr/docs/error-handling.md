@@ -1,10 +1,10 @@
-# Error Handling
+# Hata Yönetimi
 
-V uses **Option** and **Result** types instead of exceptions. This makes error handling explicit and visible in function signatures.
+V, istisnalar yerine **Option** ve **Result** türlerini kullanır. Bu, hata yönetimini açık ve fonksiyon imzalarında görünür kılar.
 
-## Option Types
+## Option Türleri
 
-An `?T` (option) holds either a value of type `T` or `none`:
+`?T` (option), `T` türünde bir değer veya `none` tutar:
 
 ```v
 fn find_user(id int) ?string {
@@ -21,9 +21,9 @@ fn main() {
 }
 ```
 
-## Result Types
+## Result Türleri
 
-A `!T` (result) holds either a value of type `T` or an error:
+`!T` (result), `T` türünde bir değer veya bir hata tutar:
 
 ```v
 fn divide(a f64, b f64) !f64 {
@@ -42,9 +42,9 @@ fn main() {
 }
 ```
 
-## The `or` Block
+## `or` Bloğu
 
-The `or` block runs when the result is `none` or an error. Inside `or`, `err` holds the error value:
+`or` bloğu, sonuç `none` veya hata olduğunda çalışır. `or` içinde `err`, hata değerini tutar:
 
 ```v
 import net.http
@@ -58,20 +58,20 @@ fn main() {
 }
 ```
 
-## Propagating Errors with `!`
+## `!` ile Hataları Yayma
 
-Adding `!` after a call propagates the error up to the caller (similar to `?` in Rust):
+Bir çağrıdan sonra `!` eklemek, hatayı çağırana yayar (Rust'taki `?`'ye benzer):
 
 ```v
 fn read_config(path string) !string {
-    content := os.read_file(path)!  // propagates if error
+    content := os.read_file(path)!  // hata varsa yayar
     return content
 }
 ```
 
-## Custom Errors
+## Özel Hatalar
 
-Implement the `IError` interface to create custom error types:
+Özel hata türleri oluşturmak için `IError` arayüzünü uygulayın:
 
 ```v
 struct DivisionError {
@@ -95,7 +95,7 @@ fn safe_divide(a f64, b f64) !f64 {
 }
 ```
 
-## Matching on Error Types
+## Hata Türlerinde Eşleştirme
 
 ```v
 import semver
@@ -120,9 +120,9 @@ fn check_error(err IError) {
 }
 ```
 
-## The `?` Unwrap Operator
+## `?` Açma Operatörü
 
-Use `val?` inside an option context to unwrap or propagate `none`:
+Bir option bağlamında `none`'ı açmak veya yaymak için `val?` kullanın:
 
 ```v
 fn get_name(users map[int]string, id int) ?string {

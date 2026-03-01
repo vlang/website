@@ -1,8 +1,8 @@
 # Variables
 
-## Declaration and Initialization
+## Declaració i Inicialització
 
-Variables are declared and initialized with `:=`. This is the only way to declare variables in V — they always have an initial value and their type is inferred from the right-hand side.
+Les variables es declaren i inicialitzen amb `:=`. Aquesta és l'única manera de declarar variables en V — sempre tenen un valor inicial i el seu tipus s'infereix del costat dret.
 
 ```v
 name := 'Bob'
@@ -13,9 +13,9 @@ println(age)
 println(large_number)
 ```
 
-## Mutable Variables
+## Variables Mutables
 
-Variables are **immutable by default**. Use `mut` to make a variable mutable:
+Les variables són **immutables per defecte**. Usa `mut` per fer una variable mutable:
 
 ```v
 mut age := 20
@@ -24,11 +24,11 @@ age = 21
 println(age)
 ```
 
-> If you try to reassign without `mut`, the compiler will refuse to compile.
+> Si intentes reassignar sense `mut`, el compilador es negarà a compilar.
 
-## Type Conversion
+## Conversió de Tipus
 
-Use `T(value)` to convert between types:
+Usa `T(value)` per convertir entre tipus:
 
 ```v
 x := 42
@@ -36,9 +36,9 @@ y := f64(x)  // x converted to f64
 z := u8(x)   // x converted to u8
 ```
 
-## Multiple Assignment
+## Assignació Múltiple
 
-Multiple variables can be changed or swapped in one line:
+Múltiples variables es poden canviar o intercanviar en una sola línia:
 
 ```v
 mut a := 0
@@ -48,9 +48,9 @@ a, b = b, a
 println('${a}, ${b}') // 1, 0
 ```
 
-## Ignoring Values
+## Ignorar Valors
 
-Use `_` to discard a return value:
+Usa `_` per descartar un valor de retorn:
 
 ```v
 fn foo() (int, int) {
@@ -63,21 +63,21 @@ fn main() {
 }
 ```
 
-## Naming Convention
+## Convenció de Nomenclatura
 
-All variable and function names must use `snake_case`. Type names must use `PascalCase`. The compiler enforces this.
+Tots els noms de variables i funcions han d'usar `snake_case`. Els noms de tipus han d'usar `PascalCase`. El compilador ho imposa.
 
-## No Global Variables
+## Sense Variables Globals
 
-V does not allow global variables by default. All variables must be declared inside functions. This leads to more predictable, testable code.
+V no permet variables globals per defecte. Totes les variables s'han de declarar dins de funcions. Això porta a un codi més predictible i proves.
 
-## No Shadowing
+## Sense Ombreig
 
-Variable shadowing is not allowed. Declaring a variable with a name already used in a parent scope is a compile error:
+L'ombreig de variables no està permès. Declarar una variable amb un nom ja usat en un àmbit pare és un error de compilació:
 
 ```v
 fn main() {
     a := 10
-    // a := 20  // ← compile error: redefinition of `a`
+    // a := 20  // ← error de compilació: redefinició de `a`
 }
 ```

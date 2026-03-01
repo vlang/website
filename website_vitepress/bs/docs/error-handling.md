@@ -1,10 +1,10 @@
-# Error Handling
+# Rukovanje greškama
 
-V uses **Option** and **Result** types instead of exceptions. This makes error handling explicit and visible in function signatures.
+V koristi tipove **Option** i **Result** umjesto iznimki. Ovo čini rukovanje greškama eksplicitnim i vidljivim u potpisima funkcija.
 
-## Option Types
+## Option tipovi
 
-An `?T` (option) holds either a value of type `T` or `none`:
+`?T` (opcija) sadrži ili vrijednost tipa `T` ili `none`:
 
 ```v
 fn find_user(id int) ?string {
@@ -21,9 +21,9 @@ fn main() {
 }
 ```
 
-## Result Types
+## Result tipovi
 
-A `!T` (result) holds either a value of type `T` or an error:
+`!T` (rezultat) sadrži ili vrijednost tipa `T` ili grešku:
 
 ```v
 fn divide(a f64, b f64) !f64 {
@@ -42,9 +42,9 @@ fn main() {
 }
 ```
 
-## The `or` Block
+## Blok `or`
 
-The `or` block runs when the result is `none` or an error. Inside `or`, `err` holds the error value:
+Blok `or` se izvršava kada je rezultat `none` ili greška. Unutar `or`, `err` sadrži vrijednost greške:
 
 ```v
 import net.http
@@ -58,20 +58,20 @@ fn main() {
 }
 ```
 
-## Propagating Errors with `!`
+## Propagiranje grešaka s `!`
 
-Adding `!` after a call propagates the error up to the caller (similar to `?` in Rust):
+Dodavanje `!` nakon poziva propagira grešku do pozivaoca (slično `?` u Rustu):
 
 ```v
 fn read_config(path string) !string {
-    content := os.read_file(path)!  // propagates if error
+    content := os.read_file(path)!  // propagira ako dođe do greške
     return content
 }
 ```
 
-## Custom Errors
+## Prilagođene greške
 
-Implement the `IError` interface to create custom error types:
+Implementirajte sučelje `IError` za kreiranje prilagođenih tipova grešaka:
 
 ```v
 struct DivisionError {
@@ -95,7 +95,7 @@ fn safe_divide(a f64, b f64) !f64 {
 }
 ```
 
-## Matching on Error Types
+## Podudaranje na tipovima grešaka
 
 ```v
 import semver
@@ -120,9 +120,9 @@ fn check_error(err IError) {
 }
 ```
 
-## The `?` Unwrap Operator
+## Operator `?` za raspakivanje
 
-Use `val?` inside an option context to unwrap or propagate `none`:
+Koristite `val?` unutar option konteksta za raspakivanje ili propagiranje `none`:
 
 ```v
 fn get_name(users map[int]string, id int) ?string {

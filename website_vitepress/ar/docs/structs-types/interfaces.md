@@ -1,8 +1,8 @@
-# Interfaces
+# الواجهات (Interfaces)
 
-Interfaces define a contract — a set of methods that a type must implement. There is no explicit `implements` keyword; types satisfy interfaces automatically (structural/duck typing).
+تُحدِّد الواجهات عقدًا — مجموعةً من الأساليب التي يجب أن يُنفِّذها النوع. لا توجد كلمة مفتاحية صريحة `implements`؛ تستوفي الأنواع الواجهات تلقائيًا (الكتابة الهيكلية/البطية).
 
-## Defining an Interface
+## تعريف واجهة
 
 ```v
 interface Shape {
@@ -11,9 +11,9 @@ interface Shape {
 }
 ```
 
-## Implementing an Interface
+## تنفيذ واجهة
 
-Any struct that has the required methods automatically implements the interface:
+تُنفِّذ أي بنية تمتلك الأساليب المطلوبة الواجهة تلقائيًا:
 
 ```v
 struct Circle {
@@ -42,7 +42,7 @@ fn (r Rectangle) perimeter() f64 {
 }
 ```
 
-## Using Interfaces
+## استخدام الواجهات
 
 ```v
 fn print_shape_info(s Shape) {
@@ -63,9 +63,9 @@ fn main() {
 }
 ```
 
-## Interface with Fields
+## الواجهة مع الحقول
 
-Interfaces can also require fields (not just methods):
+يمكن للواجهات أيضًا أن تطلب حقولاً (ليس فقط أساليب):
 
 ```v
 interface Named {
@@ -86,7 +86,7 @@ fn main() {
 }
 ```
 
-## Type Checking with Interfaces
+## التحقق من الأنواع مع الواجهات
 
 ```v
 fn describe(s Shape) {
@@ -98,7 +98,7 @@ fn describe(s Shape) {
 }
 ```
 
-## Sum Types vs Interfaces
+## أنواع المجموع مقابل الواجهات
 
-- Use **interfaces** when different unrelated types share common behaviour.
-- Use **sum types** (`type Foo = A | B`) when you have a closed, finite set of variants and want exhaustive pattern matching with `match`.
+- استخدم **الواجهات** عندما تشترك أنواع غير مترابطة مختلفة في سلوك مشترك.
+- استخدم **أنواع المجموع** (`type Foo = A | B`) عندما يكون لديك مجموعة مغلقة ومحدودة من المتغيرات وتريد مطابقة أنماط شاملة باستخدام `match`.

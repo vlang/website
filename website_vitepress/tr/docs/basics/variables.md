@@ -1,8 +1,8 @@
-# Variables
+# Değişkenler
 
-## Declaration and Initialization
+## Tanımlama ve Başlatma
 
-Variables are declared and initialized with `:=`. This is the only way to declare variables in V — they always have an initial value and their type is inferred from the right-hand side.
+Değişkenler `:=` ile tanımlanır ve başlatılır. V'de değişken tanımlamanın tek yolu budur — değişkenler her zaman bir başlangıç değerine sahiptir ve tipleri sağ taraftan çıkarılır.
 
 ```v
 name := 'Bob'
@@ -13,9 +13,9 @@ println(age)
 println(large_number)
 ```
 
-## Mutable Variables
+## Değiştirilebilir Değişkenler
 
-Variables are **immutable by default**. Use `mut` to make a variable mutable:
+Değişkenler **varsayılan olarak değişmezdir**. Değiştirilebilir yapmak için `mut` kullanın:
 
 ```v
 mut age := 20
@@ -24,21 +24,21 @@ age = 21
 println(age)
 ```
 
-> If you try to reassign without `mut`, the compiler will refuse to compile.
+> `mut` olmadan yeniden atama yapmaya çalışırsanız, derleyici derlemeyi reddeder.
 
-## Type Conversion
+## Tip Dönüşümü
 
-Use `T(value)` to convert between types:
+Tipler arasında dönüşüm yapmak için `T(value)` kullanın:
 
 ```v
 x := 42
-y := f64(x)  // x converted to f64
-z := u8(x)   // x converted to u8
+y := f64(x)  // x, f64'e dönüştürüldü
+z := u8(x)   // x, u8'e dönüştürüldü
 ```
 
-## Multiple Assignment
+## Çoklu Atama
 
-Multiple variables can be changed or swapped in one line:
+Birden fazla değişken tek satırda değiştirilebilir veya takas edilebilir:
 
 ```v
 mut a := 0
@@ -48,9 +48,9 @@ a, b = b, a
 println('${a}, ${b}') // 1, 0
 ```
 
-## Ignoring Values
+## Değerleri Yoksaymak
 
-Use `_` to discard a return value:
+Bir dönüş değerini atmak için `_` kullanın:
 
 ```v
 fn foo() (int, int) {
@@ -63,21 +63,21 @@ fn main() {
 }
 ```
 
-## Naming Convention
+## İsimlendirme Kuralı
 
-All variable and function names must use `snake_case`. Type names must use `PascalCase`. The compiler enforces this.
+Tüm değişken ve fonksiyon adları `snake_case` kullanmalıdır. Tip adları `PascalCase` kullanmalıdır. Derleyici bunu zorlar.
 
-## No Global Variables
+## Global Değişken Yok
 
-V does not allow global variables by default. All variables must be declared inside functions. This leads to more predictable, testable code.
+V, varsayılan olarak global değişkenlere izin vermez. Tüm değişkenler fonksiyonların içinde tanımlanmalıdır. Bu, daha öngörülü ve test edilebilir kod sağlar.
 
-## No Shadowing
+## Gölgeleme Yok
 
-Variable shadowing is not allowed. Declaring a variable with a name already used in a parent scope is a compile error:
+Değişken gölgelemeye izin verilmez. Bir üst kapsamda zaten kullanılan bir adla değişken tanımlamak derleme hatasıdır:
 
 ```v
 fn main() {
     a := 10
-    // a := 20  // ← compile error: redefinition of `a`
+    // a := 20  // ← derleme hatası: `a`'nın yeniden tanımlanması
 }
 ```

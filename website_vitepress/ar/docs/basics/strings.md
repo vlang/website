@@ -1,8 +1,8 @@
-# Strings
+# السلاسل النصية
 
-In V, strings are encoded in **UTF-8** and are **immutable** by default.
+في V، السلاسل النصية مُرمَّزة بـ**UTF-8** و**غير قابلة للتغيير** بشكل افتراضي.
 
-## Basic Usage
+## الاستخدام الأساسي
 
 ```v
 s    := 'hello 🌎'
@@ -14,9 +14,9 @@ println(name[0])       // 66  (u8 — byte value of 'B')
 println(name[1..3])    // ob  (slicing returns a string)
 ```
 
-## String Interpolation
+## التضمين في السلاسل النصية
 
-Use `${}` to embed expressions inside strings:
+استخدم `${}` لتضمين التعبيرات داخل السلاسل النصية:
 
 ```v
 name := 'Alice'
@@ -25,7 +25,7 @@ println('Hello, ${name}! You are ${age} years old.')
 println('Is adult: ${age >= 18}')
 ```
 
-## Multiline Strings
+## السلاسل النصية متعددة الأسطر
 
 ```v
 text := 'line one
@@ -33,16 +33,16 @@ line two
 line three'
 ```
 
-## Raw Strings
+## السلاسل النصية الخام
 
-Prepend `r` to disable escape processing:
+أضف `r` قبل السلسلة لتعطيل معالجة الهروب:
 
 ```v
 s := r'hello\nworld'  // \n is kept as two characters
 println(s)            // hello\nworld
 ```
 
-## String Methods
+## دوال السلاسل النصية
 
 ```v
 s := 'Hello, World!'
@@ -57,7 +57,7 @@ println(s.split(', '))     // ['Hello', 'World!']
 println(s.trim_space())    // Hello, World!  (removes leading/trailing whitespace)
 ```
 
-## Converting to Numbers
+## التحويل إلى أرقام
 
 ```v
 s := '42'
@@ -69,9 +69,9 @@ assert '0o10'.int() == 8
 assert '0b1010'.int() == 10
 ```
 
-## Runes (Unicode Code Points)
+## الرموز (Runes - نقاط الشيفرة Unicode)
 
-To work with Unicode characters rather than raw bytes, use `runes()`:
+للعمل مع محارف Unicode بدلاً من البايتات الخام، استخدم `runes()`:
 
 ```v
 mut s := 'hello 🌎'
@@ -80,9 +80,9 @@ println(r.len)    // 7  (7 Unicode code points, not 10 bytes)
 println(r[6])     // 🌎
 ```
 
-## String Builder
+## منشئ السلاسل النصية
 
-For efficient string concatenation, use `strings.Builder`:
+لتسلسل السلاسل النصية بكفاءة، استخدم `strings.Builder`:
 
 ```v
 import strings

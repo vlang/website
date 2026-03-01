@@ -1,8 +1,8 @@
 # JSON
 
-V has built-in JSON encoding and decoding in the `json` module — no external library needed.
+تحتوي V على ترميز وفك ترميز JSON مدمَج في وحدة `json` — دون الحاجة إلى مكتبة خارجية.
 
-## Decoding JSON
+## فك ترميز JSON
 
 ```v
 import json
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Encoding JSON
+## ترميز JSON
 
 ```v
 import json
@@ -45,9 +45,9 @@ fn main() {
 }
 ```
 
-## Custom Field Names
+## أسماء الحقول المخصصة
 
-Use the `@[json: 'field_name']` attribute to map struct fields to different JSON keys:
+استخدم السمة `@[json: 'field_name']` لتعيين حقول البنية إلى مفاتيح JSON مختلفة:
 
 ```v
 import json
@@ -66,9 +66,9 @@ fn main() {
 }
 ```
 
-## Skipping Fields
+## تخطي الحقول
 
-Use `@[json: '-']` to exclude a field from JSON serialization:
+استخدم `@[json: '-']` لاستبعاد حقل من تسلسل JSON:
 
 ```v
 struct User {
@@ -78,9 +78,9 @@ struct User {
 }
 ```
 
-## Optional / Nullable Fields
+## الحقول الاختيارية / القابلة للإهمال
 
-Use option types for fields that may be absent in the JSON:
+استخدم أنواع الخيار للحقول التي قد تكون غائبةً في JSON:
 
 ```v
 import json
@@ -99,7 +99,7 @@ fn main() {
 }
 ```
 
-## Nested Structs
+## البنيات المتداخلة
 
 ```v
 import json

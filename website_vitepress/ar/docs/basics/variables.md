@@ -1,8 +1,8 @@
-# Variables
+# المتغيرات
 
-## Declaration and Initialization
+## الإعلان والتهيئة
 
-Variables are declared and initialized with `:=`. This is the only way to declare variables in V — they always have an initial value and their type is inferred from the right-hand side.
+تُعلَن المتغيرات وتُهيَّأ باستخدام `:=`. هذه هي الطريقة الوحيدة لإعلان المتغيرات في V — فلها دائمًا قيمة أولية ويُستنتج نوعها من الجانب الأيمن.
 
 ```v
 name := 'Bob'
@@ -13,9 +13,9 @@ println(age)
 println(large_number)
 ```
 
-## Mutable Variables
+## المتغيرات القابلة للتغيير
 
-Variables are **immutable by default**. Use `mut` to make a variable mutable:
+المتغيرات **غير قابلة للتغيير بشكل افتراضي**. استخدم `mut` لجعل المتغير قابلاً للتغيير:
 
 ```v
 mut age := 20
@@ -24,11 +24,11 @@ age = 21
 println(age)
 ```
 
-> If you try to reassign without `mut`, the compiler will refuse to compile.
+> إذا حاولت إعادة التعيين بدون `mut`، سيرفض المُصرِّف التصريف.
 
-## Type Conversion
+## تحويل الأنواع
 
-Use `T(value)` to convert between types:
+استخدم `T(value)` للتحويل بين الأنواع:
 
 ```v
 x := 42
@@ -36,9 +36,9 @@ y := f64(x)  // x converted to f64
 z := u8(x)   // x converted to u8
 ```
 
-## Multiple Assignment
+## التعيين المتعدد
 
-Multiple variables can be changed or swapped in one line:
+يمكن تغيير متغيرات متعددة أو تبادلها في سطر واحد:
 
 ```v
 mut a := 0
@@ -48,9 +48,9 @@ a, b = b, a
 println('${a}, ${b}') // 1, 0
 ```
 
-## Ignoring Values
+## تجاهل القيم
 
-Use `_` to discard a return value:
+استخدم `_` لتجاهل قيمة معادة:
 
 ```v
 fn foo() (int, int) {
@@ -63,17 +63,17 @@ fn main() {
 }
 ```
 
-## Naming Convention
+## اتفاقية التسمية
 
-All variable and function names must use `snake_case`. Type names must use `PascalCase`. The compiler enforces this.
+يجب أن تستخدم جميع أسماء المتغيرات والدوال `snake_case`. يجب أن تستخدم أسماء الأنواع `PascalCase`. يُطبِّق المُصرِّف هذه القاعدة.
 
-## No Global Variables
+## لا متغيرات عامة
 
-V does not allow global variables by default. All variables must be declared inside functions. This leads to more predictable, testable code.
+لا تسمح V بالمتغيرات العامة بشكل افتراضي. يجب إعلان جميع المتغيرات داخل الدوال. يؤدي هذا إلى كود أكثر قدرةً على التنبؤ وقابليةً للاختبار.
 
-## No Shadowing
+## لا ظلال للمتغيرات
 
-Variable shadowing is not allowed. Declaring a variable with a name already used in a parent scope is a compile error:
+لا يُسمح بإخفاء المتغيرات. إعلان متغير باسم مستخدم بالفعل في نطاق أب هو خطأ في التصريف:
 
 ```v
 fn main() {

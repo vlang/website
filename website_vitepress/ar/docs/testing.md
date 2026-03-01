@@ -1,10 +1,10 @@
-# Testing
+# الاختبار
 
-V has built-in testing support. No test framework or external library needed.
+تمتلك V دعمًا مدمَجًا للاختبار. لا حاجة لإطار اختبار أو مكتبة خارجية.
 
-## Writing Tests
+## كتابة الاختبارات
 
-Test functions must start with `test_` and live in files ending with `_test.v`:
+يجب أن تبدأ دوال الاختبار بـ`test_` وأن تكون في ملفات تنتهي بـ`_test.v`:
 
 ```v
 // math_test.v
@@ -24,7 +24,7 @@ fn test_add_large_numbers() {
 }
 ```
 
-Run tests with:
+شغِّل الاختبارات باستخدام:
 
 ```bash
 v test math_test.v
@@ -32,9 +32,9 @@ v test math_test.v
 v test .
 ```
 
-## Assertions
+## التأكيدات
 
-Use `assert` to check conditions. A failing assertion prints the values of both sides:
+استخدم `assert` للتحقق من الشروط. يقوم التأكيد الفاشل بطباعة قيم الجانبين:
 
 ```v
 fn test_string_ops() {
@@ -45,7 +45,7 @@ fn test_string_ops() {
 }
 ```
 
-## Test Setup and Teardown
+## إعداد الاختبار وتفكيكه
 
 ```v
 // Use testsuite_begin and testsuite_end for module-level setup/teardown
@@ -60,7 +60,7 @@ fn testsuite_end() {
 }
 ```
 
-## Testing Error Cases
+## اختبار حالات الأخطاء
 
 ```v
 fn safe_divide(a f64, b f64) !f64 {
@@ -81,7 +81,7 @@ fn test_divide_normal() {
 }
 ```
 
-## Running Specific Tests
+## تشغيل اختبارات محددة
 
 ```bash
 # Run a single test file
@@ -94,9 +94,9 @@ v test -run test_add .
 v test -v .
 ```
 
-## Table-driven Tests
+## الاختبارات المُدارة بجدول
 
-V doesn't have a built-in table-driven test helper, but you can do it manually:
+لا تمتلك V مساعدًا مدمَجًا للاختبارات المُدارة بجدول، لكن يمكنك تنفيذها يدويًا:
 
 ```v
 fn test_add_table() {
@@ -112,9 +112,9 @@ fn test_add_table() {
 }
 ```
 
-## Code Coverage
+## تغطية الكود
 
-Generate a coverage report:
+أنشئ تقرير تغطية:
 
 ```bash
 v -coverage ./coverage_output test .

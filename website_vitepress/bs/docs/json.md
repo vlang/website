@@ -1,8 +1,8 @@
 # JSON
 
-V has built-in JSON encoding and decoding in the `json` module — no external library needed.
+V ima ugrađeno JSON kodiranje i dekodiranje u modulu `json` — nije potrebna vanjska biblioteka.
 
-## Decoding JSON
+## Dekodiranje JSON-a
 
 ```v
 import json
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Encoding JSON
+## Kodiranje JSON-a
 
 ```v
 import json
@@ -45,9 +45,9 @@ fn main() {
 }
 ```
 
-## Custom Field Names
+## Prilagođena imena polja
 
-Use the `@[json: 'field_name']` attribute to map struct fields to different JSON keys:
+Koristite atribut `@[json: 'field_name']` za mapiranje polja strukture na različite JSON ključeve:
 
 ```v
 import json
@@ -66,28 +66,28 @@ fn main() {
 }
 ```
 
-## Skipping Fields
+## Preskakanje polja
 
-Use `@[json: '-']` to exclude a field from JSON serialization:
+Koristite `@[json: '-']` za isključivanje polja iz JSON serijalizacije:
 
 ```v
 struct User {
     name     string
     email    string
-    password string @[json: '-']  // never included in JSON output
+    password string @[json: '-']  // nikada nije uključeno u JSON izlaz
 }
 ```
 
-## Optional / Nullable Fields
+## Opcionalna / Nullable polja
 
-Use option types for fields that may be absent in the JSON:
+Koristite option tipove za polja koja mogu biti odsutna u JSON-u:
 
 ```v
 import json
 
 struct Profile {
     name   string
-    bio    ?string   // optional — may be null or absent
+    bio    ?string   // opcionalno — može biti null ili odsutno
     age    ?int
 }
 
@@ -99,7 +99,7 @@ fn main() {
 }
 ```
 
-## Nested Structs
+## Ugniježđene strukture
 
 ```v
 import json

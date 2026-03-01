@@ -1,8 +1,8 @@
-# Interfaces
+# Arayüzler
 
-Interfaces define a contract — a set of methods that a type must implement. There is no explicit `implements` keyword; types satisfy interfaces automatically (structural/duck typing).
+Arayüzler bir sözleşme tanımlar — bir tipin uygulaması gereken metodlar kümesi. Açık bir `implements` anahtar sözcüğü yoktur; tipler arayüzleri otomatik olarak karşılar (yapısal/ördek tiplemesi).
 
-## Defining an Interface
+## Arayüz Tanımlama
 
 ```v
 interface Shape {
@@ -11,9 +11,9 @@ interface Shape {
 }
 ```
 
-## Implementing an Interface
+## Arayüz Uygulama
 
-Any struct that has the required methods automatically implements the interface:
+Gerekli metodlara sahip herhangi bir yapı otomatik olarak arayüzü uygular:
 
 ```v
 struct Circle {
@@ -42,7 +42,7 @@ fn (r Rectangle) perimeter() f64 {
 }
 ```
 
-## Using Interfaces
+## Arayüzleri Kullanma
 
 ```v
 fn print_shape_info(s Shape) {
@@ -63,9 +63,9 @@ fn main() {
 }
 ```
 
-## Interface with Fields
+## Alanlı Arayüz
 
-Interfaces can also require fields (not just methods):
+Arayüzler aynı zamanda alan da gerektirebilir (yalnızca metodlar değil):
 
 ```v
 interface Named {
@@ -86,7 +86,7 @@ fn main() {
 }
 ```
 
-## Type Checking with Interfaces
+## Arayüzlerle Tip Kontrolü
 
 ```v
 fn describe(s Shape) {
@@ -98,7 +98,7 @@ fn describe(s Shape) {
 }
 ```
 
-## Sum Types vs Interfaces
+## Toplam Tipler vs Arayüzler
 
-- Use **interfaces** when different unrelated types share common behaviour.
-- Use **sum types** (`type Foo = A | B`) when you have a closed, finite set of variants and want exhaustive pattern matching with `match`.
+- İlgisiz farklı tipler ortak davranış paylaştığında **arayüzler** kullanın.
+- Kapalı, sonlu bir varyant kümesine sahip olduğunuzda ve `match` ile kapsamlı desen eşleştirmesi istediğinizde **toplam tipler** (`type Foo = A | B`) kullanın.

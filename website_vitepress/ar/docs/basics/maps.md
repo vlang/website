@@ -1,8 +1,8 @@
-# Maps
+# الخرائط (Maps)
 
-Maps are unordered key-value stores. All keys must be of the same type, and all values must be of the same type.
+الخرائط هي مخازن غير مُرتَّبة للمفاتيح والقيم. يجب أن تكون جميع المفاتيح من نفس النوع، وجميع القيم من نفس النوع.
 
-## Creating Maps
+## إنشاء الخرائط
 
 ```v
 // map literal
@@ -16,7 +16,7 @@ mut scores := {
 mut m := map[string]int{}
 ```
 
-## Adding and Updating
+## الإضافة والتحديث
 
 ```v
 mut m := map[string]int{}
@@ -26,7 +26,7 @@ m['x'] = 99   // update existing key
 println(m)    // {'x': 99, 'y': 2}
 ```
 
-## Reading Values
+## قراءة القيم
 
 ```v
 scores := {'Alice': 10, 'Bob': 20}
@@ -38,7 +38,7 @@ val := scores['Dave'] or { -1 }
 println(val) // -1
 ```
 
-## Checking for a Key
+## التحقق من وجود مفتاح
 
 ```v
 m := {'a': 1, 'b': 2}
@@ -52,7 +52,7 @@ if 'z' !in m {
 }
 ```
 
-## Deleting Keys
+## حذف المفاتيح
 
 ```v
 mut m := {'a': 1, 'b': 2, 'c': 3}
@@ -60,7 +60,7 @@ m.delete('b')
 println(m) // {'a': 1, 'c': 3}
 ```
 
-## Iterating
+## التكرار
 
 ```v
 m := {'one': 1, 'two': 2, 'three': 3}
@@ -75,16 +75,16 @@ for key in m.keys() {
 }
 ```
 
-## Map Size
+## حجم الخريطة
 
 ```v
 m := {'a': 1, 'b': 2}
 println(m.len) // 2
 ```
 
-## Allowed Key Types
+## أنواع المفاتيح المسموح بها
 
-Map keys can be strings, integers, floats, runes, or any type that implements the `==` operator.
+يمكن أن تكون مفاتيح الخريطة سلاسل نصية أو أعداد صحيحة أو أعداد عشرية أو رموز (runes) أو أي نوع ينفِّذ عامل `==`.
 
 ```v
 mut m := map[int]string{}

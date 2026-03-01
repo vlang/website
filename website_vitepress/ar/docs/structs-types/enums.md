@@ -1,8 +1,8 @@
-# Enums
+# التعدادات (Enums)
 
-Enums define a type with a fixed set of named constants.
+تُعرِّف التعدادات نوعًا بمجموعة ثابتة من الثوابت المُسمَّاة.
 
-## Basic Enum
+## التعداد الأساسي
 
 ```v
 enum Direction {
@@ -18,7 +18,7 @@ fn main() {
 }
 ```
 
-## Matching on Enums
+## المطابقة على التعدادات
 
 ```v
 enum Color {
@@ -36,9 +36,9 @@ fn describe(c Color) string {
 }
 ```
 
-Notice the shorthand `.variant` syntax when the type can be inferred.
+لاحظ صياغة الاختصار `.variant` عندما يمكن استنتاج النوع.
 
-## Enums with Custom Values
+## التعدادات بقيم مخصصة
 
 ```v
 enum StatusCode {
@@ -53,7 +53,7 @@ fn main() {
 }
 ```
 
-## Enum Methods
+## دوال التعدادات
 
 ```v
 enum Planet {
@@ -71,7 +71,7 @@ fn (p Planet) is_inner() bool {
 }
 ```
 
-## Iterating Over Enums
+## التكرار على التعدادات
 
 ```v
 enum Season {
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-## Flag Enums (Bit Fields)
+## تعدادات الأعلام (حقول البت)
 
 ```v
 @[flag]

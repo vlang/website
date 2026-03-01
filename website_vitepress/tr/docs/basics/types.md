@@ -1,32 +1,32 @@
-# Primitive Types
+# İlkel Tipler
 
-## Integer Types
+## Tam Sayı Tipleri
 
 ```v
-// Signed integers
-i8    // -128 to 127
-i16   // -32,768 to 32,767
-int   // -2,147,483,648 to 2,147,483,647  (always 32-bit)
-i64   // -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+// İşaretli tam sayılar
+i8    // -128 ile 127
+i16   // -32.768 ile 32.767
+int   // -2.147.483.648 ile 2.147.483.647  (her zaman 32-bit)
+i64   // -9.223.372.036.854.775.808 ile 9.223.372.036.854.775.807
 
-// Unsigned integers
-u8    // 0 to 255  (also used for bytes)
-u16   // 0 to 65,535
-u32   // 0 to 4,294,967,295
-u64   // 0 to 18,446,744,073,709,551,615
+// İşaretsiz tam sayılar
+u8    // 0 ile 255  (baytlar için de kullanılır)
+u16   // 0 ile 65.535
+u32   // 0 ile 4.294.967.295
+u64   // 0 ile 18.446.744.073.709.551.615
 
-// Platform-dependent
-isize // signed, size of a pointer
-usize // unsigned, size of a pointer
+// Platforma bağımlı
+isize // işaretli, bir işaretçinin boyutu
+usize // işaretsiz, bir işaretçinin boyutu
 ```
 
-> **Note:** Unlike C and Go, `int` in V is always 32-bit regardless of platform.
+> **Not:** C ve Go'dan farklı olarak V'deki `int`, platformdan bağımsız olarak her zaman 32-bit'tir.
 
-## Floating-Point Types
+## Kayan Noktalı Tipler
 
 ```v
-f32   // single-precision (32-bit)
-f64   // double-precision (64-bit)
+f32   // tek duyarlıklı (32-bit)
+f64   // çift duyarlıklı (64-bit)
 ```
 
 ## Boolean
@@ -38,43 +38,43 @@ is_done  := false
 
 ## Rune
 
-A `rune` represents a Unicode code point:
+Bir `rune`, Unicode kod noktasını temsil eder:
 
 ```v
-letter := `A`        // rune literal uses backticks
+letter := `A`        // rune literali ters tırnak kullanır
 emoji  := `🌎`
 println(letter)      // A
 println(int(letter)) // 65
 ```
 
-## Type Promotions
+## Tip Terfileri
 
-Small types are automatically promoted when combined with larger types on the same side of an operator:
+Küçük tipler, bir operatörün aynı tarafındaki daha büyük tiplerle birleştirildiğinde otomatik olarak terfiye edilir:
 
 ```v
 u := u16(12)
-v := 13 + u    // v is u16 — no promotion
+v := 13 + u    // v, u16'dır — terfiye edilmez
 x := f32(45.6)
-y := x + 3.14  // y is f32 — no promotion
-a := 75        // int (default for integer literals)
-b := 14.7      // f64 (default for float literals)
+y := x + 3.14  // y, f32'dir — terfiye edilmez
+a := 75        // int (tam sayı literalleri için varsayılan)
+b := 14.7      // f64 (float literalleri için varsayılan)
 ```
 
-## Numeric Literals
+## Sayısal Literaller
 
 ```v
-n1 := 1_000_000      // underscores for readability
-n2 := 0xff           // hex
-n3 := 0o77           // octal
-n4 := 0b1111_0000    // binary
-f1 := 3.14_159_265   // float with underscores
+n1 := 1_000_000      // okunabilirlik için alt çizgi
+n2 := 0xff           // onaltılık
+n3 := 0o77           // sekizlik
+n4 := 0b1111_0000    // ikili
+f1 := 3.14_159_265   // alt çizgili float
 ```
 
 ## `voidptr`
 
-A raw pointer type used mainly for C interoperability. Avoid in pure V code.
+Esas olarak C birlikte çalışabilirliği için kullanılan ham işaretçi tipi. Salt V kodunda kullanmaktan kaçının.
 
 ```v
-// mostly for C interop
+// çoğunlukla C birlikte çalışması için
 p := voidptr(0)
 ```

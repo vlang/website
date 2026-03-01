@@ -1,8 +1,8 @@
-# Concurrency
+# Eşzamanlılık
 
-V uses lightweight threads (goroutines) to run work concurrently. The `spawn` keyword starts a function in a new thread.
+V, işleri eşzamanlı olarak çalıştırmak için hafif iş parçacıkları (goroutine'ler) kullanır. `spawn` anahtar sözcüğü bir fonksiyonu yeni bir iş parçacığında başlatır.
 
-## Basic Spawning
+## Temel Spawn Kullanımı
 
 ```v
 import time
@@ -19,15 +19,15 @@ fn main() {
     threads << spawn expensive_computing(2, 500)
     threads << spawn expensive_computing(3, 1000)
 
-    // Wait for all threads to finish
+    // Tüm iş parçacıklarının bitmesini bekle
     threads.wait()
     println('All jobs finished!')
 }
 ```
 
-## Getting Return Values
+## Dönüş Değerleri Alma
 
-Threads can return values. Calling `.wait()` on a `[]thread T` returns `[]T`:
+İş parçacıkları değer döndürebilir. `[]thread T` üzerinde `.wait()` çağrısı `[]T` döndürür:
 
 ```v
 fn expensive_computing(i int) int {
@@ -45,7 +45,7 @@ fn main() {
 }
 ```
 
-## Concurrent HTTP Requests
+## Eşzamanlı HTTP İstekleri
 
 ```v
 import net.http
@@ -75,14 +75,14 @@ fn main() {
 }
 ```
 
-## Channels
+## Kanallar
 
-Channels allow safe communication between threads:
+Kanallar, iş parçacıkları arasında güvenli iletişim sağlar:
 
 ```v
 fn producer(ch chan int) {
     for i in 1 .. 6 {
-        ch <- i  // send to channel
+        ch <- i  // kanala gönder
     }
     ch.close()
 }
@@ -97,9 +97,9 @@ fn main() {
 }
 ```
 
-## Mutexes
+## Mutex'ler
 
-Use `sync.Mutex` to protect shared state:
+Paylaşılan durumu korumak için `sync.Mutex` kullanın:
 
 ```v
 import sync
@@ -119,7 +119,7 @@ fn (mut c Counter) increment() {
 
 ## `defer`
 
-`defer` executes a statement when the surrounding function returns — useful for cleanup:
+`defer`, çevreleyen fonksiyon döndüğünde bir ifadeyi çalıştırır — temizlik işlemleri için kullanışlıdır:
 
 ```v
 import os
@@ -128,7 +128,7 @@ fn process_file(path string) {
     f := os.open(path) or { return }
     defer { f.close() }
 
-    // use f — it will be closed automatically
+    // f'yi kullan — otomatik olarak kapatılacak
     println(f.read_to_string() or { '' })
 }
 ```

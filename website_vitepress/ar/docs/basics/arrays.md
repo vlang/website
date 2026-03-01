@@ -1,6 +1,6 @@
-# Arrays
+# المصفوفات
 
-## Basic Usage
+## الاستخدام الأساسي
 
 ```v
 mut nums := [1, 2, 3]
@@ -11,9 +11,9 @@ nums[1] = 20
 println(nums)        // [1, 20, 3]
 ```
 
-## Typed Arrays
+## المصفوفات المُحدَّدة النوع
 
-Array element types are inferred. You can also declare an empty array with an explicit type:
+يتم استنتاج أنواع عناصر المصفوفة تلقائيًا. يمكنك أيضًا إعلان مصفوفة فارغة بنوع صريح:
 
 ```v
 mut names := []string{}
@@ -22,7 +22,7 @@ names << 'Bob'
 println(names) // ['Alice', 'Bob']
 ```
 
-## Pre-allocated Arrays
+## المصفوفات المُخصَّصة مسبقًا
 
 ```v
 // array of 5 ints, all initialized to 0
@@ -32,9 +32,9 @@ a := []int{len: 5}
 b := []string{len: 3, init: 'x'}
 ```
 
-## Appending Elements
+## إضافة العناصر
 
-Use `<<` to append:
+استخدم `<<` للإضافة:
 
 ```v
 mut a := [1, 2, 3]
@@ -43,7 +43,7 @@ a << [5, 6]   // append another array
 println(a)    // [1, 2, 3, 4, 5, 6]
 ```
 
-## Slicing
+## التقطيع
 
 ```v
 a := [1, 2, 3, 4, 5]
@@ -52,7 +52,7 @@ c := a[..2]   // [1, 2]  (from start to index 2)
 d := a[3..]   // [4, 5]  (from index 3 to end)
 ```
 
-## Iteration
+## التكرار
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
@@ -66,7 +66,7 @@ for i, name in names {
 }
 ```
 
-## Common Methods
+## الدوال الشائعة
 
 ```v
 mut a := [3, 1, 4, 1, 5, 9, 2, 6]
@@ -88,7 +88,7 @@ mapped := a.map(it * 2)
 println(mapped) // [18, 12, 10, 8, 6, 4, 2, 2]
 ```
 
-## Multidimensional Arrays
+## المصفوفات متعددة الأبعاد
 
 ```v
 mut matrix := [][]int{len: 3, init: []int{len: 3}}
@@ -98,7 +98,7 @@ matrix[2][2] = 9
 println(matrix) // [[1, 0, 0], [0, 5, 0], [0, 0, 9]]
 ```
 
-## Fixed-size Arrays
+## المصفوفات ذات الحجم الثابت
 
 ```v
 mut a := [5]int{}   // fixed array of 5 ints
@@ -106,4 +106,4 @@ a[0] = 10
 println(a)          // [10, 0, 0, 0, 0]
 ```
 
-Fixed arrays are stack-allocated and cannot be grown.
+المصفوفات الثابتة مُخصَّصة على المكدس ولا يمكن توسيعها.

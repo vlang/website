@@ -1,6 +1,6 @@
-# Functions
+# Funcions
 
-## Basic Syntax
+## Sintaxi Bàsica
 
 ```v
 fn main() {
@@ -17,13 +17,13 @@ fn sub(x int, y int) int {
 }
 ```
 
-The return type is specified **after** the parameter list. If the function returns nothing, the return type is omitted.
+El tipus de retorn s'especifica **després** de la llista de paràmetres. Si la funció no retorna res, el tipus de retorn s'omet.
 
-## Hoisting
+## Hissament
 
-Functions can be used before they are declared. V hoists all declarations, so there is no need for header files or forward declarations.
+Les funcions es poden usar abans de ser declarades. V hissa totes les declaracions, de manera que no cal fitxers de capçalera ni declaracions anticipades.
 
-## Multiple Return Values
+## Múltiples Valors de Retorn
 
 ```v
 fn foo() (int, int) {
@@ -33,12 +33,12 @@ fn foo() (int, int) {
 a, b := foo()
 println(a) // 2
 println(b) // 3
-c, _ := foo() // ignore the second value with `_`
+c, _ := foo() // ignora el segon valor amb `_`
 ```
 
-## Visibility
+## Visibilitat
 
-Functions are **private** by default. Use `pub` to export them:
+Les funcions són **privades** per defecte. Usa `pub` per exportar-les:
 
 ```v
 pub fn public_function() {
@@ -48,13 +48,13 @@ fn private_function() {
 }
 ```
 
-## No Overloading
+## Sense Sobrecàrrega
 
-Functions cannot be overloaded. This keeps the code unambiguous and easy to read.
+Les funcions no es poden sobrecarregar. Això manté el codi inequívoc i fàcil de llegir.
 
-## Methods
+## Mètodes
 
-Functions can be attached to types:
+Les funcions es poden adjuntar a tipus:
 
 ```v
 struct User {
@@ -78,9 +78,9 @@ fn main() {
 }
 ```
 
-## High-Order Functions
+## Funcions d'Ordre Superior
 
-Functions are first-class values and can be passed to other functions:
+Les funcions són valors de primera classe i es poden passar a altres funcions:
 
 ```v
 fn apply(arr []int, f fn(int) int) []int {
@@ -102,7 +102,7 @@ fn main() {
 }
 ```
 
-## Anonymous Functions
+## Funcions Anònimes
 
 ```v
 fn main() {

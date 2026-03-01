@@ -1,32 +1,32 @@
-# Introduction
+# Giriş
 
-V is a statically typed compiled programming language designed for building maintainable software.
+V, sürdürülebilir yazılım geliştirmek için tasarlanmış, statik tipli ve derlenen bir programlama dilidir.
 
-It is influenced by Go, Oberon, Rust, Swift, Kotlin, and Python. V looks like Go and is nearly as simple, but it compiles much faster and offers more safety features.
+Go, Oberon, Rust, Swift, Kotlin ve Python'dan ilham almıştır. V, Go'ya benzer ve neredeyse aynı derecede basittir; ancak çok daha hızlı derlenir ve daha fazla güvenlik özelliği sunar.
 
-Despite being simple, V covers all the fields: systems programming, web development, game development, GUI apps, mobile, science, embedded, tools, and more.
+Basit olmasına karşın V, tüm alanları kapsar: sistem programlama, web geliştirme, oyun geliştirme, GUI uygulamaları, mobil, bilim, gömülü sistemler, araçlar ve daha fazlası.
 
-## Key Features
+## Temel Özellikler
 
-- **Simple** — Learn the entire language over a weekend. If you know Go, you already know ~80% of V.
-- **Fast compilation** — ~110k–1.2M lines of code per second per CPU core. V compiles itself in under 1 second.
-- **Safe** — No null, no global variables, no undefined behaviour. Immutability by default.
-- **Performance** — As fast as C. Compiles to human-readable C.
-- **Zero dependencies** — The compiler is only 400 KB with no external dependencies.
-- **C/C++ translation** — Translate entire C/C++ projects to V automatically.
-- **Hot code reloading** — Change code while the app is running without losing state.
-- **Built-in ORM & web framework** — Everything you need is in the standard library.
+- **Basit** — Dili bir hafta sonunda öğrenin. Go biliyorsanız, V'nin yaklaşık %80'ini zaten biliyorsunuzdur.
+- **Hızlı derleme** — CPU çekirdeği başına saniyede ~110k–1.2M satır kod. V, kendisini 1 saniyenin altında derler.
+- **Güvenli** — Null yok, global değişken yok, tanımsız davranış yok. Varsayılan olarak değişmezlik.
+- **Performanslı** — C kadar hızlı. İnsan tarafından okunabilir C'ye derlenir.
+- **Sıfır bağımlılık** — Derleyici, harici bağımlılık olmaksızın yalnızca 400 KB boyutundadır.
+- **C/C++ çevirisi** — Tüm C/C++ projelerini otomatik olarak V'ye çevirin.
+- **Sıcak kod yeniden yükleme** — Durumu kaybetmeden uygulama çalışırken kodu değiştirin.
+- **Dahili ORM ve web çerçevesi** — İhtiyacınız olan her şey standart kütüphanede mevcuttur.
 
-## Where to Start
+## Nereden Başlamalı
 
-- [Installation](/docs/installation) — Build V from source or download binaries.
-- [Hello World](/docs/hello-world) — Your first V program.
-- [Variables](/docs/basics/variables) — How to declare and use variables.
-- [Functions](/docs/basics/functions) — Defining and calling functions.
+- [Kurulum](/docs/installation) — V'yi kaynaktan derleyin veya ikilileri indirin.
+- [Merhaba Dünya](/docs/hello-world) — İlk V programınız.
+- [Değişkenler](/docs/basics/variables) — Değişkenleri nasıl tanımlayıp kullanacağınız.
+- [Fonksiyonlar](/docs/basics/functions) — Fonksiyon tanımlama ve çağırma.
 
-## External Resources
+## Harici Kaynaklar
 
-- [Official Documentation](https://docs.vlang.io) — Full language reference
-- [Standard Library](https://modules.vlang.io) — Module API reference
-- [Playground](https://play.vlang.io) — Run V code in the browser
-- [Package Manager](https://vpm.vlang.io) — Browse and publish V packages
+- [Resmi Dokümantasyon](https://docs.vlang.io) — Tam dil referansı
+- [Standart Kütüphane](https://modules.vlang.io) — Modül API referansı
+- [Playground](https://play.vlang.io) — V kodunu tarayıcıda çalıştırın
+- [Paket Yöneticisi](https://vpm.vlang.io) — V paketlerine göz atın ve yayımlayın

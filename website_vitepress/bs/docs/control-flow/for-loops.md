@@ -1,10 +1,10 @@
-# For Loops
+# For petlje
 
-V has a single looping keyword: `for`. It covers all iteration patterns.
+V ima jednu ključnu riječ za petlje: `for`. Pokriva sve obrasce iteracije.
 
-## Range Loop
+## Petlja po rasponu
 
-Iterate over a half-open range `start..end` (end is exclusive):
+Iteracija po poluotvorenom rasponu `start..end` (kraj je isključen):
 
 ```v
 for i in 0 .. 5 {
@@ -12,23 +12,23 @@ for i in 0 .. 5 {
 }
 ```
 
-## Iterating Over Arrays
+## Iteracija po nizovima
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
 
-// value only
+// samo vrijednost
 for name in names {
     println(name)
 }
 
-// index and value
+// indeks i vrijednost
 for i, name in names {
     println('${i}: ${name}')
 }
 ```
 
-## Iterating Over Maps
+## Iteracija po mapama
 
 ```v
 m := {'a': 1, 'b': 2, 'c': 3}
@@ -38,7 +38,7 @@ for key, val in m {
 }
 ```
 
-## Classic C-style Loop
+## Klasična C-stilska petlja
 
 ```v
 for i := 0; i < 10; i++ {
@@ -46,7 +46,7 @@ for i := 0; i < 10; i++ {
 }
 ```
 
-## Condition-only Loop (while equivalent)
+## Petlja samo s uvjetom (ekvivalent while)
 
 ```v
 mut n := 0
@@ -56,7 +56,7 @@ for n < 5 {
 }
 ```
 
-## Infinite Loop
+## Beskonačna petlja
 
 ```v
 mut i := 0
@@ -70,15 +70,15 @@ for {
 
 ```v
 for i in 0 .. 10 {
-    if i == 3 { continue }  // skip 3
-    if i == 7 { break }     // stop at 7
+    if i == 3 { continue }  // preskoči 3
+    if i == 7 { break }     // zaustavi se na 7
     println(i)
 }
 ```
 
-## Labeled Loops
+## Označene petlje
 
-For nested loops, you can label and break/continue from an outer loop:
+Za ugniježđene petlje možete označiti i prekinuti/nastaviti vanjsku petlju:
 
 ```v
 outer: for i in 0 .. 3 {
@@ -91,7 +91,7 @@ outer: for i in 0 .. 3 {
 }
 ```
 
-## Primes Example
+## Primjer s primes brojevima
 
 ```v
 import math { log }

@@ -1,32 +1,32 @@
-# Introduction
+# مقدمة
 
-V is a statically typed compiled programming language designed for building maintainable software.
+V هي لغة برمجة مُصرَّفة ذات تحقق ثابت للأنواع، مصمَّمة لبناء برامج قابلة للصيانة.
 
-It is influenced by Go, Oberon, Rust, Swift, Kotlin, and Python. V looks like Go and is nearly as simple, but it compiles much faster and offers more safety features.
+وقد تأثرت بلغات Go وOberon وRust وSwift وKotlin وPython. تبدو V مشابهةً لـGo وبسيطةً تقريبًا بنفس القدر، غير أنها تُصرَّف بسرعة أكبر بكثير وتوفر مزيدًا من ميزات السلامة.
 
-Despite being simple, V covers all the fields: systems programming, web development, game development, GUI apps, mobile, science, embedded, tools, and more.
+ورغم بساطتها، تغطي V جميع المجالات: برمجة الأنظمة، وتطوير الويب، وتطوير الألعاب، وتطبيقات واجهات المستخدم الرسومية، والجوال، والعلوم، والأنظمة المضمَّنة، والأدوات، وغيرها.
 
-## Key Features
+## الميزات الرئيسية
 
-- **Simple** — Learn the entire language over a weekend. If you know Go, you already know ~80% of V.
-- **Fast compilation** — ~110k–1.2M lines of code per second per CPU core. V compiles itself in under 1 second.
-- **Safe** — No null, no global variables, no undefined behaviour. Immutability by default.
-- **Performance** — As fast as C. Compiles to human-readable C.
-- **Zero dependencies** — The compiler is only 400 KB with no external dependencies.
-- **C/C++ translation** — Translate entire C/C++ projects to V automatically.
-- **Hot code reloading** — Change code while the app is running without losing state.
-- **Built-in ORM & web framework** — Everything you need is in the standard library.
+- **بسيطة** — تعلّم اللغة بأكملها خلال عطلة نهاية أسبوع. إن كنت تعرف Go، فأنت تعرف بالفعل ~80% من V.
+- **تصريف سريع** — ~110 ألف إلى 1.2 مليون سطر من الشيفرة في الثانية لكل نواة معالج. تُصرِّف V نفسها في أقل من ثانية واحدة.
+- **آمنة** — لا قيم فارغة (null)، ولا متغيرات عامة، ولا سلوك غير محدد. عدم قابلية التغيير هو الخيار الافتراضي.
+- **أداء عالٍ** — بسرعة C. تُصرَّف إلى كود C مقروء.
+- **صفر تبعيات** — حجم المُصرِّف 400 كيلوبايت فقط بدون تبعيات خارجية.
+- **ترجمة C/C++** — ترجمة مشاريع C/C++ بأكملها إلى V تلقائيًا.
+- **إعادة تحميل الشيفرة مباشرةً** — تغيير الشيفرة أثناء تشغيل التطبيق دون فقدان الحالة.
+- **ORM وإطار ويب مدمَجان** — كل ما تحتاجه موجود في المكتبة القياسية.
 
-## Where to Start
+## من أين تبدأ
 
-- [Installation](/docs/installation) — Build V from source or download binaries.
-- [Hello World](/docs/hello-world) — Your first V program.
-- [Variables](/docs/basics/variables) — How to declare and use variables.
-- [Functions](/docs/basics/functions) — Defining and calling functions.
+- [التثبيت](/docs/installation) — بناء V من المصدر أو تنزيل الملفات الثنائية.
+- [مرحبًا بالعالم](/docs/hello-world) — برنامجك الأول بلغة V.
+- [المتغيرات](/docs/basics/variables) — كيفية إعلان المتغيرات واستخدامها.
+- [الدوال](/docs/basics/functions) — تعريف الدوال واستدعاؤها.
 
-## External Resources
+## موارد خارجية
 
-- [Official Documentation](https://docs.vlang.io) — Full language reference
-- [Standard Library](https://modules.vlang.io) — Module API reference
-- [Playground](https://play.vlang.io) — Run V code in the browser
-- [Package Manager](https://vpm.vlang.io) — Browse and publish V packages
+- [التوثيق الرسمي](https://docs.vlang.io) — مرجع اللغة الكامل
+- [المكتبة القياسية](https://modules.vlang.io) — مرجع واجهة برمجة الوحدات
+- [بيئة التجربة](https://play.vlang.io) — تشغيل كود V في المتصفح
+- [مدير الحزم](https://vpm.vlang.io) — تصفُّح ونشر حزم V

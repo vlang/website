@@ -1,10 +1,10 @@
-# Testing
+# Proves
 
-V has built-in testing support. No test framework or external library needed.
+V té suport de proves integrat. No cal cap framework de proves ni biblioteca externa.
 
-## Writing Tests
+## Escriure Proves
 
-Test functions must start with `test_` and live in files ending with `_test.v`:
+Les funcions de prova han de començar amb `test_` i estar en fitxers que acabin amb `_test.v`:
 
 ```v
 // math_test.v
@@ -24,17 +24,17 @@ fn test_add_large_numbers() {
 }
 ```
 
-Run tests with:
+Executa les proves amb:
 
 ```bash
 v test math_test.v
-# or run all tests in a directory:
+# o executa totes les proves d'un directori:
 v test .
 ```
 
-## Assertions
+## Assercions
 
-Use `assert` to check conditions. A failing assertion prints the values of both sides:
+Usa `assert` per verificar condicions. Una asserció fallida imprimeix els valors dels dos costats:
 
 ```v
 fn test_string_ops() {
@@ -45,22 +45,22 @@ fn test_string_ops() {
 }
 ```
 
-## Test Setup and Teardown
+## Configuració i Desmuntatge de Proves
 
 ```v
-// Use testsuite_begin and testsuite_end for module-level setup/teardown
+// Usa testsuite_begin i testsuite_end per a la configuració/desmuntatge a nivell de mòdul
 fn testsuite_begin() {
-    // runs once before all tests in the file
+    // s'executa una vegada abans de totes les proves del fitxer
     println('Setting up test suite...')
 }
 
 fn testsuite_end() {
-    // runs once after all tests in the file
+    // s'executa una vegada després de totes les proves del fitxer
     println('Tearing down test suite...')
 }
 ```
 
-## Testing Error Cases
+## Provar Casos d'Error
 
 ```v
 fn safe_divide(a f64, b f64) !f64 {
@@ -81,22 +81,22 @@ fn test_divide_normal() {
 }
 ```
 
-## Running Specific Tests
+## Executar Proves Específiques
 
 ```bash
-# Run a single test file
+# Executa un sol fitxer de proves
 v test mypackage/foo_test.v
 
-# Run tests matching a pattern
+# Executa proves que coincideixin amb un patró
 v test -run test_add .
 
-# Run with verbose output
+# Executa amb sortida detallada
 v test -v .
 ```
 
-## Table-driven Tests
+## Proves Basades en Taules
 
-V doesn't have a built-in table-driven test helper, but you can do it manually:
+V no té un auxiliar de proves basat en taules integrat, però es pot fer manualment:
 
 ```v
 fn test_add_table() {
@@ -112,9 +112,9 @@ fn test_add_table() {
 }
 ```
 
-## Code Coverage
+## Cobertura de Codi
 
-Generate a coverage report:
+Genera un informe de cobertura:
 
 ```bash
 v -coverage ./coverage_output test .

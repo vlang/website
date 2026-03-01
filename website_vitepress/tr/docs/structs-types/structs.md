@@ -1,8 +1,8 @@
-# Structs
+# Yapılar
 
-Structs are used to define custom data types with named fields.
+Yapılar, adlandırılmış alanlara sahip özel veri tipleri tanımlamak için kullanılır.
 
-## Basic Struct
+## Temel Yapı
 
 ```v
 struct Point {
@@ -17,9 +17,9 @@ fn main() {
 }
 ```
 
-## Mutable Structs
+## Değiştirilebilir Yapılar
 
-Fields are immutable by default. Use `mut:` to declare mutable fields:
+Alanlar varsayılan olarak değişmezdir. Değiştirilebilir alanlar tanımlamak için `mut:` kullanın:
 
 ```v
 struct User {
@@ -38,25 +38,25 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## Erişim Değiştiricileri
 
 ```v
 struct Foo {
-    a int         // private immutable (default)
+    a int         // özel değişmez (varsayılan)
 mut:
-    b int         // private mutable
+    b int         // özel değiştirilebilir
 pub:
-    c int         // public immutable
+    c int         // genel değişmez
 pub mut:
-    d int         // public mutable, private to set
+    d int         // genel değiştirilebilir, ayarlama özel
 __global:
-    e int         // public and mutable everywhere (rare)
+    e int         // her yerde genel ve değiştirilebilir (nadir)
 }
 ```
 
-## Methods
+## Metodlar
 
-Functions can be attached to structs:
+Fonksiyonlar yapılara bağlanabilir:
 
 ```v
 struct Rectangle {
@@ -79,9 +79,9 @@ fn main() {
 }
 ```
 
-## Embedding
+## Gömme
 
-Structs can embed other structs to inherit their fields and methods:
+Yapılar, alanlarını ve metodlarını miras almak için başka yapıları gömebilir:
 
 ```v
 struct Animal {
@@ -103,12 +103,12 @@ fn (d Dog) speak() string {
 
 fn main() {
     d := Dog{Animal: Animal{name: 'Rex'}, breed: 'Labrador'}
-    println(d.name)    // Rex  (promoted from Animal)
+    println(d.name)    // Rex  (Animal'dan yükseltildi)
     println(d.speak()) // Woof!
 }
 ```
 
-## Default Field Values
+## Varsayılan Alan Değerleri
 
 ```v
 struct Config {
@@ -124,7 +124,7 @@ fn main() {
 }
 ```
 
-## JSON Example
+## JSON Örneği
 
 ```v
 import json

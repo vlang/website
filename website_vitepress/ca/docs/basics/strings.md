@@ -1,22 +1,22 @@
-# Strings
+# Cadenes
 
-In V, strings are encoded in **UTF-8** and are **immutable** by default.
+En V, les cadenes estan codificades en **UTF-8** i són **immutables** per defecte.
 
-## Basic Usage
+## Ús Bàsic
 
 ```v
 s    := 'hello 🌎'
 name := 'Bob'
 
-println(s.len)         // 10  (byte count)
+println(s.len)         // 10  (nombre de bytes)
 println(name.len)      // 3
-println(name[0])       // 66  (u8 — byte value of 'B')
-println(name[1..3])    // ob  (slicing returns a string)
+println(name[0])       // 66  (u8 — valor de byte de 'B')
+println(name[1..3])    // ob  (el tall retorna una cadena)
 ```
 
-## String Interpolation
+## Interpolació de Cadenes
 
-Use `${}` to embed expressions inside strings:
+Usa `${}` per inserir expressions dins de cadenes:
 
 ```v
 name := 'Alice'
@@ -25,7 +25,7 @@ println('Hello, ${name}! You are ${age} years old.')
 println('Is adult: ${age >= 18}')
 ```
 
-## Multiline Strings
+## Cadenes Multilínia
 
 ```v
 text := 'line one
@@ -33,16 +33,16 @@ line two
 line three'
 ```
 
-## Raw Strings
+## Cadenes Crues
 
-Prepend `r` to disable escape processing:
+Afegeix `r` al principi per desactivar el processament d'escape:
 
 ```v
 s := r'hello\nworld'  // \n is kept as two characters
 println(s)            // hello\nworld
 ```
 
-## String Methods
+## Mètodes de Cadenes
 
 ```v
 s := 'Hello, World!'
@@ -57,7 +57,7 @@ println(s.split(', '))     // ['Hello', 'World!']
 println(s.trim_space())    // Hello, World!  (removes leading/trailing whitespace)
 ```
 
-## Converting to Numbers
+## Conversió a Nombres
 
 ```v
 s := '42'
@@ -69,20 +69,20 @@ assert '0o10'.int() == 8
 assert '0b1010'.int() == 10
 ```
 
-## Runes (Unicode Code Points)
+## Runes (Punts de Codi Unicode)
 
-To work with Unicode characters rather than raw bytes, use `runes()`:
+Per treballar amb caràcters Unicode en lloc de bytes bruts, usa `runes()`:
 
 ```v
 mut s := 'hello 🌎'
 r := s.runes()
-println(r.len)    // 7  (7 Unicode code points, not 10 bytes)
+println(r.len)    // 7  (7 punts de codi Unicode, no 10 bytes)
 println(r[6])     // 🌎
 ```
 
-## String Builder
+## Constructor de Cadenes
 
-For efficient string concatenation, use `strings.Builder`:
+Per a la concatenació eficient de cadenes, usa `strings.Builder`:
 
 ```v
 import strings

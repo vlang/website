@@ -1,8 +1,8 @@
 # JSON
 
-V has built-in JSON encoding and decoding in the `json` module — no external library needed.
+V té codificació i decodificació JSON integrada al mòdul `json` — no cal cap biblioteca externa.
 
-## Decoding JSON
+## Decodificar JSON
 
 ```v
 import json
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Encoding JSON
+## Codificar JSON
 
 ```v
 import json
@@ -45,9 +45,9 @@ fn main() {
 }
 ```
 
-## Custom Field Names
+## Noms de Camps Personalitzats
 
-Use the `@[json: 'field_name']` attribute to map struct fields to different JSON keys:
+Usa l'atribut `@[json: 'field_name']` per mapejar camps d'estructures a claus JSON diferents:
 
 ```v
 import json
@@ -66,28 +66,28 @@ fn main() {
 }
 ```
 
-## Skipping Fields
+## Ometre Camps
 
-Use `@[json: '-']` to exclude a field from JSON serialization:
+Usa `@[json: '-']` per excloure un camp de la serialització JSON:
 
 ```v
 struct User {
     name     string
     email    string
-    password string @[json: '-']  // never included in JSON output
+    password string @[json: '-']  // mai inclòs en la sortida JSON
 }
 ```
 
-## Optional / Nullable Fields
+## Camps Opcionals / Nuls
 
-Use option types for fields that may be absent in the JSON:
+Usa tipus option per a camps que poden estar absents al JSON:
 
 ```v
 import json
 
 struct Profile {
     name   string
-    bio    ?string   // optional — may be null or absent
+    bio    ?string   // opcional — pot ser null o absent
     age    ?int
 }
 
@@ -99,7 +99,7 @@ fn main() {
 }
 ```
 
-## Nested Structs
+## Estructures Niuades
 
 ```v
 import json

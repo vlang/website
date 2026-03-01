@@ -1,8 +1,8 @@
-# Hello World
+# مرحبًا بالعالم
 
-## Your First V Program
+## برنامجك الأول بلغة V
 
-Create a file named `hello.v`:
+أنشئ ملفًا باسم `hello.v`:
 
 ```v
 fn main() {
@@ -10,48 +10,48 @@ fn main() {
 }
 ```
 
-Run it:
+شغِّله:
 
 ```bash
 v run hello.v
 ```
 
-Or compile and run separately:
+أو صرِّفه وشغِّله بشكل منفصل:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-## Skipping `fn main()`
+## حذف `fn main()`
 
-For single-file scripts, `fn main()` is optional:
+بالنسبة للنصوص البرمجية أحادية الملف، تُعدّ `fn main()` اختياريةً:
 
 ```v
 println('Hello, World!')
 ```
 
-This is useful for small programs and learning the language.
+هذا مفيد للبرامج الصغيرة وتعلم اللغة.
 
-## Running Multiple Files
+## تشغيل ملفات متعددة
 
-If your project has multiple `.v` files in a folder, run all of them at once:
+إذا كان مشروعك يحتوي على ملفات `.v` متعددة في مجلد، شغِّلها جميعًا دفعةً واحدة:
 
 ```bash
 v run .
 ```
 
-## Comments
+## التعليقات
 
 ```v
-// This is a single line comment.
+// هذا تعليق من سطر واحد.
 /*
-  This is a multiline comment.
-  /* It can be nested. */
+  هذا تعليق متعدد الأسطر.
+  /* يمكن أن يكون متداخلاً. */
 */
 ```
 
-## A Slightly Bigger Example
+## مثال أكبر قليلاً
 
 ```v
 // fibonacci.v — compute Fibonacci numbers up to a given rank

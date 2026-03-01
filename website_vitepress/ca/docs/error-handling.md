@@ -1,10 +1,10 @@
-# Error Handling
+# Gestió d'Errors
 
-V uses **Option** and **Result** types instead of exceptions. This makes error handling explicit and visible in function signatures.
+V utilitza tipus **Option** i **Result** en lloc d'excepcions. Això fa que la gestió d'errors sigui explícita i visible en les signatures de les funcions.
 
-## Option Types
+## Tipus Option
 
-An `?T` (option) holds either a value of type `T` or `none`:
+Un `?T` (option) conté un valor de tipus `T` o `none`:
 
 ```v
 fn find_user(id int) ?string {
@@ -21,9 +21,9 @@ fn main() {
 }
 ```
 
-## Result Types
+## Tipus Result
 
-A `!T` (result) holds either a value of type `T` or an error:
+Un `!T` (result) conté un valor de tipus `T` o un error:
 
 ```v
 fn divide(a f64, b f64) !f64 {
@@ -42,9 +42,9 @@ fn main() {
 }
 ```
 
-## The `or` Block
+## El Bloc `or`
 
-The `or` block runs when the result is `none` or an error. Inside `or`, `err` holds the error value:
+El bloc `or` s'executa quan el resultat és `none` o un error. Dins de `or`, `err` conté el valor de l'error:
 
 ```v
 import net.http
@@ -58,20 +58,20 @@ fn main() {
 }
 ```
 
-## Propagating Errors with `!`
+## Propagació d'Errors amb `!`
 
-Adding `!` after a call propagates the error up to the caller (similar to `?` in Rust):
+Afegir `!` després d'una crida propaga l'error cap al cridant (similar a `?` en Rust):
 
 ```v
 fn read_config(path string) !string {
-    content := os.read_file(path)!  // propagates if error
+    content := os.read_file(path)!  // propaga si hi ha error
     return content
 }
 ```
 
-## Custom Errors
+## Errors Personalitzats
 
-Implement the `IError` interface to create custom error types:
+Implementa la interfície `IError` per crear tipus d'error personalitzats:
 
 ```v
 struct DivisionError {
@@ -95,7 +95,7 @@ fn safe_divide(a f64, b f64) !f64 {
 }
 ```
 
-## Matching on Error Types
+## Coincidència amb Tipus d'Error
 
 ```v
 import semver
@@ -120,9 +120,9 @@ fn check_error(err IError) {
 }
 ```
 
-## The `?` Unwrap Operator
+## L'Operador de Desembolcall `?`
 
-Use `val?` inside an option context to unwrap or propagate `none`:
+Usa `val?` dins d'un context d'option per desembolcallar o propagar `none`:
 
 ```v
 fn get_name(users map[int]string, id int) ?string {

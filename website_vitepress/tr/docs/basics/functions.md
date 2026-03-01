@@ -1,6 +1,6 @@
-# Functions
+# Fonksiyonlar
 
-## Basic Syntax
+## Temel Sözdizimi
 
 ```v
 fn main() {
@@ -17,13 +17,13 @@ fn sub(x int, y int) int {
 }
 ```
 
-The return type is specified **after** the parameter list. If the function returns nothing, the return type is omitted.
+Dönüş tipi, parametre listesinden **sonra** belirtilir. Fonksiyon hiçbir şey döndürmüyorsa dönüş tipi atlanır.
 
-## Hoisting
+## Öteleme (Hoisting)
 
-Functions can be used before they are declared. V hoists all declarations, so there is no need for header files or forward declarations.
+Fonksiyonlar tanımlanmadan önce kullanılabilir. V tüm tanımlamaları ötelediğinden başlık dosyalarına veya ileri tanımlamalara gerek yoktur.
 
-## Multiple Return Values
+## Birden Fazla Dönüş Değeri
 
 ```v
 fn foo() (int, int) {
@@ -33,12 +33,12 @@ fn foo() (int, int) {
 a, b := foo()
 println(a) // 2
 println(b) // 3
-c, _ := foo() // ignore the second value with `_`
+c, _ := foo() // ikinci değeri `_` ile yoksay
 ```
 
-## Visibility
+## Görünürlük
 
-Functions are **private** by default. Use `pub` to export them:
+Fonksiyonlar varsayılan olarak **özeldir**. Dışa aktarmak için `pub` kullanın:
 
 ```v
 pub fn public_function() {
@@ -48,13 +48,13 @@ fn private_function() {
 }
 ```
 
-## No Overloading
+## Aşırı Yükleme Yok
 
-Functions cannot be overloaded. This keeps the code unambiguous and easy to read.
+Fonksiyonlar aşırı yüklenemez. Bu, kodu belirsizlikten arındırır ve okunmasını kolaylaştırır.
 
-## Methods
+## Metodlar
 
-Functions can be attached to types:
+Fonksiyonlar tiplere bağlanabilir:
 
 ```v
 struct User {
@@ -78,9 +78,9 @@ fn main() {
 }
 ```
 
-## High-Order Functions
+## Yüksek Dereceli Fonksiyonlar
 
-Functions are first-class values and can be passed to other functions:
+Fonksiyonlar birinci sınıf değerlerdir ve diğer fonksiyonlara aktarılabilir:
 
 ```v
 fn apply(arr []int, f fn(int) int) []int {
@@ -102,7 +102,7 @@ fn main() {
 }
 ```
 
-## Anonymous Functions
+## Anonim Fonksiyonlar
 
 ```v
 fn main() {

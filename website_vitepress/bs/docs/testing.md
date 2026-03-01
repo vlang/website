@@ -1,10 +1,10 @@
-# Testing
+# Testiranje
 
-V has built-in testing support. No test framework or external library needed.
+V ima ugrađenu podršku za testiranje. Nije potreban okvir za testiranje niti vanjska biblioteka.
 
-## Writing Tests
+## Pisanje testova
 
-Test functions must start with `test_` and live in files ending with `_test.v`:
+Funkcije testiranja moraju počinjati s `test_` i nalaziti se u datotekama koje završavaju s `_test.v`:
 
 ```v
 // math_test.v
@@ -24,17 +24,17 @@ fn test_add_large_numbers() {
 }
 ```
 
-Run tests with:
+Pokrenite testove s:
 
 ```bash
 v test math_test.v
-# or run all tests in a directory:
+# ili pokrenite sve testove u direktoriju:
 v test .
 ```
 
-## Assertions
+## Tvrdnje (assert)
 
-Use `assert` to check conditions. A failing assertion prints the values of both sides:
+Koristite `assert` za provjeru uvjeta. Neuspješna tvrdnja ispisuje vrijednosti obje strane:
 
 ```v
 fn test_string_ops() {
@@ -45,22 +45,22 @@ fn test_string_ops() {
 }
 ```
 
-## Test Setup and Teardown
+## Postavljanje i rasformiranje testova
 
 ```v
-// Use testsuite_begin and testsuite_end for module-level setup/teardown
+// Koristite testsuite_begin i testsuite_end za postavljanje/rasformiranje na razini modula
 fn testsuite_begin() {
-    // runs once before all tests in the file
+    // izvršava se jednom prije svih testova u datoteci
     println('Setting up test suite...')
 }
 
 fn testsuite_end() {
-    // runs once after all tests in the file
+    // izvršava se jednom nakon svih testova u datoteci
     println('Tearing down test suite...')
 }
 ```
 
-## Testing Error Cases
+## Testiranje slučajeva grešaka
 
 ```v
 fn safe_divide(a f64, b f64) !f64 {
@@ -81,22 +81,22 @@ fn test_divide_normal() {
 }
 ```
 
-## Running Specific Tests
+## Pokretanje određenih testova
 
 ```bash
-# Run a single test file
+# Pokretanje jedne datoteke testova
 v test mypackage/foo_test.v
 
-# Run tests matching a pattern
+# Pokretanje testova koji odgovaraju uzorku
 v test -run test_add .
 
-# Run with verbose output
+# Pokretanje s detaljnim ispisom
 v test -v .
 ```
 
-## Table-driven Tests
+## Testovi vođeni tabelom
 
-V doesn't have a built-in table-driven test helper, but you can do it manually:
+V nema ugrađeni pomoćnik za testove vođene tabelom, ali to možete učiniti ručno:
 
 ```v
 fn test_add_table() {
@@ -112,9 +112,9 @@ fn test_add_table() {
 }
 ```
 
-## Code Coverage
+## Pokrivenost koda
 
-Generate a coverage report:
+Generirajte izvještaj o pokrivenosti:
 
 ```bash
 v -coverage ./coverage_output test .

@@ -1,8 +1,8 @@
-# Concurrency
+# التزامن
 
-V uses lightweight threads (goroutines) to run work concurrently. The `spawn` keyword starts a function in a new thread.
+تستخدم V خيوطًا خفيفة الوزن (goroutines) لتشغيل العمل بشكل متزامن. تبدأ الكلمة المفتاحية `spawn` دالةً في خيط جديد.
 
-## Basic Spawning
+## الإطلاق الأساسي
 
 ```v
 import time
@@ -25,9 +25,9 @@ fn main() {
 }
 ```
 
-## Getting Return Values
+## الحصول على القيم المُعادة
 
-Threads can return values. Calling `.wait()` on a `[]thread T` returns `[]T`:
+يمكن للخيوط إعادة قيم. استدعاء `.wait()` على `[]thread T` يُعيد `[]T`:
 
 ```v
 fn expensive_computing(i int) int {
@@ -45,7 +45,7 @@ fn main() {
 }
 ```
 
-## Concurrent HTTP Requests
+## طلبات HTTP المتزامنة
 
 ```v
 import net.http
@@ -75,9 +75,9 @@ fn main() {
 }
 ```
 
-## Channels
+## القنوات
 
-Channels allow safe communication between threads:
+تتيح القنوات التواصل الآمن بين الخيوط:
 
 ```v
 fn producer(ch chan int) {
@@ -97,9 +97,9 @@ fn main() {
 }
 ```
 
-## Mutexes
+## الأقفال المتبادلة (Mutexes)
 
-Use `sync.Mutex` to protect shared state:
+استخدم `sync.Mutex` لحماية الحالة المشتركة:
 
 ```v
 import sync
@@ -119,7 +119,7 @@ fn (mut c Counter) increment() {
 
 ## `defer`
 
-`defer` executes a statement when the surrounding function returns — useful for cleanup:
+يُنفِّذ `defer` تعليمةً عند عودة الدالة المحيطة — مفيد للتنظيف:
 
 ```v
 import os

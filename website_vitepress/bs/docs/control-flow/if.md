@@ -1,6 +1,6 @@
 # If / Else
 
-## Basic Syntax
+## Osnovna sintaksa
 
 ```v
 a := 10
@@ -14,9 +14,9 @@ if a < 10 {
 }
 ```
 
-## If as an Expression
+## If kao izraz
 
-In V, `if` is an expression and can be used on the right side of an assignment:
+U V-u, `if` je izraz i može se koristiti na desnoj strani dodjele:
 
 ```v
 num := 7
@@ -24,16 +24,16 @@ result := if num % 2 == 0 { 'even' } else { 'odd' }
 println(result) // odd
 ```
 
-## Inline Short Form
+## Kratki oblik u jednoj liniji
 
 ```v
 x := 42
 if x > 0 { println('positive') }
 ```
 
-## Condition with Initialization
+## Uvjet s inicijalizacijom
 
-You can initialize a variable inside an `if` condition:
+Možete inicijalizirati varijablu unutar `if` uvjeta:
 
 ```v
 if val := some_function_returning_option() {
@@ -43,9 +43,9 @@ if val := some_function_returning_option() {
 }
 ```
 
-## The `in` Operator
+## Operator `in`
 
-Use `in` to check membership in arrays or maps:
+Koristite `in` za provjeru članstva u nizovima ili mapama:
 
 ```v
 nums := [1, 2, 3]
@@ -59,7 +59,7 @@ if 'a' in m {
 }
 ```
 
-Use `!in` for the inverse:
+Koristite `!in` za suprotno:
 
 ```v
 if 5 !in nums {
@@ -67,7 +67,7 @@ if 5 !in nums {
 }
 ```
 
-## FizzBuzz Example
+## Primjer FizzBuzz
 
 ```v
 for n in 1 .. 101 {

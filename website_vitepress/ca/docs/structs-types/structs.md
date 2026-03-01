@@ -1,8 +1,8 @@
-# Structs
+# Estructures
 
-Structs are used to define custom data types with named fields.
+Les estructures s'utilitzen per definir tipus de dades personalitzats amb camps amb nom.
 
-## Basic Struct
+## Estructura Bàsica
 
 ```v
 struct Point {
@@ -17,9 +17,9 @@ fn main() {
 }
 ```
 
-## Mutable Structs
+## Estructures Mutables
 
-Fields are immutable by default. Use `mut:` to declare mutable fields:
+Els camps són immutables per defecte. Usa `mut:` per declarar camps mutables:
 
 ```v
 struct User {
@@ -38,25 +38,25 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## Modificadors d'Accés
 
 ```v
 struct Foo {
-    a int         // private immutable (default)
+    a int         // privat immutable (per defecte)
 mut:
-    b int         // private mutable
+    b int         // privat mutable
 pub:
-    c int         // public immutable
+    c int         // públic immutable
 pub mut:
-    d int         // public mutable, private to set
+    d int         // públic mutable, privat per establir
 __global:
-    e int         // public and mutable everywhere (rare)
+    e int         // públic i mutable a tot arreu (rar)
 }
 ```
 
-## Methods
+## Mètodes
 
-Functions can be attached to structs:
+Les funcions es poden adjuntar a estructures:
 
 ```v
 struct Rectangle {
@@ -79,9 +79,9 @@ fn main() {
 }
 ```
 
-## Embedding
+## Incrustació
 
-Structs can embed other structs to inherit their fields and methods:
+Les estructures poden incrustar altres estructures per heretar els seus camps i mètodes:
 
 ```v
 struct Animal {
@@ -103,12 +103,12 @@ fn (d Dog) speak() string {
 
 fn main() {
     d := Dog{Animal: Animal{name: 'Rex'}, breed: 'Labrador'}
-    println(d.name)    // Rex  (promoted from Animal)
+    println(d.name)    // Rex  (promogut des d'Animal)
     println(d.speak()) // Woof!
 }
 ```
 
-## Default Field Values
+## Valors de Camp per Defecte
 
 ```v
 struct Config {
@@ -124,7 +124,7 @@ fn main() {
 }
 ```
 
-## JSON Example
+## Exemple JSON
 
 ```v
 import json

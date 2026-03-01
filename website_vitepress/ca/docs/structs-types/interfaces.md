@@ -1,8 +1,8 @@
-# Interfaces
+# Interfícies
 
-Interfaces define a contract — a set of methods that a type must implement. There is no explicit `implements` keyword; types satisfy interfaces automatically (structural/duck typing).
+Les interfícies defineixen un contracte — un conjunt de mètodes que un tipus ha d'implementar. No hi ha una paraula clau explícita `implements`; els tipus satisfan les interfícies automàticament (tipatje estructural/duck typing).
 
-## Defining an Interface
+## Definir una Interfície
 
 ```v
 interface Shape {
@@ -11,9 +11,9 @@ interface Shape {
 }
 ```
 
-## Implementing an Interface
+## Implementar una Interfície
 
-Any struct that has the required methods automatically implements the interface:
+Qualsevol estructura que tingui els mètodes requerits implementa automàticament la interfície:
 
 ```v
 struct Circle {
@@ -42,7 +42,7 @@ fn (r Rectangle) perimeter() f64 {
 }
 ```
 
-## Using Interfaces
+## Usar Interfícies
 
 ```v
 fn print_shape_info(s Shape) {
@@ -63,9 +63,9 @@ fn main() {
 }
 ```
 
-## Interface with Fields
+## Interfície amb Camps
 
-Interfaces can also require fields (not just methods):
+Les interfícies també poden requerir camps (no només mètodes):
 
 ```v
 interface Named {
@@ -86,7 +86,7 @@ fn main() {
 }
 ```
 
-## Type Checking with Interfaces
+## Comprovació de Tipus amb Interfícies
 
 ```v
 fn describe(s Shape) {
@@ -98,7 +98,7 @@ fn describe(s Shape) {
 }
 ```
 
-## Sum Types vs Interfaces
+## Tipus Suma vs Interfícies
 
-- Use **interfaces** when different unrelated types share common behaviour.
-- Use **sum types** (`type Foo = A | B`) when you have a closed, finite set of variants and want exhaustive pattern matching with `match`.
+- Usa **interfícies** quan tipus no relacionats comparteixen comportament comú.
+- Usa **tipus suma** (`type Foo = A | B`) quan tens un conjunt tancat i finit de variants i vols coincidència exhaustiva de patrons amb `match`.

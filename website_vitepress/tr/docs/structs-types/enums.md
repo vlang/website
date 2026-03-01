@@ -1,8 +1,8 @@
-# Enums
+# Enum'lar
 
-Enums define a type with a fixed set of named constants.
+Enum'lar, sabit adlandırılmış sabitlerden oluşan bir tip tanımlar.
 
-## Basic Enum
+## Temel Enum
 
 ```v
 enum Direction {
@@ -18,7 +18,7 @@ fn main() {
 }
 ```
 
-## Matching on Enums
+## Enum'larda Eşleştirme
 
 ```v
 enum Color {
@@ -36,9 +36,9 @@ fn describe(c Color) string {
 }
 ```
 
-Notice the shorthand `.variant` syntax when the type can be inferred.
+Tip çıkarılabildiğinde `.variant` kısaltma sözdizimini kullanın.
 
-## Enums with Custom Values
+## Özel Değerli Enum'lar
 
 ```v
 enum StatusCode {
@@ -53,7 +53,7 @@ fn main() {
 }
 ```
 
-## Enum Methods
+## Enum Metodları
 
 ```v
 enum Planet {
@@ -71,7 +71,7 @@ fn (p Planet) is_inner() bool {
 }
 ```
 
-## Iterating Over Enums
+## Enum'lar Üzerinde Yineleme
 
 ```v
 enum Season {
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-## Flag Enums (Bit Fields)
+## Bayrak Enum'ları (Bit Alanları)
 
 ```v
 @[flag]

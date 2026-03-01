@@ -1,10 +1,10 @@
-# For Loops
+# For Döngüleri
 
-V has a single looping keyword: `for`. It covers all iteration patterns.
+V'de tek bir döngü anahtar sözcüğü vardır: `for`. Tüm yineleme desenlerini kapsar.
 
-## Range Loop
+## Aralık Döngüsü
 
-Iterate over a half-open range `start..end` (end is exclusive):
+Yarı açık bir aralık üzerinde yineleme yapın `start..end` (bitiş dahil değil):
 
 ```v
 for i in 0 .. 5 {
@@ -12,23 +12,23 @@ for i in 0 .. 5 {
 }
 ```
 
-## Iterating Over Arrays
+## Diziler Üzerinde Yineleme
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
 
-// value only
+// yalnızca değer
 for name in names {
     println(name)
 }
 
-// index and value
+// indeks ve değer
 for i, name in names {
     println('${i}: ${name}')
 }
 ```
 
-## Iterating Over Maps
+## Haritalar Üzerinde Yineleme
 
 ```v
 m := {'a': 1, 'b': 2, 'c': 3}
@@ -38,7 +38,7 @@ for key, val in m {
 }
 ```
 
-## Classic C-style Loop
+## Klasik C Tarzı Döngü
 
 ```v
 for i := 0; i < 10; i++ {
@@ -46,7 +46,7 @@ for i := 0; i < 10; i++ {
 }
 ```
 
-## Condition-only Loop (while equivalent)
+## Yalnızca Koşullu Döngü (while eşdeğeri)
 
 ```v
 mut n := 0
@@ -56,7 +56,7 @@ for n < 5 {
 }
 ```
 
-## Infinite Loop
+## Sonsuz Döngü
 
 ```v
 mut i := 0
@@ -66,19 +66,19 @@ for {
 }
 ```
 
-## `break` and `continue`
+## `break` ve `continue`
 
 ```v
 for i in 0 .. 10 {
-    if i == 3 { continue }  // skip 3
-    if i == 7 { break }     // stop at 7
+    if i == 3 { continue }  // 3'ü atla
+    if i == 7 { break }     // 7'de dur
     println(i)
 }
 ```
 
-## Labeled Loops
+## Etiketli Döngüler
 
-For nested loops, you can label and break/continue from an outer loop:
+İç içe döngüler için, dış döngüyü etiketleyip oradan break/continue yapabilirsiniz:
 
 ```v
 outer: for i in 0 .. 3 {
@@ -91,7 +91,7 @@ outer: for i in 0 .. 3 {
 }
 ```
 
-## Primes Example
+## Asal Sayılar Örneği
 
 ```v
 import math { log }

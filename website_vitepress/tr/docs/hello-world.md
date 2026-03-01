@@ -1,8 +1,8 @@
-# Hello World
+# Merhaba Dünya
 
-## Your First V Program
+## İlk V Programınız
 
-Create a file named `hello.v`:
+`hello.v` adında bir dosya oluşturun:
 
 ```v
 fn main() {
@@ -10,51 +10,51 @@ fn main() {
 }
 ```
 
-Run it:
+Çalıştırın:
 
 ```bash
 v run hello.v
 ```
 
-Or compile and run separately:
+Ya da ayrı ayrı derleyip çalıştırın:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-## Skipping `fn main()`
+## `fn main()` Kullanmadan
 
-For single-file scripts, `fn main()` is optional:
+Tek dosyalı betiklerde `fn main()` isteğe bağlıdır:
 
 ```v
 println('Hello, World!')
 ```
 
-This is useful for small programs and learning the language.
+Bu, küçük programlar ve dili öğrenmek için kullanışlıdır.
 
-## Running Multiple Files
+## Birden Fazla Dosyayı Çalıştırma
 
-If your project has multiple `.v` files in a folder, run all of them at once:
+Projenizde bir klasörde birden fazla `.v` dosyası varsa, hepsini bir anda çalıştırın:
 
 ```bash
 v run .
 ```
 
-## Comments
+## Yorumlar
 
 ```v
-// This is a single line comment.
+// Bu tek satırlık bir yorumdur.
 /*
-  This is a multiline comment.
-  /* It can be nested. */
+  Bu çok satırlı bir yorumdur.
+  /* İç içe olabilir. */
 */
 ```
 
-## A Slightly Bigger Example
+## Biraz Daha Büyük Bir Örnek
 
 ```v
-// fibonacci.v — compute Fibonacci numbers up to a given rank
+// fibonacci.v — belirli bir sıraya kadar Fibonacci sayılarını hesaplar
 const args = arguments()
 
 fn main() {

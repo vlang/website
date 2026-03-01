@@ -1,10 +1,10 @@
-# Testing
+# Test
 
-V has built-in testing support. No test framework or external library needed.
+V'nin yerleşik test desteği vardır. Test çerçevesi veya harici kütüphane gerekmez.
 
-## Writing Tests
+## Test Yazma
 
-Test functions must start with `test_` and live in files ending with `_test.v`:
+Test fonksiyonları `test_` ile başlamalı ve `_test.v` ile biten dosyalarda yer almalıdır:
 
 ```v
 // math_test.v
@@ -24,17 +24,17 @@ fn test_add_large_numbers() {
 }
 ```
 
-Run tests with:
+Testleri şu şekilde çalıştırın:
 
 ```bash
 v test math_test.v
-# or run all tests in a directory:
+# ya da bir dizindeki tüm testleri çalıştırın:
 v test .
 ```
 
-## Assertions
+## Assertion'lar
 
-Use `assert` to check conditions. A failing assertion prints the values of both sides:
+Koşulları kontrol etmek için `assert` kullanın. Başarısız bir assertion, her iki tarafın değerlerini yazdırır:
 
 ```v
 fn test_string_ops() {
@@ -45,22 +45,22 @@ fn test_string_ops() {
 }
 ```
 
-## Test Setup and Teardown
+## Test Kurulumu ve Kaldırma
 
 ```v
-// Use testsuite_begin and testsuite_end for module-level setup/teardown
+// Modül düzeyinde kurulum/kaldırma için testsuite_begin ve testsuite_end kullanın
 fn testsuite_begin() {
-    // runs once before all tests in the file
+    // dosyadaki tüm testlerden önce bir kez çalışır
     println('Setting up test suite...')
 }
 
 fn testsuite_end() {
-    // runs once after all tests in the file
+    // dosyadaki tüm testlerden sonra bir kez çalışır
     println('Tearing down test suite...')
 }
 ```
 
-## Testing Error Cases
+## Hata Durumlarını Test Etme
 
 ```v
 fn safe_divide(a f64, b f64) !f64 {
@@ -81,22 +81,22 @@ fn test_divide_normal() {
 }
 ```
 
-## Running Specific Tests
+## Belirli Testleri Çalıştırma
 
 ```bash
-# Run a single test file
+# Tek bir test dosyasını çalıştır
 v test mypackage/foo_test.v
 
-# Run tests matching a pattern
+# Bir desenle eşleşen testleri çalıştır
 v test -run test_add .
 
-# Run with verbose output
+# Ayrıntılı çıktıyla çalıştır
 v test -v .
 ```
 
-## Table-driven Tests
+## Tablo Tabanlı Testler
 
-V doesn't have a built-in table-driven test helper, but you can do it manually:
+V'nin yerleşik tablo tabanlı test yardımcısı yoktur, ancak bunu manuel olarak yapabilirsiniz:
 
 ```v
 fn test_add_table() {
@@ -112,9 +112,9 @@ fn test_add_table() {
 }
 ```
 
-## Code Coverage
+## Kod Kapsama
 
-Generate a coverage report:
+Kapsama raporu oluşturun:
 
 ```bash
 v -coverage ./coverage_output test .

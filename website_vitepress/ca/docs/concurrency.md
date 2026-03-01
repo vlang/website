@@ -1,8 +1,8 @@
-# Concurrency
+# Concurrència
 
-V uses lightweight threads (goroutines) to run work concurrently. The `spawn` keyword starts a function in a new thread.
+V utilitza fils lleugers (goroutines) per executar tasques de manera concurrent. La paraula clau `spawn` inicia una funció en un nou fil.
 
-## Basic Spawning
+## Llançament Bàsic
 
 ```v
 import time
@@ -19,15 +19,15 @@ fn main() {
     threads << spawn expensive_computing(2, 500)
     threads << spawn expensive_computing(3, 1000)
 
-    // Wait for all threads to finish
+    // Espera que tots els fils acabin
     threads.wait()
     println('All jobs finished!')
 }
 ```
 
-## Getting Return Values
+## Obtenir Valors de Retorn
 
-Threads can return values. Calling `.wait()` on a `[]thread T` returns `[]T`:
+Els fils poden retornar valors. Cridar `.wait()` en un `[]thread T` retorna `[]T`:
 
 ```v
 fn expensive_computing(i int) int {
@@ -45,7 +45,7 @@ fn main() {
 }
 ```
 
-## Concurrent HTTP Requests
+## Peticions HTTP Concurrents
 
 ```v
 import net.http
@@ -75,14 +75,14 @@ fn main() {
 }
 ```
 
-## Channels
+## Canals
 
-Channels allow safe communication between threads:
+Els canals permeten la comunicació segura entre fils:
 
 ```v
 fn producer(ch chan int) {
     for i in 1 .. 6 {
-        ch <- i  // send to channel
+        ch <- i  // envia al canal
     }
     ch.close()
 }
@@ -97,9 +97,9 @@ fn main() {
 }
 ```
 
-## Mutexes
+## Mutexos
 
-Use `sync.Mutex` to protect shared state:
+Usa `sync.Mutex` per protegir l'estat compartit:
 
 ```v
 import sync
@@ -119,7 +119,7 @@ fn (mut c Counter) increment() {
 
 ## `defer`
 
-`defer` executes a statement when the surrounding function returns — useful for cleanup:
+`defer` executa una instrucció quan la funció que l'envolta retorna — útil per a la neteja de recursos:
 
 ```v
 import os
@@ -128,7 +128,7 @@ fn process_file(path string) {
     f := os.open(path) or { return }
     defer { f.close() }
 
-    // use f — it will be closed automatically
+    // usa f — es tancarà automàticament
     println(f.read_to_string() or { '' })
 }
 ```

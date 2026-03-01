@@ -1,44 +1,44 @@
-# Maps
+# Haritalar
 
-Maps are unordered key-value stores. All keys must be of the same type, and all values must be of the same type.
+Haritalar, sırasız anahtar-değer depolardır. Tüm anahtarlar aynı tipte, tüm değerler de aynı tipte olmalıdır.
 
-## Creating Maps
+## Harita Oluşturma
 
 ```v
-// map literal
+// harita literali
 mut scores := {
     'Alice': 10
     'Bob':   20
     'Carol': 30
 }
 
-// empty map
+// boş harita
 mut m := map[string]int{}
 ```
 
-## Adding and Updating
+## Ekleme ve Güncelleme
 
 ```v
 mut m := map[string]int{}
 m['x'] = 1
 m['y'] = 2
-m['x'] = 99   // update existing key
+m['x'] = 99   // mevcut anahtarı güncelle
 println(m)    // {'x': 99, 'y': 2}
 ```
 
-## Reading Values
+## Değerleri Okuma
 
 ```v
 scores := {'Alice': 10, 'Bob': 20}
 
 println(scores['Alice']) // 10
 
-// safe lookup with `or` block — avoids panicking on missing key
+// `or` bloğu ile güvenli arama — eksik anahtarda panik olmaz
 val := scores['Dave'] or { -1 }
 println(val) // -1
 ```
 
-## Checking for a Key
+## Anahtar Kontrolü
 
 ```v
 m := {'a': 1, 'b': 2}
@@ -52,7 +52,7 @@ if 'z' !in m {
 }
 ```
 
-## Deleting Keys
+## Anahtar Silme
 
 ```v
 mut m := {'a': 1, 'b': 2, 'c': 3}
@@ -60,7 +60,7 @@ m.delete('b')
 println(m) // {'a': 1, 'c': 3}
 ```
 
-## Iterating
+## Yineleme
 
 ```v
 m := {'one': 1, 'two': 2, 'three': 3}
@@ -69,22 +69,22 @@ for key, val in m {
     println('${key} = ${val}')
 }
 
-// keys and values separately
+// anahtarlar ve değerler ayrı ayrı
 for key in m.keys() {
     println(key)
 }
 ```
 
-## Map Size
+## Harita Boyutu
 
 ```v
 m := {'a': 1, 'b': 2}
 println(m.len) // 2
 ```
 
-## Allowed Key Types
+## İzin Verilen Anahtar Tipleri
 
-Map keys can be strings, integers, floats, runes, or any type that implements the `==` operator.
+Harita anahtarları string, integer, float, rune veya `==` operatörünü uygulayan herhangi bir tip olabilir.
 
 ```v
 mut m := map[int]string{}

@@ -1,8 +1,8 @@
-# Enums
+# Enumeracions
 
-Enums define a type with a fixed set of named constants.
+Les enumeracions defineixen un tipus amb un conjunt fix de constants amb nom.
 
-## Basic Enum
+## Enumeració Bàsica
 
 ```v
 enum Direction {
@@ -18,7 +18,7 @@ fn main() {
 }
 ```
 
-## Matching on Enums
+## Coincidència sobre Enumeracions
 
 ```v
 enum Color {
@@ -36,9 +36,9 @@ fn describe(c Color) string {
 }
 ```
 
-Notice the shorthand `.variant` syntax when the type can be inferred.
+Observa la sintaxi abreviada `.variant` quan el tipus es pot inferir.
 
-## Enums with Custom Values
+## Enumeracions amb Valors Personalitzats
 
 ```v
 enum StatusCode {
@@ -53,7 +53,7 @@ fn main() {
 }
 ```
 
-## Enum Methods
+## Mètodes d'Enumeració
 
 ```v
 enum Planet {
@@ -71,7 +71,7 @@ fn (p Planet) is_inner() bool {
 }
 ```
 
-## Iterating Over Enums
+## Iteració sobre Enumeracions
 
 ```v
 enum Season {
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-## Flag Enums (Bit Fields)
+## Enumeracions de Bandera (Camps de Bits)
 
 ```v
 @[flag]

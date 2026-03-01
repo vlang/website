@@ -1,35 +1,35 @@
-# Primitive Types
+# Tipus Primitius
 
-## Integer Types
+## Tipus Enters
 
 ```v
-// Signed integers
-i8    // -128 to 127
-i16   // -32,768 to 32,767
-int   // -2,147,483,648 to 2,147,483,647  (always 32-bit)
-i64   // -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+// Enters amb signe
+i8    // -128 fins a 127
+i16   // -32.768 fins a 32.767
+int   // -2.147.483.648 fins a 2.147.483.647  (sempre de 32 bits)
+i64   // -9.223.372.036.854.775.808 fins a 9.223.372.036.854.775.807
 
-// Unsigned integers
-u8    // 0 to 255  (also used for bytes)
-u16   // 0 to 65,535
-u32   // 0 to 4,294,967,295
-u64   // 0 to 18,446,744,073,709,551,615
+// Enters sense signe
+u8    // 0 fins a 255  (també usat per als bytes)
+u16   // 0 fins a 65.535
+u32   // 0 fins a 4.294.967.295
+u64   // 0 fins a 18.446.744.073.709.551.615
 
-// Platform-dependent
-isize // signed, size of a pointer
-usize // unsigned, size of a pointer
+// Dependent de la plataforma
+isize // amb signe, mida d'un punter
+usize // sense signe, mida d'un punter
 ```
 
-> **Note:** Unlike C and Go, `int` in V is always 32-bit regardless of platform.
+> **Nota:** A diferència de C i Go, `int` en V sempre és de 32 bits independentment de la plataforma.
 
-## Floating-Point Types
+## Tipus de Punt Flotant
 
 ```v
 f32   // single-precision (32-bit)
 f64   // double-precision (64-bit)
 ```
 
-## Boolean
+## Booleà
 
 ```v
 is_ready := true
@@ -38,7 +38,7 @@ is_done  := false
 
 ## Rune
 
-A `rune` represents a Unicode code point:
+Un `rune` representa un punt de codi Unicode:
 
 ```v
 letter := `A`        // rune literal uses backticks
@@ -47,9 +47,9 @@ println(letter)      // A
 println(int(letter)) // 65
 ```
 
-## Type Promotions
+## Promocions de Tipus
 
-Small types are automatically promoted when combined with larger types on the same side of an operator:
+Els tipus petits es promocionen automàticament quan es combinen amb tipus més grans al mateix costat d'un operador:
 
 ```v
 u := u16(12)
@@ -60,21 +60,21 @@ a := 75        // int (default for integer literals)
 b := 14.7      // f64 (default for float literals)
 ```
 
-## Numeric Literals
+## Literals Numèrics
 
 ```v
-n1 := 1_000_000      // underscores for readability
-n2 := 0xff           // hex
+n1 := 1_000_000      // guions baixos per a llegibilitat
+n2 := 0xff           // hexadecimal
 n3 := 0o77           // octal
-n4 := 0b1111_0000    // binary
-f1 := 3.14_159_265   // float with underscores
+n4 := 0b1111_0000    // binari
+f1 := 3.14_159_265   // decimal amb guions baixos
 ```
 
 ## `voidptr`
 
-A raw pointer type used mainly for C interoperability. Avoid in pure V code.
+Un tipus de punter brut usat principalment per a la interoperabilitat amb C. Evita'l en codi V pur.
 
 ```v
-// mostly for C interop
+// principalment per a la interoperabilitat amb C
 p := voidptr(0)
 ```

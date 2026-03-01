@@ -1,67 +1,67 @@
-# Installation
+# Kurulum
 
-## Install from Source
+## Kaynaktan Kurulum
 
-The recommended way to install V is from source. It only takes a few seconds:
+V'yi kurmanın önerilen yolu kaynaktan derlemektir. Yalnızca birkaç saniye sürer:
 
 ```bash
 git clone --depth=1 https://github.com/vlang/v && cd v && make
 ```
 
-On Windows, use `make.bat` instead of `make`.
+Windows'ta `make` yerine `make.bat` kullanın.
 
-## Symlink V
+## V'ye Sembolik Bağ Oluşturma
 
-After building, you can symlink V so it's available everywhere:
+Derleme sonrasında V'yi her yerden erişilebilir kılmak için sembolik bağ oluşturabilirsiniz:
 
 ```bash
 sudo ./v symlink
 ```
 
-On Windows, run `v.exe symlink` from an elevated command prompt.
+Windows'ta, yönetici komut isteminden `v.exe symlink` komutunu çalıştırın.
 
-## Verify Installation
+## Kurulumu Doğrulama
 
 ```bash
 v version
 ```
 
-You should see output like `V 0.5.0 ...`.
+`V 0.5.0 ...` gibi bir çıktı görmelisiniz.
 
-## Download Pre-built Binaries
+## Önceden Derlenmiş İkilileri İndirme
 
-Pre-built binaries are available for all major platforms on the
-[GitHub Releases](https://github.com/vlang/v/releases/latest) page:
+Tüm büyük platformlar için önceden derlenmiş ikililere
+[GitHub Releases](https://github.com/vlang/v/releases/latest) sayfasından ulaşabilirsiniz:
 
-| Platform | File |
+| Platform | Dosya |
 | --- | --- |
 | Linux (x86_64) | `v_linux.zip` |
 | macOS (Apple Silicon) | `v_macos_arm64.zip` |
 | macOS (Intel) | `v_macos_x86_64.zip` |
 | Windows | `v_windows.zip` |
 
-## Upgrading V
+## V'yi Güncelleme
 
-To upgrade V to the latest version, run:
+V'yi en son sürüme güncellemek için:
 
 ```bash
 v up
 ```
 
-## Running a Program
+## Bir Program Çalıştırma
 
 ```bash
 v run hello.v
 ```
 
-Or compile it:
+Ya da derleyin:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-To run all `.v` files in a directory:
+Bir dizindeki tüm `.v` dosyalarını çalıştırmak için:
 
 ```bash
 v run .

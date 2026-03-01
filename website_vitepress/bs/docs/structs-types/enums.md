@@ -1,8 +1,8 @@
-# Enums
+# Enumeracije
 
-Enums define a type with a fixed set of named constants.
+Enumeracije definiraju tip s fiksnim skupom imenovanih konstanti.
 
-## Basic Enum
+## Osnovna enumeracija
 
 ```v
 enum Direction {
@@ -18,7 +18,7 @@ fn main() {
 }
 ```
 
-## Matching on Enums
+## Podudaranje na enumeracijama
 
 ```v
 enum Color {
@@ -36,9 +36,9 @@ fn describe(c Color) string {
 }
 ```
 
-Notice the shorthand `.variant` syntax when the type can be inferred.
+Primijetite skraćenu sintaksu `.variant` kada se tip može automatski odrediti.
 
-## Enums with Custom Values
+## Enumeracije s prilagođenim vrijednostima
 
 ```v
 enum StatusCode {
@@ -53,7 +53,7 @@ fn main() {
 }
 ```
 
-## Enum Methods
+## Metode enumeracije
 
 ```v
 enum Planet {
@@ -71,7 +71,7 @@ fn (p Planet) is_inner() bool {
 }
 ```
 
-## Iterating Over Enums
+## Iteracija po enumeracijama
 
 ```v
 enum Season {
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-## Flag Enums (Bit Fields)
+## Zastavicaške enumeracije (Bit polja)
 
 ```v
 @[flag]

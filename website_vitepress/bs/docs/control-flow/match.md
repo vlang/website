@@ -1,8 +1,8 @@
 # Match
 
-`match` is V's pattern matching statement — more powerful than a C `switch`. It must be exhaustive: every possible value must be handled.
+`match` je V-ov iskaz za podudaranje uzoraka — moćniji od C-ovog `switch`. Mora biti iscrpan: svaka moguća vrijednost mora biti obrađena.
 
-## Basic Usage
+## Osnovna upotreba
 
 ```v
 x := 3
@@ -15,7 +15,7 @@ match x {
 }
 ```
 
-## Match as an Expression
+## Match kao izraz
 
 ```v
 name := 'Bob'
@@ -27,7 +27,7 @@ greeting := match name {
 println(greeting)
 ```
 
-## Matching Multiple Values
+## Podudaranje više vrijednosti
 
 ```v
 n := 5
@@ -38,7 +38,7 @@ match n {
 }
 ```
 
-## Matching Ranges
+## Podudaranje raspona
 
 ```v
 score := 72
@@ -52,9 +52,9 @@ grade := match score {
 println(grade) // C
 ```
 
-## Matching Sum Types
+## Podudaranje zbirnih tipova
 
-When matching on a sum type, V gives you access to the inner value with the correct type:
+Kada se podudaramo na zbirnom tipu, V vam daje pristup unutarnjoj vrijednosti s ispravnim tipom:
 
 ```v
 type Shape = Circle | Rectangle
@@ -76,7 +76,7 @@ fn area(s Shape) f64 {
 }
 ```
 
-## FizzBuzz with Match
+## FizzBuzz s match-om
 
 ```v
 for n in 1 .. 101 {

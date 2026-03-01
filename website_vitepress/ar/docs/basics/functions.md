@@ -1,6 +1,6 @@
-# Functions
+# الدوال
 
-## Basic Syntax
+## الصياغة الأساسية
 
 ```v
 fn main() {
@@ -17,13 +17,13 @@ fn sub(x int, y int) int {
 }
 ```
 
-The return type is specified **after** the parameter list. If the function returns nothing, the return type is omitted.
+يُحدَّد نوع القيمة المُعادة **بعد** قائمة المعاملات. إذا لم تُعِد الدالة شيئًا، يُحذف نوع القيمة المُعادة.
 
-## Hoisting
+## الرفع (Hoisting)
 
-Functions can be used before they are declared. V hoists all declarations, so there is no need for header files or forward declarations.
+يمكن استخدام الدوال قبل إعلانها. تقوم V برفع جميع الإعلانات، لذا لا حاجة لملفات الترويسة أو الإعلانات المسبقة.
 
-## Multiple Return Values
+## قيم إعادة متعددة
 
 ```v
 fn foo() (int, int) {
@@ -36,9 +36,9 @@ println(b) // 3
 c, _ := foo() // ignore the second value with `_`
 ```
 
-## Visibility
+## مستوى الرؤية
 
-Functions are **private** by default. Use `pub` to export them:
+الدوال **خاصة** بشكل افتراضي. استخدم `pub` لتصديرها:
 
 ```v
 pub fn public_function() {
@@ -48,13 +48,13 @@ fn private_function() {
 }
 ```
 
-## No Overloading
+## لا تحميل زائد
 
-Functions cannot be overloaded. This keeps the code unambiguous and easy to read.
+لا يمكن تحميل الدوال بشكل زائد. هذا يجعل الكود واضحًا وسهل القراءة.
 
-## Methods
+## الأساليب (Methods)
 
-Functions can be attached to types:
+يمكن ربط الدوال بالأنواع:
 
 ```v
 struct User {
@@ -78,9 +78,9 @@ fn main() {
 }
 ```
 
-## High-Order Functions
+## الدوال ذات الرتبة العليا
 
-Functions are first-class values and can be passed to other functions:
+الدوال هي قيم من الدرجة الأولى ويمكن تمريرها إلى دوال أخرى:
 
 ```v
 fn apply(arr []int, f fn(int) int) []int {
@@ -102,7 +102,7 @@ fn main() {
 }
 ```
 
-## Anonymous Functions
+## الدوال المجهولة
 
 ```v
 fn main() {

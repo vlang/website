@@ -1,8 +1,8 @@
-# Variables
+# Varijable
 
-## Declaration and Initialization
+## Deklaracija i inicijalizacija
 
-Variables are declared and initialized with `:=`. This is the only way to declare variables in V — they always have an initial value and their type is inferred from the right-hand side.
+Varijable se deklariraju i inicijaliziraju s `:=`. Ovo je jedini način deklaracije varijabli u V-u — uvijek imaju početnu vrijednost, a njihov tip se određuje automatski iz desne strane.
 
 ```v
 name := 'Bob'
@@ -13,9 +13,9 @@ println(age)
 println(large_number)
 ```
 
-## Mutable Variables
+## Promjenljive varijable
 
-Variables are **immutable by default**. Use `mut` to make a variable mutable:
+Varijable su **nepromjenjive po zadanom**. Koristite `mut` da biste varijablu učinili promjenljivom:
 
 ```v
 mut age := 20
@@ -24,21 +24,21 @@ age = 21
 println(age)
 ```
 
-> If you try to reassign without `mut`, the compiler will refuse to compile.
+> Ako pokušate dodijeliti vrijednost bez `mut`, kompajler će odbiti kompajliranje.
 
-## Type Conversion
+## Konverzija tipova
 
-Use `T(value)` to convert between types:
+Koristite `T(value)` za konverziju između tipova:
 
 ```v
 x := 42
-y := f64(x)  // x converted to f64
-z := u8(x)   // x converted to u8
+y := f64(x)  // x konvertovan u f64
+z := u8(x)   // x konvertovan u u8
 ```
 
-## Multiple Assignment
+## Višestruka dodjela
 
-Multiple variables can be changed or swapped in one line:
+Više varijabli može se promijeniti ili zamijeniti u jednoj liniji:
 
 ```v
 mut a := 0
@@ -48,9 +48,9 @@ a, b = b, a
 println('${a}, ${b}') // 1, 0
 ```
 
-## Ignoring Values
+## Ignoriranje vrijednosti
 
-Use `_` to discard a return value:
+Koristite `_` za odbacivanje povratne vrijednosti:
 
 ```v
 fn foo() (int, int) {
@@ -63,21 +63,21 @@ fn main() {
 }
 ```
 
-## Naming Convention
+## Konvencija imenovanja
 
-All variable and function names must use `snake_case`. Type names must use `PascalCase`. The compiler enforces this.
+Sva imena varijabli i funkcija moraju koristiti `snake_case`. Imena tipova moraju koristiti `PascalCase`. Kompajler to provodi.
 
-## No Global Variables
+## Bez globalnih varijabli
 
-V does not allow global variables by default. All variables must be declared inside functions. This leads to more predictable, testable code.
+V ne dozvoljava globalne varijable po zadanom. Sve varijable moraju biti deklarirane unutar funkcija. Ovo vodi ka predvidljivijem, testabilnom kodu.
 
-## No Shadowing
+## Bez zasjenjivanja
 
-Variable shadowing is not allowed. Declaring a variable with a name already used in a parent scope is a compile error:
+Zasjenjivanje varijabli nije dozvoljeno. Deklariranje varijable s imenom koje se već koristi u roditeljskom opsegu je greška kompajliranja:
 
 ```v
 fn main() {
     a := 10
-    // a := 20  // ← compile error: redefinition of `a`
+    // a := 20  // ← greška kompajliranja: redefinicija `a`
 }
 ```

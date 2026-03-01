@@ -1,8 +1,8 @@
-# Structs
+# Strukture
 
-Structs are used to define custom data types with named fields.
+Strukture se koriste za definisanje prilagođenih tipova podataka s imenovanim poljima.
 
-## Basic Struct
+## Osnovna struktura
 
 ```v
 struct Point {
@@ -17,9 +17,9 @@ fn main() {
 }
 ```
 
-## Mutable Structs
+## Promjenljive strukture
 
-Fields are immutable by default. Use `mut:` to declare mutable fields:
+Polja su nepromjenjiva po zadanom. Koristite `mut:` za deklariranje promjenljivih polja:
 
 ```v
 struct User {
@@ -38,25 +38,25 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## Modifikatori pristupa
 
 ```v
 struct Foo {
-    a int         // private immutable (default)
+    a int         // privatno nepromjenjivo (zadano)
 mut:
-    b int         // private mutable
+    b int         // privatno promjenjivo
 pub:
-    c int         // public immutable
+    c int         // javno nepromjenjivo
 pub mut:
-    d int         // public mutable, private to set
+    d int         // javno promjenjivo, privatno za postavljanje
 __global:
-    e int         // public and mutable everywhere (rare)
+    e int         // javno i promjenjivo svugdje (rijetko)
 }
 ```
 
-## Methods
+## Metode
 
-Functions can be attached to structs:
+Funkcije se mogu pridružiti strukturama:
 
 ```v
 struct Rectangle {
@@ -79,9 +79,9 @@ fn main() {
 }
 ```
 
-## Embedding
+## Ugrađivanje (Embedding)
 
-Structs can embed other structs to inherit their fields and methods:
+Strukture mogu ugrađivati druge strukture radi naslijeđivanja njihovih polja i metoda:
 
 ```v
 struct Animal {
@@ -103,12 +103,12 @@ fn (d Dog) speak() string {
 
 fn main() {
     d := Dog{Animal: Animal{name: 'Rex'}, breed: 'Labrador'}
-    println(d.name)    // Rex  (promoted from Animal)
+    println(d.name)    // Rex  (promovirano iz Animal)
     println(d.speak()) // Woof!
 }
 ```
 
-## Default Field Values
+## Zadane vrijednosti polja
 
 ```v
 struct Config {
@@ -124,7 +124,7 @@ fn main() {
 }
 ```
 
-## JSON Example
+## JSON primjer
 
 ```v
 import json

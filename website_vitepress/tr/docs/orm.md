@@ -1,10 +1,10 @@
 # ORM
 
-V includes a built-in ORM that supports SQLite, PostgreSQL, MySQL, and MSSQL. No external library needed.
+V, SQLite, PostgreSQL, MySQL ve MSSQL destekleyen yerleşik bir ORM içerir. Harici kütüphane gerekmez.
 
-## Defining a Model
+## Model Tanımlama
 
-Use the `@[table: 'table_name']` attribute to map a struct to a database table:
+Bir yapıyı veritabanı tablosuna eşlemek için `@[table: 'table_name']` özelliğini kullanın:
 
 ```v
 import db.sqlite
@@ -20,9 +20,9 @@ pub:
 }
 ```
 
-## SQL Syntax (Built-in DSL)
+## SQL Sözdizimi (Yerleşik DSL)
 
-V provides a clean SQL-like DSL for queries:
+V, sorgular için temiz bir SQL benzeri DSL sunar:
 
 ```v
 import db.sqlite
@@ -42,35 +42,35 @@ fn main() {
     user1 := User{id: '001', name: 'Alice'}
     user2 := User{id: '002', name: 'Bob'}
 
-    // Create table
+    // Tablo oluştur
     sql db { create table User }!
 
-    // Insert
+    // Ekle
     sql db { insert user1 into User }!
     sql db { insert user2 into User }!
 
-    // Select all
+    // Tümünü seç
     all_users := sql db { select from User }!
     dump(all_users)
 
-    // Select with condition
+    // Koşullu seç
     alice := sql db { select from User where id == '001' }!
     dump(alice)
 
-    // Update
+    // Güncelle
     sql db { update User set name = 'Alice Smith' where id == '001' }!
 
-    // Delete
+    // Sil
     sql db { delete from User where id == '002' }!
 
-    // Drop table
+    // Tabloyu düşür
     sql db { drop table User }!
 }
 ```
 
-## Query Builder Syntax
+## Sorgu Oluşturucu Sözdizimi
 
-An alternative fluent query builder API is also available:
+Alternatif bir akıcı sorgu oluşturucu API'si de mevcuttur:
 
 ```v
 import db.sqlite
@@ -94,23 +94,23 @@ fn main() {
     qb.insert(Product{id: 'p1', name: 'Widget', price: 9.99})!
     qb.insert(Product{id: 'p2', name: 'Gadget', price: 19.99})!
 
-    // Fetch all
+    // Tümünü getir
     all := qb.query()!
     dump(all)
 
-    // Filter
+    // Filtrele
     cheap := qb.where('price < ?', 15.0)!.query()!
     dump(cheap)
 
-    // Update
+    // Güncelle
     qb.set('price = ?', 12.99)!.where('id = ?', 'p1')!.update()!
 
-    // Delete
+    // Sil
     qb.where('id = ?', 'p2')!.delete()!
 }
 ```
 
-## PostgreSQL Example
+## PostgreSQL Örneği
 
 ```v
 import db.pg
@@ -124,7 +124,7 @@ fn main() {
     })!
     defer { db.close() }
 
-    // same SQL DSL works with PostgreSQL
+    // aynı SQL DSL PostgreSQL ile de çalışır
     users := sql db { select from User }!
     println(users)
 }

@@ -1,10 +1,10 @@
 # ORM
 
-V includes a built-in ORM that supports SQLite, PostgreSQL, MySQL, and MSSQL. No external library needed.
+تتضمن V نظام ORM مدمَجًا يدعم SQLite وPostgreSQL وMySQL وMSSQL. لا حاجة لمكتبة خارجية.
 
-## Defining a Model
+## تعريف نموذج
 
-Use the `@[table: 'table_name']` attribute to map a struct to a database table:
+استخدم السمة `@[table: 'table_name']` لتعيين بنية إلى جدول في قاعدة البيانات:
 
 ```v
 import db.sqlite
@@ -20,9 +20,9 @@ pub:
 }
 ```
 
-## SQL Syntax (Built-in DSL)
+## صياغة SQL (لغة DSL المدمَجة)
 
-V provides a clean SQL-like DSL for queries:
+توفر V لغة DSL نظيفة تشبه SQL للاستعلامات:
 
 ```v
 import db.sqlite
@@ -68,9 +68,9 @@ fn main() {
 }
 ```
 
-## Query Builder Syntax
+## صياغة منشئ الاستعلامات
 
-An alternative fluent query builder API is also available:
+تتوفر أيضًا واجهة برمجة تطبيقات بديلة لمنشئ الاستعلامات السلسة:
 
 ```v
 import db.sqlite
@@ -110,7 +110,7 @@ fn main() {
 }
 ```
 
-## PostgreSQL Example
+## مثال على PostgreSQL
 
 ```v
 import db.pg

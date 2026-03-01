@@ -1,10 +1,10 @@
-# Error Handling
+# معالجة الأخطاء
 
-V uses **Option** and **Result** types instead of exceptions. This makes error handling explicit and visible in function signatures.
+تستخدم V نوعَي **Option** و**Result** بدلاً من الاستثناءات. وهذا يجعل معالجة الأخطاء صريحةً وظاهرةً في توقيعات الدوال.
 
-## Option Types
+## أنواع Option
 
-An `?T` (option) holds either a value of type `T` or `none`:
+يحمل `?T` (الخيار) إما قيمةً من النوع `T` أو `none`:
 
 ```v
 fn find_user(id int) ?string {
@@ -21,9 +21,9 @@ fn main() {
 }
 ```
 
-## Result Types
+## أنواع Result
 
-A `!T` (result) holds either a value of type `T` or an error:
+يحمل `!T` (النتيجة) إما قيمةً من النوع `T` أو خطأً:
 
 ```v
 fn divide(a f64, b f64) !f64 {
@@ -42,9 +42,9 @@ fn main() {
 }
 ```
 
-## The `or` Block
+## كتلة `or`
 
-The `or` block runs when the result is `none` or an error. Inside `or`, `err` holds the error value:
+تعمل كتلة `or` عندما تكون النتيجة `none` أو خطأً. داخل `or`، يحتوي `err` على قيمة الخطأ:
 
 ```v
 import net.http
@@ -58,9 +58,9 @@ fn main() {
 }
 ```
 
-## Propagating Errors with `!`
+## نشر الأخطاء باستخدام `!`
 
-Adding `!` after a call propagates the error up to the caller (similar to `?` in Rust):
+إضافة `!` بعد استدعاء دالة ينشر الخطأ إلى المُستدعي (مشابه لـ`?` في Rust):
 
 ```v
 fn read_config(path string) !string {
@@ -69,9 +69,9 @@ fn read_config(path string) !string {
 }
 ```
 
-## Custom Errors
+## أخطاء مخصصة
 
-Implement the `IError` interface to create custom error types:
+نفِّذ واجهة `IError` لإنشاء أنواع أخطاء مخصصة:
 
 ```v
 struct DivisionError {
@@ -95,7 +95,7 @@ fn safe_divide(a f64, b f64) !f64 {
 }
 ```
 
-## Matching on Error Types
+## المطابقة على أنواع الأخطاء
 
 ```v
 import semver
@@ -120,9 +120,9 @@ fn check_error(err IError) {
 }
 ```
 
-## The `?` Unwrap Operator
+## عامل الكشف `?`
 
-Use `val?` inside an option context to unwrap or propagate `none`:
+استخدم `val?` داخل سياق خيار لكشف القيمة أو نشر `none`:
 
 ```v
 fn get_name(users map[int]string, id int) ?string {

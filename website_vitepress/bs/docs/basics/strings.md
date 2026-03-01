@@ -1,22 +1,22 @@
-# Strings
+# Stringovi
 
-In V, strings are encoded in **UTF-8** and are **immutable** by default.
+U V-u, stringovi su kodirani u **UTF-8** i **nepromjenjivi** su po zadanom.
 
-## Basic Usage
+## Osnovna upotreba
 
 ```v
 s    := 'hello 🌎'
 name := 'Bob'
 
-println(s.len)         // 10  (byte count)
+println(s.len)         // 10  (broj bajtova)
 println(name.len)      // 3
-println(name[0])       // 66  (u8 — byte value of 'B')
-println(name[1..3])    // ob  (slicing returns a string)
+println(name[0])       // 66  (u8 — vrijednost bajta za 'B')
+println(name[1..3])    // ob  (rezanje vraća string)
 ```
 
-## String Interpolation
+## Interpolacija stringa
 
-Use `${}` to embed expressions inside strings:
+Koristite `${}` za ugrađivanje izraza unutar stringova:
 
 ```v
 name := 'Alice'
@@ -25,7 +25,7 @@ println('Hello, ${name}! You are ${age} years old.')
 println('Is adult: ${age >= 18}')
 ```
 
-## Multiline Strings
+## Višelinjski stringovi
 
 ```v
 text := 'line one
@@ -33,16 +33,16 @@ line two
 line three'
 ```
 
-## Raw Strings
+## Sirovi stringovi
 
-Prepend `r` to disable escape processing:
+Dodajte `r` za onemogućavanje obrade escape sekvenci:
 
 ```v
-s := r'hello\nworld'  // \n is kept as two characters
+s := r'hello\nworld'  // \n je zadržan kao dva znaka
 println(s)            // hello\nworld
 ```
 
-## String Methods
+## Metode stringa
 
 ```v
 s := 'Hello, World!'
@@ -54,10 +54,10 @@ println(s.starts_with('Hello')) // true
 println(s.ends_with('!'))  // true
 println(s.replace('World', 'V')) // Hello, V!
 println(s.split(', '))     // ['Hello', 'World!']
-println(s.trim_space())    // Hello, World!  (removes leading/trailing whitespace)
+println(s.trim_space())    // Hello, World!  (uklanja vodeće/zakasnjele razmake)
 ```
 
-## Converting to Numbers
+## Pretvaranje u brojeve
 
 ```v
 s := '42'
@@ -69,20 +69,20 @@ assert '0o10'.int() == 8
 assert '0b1010'.int() == 10
 ```
 
-## Runes (Unicode Code Points)
+## Rune (Unicode kodne tačke)
 
-To work with Unicode characters rather than raw bytes, use `runes()`:
+Za rad s Unicode znakovima umjesto sirovih bajtova, koristite `runes()`:
 
 ```v
 mut s := 'hello 🌎'
 r := s.runes()
-println(r.len)    // 7  (7 Unicode code points, not 10 bytes)
+println(r.len)    // 7  (7 Unicode kodnih tačaka, ne 10 bajtova)
 println(r[6])     // 🌎
 ```
 
-## String Builder
+## Graditelj stringova
 
-For efficient string concatenation, use `strings.Builder`:
+Za efikasno spajanje stringova koristite `strings.Builder`:
 
 ```v
 import strings

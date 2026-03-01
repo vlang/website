@@ -1,67 +1,67 @@
-# Installation
+# التثبيت
 
-## Install from Source
+## التثبيت من المصدر
 
-The recommended way to install V is from source. It only takes a few seconds:
+الطريقة الموصى بها لتثبيت V هي من المصدر. لا تستغرق سوى بضع ثوانٍ:
 
 ```bash
 git clone --depth=1 https://github.com/vlang/v && cd v && make
 ```
 
-On Windows, use `make.bat` instead of `make`.
+على Windows، استخدم `make.bat` بدلاً من `make`.
 
-## Symlink V
+## إنشاء رابط رمزي لـ V
 
-After building, you can symlink V so it's available everywhere:
+بعد البناء، يمكنك إنشاء رابط رمزي لـ V حتى تكون متاحةً في كل مكان:
 
 ```bash
 sudo ./v symlink
 ```
 
-On Windows, run `v.exe symlink` from an elevated command prompt.
+على Windows، شغِّل `v.exe symlink` من موجه الأوامر بصلاحيات المسؤول.
 
-## Verify Installation
+## التحقق من التثبيت
 
 ```bash
 v version
 ```
 
-You should see output like `V 0.5.0 ...`.
+يجب أن ترى مخرجات مثل `V 0.5.0 ...`.
 
-## Download Pre-built Binaries
+## تنزيل الملفات الثنائية الجاهزة
 
-Pre-built binaries are available for all major platforms on the
-[GitHub Releases](https://github.com/vlang/v/releases/latest) page:
+تتوفر الملفات الثنائية الجاهزة لجميع المنصات الرئيسية على صفحة
+[إصدارات GitHub](https://github.com/vlang/v/releases/latest):
 
-| Platform | File |
+| المنصة | الملف |
 | --- | --- |
 | Linux (x86_64) | `v_linux.zip` |
 | macOS (Apple Silicon) | `v_macos_arm64.zip` |
 | macOS (Intel) | `v_macos_x86_64.zip` |
 | Windows | `v_windows.zip` |
 
-## Upgrading V
+## ترقية V
 
-To upgrade V to the latest version, run:
+لترقية V إلى أحدث إصدار، شغِّل:
 
 ```bash
 v up
 ```
 
-## Running a Program
+## تشغيل برنامج
 
 ```bash
 v run hello.v
 ```
 
-Or compile it:
+أو صرِّفه:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-To run all `.v` files in a directory:
+لتشغيل جميع ملفات `.v` في مجلد:
 
 ```bash
 v run .

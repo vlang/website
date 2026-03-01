@@ -1,8 +1,8 @@
-# Hello World
+# Hola Món
 
-## Your First V Program
+## El Teu Primer Programa en V
 
-Create a file named `hello.v`:
+Crea un fitxer anomenat `hello.v`:
 
 ```v
 fn main() {
@@ -10,51 +10,51 @@ fn main() {
 }
 ```
 
-Run it:
+Executa'l:
 
 ```bash
 v run hello.v
 ```
 
-Or compile and run separately:
+O compila i executa per separat:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-## Skipping `fn main()`
+## Ometre `fn main()`
 
-For single-file scripts, `fn main()` is optional:
+Per a scripts d'un sol fitxer, `fn main()` és opcional:
 
 ```v
 println('Hello, World!')
 ```
 
-This is useful for small programs and learning the language.
+Això és útil per a programes petits i per aprendre el llenguatge.
 
-## Running Multiple Files
+## Executar Múltiples Fitxers
 
-If your project has multiple `.v` files in a folder, run all of them at once:
+Si el teu projecte té múltiples fitxers `.v` en una carpeta, executa'ls tots alhora:
 
 ```bash
 v run .
 ```
 
-## Comments
+## Comentaris
 
 ```v
-// This is a single line comment.
+// Aquest és un comentari d'una sola línia.
 /*
-  This is a multiline comment.
-  /* It can be nested. */
+  Aquest és un comentari multilínia.
+  /* Pot estar niuat. */
 */
 ```
 
-## A Slightly Bigger Example
+## Un Exemple Una Mica Més Gran
 
 ```v
-// fibonacci.v — compute Fibonacci numbers up to a given rank
+// fibonacci.v — calcula nombres de Fibonacci fins a un rang donat
 const args = arguments()
 
 fn main() {

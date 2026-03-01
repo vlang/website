@@ -1,10 +1,10 @@
 # ORM
 
-V includes a built-in ORM that supports SQLite, PostgreSQL, MySQL, and MSSQL. No external library needed.
+V uključuje ugrađeni ORM koji podržava SQLite, PostgreSQL, MySQL i MSSQL. Nije potrebna vanjska biblioteka.
 
-## Defining a Model
+## Definisanje modela
 
-Use the `@[table: 'table_name']` attribute to map a struct to a database table:
+Koristite atribut `@[table: 'table_name']` za mapiranje strukture na tabelu baze podataka:
 
 ```v
 import db.sqlite
@@ -20,9 +20,9 @@ pub:
 }
 ```
 
-## SQL Syntax (Built-in DSL)
+## SQL sintaksa (ugrađeni DSL)
 
-V provides a clean SQL-like DSL for queries:
+V pruža čist SQL-nalik DSL za upite:
 
 ```v
 import db.sqlite
@@ -42,35 +42,35 @@ fn main() {
     user1 := User{id: '001', name: 'Alice'}
     user2 := User{id: '002', name: 'Bob'}
 
-    // Create table
+    // Kreiranje tabele
     sql db { create table User }!
 
-    // Insert
+    // Umetanje
     sql db { insert user1 into User }!
     sql db { insert user2 into User }!
 
-    // Select all
+    // Odabir svih
     all_users := sql db { select from User }!
     dump(all_users)
 
-    // Select with condition
+    // Odabir s uvjetom
     alice := sql db { select from User where id == '001' }!
     dump(alice)
 
-    // Update
+    // Ažuriranje
     sql db { update User set name = 'Alice Smith' where id == '001' }!
 
-    // Delete
+    // Brisanje
     sql db { delete from User where id == '002' }!
 
-    // Drop table
+    // Brisanje tabele
     sql db { drop table User }!
 }
 ```
 
-## Query Builder Syntax
+## Sintaksa graditelja upita
 
-An alternative fluent query builder API is also available:
+Na raspolaganju je i alternativni fluent API graditelja upita:
 
 ```v
 import db.sqlite
@@ -94,23 +94,23 @@ fn main() {
     qb.insert(Product{id: 'p1', name: 'Widget', price: 9.99})!
     qb.insert(Product{id: 'p2', name: 'Gadget', price: 19.99})!
 
-    // Fetch all
+    // Dohvatanje svega
     all := qb.query()!
     dump(all)
 
-    // Filter
+    // Filtriranje
     cheap := qb.where('price < ?', 15.0)!.query()!
     dump(cheap)
 
-    // Update
+    // Ažuriranje
     qb.set('price = ?', 12.99)!.where('id = ?', 'p1')!.update()!
 
-    // Delete
+    // Brisanje
     qb.where('id = ?', 'p2')!.delete()!
 }
 ```
 
-## PostgreSQL Example
+## Primjer s PostgreSQL-om
 
 ```v
 import db.pg
@@ -124,7 +124,7 @@ fn main() {
     })!
     defer { db.close() }
 
-    // same SQL DSL works with PostgreSQL
+    // isti SQL DSL radi s PostgreSQL-om
     users := sql db { select from User }!
     println(users)
 }

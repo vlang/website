@@ -1,22 +1,22 @@
-# Maps
+# Mapes
 
-Maps are unordered key-value stores. All keys must be of the same type, and all values must be of the same type.
+Els mapes són emmagatzemadors de clau-valor sense ordre. Totes les claus han de ser del mateix tipus i tots els valors han de ser del mateix tipus.
 
-## Creating Maps
+## Crear Mapes
 
 ```v
-// map literal
+// literal de mapa
 mut scores := {
     'Alice': 10
     'Bob':   20
     'Carol': 30
 }
 
-// empty map
+// mapa buit
 mut m := map[string]int{}
 ```
 
-## Adding and Updating
+## Afegir i Actualitzar
 
 ```v
 mut m := map[string]int{}
@@ -26,19 +26,19 @@ m['x'] = 99   // update existing key
 println(m)    // {'x': 99, 'y': 2}
 ```
 
-## Reading Values
+## Llegir Valors
 
 ```v
 scores := {'Alice': 10, 'Bob': 20}
 
 println(scores['Alice']) // 10
 
-// safe lookup with `or` block — avoids panicking on missing key
+// cerca segura amb bloc `or` — evita el pànic si falta la clau
 val := scores['Dave'] or { -1 }
 println(val) // -1
 ```
 
-## Checking for a Key
+## Verificar una Clau
 
 ```v
 m := {'a': 1, 'b': 2}
@@ -52,7 +52,7 @@ if 'z' !in m {
 }
 ```
 
-## Deleting Keys
+## Eliminar Claus
 
 ```v
 mut m := {'a': 1, 'b': 2, 'c': 3}
@@ -60,7 +60,7 @@ m.delete('b')
 println(m) // {'a': 1, 'c': 3}
 ```
 
-## Iterating
+## Iteració
 
 ```v
 m := {'one': 1, 'two': 2, 'three': 3}
@@ -69,22 +69,22 @@ for key, val in m {
     println('${key} = ${val}')
 }
 
-// keys and values separately
+// claus i valors per separat
 for key in m.keys() {
     println(key)
 }
 ```
 
-## Map Size
+## Mida del Mapa
 
 ```v
 m := {'a': 1, 'b': 2}
 println(m.len) // 2
 ```
 
-## Allowed Key Types
+## Tipus de Clau Permesos
 
-Map keys can be strings, integers, floats, runes, or any type that implements the `==` operator.
+Les claus dels mapes poden ser cadenes, enters, decimals, runes o qualsevol tipus que implementi l'operador `==`.
 
 ```v
 mut m := map[int]string{}

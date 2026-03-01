@@ -1,8 +1,8 @@
-# Concurrency
+# Konkurentnost
 
-V uses lightweight threads (goroutines) to run work concurrently. The `spawn` keyword starts a function in a new thread.
+V koristi lagane niti (goroutine) za paralelno izvršavanje rada. Ključna riječ `spawn` pokreće funkciju u novoj niti.
 
-## Basic Spawning
+## Osnovno pokretanje niti
 
 ```v
 import time
@@ -19,15 +19,15 @@ fn main() {
     threads << spawn expensive_computing(2, 500)
     threads << spawn expensive_computing(3, 1000)
 
-    // Wait for all threads to finish
+    // Čekaj da sve niti završe
     threads.wait()
     println('All jobs finished!')
 }
 ```
 
-## Getting Return Values
+## Dobivanje povratnih vrijednosti
 
-Threads can return values. Calling `.wait()` on a `[]thread T` returns `[]T`:
+Niti mogu vraćati vrijednosti. Pozivanje `.wait()` na `[]thread T` vraća `[]T`:
 
 ```v
 fn expensive_computing(i int) int {
@@ -45,7 +45,7 @@ fn main() {
 }
 ```
 
-## Concurrent HTTP Requests
+## Konkurentni HTTP zahtjevi
 
 ```v
 import net.http
@@ -75,14 +75,14 @@ fn main() {
 }
 ```
 
-## Channels
+## Kanali
 
-Channels allow safe communication between threads:
+Kanali omogućavaju sigurnu komunikaciju između niti:
 
 ```v
 fn producer(ch chan int) {
     for i in 1 .. 6 {
-        ch <- i  // send to channel
+        ch <- i  // pošalji u kanal
     }
     ch.close()
 }
@@ -97,9 +97,9 @@ fn main() {
 }
 ```
 
-## Mutexes
+## Mutexi
 
-Use `sync.Mutex` to protect shared state:
+Koristite `sync.Mutex` za zaštitu dijeljenog stanja:
 
 ```v
 import sync
@@ -119,7 +119,7 @@ fn (mut c Counter) increment() {
 
 ## `defer`
 
-`defer` executes a statement when the surrounding function returns — useful for cleanup:
+`defer` izvršava naredbu kada se okolna funkcija vrati — korisno za čišćenje:
 
 ```v
 import os
@@ -128,7 +128,7 @@ fn process_file(path string) {
     f := os.open(path) or { return }
     defer { f.close() }
 
-    // use f — it will be closed automatically
+    // koristi f — bit će automatski zatvoren
     println(f.read_to_string() or { '' })
 }
 ```

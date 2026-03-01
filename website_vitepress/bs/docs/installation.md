@@ -1,67 +1,67 @@
-# Installation
+# Instalacija
 
-## Install from Source
+## Instalacija iz izvornog koda
 
-The recommended way to install V is from source. It only takes a few seconds:
+Preporučeni način instalacije V-a je iz izvornog koda. Traje samo nekoliko sekundi:
 
 ```bash
 git clone --depth=1 https://github.com/vlang/v && cd v && make
 ```
 
-On Windows, use `make.bat` instead of `make`.
+Na Windowsu koristite `make.bat` umjesto `make`.
 
-## Symlink V
+## Simbolička veza V
 
-After building, you can symlink V so it's available everywhere:
+Nakon izgradnje, možete kreirati simboličku vezu za V kako bi bio dostupan svugdje:
 
 ```bash
 sudo ./v symlink
 ```
 
-On Windows, run `v.exe symlink` from an elevated command prompt.
+Na Windowsu pokrenite `v.exe symlink` iz povišene komandne linije.
 
-## Verify Installation
+## Provjera instalacije
 
 ```bash
 v version
 ```
 
-You should see output like `V 0.5.0 ...`.
+Trebali biste vidjeti izlaz poput `V 0.5.0 ...`.
 
-## Download Pre-built Binaries
+## Preuzimanje gotovih binarnih datoteka
 
-Pre-built binaries are available for all major platforms on the
-[GitHub Releases](https://github.com/vlang/v/releases/latest) page:
+Gotove binarne datoteke dostupne su za sve veće platforme na stranici
+[GitHub Releases](https://github.com/vlang/v/releases/latest):
 
-| Platform | File |
+| Platforma | Datoteka |
 | --- | --- |
 | Linux (x86_64) | `v_linux.zip` |
 | macOS (Apple Silicon) | `v_macos_arm64.zip` |
 | macOS (Intel) | `v_macos_x86_64.zip` |
 | Windows | `v_windows.zip` |
 
-## Upgrading V
+## Ažuriranje V
 
-To upgrade V to the latest version, run:
+Za ažuriranje V na najnoviju verziju pokrenite:
 
 ```bash
 v up
 ```
 
-## Running a Program
+## Pokretanje programa
 
 ```bash
 v run hello.v
 ```
 
-Or compile it:
+Ili ga kompajlirajte:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-To run all `.v` files in a directory:
+Za pokretanje svih `.v` datoteka u direktoriju:
 
 ```bash
 v run .

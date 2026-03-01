@@ -1,8 +1,8 @@
 # JSON
 
-V has built-in JSON encoding and decoding in the `json` module — no external library needed.
+V, `json` modülünde yerleşik JSON kodlama ve kod çözme desteğine sahiptir — harici kütüphane gerekmez.
 
-## Decoding JSON
+## JSON'u Çözme
 
 ```v
 import json
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Encoding JSON
+## JSON Kodlama
 
 ```v
 import json
@@ -45,9 +45,9 @@ fn main() {
 }
 ```
 
-## Custom Field Names
+## Özel Alan Adları
 
-Use the `@[json: 'field_name']` attribute to map struct fields to different JSON keys:
+Yapı alanlarını farklı JSON anahtarlarına eşlemek için `@[json: 'field_name']` özelliğini kullanın:
 
 ```v
 import json
@@ -66,28 +66,28 @@ fn main() {
 }
 ```
 
-## Skipping Fields
+## Alanları Atlamak
 
-Use `@[json: '-']` to exclude a field from JSON serialization:
+Bir alanı JSON seri hale getirmeden dışlamak için `@[json: '-']` kullanın:
 
 ```v
 struct User {
     name     string
     email    string
-    password string @[json: '-']  // never included in JSON output
+    password string @[json: '-']  // JSON çıktısına hiçbir zaman dahil edilmez
 }
 ```
 
-## Optional / Nullable Fields
+## İsteğe Bağlı / Null Olabilir Alanlar
 
-Use option types for fields that may be absent in the JSON:
+JSON'da bulunmayabilecek alanlar için option türlerini kullanın:
 
 ```v
 import json
 
 struct Profile {
     name   string
-    bio    ?string   // optional — may be null or absent
+    bio    ?string   // isteğe bağlı — null veya yoksa
     age    ?int
 }
 
@@ -99,7 +99,7 @@ fn main() {
 }
 ```
 
-## Nested Structs
+## İç İçe Yapılar
 
 ```v
 import json
