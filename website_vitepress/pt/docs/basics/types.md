@@ -1,6 +1,6 @@
-# Primitive Types
+# Tipos Primitivos
 
-## Integer Types
+## Tipos Inteiros
 
 ```v
 // Signed integers
@@ -20,16 +20,16 @@ isize // signed, size of a pointer
 usize // unsigned, size of a pointer
 ```
 
-> **Note:** Unlike C and Go, `int` in V is always 32-bit regardless of platform.
+> **Nota:** Ao contrário de C e Go, `int` em V é sempre 32-bit independentemente da plataforma.
 
-## Floating-Point Types
+## Tipos de Ponto Flutuante
 
 ```v
 f32   // single-precision (32-bit)
 f64   // double-precision (64-bit)
 ```
 
-## Boolean
+## Booleano
 
 ```v
 is_ready := true
@@ -38,7 +38,7 @@ is_done  := false
 
 ## Rune
 
-A `rune` represents a Unicode code point:
+Um `rune` representa um ponto de código Unicode:
 
 ```v
 letter := `A`        // rune literal uses backticks
@@ -47,9 +47,9 @@ println(letter)      // A
 println(int(letter)) // 65
 ```
 
-## Type Promotions
+## Promoções de Tipo
 
-Small types are automatically promoted when combined with larger types on the same side of an operator:
+Tipos pequenos são automaticamente promovidos quando combinados com tipos maiores no mesmo lado de um operador:
 
 ```v
 u := u16(12)
@@ -60,7 +60,7 @@ a := 75        // int (default for integer literals)
 b := 14.7      // f64 (default for float literals)
 ```
 
-## Numeric Literals
+## Literais Numéricos
 
 ```v
 n1 := 1_000_000      // underscores for readability
@@ -72,7 +72,7 @@ f1 := 3.14_159_265   // float with underscores
 
 ## `voidptr`
 
-A raw pointer type used mainly for C interoperability. Avoid in pure V code.
+Um tipo de ponteiro bruto usado principalmente para interoperabilidade com C. Evite em código V puro.
 
 ```v
 // mostly for C interop

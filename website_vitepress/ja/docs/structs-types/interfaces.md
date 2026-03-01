@@ -1,8 +1,8 @@
-# Interfaces
+# インターフェース
 
-Interfaces define a contract — a set of methods that a type must implement. There is no explicit `implements` keyword; types satisfy interfaces automatically (structural/duck typing).
+インターフェースはコントラクトを定義します — 型が実装しなければならないメソッドのセットです。明示的な`implements`キーワードはありません。型は自動的にインターフェースを満たします（構造的/ダック型付け）。
 
-## Defining an Interface
+## インターフェースの定義
 
 ```v
 interface Shape {
@@ -11,9 +11,9 @@ interface Shape {
 }
 ```
 
-## Implementing an Interface
+## インターフェースの実装
 
-Any struct that has the required methods automatically implements the interface:
+必要なメソッドを持つ構造体は、自動的にインターフェースを実装します：
 
 ```v
 struct Circle {
@@ -42,7 +42,7 @@ fn (r Rectangle) perimeter() f64 {
 }
 ```
 
-## Using Interfaces
+## インターフェースの使用
 
 ```v
 fn print_shape_info(s Shape) {
@@ -63,9 +63,9 @@ fn main() {
 }
 ```
 
-## Interface with Fields
+## フィールドを持つインターフェース
 
-Interfaces can also require fields (not just methods):
+インターフェースはフィールドも要求できます（メソッドだけでなく）：
 
 ```v
 interface Named {
@@ -86,7 +86,7 @@ fn main() {
 }
 ```
 
-## Type Checking with Interfaces
+## インターフェースを使った型チェック
 
 ```v
 fn describe(s Shape) {
@@ -98,7 +98,7 @@ fn describe(s Shape) {
 }
 ```
 
-## Sum Types vs Interfaces
+## サム型とインターフェースの使い分け
 
-- Use **interfaces** when different unrelated types share common behaviour.
-- Use **sum types** (`type Foo = A | B`) when you have a closed, finite set of variants and want exhaustive pattern matching with `match`.
+- 異なる関係のない型が共通の動作を共有する場合は**インターフェース**を使用。
+- `match`で網羅的なパターンマッチングが必要な、閉じた有限のバリアントセットがある場合は**サム型**（`type Foo = A | B`）を使用。

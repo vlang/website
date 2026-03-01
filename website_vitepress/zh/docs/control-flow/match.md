@@ -1,8 +1,8 @@
 # Match
 
-`match` is V's pattern matching statement — more powerful than a C `switch`. It must be exhaustive: every possible value must be handled.
+`match` 是 V 的模式匹配语句——比 C 的 `switch` 更强大。它必须是穷尽的：每种可能的值都必须被处理。
 
-## Basic Usage
+## 基本用法
 
 ```v
 x := 3
@@ -15,7 +15,7 @@ match x {
 }
 ```
 
-## Match as an Expression
+## Match 作为表达式
 
 ```v
 name := 'Bob'
@@ -27,7 +27,7 @@ greeting := match name {
 println(greeting)
 ```
 
-## Matching Multiple Values
+## 匹配多个值
 
 ```v
 n := 5
@@ -38,7 +38,7 @@ match n {
 }
 ```
 
-## Matching Ranges
+## 匹配范围
 
 ```v
 score := 72
@@ -52,9 +52,9 @@ grade := match score {
 println(grade) // C
 ```
 
-## Matching Sum Types
+## 匹配联合类型
 
-When matching on a sum type, V gives you access to the inner value with the correct type:
+匹配联合类型时，V 以正确的类型给你访问内部值：
 
 ```v
 type Shape = Circle | Rectangle
@@ -76,7 +76,7 @@ fn area(s Shape) f64 {
 }
 ```
 
-## FizzBuzz with Match
+## 使用 Match 的 FizzBuzz
 
 ```v
 for n in 1 .. 101 {

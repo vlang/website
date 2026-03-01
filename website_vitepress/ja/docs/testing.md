@@ -1,10 +1,10 @@
-# Testing
+# テスト
 
-V has built-in testing support. No test framework or external library needed.
+Vには組み込みのテストサポートがあります。テストフレームワークや外部ライブラリは不要です。
 
-## Writing Tests
+## テストの作成
 
-Test functions must start with `test_` and live in files ending with `_test.v`:
+テスト関数は`test_`で始まり、`_test.v`で終わるファイルに記述する必要があります：
 
 ```v
 // math_test.v
@@ -24,17 +24,17 @@ fn test_add_large_numbers() {
 }
 ```
 
-Run tests with:
+テストを実行するには：
 
 ```bash
 v test math_test.v
-# or run all tests in a directory:
+# またはディレクトリ内のすべてのテストを実行：
 v test .
 ```
 
-## Assertions
+## アサーション
 
-Use `assert` to check conditions. A failing assertion prints the values of both sides:
+`assert`を使用して条件をチェックします。失敗したアサーションは両辺の値を出力します：
 
 ```v
 fn test_string_ops() {
@@ -45,22 +45,22 @@ fn test_string_ops() {
 }
 ```
 
-## Test Setup and Teardown
+## テストのセットアップとティアダウン
 
 ```v
-// Use testsuite_begin and testsuite_end for module-level setup/teardown
+// モジュールレベルのセットアップ/ティアダウンにはtestsuite_beginとtestsuite_endを使用
 fn testsuite_begin() {
-    // runs once before all tests in the file
+    // ファイル内のすべてのテストの前に一度実行される
     println('Setting up test suite...')
 }
 
 fn testsuite_end() {
-    // runs once after all tests in the file
+    // ファイル内のすべてのテストの後に一度実行される
     println('Tearing down test suite...')
 }
 ```
 
-## Testing Error Cases
+## エラーケースのテスト
 
 ```v
 fn safe_divide(a f64, b f64) !f64 {
@@ -81,22 +81,22 @@ fn test_divide_normal() {
 }
 ```
 
-## Running Specific Tests
+## 特定のテストの実行
 
 ```bash
-# Run a single test file
+# 単一のテストファイルを実行
 v test mypackage/foo_test.v
 
-# Run tests matching a pattern
+# パターンに一致するテストを実行
 v test -run test_add .
 
-# Run with verbose output
+# 詳細出力で実行
 v test -v .
 ```
 
-## Table-driven Tests
+## テーブル駆動テスト
 
-V doesn't have a built-in table-driven test helper, but you can do it manually:
+Vには組み込みのテーブル駆動テストヘルパーはありませんが、手動で実行できます：
 
 ```v
 fn test_add_table() {
@@ -112,9 +112,9 @@ fn test_add_table() {
 }
 ```
 
-## Code Coverage
+## コードカバレッジ
 
-Generate a coverage report:
+カバレッジレポートを生成します：
 
 ```bash
 v -coverage ./coverage_output test .

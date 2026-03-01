@@ -1,6 +1,6 @@
 # If / Else
 
-## Basic Syntax
+## Sintaxe Básica
 
 ```v
 a := 10
@@ -14,9 +14,9 @@ if a < 10 {
 }
 ```
 
-## If as an Expression
+## If como Expressão
 
-In V, `if` is an expression and can be used on the right side of an assignment:
+Em V, `if` é uma expressão e pode ser usado no lado direito de uma atribuição:
 
 ```v
 num := 7
@@ -24,16 +24,16 @@ result := if num % 2 == 0 { 'even' } else { 'odd' }
 println(result) // odd
 ```
 
-## Inline Short Form
+## Forma Curta Inline
 
 ```v
 x := 42
 if x > 0 { println('positive') }
 ```
 
-## Condition with Initialization
+## Condição com Inicialização
 
-You can initialize a variable inside an `if` condition:
+Você pode inicializar uma variável dentro de uma condição `if`:
 
 ```v
 if val := some_function_returning_option() {
@@ -43,9 +43,9 @@ if val := some_function_returning_option() {
 }
 ```
 
-## The `in` Operator
+## O Operador `in`
 
-Use `in` to check membership in arrays or maps:
+Use `in` para verificar pertencimento em arrays ou maps:
 
 ```v
 nums := [1, 2, 3]
@@ -59,7 +59,7 @@ if 'a' in m {
 }
 ```
 
-Use `!in` for the inverse:
+Use `!in` para o inverso:
 
 ```v
 if 5 !in nums {
@@ -67,7 +67,7 @@ if 5 !in nums {
 }
 ```
 
-## FizzBuzz Example
+## Exemplo FizzBuzz
 
 ```v
 for n in 1 .. 101 {

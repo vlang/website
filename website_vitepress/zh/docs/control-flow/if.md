@@ -1,6 +1,6 @@
 # If / Else
 
-## Basic Syntax
+## 基本语法
 
 ```v
 a := 10
@@ -14,9 +14,9 @@ if a < 10 {
 }
 ```
 
-## If as an Expression
+## If 作为表达式
 
-In V, `if` is an expression and can be used on the right side of an assignment:
+在 V 中，`if` 是一个表达式，可以用在赋值语句的右侧：
 
 ```v
 num := 7
@@ -24,16 +24,16 @@ result := if num % 2 == 0 { 'even' } else { 'odd' }
 println(result) // odd
 ```
 
-## Inline Short Form
+## 内联简写
 
 ```v
 x := 42
 if x > 0 { println('positive') }
 ```
 
-## Condition with Initialization
+## 带初始化的条件
 
-You can initialize a variable inside an `if` condition:
+你可以在 `if` 条件中初始化一个变量：
 
 ```v
 if val := some_function_returning_option() {
@@ -43,9 +43,9 @@ if val := some_function_returning_option() {
 }
 ```
 
-## The `in` Operator
+## `in` 操作符
 
-Use `in` to check membership in arrays or maps:
+使用 `in` 检查数组或映射中的成员资格：
 
 ```v
 nums := [1, 2, 3]
@@ -59,7 +59,7 @@ if 'a' in m {
 }
 ```
 
-Use `!in` for the inverse:
+使用 `!in` 进行反向检查：
 
 ```v
 if 5 !in nums {
@@ -67,7 +67,7 @@ if 5 !in nums {
 }
 ```
 
-## FizzBuzz Example
+## FizzBuzz 示例
 
 ```v
 for n in 1 .. 101 {

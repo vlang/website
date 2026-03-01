@@ -1,8 +1,8 @@
 # Match
 
-`match` is V's pattern matching statement — more powerful than a C `switch`. It must be exhaustive: every possible value must be handled.
+`match` é a instrução de correspondência de padrões de V — mais poderosa que um `switch` em C. Deve ser exaustiva: todo valor possível deve ser tratado.
 
-## Basic Usage
+## Uso Básico
 
 ```v
 x := 3
@@ -15,7 +15,7 @@ match x {
 }
 ```
 
-## Match as an Expression
+## Match como Expressão
 
 ```v
 name := 'Bob'
@@ -27,7 +27,7 @@ greeting := match name {
 println(greeting)
 ```
 
-## Matching Multiple Values
+## Combinando Múltiplos Valores
 
 ```v
 n := 5
@@ -38,7 +38,7 @@ match n {
 }
 ```
 
-## Matching Ranges
+## Combinando Intervalos
 
 ```v
 score := 72
@@ -52,9 +52,9 @@ grade := match score {
 println(grade) // C
 ```
 
-## Matching Sum Types
+## Combinando Sum Types
 
-When matching on a sum type, V gives you access to the inner value with the correct type:
+Ao combinar um sum type, V dá acesso ao valor interno com o tipo correto:
 
 ```v
 type Shape = Circle | Rectangle
@@ -76,7 +76,7 @@ fn area(s Shape) f64 {
 }
 ```
 
-## FizzBuzz with Match
+## FizzBuzz com Match
 
 ```v
 for n in 1 .. 101 {

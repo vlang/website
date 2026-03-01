@@ -1,6 +1,6 @@
 # If / Else
 
-## Basic Syntax
+## 基本構文
 
 ```v
 a := 10
@@ -14,9 +14,9 @@ if a < 10 {
 }
 ```
 
-## If as an Expression
+## 式としてのif
 
-In V, `if` is an expression and can be used on the right side of an assignment:
+Vでは、`if`は式であり、代入の右辺に使用できます：
 
 ```v
 num := 7
@@ -24,16 +24,16 @@ result := if num % 2 == 0 { 'even' } else { 'odd' }
 println(result) // odd
 ```
 
-## Inline Short Form
+## インラインの短縮形
 
 ```v
 x := 42
 if x > 0 { println('positive') }
 ```
 
-## Condition with Initialization
+## 初期化付き条件
 
-You can initialize a variable inside an `if` condition:
+`if`条件の中で変数を初期化できます：
 
 ```v
 if val := some_function_returning_option() {
@@ -43,9 +43,9 @@ if val := some_function_returning_option() {
 }
 ```
 
-## The `in` Operator
+## `in`演算子
 
-Use `in` to check membership in arrays or maps:
+`in`を使用して配列またはマップのメンバーシップを確認します：
 
 ```v
 nums := [1, 2, 3]
@@ -59,7 +59,7 @@ if 'a' in m {
 }
 ```
 
-Use `!in` for the inverse:
+逆の場合は`!in`を使用します：
 
 ```v
 if 5 !in nums {
@@ -67,7 +67,7 @@ if 5 !in nums {
 }
 ```
 
-## FizzBuzz Example
+## FizzBuzzの例
 
 ```v
 for n in 1 .. 101 {

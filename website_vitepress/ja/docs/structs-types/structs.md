@@ -1,8 +1,8 @@
-# Structs
+# 構造体
 
-Structs are used to define custom data types with named fields.
+構造体は名前付きフィールドを持つカスタムデータ型を定義するために使用されます。
 
-## Basic Struct
+## 基本的な構造体
 
 ```v
 struct Point {
@@ -17,9 +17,9 @@ fn main() {
 }
 ```
 
-## Mutable Structs
+## ミュータブルな構造体
 
-Fields are immutable by default. Use `mut:` to declare mutable fields:
+フィールドはデフォルトでイミュータブルです。ミュータブルなフィールドを宣言するには`mut:`を使用します：
 
 ```v
 struct User {
@@ -38,25 +38,25 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## アクセス修飾子
 
 ```v
 struct Foo {
-    a int         // private immutable (default)
+    a int         // プライベートイミュータブル（デフォルト）
 mut:
-    b int         // private mutable
+    b int         // プライベートミュータブル
 pub:
-    c int         // public immutable
+    c int         // パブリックイミュータブル
 pub mut:
-    d int         // public mutable, private to set
+    d int         // パブリックミュータブル、設定はプライベート
 __global:
-    e int         // public and mutable everywhere (rare)
+    e int         // どこでもパブリックかつミュータブル（まれ）
 }
 ```
 
-## Methods
+## メソッド
 
-Functions can be attached to structs:
+構造体に関数を付加できます：
 
 ```v
 struct Rectangle {
@@ -79,9 +79,9 @@ fn main() {
 }
 ```
 
-## Embedding
+## 埋め込み
 
-Structs can embed other structs to inherit their fields and methods:
+構造体は他の構造体を埋め込んでフィールドとメソッドを継承できます：
 
 ```v
 struct Animal {
@@ -103,12 +103,12 @@ fn (d Dog) speak() string {
 
 fn main() {
     d := Dog{Animal: Animal{name: 'Rex'}, breed: 'Labrador'}
-    println(d.name)    // Rex  (promoted from Animal)
+    println(d.name)    // Rex  （Animalから昇格）
     println(d.speak()) // Woof!
 }
 ```
 
-## Default Field Values
+## デフォルトフィールド値
 
 ```v
 struct Config {
@@ -124,7 +124,7 @@ fn main() {
 }
 ```
 
-## JSON Example
+## JSONの例
 
 ```v
 import json
@@ -150,11 +150,11 @@ fn main() {
         eprintln('Failed to parse json')
         return
     }
-    for i, user in users {
+    for mut user in users {
         if user.can_register() {
-            users[i].register()
+            user.register()
         }
     }
-    println(json.encode(users))
+    println(users)
 }
 ```

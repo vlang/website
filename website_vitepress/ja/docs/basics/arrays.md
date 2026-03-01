@@ -1,6 +1,6 @@
-# Arrays
+# 配列
 
-## Basic Usage
+## 基本的な使い方
 
 ```v
 mut nums := [1, 2, 3]
@@ -11,9 +11,9 @@ nums[1] = 20
 println(nums)        // [1, 20, 3]
 ```
 
-## Typed Arrays
+## 型付き配列
 
-Array element types are inferred. You can also declare an empty array with an explicit type:
+配列の要素型は推論されます。明示的な型で空の配列を宣言することもできます：
 
 ```v
 mut names := []string{}
@@ -22,37 +22,37 @@ names << 'Bob'
 println(names) // ['Alice', 'Bob']
 ```
 
-## Pre-allocated Arrays
+## 事前割り当て配列
 
 ```v
-// array of 5 ints, all initialized to 0
+// 5つのintの配列、すべて0で初期化
 a := []int{len: 5}
 
-// array of 3 strings, all initialized to 'x'
+// 3つのstringの配列、すべて'x'で初期化
 b := []string{len: 3, init: 'x'}
 ```
 
-## Appending Elements
+## 要素の追加
 
-Use `<<` to append:
+`<<`を使って追加します：
 
 ```v
 mut a := [1, 2, 3]
 a << 4
-a << [5, 6]   // append another array
+a << [5, 6]   // 別の配列を追加
 println(a)    // [1, 2, 3, 4, 5, 6]
 ```
 
-## Slicing
+## スライシング
 
 ```v
 a := [1, 2, 3, 4, 5]
-b := a[1..3]  // [2, 3]  (from index 1, up to but not including 3)
-c := a[..2]   // [1, 2]  (from start to index 2)
-d := a[3..]   // [4, 5]  (from index 3 to end)
+b := a[1..3]  // [2, 3]  （インデックス1から3を含まない）
+c := a[..2]   // [1, 2]  （先頭からインデックス2まで）
+d := a[3..]   // [4, 5]  （インデックス3から末尾まで）
 ```
 
-## Iteration
+## イテレーション
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
@@ -66,7 +66,7 @@ for i, name in names {
 }
 ```
 
-## Common Methods
+## 主なメソッド
 
 ```v
 mut a := [3, 1, 4, 1, 5, 9, 2, 6]
@@ -88,7 +88,7 @@ mapped := a.map(it * 2)
 println(mapped) // [18, 12, 10, 8, 6, 4, 2, 2]
 ```
 
-## Multidimensional Arrays
+## 多次元配列
 
 ```v
 mut matrix := [][]int{len: 3, init: []int{len: 3}}
@@ -98,12 +98,12 @@ matrix[2][2] = 9
 println(matrix) // [[1, 0, 0], [0, 5, 0], [0, 0, 9]]
 ```
 
-## Fixed-size Arrays
+## 固定サイズ配列
 
 ```v
-mut a := [5]int{}   // fixed array of 5 ints
+mut a := [5]int{}   // 5つのintの固定配列
 a[0] = 10
 println(a)          // [10, 0, 0, 0, 0]
 ```
 
-Fixed arrays are stack-allocated and cannot be grown.
+固定配列はスタックに割り当てられ、拡張できません。

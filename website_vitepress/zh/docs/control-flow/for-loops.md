@@ -1,10 +1,10 @@
-# For Loops
+# For 循环
 
-V has a single looping keyword: `for`. It covers all iteration patterns.
+V 只有一个循环关键字：`for`。它涵盖所有迭代模式。
 
-## Range Loop
+## 范围循环
 
-Iterate over a half-open range `start..end` (end is exclusive):
+遍历半开区间 `start..end`（不包含 end）：
 
 ```v
 for i in 0 .. 5 {
@@ -12,23 +12,23 @@ for i in 0 .. 5 {
 }
 ```
 
-## Iterating Over Arrays
+## 遍历数组
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
 
-// value only
+// 仅值
 for name in names {
     println(name)
 }
 
-// index and value
+// 索引和值
 for i, name in names {
     println('${i}: ${name}')
 }
 ```
 
-## Iterating Over Maps
+## 遍历映射
 
 ```v
 m := {'a': 1, 'b': 2, 'c': 3}
@@ -38,7 +38,7 @@ for key, val in m {
 }
 ```
 
-## Classic C-style Loop
+## 经典 C 风格循环
 
 ```v
 for i := 0; i < 10; i++ {
@@ -46,7 +46,7 @@ for i := 0; i < 10; i++ {
 }
 ```
 
-## Condition-only Loop (while equivalent)
+## 仅条件循环（while 等价形式）
 
 ```v
 mut n := 0
@@ -56,7 +56,7 @@ for n < 5 {
 }
 ```
 
-## Infinite Loop
+## 无限循环
 
 ```v
 mut i := 0
@@ -66,19 +66,19 @@ for {
 }
 ```
 
-## `break` and `continue`
+## `break` 和 `continue`
 
 ```v
 for i in 0 .. 10 {
-    if i == 3 { continue }  // skip 3
-    if i == 7 { break }     // stop at 7
+    if i == 3 { continue }  // 跳过 3
+    if i == 7 { break }     // 在 7 处停止
     println(i)
 }
 ```
 
-## Labeled Loops
+## 带标签的循环
 
-For nested loops, you can label and break/continue from an outer loop:
+对于嵌套循环，可以使用标签从外层循环执行 break/continue：
 
 ```v
 outer: for i in 0 .. 3 {
@@ -91,7 +91,7 @@ outer: for i in 0 .. 3 {
 }
 ```
 
-## Primes Example
+## 质数示例
 
 ```v
 import math { log }

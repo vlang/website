@@ -1,10 +1,10 @@
-# Error Handling
+# エラーハンドリング
 
-V uses **Option** and **Result** types instead of exceptions. This makes error handling explicit and visible in function signatures.
+Vは例外の代わりに**Option**型と**Result**型を使用します。これにより、エラーハンドリングが明示的になり、関数シグネチャで可視化されます。
 
-## Option Types
+## Option型
 
-An `?T` (option) holds either a value of type `T` or `none`:
+`?T`（オプション）は型`T`の値または`none`のどちらかを保持します：
 
 ```v
 fn find_user(id int) ?string {
@@ -21,9 +21,9 @@ fn main() {
 }
 ```
 
-## Result Types
+## Result型
 
-A `!T` (result) holds either a value of type `T` or an error:
+`!T`（リザルト）は型`T`の値またはエラーのどちらかを保持します：
 
 ```v
 fn divide(a f64, b f64) !f64 {
@@ -42,9 +42,9 @@ fn main() {
 }
 ```
 
-## The `or` Block
+## `or`ブロック
 
-The `or` block runs when the result is `none` or an error. Inside `or`, `err` holds the error value:
+`or`ブロックはリザルトが`none`またはエラーのときに実行されます。`or`の中では`err`がエラー値を保持します：
 
 ```v
 import net.http
@@ -58,20 +58,20 @@ fn main() {
 }
 ```
 
-## Propagating Errors with `!`
+## `!`でエラーを伝播する
 
-Adding `!` after a call propagates the error up to the caller (similar to `?` in Rust):
+呼び出しの後に`!`を追加すると、エラーを呼び出し元に伝播します（Rustの`?`に相当）：
 
 ```v
 fn read_config(path string) !string {
-    content := os.read_file(path)!  // propagates if error
+    content := os.read_file(path)!  // エラーの場合は伝播
     return content
 }
 ```
 
-## Custom Errors
+## カスタムエラー
 
-Implement the `IError` interface to create custom error types:
+`IError`インターフェースを実装してカスタムエラー型を作成します：
 
 ```v
 struct DivisionError {
@@ -95,7 +95,7 @@ fn safe_divide(a f64, b f64) !f64 {
 }
 ```
 
-## Matching on Error Types
+## エラー型のマッチング
 
 ```v
 import semver
@@ -120,9 +120,9 @@ fn check_error(err IError) {
 }
 ```
 
-## The `?` Unwrap Operator
+## `?`アンラップ演算子
 
-Use `val?` inside an option context to unwrap or propagate `none`:
+オプションコンテキスト内で`val?`を使用してアンラップするか`none`を伝播します：
 
 ```v
 fn get_name(users map[int]string, id int) ?string {

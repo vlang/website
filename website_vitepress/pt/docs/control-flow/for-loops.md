@@ -1,10 +1,10 @@
-# For Loops
+# Laços For
 
-V has a single looping keyword: `for`. It covers all iteration patterns.
+V possui uma única palavra-chave de repetição: `for`. Ela cobre todos os padrões de iteração.
 
-## Range Loop
+## Laço de Intervalo
 
-Iterate over a half-open range `start..end` (end is exclusive):
+Itera sobre um intervalo semi-aberto `inicio..fim` (fim é exclusivo):
 
 ```v
 for i in 0 .. 5 {
@@ -12,7 +12,7 @@ for i in 0 .. 5 {
 }
 ```
 
-## Iterating Over Arrays
+## Iterando Sobre Arrays
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
@@ -28,7 +28,7 @@ for i, name in names {
 }
 ```
 
-## Iterating Over Maps
+## Iterando Sobre Maps
 
 ```v
 m := {'a': 1, 'b': 2, 'c': 3}
@@ -38,7 +38,7 @@ for key, val in m {
 }
 ```
 
-## Classic C-style Loop
+## Laço Clássico Estilo C
 
 ```v
 for i := 0; i < 10; i++ {
@@ -46,7 +46,7 @@ for i := 0; i < 10; i++ {
 }
 ```
 
-## Condition-only Loop (while equivalent)
+## Laço Apenas com Condição (equivalente ao while)
 
 ```v
 mut n := 0
@@ -56,7 +56,7 @@ for n < 5 {
 }
 ```
 
-## Infinite Loop
+## Laço Infinito
 
 ```v
 mut i := 0
@@ -66,7 +66,7 @@ for {
 }
 ```
 
-## `break` and `continue`
+## `break` e `continue`
 
 ```v
 for i in 0 .. 10 {
@@ -76,9 +76,9 @@ for i in 0 .. 10 {
 }
 ```
 
-## Labeled Loops
+## Laços Rotulados
 
-For nested loops, you can label and break/continue from an outer loop:
+Para laços aninhados, você pode rotular e usar break/continue a partir de um laço externo:
 
 ```v
 outer: for i in 0 .. 3 {
@@ -91,7 +91,7 @@ outer: for i in 0 .. 3 {
 }
 ```
 
-## Primes Example
+## Exemplo de Números Primos
 
 ```v
 import math { log }

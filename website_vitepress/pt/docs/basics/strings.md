@@ -1,8 +1,8 @@
 # Strings
 
-In V, strings are encoded in **UTF-8** and are **immutable** by default.
+Em V, strings são codificadas em **UTF-8** e são **imutáveis** por padrão.
 
-## Basic Usage
+## Uso Básico
 
 ```v
 s    := 'hello 🌎'
@@ -14,9 +14,9 @@ println(name[0])       // 66  (u8 — byte value of 'B')
 println(name[1..3])    // ob  (slicing returns a string)
 ```
 
-## String Interpolation
+## Interpolação de Strings
 
-Use `${}` to embed expressions inside strings:
+Use `${}` para incorporar expressões dentro de strings:
 
 ```v
 name := 'Alice'
@@ -25,7 +25,7 @@ println('Hello, ${name}! You are ${age} years old.')
 println('Is adult: ${age >= 18}')
 ```
 
-## Multiline Strings
+## Strings Multilinha
 
 ```v
 text := 'line one
@@ -33,16 +33,16 @@ line two
 line three'
 ```
 
-## Raw Strings
+## Strings Brutas
 
-Prepend `r` to disable escape processing:
+Adicione `r` como prefixo para desativar o processamento de escape:
 
 ```v
 s := r'hello\nworld'  // \n is kept as two characters
 println(s)            // hello\nworld
 ```
 
-## String Methods
+## Métodos de String
 
 ```v
 s := 'Hello, World!'
@@ -57,7 +57,7 @@ println(s.split(', '))     // ['Hello', 'World!']
 println(s.trim_space())    // Hello, World!  (removes leading/trailing whitespace)
 ```
 
-## Converting to Numbers
+## Convertendo para Números
 
 ```v
 s := '42'
@@ -69,9 +69,9 @@ assert '0o10'.int() == 8
 assert '0b1010'.int() == 10
 ```
 
-## Runes (Unicode Code Points)
+## Runes (Pontos de Código Unicode)
 
-To work with Unicode characters rather than raw bytes, use `runes()`:
+Para trabalhar com caracteres Unicode em vez de bytes brutos, use `runes()`:
 
 ```v
 mut s := 'hello 🌎'
@@ -82,7 +82,7 @@ println(r[6])     // 🌎
 
 ## String Builder
 
-For efficient string concatenation, use `strings.Builder`:
+Para concatenação eficiente de strings, use `strings.Builder`:
 
 ```v
 import strings

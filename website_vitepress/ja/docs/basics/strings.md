@@ -1,22 +1,22 @@
-# Strings
+# 文字列
 
-In V, strings are encoded in **UTF-8** and are **immutable** by default.
+Vでは、文字列は**UTF-8**でエンコードされ、デフォルトで**イミュータブル**です。
 
-## Basic Usage
+## 基本的な使い方
 
 ```v
 s    := 'hello 🌎'
 name := 'Bob'
 
-println(s.len)         // 10  (byte count)
+println(s.len)         // 10  （バイト数）
 println(name.len)      // 3
-println(name[0])       // 66  (u8 — byte value of 'B')
-println(name[1..3])    // ob  (slicing returns a string)
+println(name[0])       // 66  （u8 — 'B'のバイト値）
+println(name[1..3])    // ob  （スライシングは文字列を返す）
 ```
 
-## String Interpolation
+## 文字列補間
 
-Use `${}` to embed expressions inside strings:
+文字列内に式を埋め込むには`${}`を使用します：
 
 ```v
 name := 'Alice'
@@ -25,7 +25,7 @@ println('Hello, ${name}! You are ${age} years old.')
 println('Is adult: ${age >= 18}')
 ```
 
-## Multiline Strings
+## 複数行文字列
 
 ```v
 text := 'line one
@@ -33,16 +33,16 @@ line two
 line three'
 ```
 
-## Raw Strings
+## 生文字列
 
-Prepend `r` to disable escape processing:
+エスケープ処理を無効にするには`r`を先頭に付けます：
 
 ```v
-s := r'hello\nworld'  // \n is kept as two characters
+s := r'hello\nworld'  // \n は2文字のままです
 println(s)            // hello\nworld
 ```
 
-## String Methods
+## 文字列メソッド
 
 ```v
 s := 'Hello, World!'
@@ -54,10 +54,10 @@ println(s.starts_with('Hello')) // true
 println(s.ends_with('!'))  // true
 println(s.replace('World', 'V')) // Hello, V!
 println(s.split(', '))     // ['Hello', 'World!']
-println(s.trim_space())    // Hello, World!  (removes leading/trailing whitespace)
+println(s.trim_space())    // Hello, World!  （先頭/末尾の空白を削除）
 ```
 
-## Converting to Numbers
+## 数値への変換
 
 ```v
 s := '42'
@@ -69,20 +69,20 @@ assert '0o10'.int() == 8
 assert '0b1010'.int() == 10
 ```
 
-## Runes (Unicode Code Points)
+## ルーン（Unicodeコードポイント）
 
-To work with Unicode characters rather than raw bytes, use `runes()`:
+生のバイトではなくUnicode文字を操作するには、`runes()`を使用します：
 
 ```v
 mut s := 'hello 🌎'
 r := s.runes()
-println(r.len)    // 7  (7 Unicode code points, not 10 bytes)
+println(r.len)    // 7  （7つのUnicodeコードポイント、10バイトではない）
 println(r[6])     // 🌎
 ```
 
-## String Builder
+## 文字列ビルダー
 
-For efficient string concatenation, use `strings.Builder`:
+効率的な文字列連結には`strings.Builder`を使用します：
 
 ```v
 import strings

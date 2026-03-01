@@ -1,8 +1,8 @@
-# Enums
+# 列挙型
 
-Enums define a type with a fixed set of named constants.
+列挙型は、固定の名前付き定数セットを持つ型を定義します。
 
-## Basic Enum
+## 基本的な列挙型
 
 ```v
 enum Direction {
@@ -18,7 +18,7 @@ fn main() {
 }
 ```
 
-## Matching on Enums
+## 列挙型のマッチング
 
 ```v
 enum Color {
@@ -36,9 +36,9 @@ fn describe(c Color) string {
 }
 ```
 
-Notice the shorthand `.variant` syntax when the type can be inferred.
+型が推論できる場合の省略記法`.variant`に注目してください。
 
-## Enums with Custom Values
+## カスタム値を持つ列挙型
 
 ```v
 enum StatusCode {
@@ -53,7 +53,7 @@ fn main() {
 }
 ```
 
-## Enum Methods
+## 列挙型のメソッド
 
 ```v
 enum Planet {
@@ -71,7 +71,7 @@ fn (p Planet) is_inner() bool {
 }
 ```
 
-## Iterating Over Enums
+## 列挙型のイテレーション
 
 ```v
 enum Season {
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-## Flag Enums (Bit Fields)
+## フラグ列挙型（ビットフィールド）
 
 ```v
 @[flag]
@@ -96,13 +96,5 @@ enum Permission {
     read
     write
     execute
-}
-
-fn main() {
-    mut p := Permission.read | Permission.write
-    println(p.has(.read))    // true
-    println(p.has(.execute)) // false
-    p.set(.execute)
-    println(p.has(.execute)) // true
 }
 ```

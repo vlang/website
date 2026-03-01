@@ -1,8 +1,8 @@
 # Structs
 
-Structs are used to define custom data types with named fields.
+Structs são usadas para definir tipos de dados personalizados com campos nomeados.
 
-## Basic Struct
+## Struct Básica
 
 ```v
 struct Point {
@@ -17,9 +17,9 @@ fn main() {
 }
 ```
 
-## Mutable Structs
+## Structs Mutáveis
 
-Fields are immutable by default. Use `mut:` to declare mutable fields:
+Os campos são imutáveis por padrão. Use `mut:` para declarar campos mutáveis:
 
 ```v
 struct User {
@@ -38,7 +38,7 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## Modificadores de Acesso
 
 ```v
 struct Foo {
@@ -54,9 +54,9 @@ __global:
 }
 ```
 
-## Methods
+## Métodos
 
-Functions can be attached to structs:
+Funções podem ser anexadas a structs:
 
 ```v
 struct Rectangle {
@@ -81,7 +81,7 @@ fn main() {
 
 ## Embedding
 
-Structs can embed other structs to inherit their fields and methods:
+Structs podem incorporar outras structs para herdar seus campos e métodos:
 
 ```v
 struct Animal {
@@ -108,7 +108,7 @@ fn main() {
 }
 ```
 
-## Default Field Values
+## Valores Padrão de Campos
 
 ```v
 struct Config {
@@ -124,7 +124,7 @@ fn main() {
 }
 ```
 
-## JSON Example
+## Exemplo com JSON
 
 ```v
 import json

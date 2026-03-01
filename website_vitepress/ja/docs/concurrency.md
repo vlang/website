@@ -1,8 +1,8 @@
-# Concurrency
+# 並行処理
 
-V uses lightweight threads (goroutines) to run work concurrently. The `spawn` keyword starts a function in a new thread.
+Vは軽量スレッド（ゴルーチン）を使って作業を並行して実行します。`spawn`キーワードで新しいスレッドで関数を開始します。
 
-## Basic Spawning
+## 基本的なスポーン
 
 ```v
 import time
@@ -19,15 +19,15 @@ fn main() {
     threads << spawn expensive_computing(2, 500)
     threads << spawn expensive_computing(3, 1000)
 
-    // Wait for all threads to finish
+    // すべてのスレッドの終了を待つ
     threads.wait()
     println('All jobs finished!')
 }
 ```
 
-## Getting Return Values
+## 戻り値の取得
 
-Threads can return values. Calling `.wait()` on a `[]thread T` returns `[]T`:
+スレッドは値を返すことができます。`[]thread T`に対して`.wait()`を呼び出すと`[]T`が返されます：
 
 ```v
 fn expensive_computing(i int) int {
@@ -45,7 +45,7 @@ fn main() {
 }
 ```
 
-## Concurrent HTTP Requests
+## 並行HTTPリクエスト
 
 ```v
 import net.http
@@ -75,14 +75,14 @@ fn main() {
 }
 ```
 
-## Channels
+## チャネル
 
-Channels allow safe communication between threads:
+チャネルはスレッド間の安全な通信を可能にします：
 
 ```v
 fn producer(ch chan int) {
     for i in 1 .. 6 {
-        ch <- i  // send to channel
+        ch <- i  // チャネルに送信
     }
     ch.close()
 }
@@ -97,9 +97,9 @@ fn main() {
 }
 ```
 
-## Mutexes
+## ミューテックス
 
-Use `sync.Mutex` to protect shared state:
+共有状態を保護するために`sync.Mutex`を使用します：
 
 ```v
 import sync
@@ -119,7 +119,7 @@ fn (mut c Counter) increment() {
 
 ## `defer`
 
-`defer` executes a statement when the surrounding function returns — useful for cleanup:
+`defer`は囲む関数が返るときにステートメントを実行します — クリーンアップに便利：
 
 ```v
 import os
@@ -128,7 +128,7 @@ fn process_file(path string) {
     f := os.open(path) or { return }
     defer { f.close() }
 
-    // use f — it will be closed automatically
+    // f を使用 — 自動的にクローズされる
     println(f.read_to_string() or { '' })
 }
 ```

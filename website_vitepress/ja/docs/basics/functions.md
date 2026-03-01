@@ -1,6 +1,6 @@
-# Functions
+# 関数
 
-## Basic Syntax
+## 基本構文
 
 ```v
 fn main() {
@@ -17,13 +17,13 @@ fn sub(x int, y int) int {
 }
 ```
 
-The return type is specified **after** the parameter list. If the function returns nothing, the return type is omitted.
+戻り値の型はパラメータリストの**後に**指定します。関数が何も返さない場合、戻り値の型は省略します。
 
-## Hoisting
+## ホイスティング
 
-Functions can be used before they are declared. V hoists all declarations, so there is no need for header files or forward declarations.
+関数は宣言前に使用できます。Vはすべての宣言をホイストするため、ヘッダーファイルや前方宣言は不要です。
 
-## Multiple Return Values
+## 複数の戻り値
 
 ```v
 fn foo() (int, int) {
@@ -33,12 +33,12 @@ fn foo() (int, int) {
 a, b := foo()
 println(a) // 2
 println(b) // 3
-c, _ := foo() // ignore the second value with `_`
+c, _ := foo() // `_`で二番目の値を無視
 ```
 
-## Visibility
+## 可視性
 
-Functions are **private** by default. Use `pub` to export them:
+関数はデフォルトで**プライベート**です。エクスポートするには`pub`を使用します：
 
 ```v
 pub fn public_function() {
@@ -48,13 +48,13 @@ fn private_function() {
 }
 ```
 
-## No Overloading
+## オーバーロードなし
 
-Functions cannot be overloaded. This keeps the code unambiguous and easy to read.
+関数はオーバーロードできません。これによりコードが明確で読みやすくなります。
 
-## Methods
+## メソッド
 
-Functions can be attached to types:
+関数を型に付加できます：
 
 ```v
 struct User {
@@ -78,9 +78,9 @@ fn main() {
 }
 ```
 
-## High-Order Functions
+## 高階関数
 
-Functions are first-class values and can be passed to other functions:
+関数はファーストクラスの値であり、他の関数に渡すことができます：
 
 ```v
 fn apply(arr []int, f fn(int) int) []int {
@@ -102,7 +102,7 @@ fn main() {
 }
 ```
 
-## Anonymous Functions
+## 無名関数
 
 ```v
 fn main() {

@@ -1,10 +1,10 @@
 # ORM
 
-V includes a built-in ORM that supports SQLite, PostgreSQL, MySQL, and MSSQL. No external library needed.
+VにはSQLite、PostgreSQL、MySQL、MSSQLをサポートする組み込みORMが含まれています。外部ライブラリは不要です。
 
-## Defining a Model
+## モデルの定義
 
-Use the `@[table: 'table_name']` attribute to map a struct to a database table:
+`@[table: 'table_name']`属性を使用して構造体をデータベーステーブルにマップします：
 
 ```v
 import db.sqlite
@@ -20,9 +20,9 @@ pub:
 }
 ```
 
-## SQL Syntax (Built-in DSL)
+## SQL構文（組み込みDSL）
 
-V provides a clean SQL-like DSL for queries:
+VはクエリのためのクリーンなSQL風DSLを提供します：
 
 ```v
 import db.sqlite
@@ -42,35 +42,35 @@ fn main() {
     user1 := User{id: '001', name: 'Alice'}
     user2 := User{id: '002', name: 'Bob'}
 
-    // Create table
+    // テーブルを作成
     sql db { create table User }!
 
-    // Insert
+    // 挿入
     sql db { insert user1 into User }!
     sql db { insert user2 into User }!
 
-    // Select all
+    // 全件取得
     all_users := sql db { select from User }!
     dump(all_users)
 
-    // Select with condition
+    // 条件付き取得
     alice := sql db { select from User where id == '001' }!
     dump(alice)
 
-    // Update
+    // 更新
     sql db { update User set name = 'Alice Smith' where id == '001' }!
 
-    // Delete
+    // 削除
     sql db { delete from User where id == '002' }!
 
-    // Drop table
+    // テーブルを削除
     sql db { drop table User }!
 }
 ```
 
-## Query Builder Syntax
+## クエリビルダー構文
 
-An alternative fluent query builder API is also available:
+代替のフルエントクエリビルダーAPIも利用可能です：
 
 ```v
 import db.sqlite
@@ -94,23 +94,23 @@ fn main() {
     qb.insert(Product{id: 'p1', name: 'Widget', price: 9.99})!
     qb.insert(Product{id: 'p2', name: 'Gadget', price: 19.99})!
 
-    // Fetch all
+    // 全件取得
     all := qb.query()!
     dump(all)
 
-    // Filter
+    // フィルタリング
     cheap := qb.where('price < ?', 15.0)!.query()!
     dump(cheap)
 
-    // Update
+    // 更新
     qb.set('price = ?', 12.99)!.where('id = ?', 'p1')!.update()!
 
-    // Delete
+    // 削除
     qb.where('id = ?', 'p2')!.delete()!
 }
 ```
 
-## PostgreSQL Example
+## PostgreSQLの例
 
 ```v
 import db.pg
@@ -124,7 +124,7 @@ fn main() {
     })!
     defer { db.close() }
 
-    // same SQL DSL works with PostgreSQL
+    // 同じSQL DSLがPostgreSQLでも動作します
     users := sql db { select from User }!
     println(users)
 }

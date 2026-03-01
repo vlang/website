@@ -1,8 +1,8 @@
-# Enums
+# 枚举
 
-Enums define a type with a fixed set of named constants.
+枚举定义了一种具有固定命名常量集合的类型。
 
-## Basic Enum
+## 基本枚举
 
 ```v
 enum Direction {
@@ -18,7 +18,7 @@ fn main() {
 }
 ```
 
-## Matching on Enums
+## 对枚举进行匹配
 
 ```v
 enum Color {
@@ -36,9 +36,9 @@ fn describe(c Color) string {
 }
 ```
 
-Notice the shorthand `.variant` syntax when the type can be inferred.
+注意当类型可以被推断时使用的 `.variant` 简写语法。
 
-## Enums with Custom Values
+## 带自定义值的枚举
 
 ```v
 enum StatusCode {
@@ -53,7 +53,7 @@ fn main() {
 }
 ```
 
-## Enum Methods
+## 枚举方法
 
 ```v
 enum Planet {
@@ -71,7 +71,7 @@ fn (p Planet) is_inner() bool {
 }
 ```
 
-## Iterating Over Enums
+## 遍历枚举
 
 ```v
 enum Season {
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-## Flag Enums (Bit Fields)
+## 标志枚举（位字段）
 
 ```v
 @[flag]

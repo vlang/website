@@ -1,8 +1,8 @@
 # Hello World
 
-## Your First V Program
+## 最初のVプログラム
 
-Create a file named `hello.v`:
+`hello.v`というファイルを作成します：
 
 ```v
 fn main() {
@@ -10,51 +10,51 @@ fn main() {
 }
 ```
 
-Run it:
+実行します：
 
 ```bash
 v run hello.v
 ```
 
-Or compile and run separately:
+またはコンパイルして別々に実行：
 
 ```bash
 v hello.v
 ./hello
 ```
 
-## Skipping `fn main()`
+## `fn main()` の省略
 
-For single-file scripts, `fn main()` is optional:
+単一ファイルのスクリプトでは、`fn main()`は省略可能です：
 
 ```v
 println('Hello, World!')
 ```
 
-This is useful for small programs and learning the language.
+これは小さなプログラムや言語学習に便利です。
 
-## Running Multiple Files
+## 複数ファイルの実行
 
-If your project has multiple `.v` files in a folder, run all of them at once:
+プロジェクトにフォルダ内に複数の`.v`ファイルがある場合、一度にすべて実行できます：
 
 ```bash
 v run .
 ```
 
-## Comments
+## コメント
 
 ```v
-// This is a single line comment.
+// これは一行コメントです。
 /*
-  This is a multiline comment.
-  /* It can be nested. */
+  これは複数行コメントです。
+  /* ネスト可能です。 */
 */
 ```
 
-## A Slightly Bigger Example
+## もう少し大きな例
 
 ```v
-// fibonacci.v — compute Fibonacci numbers up to a given rank
+// fibonacci.v — 指定されたランクまでフィボナッチ数を計算する
 const args = arguments()
 
 fn main() {

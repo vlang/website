@@ -1,8 +1,8 @@
 # Maps
 
-Maps are unordered key-value stores. All keys must be of the same type, and all values must be of the same type.
+Maps são armazenamentos de chave-valor não ordenados. Todas as chaves devem ser do mesmo tipo, e todos os valores devem ser do mesmo tipo.
 
-## Creating Maps
+## Criando Maps
 
 ```v
 // map literal
@@ -16,7 +16,7 @@ mut scores := {
 mut m := map[string]int{}
 ```
 
-## Adding and Updating
+## Adicionando e Atualizando
 
 ```v
 mut m := map[string]int{}
@@ -26,7 +26,7 @@ m['x'] = 99   // update existing key
 println(m)    // {'x': 99, 'y': 2}
 ```
 
-## Reading Values
+## Lendo Valores
 
 ```v
 scores := {'Alice': 10, 'Bob': 20}
@@ -38,7 +38,7 @@ val := scores['Dave'] or { -1 }
 println(val) // -1
 ```
 
-## Checking for a Key
+## Verificando se uma Chave Existe
 
 ```v
 m := {'a': 1, 'b': 2}
@@ -52,7 +52,7 @@ if 'z' !in m {
 }
 ```
 
-## Deleting Keys
+## Removendo Chaves
 
 ```v
 mut m := {'a': 1, 'b': 2, 'c': 3}
@@ -60,7 +60,7 @@ m.delete('b')
 println(m) // {'a': 1, 'c': 3}
 ```
 
-## Iterating
+## Iterando
 
 ```v
 m := {'one': 1, 'two': 2, 'three': 3}
@@ -75,16 +75,16 @@ for key in m.keys() {
 }
 ```
 
-## Map Size
+## Tamanho do Map
 
 ```v
 m := {'a': 1, 'b': 2}
 println(m.len) // 2
 ```
 
-## Allowed Key Types
+## Tipos de Chave Permitidos
 
-Map keys can be strings, integers, floats, runes, or any type that implements the `==` operator.
+As chaves de um map podem ser strings, inteiros, floats, runes, ou qualquer tipo que implemente o operador `==`.
 
 ```v
 mut m := map[int]string{}

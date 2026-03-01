@@ -1,8 +1,8 @@
-# Variables
+# 変数
 
-## Declaration and Initialization
+## 宣言と初期化
 
-Variables are declared and initialized with `:=`. This is the only way to declare variables in V — they always have an initial value and their type is inferred from the right-hand side.
+変数は`:=`で宣言・初期化されます。これがVで変数を宣言する唯一の方法です — 変数は常に初期値を持ち、型は右辺から推論されます。
 
 ```v
 name := 'Bob'
@@ -13,9 +13,9 @@ println(age)
 println(large_number)
 ```
 
-## Mutable Variables
+## ミュータブルな変数
 
-Variables are **immutable by default**. Use `mut` to make a variable mutable:
+変数はデフォルトで**イミュータブル**です。変数をミュータブルにするには`mut`を使用します：
 
 ```v
 mut age := 20
@@ -24,21 +24,21 @@ age = 21
 println(age)
 ```
 
-> If you try to reassign without `mut`, the compiler will refuse to compile.
+> `mut`なしで再代入しようとすると、コンパイラはコンパイルを拒否します。
 
-## Type Conversion
+## 型変換
 
-Use `T(value)` to convert between types:
+型を変換するには`T(value)`を使用します：
 
 ```v
 x := 42
-y := f64(x)  // x converted to f64
-z := u8(x)   // x converted to u8
+y := f64(x)  // x を f64 に変換
+z := u8(x)   // x を u8 に変換
 ```
 
-## Multiple Assignment
+## 複数代入
 
-Multiple variables can be changed or swapped in one line:
+複数の変数を1行で変更またはスワップできます：
 
 ```v
 mut a := 0
@@ -48,9 +48,9 @@ a, b = b, a
 println('${a}, ${b}') // 1, 0
 ```
 
-## Ignoring Values
+## 値の無視
 
-Use `_` to discard a return value:
+戻り値を破棄するには`_`を使用します：
 
 ```v
 fn foo() (int, int) {
@@ -63,21 +63,21 @@ fn main() {
 }
 ```
 
-## Naming Convention
+## 命名規則
 
-All variable and function names must use `snake_case`. Type names must use `PascalCase`. The compiler enforces this.
+すべての変数名と関数名は`snake_case`を使用する必要があります。型名は`PascalCase`を使用する必要があります。コンパイラがこれを強制します。
 
-## No Global Variables
+## グローバル変数なし
 
-V does not allow global variables by default. All variables must be declared inside functions. This leads to more predictable, testable code.
+Vはデフォルトでグローバル変数を許可しません。すべての変数は関数内で宣言する必要があります。これにより、より予測可能でテストしやすいコードになります。
 
-## No Shadowing
+## シャドウイングなし
 
-Variable shadowing is not allowed. Declaring a variable with a name already used in a parent scope is a compile error:
+変数のシャドウイングは許可されていません。親スコープですでに使用されている名前で変数を宣言するとコンパイルエラーになります：
 
 ```v
 fn main() {
     a := 10
-    // a := 20  // ← compile error: redefinition of `a`
+    // a := 20  // ← コンパイルエラー: `a` の再定義
 }
 ```

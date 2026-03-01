@@ -1,8 +1,8 @@
 # JSON
 
-V has built-in JSON encoding and decoding in the `json` module — no external library needed.
+Vには`json`モジュールに組み込みのJSONエンコードとデコードがあります — 外部ライブラリは不要です。
 
-## Decoding JSON
+## JSONのデコード
 
 ```v
 import json
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Encoding JSON
+## JSONのエンコード
 
 ```v
 import json
@@ -45,9 +45,9 @@ fn main() {
 }
 ```
 
-## Custom Field Names
+## カスタムフィールド名
 
-Use the `@[json: 'field_name']` attribute to map struct fields to different JSON keys:
+`@[json: 'field_name']`属性を使用して構造体フィールドを異なるJSONキーにマップします：
 
 ```v
 import json
@@ -66,28 +66,28 @@ fn main() {
 }
 ```
 
-## Skipping Fields
+## フィールドのスキップ
 
-Use `@[json: '-']` to exclude a field from JSON serialization:
+`@[json: '-']`を使用してJSONシリアライゼーションからフィールドを除外します：
 
 ```v
 struct User {
     name     string
     email    string
-    password string @[json: '-']  // never included in JSON output
+    password string @[json: '-']  // JSON出力には含まれない
 }
 ```
 
-## Optional / Nullable Fields
+## オプション/Nullableフィールド
 
-Use option types for fields that may be absent in the JSON:
+JSONに存在しない可能性があるフィールドにはオプション型を使用します：
 
 ```v
 import json
 
 struct Profile {
     name   string
-    bio    ?string   // optional — may be null or absent
+    bio    ?string   // オプション — nullまたは存在しない場合がある
     age    ?int
 }
 
@@ -96,30 +96,5 @@ fn main() {
     p := json.decode(Profile, raw) or { panic(err) }
     println(p.name) // Alice
     println(p.bio)  // Option(none)
-}
-```
-
-## Nested Structs
-
-```v
-import json
-
-struct Address {
-    street string
-    city   string
-}
-
-struct Person {
-    name    string
-    age     int
-    address Address
-}
-
-fn main() {
-    raw := '{"name":"Bob","age":30,"address":{"street":"123 Main St","city":"Sampletown"}}'
-    p := json.decode(Person, raw) or { panic(err) }
-    println(p.address.city) // Sampletown
-
-    println(json.encode(p))
 }
 ```

@@ -1,67 +1,67 @@
-# Installation
+# インストール
 
-## Install from Source
+## ソースからインストール
 
-The recommended way to install V is from source. It only takes a few seconds:
+Vをインストールする推奨方法はソースからです。数秒で完了します：
 
 ```bash
 git clone --depth=1 https://github.com/vlang/v && cd v && make
 ```
 
-On Windows, use `make.bat` instead of `make`.
+Windowsでは、`make`の代わりに`make.bat`を使用してください。
 
-## Symlink V
+## Vのシンボリックリンク
 
-After building, you can symlink V so it's available everywhere:
+ビルド後、どこからでも使えるようにVをシンボリックリンクできます：
 
 ```bash
 sudo ./v symlink
 ```
 
-On Windows, run `v.exe symlink` from an elevated command prompt.
+Windowsでは、管理者権限のコマンドプロンプトから`v.exe symlink`を実行してください。
 
-## Verify Installation
+## インストールの確認
 
 ```bash
 v version
 ```
 
-You should see output like `V 0.5.0 ...`.
+`V 0.5.0 ...`のような出力が表示されるはずです。
 
-## Download Pre-built Binaries
+## ビルド済みバイナリのダウンロード
 
-Pre-built binaries are available for all major platforms on the
-[GitHub Releases](https://github.com/vlang/v/releases/latest) page:
+すべての主要プラットフォーム向けのビルド済みバイナリが
+[GitHub Releases](https://github.com/vlang/v/releases/latest) ページで入手できます：
 
-| Platform | File |
+| プラットフォーム | ファイル |
 | --- | --- |
 | Linux (x86_64) | `v_linux.zip` |
 | macOS (Apple Silicon) | `v_macos_arm64.zip` |
 | macOS (Intel) | `v_macos_x86_64.zip` |
 | Windows | `v_windows.zip` |
 
-## Upgrading V
+## Vのアップグレード
 
-To upgrade V to the latest version, run:
+Vを最新バージョンにアップグレードするには：
 
 ```bash
 v up
 ```
 
-## Running a Program
+## プログラムの実行
 
 ```bash
 v run hello.v
 ```
 
-Or compile it:
+またはコンパイルして実行：
 
 ```bash
 v hello.v
 ./hello
 ```
 
-To run all `.v` files in a directory:
+ディレクトリ内のすべての`.v`ファイルを実行するには：
 
 ```bash
 v run .

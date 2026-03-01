@@ -1,8 +1,8 @@
-# Structs
+# 结构体
 
-Structs are used to define custom data types with named fields.
+结构体用于定义带有命名字段的自定义数据类型。
 
-## Basic Struct
+## 基本结构体
 
 ```v
 struct Point {
@@ -17,9 +17,9 @@ fn main() {
 }
 ```
 
-## Mutable Structs
+## 可变结构体
 
-Fields are immutable by default. Use `mut:` to declare mutable fields:
+字段默认是不可变的。使用 `mut:` 声明可变字段：
 
 ```v
 struct User {
@@ -38,25 +38,25 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## 访问修饰符
 
 ```v
 struct Foo {
-    a int         // private immutable (default)
+    a int         // 私有不可变（默认）
 mut:
-    b int         // private mutable
+    b int         // 私有可变
 pub:
-    c int         // public immutable
+    c int         // 公开不可变
 pub mut:
-    d int         // public mutable, private to set
+    d int         // 公开可变，私有可设置
 __global:
-    e int         // public and mutable everywhere (rare)
+    e int         // 公开且处处可变（很少使用）
 }
 ```
 
-## Methods
+## 方法
 
-Functions can be attached to structs:
+函数可以附加到结构体上：
 
 ```v
 struct Rectangle {
@@ -79,9 +79,9 @@ fn main() {
 }
 ```
 
-## Embedding
+## 嵌入
 
-Structs can embed other structs to inherit their fields and methods:
+结构体可以嵌入其他结构体以继承其字段和方法：
 
 ```v
 struct Animal {
@@ -103,12 +103,12 @@ fn (d Dog) speak() string {
 
 fn main() {
     d := Dog{Animal: Animal{name: 'Rex'}, breed: 'Labrador'}
-    println(d.name)    // Rex  (promoted from Animal)
+    println(d.name)    // Rex（从 Animal 提升）
     println(d.speak()) // Woof!
 }
 ```
 
-## Default Field Values
+## 字段默认值
 
 ```v
 struct Config {
@@ -124,7 +124,7 @@ fn main() {
 }
 ```
 
-## JSON Example
+## JSON 示例
 
 ```v
 import json

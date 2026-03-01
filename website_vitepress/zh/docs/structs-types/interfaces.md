@@ -1,8 +1,8 @@
-# Interfaces
+# 接口
 
-Interfaces define a contract — a set of methods that a type must implement. There is no explicit `implements` keyword; types satisfy interfaces automatically (structural/duck typing).
+接口定义了一个契约——一组类型必须实现的方法。没有显式的 `implements` 关键字；类型自动满足接口（结构化/鸭子类型）。
 
-## Defining an Interface
+## 定义接口
 
 ```v
 interface Shape {
@@ -11,9 +11,9 @@ interface Shape {
 }
 ```
 
-## Implementing an Interface
+## 实现接口
 
-Any struct that has the required methods automatically implements the interface:
+任何具有所需方法的结构体都会自动实现该接口：
 
 ```v
 struct Circle {
@@ -42,7 +42,7 @@ fn (r Rectangle) perimeter() f64 {
 }
 ```
 
-## Using Interfaces
+## 使用接口
 
 ```v
 fn print_shape_info(s Shape) {
@@ -63,9 +63,9 @@ fn main() {
 }
 ```
 
-## Interface with Fields
+## 带字段的接口
 
-Interfaces can also require fields (not just methods):
+接口也可以要求字段（不仅仅是方法）：
 
 ```v
 interface Named {
@@ -86,7 +86,7 @@ fn main() {
 }
 ```
 
-## Type Checking with Interfaces
+## 用接口进行类型检查
 
 ```v
 fn describe(s Shape) {
@@ -98,7 +98,7 @@ fn describe(s Shape) {
 }
 ```
 
-## Sum Types vs Interfaces
+## 联合类型与接口的对比
 
-- Use **interfaces** when different unrelated types share common behaviour.
-- Use **sum types** (`type Foo = A | B`) when you have a closed, finite set of variants and want exhaustive pattern matching with `match`.
+- 当不同的无关类型共享公共行为时，使用**接口**。
+- 当你有一组封闭的、有限的变体，并希望使用 `match` 进行穷尽模式匹配时，使用**联合类型**（`type Foo = A | B`）。
