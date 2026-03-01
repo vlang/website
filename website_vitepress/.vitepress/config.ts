@@ -1,10 +1,16 @@
 import { defineConfig } from 'vitepress'
 
+const SITE_URL = 'https://vlang.io'
+
 export default defineConfig({
-  title: 'The V Programming Language',
-  description: 'Simple, fast, safe, compiled. For developing maintainable software.',
+  title: 'The V Programming Language | Fast, Safe, Compiled & Maintainable',
+  description: 'A simple, fast, safe, compiled language for developing maintainable software. Batteries included, cross-platform and open source.',
   lang: 'en-US',
   appearance: 'dark',
+  cleanUrls: true,
+  sitemap: {
+    hostname: SITE_URL,
+  },
   head: [
     ['link', { rel: 'icon', href: '/img/v-logo.png' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
@@ -17,6 +23,12 @@ export default defineConfig({
       },
     ],
   ],
+  transformHead({ pageData }) {
+    const canonicalUrl = `${SITE_URL}/${pageData.relativePath}`
+      .replace(/index\.md$/, '')
+      .replace(/\.md$/, '')
+    return [['link', { rel: 'canonical', href: canonicalUrl }]]
+  },
   themeConfig: {
     logo: '/img/v-logo.png',
     siteTitle: 'V Lang',
