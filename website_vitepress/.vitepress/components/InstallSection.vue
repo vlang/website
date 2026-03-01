@@ -1,8 +1,8 @@
 <template>
   <section class="install-section">
     <div class="install-inner">
-      <h2 class="install-heading">Install V from source</h2>
-      <p class="install-sub">This will take a couple of seconds.</p>
+      <h2 class="install-heading">{{ t.install.heading }}</h2>
+      <p class="install-sub">{{ t.install.sub }}</p>
 
       <div class="terminal">
         <div class="term-tabs">
@@ -29,26 +29,27 @@
       </div>
 
       <p class="install-note">
-        Or
         <a
           href="https://github.com/vlang/v/releases/latest"
           target="_blank"
           rel="noopener"
-        >download pre-built binaries</a>
-        for Windows, macOS, and Linux.
+        >{{ t.install.note }}</a>
       </p>
 
-      <a class="btn-getting-started" href="/docs/">Getting Started →</a>
+      <a class="btn-getting-started" href="/docs/">{{ t.install.gettingStarted }}</a>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useTranslations } from '../composables/useTranslations'
+
+const t = useTranslations()
 
 const tabs = [
-  { id: 'unix', label: 'Linux & Mac', command: 'git clone --depth=1 https://github.com/vlang/v && cd v && make' },
-  { id: 'windows', label: 'Windows', command: 'git clone --depth=1 https://github.com/vlang/v && cd v && make.bat' },
+  { id: 'unix', label: t.install.tabLinux, command: 'git clone --depth=1 https://github.com/vlang/v && cd v && make' },
+  { id: 'windows', label: t.install.tabWindows, command: 'git clone --depth=1 https://github.com/vlang/v && cd v && make.bat' },
 ]
 
 const activeTab = ref('unix')

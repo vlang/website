@@ -1,7 +1,7 @@
 <template>
   <section class="news-section">
     <div class="news-inner">
-      <h2 class="section-title">Latest News</h2>
+      <h2 class="section-title">{{ t.news.title }}</h2>
       <div class="news-scroll-wrapper">
         <div class="news-track">
           <a
@@ -23,6 +23,9 @@
 
 <script setup lang="ts">
 import { data as news } from '../releases.data'
+import { useTranslations } from '../composables/useTranslations'
+
+const t = useTranslations()
 </script>
 
 <style scoped>

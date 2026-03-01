@@ -7,7 +7,7 @@
           <span class="footer-brand-name">V Lang</span>
         </div>
         <p class="footer-tagline">
-          Simple, fast, safe, compiled.<br />
+          {{ t.footer.tagline }}<br />
           © {{ year }} V Language Contributors.
         </p>
         <div class="social-icons">
@@ -33,22 +33,22 @@
       </div>
 
       <div class="footer-col">
-        <h4 class="col-title">Resources</h4>
+        <h4 class="col-title">{{ t.footer.resources }}</h4>
         <ul>
-          <li><a href="/docs/">Documentation</a></li>
-          <li><a href="https://modules.vlang.io" target="_blank" rel="noopener">Stdlib Docs</a></li>
-          <li><a href="https://github.com/vlang/v/tree/master/examples" target="_blank" rel="noopener">Examples</a></li>
-          <li><a href="https://github.com/vlang/v/blob/master/tutorials" target="_blank" rel="noopener">Tutorials</a></li>
+          <li><a href="/docs/">{{ t.footer.links.documentation }}</a></li>
+          <li><a href="https://modules.vlang.io" target="_blank" rel="noopener">{{ t.footer.links.stdlib }}</a></li>
+          <li><a href="https://github.com/vlang/v/tree/master/examples" target="_blank" rel="noopener">{{ t.footer.links.examples }}</a></li>
+          <li><a href="https://github.com/vlang/v/blob/master/tutorials" target="_blank" rel="noopener">{{ t.footer.links.tutorials }}</a></li>
           <li><a href="https://vpm.vlang.io" target="_blank" rel="noopener">vpm</a></li>
-          <li><a href="https://play.vlang.io" target="_blank" rel="noopener">Playground</a></li>
+          <li><a href="https://play.vlang.io" target="_blank" rel="noopener">{{ t.footer.links.playground }}</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4 class="col-title">Community</h4>
+        <h4 class="col-title">{{ t.footer.community }}</h4>
         <ul>
           <li><a href="https://github.com/vlang/v" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://github.com/vlang/v/discussions" target="_blank" rel="noopener">Forum</a></li>
+          <li><a href="https://github.com/vlang/v/discussions" target="_blank" rel="noopener">{{ t.footer.links.forum }}</a></li>
           <li><a href="https://discord.gg/vlang" target="_blank" rel="noopener">Discord</a></li>
           <li><a href="https://t.me/vlanguage" target="_blank" rel="noopener">Telegram</a></li>
           <li><a href="https://www.youtube.com/@VLang" target="_blank" rel="noopener">YouTube</a></li>
@@ -56,7 +56,7 @@
       </div>
 
       <div class="footer-col">
-        <h4 class="col-title">Support the Project</h4>
+        <h4 class="col-title">{{ t.footer.support }}</h4>
         <ul>
           <li>
             <a href="https://www.patreon.com/vlang" target="_blank" rel="noopener">
@@ -80,6 +80,9 @@
 </template>
 
 <script setup lang="ts">
+import { useTranslations } from '../composables/useTranslations'
+
+const t = useTranslations()
 const year = new Date().getFullYear()
 </script>
 

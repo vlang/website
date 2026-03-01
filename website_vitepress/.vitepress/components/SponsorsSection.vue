@@ -1,7 +1,7 @@
 <template>
   <section class="sponsors-section">
     <div class="sponsors-inner">
-      <h2 class="section-title">Partners &amp; Sponsors</h2>
+      <h2 class="section-title">{{ t.sponsors.title }}</h2>
 
       <div class="sponsor-grid">
         <a
@@ -24,13 +24,17 @@
         target="_blank"
         rel="noopener"
       >
-        Become a sponsor via GitHub Sponsors
+        {{ t.sponsors.becomeLink }}
       </a>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import { useTranslations } from '../composables/useTranslations'
+
+const t = useTranslations()
+
 interface Sponsor {
   name: string
   url: string

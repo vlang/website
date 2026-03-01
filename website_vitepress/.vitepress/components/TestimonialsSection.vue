@@ -1,7 +1,7 @@
 <template>
   <section class="testimonials-section">
     <div class="testimonials-inner">
-      <h2 class="section-title">What developers say about V</h2>
+      <h2 class="section-title">{{ i18n.testimonials.title }}</h2>
       <div class="scroll-wrapper">
         <div class="cards-track">
           <a
@@ -25,6 +25,10 @@
 </template>
 
 <script setup lang="ts">
+import { useTranslations } from '../composables/useTranslations'
+
+const i18n = useTranslations()
+
 const testimonials = [
   {
     quote:

@@ -3,19 +3,19 @@
     <!-- top identity row -->
     <div class="hero-identity">
       <img src="/img/v-logo.png" alt="V logo" class="hero-logo" />
-      <span class="hero-name">The V Programming Language</span>
+      <span class="hero-name">{{ t.hero.name }}</span>
       <span class="version-badge">v0.5.0</span>
     </div>
 
     <!-- headline -->
     <div class="hero-headline">
       <h1 class="hero-motto">
-        <span class="motto-word">Simple.</span>
-        <span class="motto-word accent">Fast.</span>
-        <span class="motto-word">Safe.</span>
-        <span class="motto-word muted">Compiled.</span>
+        <span class="motto-word">{{ t.hero.simple }}</span>
+        <span class="motto-word accent">{{ t.hero.fast }}</span>
+        <span class="motto-word">{{ t.hero.safe }}</span>
+        <span class="motto-word muted">{{ t.hero.compiled }}</span>
       </h1>
-      <p class="hero-sub">For developing maintainable software.</p>
+      <p class="hero-sub">{{ t.hero.sub }}</p>
     </div>
 
     <!-- action row -->
@@ -47,17 +47,17 @@
 
     <!-- quick links -->
     <nav class="hero-links" aria-label="Quick links">
-      <a href="https://fast.vlang.io/" target="_blank" rel="noopener">Is V still fast?</a>
+      <a href="https://fast.vlang.io/" target="_blank" rel="noopener">{{ t.hero.links.stillFast }}</a>
       <span class="dot" aria-hidden="true">·</span>
-      <a href="https://github.com/vlang/v/wiki/FAQ" target="_blank">FAQ</a>
+      <a href="https://github.com/vlang/v/wiki/FAQ" target="_blank">{{ t.hero.links.faq }}</a>
       <span class="dot" aria-hidden="true">·</span>
-      <a href="/docs/">Docs</a>
+      <a href="/docs/">{{ t.hero.links.docs }}</a>
       <span class="dot" aria-hidden="true">·</span>
-      <a href="https://github.com/vlang/v/blob/master/CHANGELOG.md" target="_blank">Changelog</a>
+      <a href="https://github.com/vlang/v/blob/master/CHANGELOG.md" target="_blank">{{ t.hero.links.changelog }}</a>
       <span class="dot" aria-hidden="true">·</span>
-      <a href="/showcase">Built with V</a>
+      <a href="/showcase">{{ t.hero.links.builtWith }}</a>
       <span class="dot" aria-hidden="true">·</span>
-      <a href="https://github.com/vlang/rfcs" target="_blank" rel="noopener">RFCs</a>
+      <a href="https://github.com/vlang/rfcs" target="_blank" rel="noopener">{{ t.hero.links.rfcs }}</a>
     </nav>
 
     <!-- video demo carousel -->
@@ -71,6 +71,9 @@
 import { ref, onMounted, computed } from 'vue'
 import DownloadButton from './DownloadButton.vue'
 import VideoDemoCarousel from './VideoDemoCarousel.vue'
+import { useTranslations } from '../composables/useTranslations'
+
+const t = useTranslations()
 
 const stars = ref<number | null>(null)
 

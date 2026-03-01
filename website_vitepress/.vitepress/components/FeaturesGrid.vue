@@ -2,10 +2,10 @@
   <section class="features-section">
     <div class="features-inner">
       <div class="section-header">
-        <span class="section-eyebrow">Capabilities</span>
-        <h2 class="section-title">Why V?</h2>
+        <span class="section-eyebrow">{{ t.features.eyebrow }}</span>
+        <h2 class="section-title">{{ t.features.title }}</h2>
         <p class="section-sub">
-          A modern language with a tiny footprint and big ambitions.
+          {{ t.features.sub }}
         </p>
       </div>
 
@@ -25,55 +25,27 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { Icon } from '@iconify/vue'
+import { useTranslations } from '../composables/useTranslations'
 
-const features = [
-  {
-    icon: 'lucide:zap',
-    title: 'Fast Compilation',
-    desc: 'V compiles between ~110k and 1.2 million lines of code per second per CPU core. Compiles itself in 0.15–0.6 seconds.',
-  },
-  {
-    icon: 'lucide:shield-check',
-    title: 'Safety',
-    desc: 'No null, no global variables, no undefined behaviour, immutability by default. V prevents entire classes of bugs at compile time.',
-  },
-  {
-    icon: 'lucide:gauge',
-    title: 'Performance',
-    desc: 'As fast as C. V compiles to human-readable C and can use any C compiler as a backend including GCC, Clang, and MSVC.',
-  },
-  {
-    icon: 'lucide:book-open',
-    title: 'Simple Language',
-    desc: 'Learn the entire language over a weekend. If you know Go, you already know ~80% of V. Simple, readable, maintainable code.',
-  },
-  {
-    icon: 'lucide:box',
-    title: 'Zero Dependencies',
-    desc: 'The V compiler is only 400 KB with zero dependencies. No LLVM, no libstdc++. Install in seconds from anywhere.',
-  },
-  {
-    icon: 'lucide:arrow-left-right',
-    title: 'C/C++ Translation',
-    desc: 'Translate entire C/C++ projects to V automatically. The C2V tool can even compile the DOOM source code to V.',
-  },
-  {
-    icon: 'lucide:refresh-cw',
-    title: 'Hot Code Reloading',
-    desc: 'Change code while the program is running, without restarting it. No lost state. Perfect for long-running GUI apps.',
-  },
-  {
-    icon: 'lucide:database',
-    title: 'Built-in ORM',
-    desc: 'A built-in ORM with a clean SQL-like syntax. Works with SQLite, PostgreSQL, MySQL, and MSSQL out of the box.',
-  },
-  {
-    icon: 'lucide:globe',
-    title: 'Built-in Web Framework',
-    desc: '`veb` is a fast, simple, and easy-to-use web framework included in the standard library. No external packages needed.',
-  },
+const t = useTranslations()
+
+const featureIcons = [
+  'lucide:zap',
+  'lucide:shield-check',
+  'lucide:gauge',
+  'lucide:book-open',
+  'lucide:box',
+  'lucide:arrow-left-right',
+  'lucide:refresh-cw',
+  'lucide:database',
+  'lucide:globe',
 ]
+
+const features = computed(() =>
+  t.features.items.map((item, i) => ({ icon: featureIcons[i], ...item }))
+)
 </script>
 
 <style scoped>
