@@ -6,7 +6,7 @@ const SITE_URL = 'https://vlang.io'
 function getDocsSidebar(lang: string = 'root', locale: string = ''): DefaultTheme.SidebarItem[] {
   const t = translations[lang] ?? translations['root']
   const s = t.docs.sidebar
-  const base = locale ? `/${locale}/docs` : '/docs'
+  const base = locale ? `/${locale}/docs` : '/docs/en'
   return [
     {
       text: s.gettingStarted,
@@ -62,7 +62,7 @@ function getDocsSidebar(lang: string = 'root', locale: string = ''): DefaultThem
 
 function getNav(): DefaultTheme.NavItem[] {
   return [
-    { text: 'Docs', link: '/docs/', activeMatch: '/docs/' },
+    { text: 'Docs', link: '/docs/en/', activeMatch: '/docs/en/' },
     { text: 'Examples', link: 'https://github.com/vlang/v/tree/master/examples' },
     { text: 'Tutorials', link: 'https://github.com/vlang/v/blob/master/tutorials' },
     { text: 'Stdlib', link: 'https://modules.vlang.io' },
@@ -527,7 +527,7 @@ export default defineConfig({
     siteTitle: 'V Lang',
     nav: getNav(),
     sidebar: {
-      '/docs/': getDocsSidebar(),
+      '/docs/en/': getDocsSidebar(),
     },
     socialLinks: [{ icon: 'github', link: 'https://github.com/vlang/v' }],
     footer: {
