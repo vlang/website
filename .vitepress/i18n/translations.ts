@@ -84,6 +84,24 @@ export interface SiteTranslations {
       }
     }
   }
+  showcase: {
+    title: string
+    sub: string
+    allCategory: string
+    viewOnGitHub: string
+    submitBanner: string
+    submitLink: string
+    submitSuffix: string
+    categories: {
+      web: string
+      tools: string
+      system: string
+      games: string
+      graphics: string
+      libraries: string
+      apps: string
+    }
+  }
 }
 
 const en: SiteTranslations = {
@@ -207,6 +225,24 @@ const en: SiteTranslations = {
         orm: 'ORM',
         testing: 'Testing',
       },
+    },
+  },
+  showcase: {
+    title: 'Built with V',
+    sub: 'Real-world projects built by the community using the V programming language.',
+    allCategory: 'All',
+    viewOnGitHub: 'View on GitHub',
+    submitBanner: 'Built something with V?',
+    submitLink: 'Submit your project',
+    submitSuffix: 'to be featured here.',
+    categories: {
+      web: 'Web',
+      tools: 'Tools',
+      system: 'System',
+      games: 'Games',
+      graphics: 'Graphics',
+      libraries: 'Libraries',
+      apps: 'Apps',
     },
   },
 }
@@ -334,6 +370,24 @@ const ar: SiteTranslations = {
       },
     },
   },
+  showcase: {
+    title: 'مبني بـ V',
+    sub: 'مشاريع حقيقية بنتها المجتمع باستخدام لغة البرمجة V.',
+    allCategory: 'الكل',
+    viewOnGitHub: 'عرض على GitHub',
+    submitBanner: 'بنيت شيئًا باستخدام V؟',
+    submitLink: 'أرسل مشروعك',
+    submitSuffix: 'ليتم عرضه هنا.',
+    categories: {
+      web: 'ويب',
+      tools: 'أدوات',
+      system: 'نظام',
+      games: 'ألعاب',
+      graphics: 'رسومات',
+      libraries: 'مكتبات',
+      apps: 'تطبيقات',
+    },
+  },
 }
 
 const ms: SiteTranslations = {
@@ -457,6 +511,24 @@ const ms: SiteTranslations = {
         orm: 'ORM',
         testing: 'Testing',
       },
+    },
+  },
+  showcase: {
+    title: 'Dibina dengan V',
+    sub: 'Projek dunia nyata yang dibina oleh komuniti menggunakan bahasa pengaturcaraan V.',
+    allCategory: 'Semua',
+    viewOnGitHub: 'Lihat di GitHub',
+    submitBanner: 'Bina sesuatu dengan V?',
+    submitLink: 'Hantar projek anda',
+    submitSuffix: 'untuk dipamerkan di sini.',
+    categories: {
+      web: 'Web',
+      tools: 'Alatan',
+      system: 'Sistem',
+      games: 'Permainan',
+      graphics: 'Grafik',
+      libraries: 'Pustaka',
+      apps: 'Aplikasi',
     },
   },
 }
@@ -584,6 +656,24 @@ const bs: SiteTranslations = {
       },
     },
   },
+  showcase: {
+    title: 'Napravljeno s V',
+    sub: 'Stvarni projekti koje zajednica gradi koristeći V programski jezik.',
+    allCategory: 'Sve',
+    viewOnGitHub: 'Pogledaj na GitHub',
+    submitBanner: 'Napravili ste nešto s V?',
+    submitLink: 'Pošaljite projekt',
+    submitSuffix: 'da bude prikazan ovdje.',
+    categories: {
+      web: 'Web',
+      tools: 'Alati',
+      system: 'Sistem',
+      games: 'Igre',
+      graphics: 'Grafika',
+      libraries: 'Biblioteke',
+      apps: 'Aplikacije',
+    },
+  },
 }
 
 const ca: SiteTranslations = {
@@ -707,6 +797,24 @@ const ca: SiteTranslations = {
         orm: 'ORM',
         testing: 'Testing',
       },
+    },
+  },
+  showcase: {
+    title: 'Fet amb V',
+    sub: 'Projectes reals creats per la comunitat amb el llenguatge de programació V.',
+    allCategory: 'Tots',
+    viewOnGitHub: 'Veure a GitHub',
+    submitBanner: 'Has creat alguna cosa amb V?',
+    submitLink: 'Envia el teu projecte',
+    submitSuffix: 'per ser destacat aquí.',
+    categories: {
+      web: 'Web',
+      tools: 'Eines',
+      system: 'Sistema',
+      games: 'Jocs',
+      graphics: 'Gràfics',
+      libraries: 'Biblioteques',
+      apps: 'Apps',
     },
   },
 }
@@ -834,6 +942,24 @@ const zh: SiteTranslations = {
       },
     },
   },
+  showcase: {
+    title: '用 V 构建',
+    sub: '社区使用 V 编程语言构建的真实项目。',
+    allCategory: '全部',
+    viewOnGitHub: '在 GitHub 上查看',
+    submitBanner: '用 V 创建了什么？',
+    submitLink: '提交你的项目',
+    submitSuffix: '以在这里展示。',
+    categories: {
+      web: 'Web',
+      tools: '工具',
+      system: '系统',
+      games: '游戏',
+      graphics: '图形',
+      libraries: '库',
+      apps: '应用',
+    },
+  },
 }
 
 const fr: SiteTranslations = {
@@ -957,6 +1083,24 @@ const fr: SiteTranslations = {
         orm: 'ORM',
         testing: 'Tests',
       },
+    },
+  },
+  showcase: {
+    title: 'Développé avec V',
+    sub: 'Projets réels créés par la communauté avec le langage de programmation V.',
+    allCategory: 'Tous',
+    viewOnGitHub: 'Voir sur GitHub',
+    submitBanner: 'Développé quelque chose avec V ?',
+    submitLink: 'Soumettez votre projet',
+    submitSuffix: 'pour être mis en avant ici.',
+    categories: {
+      web: 'Web',
+      tools: 'Outils',
+      system: 'Système',
+      games: 'Jeux',
+      graphics: 'Graphiques',
+      libraries: 'Bibliothèques',
+      apps: 'Applications',
     },
   },
 }
@@ -1084,6 +1228,24 @@ const de: SiteTranslations = {
       },
     },
   },
+  showcase: {
+    title: 'Mit V entwickelt',
+    sub: 'Echte Projekte, die von der Community mit der Programmiersprache V entwickelt wurden.',
+    allCategory: 'Alle',
+    viewOnGitHub: 'Auf GitHub ansehen',
+    submitBanner: 'Etwas mit V entwickelt?',
+    submitLink: 'Projekt einreichen',
+    submitSuffix: 'um hier vorgestellt zu werden.',
+    categories: {
+      web: 'Web',
+      tools: 'Werkzeuge',
+      system: 'System',
+      games: 'Spiele',
+      graphics: 'Grafik',
+      libraries: 'Bibliotheken',
+      apps: 'Anwendungen',
+    },
+  },
 }
 
 const id: SiteTranslations = {
@@ -1207,6 +1369,24 @@ const id: SiteTranslations = {
         orm: 'ORM',
         testing: 'Pengujian',
       },
+    },
+  },
+  showcase: {
+    title: 'Dibuat dengan V',
+    sub: 'Proyek nyata yang dibuat oleh komunitas menggunakan bahasa pemrograman V.',
+    allCategory: 'Semua',
+    viewOnGitHub: 'Lihat di GitHub',
+    submitBanner: 'Membuat sesuatu dengan V?',
+    submitLink: 'Kirim proyek Anda',
+    submitSuffix: 'untuk ditampilkan di sini.',
+    categories: {
+      web: 'Web',
+      tools: 'Alat',
+      system: 'Sistem',
+      games: 'Permainan',
+      graphics: 'Grafis',
+      libraries: 'Pustaka',
+      apps: 'Aplikasi',
     },
   },
 }
@@ -1334,6 +1514,24 @@ const ja: SiteTranslations = {
       },
     },
   },
+  showcase: {
+    title: 'Vで作られた',
+    sub: 'Vプログラミング言語を使用してコミュニティが構築した実際のプロジェクト。',
+    allCategory: 'すべて',
+    viewOnGitHub: 'GitHubで見る',
+    submitBanner: 'Vで何か作りましたか？',
+    submitLink: 'プロジェクトを送信する',
+    submitSuffix: 'こちらに掲載されます。',
+    categories: {
+      web: 'Web',
+      tools: 'ツール',
+      system: 'システム',
+      games: 'ゲーム',
+      graphics: 'グラフィックス',
+      libraries: 'ライブラリ',
+      apps: 'アプリ',
+    },
+  },
 }
 
 const no: SiteTranslations = {
@@ -1457,6 +1655,24 @@ const no: SiteTranslations = {
         orm: 'ORM',
         testing: 'Feilsøking',
       },
+    },
+  },
+  showcase: {
+    title: 'Laget med V',
+    sub: 'Virkelige prosjekter bygget av fellesskapet ved hjelp av programmeringsspråket V.',
+    allCategory: 'Alle',
+    viewOnGitHub: 'Se på GitHub',
+    submitBanner: 'Laget noe med V?',
+    submitLink: 'Send inn prosjektet ditt',
+    submitSuffix: 'for å vises her.',
+    categories: {
+      web: 'Web',
+      tools: 'Verktøy',
+      system: 'System',
+      games: 'Spill',
+      graphics: 'Grafikk',
+      libraries: 'Biblioteker',
+      apps: 'Apper',
     },
   },
 }
@@ -1584,6 +1800,24 @@ const pt: SiteTranslations = {
       },
     },
   },
+  showcase: {
+    title: 'Feito com V',
+    sub: 'Projetos do mundo real criados pela comunidade usando a linguagem de programação V.',
+    allCategory: 'Todos',
+    viewOnGitHub: 'Ver no GitHub',
+    submitBanner: 'Criou algo com V?',
+    submitLink: 'Envie seu projeto',
+    submitSuffix: 'para ser exibido aqui.',
+    categories: {
+      web: 'Web',
+      tools: 'Ferramentas',
+      system: 'Sistema',
+      games: 'Jogos',
+      graphics: 'Gráficos',
+      libraries: 'Bibliotecas',
+      apps: 'Aplicativos',
+    },
+  },
 }
 
 const ru: SiteTranslations = {
@@ -1707,6 +1941,24 @@ const ru: SiteTranslations = {
         orm: 'ORM',
         testing: 'Тестирование',
       },
+    },
+  },
+  showcase: {
+    title: 'Создано на V',
+    sub: 'Реальные проекты, созданные сообществом на языке программирования V.',
+    allCategory: 'Все',
+    viewOnGitHub: 'Посмотреть на GitHub',
+    submitBanner: 'Создали что-то на V?',
+    submitLink: 'Отправьте свой проект',
+    submitSuffix: 'чтобы оказаться здесь.',
+    categories: {
+      web: 'Web',
+      tools: 'Инструменты',
+      system: 'Система',
+      games: 'Игры',
+      graphics: 'Графика',
+      libraries: 'Библиотеки',
+      apps: 'Приложения',
     },
   },
 }
@@ -1834,6 +2086,24 @@ const es: SiteTranslations = {
       },
     },
   },
+  showcase: {
+    title: 'Hecho con V',
+    sub: 'Proyectos del mundo real creados por la comunidad utilizando el lenguaje de programación V.',
+    allCategory: 'Todos',
+    viewOnGitHub: 'Ver en GitHub',
+    submitBanner: '¿Creaste algo con V?',
+    submitLink: 'Envía tu proyecto',
+    submitSuffix: 'para aparecer aquí.',
+    categories: {
+      web: 'Web',
+      tools: 'Herramientas',
+      system: 'Sistema',
+      games: 'Juegos',
+      graphics: 'Gráficos',
+      libraries: 'Bibliotecas',
+      apps: 'Aplicaciones',
+    },
+  },
 }
 
 const tr: SiteTranslations = {
@@ -1957,6 +2227,24 @@ const tr: SiteTranslations = {
         orm: 'ORM',
         testing: 'Testing',
       },
+    },
+  },
+  showcase: {
+    title: 'V ile Yapıldı',
+    sub: 'V programlama dili kullanılarak topluluk tarafından oluşturulan gerçek dünya projeleri.',
+    allCategory: 'Tümü',
+    viewOnGitHub: "GitHub'da Görüntüle",
+    submitBanner: 'V ile bir şey yaptınız mı?',
+    submitLink: 'Projenizi gönderin',
+    submitSuffix: 'burada öne çıkmak için.',
+    categories: {
+      web: 'Web',
+      tools: 'Araçlar',
+      system: 'Sistem',
+      games: 'Oyunlar',
+      graphics: 'Grafik',
+      libraries: 'Kütüphaneler',
+      apps: 'Uygulamalar',
     },
   },
 }

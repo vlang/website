@@ -1,9 +1,9 @@
 <template>
   <div class="showcase-page">
     <div class="showcase-header">
-      <h1 class="showcase-title">Built with V</h1>
+      <h1 class="showcase-title">{{ t.showcase.title }}</h1>
       <p class="showcase-sub">
-        Real-world projects built by the community using the V programming language.
+        {{ t.showcase.sub }}
       </p>
 
       <!-- Category filter -->
@@ -15,7 +15,7 @@
           :class="{ active: activeCategory === cat }"
           @click="activeCategory = cat"
         >
-          {{ cat }}
+          {{ getCategoryLabel(cat) }}
         </button>
       </div>
     </div>
@@ -36,7 +36,7 @@
         <div class="card-body">
         <div class="card-top">
           <h3 class="project-name">{{ project.name }}</h3>
-          <span class="project-category-badge">{{ project.category }}</span>
+          <span class="project-category-badge">{{ getCategoryLabel(project.category) }}</span>
         </div>
         <p class="project-desc">{{ project.desc }}</p>
         <div class="card-footer">
@@ -53,7 +53,7 @@
                  1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
             />
           </svg>
-          <span class="link-label">View on GitHub</span>
+          <span class="link-label">{{ t.showcase.viewOnGitHub }}</span>
         </div>
         </div>
       </a>
@@ -61,13 +61,13 @@
 
     <div class="submit-banner">
       <p>
-        Built something with V?
+        {{ t.showcase.submitBanner }}
         <a
           href="https://github.com/vlang/v/wiki/Built-with-V"
           target="_blank"
           rel="noopener"
-        >Submit your project</a>
-        to be featured here.
+        >{{ t.showcase.submitLink }}</a>
+        {{ t.showcase.submitSuffix }}
       </p>
     </div>
   </div>
@@ -75,6 +75,9 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useTranslations } from '../composables/useTranslations'
+
+const t = useTranslations()
 
 interface Project {
   name: string
@@ -189,6 +192,22 @@ const filteredProjects = computed(() =>
     ? projects
     : projects.filter((p) => p.category === activeCategory.value),
 )
+
+const categoryKeyMap: Record<string, keyof typeof t.showcase.categories> = {
+  Web: 'web',
+  Tools: 'tools',
+  System: 'system',
+  Games: 'games',
+  Graphics: 'graphics',
+  Libraries: 'libraries',
+  Apps: 'apps',
+}
+
+function getCategoryLabel(cat: string): string {
+  if (cat === allCategory) return t.showcase.allCategory
+  const key = categoryKeyMap[cat]
+  return key ? t.showcase.categories[key] : cat
+}
 </script>
 
 <style scoped>

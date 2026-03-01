@@ -138,7 +138,7 @@ export default defineConfig({
               { text: 'YouTube', link: 'https://www.youtube.com/@VLang' },
             ],
           },
-          { text: 'Showcase', link: '/showcase' },
+          { text: 'Showcase', link: '/ar/showcase' },
         ],
         sidebar: {
           '/ar/docs/': getDocsSidebar('ar', 'ar'),
@@ -167,7 +167,7 @@ export default defineConfig({
               { text: 'YouTube', link: 'https://www.youtube.com/@VLang' },
             ],
           },
-          { text: 'Showcase', link: '/showcase' },
+          { text: 'Showcase', link: '/ms/showcase' },
         ],
         sidebar: {
           '/ms/docs/': getDocsSidebar('ms', 'ms'),
@@ -196,7 +196,7 @@ export default defineConfig({
               { text: 'YouTube', link: 'https://www.youtube.com/@VLang' },
             ],
           },
-          { text: 'Showcase', link: '/showcase' },
+          { text: 'Showcase', link: '/bs/showcase' },
         ],
         sidebar: {
           '/bs/docs/': getDocsSidebar('bs', 'bs'),
@@ -225,7 +225,7 @@ export default defineConfig({
               { text: 'YouTube', link: 'https://www.youtube.com/@VLang' },
             ],
           },
-          { text: 'Showcase', link: '/showcase' },
+          { text: 'Showcase', link: '/ca/showcase' },
         ],
         sidebar: {
           '/ca/docs/': getDocsSidebar('ca', 'ca'),
@@ -254,7 +254,7 @@ export default defineConfig({
               { text: 'YouTube', link: 'https://www.youtube.com/@VLang' },
             ],
           },
-          { text: 'Showcase', link: '/showcase' },
+          { text: 'Showcase', link: '/zh/showcase' },
         ],
         sidebar: {
           '/zh/docs/': getDocsSidebar('zh', 'zh'),
@@ -283,7 +283,7 @@ export default defineConfig({
               { text: 'YouTube', link: 'https://www.youtube.com/@VLang' },
             ],
           },
-          { text: 'Showcase', link: '/showcase' },
+          { text: 'Showcase', link: '/fr/showcase' },
         ],
         sidebar: {
           '/fr/docs/': getDocsSidebar('fr', 'fr'),
@@ -312,7 +312,7 @@ export default defineConfig({
               { text: 'YouTube', link: 'https://www.youtube.com/@VLang' },
             ],
           },
-          { text: 'Showcase', link: '/showcase' },
+          { text: 'Showcase', link: '/de/showcase' },
         ],
         sidebar: {
           '/de/docs/': getDocsSidebar('de', 'de'),
@@ -341,7 +341,7 @@ export default defineConfig({
               { text: 'YouTube', link: 'https://www.youtube.com/@VLang' },
             ],
           },
-          { text: 'Showcase', link: '/showcase' },
+          { text: 'Showcase', link: '/id/showcase' },
         ],
         sidebar: {
           '/id/docs/': getDocsSidebar('id', 'id'),
@@ -370,7 +370,7 @@ export default defineConfig({
               { text: 'YouTube', link: 'https://www.youtube.com/@VLang' },
             ],
           },
-          { text: 'Showcase', link: '/showcase' },
+          { text: 'Showcase', link: '/ja/showcase' },
         ],
         sidebar: {
           '/ja/docs/': getDocsSidebar('ja', 'ja'),
@@ -399,7 +399,7 @@ export default defineConfig({
               { text: 'YouTube', link: 'https://www.youtube.com/@VLang' },
             ],
           },
-          { text: 'Showcase', link: '/showcase' },
+          { text: 'Showcase', link: '/no/showcase' },
         ],
         sidebar: {
           '/no/docs/': getDocsSidebar('no', 'no'),
@@ -428,7 +428,7 @@ export default defineConfig({
               { text: 'YouTube', link: 'https://www.youtube.com/@VLang' },
             ],
           },
-          { text: 'Showcase', link: '/showcase' },
+          { text: 'Showcase', link: '/pt/showcase' },
         ],
         sidebar: {
           '/pt/docs/': getDocsSidebar('pt', 'pt'),
@@ -457,7 +457,7 @@ export default defineConfig({
               { text: 'YouTube', link: 'https://www.youtube.com/@VLang' },
             ],
           },
-          { text: 'Showcase', link: '/showcase' },
+          { text: 'Showcase', link: '/ru/showcase' },
         ],
         sidebar: {
           '/ru/docs/': getDocsSidebar('ru', 'ru'),
@@ -486,7 +486,7 @@ export default defineConfig({
               { text: 'YouTube', link: 'https://www.youtube.com/@VLang' },
             ],
           },
-          { text: 'Showcase', link: '/showcase' },
+          { text: 'Showcase', link: '/es/showcase' },
         ],
         sidebar: {
           '/es/docs/': getDocsSidebar('es', 'es'),
@@ -515,7 +515,7 @@ export default defineConfig({
               { text: 'YouTube', link: 'https://www.youtube.com/@VLang' },
             ],
           },
-          { text: 'Showcase', link: '/showcase' },
+          { text: 'Showcase', link: '/tr/showcase' },
         ],
         sidebar: {
           '/tr/docs/': getDocsSidebar('tr', 'tr'),
