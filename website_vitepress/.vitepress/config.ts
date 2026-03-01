@@ -46,8 +46,14 @@ export default defineConfig({
         link: 'https://play.vlang.io',
       },
       {
-        text: 'Forum',
-        link: 'https://github.com/vlang/v/discussions',
+        text: 'Community',
+        items: [
+          { text: 'Forum', link: 'https://github.com/vlang/v/discussions' },
+          { text: 'Discord', link: 'https://discord.gg/vlang' },
+          { text: 'GitHub', link: 'https://github.com/vlang/v' },
+          { text: 'Telegram', link: 'https://t.me/vlang_lang' },
+          { text: 'YouTube', link: 'https://www.youtube.com/@VLang' },
+        ],
       },
       {
         text: 'Showcase',
