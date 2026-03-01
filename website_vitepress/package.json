@@ -8,10 +8,11 @@
     "build": "vitepress build",
     "preview": "vitepress preview"
   },
+  "engines": {
+    "node": ">=24",
+    "npm": ">=11"
+  },
   "devDependencies": {
     "vitepress": "^1.6.3"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": ["esbuild"]
   }
 }
