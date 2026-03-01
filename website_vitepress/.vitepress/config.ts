@@ -4,6 +4,7 @@ export default defineConfig({
   title: 'The V Programming Language',
   description: 'Simple, fast, safe, compiled. For developing maintainable software.',
   lang: 'en-US',
+  appearance: 'dark',
   head: [
     ['link', { rel: 'icon', href: '/img/v-logo.png' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
