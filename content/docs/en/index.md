@@ -19,10 +19,10 @@ Despite being simple, V covers all the fields: systems programming, web developm
 
 ## Where to Start
 
-- [Installation](/docs/en/installation) — Build V from source or download binaries.
-- [Hello World](/docs/en/hello-world) — Your first V program.
-- [Variables](/docs/en/basics/variables) — How to declare and use variables.
-- [Functions](/docs/en/basics/functions) — Defining and calling functions.
+- [Installation](/docs/installation) — Build V from source or download binaries.
+- [Hello World](/docs/hello-world) — Your first V program.
+- [Variables](/docs/basics/variables) — How to declare and use variables.
+- [Functions](/docs/basics/functions) — Defining and calling functions.
 
 ## External Resources
 
