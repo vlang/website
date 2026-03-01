@@ -1,10 +1,10 @@
-# Testing
+# Pengujian
 
-V has built-in testing support. No test framework or external library needed.
+V memiliki dukungan pengujian bawaan. Tidak diperlukan framework pengujian atau pustaka eksternal.
 
-## Writing Tests
+## Menulis Pengujian
 
-Test functions must start with `test_` and live in files ending with `_test.v`:
+Fungsi pengujian harus dimulai dengan `test_` dan berada dalam file yang diakhiri dengan `_test.v`:
 
 ```v
 // math_test.v
@@ -24,17 +24,17 @@ fn test_add_large_numbers() {
 }
 ```
 
-Run tests with:
+Jalankan pengujian dengan:
 
 ```bash
 v test math_test.v
-# or run all tests in a directory:
+# atau jalankan semua pengujian dalam direktori:
 v test .
 ```
 
-## Assertions
+## Assertion
 
-Use `assert` to check conditions. A failing assertion prints the values of both sides:
+Gunakan `assert` untuk memeriksa kondisi. Assertion yang gagal mencetak nilai dari kedua sisi:
 
 ```v
 fn test_string_ops() {
@@ -45,22 +45,22 @@ fn test_string_ops() {
 }
 ```
 
-## Test Setup and Teardown
+## Setup dan Teardown Pengujian
 
 ```v
-// Use testsuite_begin and testsuite_end for module-level setup/teardown
+// Gunakan testsuite_begin dan testsuite_end untuk setup/teardown tingkat modul
 fn testsuite_begin() {
-    // runs once before all tests in the file
+    // dijalankan sekali sebelum semua pengujian dalam file
     println('Setting up test suite...')
 }
 
 fn testsuite_end() {
-    // runs once after all tests in the file
+    // dijalankan sekali setelah semua pengujian dalam file
     println('Tearing down test suite...')
 }
 ```
 
-## Testing Error Cases
+## Menguji Kasus Error
 
 ```v
 fn safe_divide(a f64, b f64) !f64 {
@@ -81,22 +81,22 @@ fn test_divide_normal() {
 }
 ```
 
-## Running Specific Tests
+## Menjalankan Pengujian Tertentu
 
 ```bash
-# Run a single test file
+# Jalankan satu file pengujian
 v test mypackage/foo_test.v
 
-# Run tests matching a pattern
+# Jalankan pengujian yang cocok dengan pola
 v test -run test_add .
 
-# Run with verbose output
+# Jalankan dengan output verbose
 v test -v .
 ```
 
-## Table-driven Tests
+## Pengujian Berbasis Tabel
 
-V doesn't have a built-in table-driven test helper, but you can do it manually:
+V tidak memiliki helper pengujian berbasis tabel bawaan, namun Anda bisa melakukannya secara manual:
 
 ```v
 fn test_add_table() {
@@ -112,9 +112,9 @@ fn test_add_table() {
 }
 ```
 
-## Code Coverage
+## Cakupan Kode
 
-Generate a coverage report:
+Buat laporan cakupan kode:
 
 ```bash
 v -coverage ./coverage_output test .

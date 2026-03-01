@@ -1,8 +1,8 @@
-# Structs
+# Strukturer
 
-Structs are used to define custom data types with named fields.
+Strukturer brukes til å definere egendefinerte datatyper med navngitte felt.
 
-## Basic Struct
+## Grunnleggende struktur
 
 ```v
 struct Point {
@@ -17,9 +17,9 @@ fn main() {
 }
 ```
 
-## Mutable Structs
+## Muterbare strukturer
 
-Fields are immutable by default. Use `mut:` to declare mutable fields:
+Felt er uforanderlige som standard. Bruk `mut:` for å erklære muterbare felt:
 
 ```v
 struct User {
@@ -38,25 +38,25 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## Tilgangsmodifikatorer
 
 ```v
 struct Foo {
-    a int         // private immutable (default)
+    a int         // privat uforanderlig (standard)
 mut:
-    b int         // private mutable
+    b int         // privat muterbar
 pub:
-    c int         // public immutable
+    c int         // offentlig uforanderlig
 pub mut:
-    d int         // public mutable, private to set
+    d int         // offentlig muterbar, privat å sette
 __global:
-    e int         // public and mutable everywhere (rare)
+    e int         // offentlig og muterbar overalt (sjelden)
 }
 ```
 
-## Methods
+## Metoder
 
-Functions can be attached to structs:
+Funksjoner kan knyttes til strukturer:
 
 ```v
 struct Rectangle {
@@ -79,9 +79,9 @@ fn main() {
 }
 ```
 
-## Embedding
+## Innbygging
 
-Structs can embed other structs to inherit their fields and methods:
+Strukturer kan bygge inn andre strukturer for å arve deres felt og metoder:
 
 ```v
 struct Animal {
@@ -103,12 +103,12 @@ fn (d Dog) speak() string {
 
 fn main() {
     d := Dog{Animal: Animal{name: 'Rex'}, breed: 'Labrador'}
-    println(d.name)    // Rex  (promoted from Animal)
+    println(d.name)    // Rex  (fremmet fra Animal)
     println(d.speak()) // Woof!
 }
 ```
 
-## Default Field Values
+## Standard feltverdier
 
 ```v
 struct Config {
@@ -124,7 +124,7 @@ fn main() {
 }
 ```
 
-## JSON Example
+## JSON-eksempel
 
 ```v
 import json

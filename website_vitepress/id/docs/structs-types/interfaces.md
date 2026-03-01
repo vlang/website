@@ -1,8 +1,8 @@
-# Interfaces
+# Antarmuka (Interface)
 
-Interfaces define a contract — a set of methods that a type must implement. There is no explicit `implements` keyword; types satisfy interfaces automatically (structural/duck typing).
+Antarmuka mendefinisikan kontrak — sekumpulan metode yang harus diimplementasikan oleh suatu tipe. Tidak ada kata kunci `implements` yang eksplisit; tipe memenuhi antarmuka secara otomatis (pengetikan struktural/duck typing).
 
-## Defining an Interface
+## Mendefinisikan Antarmuka
 
 ```v
 interface Shape {
@@ -11,9 +11,9 @@ interface Shape {
 }
 ```
 
-## Implementing an Interface
+## Mengimplementasikan Antarmuka
 
-Any struct that has the required methods automatically implements the interface:
+Struct apa pun yang memiliki metode yang diperlukan secara otomatis mengimplementasikan antarmuka:
 
 ```v
 struct Circle {
@@ -42,7 +42,7 @@ fn (r Rectangle) perimeter() f64 {
 }
 ```
 
-## Using Interfaces
+## Menggunakan Antarmuka
 
 ```v
 fn print_shape_info(s Shape) {
@@ -63,9 +63,9 @@ fn main() {
 }
 ```
 
-## Interface with Fields
+## Antarmuka dengan Field
 
-Interfaces can also require fields (not just methods):
+Antarmuka juga dapat memerlukan field (bukan hanya metode):
 
 ```v
 interface Named {
@@ -86,7 +86,7 @@ fn main() {
 }
 ```
 
-## Type Checking with Interfaces
+## Pemeriksaan Tipe dengan Antarmuka
 
 ```v
 fn describe(s Shape) {
@@ -98,7 +98,7 @@ fn describe(s Shape) {
 }
 ```
 
-## Sum Types vs Interfaces
+## Tipe Sum vs Antarmuka
 
-- Use **interfaces** when different unrelated types share common behaviour.
-- Use **sum types** (`type Foo = A | B`) when you have a closed, finite set of variants and want exhaustive pattern matching with `match`.
+- Gunakan **antarmuka** ketika tipe-tipe berbeda yang tidak berkaitan berbagi perilaku yang sama.
+- Gunakan **tipe sum** (`type Foo = A | B`) ketika Anda memiliki sekumpulan varian yang tertutup dan terbatas serta ingin pencocokan pola exhaustive dengan `match`.

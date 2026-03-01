@@ -1,8 +1,8 @@
-# Variables
+# Variabel
 
-## Declaration and Initialization
+## Deklarasi dan Inisialisasi
 
-Variables are declared and initialized with `:=`. This is the only way to declare variables in V — they always have an initial value and their type is inferred from the right-hand side.
+Variabel dideklarasikan dan diinisialisasi dengan `:=`. Ini adalah satu-satunya cara mendeklarasikan variabel dalam V — variabel selalu memiliki nilai awal dan tipenya disimpulkan dari sisi kanan.
 
 ```v
 name := 'Bob'
@@ -13,9 +13,9 @@ println(age)
 println(large_number)
 ```
 
-## Mutable Variables
+## Variabel yang Dapat Diubah
 
-Variables are **immutable by default**. Use `mut` to make a variable mutable:
+Variabel bersifat **tak dapat diubah secara default**. Gunakan `mut` untuk membuat variabel dapat diubah:
 
 ```v
 mut age := 20
@@ -24,21 +24,21 @@ age = 21
 println(age)
 ```
 
-> If you try to reassign without `mut`, the compiler will refuse to compile.
+> Jika Anda mencoba mengubah nilai tanpa `mut`, kompiler akan menolak mengompilasi.
 
-## Type Conversion
+## Konversi Tipe
 
-Use `T(value)` to convert between types:
+Gunakan `T(value)` untuk mengonversi antar tipe:
 
 ```v
 x := 42
-y := f64(x)  // x converted to f64
-z := u8(x)   // x converted to u8
+y := f64(x)  // x dikonversi ke f64
+z := u8(x)   // x dikonversi ke u8
 ```
 
-## Multiple Assignment
+## Penugasan Ganda
 
-Multiple variables can be changed or swapped in one line:
+Beberapa variabel dapat diubah atau ditukar dalam satu baris:
 
 ```v
 mut a := 0
@@ -48,9 +48,9 @@ a, b = b, a
 println('${a}, ${b}') // 1, 0
 ```
 
-## Ignoring Values
+## Mengabaikan Nilai
 
-Use `_` to discard a return value:
+Gunakan `_` untuk membuang nilai kembalian:
 
 ```v
 fn foo() (int, int) {
@@ -63,21 +63,21 @@ fn main() {
 }
 ```
 
-## Naming Convention
+## Konvensi Penamaan
 
-All variable and function names must use `snake_case`. Type names must use `PascalCase`. The compiler enforces this.
+Semua nama variabel dan fungsi harus menggunakan `snake_case`. Nama tipe harus menggunakan `PascalCase`. Kompiler menegakkan aturan ini.
 
-## No Global Variables
+## Tidak Ada Variabel Global
 
-V does not allow global variables by default. All variables must be declared inside functions. This leads to more predictable, testable code.
+V tidak mengizinkan variabel global secara default. Semua variabel harus dideklarasikan di dalam fungsi. Ini menghasilkan kode yang lebih dapat diprediksi dan diuji.
 
-## No Shadowing
+## Tidak Ada Shadowing
 
-Variable shadowing is not allowed. Declaring a variable with a name already used in a parent scope is a compile error:
+Shadowing variabel tidak diizinkan. Mendeklarasikan variabel dengan nama yang sudah digunakan dalam cakupan induk adalah kesalahan kompilasi:
 
 ```v
 fn main() {
     a := 10
-    // a := 20  // ← compile error: redefinition of `a`
+    // a := 20  // ← kesalahan kompilasi: pendefinisian ulang `a`
 }
 ```

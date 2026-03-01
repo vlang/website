@@ -1,10 +1,10 @@
-# For Loops
+# Gelung For
 
-V has a single looping keyword: `for`. It covers all iteration patterns.
+V mempunyai satu kata kunci gelung: `for`. Ia merangkumi semua corak pengulangan.
 
-## Range Loop
+## Gelung Julat
 
-Iterate over a half-open range `start..end` (end is exclusive):
+Ulangi julat separuh terbuka `mula..akhir` (akhir tidak termasuk):
 
 ```v
 for i in 0 .. 5 {
@@ -12,23 +12,23 @@ for i in 0 .. 5 {
 }
 ```
 
-## Iterating Over Arrays
+## Mengulang Tatasusunan
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
 
-// value only
+// nilai sahaja
 for name in names {
     println(name)
 }
 
-// index and value
+// indeks dan nilai
 for i, name in names {
     println('${i}: ${name}')
 }
 ```
 
-## Iterating Over Maps
+## Mengulang Peta
 
 ```v
 m := {'a': 1, 'b': 2, 'c': 3}
@@ -38,7 +38,7 @@ for key, val in m {
 }
 ```
 
-## Classic C-style Loop
+## Gelung Gaya-C Klasik
 
 ```v
 for i := 0; i < 10; i++ {
@@ -46,7 +46,7 @@ for i := 0; i < 10; i++ {
 }
 ```
 
-## Condition-only Loop (while equivalent)
+## Gelung Syarat Sahaja (setara while)
 
 ```v
 mut n := 0
@@ -56,7 +56,7 @@ for n < 5 {
 }
 ```
 
-## Infinite Loop
+## Gelung Tak Terhingga
 
 ```v
 mut i := 0
@@ -66,19 +66,19 @@ for {
 }
 ```
 
-## `break` and `continue`
+## `break` dan `continue`
 
 ```v
 for i in 0 .. 10 {
-    if i == 3 { continue }  // skip 3
-    if i == 7 { break }     // stop at 7
+    if i == 3 { continue }  // langkau 3
+    if i == 7 { break }     // berhenti pada 7
     println(i)
 }
 ```
 
-## Labeled Loops
+## Gelung Berlabel
 
-For nested loops, you can label and break/continue from an outer loop:
+Untuk gelung bersarang, anda boleh melabel dan break/continue dari gelung luar:
 
 ```v
 outer: for i in 0 .. 3 {
@@ -91,7 +91,7 @@ outer: for i in 0 .. 3 {
 }
 ```
 
-## Primes Example
+## Contoh Nombor Perdana
 
 ```v
 import math { log }

@@ -1,6 +1,6 @@
-# Arrays
+# Tatasusunan
 
-## Basic Usage
+## Penggunaan Asas
 
 ```v
 mut nums := [1, 2, 3]
@@ -11,9 +11,9 @@ nums[1] = 20
 println(nums)        // [1, 20, 3]
 ```
 
-## Typed Arrays
+## Tatasusunan Bertaip
 
-Array element types are inferred. You can also declare an empty array with an explicit type:
+Jenis elemen tatasusunan disimpulkan. Anda juga boleh mengisytiharkan tatasusunan kosong dengan jenis eksplisit:
 
 ```v
 mut names := []string{}
@@ -22,37 +22,37 @@ names << 'Bob'
 println(names) // ['Alice', 'Bob']
 ```
 
-## Pre-allocated Arrays
+## Tatasusunan Pra-peruntukan
 
 ```v
-// array of 5 ints, all initialized to 0
+// tatasusunan 5 int, semua bermula 0
 a := []int{len: 5}
 
-// array of 3 strings, all initialized to 'x'
+// tatasusunan 3 rentetan, semua bermula 'x'
 b := []string{len: 3, init: 'x'}
 ```
 
-## Appending Elements
+## Menambah Elemen
 
-Use `<<` to append:
+Gunakan `<<` untuk menambah:
 
 ```v
 mut a := [1, 2, 3]
 a << 4
-a << [5, 6]   // append another array
+a << [5, 6]   // tambahkan tatasusunan lain
 println(a)    // [1, 2, 3, 4, 5, 6]
 ```
 
-## Slicing
+## Penghirisan
 
 ```v
 a := [1, 2, 3, 4, 5]
-b := a[1..3]  // [2, 3]  (from index 1, up to but not including 3)
-c := a[..2]   // [1, 2]  (from start to index 2)
-d := a[3..]   // [4, 5]  (from index 3 to end)
+b := a[1..3]  // [2, 3]  (dari indeks 1, sehingga tetapi tidak termasuk 3)
+c := a[..2]   // [1, 2]  (dari mula ke indeks 2)
+d := a[3..]   // [4, 5]  (dari indeks 3 ke hujung)
 ```
 
-## Iteration
+## Pengulangan
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
@@ -66,7 +66,7 @@ for i, name in names {
 }
 ```
 
-## Common Methods
+## Kaedah Biasa
 
 ```v
 mut a := [3, 1, 4, 1, 5, 9, 2, 6]
@@ -88,7 +88,7 @@ mapped := a.map(it * 2)
 println(mapped) // [18, 12, 10, 8, 6, 4, 2, 2]
 ```
 
-## Multidimensional Arrays
+## Tatasusunan Pelbagai Dimensi
 
 ```v
 mut matrix := [][]int{len: 3, init: []int{len: 3}}
@@ -98,12 +98,12 @@ matrix[2][2] = 9
 println(matrix) // [[1, 0, 0], [0, 5, 0], [0, 0, 9]]
 ```
 
-## Fixed-size Arrays
+## Tatasusunan Bersaiz Tetap
 
 ```v
-mut a := [5]int{}   // fixed array of 5 ints
+mut a := [5]int{}   // tatasusunan tetap dengan 5 int
 a[0] = 10
 println(a)          // [10, 0, 0, 0, 0]
 ```
 
-Fixed arrays are stack-allocated and cannot be grown.
+Tatasusunan tetap diperuntukkan pada tindanan dan tidak boleh dikembangkan.

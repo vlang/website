@@ -1,73 +1,73 @@
 # If / Else
 
-## Basic Syntax
+## Grunnleggende syntaks
 
 ```v
 a := 10
 
 if a < 10 {
-    println('less than 10')
+    println('mindre enn 10')
 } else if a == 10 {
-    println('exactly 10')
+    println('nøyaktig 10')
 } else {
-    println('greater than 10')
+    println('større enn 10')
 }
 ```
 
-## If as an Expression
+## If som uttrykk
 
-In V, `if` is an expression and can be used on the right side of an assignment:
+I V er `if` et uttrykk og kan brukes på høyre side av en tilordning:
 
 ```v
 num := 7
-result := if num % 2 == 0 { 'even' } else { 'odd' }
-println(result) // odd
+result := if num % 2 == 0 { 'partall' } else { 'oddetall' }
+println(result) // oddetall
 ```
 
-## Inline Short Form
+## Innebygd kortform
 
 ```v
 x := 42
-if x > 0 { println('positive') }
+if x > 0 { println('positiv') }
 ```
 
-## Condition with Initialization
+## Betingelse med initialisering
 
-You can initialize a variable inside an `if` condition:
+Du kan initialisere en variabel inne i en `if`-betingelse:
 
 ```v
 if val := some_function_returning_option() {
-    println('got value: ${val}')
+    println('fikk verdi: ${val}')
 } else {
-    println('no value')
+    println('ingen verdi')
 }
 ```
 
-## The `in` Operator
+## `in`-operatoren
 
-Use `in` to check membership in arrays or maps:
+Bruk `in` for å sjekke medlemskap i matriser eller kart:
 
 ```v
 nums := [1, 2, 3]
 if 2 in nums {
-    println('found 2')
+    println('fant 2')
 }
 
 m := {'a': 1, 'b': 2}
 if 'a' in m {
-    println('key exists')
+    println('nøkkelen finnes')
 }
 ```
 
-Use `!in` for the inverse:
+Bruk `!in` for den inverse:
 
 ```v
 if 5 !in nums {
-    println('5 is not in the array')
+    println('5 er ikke i matrisen')
 }
 ```
 
-## FizzBuzz Example
+## FizzBuzz-eksempel
 
 ```v
 for n in 1 .. 101 {

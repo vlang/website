@@ -1,16 +1,16 @@
-# Concurrency
+# Parallellitet
 
-V uses lightweight threads (goroutines) to run work concurrently. The `spawn` keyword starts a function in a new thread.
+V bruker lette tråder (goroutiner) for å kjøre arbeid parallelt. Nøkkelordet `spawn` starter en funksjon i en ny tråd.
 
-## Basic Spawning
+## Grunnleggende oppretting
 
 ```v
 import time
 
 fn expensive_computing(id int, duration int) {
-    println('Starting task ${id}...')
+    println('Starter oppgave ${id}...')
     time.sleep(duration * time.millisecond)
-    println('Finished task ${id} in ${duration} ms')
+    println('Fullførte oppgave ${id} på ${duration} ms')
 }
 
 fn main() {
@@ -19,15 +19,15 @@ fn main() {
     threads << spawn expensive_computing(2, 500)
     threads << spawn expensive_computing(3, 1000)
 
-    // Wait for all threads to finish
+    // Vent på at alle tråder er ferdig
     threads.wait()
-    println('All jobs finished!')
+    println('Alle jobber er fullført!')
 }
 ```
 
-## Getting Return Values
+## Hente returverdier
 
-Threads can return values. Calling `.wait()` on a `[]thread T` returns `[]T`:
+Tråder kan returnere verdier. Å kalle `.wait()` på en `[]thread T` returnerer `[]T`:
 
 ```v
 fn expensive_computing(i int) int {
@@ -40,12 +40,12 @@ fn main() {
         threads << spawn expensive_computing(i)
     }
     results := threads.wait()
-    println('All jobs finished: ${results}')
+    println('Alle jobber er fullført: ${results}')
     // [1, 4, 9, 16, 25, 36, 49, 64, 81]
 }
 ```
 
-## Concurrent HTTP Requests
+## Parallelle HTTP-forespørsler
 
 ```v
 import net.http
@@ -55,14 +55,14 @@ import time
 fn fetch_time(mut wg sync.WaitGroup) {
     start := time.ticks()
     data := http.get('https://vlang.io/utc_now') or { return }
-    println('Time request: ${time.ticks() - start} ms — ${data.body}')
+    println('Tidsforespørsel: ${time.ticks() - start} ms — ${data.body}')
     wg.done()
 }
 
 fn fetch_ip(mut wg sync.WaitGroup) {
     start := time.ticks()
     data := http.get('https://api.ipify.org') or { return }
-    println('IP request: ${time.ticks() - start} ms — ${data.body}')
+    println('IP-forespørsel: ${time.ticks() - start} ms — ${data.body}')
     wg.done()
 }
 
@@ -75,14 +75,14 @@ fn main() {
 }
 ```
 
-## Channels
+## Kanaler
 
-Channels allow safe communication between threads:
+Kanaler muliggjør sikker kommunikasjon mellom tråder:
 
 ```v
 fn producer(ch chan int) {
     for i in 1 .. 6 {
-        ch <- i  // send to channel
+        ch <- i  // send til kanal
     }
     ch.close()
 }
@@ -97,9 +97,9 @@ fn main() {
 }
 ```
 
-## Mutexes
+## Mutexter
 
-Use `sync.Mutex` to protect shared state:
+Bruk `sync.Mutex` for å beskytte delt tilstand:
 
 ```v
 import sync
@@ -119,7 +119,7 @@ fn (mut c Counter) increment() {
 
 ## `defer`
 
-`defer` executes a statement when the surrounding function returns — useful for cleanup:
+`defer` utfører en setning når den omsluttende funksjonen returnerer — nyttig for opprydding:
 
 ```v
 import os
@@ -128,7 +128,7 @@ fn process_file(path string) {
     f := os.open(path) or { return }
     defer { f.close() }
 
-    // use f — it will be closed automatically
+    // bruk f — den vil bli lukket automatisk
     println(f.read_to_string() or { '' })
 }
 ```

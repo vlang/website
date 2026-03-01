@@ -1,6 +1,6 @@
-# Functions
+# Fungsi
 
-## Basic Syntax
+## Sintaks Asas
 
 ```v
 fn main() {
@@ -17,13 +17,13 @@ fn sub(x int, y int) int {
 }
 ```
 
-The return type is specified **after** the parameter list. If the function returns nothing, the return type is omitted.
+Jenis pulangan dinyatakan **selepas** senarai parameter. Jika fungsi tidak mengembalikan apa-apa, jenis pulangan ditinggalkan.
 
-## Hoisting
+## Pengangkatan
 
-Functions can be used before they are declared. V hoists all declarations, so there is no need for header files or forward declarations.
+Fungsi boleh digunakan sebelum dideklarasikan. V mengangkat semua deklarasi, jadi tiada keperluan untuk fail pengepala atau deklarasi hadapan.
 
-## Multiple Return Values
+## Pelbagai Nilai Pulangan
 
 ```v
 fn foo() (int, int) {
@@ -33,12 +33,12 @@ fn foo() (int, int) {
 a, b := foo()
 println(a) // 2
 println(b) // 3
-c, _ := foo() // ignore the second value with `_`
+c, _ := foo() // abaikan nilai kedua dengan `_`
 ```
 
-## Visibility
+## Keterlihatan
 
-Functions are **private** by default. Use `pub` to export them:
+Fungsi adalah **peribadi** secara lalai. Gunakan `pub` untuk mengeksportnya:
 
 ```v
 pub fn public_function() {
@@ -48,13 +48,13 @@ fn private_function() {
 }
 ```
 
-## No Overloading
+## Tiada Lebih Muatan
 
-Functions cannot be overloaded. This keeps the code unambiguous and easy to read.
+Fungsi tidak boleh ditindih. Ini memastikan kod tidak samar-samar dan mudah dibaca.
 
-## Methods
+## Kaedah
 
-Functions can be attached to types:
+Fungsi boleh dilampirkan pada jenis:
 
 ```v
 struct User {
@@ -78,9 +78,9 @@ fn main() {
 }
 ```
 
-## High-Order Functions
+## Fungsi Tertib Tinggi
 
-Functions are first-class values and can be passed to other functions:
+Fungsi adalah nilai kelas pertama dan boleh dihantar ke fungsi lain:
 
 ```v
 fn apply(arr []int, f fn(int) int) []int {
@@ -102,7 +102,7 @@ fn main() {
 }
 ```
 
-## Anonymous Functions
+## Fungsi Tanpa Nama
 
 ```v
 fn main() {

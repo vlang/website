@@ -1,44 +1,44 @@
-# Maps
+# Map
 
-Maps are unordered key-value stores. All keys must be of the same type, and all values must be of the same type.
+Map adalah penyimpanan kunci-nilai yang tidak berurutan. Semua kunci harus bertipe sama, dan semua nilai harus bertipe sama.
 
-## Creating Maps
+## Membuat Map
 
 ```v
-// map literal
+// literal map
 mut scores := {
     'Alice': 10
     'Bob':   20
     'Carol': 30
 }
 
-// empty map
+// map kosong
 mut m := map[string]int{}
 ```
 
-## Adding and Updating
+## Menambah dan Memperbarui
 
 ```v
 mut m := map[string]int{}
 m['x'] = 1
 m['y'] = 2
-m['x'] = 99   // update existing key
+m['x'] = 99   // perbarui kunci yang sudah ada
 println(m)    // {'x': 99, 'y': 2}
 ```
 
-## Reading Values
+## Membaca Nilai
 
 ```v
 scores := {'Alice': 10, 'Bob': 20}
 
 println(scores['Alice']) // 10
 
-// safe lookup with `or` block — avoids panicking on missing key
+// pencarian aman dengan blok `or` — menghindari panic pada kunci yang tidak ada
 val := scores['Dave'] or { -1 }
 println(val) // -1
 ```
 
-## Checking for a Key
+## Memeriksa Kunci
 
 ```v
 m := {'a': 1, 'b': 2}
@@ -52,7 +52,7 @@ if 'z' !in m {
 }
 ```
 
-## Deleting Keys
+## Menghapus Kunci
 
 ```v
 mut m := {'a': 1, 'b': 2, 'c': 3}
@@ -60,7 +60,7 @@ m.delete('b')
 println(m) // {'a': 1, 'c': 3}
 ```
 
-## Iterating
+## Iterasi
 
 ```v
 m := {'one': 1, 'two': 2, 'three': 3}
@@ -69,22 +69,22 @@ for key, val in m {
     println('${key} = ${val}')
 }
 
-// keys and values separately
+// kunci dan nilai secara terpisah
 for key in m.keys() {
     println(key)
 }
 ```
 
-## Map Size
+## Ukuran Map
 
 ```v
 m := {'a': 1, 'b': 2}
 println(m.len) // 2
 ```
 
-## Allowed Key Types
+## Tipe Kunci yang Diizinkan
 
-Map keys can be strings, integers, floats, runes, or any type that implements the `==` operator.
+Kunci map dapat berupa string, integer, float, rune, atau tipe apa pun yang mengimplementasikan operator `==`.
 
 ```v
 mut m := map[int]string{}

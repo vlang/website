@@ -1,10 +1,10 @@
-# Error Handling
+# Feilhåndtering
 
-V uses **Option** and **Result** types instead of exceptions. This makes error handling explicit and visible in function signatures.
+V bruker **Option**- og **Result**-typer i stedet for unntak. Dette gjør feilhåndtering eksplisitt og synlig i funksjonssignaturer.
 
-## Option Types
+## Option-typer
 
-An `?T` (option) holds either a value of type `T` or `none`:
+En `?T` (option) holder enten en verdi av typen `T` eller `none`:
 
 ```v
 fn find_user(id int) ?string {
@@ -14,64 +14,64 @@ fn find_user(id int) ?string {
 
 fn main() {
     if name := find_user(1) {
-        println('Found: ${name}') // Found: Alice
+        println('Fant: ${name}') // Fant: Alice
     } else {
-        println('Not found')
+        println('Ikke funnet')
     }
 }
 ```
 
-## Result Types
+## Result-typer
 
-A `!T` (result) holds either a value of type `T` or an error:
+En `!T` (result) holder enten en verdi av typen `T` eller en feil:
 
 ```v
 fn divide(a f64, b f64) !f64 {
     if b == 0.0 {
-        return error('division by zero')
+        return error('divisjon med null')
     }
     return a / b
 }
 
 fn main() {
     result := divide(10.0, 2.0) or {
-        eprintln('Error: ${err}')
+        eprintln('Feil: ${err}')
         return
     }
     println(result) // 5.0
 }
 ```
 
-## The `or` Block
+## `or`-blokken
 
-The `or` block runs when the result is `none` or an error. Inside `or`, `err` holds the error value:
+`or`-blokken kjører når resultatet er `none` eller en feil. Inne i `or` holder `err` feilverdien:
 
 ```v
 import net.http
 
 fn main() {
     resp := http.get('https://vlang.io/utc_now') or {
-        eprintln('Failed to fetch. Error: ${err}')
+        eprintln('Klarte ikke å hente. Feil: ${err}')
         return
     }
     println(resp.body)
 }
 ```
 
-## Propagating Errors with `!`
+## Videreformidle feil med `!`
 
-Adding `!` after a call propagates the error up to the caller (similar to `?` in Rust):
+Å legge til `!` etter et kall videresender feilen til kalleren (ligner på `?` i Rust):
 
 ```v
 fn read_config(path string) !string {
-    content := os.read_file(path)!  // propagates if error
+    content := os.read_file(path)!  // videreformidler ved feil
     return content
 }
 ```
 
-## Custom Errors
+## Egendefinerte feil
 
-Implement the `IError` interface to create custom error types:
+Implementer `IError`-grensesnittet for å lage egendefinerte feiltyper:
 
 ```v
 struct DivisionError {
@@ -89,13 +89,13 @@ fn (e DivisionError) code() int {
 
 fn safe_divide(a f64, b f64) !f64 {
     if b == 0 {
-        return DivisionError{msg: 'cannot divide by zero', code: 1}
+        return DivisionError{msg: 'kan ikke dele med null', code: 1}
     }
     return a / b
 }
 ```
 
-## Matching on Error Types
+## Matching på feiltyper
 
 ```v
 import semver
@@ -108,21 +108,21 @@ fn main() {
 fn check_error(err IError) {
     match err {
         semver.InvalidVersionFormatError {
-            println('wrong format')
+            println('feil format')
         }
         semver.EmptyInputError {
-            println('empty input')
+            println('tom inndata')
         }
         else {
-            println('unknown error: ${err}')
+            println('ukjent feil: ${err}')
         }
     }
 }
 ```
 
-## The `?` Unwrap Operator
+## `?`-operatoren for utpakking
 
-Use `val?` inside an option context to unwrap or propagate `none`:
+Bruk `val?` inne i en option-kontekst for å pakke ut eller videreformidle `none`:
 
 ```v
 fn get_name(users map[int]string, id int) ?string {

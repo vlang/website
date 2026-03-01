@@ -1,31 +1,31 @@
-# Strings
+# Rentetan
 
-In V, strings are encoded in **UTF-8** and are **immutable** by default.
+Dalam V, rentetan dikodkan dalam **UTF-8** dan adalah **tidak boleh diubah** secara lalai.
 
-## Basic Usage
+## Penggunaan Asas
 
 ```v
 s    := 'hello 🌎'
 name := 'Bob'
 
-println(s.len)         // 10  (byte count)
+println(s.len)         // 10  (bilangan bait)
 println(name.len)      // 3
-println(name[0])       // 66  (u8 — byte value of 'B')
-println(name[1..3])    // ob  (slicing returns a string)
+println(name[0])       // 66  (u8 — nilai bait 'B')
+println(name[1..3])    // ob  (penghirisan mengembalikan rentetan)
 ```
 
-## String Interpolation
+## Interpolasi Rentetan
 
-Use `${}` to embed expressions inside strings:
+Gunakan `${}` untuk menyematkan ungkapan dalam rentetan:
 
 ```v
 name := 'Alice'
 age  := 30
-println('Hello, ${name}! You are ${age} years old.')
-println('Is adult: ${age >= 18}')
+println('Helo, ${name}! Anda berumur ${age} tahun.')
+println('Dewasa: ${age >= 18}')
 ```
 
-## Multiline Strings
+## Rentetan Berbilang Baris
 
 ```v
 text := 'line one
@@ -33,16 +33,16 @@ line two
 line three'
 ```
 
-## Raw Strings
+## Rentetan Mentah
 
-Prepend `r` to disable escape processing:
+Letakkan awalan `r` untuk melumpuhkan pemprosesan jujukan lari:
 
 ```v
-s := r'hello\nworld'  // \n is kept as two characters
+s := r'hello\nworld'  // \n disimpan sebagai dua aksara
 println(s)            // hello\nworld
 ```
 
-## String Methods
+## Kaedah Rentetan
 
 ```v
 s := 'Hello, World!'
@@ -54,10 +54,10 @@ println(s.starts_with('Hello')) // true
 println(s.ends_with('!'))  // true
 println(s.replace('World', 'V')) // Hello, V!
 println(s.split(', '))     // ['Hello', 'World!']
-println(s.trim_space())    // Hello, World!  (removes leading/trailing whitespace)
+println(s.trim_space())    // Hello, World!  (buang ruang di hadapan/belakang)
 ```
 
-## Converting to Numbers
+## Menukar kepada Nombor
 
 ```v
 s := '42'
@@ -69,20 +69,20 @@ assert '0o10'.int() == 8
 assert '0b1010'.int() == 10
 ```
 
-## Runes (Unicode Code Points)
+## Rune (Titik Kod Unicode)
 
-To work with Unicode characters rather than raw bytes, use `runes()`:
+Untuk bekerja dengan aksara Unicode berbanding bait mentah, gunakan `runes()`:
 
 ```v
 mut s := 'hello 🌎'
 r := s.runes()
-println(r.len)    // 7  (7 Unicode code points, not 10 bytes)
+println(r.len)    // 7  (7 titik kod Unicode, bukan 10 bait)
 println(r[6])     // 🌎
 ```
 
-## String Builder
+## Pembina Rentetan
 
-For efficient string concatenation, use `strings.Builder`:
+Untuk penggabungan rentetan yang cekap, gunakan `strings.Builder`:
 
 ```v
 import strings

@@ -1,8 +1,8 @@
-# Interfaces
+# Antara Muka
 
-Interfaces define a contract — a set of methods that a type must implement. There is no explicit `implements` keyword; types satisfy interfaces automatically (structural/duck typing).
+Antara muka mentakrifkan kontrak — satu set kaedah yang mesti dilaksanakan oleh sesuatu jenis. Tiada kata kunci `implements` yang eksplisit; jenis memenuhi antara muka secara automatik (pengetikan struktural/itik).
 
-## Defining an Interface
+## Mentakrifkan Antara Muka
 
 ```v
 interface Shape {
@@ -11,9 +11,9 @@ interface Shape {
 }
 ```
 
-## Implementing an Interface
+## Melaksanakan Antara Muka
 
-Any struct that has the required methods automatically implements the interface:
+Mana-mana struct yang mempunyai kaedah yang diperlukan secara automatik melaksanakan antara muka:
 
 ```v
 struct Circle {
@@ -42,11 +42,11 @@ fn (r Rectangle) perimeter() f64 {
 }
 ```
 
-## Using Interfaces
+## Menggunakan Antara Muka
 
 ```v
 fn print_shape_info(s Shape) {
-    println('Area:      ${s.area():.2f}')
+    println('Luas:      ${s.area():.2f}')
     println('Perimeter: ${s.perimeter():.2f}')
 }
 
@@ -63,9 +63,9 @@ fn main() {
 }
 ```
 
-## Interface with Fields
+## Antara Muka dengan Medan
 
-Interfaces can also require fields (not just methods):
+Antara muka juga boleh memerlukan medan (bukan hanya kaedah):
 
 ```v
 interface Named {
@@ -77,7 +77,7 @@ struct Person {
 }
 
 fn greet(n Named) {
-    println('Hello, ${n.name}!')
+    println('Helo, ${n.name}!')
 }
 
 fn main() {
@@ -86,19 +86,19 @@ fn main() {
 }
 ```
 
-## Type Checking with Interfaces
+## Semakan Jenis dengan Antara Muka
 
 ```v
 fn describe(s Shape) {
     if s is Circle {
-        println('Circle with radius ${s.radius}')
+        println('Bulatan dengan jejari ${s.radius}')
     } else if s is Rectangle {
-        println('Rectangle ${s.width} x ${s.height}')
+        println('Segi empat ${s.width} x ${s.height}')
     }
 }
 ```
 
-## Sum Types vs Interfaces
+## Jenis Jumlah vs Antara Muka
 
-- Use **interfaces** when different unrelated types share common behaviour.
-- Use **sum types** (`type Foo = A | B`) when you have a closed, finite set of variants and want exhaustive pattern matching with `match`.
+- Gunakan **antara muka** apabila jenis yang berbeza dan tidak berkaitan berkongsi tingkah laku yang sama.
+- Gunakan **jenis jumlah** (`type Foo = A | B`) apabila anda mempunyai set varian yang tertutup dan terhingga dan ingin pemadanan corak lengkap dengan `match`.

@@ -1,6 +1,6 @@
-# Arrays
+# Matriser
 
-## Basic Usage
+## Grunnleggende bruk
 
 ```v
 mut nums := [1, 2, 3]
@@ -11,9 +11,9 @@ nums[1] = 20
 println(nums)        // [1, 20, 3]
 ```
 
-## Typed Arrays
+## Typede matriser
 
-Array element types are inferred. You can also declare an empty array with an explicit type:
+matriseelementer utledes automatisk. Du kan også deklarere en tom matrise med en eksplisitt type:
 
 ```v
 mut names := []string{}
@@ -22,24 +22,24 @@ names << 'Bob'
 println(names) // ['Alice', 'Bob']
 ```
 
-## Pre-allocated Arrays
+## Forhåndsallokerte matriser
 
 ```v
-// array of 5 ints, all initialized to 0
+// matrise med 5 heltall, alle initialisert til 0
 a := []int{len: 5}
 
-// array of 3 strings, all initialized to 'x'
+// matrise med 3 strenger, alle initialisert til 'x'
 b := []string{len: 3, init: 'x'}
 ```
 
-## Appending Elements
+## Legge til elementer
 
-Use `<<` to append:
+Bruk `<<` for å legge til:
 
 ```v
 mut a := [1, 2, 3]
 a << 4
-a << [5, 6]   // append another array
+a << [5, 6]   // legg til en annen matrise
 println(a)    // [1, 2, 3, 4, 5, 6]
 ```
 
@@ -47,12 +47,12 @@ println(a)    // [1, 2, 3, 4, 5, 6]
 
 ```v
 a := [1, 2, 3, 4, 5]
-b := a[1..3]  // [2, 3]  (from index 1, up to but not including 3)
-c := a[..2]   // [1, 2]  (from start to index 2)
-d := a[3..]   // [4, 5]  (from index 3 to end)
+b := a[1..3]  // [2, 3]  (fra indeks 1, opp til men ikke inkludert 3)
+c := a[..2]   // [1, 2]  (fra start til indeks 2)
+d := a[3..]   // [4, 5]  (fra indeks 3 til slutten)
 ```
 
-## Iteration
+## Iterasjon
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
@@ -66,7 +66,7 @@ for i, name in names {
 }
 ```
 
-## Common Methods
+## Vanlige metoder
 
 ```v
 mut a := [3, 1, 4, 1, 5, 9, 2, 6]
@@ -88,7 +88,7 @@ mapped := a.map(it * 2)
 println(mapped) // [18, 12, 10, 8, 6, 4, 2, 2]
 ```
 
-## Multidimensional Arrays
+## Flerdimensjonale matriser
 
 ```v
 mut matrix := [][]int{len: 3, init: []int{len: 3}}
@@ -98,12 +98,12 @@ matrix[2][2] = 9
 println(matrix) // [[1, 0, 0], [0, 5, 0], [0, 0, 9]]
 ```
 
-## Fixed-size Arrays
+## Matriser med fast størrelse
 
 ```v
-mut a := [5]int{}   // fixed array of 5 ints
+mut a := [5]int{}   // fast matrise med 5 heltall
 a[0] = 10
 println(a)          // [10, 0, 0, 0, 0]
 ```
 
-Fixed arrays are stack-allocated and cannot be grown.
+Faste matriser er stakk-allokert og kan ikke vokse.

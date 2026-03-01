@@ -1,67 +1,67 @@
-# Installation
+# Installasjon
 
-## Install from Source
+## Installer fra kilde
 
-The recommended way to install V is from source. It only takes a few seconds:
+Den anbefalte måten å installere V på er fra kilde. Det tar bare noen sekunder:
 
 ```bash
 git clone --depth=1 https://github.com/vlang/v && cd v && make
 ```
 
-On Windows, use `make.bat` instead of `make`.
+På Windows, bruk `make.bat` i stedet for `make`.
 
 ## Symlink V
 
-After building, you can symlink V so it's available everywhere:
+Etter bygging kan du opprette en symlink til V slik at det er tilgjengelig overalt:
 
 ```bash
 sudo ./v symlink
 ```
 
-On Windows, run `v.exe symlink` from an elevated command prompt.
+På Windows, kjør `v.exe symlink` fra en forhøyet ledetekst.
 
-## Verify Installation
+## Bekreft installasjon
 
 ```bash
 v version
 ```
 
-You should see output like `V 0.5.0 ...`.
+Du bør se utdata som `V 0.5.0 ...`.
 
-## Download Pre-built Binaries
+## Last ned forhåndsbygde binærfiler
 
-Pre-built binaries are available for all major platforms on the
-[GitHub Releases](https://github.com/vlang/v/releases/latest) page:
+Forhåndsbygde binærfiler er tilgjengelige for alle større plattformer på
+[GitHub Releases](https://github.com/vlang/v/releases/latest)-siden:
 
-| Platform | File |
+| Plattform | Fil |
 | --- | --- |
 | Linux (x86_64) | `v_linux.zip` |
 | macOS (Apple Silicon) | `v_macos_arm64.zip` |
 | macOS (Intel) | `v_macos_x86_64.zip` |
 | Windows | `v_windows.zip` |
 
-## Upgrading V
+## Oppgradere V
 
-To upgrade V to the latest version, run:
+For å oppgradere V til nyeste versjon, kjør:
 
 ```bash
 v up
 ```
 
-## Running a Program
+## Kjøre et program
 
 ```bash
 v run hello.v
 ```
 
-Or compile it:
+Eller kompiler det:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-To run all `.v` files in a directory:
+For å kjøre alle `.v`-filer i en mappe:
 
 ```bash
 v run .

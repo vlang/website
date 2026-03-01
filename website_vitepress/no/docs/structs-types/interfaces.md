@@ -1,8 +1,8 @@
-# Interfaces
+# Grensesnitt
 
-Interfaces define a contract — a set of methods that a type must implement. There is no explicit `implements` keyword; types satisfy interfaces automatically (structural/duck typing).
+Grensesnitt definerer en kontrakt — et sett metoder som en type må implementere. Det er inget eksplisitt `implements`-nøkkelord; typer oppfyller grensesnitt automatisk (strukturell/and-typing).
 
-## Defining an Interface
+## Definere et grensesnitt
 
 ```v
 interface Shape {
@@ -11,9 +11,9 @@ interface Shape {
 }
 ```
 
-## Implementing an Interface
+## Implementere et grensesnitt
 
-Any struct that has the required methods automatically implements the interface:
+Enhver struktur som har de nødvendige metodene implementerer automatisk grensesnittet:
 
 ```v
 struct Circle {
@@ -42,12 +42,12 @@ fn (r Rectangle) perimeter() f64 {
 }
 ```
 
-## Using Interfaces
+## Bruke grensesnitt
 
 ```v
 fn print_shape_info(s Shape) {
-    println('Area:      ${s.area():.2f}')
-    println('Perimeter: ${s.perimeter():.2f}')
+    println('Areal:     ${s.area():.2f}')
+    println('Omkrets:   ${s.perimeter():.2f}')
 }
 
 fn main() {
@@ -63,9 +63,9 @@ fn main() {
 }
 ```
 
-## Interface with Fields
+## Grensesnitt med felt
 
-Interfaces can also require fields (not just methods):
+Grensesnitt kan også kreve felt (ikke bare metoder):
 
 ```v
 interface Named {
@@ -77,7 +77,7 @@ struct Person {
 }
 
 fn greet(n Named) {
-    println('Hello, ${n.name}!')
+    println('Hei, ${n.name}!')
 }
 
 fn main() {
@@ -86,19 +86,19 @@ fn main() {
 }
 ```
 
-## Type Checking with Interfaces
+## Typekontroll med grensesnitt
 
 ```v
 fn describe(s Shape) {
     if s is Circle {
-        println('Circle with radius ${s.radius}')
+        println('Sirkel med radius ${s.radius}')
     } else if s is Rectangle {
-        println('Rectangle ${s.width} x ${s.height}')
+        println('Rektangel ${s.width} x ${s.height}')
     }
 }
 ```
 
-## Sum Types vs Interfaces
+## Sumtyper vs grensesnitt
 
-- Use **interfaces** when different unrelated types share common behaviour.
-- Use **sum types** (`type Foo = A | B`) when you have a closed, finite set of variants and want exhaustive pattern matching with `match`.
+- Bruk **grensesnitt** når forskjellige urelaterte typer deler felles atferd.
+- Bruk **sumtyper** (`type Foo = A | B`) når du har et lukket, endelig sett av varianter og vil ha uttjømmende mønstermatching med `match`.

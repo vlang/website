@@ -1,10 +1,10 @@
-# Error Handling
+# Pengendalian Ralat
 
-V uses **Option** and **Result** types instead of exceptions. This makes error handling explicit and visible in function signatures.
+V menggunakan jenis **Option** dan **Result** sebagai ganti pengecualian. Ini menjadikan pengendalian ralat eksplisit dan kelihatan dalam tandatangan fungsi.
 
-## Option Types
+## Jenis Option
 
-An `?T` (option) holds either a value of type `T` or `none`:
+Sebuah `?T` (option) menahan sama ada nilai jenis `T` atau `none`:
 
 ```v
 fn find_user(id int) ?string {
@@ -14,64 +14,64 @@ fn find_user(id int) ?string {
 
 fn main() {
     if name := find_user(1) {
-        println('Found: ${name}') // Found: Alice
+        println('Dijumpai: ${name}') // Dijumpai: Alice
     } else {
-        println('Not found')
+        println('Tidak dijumpai')
     }
 }
 ```
 
-## Result Types
+## Jenis Result
 
-A `!T` (result) holds either a value of type `T` or an error:
+Sebuah `!T` (result) menahan sama ada nilai jenis `T` atau ralat:
 
 ```v
 fn divide(a f64, b f64) !f64 {
     if b == 0.0 {
-        return error('division by zero')
+        return error('bahagi dengan sifar')
     }
     return a / b
 }
 
 fn main() {
     result := divide(10.0, 2.0) or {
-        eprintln('Error: ${err}')
+        eprintln('Ralat: ${err}')
         return
     }
     println(result) // 5.0
 }
 ```
 
-## The `or` Block
+## Blok `or`
 
-The `or` block runs when the result is `none` or an error. Inside `or`, `err` holds the error value:
+Blok `or` berjalan apabila hasilnya adalah `none` atau ralat. Di dalam `or`, `err` menyimpan nilai ralat:
 
 ```v
 import net.http
 
 fn main() {
     resp := http.get('https://vlang.io/utc_now') or {
-        eprintln('Failed to fetch. Error: ${err}')
+        eprintln('Gagal mengambil. Ralat: ${err}')
         return
     }
     println(resp.body)
 }
 ```
 
-## Propagating Errors with `!`
+## Menyebarkan Ralat dengan `!`
 
-Adding `!` after a call propagates the error up to the caller (similar to `?` in Rust):
+Menambah `!` selepas panggilan menyebarkan ralat kepada pemanggil (serupa dengan `?` dalam Rust):
 
 ```v
 fn read_config(path string) !string {
-    content := os.read_file(path)!  // propagates if error
+    content := os.read_file(path)!  // sebarkan jika ralat
     return content
 }
 ```
 
-## Custom Errors
+## Ralat Tersuai
 
-Implement the `IError` interface to create custom error types:
+Laksanakan antara muka `IError` untuk mencipta jenis ralat tersuai:
 
 ```v
 struct DivisionError {
@@ -89,13 +89,13 @@ fn (e DivisionError) code() int {
 
 fn safe_divide(a f64, b f64) !f64 {
     if b == 0 {
-        return DivisionError{msg: 'cannot divide by zero', code: 1}
+        return DivisionError{msg: 'tidak boleh bahagi dengan sifar', code: 1}
     }
     return a / b
 }
 ```
 
-## Matching on Error Types
+## Pemadanan pada Jenis Ralat
 
 ```v
 import semver
@@ -108,21 +108,21 @@ fn main() {
 fn check_error(err IError) {
     match err {
         semver.InvalidVersionFormatError {
-            println('wrong format')
+            println('format salah')
         }
         semver.EmptyInputError {
-            println('empty input')
+            println('input kosong')
         }
         else {
-            println('unknown error: ${err}')
+            println('ralat tidak diketahui: ${err}')
         }
     }
 }
 ```
 
-## The `?` Unwrap Operator
+## Pengendali Nyah Bungkus `?`
 
-Use `val?` inside an option context to unwrap or propagate `none`:
+Gunakan `val?` dalam konteks pilihan untuk membuka bungkusan atau menyebarkan `none`:
 
 ```v
 fn get_name(users map[int]string, id int) ?string {

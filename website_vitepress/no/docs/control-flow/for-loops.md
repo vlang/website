@@ -1,10 +1,10 @@
-# For Loops
+# For-løkker
 
-V has a single looping keyword: `for`. It covers all iteration patterns.
+V har ett enkelt løkkekjørenavn: `for`. Det dekker alle iterasonsmønstre.
 
-## Range Loop
+## Områdeløkke
 
-Iterate over a half-open range `start..end` (end is exclusive):
+Iterer over et halvtåpent område `start..slutt` (slutt er eksklusiv):
 
 ```v
 for i in 0 .. 5 {
@@ -12,23 +12,23 @@ for i in 0 .. 5 {
 }
 ```
 
-## Iterating Over Arrays
+## Iterere over matriser
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
 
-// value only
+// kun verdi
 for name in names {
     println(name)
 }
 
-// index and value
+// indeks og verdi
 for i, name in names {
     println('${i}: ${name}')
 }
 ```
 
-## Iterating Over Maps
+## Iterere over kart
 
 ```v
 m := {'a': 1, 'b': 2, 'c': 3}
@@ -38,7 +38,7 @@ for key, val in m {
 }
 ```
 
-## Classic C-style Loop
+## Klassisk C-stillløkke
 
 ```v
 for i := 0; i < 10; i++ {
@@ -46,7 +46,7 @@ for i := 0; i < 10; i++ {
 }
 ```
 
-## Condition-only Loop (while equivalent)
+## Kun-betingelse-løkke (while-ekvivalent)
 
 ```v
 mut n := 0
@@ -56,7 +56,7 @@ for n < 5 {
 }
 ```
 
-## Infinite Loop
+## Uendelig løkke
 
 ```v
 mut i := 0
@@ -66,19 +66,19 @@ for {
 }
 ```
 
-## `break` and `continue`
+## `break` og `continue`
 
 ```v
 for i in 0 .. 10 {
-    if i == 3 { continue }  // skip 3
-    if i == 7 { break }     // stop at 7
+    if i == 3 { continue }  // hopp over 3
+    if i == 7 { break }     // stopp ved 7
     println(i)
 }
 ```
 
-## Labeled Loops
+## Merkede løkker
 
-For nested loops, you can label and break/continue from an outer loop:
+For nestede løkker kan du merke og bryte/fortsette fra en ytre løkke:
 
 ```v
 outer: for i in 0 .. 3 {
@@ -91,7 +91,7 @@ outer: for i in 0 .. 3 {
 }
 ```
 
-## Primes Example
+## Primtallseksempel
 
 ```v
 import math { log }

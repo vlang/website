@@ -1,44 +1,44 @@
 # Match
 
-`match` is V's pattern matching statement — more powerful than a C `switch`. It must be exhaustive: every possible value must be handled.
+`match` adalah pernyataan pemadanan corak V — lebih berkuasa daripada `switch` C. Ia mestilah lengkap: setiap nilai yang mungkin mesti ditangani.
 
-## Basic Usage
+## Penggunaan Asas
 
 ```v
 x := 3
 
 match x {
-    1 { println('one') }
-    2 { println('two') }
-    3 { println('three') }
-    else { println('other') }
+    1 { println('satu') }
+    2 { println('dua') }
+    3 { println('tiga') }
+    else { println('lain') }
 }
 ```
 
-## Match as an Expression
+## Match sebagai Ungkapan
 
 ```v
 name := 'Bob'
 greeting := match name {
-    'Alice' { 'Hey Alice!' }
-    'Bob'   { 'What is up, Bob?' }
-    else    { 'Hello, ${name}.' }
+    'Alice' { 'Hai Alice!' }
+    'Bob'   { 'Apa khabar, Bob?' }
+    else    { 'Helo, ${name}.' }
 }
 println(greeting)
 ```
 
-## Matching Multiple Values
+## Pemadanan Pelbagai Nilai
 
 ```v
 n := 5
 match n {
-    1, 3, 5, 7, 9 { println('odd') }
-    2, 4, 6, 8    { println('even') }
-    else          { println('out of range') }
+    1, 3, 5, 7, 9 { println('ganjil') }
+    2, 4, 6, 8    { println('genap') }
+    else          { println('di luar julat') }
 }
 ```
 
-## Matching Ranges
+## Pemadanan Julat
 
 ```v
 score := 72
@@ -52,9 +52,9 @@ grade := match score {
 println(grade) // C
 ```
 
-## Matching Sum Types
+## Pemadanan Jenis Jumlah
 
-When matching on a sum type, V gives you access to the inner value with the correct type:
+Apabila memadankan pada jenis jumlah, V memberi anda akses kepada nilai dalaman dengan jenis yang betul:
 
 ```v
 type Shape = Circle | Rectangle
@@ -76,7 +76,7 @@ fn area(s Shape) f64 {
 }
 ```
 
-## FizzBuzz with Match
+## FizzBuzz dengan Match
 
 ```v
 for n in 1 .. 101 {

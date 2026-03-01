@@ -1,8 +1,8 @@
-# Structs
+# Struct
 
-Structs are used to define custom data types with named fields.
+Struct digunakan untuk mendefinisikan tipe data kustom dengan field bernama.
 
-## Basic Struct
+## Struct Dasar
 
 ```v
 struct Point {
@@ -17,9 +17,9 @@ fn main() {
 }
 ```
 
-## Mutable Structs
+## Struct yang Dapat Diubah
 
-Fields are immutable by default. Use `mut:` to declare mutable fields:
+Field bersifat tak dapat diubah secara default. Gunakan `mut:` untuk mendeklarasikan field yang dapat diubah:
 
 ```v
 struct User {
@@ -38,25 +38,25 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## Pengubah Akses
 
 ```v
 struct Foo {
-    a int         // private immutable (default)
+    a int         // privat tak dapat diubah (default)
 mut:
-    b int         // private mutable
+    b int         // privat dapat diubah
 pub:
-    c int         // public immutable
+    c int         // publik tak dapat diubah
 pub mut:
-    d int         // public mutable, private to set
+    d int         // publik dapat diubah, privat untuk diset
 __global:
-    e int         // public and mutable everywhere (rare)
+    e int         // publik dan dapat diubah di mana saja (jarang)
 }
 ```
 
-## Methods
+## Metode
 
-Functions can be attached to structs:
+Fungsi dapat dilampirkan ke struct:
 
 ```v
 struct Rectangle {
@@ -81,7 +81,7 @@ fn main() {
 
 ## Embedding
 
-Structs can embed other structs to inherit their fields and methods:
+Struct dapat menyematkan struct lain untuk mewarisi field dan metode mereka:
 
 ```v
 struct Animal {
@@ -103,12 +103,12 @@ fn (d Dog) speak() string {
 
 fn main() {
     d := Dog{Animal: Animal{name: 'Rex'}, breed: 'Labrador'}
-    println(d.name)    // Rex  (promoted from Animal)
+    println(d.name)    // Rex  (dipromosikan dari Animal)
     println(d.speak()) // Woof!
 }
 ```
 
-## Default Field Values
+## Nilai Field Default
 
 ```v
 struct Config {
@@ -124,7 +124,7 @@ fn main() {
 }
 ```
 
-## JSON Example
+## Contoh JSON
 
 ```v
 import json

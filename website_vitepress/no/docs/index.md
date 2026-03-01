@@ -1,32 +1,32 @@
-# Introduction
+# Introduksjon
 
-V is a statically typed compiled programming language designed for building maintainable software.
+V er et statisk typet kompilert programmeringsspråk designet for å bygge vedlikeholdbar programvare.
 
-It is influenced by Go, Oberon, Rust, Swift, Kotlin, and Python. V looks like Go and is nearly as simple, but it compiles much faster and offers more safety features.
+Det er inspirert av Go, Oberon, Rust, Swift, Kotlin og Python. V ligner på Go og er nesten like enkelt, men kompilerer mye raskere og tilbyr flere sikkerhetsfunksjoner.
 
-Despite being simple, V covers all the fields: systems programming, web development, game development, GUI apps, mobile, science, embedded, tools, and more.
+Til tross for å være enkelt, dekker V alle felt: systemprogrammering, webutvikling, spillutvikling, GUI-apper, mobil, vitenskap, innebygde systemer, verktøy og mer.
 
-## Key Features
+## Nøkkelfunksjoner
 
-- **Simple** — Learn the entire language over a weekend. If you know Go, you already know ~80% of V.
-- **Fast compilation** — ~110k–1.2M lines of code per second per CPU core. V compiles itself in under 1 second.
-- **Safe** — No null, no global variables, no undefined behaviour. Immutability by default.
-- **Performance** — As fast as C. Compiles to human-readable C.
-- **Zero dependencies** — The compiler is only 400 KB with no external dependencies.
-- **C/C++ translation** — Translate entire C/C++ projects to V automatically.
-- **Hot code reloading** — Change code while the app is running without losing state.
-- **Built-in ORM & web framework** — Everything you need is in the standard library.
+- **Enkelt** — Lær hele språket i løpet av en helg. Hvis du kan Go, kan du allerede ~80% av V.
+- **Rask kompilering** — ~110k–1.2M kodelinjer per sekund per CPU-kjerne. V kompilerer seg selv på under 1 sekund.
+- **Trygt** — Ingen null, ingen globale variabler, ingen udefinert atferd. Uforanderlighet som standard.
+- **Ytelse** — Like rask som C. Kompilerer til menneskelig lesbar C.
+- **Null avhengigheter** — Kompilatoren er bare 400 KB uten eksterne avhengigheter.
+- **C/C++-oversettelse** — Oversett hele C/C++-prosjekter til V automatisk.
+- **Varm kodeinnlasting** — Endre kode mens appen kjører uten å miste tilstand.
+- **Innebygd ORM og webramme** — Alt du trenger er i standardbiblioteket.
 
-## Where to Start
+## Hvor du skal begynne
 
-- [Installation](/docs/installation) — Build V from source or download binaries.
-- [Hello World](/docs/hello-world) — Your first V program.
-- [Variables](/docs/basics/variables) — How to declare and use variables.
-- [Functions](/docs/basics/functions) — Defining and calling functions.
+- [Installasjon](/docs/installation) — Bygg V fra kilde eller last ned binærfiler.
+- [Hello World](/docs/hello-world) — Ditt første V-program.
+- [Variabler](/docs/basics/variables) — Hvordan deklarere og bruke variabler.
+- [Funksjoner](/docs/basics/functions) — Definere og kalle funksjoner.
 
-## External Resources
+## Eksterne ressurser
 
-- [Official Documentation](https://docs.vlang.io) — Full language reference
-- [Standard Library](https://modules.vlang.io) — Module API reference
-- [Playground](https://play.vlang.io) — Run V code in the browser
-- [Package Manager](https://vpm.vlang.io) — Browse and publish V packages
+- [Offisiell dokumentasjon](https://docs.vlang.io) — Full språkreferanse
+- [Standardbibliotek](https://modules.vlang.io) — Modul-API-referanse
+- [Lekeplass](https://play.vlang.io) — Kjør V-kode i nettleseren
+- [Pakkebehandler](https://vpm.vlang.io) — Bla gjennom og publiser V-pakker

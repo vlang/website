@@ -1,8 +1,8 @@
-# Variables
+# Pemboleh Ubah
 
-## Declaration and Initialization
+## Pengisytiharan dan Permulaan
 
-Variables are declared and initialized with `:=`. This is the only way to declare variables in V — they always have an initial value and their type is inferred from the right-hand side.
+Pemboleh ubah diisytiharkan dan dimulakan dengan `:=`. Ini adalah satu-satunya cara untuk mengisytiharkan pemboleh ubah dalam V — ia sentiasa mempunyai nilai awal dan jenisnya disimpulkan dari sebelah kanan.
 
 ```v
 name := 'Bob'
@@ -13,9 +13,9 @@ println(age)
 println(large_number)
 ```
 
-## Mutable Variables
+## Pemboleh Ubah Boleh Ubah
 
-Variables are **immutable by default**. Use `mut` to make a variable mutable:
+Pemboleh ubah adalah **tidak boleh diubah secara lalai**. Gunakan `mut` untuk menjadikan pemboleh ubah boleh diubah:
 
 ```v
 mut age := 20
@@ -24,21 +24,21 @@ age = 21
 println(age)
 ```
 
-> If you try to reassign without `mut`, the compiler will refuse to compile.
+> Jika anda cuba menetapkan semula tanpa `mut`, pengkompil akan menolak untuk mengkompil.
 
-## Type Conversion
+## Penukaran Jenis
 
-Use `T(value)` to convert between types:
+Gunakan `T(value)` untuk menukar antara jenis:
 
 ```v
 x := 42
-y := f64(x)  // x converted to f64
-z := u8(x)   // x converted to u8
+y := f64(x)  // x ditukar kepada f64
+z := u8(x)   // x ditukar kepada u8
 ```
 
-## Multiple Assignment
+## Penetapan Berganda
 
-Multiple variables can be changed or swapped in one line:
+Pelbagai pemboleh ubah boleh ditukar atau ditukar kedudukan dalam satu baris:
 
 ```v
 mut a := 0
@@ -48,9 +48,9 @@ a, b = b, a
 println('${a}, ${b}') // 1, 0
 ```
 
-## Ignoring Values
+## Mengabaikan Nilai
 
-Use `_` to discard a return value:
+Gunakan `_` untuk membuang nilai pulangan:
 
 ```v
 fn foo() (int, int) {
@@ -63,21 +63,21 @@ fn main() {
 }
 ```
 
-## Naming Convention
+## Konvensyen Penamaan
 
-All variable and function names must use `snake_case`. Type names must use `PascalCase`. The compiler enforces this.
+Semua nama pemboleh ubah dan fungsi mestilah menggunakan `snake_case`. Nama jenis mestilah menggunakan `PascalCase`. Pengkompil menguatkuasakannya.
 
-## No Global Variables
+## Tiada Pemboleh Ubah Global
 
-V does not allow global variables by default. All variables must be declared inside functions. This leads to more predictable, testable code.
+V tidak membenarkan pemboleh ubah global secara lalai. Semua pemboleh ubah mesti diisytiharkan dalam fungsi. Ini menghasilkan kod yang lebih boleh diramal dan diuji.
 
-## No Shadowing
+## Tiada Perlindungan Bayangan
 
-Variable shadowing is not allowed. Declaring a variable with a name already used in a parent scope is a compile error:
+Bayangan pemboleh ubah tidak dibenarkan. Mengisytiharkan pemboleh ubah dengan nama yang sudah digunakan dalam skop induk adalah ralat kompilasi:
 
 ```v
 fn main() {
     a := 10
-    // a := 20  // ← compile error: redefinition of `a`
+    // a := 20  // ← ralat kompilasi: redefinisi `a`
 }
 ```

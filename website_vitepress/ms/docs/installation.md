@@ -1,67 +1,67 @@
-# Installation
+# Pemasangan
 
-## Install from Source
+## Pasang dari Sumber
 
-The recommended way to install V is from source. It only takes a few seconds:
+Cara yang disyorkan untuk memasang V adalah dari sumber. Ia hanya mengambil masa beberapa saat:
 
 ```bash
 git clone --depth=1 https://github.com/vlang/v && cd v && make
 ```
 
-On Windows, use `make.bat` instead of `make`.
+Di Windows, gunakan `make.bat` sebagai ganti `make`.
 
-## Symlink V
+## Simpautan V
 
-After building, you can symlink V so it's available everywhere:
+Selepas membina, anda boleh mensimpautan V supaya ia tersedia di mana-mana:
 
 ```bash
 sudo ./v symlink
 ```
 
-On Windows, run `v.exe symlink` from an elevated command prompt.
+Di Windows, jalankan `v.exe symlink` dari command prompt yang ditinggikan.
 
-## Verify Installation
+## Sahkan Pemasangan
 
 ```bash
 v version
 ```
 
-You should see output like `V 0.5.0 ...`.
+Anda sepatutnya melihat output seperti `V 0.5.0 ...`.
 
-## Download Pre-built Binaries
+## Muat Turun Binari Pra-bina
 
-Pre-built binaries are available for all major platforms on the
-[GitHub Releases](https://github.com/vlang/v/releases/latest) page:
+Binari pra-bina tersedia untuk semua platform utama di halaman
+[GitHub Releases](https://github.com/vlang/v/releases/latest):
 
-| Platform | File |
+| Platform | Fail |
 | --- | --- |
 | Linux (x86_64) | `v_linux.zip` |
 | macOS (Apple Silicon) | `v_macos_arm64.zip` |
 | macOS (Intel) | `v_macos_x86_64.zip` |
 | Windows | `v_windows.zip` |
 
-## Upgrading V
+## Naik Taraf V
 
-To upgrade V to the latest version, run:
+Untuk menaik taraf V ke versi terkini, jalankan:
 
 ```bash
 v up
 ```
 
-## Running a Program
+## Menjalankan Program
 
 ```bash
 v run hello.v
 ```
 
-Or compile it:
+Atau kompil dahulu:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-To run all `.v` files in a directory:
+Untuk menjalankan semua fail `.v` dalam direktori:
 
 ```bash
 v run .

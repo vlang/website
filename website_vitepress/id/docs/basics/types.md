@@ -1,32 +1,32 @@
-# Primitive Types
+# Tipe Primitif
 
-## Integer Types
+## Tipe Integer
 
 ```v
-// Signed integers
-i8    // -128 to 127
-i16   // -32,768 to 32,767
-int   // -2,147,483,648 to 2,147,483,647  (always 32-bit)
-i64   // -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+// Integer bertanda
+i8    // -128 hingga 127
+i16   // -32.768 hingga 32.767
+int   // -2.147.483.648 hingga 2.147.483.647  (selalu 32-bit)
+i64   // -9.223.372.036.854.775.808 hingga 9.223.372.036.854.775.807
 
-// Unsigned integers
-u8    // 0 to 255  (also used for bytes)
-u16   // 0 to 65,535
-u32   // 0 to 4,294,967,295
-u64   // 0 to 18,446,744,073,709,551,615
+// Integer tak bertanda
+u8    // 0 hingga 255  (juga digunakan untuk byte)
+u16   // 0 hingga 65.535
+u32   // 0 hingga 4.294.967.295
+u64   // 0 hingga 18.446.744.073.709.551.615
 
-// Platform-dependent
-isize // signed, size of a pointer
-usize // unsigned, size of a pointer
+// Bergantung platform
+isize // bertanda, ukuran pointer
+usize // tak bertanda, ukuran pointer
 ```
 
-> **Note:** Unlike C and Go, `int` in V is always 32-bit regardless of platform.
+> **Catatan:** Tidak seperti C dan Go, `int` dalam V selalu 32-bit tanpa memandang platform.
 
-## Floating-Point Types
+## Tipe Titik Mengambang
 
 ```v
-f32   // single-precision (32-bit)
-f64   // double-precision (64-bit)
+f32   // presisi tunggal (32-bit)
+f64   // presisi ganda (64-bit)
 ```
 
 ## Boolean
@@ -38,43 +38,43 @@ is_done  := false
 
 ## Rune
 
-A `rune` represents a Unicode code point:
+`rune` mewakili titik kode Unicode:
 
 ```v
-letter := `A`        // rune literal uses backticks
+letter := `A`        // literal rune menggunakan backtick
 emoji  := `🌎`
 println(letter)      // A
 println(int(letter)) // 65
 ```
 
-## Type Promotions
+## Promosi Tipe
 
-Small types are automatically promoted when combined with larger types on the same side of an operator:
+Tipe kecil secara otomatis dipromosikan ketika digabungkan dengan tipe yang lebih besar di sisi yang sama dari sebuah operator:
 
 ```v
 u := u16(12)
-v := 13 + u    // v is u16 — no promotion
+v := 13 + u    // v adalah u16 — tidak ada promosi
 x := f32(45.6)
-y := x + 3.14  // y is f32 — no promotion
-a := 75        // int (default for integer literals)
-b := 14.7      // f64 (default for float literals)
+y := x + 3.14  // y adalah f32 — tidak ada promosi
+a := 75        // int (default untuk literal integer)
+b := 14.7      // f64 (default untuk literal float)
 ```
 
-## Numeric Literals
+## Literal Numerik
 
 ```v
-n1 := 1_000_000      // underscores for readability
-n2 := 0xff           // hex
-n3 := 0o77           // octal
-n4 := 0b1111_0000    // binary
-f1 := 3.14_159_265   // float with underscores
+n1 := 1_000_000      // garis bawah untuk keterbacaan
+n2 := 0xff           // heksadesimal
+n3 := 0o77           // oktal
+n4 := 0b1111_0000    // biner
+f1 := 3.14_159_265   // float dengan garis bawah
 ```
 
 ## `voidptr`
 
-A raw pointer type used mainly for C interoperability. Avoid in pure V code.
+Tipe pointer mentah yang digunakan terutama untuk interoperabilitas C. Hindari dalam kode V murni.
 
 ```v
-// mostly for C interop
+// terutama untuk interop C
 p := voidptr(0)
 ```

@@ -1,32 +1,32 @@
-# Introduction
+# Pengenalan
 
-V is a statically typed compiled programming language designed for building maintainable software.
+V adalah bahasa pemrograman terkompilasi dengan tipe statis yang dirancang untuk membangun perangkat lunak yang mudah dipelihara.
 
-It is influenced by Go, Oberon, Rust, Swift, Kotlin, and Python. V looks like Go and is nearly as simple, but it compiles much faster and offers more safety features.
+Bahasa ini dipengaruhi oleh Go, Oberon, Rust, Swift, Kotlin, dan Python. V terlihat seperti Go dan hampir sesederhana itu, namun kompilasi jauh lebih cepat dan menawarkan lebih banyak fitur keamanan.
 
-Despite being simple, V covers all the fields: systems programming, web development, game development, GUI apps, mobile, science, embedded, tools, and more.
+Meskipun sederhana, V mencakup semua bidang: pemrograman sistem, pengembangan web, pengembangan game, aplikasi GUI, mobile, sains, embedded, alat bantu, dan banyak lagi.
 
-## Key Features
+## Fitur Utama
 
-- **Simple** — Learn the entire language over a weekend. If you know Go, you already know ~80% of V.
-- **Fast compilation** — ~110k–1.2M lines of code per second per CPU core. V compiles itself in under 1 second.
-- **Safe** — No null, no global variables, no undefined behaviour. Immutability by default.
-- **Performance** — As fast as C. Compiles to human-readable C.
-- **Zero dependencies** — The compiler is only 400 KB with no external dependencies.
-- **C/C++ translation** — Translate entire C/C++ projects to V automatically.
-- **Hot code reloading** — Change code while the app is running without losing state.
-- **Built-in ORM & web framework** — Everything you need is in the standard library.
+- **Sederhana** — Pelajari seluruh bahasa dalam satu akhir pekan. Jika Anda mengenal Go, Anda sudah menguasai ~80% V.
+- **Kompilasi cepat** — ~110rb–1,2 juta baris kode per detik per inti CPU. V mengompilasi dirinya sendiri dalam waktu kurang dari 1 detik.
+- **Aman** — Tidak ada null, tidak ada variabel global, tidak ada perilaku tak terdefinisi. Nilai tak dapat diubah secara default.
+- **Performa tinggi** — Secepat C. Dikompilasi ke C yang mudah dibaca manusia.
+- **Tanpa dependensi** — Kompiler hanya berukuran 400 KB tanpa dependensi eksternal.
+- **Terjemahan C/C++** — Terjemahkan seluruh proyek C/C++ ke V secara otomatis.
+- **Pemuatan ulang kode panas** — Ubah kode saat aplikasi berjalan tanpa kehilangan state.
+- **ORM & framework web bawaan** — Semua yang Anda butuhkan ada di pustaka standar.
 
-## Where to Start
+## Tempat Mulai
 
-- [Installation](/docs/installation) — Build V from source or download binaries.
-- [Hello World](/docs/hello-world) — Your first V program.
-- [Variables](/docs/basics/variables) — How to declare and use variables.
-- [Functions](/docs/basics/functions) — Defining and calling functions.
+- [Instalasi](/docs/installation) — Bangun V dari sumber atau unduh binary.
+- [Hello World](/docs/hello-world) — Program V pertama Anda.
+- [Variabel](/docs/basics/variables) — Cara mendeklarasikan dan menggunakan variabel.
+- [Fungsi](/docs/basics/functions) — Mendefinisikan dan memanggil fungsi.
 
-## External Resources
+## Sumber Daya Eksternal
 
-- [Official Documentation](https://docs.vlang.io) — Full language reference
-- [Standard Library](https://modules.vlang.io) — Module API reference
-- [Playground](https://play.vlang.io) — Run V code in the browser
-- [Package Manager](https://vpm.vlang.io) — Browse and publish V packages
+- [Dokumentasi Resmi](https://docs.vlang.io) — Referensi bahasa lengkap
+- [Pustaka Standar](https://modules.vlang.io) — Referensi API modul
+- [Playground](https://play.vlang.io) — Jalankan kode V di browser
+- [Manajer Paket](https://vpm.vlang.io) — Jelajahi dan publikasikan paket V

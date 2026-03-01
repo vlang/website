@@ -1,8 +1,8 @@
-# Concurrency
+# Konkurensi
 
-V uses lightweight threads (goroutines) to run work concurrently. The `spawn` keyword starts a function in a new thread.
+V menggunakan thread ringan (goroutine) untuk menjalankan pekerjaan secara bersamaan. Kata kunci `spawn` memulai sebuah fungsi dalam thread baru.
 
-## Basic Spawning
+## Pembuatan Thread Dasar
 
 ```v
 import time
@@ -19,15 +19,15 @@ fn main() {
     threads << spawn expensive_computing(2, 500)
     threads << spawn expensive_computing(3, 1000)
 
-    // Wait for all threads to finish
+    // Tunggu semua thread selesai
     threads.wait()
     println('All jobs finished!')
 }
 ```
 
-## Getting Return Values
+## Mendapatkan Nilai Kembalian
 
-Threads can return values. Calling `.wait()` on a `[]thread T` returns `[]T`:
+Thread dapat mengembalikan nilai. Memanggil `.wait()` pada `[]thread T` mengembalikan `[]T`:
 
 ```v
 fn expensive_computing(i int) int {
@@ -45,7 +45,7 @@ fn main() {
 }
 ```
 
-## Concurrent HTTP Requests
+## Permintaan HTTP Bersamaan
 
 ```v
 import net.http
@@ -75,14 +75,14 @@ fn main() {
 }
 ```
 
-## Channels
+## Channel
 
-Channels allow safe communication between threads:
+Channel memungkinkan komunikasi yang aman antar thread:
 
 ```v
 fn producer(ch chan int) {
     for i in 1 .. 6 {
-        ch <- i  // send to channel
+        ch <- i  // kirim ke channel
     }
     ch.close()
 }
@@ -97,9 +97,9 @@ fn main() {
 }
 ```
 
-## Mutexes
+## Mutex
 
-Use `sync.Mutex` to protect shared state:
+Gunakan `sync.Mutex` untuk melindungi state yang dipakai bersama:
 
 ```v
 import sync
@@ -119,7 +119,7 @@ fn (mut c Counter) increment() {
 
 ## `defer`
 
-`defer` executes a statement when the surrounding function returns — useful for cleanup:
+`defer` mengeksekusi sebuah pernyataan ketika fungsi yang melingkupinya kembali — berguna untuk pembersihan:
 
 ```v
 import os
@@ -128,7 +128,7 @@ fn process_file(path string) {
     f := os.open(path) or { return }
     defer { f.close() }
 
-    // use f — it will be closed automatically
+    // gunakan f — akan ditutup secara otomatis
     println(f.read_to_string() or { '' })
 }
 ```

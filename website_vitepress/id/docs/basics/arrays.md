@@ -1,6 +1,6 @@
-# Arrays
+# Array
 
-## Basic Usage
+## Penggunaan Dasar
 
 ```v
 mut nums := [1, 2, 3]
@@ -11,9 +11,9 @@ nums[1] = 20
 println(nums)        // [1, 20, 3]
 ```
 
-## Typed Arrays
+## Array Bertipe
 
-Array element types are inferred. You can also declare an empty array with an explicit type:
+Tipe elemen array disimpulkan secara otomatis. Anda juga dapat mendeklarasikan array kosong dengan tipe eksplisit:
 
 ```v
 mut names := []string{}
@@ -22,37 +22,37 @@ names << 'Bob'
 println(names) // ['Alice', 'Bob']
 ```
 
-## Pre-allocated Arrays
+## Array Pre-alokasi
 
 ```v
-// array of 5 ints, all initialized to 0
+// array berisi 5 int, semua diinisialisasi ke 0
 a := []int{len: 5}
 
-// array of 3 strings, all initialized to 'x'
+// array berisi 3 string, semua diinisialisasi ke 'x'
 b := []string{len: 3, init: 'x'}
 ```
 
-## Appending Elements
+## Menambahkan Elemen
 
-Use `<<` to append:
+Gunakan `<<` untuk menambahkan:
 
 ```v
 mut a := [1, 2, 3]
 a << 4
-a << [5, 6]   // append another array
+a << [5, 6]   // tambahkan array lain
 println(a)    // [1, 2, 3, 4, 5, 6]
 ```
 
-## Slicing
+## Pemotongan (Slicing)
 
 ```v
 a := [1, 2, 3, 4, 5]
-b := a[1..3]  // [2, 3]  (from index 1, up to but not including 3)
-c := a[..2]   // [1, 2]  (from start to index 2)
-d := a[3..]   // [4, 5]  (from index 3 to end)
+b := a[1..3]  // [2, 3]  (dari indeks 1, hingga tapi tidak termasuk 3)
+c := a[..2]   // [1, 2]  (dari awal hingga indeks 2)
+d := a[3..]   // [4, 5]  (dari indeks 3 hingga akhir)
 ```
 
-## Iteration
+## Iterasi
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
@@ -66,7 +66,7 @@ for i, name in names {
 }
 ```
 
-## Common Methods
+## Metode Umum
 
 ```v
 mut a := [3, 1, 4, 1, 5, 9, 2, 6]
@@ -88,7 +88,7 @@ mapped := a.map(it * 2)
 println(mapped) // [18, 12, 10, 8, 6, 4, 2, 2]
 ```
 
-## Multidimensional Arrays
+## Array Multidimensi
 
 ```v
 mut matrix := [][]int{len: 3, init: []int{len: 3}}
@@ -98,12 +98,12 @@ matrix[2][2] = 9
 println(matrix) // [[1, 0, 0], [0, 5, 0], [0, 0, 9]]
 ```
 
-## Fixed-size Arrays
+## Array Berukuran Tetap
 
 ```v
-mut a := [5]int{}   // fixed array of 5 ints
+mut a := [5]int{}   // array tetap berisi 5 int
 a[0] = 10
 println(a)          // [10, 0, 0, 0, 0]
 ```
 
-Fixed arrays are stack-allocated and cannot be grown.
+Array tetap dialokasikan di stack dan tidak dapat diperbesar.

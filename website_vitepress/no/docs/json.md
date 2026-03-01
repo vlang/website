@@ -1,8 +1,8 @@
 # JSON
 
-V has built-in JSON encoding and decoding in the `json` module — no external library needed.
+V har innebygd JSON-koding og -dekoding i `json`-modulen — ingen ekstern pakke nødvendig.
 
-## Decoding JSON
+## Dekode JSON
 
 ```v
 import json
@@ -18,7 +18,7 @@ fn main() {
     s := '[{"name":"Frodo","age":25},{"name":"Bobby","age":10}]'
 
     mut users := json.decode([]User, s) or {
-        eprintln('Failed to parse json')
+        eprintln('Klarte ikke å analysere json')
         return
     }
 
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Encoding JSON
+## Kode JSON
 
 ```v
 import json
@@ -45,9 +45,9 @@ fn main() {
 }
 ```
 
-## Custom Field Names
+## Egendefinerte feltnavn
 
-Use the `@[json: 'field_name']` attribute to map struct fields to different JSON keys:
+Bruk attributtet `@[json: 'field_name']` for å tilordne strukturfelt til andre JSON-nøkler:
 
 ```v
 import json
@@ -66,28 +66,28 @@ fn main() {
 }
 ```
 
-## Skipping Fields
+## Hoppe over felt
 
-Use `@[json: '-']` to exclude a field from JSON serialization:
+Bruk `@[json: '-']` for å utelate et felt fra JSON-serialisering:
 
 ```v
 struct User {
     name     string
     email    string
-    password string @[json: '-']  // never included in JSON output
+    password string @[json: '-']  // aldri inkludert i JSON-utdata
 }
 ```
 
-## Optional / Nullable Fields
+## Valgfrie / nullbare felt
 
-Use option types for fields that may be absent in the JSON:
+Bruk option-typer for felt som kanskje ikke er til stede i JSON:
 
 ```v
 import json
 
 struct Profile {
     name   string
-    bio    ?string   // optional — may be null or absent
+    bio    ?string   // valgfri — kan være null eller fraværende
     age    ?int
 }
 
@@ -99,7 +99,7 @@ fn main() {
 }
 ```
 
-## Nested Structs
+## Nestede strukturer
 
 ```v
 import json

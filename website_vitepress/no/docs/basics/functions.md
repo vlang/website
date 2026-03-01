@@ -1,6 +1,6 @@
-# Functions
+# Funksjoner
 
-## Basic Syntax
+## Grunnleggende syntaks
 
 ```v
 fn main() {
@@ -17,13 +17,13 @@ fn sub(x int, y int) int {
 }
 ```
 
-The return type is specified **after** the parameter list. If the function returns nothing, the return type is omitted.
+Returtypen er angitt **etter** parameterlisten. Hvis funksjonen ikke returnerer noe, utelates returtypen.
 
-## Hoisting
+## Heising
 
-Functions can be used before they are declared. V hoists all declarations, so there is no need for header files or forward declarations.
+Funksjoner kan brukes før de er deklarert. V heiser alle deklarasjoner, så det er ikke nødvendig med header-filer eller foroverdeklarasjoner.
 
-## Multiple Return Values
+## Flere returverdier
 
 ```v
 fn foo() (int, int) {
@@ -33,12 +33,12 @@ fn foo() (int, int) {
 a, b := foo()
 println(a) // 2
 println(b) // 3
-c, _ := foo() // ignore the second value with `_`
+c, _ := foo() // ignorer den andre verdien med `_`
 ```
 
-## Visibility
+## Synlighet
 
-Functions are **private** by default. Use `pub` to export them:
+Funksjoner er **private** som standard. Bruk `pub` for å eksportere dem:
 
 ```v
 pub fn public_function() {
@@ -48,13 +48,13 @@ fn private_function() {
 }
 ```
 
-## No Overloading
+## Ingen overbelastning
 
-Functions cannot be overloaded. This keeps the code unambiguous and easy to read.
+Funksjoner kan ikke overbelastes. Dette holder koden entydig og lett å lese.
 
-## Methods
+## Metoder
 
-Functions can be attached to types:
+Funksjoner kan kobles til typer:
 
 ```v
 struct User {
@@ -78,9 +78,9 @@ fn main() {
 }
 ```
 
-## High-Order Functions
+## Høyereordens funksjoner
 
-Functions are first-class values and can be passed to other functions:
+Funksjoner er førsteklasses verdier og kan sendes til andre funksjoner:
 
 ```v
 fn apply(arr []int, f fn(int) int) []int {
@@ -102,7 +102,7 @@ fn main() {
 }
 ```
 
-## Anonymous Functions
+## Anonyme funksjoner
 
 ```v
 fn main() {

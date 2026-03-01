@@ -1,10 +1,10 @@
-# Error Handling
+# Penanganan Error
 
-V uses **Option** and **Result** types instead of exceptions. This makes error handling explicit and visible in function signatures.
+V menggunakan tipe **Option** dan **Result** sebagai pengganti exception. Ini membuat penanganan error menjadi eksplisit dan terlihat dalam tanda tangan fungsi.
 
-## Option Types
+## Tipe Option
 
-An `?T` (option) holds either a value of type `T` or `none`:
+`?T` (option) menyimpan nilai bertipe `T` atau `none`:
 
 ```v
 fn find_user(id int) ?string {
@@ -21,9 +21,9 @@ fn main() {
 }
 ```
 
-## Result Types
+## Tipe Result
 
-A `!T` (result) holds either a value of type `T` or an error:
+`!T` (result) menyimpan nilai bertipe `T` atau sebuah error:
 
 ```v
 fn divide(a f64, b f64) !f64 {
@@ -42,9 +42,9 @@ fn main() {
 }
 ```
 
-## The `or` Block
+## Blok `or`
 
-The `or` block runs when the result is `none` or an error. Inside `or`, `err` holds the error value:
+Blok `or` dijalankan ketika hasilnya adalah `none` atau error. Di dalam `or`, `err` menyimpan nilai error:
 
 ```v
 import net.http
@@ -58,20 +58,20 @@ fn main() {
 }
 ```
 
-## Propagating Errors with `!`
+## Meneruskan Error dengan `!`
 
-Adding `!` after a call propagates the error up to the caller (similar to `?` in Rust):
+Menambahkan `!` setelah pemanggilan akan meneruskan error ke pemanggil (mirip dengan `?` di Rust):
 
 ```v
 fn read_config(path string) !string {
-    content := os.read_file(path)!  // propagates if error
+    content := os.read_file(path)!  // diteruskan jika terjadi error
     return content
 }
 ```
 
-## Custom Errors
+## Error Kustom
 
-Implement the `IError` interface to create custom error types:
+Implementasikan antarmuka `IError` untuk membuat tipe error kustom:
 
 ```v
 struct DivisionError {
@@ -95,7 +95,7 @@ fn safe_divide(a f64, b f64) !f64 {
 }
 ```
 
-## Matching on Error Types
+## Pencocokan pada Tipe Error
 
 ```v
 import semver
@@ -120,9 +120,9 @@ fn check_error(err IError) {
 }
 ```
 
-## The `?` Unwrap Operator
+## Operator Unwrap `?`
 
-Use `val?` inside an option context to unwrap or propagate `none`:
+Gunakan `val?` dalam konteks option untuk membuka nilai atau meneruskan `none`:
 
 ```v
 fn get_name(users map[int]string, id int) ?string {

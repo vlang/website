@@ -1,10 +1,10 @@
-# Testing
+# Pengujian
 
-V has built-in testing support. No test framework or external library needed.
+V mempunyai sokongan ujian terbina dalam. Tiada rangka kerja ujian atau pustaka luaran diperlukan.
 
-## Writing Tests
+## Menulis Ujian
 
-Test functions must start with `test_` and live in files ending with `_test.v`:
+Fungsi ujian mesti bermula dengan `test_` dan berada dalam fail yang berakhir dengan `_test.v`:
 
 ```v
 // math_test.v
@@ -24,17 +24,17 @@ fn test_add_large_numbers() {
 }
 ```
 
-Run tests with:
+Jalankan ujian dengan:
 
 ```bash
 v test math_test.v
-# or run all tests in a directory:
+# atau jalankan semua ujian dalam direktori:
 v test .
 ```
 
-## Assertions
+## Penegasan
 
-Use `assert` to check conditions. A failing assertion prints the values of both sides:
+Gunakan `assert` untuk memeriksa syarat. Penegasan yang gagal mencetak nilai kedua-dua pihak:
 
 ```v
 fn test_string_ops() {
@@ -45,34 +45,34 @@ fn test_string_ops() {
 }
 ```
 
-## Test Setup and Teardown
+## Persediaan dan Pembungkusan Ujian
 
 ```v
-// Use testsuite_begin and testsuite_end for module-level setup/teardown
+// Gunakan testsuite_begin dan testsuite_end untuk persediaan/pembungkusan peringkat modul
 fn testsuite_begin() {
-    // runs once before all tests in the file
-    println('Setting up test suite...')
+    // berjalan sekali sebelum semua ujian dalam fail
+    println('Menyediakan suite ujian...')
 }
 
 fn testsuite_end() {
-    // runs once after all tests in the file
-    println('Tearing down test suite...')
+    // berjalan sekali selepas semua ujian dalam fail
+    println('Meruntuhkan suite ujian...')
 }
 ```
 
-## Testing Error Cases
+## Menguji Kes Ralat
 
 ```v
 fn safe_divide(a f64, b f64) !f64 {
     if b == 0 {
-        return error('division by zero')
+        return error('bahagi dengan sifar')
     }
     return a / b
 }
 
 fn test_divide_by_zero() {
     result := safe_divide(10, 0) or { err.msg() }
-    assert result == 'division by zero'
+    assert result == 'bahagi dengan sifar'
 }
 
 fn test_divide_normal() {
@@ -81,22 +81,22 @@ fn test_divide_normal() {
 }
 ```
 
-## Running Specific Tests
+## Menjalankan Ujian Tertentu
 
 ```bash
-# Run a single test file
+# Jalankan satu fail ujian
 v test mypackage/foo_test.v
 
-# Run tests matching a pattern
+# Jalankan ujian yang sepadan dengan corak
 v test -run test_add .
 
-# Run with verbose output
+# Jalankan dengan output verbose
 v test -v .
 ```
 
-## Table-driven Tests
+## Ujian Berasaskan Jadual
 
-V doesn't have a built-in table-driven test helper, but you can do it manually:
+V tidak mempunyai pembantu ujian berasaskan jadual terbina dalam, tetapi anda boleh melakukannya secara manual:
 
 ```v
 fn test_add_table() {
@@ -112,9 +112,9 @@ fn test_add_table() {
 }
 ```
 
-## Code Coverage
+## Liputan Kod
 
-Generate a coverage report:
+Jana laporan liputan:
 
 ```bash
 v -coverage ./coverage_output test .

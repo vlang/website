@@ -1,8 +1,8 @@
 # Hello World
 
-## Your First V Program
+## Program V Pertama Anda
 
-Create a file named `hello.v`:
+Cipta fail bernama `hello.v`:
 
 ```v
 fn main() {
@@ -10,61 +10,61 @@ fn main() {
 }
 ```
 
-Run it:
+Jalankannya:
 
 ```bash
 v run hello.v
 ```
 
-Or compile and run separately:
+Atau kompil dan jalankan secara berasingan:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-## Skipping `fn main()`
+## Melangkau `fn main()`
 
-For single-file scripts, `fn main()` is optional:
+Untuk skrip fail tunggal, `fn main()` adalah pilihan:
 
 ```v
 println('Hello, World!')
 ```
 
-This is useful for small programs and learning the language.
+Ini berguna untuk program kecil dan mempelajari bahasa.
 
-## Running Multiple Files
+## Menjalankan Beberapa Fail
 
-If your project has multiple `.v` files in a folder, run all of them at once:
+Jika projek anda mempunyai beberapa fail `.v` dalam folder, jalankan semuanya sekaligus:
 
 ```bash
 v run .
 ```
 
-## Comments
+## Komen
 
 ```v
-// This is a single line comment.
+// Ini ialah komen satu baris.
 /*
-  This is a multiline comment.
-  /* It can be nested. */
+  Ini ialah komen berbilang baris.
+  /* Ia boleh bersarang. */
 */
 ```
 
-## A Slightly Bigger Example
+## Contoh yang Sedikit Lebih Besar
 
 ```v
-// fibonacci.v — compute Fibonacci numbers up to a given rank
+// fibonacci.v — kira nombor Fibonacci sehingga pangkat tertentu
 const args = arguments()
 
 fn main() {
     if args.len != 2 {
-        println('usage: fibonacci [rank]')
+        println('penggunaan: fibonacci [pangkat]')
         return
     }
     stop := args[1].int()
     if stop > 92 {
-        println('rank must be 92 or less')
+        println('pangkat mestilah 92 atau kurang')
         return
     }
     mut a := i64(0)

@@ -1,10 +1,10 @@
 # ORM
 
-V includes a built-in ORM that supports SQLite, PostgreSQL, MySQL, and MSSQL. No external library needed.
+V inkluderer et innebygd ORM som støtter SQLite, PostgreSQL, MySQL og MSSQL. Ingen ekstern pakke nødvendig.
 
-## Defining a Model
+## Definere en modell
 
-Use the `@[table: 'table_name']` attribute to map a struct to a database table:
+Bruk attributtet `@[table: 'table_name']` for å tilordne en struktur til en databasetabell:
 
 ```v
 import db.sqlite
@@ -20,9 +20,9 @@ pub:
 }
 ```
 
-## SQL Syntax (Built-in DSL)
+## SQL-syntaks (innebygd DSL)
 
-V provides a clean SQL-like DSL for queries:
+V gir en ren SQL-lignende DSL for spørringer:
 
 ```v
 import db.sqlite
@@ -42,35 +42,35 @@ fn main() {
     user1 := User{id: '001', name: 'Alice'}
     user2 := User{id: '002', name: 'Bob'}
 
-    // Create table
+    // Opprett tabell
     sql db { create table User }!
 
-    // Insert
+    // Sett inn
     sql db { insert user1 into User }!
     sql db { insert user2 into User }!
 
-    // Select all
+    // Velg alle
     all_users := sql db { select from User }!
     dump(all_users)
 
-    // Select with condition
+    // Velg med betingelse
     alice := sql db { select from User where id == '001' }!
     dump(alice)
 
-    // Update
+    // Oppdater
     sql db { update User set name = 'Alice Smith' where id == '001' }!
 
-    // Delete
+    // Slett
     sql db { delete from User where id == '002' }!
 
-    // Drop table
+    // Dropp tabell
     sql db { drop table User }!
 }
 ```
 
-## Query Builder Syntax
+## Spørrebyggersyntaks
 
-An alternative fluent query builder API is also available:
+Et alternativt flytende spørrebygger-API er også tilgjengelig:
 
 ```v
 import db.sqlite
@@ -94,23 +94,23 @@ fn main() {
     qb.insert(Product{id: 'p1', name: 'Widget', price: 9.99})!
     qb.insert(Product{id: 'p2', name: 'Gadget', price: 19.99})!
 
-    // Fetch all
+    // Hent alle
     all := qb.query()!
     dump(all)
 
-    // Filter
+    // Filtrer
     cheap := qb.where('price < ?', 15.0)!.query()!
     dump(cheap)
 
-    // Update
+    // Oppdater
     qb.set('price = ?', 12.99)!.where('id = ?', 'p1')!.update()!
 
-    // Delete
+    // Slett
     qb.where('id = ?', 'p2')!.delete()!
 }
 ```
 
-## PostgreSQL Example
+## PostgreSQL-eksempel
 
 ```v
 import db.pg
@@ -124,7 +124,7 @@ fn main() {
     })!
     defer { db.close() }
 
-    // same SQL DSL works with PostgreSQL
+    // samme SQL DSL fungerer med PostgreSQL
     users := sql db { select from User }!
     println(users)
 }

@@ -1,73 +1,73 @@
 # If / Else
 
-## Basic Syntax
+## Sintaks Asas
 
 ```v
 a := 10
 
 if a < 10 {
-    println('less than 10')
+    println('kurang daripada 10')
 } else if a == 10 {
-    println('exactly 10')
+    println('tepat 10')
 } else {
-    println('greater than 10')
+    println('lebih daripada 10')
 }
 ```
 
-## If as an Expression
+## If sebagai Ungkapan
 
-In V, `if` is an expression and can be used on the right side of an assignment:
+Dalam V, `if` adalah ungkapan dan boleh digunakan di sebelah kanan tugasan:
 
 ```v
 num := 7
-result := if num % 2 == 0 { 'even' } else { 'odd' }
-println(result) // odd
+result := if num % 2 == 0 { 'genap' } else { 'ganjil' }
+println(result) // ganjil
 ```
 
-## Inline Short Form
+## Borang Pendek Sebaris
 
 ```v
 x := 42
-if x > 0 { println('positive') }
+if x > 0 { println('positif') }
 ```
 
-## Condition with Initialization
+## Syarat dengan Permulaan
 
-You can initialize a variable inside an `if` condition:
+Anda boleh memulakan pemboleh ubah dalam syarat `if`:
 
 ```v
 if val := some_function_returning_option() {
-    println('got value: ${val}')
+    println('mendapat nilai: ${val}')
 } else {
-    println('no value')
+    println('tiada nilai')
 }
 ```
 
-## The `in` Operator
+## Pengendali `in`
 
-Use `in` to check membership in arrays or maps:
+Gunakan `in` untuk memeriksa keahlian dalam tatasusunan atau peta:
 
 ```v
 nums := [1, 2, 3]
 if 2 in nums {
-    println('found 2')
+    println('dijumpai 2')
 }
 
 m := {'a': 1, 'b': 2}
 if 'a' in m {
-    println('key exists')
+    println('kunci wujud')
 }
 ```
 
-Use `!in` for the inverse:
+Gunakan `!in` untuk songsangan:
 
 ```v
 if 5 !in nums {
-    println('5 is not in the array')
+    println('5 tidak dalam tatasusunan')
 }
 ```
 
-## FizzBuzz Example
+## Contoh FizzBuzz
 
 ```v
 for n in 1 .. 101 {

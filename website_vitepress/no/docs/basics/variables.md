@@ -1,8 +1,8 @@
-# Variables
+# Variabler
 
-## Declaration and Initialization
+## Deklarering og initialisering
 
-Variables are declared and initialized with `:=`. This is the only way to declare variables in V — they always have an initial value and their type is inferred from the right-hand side.
+Variabler deklareres og initialiseres med `:=`. Dette er den eneste måten å deklarere variabler i V på — de har alltid en startverdi og typen utledes fra høyre side.
 
 ```v
 name := 'Bob'
@@ -13,9 +13,9 @@ println(age)
 println(large_number)
 ```
 
-## Mutable Variables
+## Muterbare variabler
 
-Variables are **immutable by default**. Use `mut` to make a variable mutable:
+Variabler er **uforanderlige som standard**. Bruk `mut` for å gjøre en variabel muterbar:
 
 ```v
 mut age := 20
@@ -24,21 +24,21 @@ age = 21
 println(age)
 ```
 
-> If you try to reassign without `mut`, the compiler will refuse to compile.
+> Hvis du prøver å tilordne på nytt uten `mut`, vil kompilatoren nekte å kompilere.
 
-## Type Conversion
+## Typekonvertering
 
-Use `T(value)` to convert between types:
+Bruk `T(value)` for å konvertere mellom typer:
 
 ```v
 x := 42
-y := f64(x)  // x converted to f64
-z := u8(x)   // x converted to u8
+y := f64(x)  // x konvertert til f64
+z := u8(x)   // x konvertert til u8
 ```
 
-## Multiple Assignment
+## Multippel tilordning
 
-Multiple variables can be changed or swapped in one line:
+Flere variabler kan endres eller byttes på én linje:
 
 ```v
 mut a := 0
@@ -48,9 +48,9 @@ a, b = b, a
 println('${a}, ${b}') // 1, 0
 ```
 
-## Ignoring Values
+## Ignorere verdier
 
-Use `_` to discard a return value:
+Bruk `_` for å forkaste en returverdi:
 
 ```v
 fn foo() (int, int) {
@@ -63,21 +63,21 @@ fn main() {
 }
 ```
 
-## Naming Convention
+## Navnekonvensjon
 
-All variable and function names must use `snake_case`. Type names must use `PascalCase`. The compiler enforces this.
+Alle variabel- og funksjonsnavn må bruke `snake_case`. Typenavn må bruke `PascalCase`. Kompilatoren håndhever dette.
 
-## No Global Variables
+## Ingen globale variabler
 
-V does not allow global variables by default. All variables must be declared inside functions. This leads to more predictable, testable code.
+V tillater ikke globale variabler som standard. Alle variabler må deklareres inne i funksjoner. Dette gir mer forutsigbar og testbar kode.
 
-## No Shadowing
+## Ingen skygging
 
-Variable shadowing is not allowed. Declaring a variable with a name already used in a parent scope is a compile error:
+Variabelskygging er ikke tillatt. Å deklarere en variabel med et navn som allerede er brukt i et foreldreomfang er en kompileringsfeil:
 
 ```v
 fn main() {
     a := 10
-    // a := 20  // ← compile error: redefinition of `a`
+    // a := 20  // ← kompileringsfeil: redefinisjon av `a`
 }
 ```

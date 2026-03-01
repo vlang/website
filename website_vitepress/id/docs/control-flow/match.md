@@ -1,8 +1,8 @@
 # Match
 
-`match` is V's pattern matching statement — more powerful than a C `switch`. It must be exhaustive: every possible value must be handled.
+`match` adalah pernyataan pencocokan pola V — lebih kuat dari `switch` di C. Harus bersifat exhaustive: setiap kemungkinan nilai harus ditangani.
 
-## Basic Usage
+## Penggunaan Dasar
 
 ```v
 x := 3
@@ -15,7 +15,7 @@ match x {
 }
 ```
 
-## Match as an Expression
+## Match sebagai Ekspresi
 
 ```v
 name := 'Bob'
@@ -27,7 +27,7 @@ greeting := match name {
 println(greeting)
 ```
 
-## Matching Multiple Values
+## Mencocokkan Beberapa Nilai
 
 ```v
 n := 5
@@ -38,7 +38,7 @@ match n {
 }
 ```
 
-## Matching Ranges
+## Mencocokkan Rentang
 
 ```v
 score := 72
@@ -52,9 +52,9 @@ grade := match score {
 println(grade) // C
 ```
 
-## Matching Sum Types
+## Mencocokkan Tipe Sum
 
-When matching on a sum type, V gives you access to the inner value with the correct type:
+Saat mencocokkan tipe sum, V memberi Anda akses ke nilai dalam dengan tipe yang benar:
 
 ```v
 type Shape = Circle | Rectangle
@@ -76,7 +76,7 @@ fn area(s Shape) f64 {
 }
 ```
 
-## FizzBuzz with Match
+## FizzBuzz dengan Match
 
 ```v
 for n in 1 .. 101 {

@@ -1,8 +1,8 @@
-# Enums
+# Enum
 
-Enums define a type with a fixed set of named constants.
+Enum mendefinisikan tipe dengan sekumpulan konstanta bernama yang tetap.
 
-## Basic Enum
+## Enum Dasar
 
 ```v
 enum Direction {
@@ -18,7 +18,7 @@ fn main() {
 }
 ```
 
-## Matching on Enums
+## Pencocokan pada Enum
 
 ```v
 enum Color {
@@ -36,9 +36,9 @@ fn describe(c Color) string {
 }
 ```
 
-Notice the shorthand `.variant` syntax when the type can be inferred.
+Perhatikan sintaks singkat `.variant` ketika tipe dapat disimpulkan.
 
-## Enums with Custom Values
+## Enum dengan Nilai Kustom
 
 ```v
 enum StatusCode {
@@ -53,7 +53,7 @@ fn main() {
 }
 ```
 
-## Enum Methods
+## Metode Enum
 
 ```v
 enum Planet {
@@ -71,7 +71,7 @@ fn (p Planet) is_inner() bool {
 }
 ```
 
-## Iterating Over Enums
+## Iterasi atas Enum
 
 ```v
 enum Season {
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-## Flag Enums (Bit Fields)
+## Enum Flag (Bidang Bit)
 
 ```v
 @[flag]

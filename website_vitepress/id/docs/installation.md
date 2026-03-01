@@ -1,37 +1,37 @@
-# Installation
+# Instalasi
 
-## Install from Source
+## Instal dari Sumber
 
-The recommended way to install V is from source. It only takes a few seconds:
+Cara yang direkomendasikan untuk menginstal V adalah dari sumber. Hanya membutuhkan beberapa detik:
 
 ```bash
 git clone --depth=1 https://github.com/vlang/v && cd v && make
 ```
 
-On Windows, use `make.bat` instead of `make`.
+Di Windows, gunakan `make.bat` sebagai pengganti `make`.
 
 ## Symlink V
 
-After building, you can symlink V so it's available everywhere:
+Setelah membangun, Anda dapat membuat symlink V agar tersedia di mana saja:
 
 ```bash
 sudo ./v symlink
 ```
 
-On Windows, run `v.exe symlink` from an elevated command prompt.
+Di Windows, jalankan `v.exe symlink` dari command prompt dengan hak administrator.
 
-## Verify Installation
+## Verifikasi Instalasi
 
 ```bash
 v version
 ```
 
-You should see output like `V 0.5.0 ...`.
+Anda akan melihat output seperti `V 0.5.0 ...`.
 
-## Download Pre-built Binaries
+## Unduh Binary Siap Pakai
 
-Pre-built binaries are available for all major platforms on the
-[GitHub Releases](https://github.com/vlang/v/releases/latest) page:
+Binary siap pakai tersedia untuk semua platform utama di halaman
+[GitHub Releases](https://github.com/vlang/v/releases/latest):
 
 | Platform | File |
 | --- | --- |
@@ -40,28 +40,28 @@ Pre-built binaries are available for all major platforms on the
 | macOS (Intel) | `v_macos_x86_64.zip` |
 | Windows | `v_windows.zip` |
 
-## Upgrading V
+## Memperbarui V
 
-To upgrade V to the latest version, run:
+Untuk memperbarui V ke versi terbaru, jalankan:
 
 ```bash
 v up
 ```
 
-## Running a Program
+## Menjalankan Program
 
 ```bash
 v run hello.v
 ```
 
-Or compile it:
+Atau kompilasi terlebih dahulu:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-To run all `.v` files in a directory:
+Untuk menjalankan semua file `.v` dalam suatu direktori:
 
 ```bash
 v run .

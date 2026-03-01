@@ -1,8 +1,8 @@
 # JSON
 
-V has built-in JSON encoding and decoding in the `json` module — no external library needed.
+V mempunyai pengekodan dan penyahkodan JSON terbina dalam dalam modul `json` — tiada pustaka luaran diperlukan.
 
-## Decoding JSON
+## Penyahkodan JSON
 
 ```v
 import json
@@ -18,7 +18,7 @@ fn main() {
     s := '[{"name":"Frodo","age":25},{"name":"Bobby","age":10}]'
 
     mut users := json.decode([]User, s) or {
-        eprintln('Failed to parse json')
+        eprintln('Gagal menghurai json')
         return
     }
 
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Encoding JSON
+## Pengekodan JSON
 
 ```v
 import json
@@ -45,9 +45,9 @@ fn main() {
 }
 ```
 
-## Custom Field Names
+## Nama Medan Tersuai
 
-Use the `@[json: 'field_name']` attribute to map struct fields to different JSON keys:
+Gunakan atribut `@[json: 'field_name']` untuk memetakan medan struct kepada kunci JSON yang berbeza:
 
 ```v
 import json
@@ -66,28 +66,28 @@ fn main() {
 }
 ```
 
-## Skipping Fields
+## Melangkau Medan
 
-Use `@[json: '-']` to exclude a field from JSON serialization:
+Gunakan `@[json: '-']` untuk mengecualikan medan daripada pensirian JSON:
 
 ```v
 struct User {
     name     string
     email    string
-    password string @[json: '-']  // never included in JSON output
+    password string @[json: '-']  // tidak pernah disertakan dalam output JSON
 }
 ```
 
-## Optional / Nullable Fields
+## Medan Pilihan / Boleh Null
 
-Use option types for fields that may be absent in the JSON:
+Gunakan jenis pilihan untuk medan yang mungkin tidak hadir dalam JSON:
 
 ```v
 import json
 
 struct Profile {
     name   string
-    bio    ?string   // optional — may be null or absent
+    bio    ?string   // pilihan — mungkin null atau tidak hadir
     age    ?int
 }
 
@@ -99,7 +99,7 @@ fn main() {
 }
 ```
 
-## Nested Structs
+## Struct Bersarang
 
 ```v
 import json

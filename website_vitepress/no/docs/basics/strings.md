@@ -1,31 +1,31 @@
-# Strings
+# Strenger
 
-In V, strings are encoded in **UTF-8** and are **immutable** by default.
+I V er strenger kodet i **UTF-8** og er **uforanderlige** som standard.
 
-## Basic Usage
+## Grunnleggende bruk
 
 ```v
 s    := 'hello 🌎'
 name := 'Bob'
 
-println(s.len)         // 10  (byte count)
+println(s.len)         // 10  (antall byte)
 println(name.len)      // 3
-println(name[0])       // 66  (u8 — byte value of 'B')
-println(name[1..3])    // ob  (slicing returns a string)
+println(name[0])       // 66  (u8 — byteverdi av 'B')
+println(name[1..3])    // ob  (slicing returnerer en streng)
 ```
 
-## String Interpolation
+## Strenginterpolasjon
 
-Use `${}` to embed expressions inside strings:
+Bruk `${}` for å bygge inn uttrykk i strenger:
 
 ```v
 name := 'Alice'
 age  := 30
-println('Hello, ${name}! You are ${age} years old.')
-println('Is adult: ${age >= 18}')
+println('Hei, ${name}! Du er ${age} år gammel.')
+println('Er voksen: ${age >= 18}')
 ```
 
-## Multiline Strings
+## Flerlinjestrenger
 
 ```v
 text := 'line one
@@ -33,16 +33,16 @@ line two
 line three'
 ```
 
-## Raw Strings
+## Råstrenger
 
-Prepend `r` to disable escape processing:
+Sett `r` foran for å deaktivere escape-behandling:
 
 ```v
-s := r'hello\nworld'  // \n is kept as two characters
+s := r'hello\nworld'  // \n beholdes som to tegn
 println(s)            // hello\nworld
 ```
 
-## String Methods
+## Strengmetoder
 
 ```v
 s := 'Hello, World!'
@@ -54,10 +54,10 @@ println(s.starts_with('Hello')) // true
 println(s.ends_with('!'))  // true
 println(s.replace('World', 'V')) // Hello, V!
 println(s.split(', '))     // ['Hello', 'World!']
-println(s.trim_space())    // Hello, World!  (removes leading/trailing whitespace)
+println(s.trim_space())    // Hello, World!  (fjerner ledende/etterfølgende mellomrom)
 ```
 
-## Converting to Numbers
+## Konvertere til tall
 
 ```v
 s := '42'
@@ -69,20 +69,20 @@ assert '0o10'.int() == 8
 assert '0b1010'.int() == 10
 ```
 
-## Runes (Unicode Code Points)
+## Runer (Unicode-kodepunkter)
 
-To work with Unicode characters rather than raw bytes, use `runes()`:
+For å arbeide med Unicode-tegn i stedet for rå byte, bruk `runes()`:
 
 ```v
 mut s := 'hello 🌎'
 r := s.runes()
-println(r.len)    // 7  (7 Unicode code points, not 10 bytes)
+println(r.len)    // 7  (7 Unicode-kodepunkter, ikke 10 byte)
 println(r[6])     // 🌎
 ```
 
-## String Builder
+## Strengbygger
 
-For efficient string concatenation, use `strings.Builder`:
+For effektiv strengsammenkobling, bruk `strings.Builder`:
 
 ```v
 import strings

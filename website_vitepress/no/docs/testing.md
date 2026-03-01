@@ -1,10 +1,10 @@
 # Testing
 
-V has built-in testing support. No test framework or external library needed.
+V har innebygd testestøtte. Ingen testramme eller ekstern pakke nødvendig.
 
-## Writing Tests
+## Skrive tester
 
-Test functions must start with `test_` and live in files ending with `_test.v`:
+Testfunksjoner må starte med `test_` og være i filer som slutter med `_test.v`:
 
 ```v
 // math_test.v
@@ -24,17 +24,17 @@ fn test_add_large_numbers() {
 }
 ```
 
-Run tests with:
+Kjør tester med:
 
 ```bash
 v test math_test.v
-# or run all tests in a directory:
+# eller kjør alle tester i en mappe:
 v test .
 ```
 
-## Assertions
+## Påstander
 
-Use `assert` to check conditions. A failing assertion prints the values of both sides:
+Bruk `assert` for å sjekke betingelser. En mislykket påstand skriver ut verdiene på begge sider:
 
 ```v
 fn test_string_ops() {
@@ -45,34 +45,34 @@ fn test_string_ops() {
 }
 ```
 
-## Test Setup and Teardown
+## Oppsett og nedrigging av tester
 
 ```v
-// Use testsuite_begin and testsuite_end for module-level setup/teardown
+// Bruk testsuite_begin og testsuite_end for oppsett/nedrigging på modulnivå
 fn testsuite_begin() {
-    // runs once before all tests in the file
-    println('Setting up test suite...')
+    // kjører én gang før alle tester i filen
+    println('Setter opp testpakke...')
 }
 
 fn testsuite_end() {
-    // runs once after all tests in the file
-    println('Tearing down test suite...')
+    // kjører én gang etter alle tester i filen
+    println('Rydder opp testpakke...')
 }
 ```
 
-## Testing Error Cases
+## Teste feiltilfeller
 
 ```v
 fn safe_divide(a f64, b f64) !f64 {
     if b == 0 {
-        return error('division by zero')
+        return error('divisjon med null')
     }
     return a / b
 }
 
 fn test_divide_by_zero() {
     result := safe_divide(10, 0) or { err.msg() }
-    assert result == 'division by zero'
+    assert result == 'divisjon med null'
 }
 
 fn test_divide_normal() {
@@ -81,22 +81,22 @@ fn test_divide_normal() {
 }
 ```
 
-## Running Specific Tests
+## Kjøre spesifikke tester
 
 ```bash
-# Run a single test file
+# Kjør en enkelt testfil
 v test mypackage/foo_test.v
 
-# Run tests matching a pattern
+# Kjør tester som matcher et mønster
 v test -run test_add .
 
-# Run with verbose output
+# Kjør med detaljert utdata
 v test -v .
 ```
 
-## Table-driven Tests
+## Tabellbaserte tester
 
-V doesn't have a built-in table-driven test helper, but you can do it manually:
+V har ikke en innebygd tabellbasert testhjelper, men du kan gjøre det manuelt:
 
 ```v
 fn test_add_table() {
@@ -112,9 +112,9 @@ fn test_add_table() {
 }
 ```
 
-## Code Coverage
+## Kodedekning
 
-Generate a coverage report:
+Generer en dekningsrapport:
 
 ```bash
 v -coverage ./coverage_output test .

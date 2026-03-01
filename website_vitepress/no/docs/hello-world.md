@@ -1,8 +1,8 @@
 # Hello World
 
-## Your First V Program
+## Ditt første V-program
 
-Create a file named `hello.v`:
+Opprett en fil kalt `hello.v`:
 
 ```v
 fn main() {
@@ -10,61 +10,61 @@ fn main() {
 }
 ```
 
-Run it:
+Kjør det:
 
 ```bash
 v run hello.v
 ```
 
-Or compile and run separately:
+Eller kompiler og kjør separat:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-## Skipping `fn main()`
+## Utelate `fn main()`
 
-For single-file scripts, `fn main()` is optional:
+For enkeltfil-skript er `fn main()` valgfritt:
 
 ```v
 println('Hello, World!')
 ```
 
-This is useful for small programs and learning the language.
+Dette er nyttig for små programmer og for å lære språket.
 
-## Running Multiple Files
+## Kjøre flere filer
 
-If your project has multiple `.v` files in a folder, run all of them at once:
+Hvis prosjektet ditt har flere `.v`-filer i en mappe, kjør dem alle på én gang:
 
 ```bash
 v run .
 ```
 
-## Comments
+## Kommentarer
 
 ```v
-// This is a single line comment.
+// Dette er en enkeltlinjekommentar.
 /*
-  This is a multiline comment.
-  /* It can be nested. */
+  Dette er en flerlinjekommentar.
+  /* Den kan være nestet. */
 */
 ```
 
-## A Slightly Bigger Example
+## Et litt større eksempel
 
 ```v
-// fibonacci.v — compute Fibonacci numbers up to a given rank
+// fibonacci.v — beregn Fibonacci-tall opp til en gitt rang
 const args = arguments()
 
 fn main() {
     if args.len != 2 {
-        println('usage: fibonacci [rank]')
+        println('bruk: fibonacci [rang]')
         return
     }
     stop := args[1].int()
     if stop > 92 {
-        println('rank must be 92 or less')
+        println('rang må være 92 eller mindre')
         return
     }
     mut a := i64(0)

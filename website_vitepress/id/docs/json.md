@@ -1,6 +1,6 @@
 # JSON
 
-V has built-in JSON encoding and decoding in the `json` module — no external library needed.
+V memiliki encoding dan decoding JSON bawaan dalam modul `json` — tidak perlu pustaka eksternal.
 
 ## Decoding JSON
 
@@ -45,9 +45,9 @@ fn main() {
 }
 ```
 
-## Custom Field Names
+## Nama Field Kustom
 
-Use the `@[json: 'field_name']` attribute to map struct fields to different JSON keys:
+Gunakan atribut `@[json: 'field_name']` untuk memetakan field struct ke kunci JSON yang berbeda:
 
 ```v
 import json
@@ -66,28 +66,28 @@ fn main() {
 }
 ```
 
-## Skipping Fields
+## Melewati Field
 
-Use `@[json: '-']` to exclude a field from JSON serialization:
+Gunakan `@[json: '-']` untuk mengecualikan sebuah field dari serialisasi JSON:
 
 ```v
 struct User {
     name     string
     email    string
-    password string @[json: '-']  // never included in JSON output
+    password string @[json: '-']  // tidak pernah disertakan dalam output JSON
 }
 ```
 
-## Optional / Nullable Fields
+## Field Opsional / Nullable
 
-Use option types for fields that may be absent in the JSON:
+Gunakan tipe option untuk field yang mungkin tidak ada dalam JSON:
 
 ```v
 import json
 
 struct Profile {
     name   string
-    bio    ?string   // optional — may be null or absent
+    bio    ?string   // opsional — mungkin null atau tidak ada
     age    ?int
 }
 
@@ -99,7 +99,7 @@ fn main() {
 }
 ```
 
-## Nested Structs
+## Struct Bersarang
 
 ```v
 import json
