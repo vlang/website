@@ -1,6 +1,6 @@
-# Functions
+# 函数
 
-## Basic Syntax
+## 基本语法
 
 ```v
 fn main() {
@@ -17,13 +17,13 @@ fn sub(x int, y int) int {
 }
 ```
 
-The return type is specified **after** the parameter list. If the function returns nothing, the return type is omitted.
+返回类型写在参数列表**之后**。如果函数没有返回值，则省略返回类型。
 
-## Hoisting
+## 提升
 
-Functions can be used before they are declared. V hoists all declarations, so there is no need for header files or forward declarations.
+函数可以在声明之前使用。V 会提升所有声明，因此不需要头文件或前向声明。
 
-## Multiple Return Values
+## 多返回值
 
 ```v
 fn foo() (int, int) {
@@ -33,12 +33,12 @@ fn foo() (int, int) {
 a, b := foo()
 println(a) // 2
 println(b) // 3
-c, _ := foo() // ignore the second value with `_`
+c, _ := foo() // 用 `_` 忽略第二个值
 ```
 
-## Visibility
+## 可见性
 
-Functions are **private** by default. Use `pub` to export them:
+函数默认是**私有的**。使用 `pub` 导出：
 
 ```v
 pub fn public_function() {
@@ -48,13 +48,13 @@ fn private_function() {
 }
 ```
 
-## No Overloading
+## 不支持重载
 
-Functions cannot be overloaded. This keeps the code unambiguous and easy to read.
+函数不能重载。这使代码无歧义、易于阅读。
 
-## Methods
+## 方法
 
-Functions can be attached to types:
+函数可以附加到类型上：
 
 ```v
 struct User {
@@ -78,9 +78,9 @@ fn main() {
 }
 ```
 
-## High-Order Functions
+## 高阶函数
 
-Functions are first-class values and can be passed to other functions:
+函数是一等值，可以传递给其他函数：
 
 ```v
 fn apply(arr []int, f fn(int) int) []int {
@@ -102,7 +102,7 @@ fn main() {
 }
 ```
 
-## Anonymous Functions
+## 匿名函数
 
 ```v
 fn main() {

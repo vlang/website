@@ -1,67 +1,67 @@
-# Installation
+# Instalación
 
-## Install from Source
+## Instalar desde el Código Fuente
 
-The recommended way to install V is from source. It only takes a few seconds:
+La forma recomendada de instalar V es desde el código fuente. Solo toma unos segundos:
 
 ```bash
 git clone --depth=1 https://github.com/vlang/v && cd v && make
 ```
 
-On Windows, use `make.bat` instead of `make`.
+En Windows, usa `make.bat` en lugar de `make`.
 
-## Symlink V
+## Crear un Enlace Simbólico para V
 
-After building, you can symlink V so it's available everywhere:
+Después de compilar, puedes crear un enlace simbólico para que V esté disponible en cualquier lugar:
 
 ```bash
 sudo ./v symlink
 ```
 
-On Windows, run `v.exe symlink` from an elevated command prompt.
+En Windows, ejecuta `v.exe symlink` desde un símbolo del sistema con privilegios elevados.
 
-## Verify Installation
+## Verificar la Instalación
 
 ```bash
 v version
 ```
 
-You should see output like `V 0.5.0 ...`.
+Deberías ver una salida como `V 0.5.0 ...`.
 
-## Download Pre-built Binaries
+## Descargar Binarios Precompilados
 
-Pre-built binaries are available for all major platforms on the
-[GitHub Releases](https://github.com/vlang/v/releases/latest) page:
+Los binarios precompilados están disponibles para todas las plataformas principales en la página de
+[Versiones de GitHub](https://github.com/vlang/v/releases/latest):
 
-| Platform | File |
+| Plataforma | Archivo |
 | --- | --- |
 | Linux (x86_64) | `v_linux.zip` |
 | macOS (Apple Silicon) | `v_macos_arm64.zip` |
 | macOS (Intel) | `v_macos_x86_64.zip` |
 | Windows | `v_windows.zip` |
 
-## Upgrading V
+## Actualizar V
 
-To upgrade V to the latest version, run:
+Para actualizar V a la última versión, ejecuta:
 
 ```bash
 v up
 ```
 
-## Running a Program
+## Ejecutar un Programa
 
 ```bash
 v run hello.v
 ```
 
-Or compile it:
+O compílalo:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-To run all `.v` files in a directory:
+Para ejecutar todos los archivos `.v` en un directorio:
 
 ```bash
 v run .

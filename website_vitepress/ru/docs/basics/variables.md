@@ -1,8 +1,8 @@
-# Variables
+# Переменные
 
-## Declaration and Initialization
+## Объявление и инициализация
 
-Variables are declared and initialized with `:=`. This is the only way to declare variables in V — they always have an initial value and their type is inferred from the right-hand side.
+Переменные объявляются и инициализируются с помощью `:=`. Это единственный способ объявления переменных в V — они всегда имеют начальное значение, а их тип выводится из правой части.
 
 ```v
 name := 'Bob'
@@ -13,9 +13,9 @@ println(age)
 println(large_number)
 ```
 
-## Mutable Variables
+## Изменяемые переменные
 
-Variables are **immutable by default**. Use `mut` to make a variable mutable:
+Переменные **неизменяемы по умолчанию**. Используйте `mut` для создания изменяемой переменной:
 
 ```v
 mut age := 20
@@ -24,21 +24,21 @@ age = 21
 println(age)
 ```
 
-> If you try to reassign without `mut`, the compiler will refuse to compile.
+> Если попытаться переприсвоить значение без `mut`, компилятор откажет в компиляции.
 
-## Type Conversion
+## Преобразование типов
 
-Use `T(value)` to convert between types:
+Используйте `T(value)` для преобразования между типами:
 
 ```v
 x := 42
-y := f64(x)  // x converted to f64
-z := u8(x)   // x converted to u8
+y := f64(x)  // x преобразован в f64
+z := u8(x)   // x преобразован в u8
 ```
 
-## Multiple Assignment
+## Множественное присваивание
 
-Multiple variables can be changed or swapped in one line:
+Несколько переменных можно изменить или поменять местами в одной строке:
 
 ```v
 mut a := 0
@@ -48,9 +48,9 @@ a, b = b, a
 println('${a}, ${b}') // 1, 0
 ```
 
-## Ignoring Values
+## Игнорирование значений
 
-Use `_` to discard a return value:
+Используйте `_` для отбрасывания возвращаемого значения:
 
 ```v
 fn foo() (int, int) {
@@ -63,21 +63,21 @@ fn main() {
 }
 ```
 
-## Naming Convention
+## Соглашение об именовании
 
-All variable and function names must use `snake_case`. Type names must use `PascalCase`. The compiler enforces this.
+Все имена переменных и функций должны использовать `snake_case`. Имена типов должны использовать `PascalCase`. Компилятор вынуждает это правило.
 
-## No Global Variables
+## Отсутствие глобальных переменных
 
-V does not allow global variables by default. All variables must be declared inside functions. This leads to more predictable, testable code.
+V по умолчанию не допускает глобальные переменные. Все переменные должны быть объявлены внутри функций. Это ведёт к более предсказуемому и тестируемому коду.
 
-## No Shadowing
+## Отсутствие затенения
 
-Variable shadowing is not allowed. Declaring a variable with a name already used in a parent scope is a compile error:
+Затенение переменных не допускается. Объявление переменной с именем, уже использованным в родительской области, является ошибкой компиляции:
 
 ```v
 fn main() {
     a := 10
-    // a := 20  // ← compile error: redefinition of `a`
+    // a := 20  // ← ошибка компиляции: redefinition of `a`
 }
 ```

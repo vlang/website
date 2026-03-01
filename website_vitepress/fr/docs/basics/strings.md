@@ -1,48 +1,48 @@
-# Strings
+# Chaînes de caractères
 
-In V, strings are encoded in **UTF-8** and are **immutable** by default.
+En V, les chaînes sont encodées en **UTF-8** et sont **immuables** par défaut.
 
-## Basic Usage
+## Utilisation de base
 
 ```v
 s    := 'hello 🌎'
 name := 'Bob'
 
-println(s.len)         // 10  (byte count)
+println(s.len)         // 10  (nombre d'octets)
 println(name.len)      // 3
-println(name[0])       // 66  (u8 — byte value of 'B')
-println(name[1..3])    // ob  (slicing returns a string)
+println(name[0])       // 66  (u8 — valeur d'octet de 'B')
+println(name[1..3])    // ob  (le slicing retourne une chaîne)
 ```
 
-## String Interpolation
+## Interpolation de chaînes
 
-Use `${}` to embed expressions inside strings:
+Utilisez `${}` pour incorporer des expressions dans les chaînes :
 
 ```v
 name := 'Alice'
 age  := 30
-println('Hello, ${name}! You are ${age} years old.')
-println('Is adult: ${age >= 18}')
+println('Bonjour, ${name} ! Vous avez ${age} ans.')
+println('Majeur : ${age >= 18}')
 ```
 
-## Multiline Strings
+## Chaînes multilignes
 
 ```v
-text := 'line one
-line two
-line three'
+text := 'ligne un
+ligne deux
+ligne trois'
 ```
 
-## Raw Strings
+## Chaînes brutes
 
-Prepend `r` to disable escape processing:
+Préfixez avec `r` pour désactiver le traitement des séquences d'échappement :
 
 ```v
-s := r'hello\nworld'  // \n is kept as two characters
+s := r'hello\nworld'  // \n est conservé comme deux caractères
 println(s)            // hello\nworld
 ```
 
-## String Methods
+## Méthodes de chaînes
 
 ```v
 s := 'Hello, World!'
@@ -54,10 +54,10 @@ println(s.starts_with('Hello')) // true
 println(s.ends_with('!'))  // true
 println(s.replace('World', 'V')) // Hello, V!
 println(s.split(', '))     // ['Hello', 'World!']
-println(s.trim_space())    // Hello, World!  (removes leading/trailing whitespace)
+println(s.trim_space())    // Hello, World!  (supprime les espaces en début/fin)
 ```
 
-## Converting to Numbers
+## Conversion en nombres
 
 ```v
 s := '42'
@@ -69,20 +69,20 @@ assert '0o10'.int() == 8
 assert '0b1010'.int() == 10
 ```
 
-## Runes (Unicode Code Points)
+## Runes (Points de code Unicode)
 
-To work with Unicode characters rather than raw bytes, use `runes()`:
+Pour travailler avec des caractères Unicode plutôt qu'avec des octets bruts, utilisez `runes()` :
 
 ```v
 mut s := 'hello 🌎'
 r := s.runes()
-println(r.len)    // 7  (7 Unicode code points, not 10 bytes)
+println(r.len)    // 7  (7 points de code Unicode, pas 10 octets)
 println(r[6])     // 🌎
 ```
 
-## String Builder
+## Constructeur de chaînes
 
-For efficient string concatenation, use `strings.Builder`:
+Pour une concaténation efficace de chaînes, utilisez `strings.Builder` :
 
 ```v
 import strings

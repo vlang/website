@@ -1,8 +1,8 @@
 # Enums
 
-Enums define a type with a fixed set of named constants.
+Enums definieren einen Typ mit einer festen Menge benannter Konstanten.
 
-## Basic Enum
+## Einfaches Enum
 
 ```v
 enum Direction {
@@ -18,7 +18,7 @@ fn main() {
 }
 ```
 
-## Matching on Enums
+## Auf Enums matchen
 
 ```v
 enum Color {
@@ -36,9 +36,9 @@ fn describe(c Color) string {
 }
 ```
 
-Notice the shorthand `.variant` syntax when the type can be inferred.
+Beachte die Kurzform `.variant`, wenn der Typ abgeleitet werden kann.
 
-## Enums with Custom Values
+## Enums mit benutzerdefinierten Werten
 
 ```v
 enum StatusCode {
@@ -53,7 +53,7 @@ fn main() {
 }
 ```
 
-## Enum Methods
+## Enum-Methoden
 
 ```v
 enum Planet {
@@ -71,7 +71,7 @@ fn (p Planet) is_inner() bool {
 }
 ```
 
-## Iterating Over Enums
+## Über Enums iterieren
 
 ```v
 enum Season {
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-## Flag Enums (Bit Fields)
+## Flag-Enums (Bit-Felder)
 
 ```v
 @[flag]

@@ -1,8 +1,8 @@
-# Variables
+# Variablen
 
-## Declaration and Initialization
+## Deklaration und Initialisierung
 
-Variables are declared and initialized with `:=`. This is the only way to declare variables in V — they always have an initial value and their type is inferred from the right-hand side.
+Variablen werden mit `:=` deklariert und initialisiert. Dies ist der einzige Weg, Variablen in V zu deklarieren — sie haben immer einen Anfangswert und ihr Typ wird von der rechten Seite abgeleitet.
 
 ```v
 name := 'Bob'
@@ -13,9 +13,9 @@ println(age)
 println(large_number)
 ```
 
-## Mutable Variables
+## Veränderliche Variablen
 
-Variables are **immutable by default**. Use `mut` to make a variable mutable:
+Variablen sind standardmäßig **unveränderlich**. Verwende `mut`, um eine Variable veränderlich zu machen:
 
 ```v
 mut age := 20
@@ -24,21 +24,21 @@ age = 21
 println(age)
 ```
 
-> If you try to reassign without `mut`, the compiler will refuse to compile.
+> Wenn du versuchst, ohne `mut` neu zuzuweisen, lehnt der Compiler das ab.
 
-## Type Conversion
+## Typkonvertierung
 
-Use `T(value)` to convert between types:
+Verwende `T(value)`, um zwischen Typen zu konvertieren:
 
 ```v
 x := 42
-y := f64(x)  // x converted to f64
-z := u8(x)   // x converted to u8
+y := f64(x)  // x nach f64 konvertiert
+z := u8(x)   // x nach u8 konvertiert
 ```
 
-## Multiple Assignment
+## Mehrfachzuweisung
 
-Multiple variables can be changed or swapped in one line:
+Mehrere Variablen können in einer Zeile geändert oder getauscht werden:
 
 ```v
 mut a := 0
@@ -48,9 +48,9 @@ a, b = b, a
 println('${a}, ${b}') // 1, 0
 ```
 
-## Ignoring Values
+## Werte ignorieren
 
-Use `_` to discard a return value:
+Verwende `_`, um einen Rückgabewert zu verwerfen:
 
 ```v
 fn foo() (int, int) {
@@ -63,21 +63,21 @@ fn main() {
 }
 ```
 
-## Naming Convention
+## Namenskonvention
 
-All variable and function names must use `snake_case`. Type names must use `PascalCase`. The compiler enforces this.
+Alle Variablen- und Funktionsnamen müssen `snake_case` verwenden. Typnamen müssen `PascalCase` verwenden. Der Compiler erzwingt dies.
 
-## No Global Variables
+## Keine globalen Variablen
 
-V does not allow global variables by default. All variables must be declared inside functions. This leads to more predictable, testable code.
+V erlaubt standardmäßig keine globalen Variablen. Alle Variablen müssen innerhalb von Funktionen deklariert werden. Dies führt zu besser vorhersehbarem, testbarem Code.
 
-## No Shadowing
+## Kein Shadowing
 
-Variable shadowing is not allowed. Declaring a variable with a name already used in a parent scope is a compile error:
+Variablen-Shadowing ist nicht erlaubt. Eine Variable mit einem Namen zu deklarieren, der bereits in einem übergeordneten Bereich verwendet wird, ist ein Kompilierfehler:
 
 ```v
 fn main() {
     a := 10
-    // a := 20  // ← compile error: redefinition of `a`
+    // a := 20  // <- Kompilierfehler: Neudefinition von `a`
 }
 ```

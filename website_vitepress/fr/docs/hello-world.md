@@ -1,8 +1,8 @@
 # Hello World
 
-## Your First V Program
+## Votre premier programme V
 
-Create a file named `hello.v`:
+Créez un fichier nommé `hello.v` :
 
 ```v
 fn main() {
@@ -10,61 +10,61 @@ fn main() {
 }
 ```
 
-Run it:
+Exécutez-le :
 
 ```bash
 v run hello.v
 ```
 
-Or compile and run separately:
+Ou compilez et exécutez séparément :
 
 ```bash
 v hello.v
 ./hello
 ```
 
-## Skipping `fn main()`
+## Omettre `fn main()`
 
-For single-file scripts, `fn main()` is optional:
+Pour les scripts à fichier unique, `fn main()` est optionnel :
 
 ```v
 println('Hello, World!')
 ```
 
-This is useful for small programs and learning the language.
+Cela est utile pour les petits programmes et l'apprentissage du langage.
 
-## Running Multiple Files
+## Exécuter plusieurs fichiers
 
-If your project has multiple `.v` files in a folder, run all of them at once:
+Si votre projet contient plusieurs fichiers `.v` dans un dossier, exécutez-les tous en même temps :
 
 ```bash
 v run .
 ```
 
-## Comments
+## Commentaires
 
 ```v
-// This is a single line comment.
+// Ceci est un commentaire sur une seule ligne.
 /*
-  This is a multiline comment.
-  /* It can be nested. */
+  Ceci est un commentaire multiligne.
+  /* Il peut être imbriqué. */
 */
 ```
 
-## A Slightly Bigger Example
+## Un exemple un peu plus grand
 
 ```v
-// fibonacci.v — compute Fibonacci numbers up to a given rank
+// fibonacci.v — calcule les nombres de Fibonacci jusqu'à un rang donné
 const args = arguments()
 
 fn main() {
     if args.len != 2 {
-        println('usage: fibonacci [rank]')
+        println('usage: fibonacci [rang]')
         return
     }
     stop := args[1].int()
     if stop > 92 {
-        println('rank must be 92 or less')
+        println('le rang doit être 92 ou moins')
         return
     }
     mut a := i64(0)

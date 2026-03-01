@@ -1,16 +1,16 @@
-# Concurrency
+# Concurrencia
 
-V uses lightweight threads (goroutines) to run work concurrently. The `spawn` keyword starts a function in a new thread.
+V usa hilos ligeros (goroutines) para ejecutar trabajo de forma concurrente. La palabra clave `spawn` inicia una función en un nuevo hilo.
 
-## Basic Spawning
+## Lanzamiento Básico
 
 ```v
 import time
 
 fn expensive_computing(id int, duration int) {
-    println('Starting task ${id}...')
+    println('Iniciando tarea ${id}...')
     time.sleep(duration * time.millisecond)
-    println('Finished task ${id} in ${duration} ms')
+    println('Tarea ${id} finalizada en ${duration} ms')
 }
 
 fn main() {
@@ -19,15 +19,15 @@ fn main() {
     threads << spawn expensive_computing(2, 500)
     threads << spawn expensive_computing(3, 1000)
 
-    // Wait for all threads to finish
+    // Esperar a que todos los hilos terminen
     threads.wait()
-    println('All jobs finished!')
+    println('¡Todos los trabajos han finalizado!')
 }
 ```
 
-## Getting Return Values
+## Obtener Valores de Retorno
 
-Threads can return values. Calling `.wait()` on a `[]thread T` returns `[]T`:
+Los hilos pueden devolver valores. Llamar `.wait()` en un `[]thread T` devuelve `[]T`:
 
 ```v
 fn expensive_computing(i int) int {
@@ -40,12 +40,12 @@ fn main() {
         threads << spawn expensive_computing(i)
     }
     results := threads.wait()
-    println('All jobs finished: ${results}')
+    println('Todos los trabajos terminados: ${results}')
     // [1, 4, 9, 16, 25, 36, 49, 64, 81]
 }
 ```
 
-## Concurrent HTTP Requests
+## Peticiones HTTP Concurrentes
 
 ```v
 import net.http
@@ -55,14 +55,14 @@ import time
 fn fetch_time(mut wg sync.WaitGroup) {
     start := time.ticks()
     data := http.get('https://vlang.io/utc_now') or { return }
-    println('Time request: ${time.ticks() - start} ms — ${data.body}')
+    println('Petición de tiempo: ${time.ticks() - start} ms — ${data.body}')
     wg.done()
 }
 
 fn fetch_ip(mut wg sync.WaitGroup) {
     start := time.ticks()
     data := http.get('https://api.ipify.org') or { return }
-    println('IP request: ${time.ticks() - start} ms — ${data.body}')
+    println('Petición de IP: ${time.ticks() - start} ms — ${data.body}')
     wg.done()
 }
 
@@ -75,14 +75,14 @@ fn main() {
 }
 ```
 
-## Channels
+## Canales
 
-Channels allow safe communication between threads:
+Los canales permiten la comunicación segura entre hilos:
 
 ```v
 fn producer(ch chan int) {
     for i in 1 .. 6 {
-        ch <- i  // send to channel
+        ch <- i  // enviar al canal
     }
     ch.close()
 }
@@ -99,7 +99,7 @@ fn main() {
 
 ## Mutexes
 
-Use `sync.Mutex` to protect shared state:
+Usa `sync.Mutex` para proteger el estado compartido:
 
 ```v
 import sync
@@ -119,7 +119,7 @@ fn (mut c Counter) increment() {
 
 ## `defer`
 
-`defer` executes a statement when the surrounding function returns — useful for cleanup:
+`defer` ejecuta una sentencia cuando la función que la contiene retorna — útil para limpieza:
 
 ```v
 import os
@@ -128,7 +128,7 @@ fn process_file(path string) {
     f := os.open(path) or { return }
     defer { f.close() }
 
-    // use f — it will be closed automatically
+    // usar f — se cerrará automáticamente
     println(f.read_to_string() or { '' })
 }
 ```

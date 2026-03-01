@@ -1,22 +1,22 @@
-# Strings
+# Строки
 
-In V, strings are encoded in **UTF-8** and are **immutable** by default.
+В V строки кодируются в **UTF-8** и **неизменяемы** по умолчанию.
 
-## Basic Usage
+## Базовое использование
 
 ```v
 s    := 'hello 🌎'
 name := 'Bob'
 
-println(s.len)         // 10  (byte count)
+println(s.len)         // 10  (количество байт)
 println(name.len)      // 3
-println(name[0])       // 66  (u8 — byte value of 'B')
-println(name[1..3])    // ob  (slicing returns a string)
+println(name[0])       // 66  (u8 — байтовое значение 'B')
+println(name[1..3])    // ob  (срез возвращает строку)
 ```
 
-## String Interpolation
+## Интерполяция строк
 
-Use `${}` to embed expressions inside strings:
+Используйте `${}` для вставки выражений внутрь строк:
 
 ```v
 name := 'Alice'
@@ -25,7 +25,7 @@ println('Hello, ${name}! You are ${age} years old.')
 println('Is adult: ${age >= 18}')
 ```
 
-## Multiline Strings
+## Многострочные строки
 
 ```v
 text := 'line one
@@ -33,16 +33,16 @@ line two
 line three'
 ```
 
-## Raw Strings
+## Сырые строки
 
-Prepend `r` to disable escape processing:
+Добавьте `r` перед строкой, чтобы отключить обработку спецсимволов:
 
 ```v
-s := r'hello\nworld'  // \n is kept as two characters
+s := r'hello\nworld'  // \n остаётся как два символа
 println(s)            // hello\nworld
 ```
 
-## String Methods
+## Методы строк
 
 ```v
 s := 'Hello, World!'
@@ -54,10 +54,10 @@ println(s.starts_with('Hello')) // true
 println(s.ends_with('!'))  // true
 println(s.replace('World', 'V')) // Hello, V!
 println(s.split(', '))     // ['Hello', 'World!']
-println(s.trim_space())    // Hello, World!  (removes leading/trailing whitespace)
+println(s.trim_space())    // Hello, World!  (удаляет пробелы в начале и конце)
 ```
 
-## Converting to Numbers
+## Преобразование в числа
 
 ```v
 s := '42'
@@ -69,20 +69,20 @@ assert '0o10'.int() == 8
 assert '0b1010'.int() == 10
 ```
 
-## Runes (Unicode Code Points)
+## Руны (кодовые точки Unicode)
 
-To work with Unicode characters rather than raw bytes, use `runes()`:
+Для работы с символами Unicode, а не с сырыми байтами, используйте `runes()`:
 
 ```v
 mut s := 'hello 🌎'
 r := s.runes()
-println(r.len)    // 7  (7 Unicode code points, not 10 bytes)
+println(r.len)    // 7  (7 кодовых точек Unicode, не 10 байт)
 println(r[6])     // 🌎
 ```
 
-## String Builder
+## Строковый буилдер
 
-For efficient string concatenation, use `strings.Builder`:
+Для эффективной конкатенации строк используйте `strings.Builder`:
 
 ```v
 import strings

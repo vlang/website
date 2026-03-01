@@ -1,10 +1,10 @@
-# Error Handling
+# Tratamento de Erros
 
-V uses **Option** and **Result** types instead of exceptions. This makes error handling explicit and visible in function signatures.
+V usa os tipos **Option** e **Result** em vez de exceções. Isso torna o tratamento de erros explícito e visível nas assinaturas das funções.
 
-## Option Types
+## Tipos Option
 
-An `?T` (option) holds either a value of type `T` or `none`:
+Um `?T` (option) contém um valor do tipo `T` ou `none`:
 
 ```v
 fn find_user(id int) ?string {
@@ -14,64 +14,64 @@ fn find_user(id int) ?string {
 
 fn main() {
     if name := find_user(1) {
-        println('Found: ${name}') // Found: Alice
+        println('Encontrado: ${name}') // Encontrado: Alice
     } else {
-        println('Not found')
+        println('Não encontrado')
     }
 }
 ```
 
-## Result Types
+## Tipos Result
 
-A `!T` (result) holds either a value of type `T` or an error:
+Um `!T` (result) contém um valor do tipo `T` ou um erro:
 
 ```v
 fn divide(a f64, b f64) !f64 {
     if b == 0.0 {
-        return error('division by zero')
+        return error('divisão por zero')
     }
     return a / b
 }
 
 fn main() {
     result := divide(10.0, 2.0) or {
-        eprintln('Error: ${err}')
+        eprintln('Erro: ${err}')
         return
     }
     println(result) // 5.0
 }
 ```
 
-## The `or` Block
+## O Bloco `or`
 
-The `or` block runs when the result is `none` or an error. Inside `or`, `err` holds the error value:
+O bloco `or` é executado quando o resultado é `none` ou um erro. Dentro de `or`, `err` contém o valor do erro:
 
 ```v
 import net.http
 
 fn main() {
     resp := http.get('https://vlang.io/utc_now') or {
-        eprintln('Failed to fetch. Error: ${err}')
+        eprintln('Falha na requisição. Erro: ${err}')
         return
     }
     println(resp.body)
 }
 ```
 
-## Propagating Errors with `!`
+## Propagando Erros com `!`
 
-Adding `!` after a call propagates the error up to the caller (similar to `?` in Rust):
+Adicionar `!` após uma chamada propaga o erro para o chamador (semelhante a `?` em Rust):
 
 ```v
 fn read_config(path string) !string {
-    content := os.read_file(path)!  // propagates if error
+    content := os.read_file(path)!  // propaga se houver erro
     return content
 }
 ```
 
-## Custom Errors
+## Erros Personalizados
 
-Implement the `IError` interface to create custom error types:
+Implemente a interface `IError` para criar tipos de erro personalizados:
 
 ```v
 struct DivisionError {
@@ -89,13 +89,13 @@ fn (e DivisionError) code() int {
 
 fn safe_divide(a f64, b f64) !f64 {
     if b == 0 {
-        return DivisionError{msg: 'cannot divide by zero', code: 1}
+        return DivisionError{msg: 'não é possível dividir por zero', code: 1}
     }
     return a / b
 }
 ```
 
-## Matching on Error Types
+## Correspondência em Tipos de Erro
 
 ```v
 import semver
@@ -108,21 +108,21 @@ fn main() {
 fn check_error(err IError) {
     match err {
         semver.InvalidVersionFormatError {
-            println('wrong format')
+            println('formato incorreto')
         }
         semver.EmptyInputError {
-            println('empty input')
+            println('entrada vazia')
         }
         else {
-            println('unknown error: ${err}')
+            println('erro desconhecido: ${err}')
         }
     }
 }
 ```
 
-## The `?` Unwrap Operator
+## O Operador de Desempacotamento `?`
 
-Use `val?` inside an option context to unwrap or propagate `none`:
+Use `val?` dentro de um contexto option para desempacotar ou propagar `none`:
 
 ```v
 fn get_name(users map[int]string, id int) ?string {

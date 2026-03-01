@@ -1,10 +1,10 @@
-# For Loops
+# For-Schleifen
 
-V has a single looping keyword: `for`. It covers all iteration patterns.
+V hat ein einziges Schleifen-Schlüsselwort: `for`. Es deckt alle Iterationsmuster ab.
 
-## Range Loop
+## Bereichsschleife
 
-Iterate over a half-open range `start..end` (end is exclusive):
+Über einen halboffenen Bereich `start..end` iterieren (end ist exklusiv):
 
 ```v
 for i in 0 .. 5 {
@@ -12,23 +12,23 @@ for i in 0 .. 5 {
 }
 ```
 
-## Iterating Over Arrays
+## Über Arrays iterieren
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
 
-// value only
+// nur Wert
 for name in names {
     println(name)
 }
 
-// index and value
+// Index und Wert
 for i, name in names {
     println('${i}: ${name}')
 }
 ```
 
-## Iterating Over Maps
+## Über Maps iterieren
 
 ```v
 m := {'a': 1, 'b': 2, 'c': 3}
@@ -38,7 +38,7 @@ for key, val in m {
 }
 ```
 
-## Classic C-style Loop
+## Klassische C-Stil-Schleife
 
 ```v
 for i := 0; i < 10; i++ {
@@ -46,7 +46,7 @@ for i := 0; i < 10; i++ {
 }
 ```
 
-## Condition-only Loop (while equivalent)
+## Nur-Bedingung-Schleife (while-Äquivalent)
 
 ```v
 mut n := 0
@@ -56,7 +56,7 @@ for n < 5 {
 }
 ```
 
-## Infinite Loop
+## Endlosschleife
 
 ```v
 mut i := 0
@@ -66,19 +66,19 @@ for {
 }
 ```
 
-## `break` and `continue`
+## `break` und `continue`
 
 ```v
 for i in 0 .. 10 {
-    if i == 3 { continue }  // skip 3
-    if i == 7 { break }     // stop at 7
+    if i == 3 { continue }  // 3 überspringen
+    if i == 7 { break }     // bei 7 stoppen
     println(i)
 }
 ```
 
-## Labeled Loops
+## Beschriftete Schleifen
 
-For nested loops, you can label and break/continue from an outer loop:
+Bei verschachtelten Schleifen kann man eine äußere Schleife beschriften und aus ihr heraus break/continue ausführen:
 
 ```v
 outer: for i in 0 .. 3 {
@@ -91,7 +91,7 @@ outer: for i in 0 .. 3 {
 }
 ```
 
-## Primes Example
+## Primzahlen-Beispiel
 
 ```v
 import math { log }

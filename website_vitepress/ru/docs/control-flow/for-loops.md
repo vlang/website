@@ -1,10 +1,10 @@
-# For Loops
+# Циклы for
 
-V has a single looping keyword: `for`. It covers all iteration patterns.
+V имеет единственное ключевое слово для циклов: `for`. Оно охватывает все шаблоны итерации.
 
-## Range Loop
+## Цикл по диапазону
 
-Iterate over a half-open range `start..end` (end is exclusive):
+Итерация по полуоткрытому диапазону `start..end` (end не включающий):
 
 ```v
 for i in 0 .. 5 {
@@ -12,23 +12,23 @@ for i in 0 .. 5 {
 }
 ```
 
-## Iterating Over Arrays
+## Итерация по массивам
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
 
-// value only
+// только значение
 for name in names {
     println(name)
 }
 
-// index and value
+// индекс и значение
 for i, name in names {
     println('${i}: ${name}')
 }
 ```
 
-## Iterating Over Maps
+## Итерация по словарям
 
 ```v
 m := {'a': 1, 'b': 2, 'c': 3}
@@ -38,7 +38,7 @@ for key, val in m {
 }
 ```
 
-## Classic C-style Loop
+## Классический цикл в стиле C
 
 ```v
 for i := 0; i < 10; i++ {
@@ -46,7 +46,7 @@ for i := 0; i < 10; i++ {
 }
 ```
 
-## Condition-only Loop (while equivalent)
+## Цикл с условием (аналог while)
 
 ```v
 mut n := 0
@@ -56,7 +56,7 @@ for n < 5 {
 }
 ```
 
-## Infinite Loop
+## Бесконечный цикл
 
 ```v
 mut i := 0
@@ -66,19 +66,19 @@ for {
 }
 ```
 
-## `break` and `continue`
+## `break` и `continue`
 
 ```v
 for i in 0 .. 10 {
-    if i == 3 { continue }  // skip 3
-    if i == 7 { break }     // stop at 7
+    if i == 3 { continue }  // пропустить 3
+    if i == 7 { break }     // остановиться на 7
     println(i)
 }
 ```
 
-## Labeled Loops
+## Метكи циклов
 
-For nested loops, you can label and break/continue from an outer loop:
+Для вложенных циклов можно помечать цикл и выполнять break/continue во внешнем цикле:
 
 ```v
 outer: for i in 0 .. 3 {
@@ -91,7 +91,7 @@ outer: for i in 0 .. 3 {
 }
 ```
 
-## Primes Example
+## Пример: Иско Простых Чисел
 
 ```v
 import math { log }

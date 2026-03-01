@@ -1,8 +1,8 @@
 # Hello World
 
-## Your First V Program
+## 你的第一个 V 程序
 
-Create a file named `hello.v`:
+创建一个名为 `hello.v` 的文件：
 
 ```v
 fn main() {
@@ -10,51 +10,51 @@ fn main() {
 }
 ```
 
-Run it:
+运行它：
 
 ```bash
 v run hello.v
 ```
 
-Or compile and run separately:
+或者分别编译和运行：
 
 ```bash
 v hello.v
 ./hello
 ```
 
-## Skipping `fn main()`
+## 省略 `fn main()`
 
-For single-file scripts, `fn main()` is optional:
+对于单文件脚本，`fn main()` 是可选的：
 
 ```v
 println('Hello, World!')
 ```
 
-This is useful for small programs and learning the language.
+这对于小程序和学习语言非常有用。
 
-## Running Multiple Files
+## 运行多个文件
 
-If your project has multiple `.v` files in a folder, run all of them at once:
+如果你的项目在一个文件夹中有多个 `.v` 文件，可以一次性运行所有文件：
 
 ```bash
 v run .
 ```
 
-## Comments
+## 注释
 
 ```v
-// This is a single line comment.
+// 这是单行注释。
 /*
-  This is a multiline comment.
-  /* It can be nested. */
+  这是多行注释。
+  /* 它可以嵌套。 */
 */
 ```
 
-## A Slightly Bigger Example
+## 稍大一点的示例
 
 ```v
-// fibonacci.v — compute Fibonacci numbers up to a given rank
+// fibonacci.v — 计算给定阶数的斐波那契数列
 const args = arguments()
 
 fn main() {

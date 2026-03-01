@@ -1,6 +1,6 @@
-# Functions
+# Функции
 
-## Basic Syntax
+## Базовый синтаксис
 
 ```v
 fn main() {
@@ -17,13 +17,13 @@ fn sub(x int, y int) int {
 }
 ```
 
-The return type is specified **after** the parameter list. If the function returns nothing, the return type is omitted.
+Тип возвращаемого значения указывается **после** списка параметров. Если функция ничего не возвращает, тип возвращаемого значения опускается.
 
-## Hoisting
+## Подъём объявлений
 
-Functions can be used before they are declared. V hoists all declarations, so there is no need for header files or forward declarations.
+Функции можно использовать до их объявления. V поднимает все объявления, поэтому нет необходимости в заголовочных файлах или предварительных объявлениях.
 
-## Multiple Return Values
+## Несколько возвращаемых значений
 
 ```v
 fn foo() (int, int) {
@@ -33,12 +33,12 @@ fn foo() (int, int) {
 a, b := foo()
 println(a) // 2
 println(b) // 3
-c, _ := foo() // ignore the second value with `_`
+c, _ := foo() // игнорируем второе значение с помощью `_`
 ```
 
-## Visibility
+## Видимость
 
-Functions are **private** by default. Use `pub` to export them:
+Функции **приватны** по умолчанию. Используйте `pub` для экспорта:
 
 ```v
 pub fn public_function() {
@@ -48,13 +48,13 @@ fn private_function() {
 }
 ```
 
-## No Overloading
+## Отсутствие перегрузки
 
-Functions cannot be overloaded. This keeps the code unambiguous and easy to read.
+Функции нельзя перегружать. Это делает код однозначным и лёгким для чтения.
 
-## Methods
+## Методы
 
-Functions can be attached to types:
+Функции можно прикреплять к типам:
 
 ```v
 struct User {
@@ -78,9 +78,9 @@ fn main() {
 }
 ```
 
-## High-Order Functions
+## Функции высшего порядка
 
-Functions are first-class values and can be passed to other functions:
+Функции являются значениями первого класса и могут передаваться другим функциям:
 
 ```v
 fn apply(arr []int, f fn(int) int) []int {
@@ -102,7 +102,7 @@ fn main() {
 }
 ```
 
-## Anonymous Functions
+## Анонимные функции
 
 ```v
 fn main() {

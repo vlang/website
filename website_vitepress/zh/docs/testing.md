@@ -1,10 +1,10 @@
-# Testing
+# 测试
 
-V has built-in testing support. No test framework or external library needed.
+V 内置了测试支持，无需测试框架或外部库。
 
-## Writing Tests
+## 编写测试
 
-Test functions must start with `test_` and live in files ending with `_test.v`:
+测试函数必须以 `test_` 开头，并放在以 `_test.v` 结尾的文件中：
 
 ```v
 // math_test.v
@@ -24,17 +24,17 @@ fn test_add_large_numbers() {
 }
 ```
 
-Run tests with:
+使用以下命令运行测试：
 
 ```bash
 v test math_test.v
-# or run all tests in a directory:
+# 或运行目录下所有测试：
 v test .
 ```
 
-## Assertions
+## 断言
 
-Use `assert` to check conditions. A failing assertion prints the values of both sides:
+使用 `assert` 检查条件。断言失败时会打印两侧的值：
 
 ```v
 fn test_string_ops() {
@@ -45,22 +45,22 @@ fn test_string_ops() {
 }
 ```
 
-## Test Setup and Teardown
+## 测试的 Setup 和 Teardown
 
 ```v
-// Use testsuite_begin and testsuite_end for module-level setup/teardown
+// 使用 testsuite_begin 和 testsuite_end 进行模块级别的 setup/teardown
 fn testsuite_begin() {
-    // runs once before all tests in the file
+    // 在文件中所有测试之前运行一次
     println('Setting up test suite...')
 }
 
 fn testsuite_end() {
-    // runs once after all tests in the file
+    // 在文件中所有测试之后运行一次
     println('Tearing down test suite...')
 }
 ```
 
-## Testing Error Cases
+## 测试错误场景
 
 ```v
 fn safe_divide(a f64, b f64) !f64 {
@@ -81,22 +81,22 @@ fn test_divide_normal() {
 }
 ```
 
-## Running Specific Tests
+## 运行特定测试
 
 ```bash
-# Run a single test file
+# 运行单个测试文件
 v test mypackage/foo_test.v
 
-# Run tests matching a pattern
+# 运行匹配模式的测试
 v test -run test_add .
 
-# Run with verbose output
+# 带详细输出运行
 v test -v .
 ```
 
-## Table-driven Tests
+## 表驱动测试
 
-V doesn't have a built-in table-driven test helper, but you can do it manually:
+V 没有内置的表驱动测试辅助工具，但可以手动实现：
 
 ```v
 fn test_add_table() {
@@ -112,9 +112,9 @@ fn test_add_table() {
 }
 ```
 
-## Code Coverage
+## 代码覆盖率
 
-Generate a coverage report:
+生成覆盖率报告：
 
 ```bash
 v -coverage ./coverage_output test .

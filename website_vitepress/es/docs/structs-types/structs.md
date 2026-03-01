@@ -1,8 +1,8 @@
-# Structs
+# Structs (Estructuras)
 
-Structs are used to define custom data types with named fields.
+Los structs se usan para definir tipos de datos personalizados con campos con nombre.
 
-## Basic Struct
+## Struct Básico
 
 ```v
 struct Point {
@@ -17,9 +17,9 @@ fn main() {
 }
 ```
 
-## Mutable Structs
+## Structs Mutables
 
-Fields are immutable by default. Use `mut:` to declare mutable fields:
+Los campos son inmutables por defecto. Usa `mut:` para declarar campos mutables:
 
 ```v
 struct User {
@@ -38,25 +38,25 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## Modificadores de Acceso
 
 ```v
 struct Foo {
-    a int         // private immutable (default)
+    a int         // privado inmutable (por defecto)
 mut:
-    b int         // private mutable
+    b int         // privado mutable
 pub:
-    c int         // public immutable
+    c int         // público inmutable
 pub mut:
-    d int         // public mutable, private to set
+    d int         // público mutable, privado para asignar
 __global:
-    e int         // public and mutable everywhere (rare)
+    e int         // público y mutable en cualquier lugar (poco común)
 }
 ```
 
-## Methods
+## Métodos
 
-Functions can be attached to structs:
+Las funciones pueden asociarse a structs:
 
 ```v
 struct Rectangle {
@@ -79,9 +79,9 @@ fn main() {
 }
 ```
 
-## Embedding
+## Embedding (Incrustación)
 
-Structs can embed other structs to inherit their fields and methods:
+Los structs pueden incrustar otros structs para heredar sus campos y métodos:
 
 ```v
 struct Animal {
@@ -98,17 +98,17 @@ struct Dog {
 }
 
 fn (d Dog) speak() string {
-    return 'Woof!'
+    return '¡Guau!'
 }
 
 fn main() {
     d := Dog{Animal: Animal{name: 'Rex'}, breed: 'Labrador'}
-    println(d.name)    // Rex  (promoted from Animal)
-    println(d.speak()) // Woof!
+    println(d.name)    // Rex  (promovido desde Animal)
+    println(d.speak()) // ¡Guau!
 }
 ```
 
-## Default Field Values
+## Valores de Campo por Defecto
 
 ```v
 struct Config {
@@ -124,7 +124,7 @@ fn main() {
 }
 ```
 
-## JSON Example
+## Ejemplo con JSON
 
 ```v
 import json
@@ -147,7 +147,7 @@ fn (mut u User) register() {
 fn main() {
     s := '[{"name":"Frodo","age":25},{"name":"Bobby","age":10}]'
     mut users := json.decode([]User, s) or {
-        eprintln('Failed to parse json')
+        eprintln('Error al analizar json')
         return
     }
     for i, user in users {

@@ -1,8 +1,8 @@
-# Enums
+# Énumérations
 
-Enums define a type with a fixed set of named constants.
+Les énumérations définissent un type avec un ensemble fixe de constantes nommées.
 
-## Basic Enum
+## Énumération de base
 
 ```v
 enum Direction {
@@ -18,7 +18,7 @@ fn main() {
 }
 ```
 
-## Matching on Enums
+## Correspondance sur des énumérations
 
 ```v
 enum Color {
@@ -29,16 +29,16 @@ enum Color {
 
 fn describe(c Color) string {
     return match c {
-        .red   { 'warm' }
-        .green { 'cool' }
-        .blue  { 'cool' }
+        .red   { 'chaud' }
+        .green { 'frais' }
+        .blue  { 'frais' }
     }
 }
 ```
 
-Notice the shorthand `.variant` syntax when the type can be inferred.
+Notez la syntaxe abrégée `.variante` lorsque le type peut être inféré.
 
-## Enums with Custom Values
+## Énumérations avec valeurs personnalisées
 
 ```v
 enum StatusCode {
@@ -53,7 +53,7 @@ fn main() {
 }
 ```
 
-## Enum Methods
+## Méthodes d'énumération
 
 ```v
 enum Planet {
@@ -71,7 +71,7 @@ fn (p Planet) is_inner() bool {
 }
 ```
 
-## Iterating Over Enums
+## Itérer sur des énumérations
 
 ```v
 enum Season {
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-## Flag Enums (Bit Fields)
+## Énumérations de drapeaux (champs de bits)
 
 ```v
 @[flag]

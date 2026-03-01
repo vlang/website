@@ -1,10 +1,10 @@
-# Error Handling
+# Обработка ошибок
 
-V uses **Option** and **Result** types instead of exceptions. This makes error handling explicit and visible in function signatures.
+V использует типы **Option** и **Result** вместо исключений. Это делает обработку ошибок явной и видимой в сигнатурах функций.
 
-## Option Types
+## Тип Option
 
-An `?T` (option) holds either a value of type `T` or `none`:
+`?T` (опциональный тип) содержит либо значение типа `T`, либо `none`:
 
 ```v
 fn find_user(id int) ?string {
@@ -21,9 +21,9 @@ fn main() {
 }
 ```
 
-## Result Types
+## Тип Result
 
-A `!T` (result) holds either a value of type `T` or an error:
+`!T` (результирующий тип) содержит либо значение типа `T`, либо ошибку:
 
 ```v
 fn divide(a f64, b f64) !f64 {
@@ -42,9 +42,9 @@ fn main() {
 }
 ```
 
-## The `or` Block
+## Блок `or`
 
-The `or` block runs when the result is `none` or an error. Inside `or`, `err` holds the error value:
+Блок `or` выполняется, когда результат равен `none` или является ошибкой. Внутри `or` переменная `err` содержит значение ошибки:
 
 ```v
 import net.http
@@ -58,20 +58,20 @@ fn main() {
 }
 ```
 
-## Propagating Errors with `!`
+## Распространение ошибок с помощью `!`
 
-Adding `!` after a call propagates the error up to the caller (similar to `?` in Rust):
+Добавление `!` после вызова передаёт ошибку вызывающей функции (аналогично `?` в Rust):
 
 ```v
 fn read_config(path string) !string {
-    content := os.read_file(path)!  // propagates if error
+    content := os.read_file(path)!  // передаёт ошибку выше при её наличии
     return content
 }
 ```
 
-## Custom Errors
+## Пользовательские ошибки
 
-Implement the `IError` interface to create custom error types:
+Реализуйте интерфейс `IError` для создания собственных типов ошибок:
 
 ```v
 struct DivisionError {
@@ -95,7 +95,7 @@ fn safe_divide(a f64, b f64) !f64 {
 }
 ```
 
-## Matching on Error Types
+## Сопоставление по типам ошибок
 
 ```v
 import semver
@@ -120,9 +120,9 @@ fn check_error(err IError) {
 }
 ```
 
-## The `?` Unwrap Operator
+## Оператор `?` для unwrap
 
-Use `val?` inside an option context to unwrap or propagate `none`:
+Используйте `val?` внутри опционального контекста для извлечения значения или передачи `none` выше:
 
 ```v
 fn get_name(users map[int]string, id int) ?string {

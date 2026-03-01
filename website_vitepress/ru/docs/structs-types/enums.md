@@ -1,8 +1,8 @@
-# Enums
+# Перечисления
 
-Enums define a type with a fixed set of named constants.
+Перечисления определяют тип с фиксированным набором именованных констант.
 
-## Basic Enum
+## Базовое перечисление
 
 ```v
 enum Direction {
@@ -18,7 +18,7 @@ fn main() {
 }
 ```
 
-## Matching on Enums
+## Сопоставление с перечислениями
 
 ```v
 enum Color {
@@ -36,9 +36,9 @@ fn describe(c Color) string {
 }
 ```
 
-Notice the shorthand `.variant` syntax when the type can be inferred.
+Обратите внимание на сокращённый синтаксис `.variant`, когда тип может быть выведен автоматически.
 
-## Enums with Custom Values
+## Перечисления с пользовательскими значениями
 
 ```v
 enum StatusCode {
@@ -53,7 +53,7 @@ fn main() {
 }
 ```
 
-## Enum Methods
+## Методы перечислений
 
 ```v
 enum Planet {
@@ -71,7 +71,7 @@ fn (p Planet) is_inner() bool {
 }
 ```
 
-## Iterating Over Enums
+## Итерация по значениям перечисления
 
 ```v
 enum Season {
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-## Flag Enums (Bit Fields)
+## Флаговые перечисления (битовые поля)
 
 ```v
 @[flag]

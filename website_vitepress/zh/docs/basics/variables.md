@@ -1,8 +1,8 @@
-# Variables
+# 变量
 
-## Declaration and Initialization
+## 声明与初始化
 
-Variables are declared and initialized with `:=`. This is the only way to declare variables in V — they always have an initial value and their type is inferred from the right-hand side.
+变量用 `:=` 声明并初始化。这是 V 中声明变量的唯一方式——变量始终有初始值，类型从右侧自动推断。
 
 ```v
 name := 'Bob'
@@ -13,9 +13,9 @@ println(age)
 println(large_number)
 ```
 
-## Mutable Variables
+## 可变变量
 
-Variables are **immutable by default**. Use `mut` to make a variable mutable:
+变量**默认不可变**。使用 `mut` 使变量可变：
 
 ```v
 mut age := 20
@@ -24,21 +24,21 @@ age = 21
 println(age)
 ```
 
-> If you try to reassign without `mut`, the compiler will refuse to compile.
+> 如果没有 `mut` 就尝试重新赋值，编译器会拒绝编译。
 
-## Type Conversion
+## 类型转换
 
-Use `T(value)` to convert between types:
+使用 `T(value)` 在类型之间转换：
 
 ```v
 x := 42
-y := f64(x)  // x converted to f64
-z := u8(x)   // x converted to u8
+y := f64(x)  // x 转换为 f64
+z := u8(x)   // x 转换为 u8
 ```
 
-## Multiple Assignment
+## 多重赋值
 
-Multiple variables can be changed or swapped in one line:
+多个变量可以在一行中赋值或交换：
 
 ```v
 mut a := 0
@@ -48,9 +48,9 @@ a, b = b, a
 println('${a}, ${b}') // 1, 0
 ```
 
-## Ignoring Values
+## 忽略值
 
-Use `_` to discard a return value:
+使用 `_` 丢弃返回值：
 
 ```v
 fn foo() (int, int) {
@@ -63,21 +63,21 @@ fn main() {
 }
 ```
 
-## Naming Convention
+## 命名约定
 
-All variable and function names must use `snake_case`. Type names must use `PascalCase`. The compiler enforces this.
+所有变量名和函数名必须使用 `snake_case`。类型名必须使用 `PascalCase`。编译器会强制执行此规则。
 
-## No Global Variables
+## 没有全局变量
 
-V does not allow global variables by default. All variables must be declared inside functions. This leads to more predictable, testable code.
+V 默认不允许全局变量。所有变量必须在函数内部声明。这使代码更可预测、更易于测试。
 
-## No Shadowing
+## 不允许变量遮蔽
 
-Variable shadowing is not allowed. Declaring a variable with a name already used in a parent scope is a compile error:
+不允许变量遮蔽。在父作用域中已使用的名称再次声明变量是编译错误：
 
 ```v
 fn main() {
     a := 10
-    // a := 20  // ← compile error: redefinition of `a`
+    // a := 20  // ← 编译错误：重定义 `a`
 }
 ```

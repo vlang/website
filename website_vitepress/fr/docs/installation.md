@@ -1,67 +1,67 @@
 # Installation
 
-## Install from Source
+## Installer depuis les sources
 
-The recommended way to install V is from source. It only takes a few seconds:
+La méthode recommandée pour installer V est depuis les sources. Cela ne prend que quelques secondes :
 
 ```bash
 git clone --depth=1 https://github.com/vlang/v && cd v && make
 ```
 
-On Windows, use `make.bat` instead of `make`.
+Sous Windows, utilisez `make.bat` à la place de `make`.
 
-## Symlink V
+## Créer un lien symbolique pour V
 
-After building, you can symlink V so it's available everywhere:
+Après la compilation, vous pouvez créer un lien symbolique pour V afin qu'il soit disponible partout :
 
 ```bash
 sudo ./v symlink
 ```
 
-On Windows, run `v.exe symlink` from an elevated command prompt.
+Sous Windows, exécutez `v.exe symlink` depuis une invite de commandes avec élévation de privilèges.
 
-## Verify Installation
+## Vérifier l'installation
 
 ```bash
 v version
 ```
 
-You should see output like `V 0.5.0 ...`.
+Vous devriez voir une sortie comme `V 0.5.0 ...`.
 
-## Download Pre-built Binaries
+## Télécharger des binaires préconstruits
 
-Pre-built binaries are available for all major platforms on the
-[GitHub Releases](https://github.com/vlang/v/releases/latest) page:
+Des binaires préconstruits sont disponibles pour toutes les plateformes principales sur la page
+[GitHub Releases](https://github.com/vlang/v/releases/latest) :
 
-| Platform | File |
+| Plateforme | Fichier |
 | --- | --- |
 | Linux (x86_64) | `v_linux.zip` |
 | macOS (Apple Silicon) | `v_macos_arm64.zip` |
 | macOS (Intel) | `v_macos_x86_64.zip` |
 | Windows | `v_windows.zip` |
 
-## Upgrading V
+## Mettre à jour V
 
-To upgrade V to the latest version, run:
+Pour mettre à jour V vers la dernière version, exécutez :
 
 ```bash
 v up
 ```
 
-## Running a Program
+## Exécuter un programme
 
 ```bash
 v run hello.v
 ```
 
-Or compile it:
+Ou compilez-le :
 
 ```bash
 v hello.v
 ./hello
 ```
 
-To run all `.v` files in a directory:
+Pour exécuter tous les fichiers `.v` d'un répertoire :
 
 ```bash
 v run .

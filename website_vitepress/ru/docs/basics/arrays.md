@@ -1,6 +1,6 @@
-# Arrays
+# Массивы
 
-## Basic Usage
+## Базовое использование
 
 ```v
 mut nums := [1, 2, 3]
@@ -11,9 +11,9 @@ nums[1] = 20
 println(nums)        // [1, 20, 3]
 ```
 
-## Typed Arrays
+## Типизированные массивы
 
-Array element types are inferred. You can also declare an empty array with an explicit type:
+Тип элементов массива выводится автоматически. Также можно объявить пустой массив с явным типом:
 
 ```v
 mut names := []string{}
@@ -22,37 +22,37 @@ names << 'Bob'
 println(names) // ['Alice', 'Bob']
 ```
 
-## Pre-allocated Arrays
+## Предвыделенные массивы
 
 ```v
-// array of 5 ints, all initialized to 0
+// массив из 5 целых чисел, все инициализированы 0
 a := []int{len: 5}
 
-// array of 3 strings, all initialized to 'x'
+// массив из 3 строк, все инициализированы 'x'
 b := []string{len: 3, init: 'x'}
 ```
 
-## Appending Elements
+## Добавление элементов
 
-Use `<<` to append:
+Используйте `<<` для добавления:
 
 ```v
 mut a := [1, 2, 3]
 a << 4
-a << [5, 6]   // append another array
+a << [5, 6]   // добавить ещё один массив
 println(a)    // [1, 2, 3, 4, 5, 6]
 ```
 
-## Slicing
+## Срезы
 
 ```v
 a := [1, 2, 3, 4, 5]
-b := a[1..3]  // [2, 3]  (from index 1, up to but not including 3)
-c := a[..2]   // [1, 2]  (from start to index 2)
-d := a[3..]   // [4, 5]  (from index 3 to end)
+b := a[1..3]  // [2, 3]  (с индекса 1 до, но не включая 3)
+c := a[..2]   // [1, 2]  (от начала до индекса 2)
+d := a[3..]   // [4, 5]  (с индекса 3 до конца)
 ```
 
-## Iteration
+## Итерация
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
@@ -66,7 +66,7 @@ for i, name in names {
 }
 ```
 
-## Common Methods
+## Основные методы
 
 ```v
 mut a := [3, 1, 4, 1, 5, 9, 2, 6]
@@ -88,7 +88,7 @@ mapped := a.map(it * 2)
 println(mapped) // [18, 12, 10, 8, 6, 4, 2, 2]
 ```
 
-## Multidimensional Arrays
+## Многомерные массивы
 
 ```v
 mut matrix := [][]int{len: 3, init: []int{len: 3}}
@@ -98,12 +98,12 @@ matrix[2][2] = 9
 println(matrix) // [[1, 0, 0], [0, 5, 0], [0, 0, 9]]
 ```
 
-## Fixed-size Arrays
+## Массивы фиксированного размера
 
 ```v
-mut a := [5]int{}   // fixed array of 5 ints
+mut a := [5]int{}   // фиксированный массив из 5 целых чисел
 a[0] = 10
 println(a)          // [10, 0, 0, 0, 0]
 ```
 
-Fixed arrays are stack-allocated and cannot be grown.
+Массивы фиксированного размера выделяются в стеке и не могут расти.

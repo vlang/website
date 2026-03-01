@@ -1,8 +1,8 @@
-# Concurrency
+# Конкурентность
 
-V uses lightweight threads (goroutines) to run work concurrently. The `spawn` keyword starts a function in a new thread.
+V использует лёгкие потоки (горутины) для параллельного выполнения работы. Ключевое слово `spawn` запускает функцию в новом потоке.
 
-## Basic Spawning
+## Базовый запуск потоков
 
 ```v
 import time
@@ -19,15 +19,15 @@ fn main() {
     threads << spawn expensive_computing(2, 500)
     threads << spawn expensive_computing(3, 1000)
 
-    // Wait for all threads to finish
+    // Ожидаем завершения всех потоков
     threads.wait()
     println('All jobs finished!')
 }
 ```
 
-## Getting Return Values
+## Получение возвращаемых значений
 
-Threads can return values. Calling `.wait()` on a `[]thread T` returns `[]T`:
+Потоки могут возвращать значения. Вызов `.wait()` на `[]thread T` возвращает `[]T`:
 
 ```v
 fn expensive_computing(i int) int {
@@ -45,7 +45,7 @@ fn main() {
 }
 ```
 
-## Concurrent HTTP Requests
+## Конкурентные HTTP-запросы
 
 ```v
 import net.http
@@ -75,14 +75,14 @@ fn main() {
 }
 ```
 
-## Channels
+## Каналы
 
-Channels allow safe communication between threads:
+Каналы обеспечивают безопасную передачу данных между потоками:
 
 ```v
 fn producer(ch chan int) {
     for i in 1 .. 6 {
-        ch <- i  // send to channel
+        ch <- i  // отправка в канал
     }
     ch.close()
 }
@@ -97,9 +97,9 @@ fn main() {
 }
 ```
 
-## Mutexes
+## Мьютексы
 
-Use `sync.Mutex` to protect shared state:
+Используйте `sync.Mutex` для защиты общего состояния:
 
 ```v
 import sync
@@ -119,7 +119,7 @@ fn (mut c Counter) increment() {
 
 ## `defer`
 
-`defer` executes a statement when the surrounding function returns — useful for cleanup:
+`defer` выполняет инструкцию при возврате из окружающей функции — удобно для освобождения ресурсов:
 
 ```v
 import os
@@ -128,7 +128,7 @@ fn process_file(path string) {
     f := os.open(path) or { return }
     defer { f.close() }
 
-    // use f — it will be closed automatically
+    // используем f — файл будет закрыт автоматически
     println(f.read_to_string() or { '' })
 }
 ```

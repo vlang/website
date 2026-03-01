@@ -1,10 +1,10 @@
-# Error Handling
+# 错误处理
 
-V uses **Option** and **Result** types instead of exceptions. This makes error handling explicit and visible in function signatures.
+V 使用 **Option** 和 **Result** 类型代替异常。这使得错误处理在函数签名中显式可见。
 
-## Option Types
+## Option 类型
 
-An `?T` (option) holds either a value of type `T` or `none`:
+`?T`（option）持有类型为 `T` 的值或 `none`：
 
 ```v
 fn find_user(id int) ?string {
@@ -21,9 +21,9 @@ fn main() {
 }
 ```
 
-## Result Types
+## Result 类型
 
-A `!T` (result) holds either a value of type `T` or an error:
+`!T`（result）持有类型为 `T` 的值或一个错误：
 
 ```v
 fn divide(a f64, b f64) !f64 {
@@ -42,9 +42,9 @@ fn main() {
 }
 ```
 
-## The `or` Block
+## `or` 块
 
-The `or` block runs when the result is `none` or an error. Inside `or`, `err` holds the error value:
+当结果为 `none` 或错误时，`or` 块会执行。在 `or` 内部，`err` 持有错误值：
 
 ```v
 import net.http
@@ -58,20 +58,20 @@ fn main() {
 }
 ```
 
-## Propagating Errors with `!`
+## 使用 `!` 传播错误
 
-Adding `!` after a call propagates the error up to the caller (similar to `?` in Rust):
+在调用后添加 `!` 可将错误向上传播给调用者（类似 Rust 中的 `?`）：
 
 ```v
 fn read_config(path string) !string {
-    content := os.read_file(path)!  // propagates if error
+    content := os.read_file(path)!  // 如果出错则传播
     return content
 }
 ```
 
-## Custom Errors
+## 自定义错误
 
-Implement the `IError` interface to create custom error types:
+实现 `IError` 接口以创建自定义错误类型：
 
 ```v
 struct DivisionError {
@@ -95,7 +95,7 @@ fn safe_divide(a f64, b f64) !f64 {
 }
 ```
 
-## Matching on Error Types
+## 匹配错误类型
 
 ```v
 import semver
@@ -120,9 +120,9 @@ fn check_error(err IError) {
 }
 ```
 
-## The `?` Unwrap Operator
+## `?` 解包运算符
 
-Use `val?` inside an option context to unwrap or propagate `none`:
+在 option 上下文中使用 `val?` 可以解包或传播 `none`：
 
 ```v
 fn get_name(users map[int]string, id int) ?string {

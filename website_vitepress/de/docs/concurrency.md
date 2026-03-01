@@ -1,8 +1,8 @@
-# Concurrency
+# Nebenläufigkeit
 
-V uses lightweight threads (goroutines) to run work concurrently. The `spawn` keyword starts a function in a new thread.
+V verwendet leichtgewichtige Threads (Goroutines), um Arbeit nebenläufig auszuführen. Das Schlüsselwort `spawn` startet eine Funktion in einem neuen Thread.
 
-## Basic Spawning
+## Grundlegendes Spawning
 
 ```v
 import time
@@ -19,15 +19,15 @@ fn main() {
     threads << spawn expensive_computing(2, 500)
     threads << spawn expensive_computing(3, 1000)
 
-    // Wait for all threads to finish
+    // Warten, bis alle Threads fertig sind
     threads.wait()
     println('All jobs finished!')
 }
 ```
 
-## Getting Return Values
+## Rückgabewerte erhalten
 
-Threads can return values. Calling `.wait()` on a `[]thread T` returns `[]T`:
+Threads können Werte zurückgeben. `.wait()` auf einem `[]thread T` gibt `[]T` zurück:
 
 ```v
 fn expensive_computing(i int) int {
@@ -45,7 +45,7 @@ fn main() {
 }
 ```
 
-## Concurrent HTTP Requests
+## Nebenläufige HTTP-Anfragen
 
 ```v
 import net.http
@@ -75,14 +75,14 @@ fn main() {
 }
 ```
 
-## Channels
+## Kanäle (Channels)
 
-Channels allow safe communication between threads:
+Kanäle ermöglichen sichere Kommunikation zwischen Threads:
 
 ```v
 fn producer(ch chan int) {
     for i in 1 .. 6 {
-        ch <- i  // send to channel
+        ch <- i  // an Kanal senden
     }
     ch.close()
 }
@@ -97,9 +97,9 @@ fn main() {
 }
 ```
 
-## Mutexes
+## Mutexe
 
-Use `sync.Mutex` to protect shared state:
+Verwende `sync.Mutex`, um gemeinsam genutzten Zustand zu schützen:
 
 ```v
 import sync
@@ -119,7 +119,7 @@ fn (mut c Counter) increment() {
 
 ## `defer`
 
-`defer` executes a statement when the surrounding function returns — useful for cleanup:
+`defer` führt eine Anweisung aus, wenn die umgebende Funktion zurückkehrt — nützlich zur Bereinigung:
 
 ```v
 import os
@@ -128,7 +128,7 @@ fn process_file(path string) {
     f := os.open(path) or { return }
     defer { f.close() }
 
-    // use f — it will be closed automatically
+    // f verwenden — es wird automatisch geschlossen
     println(f.read_to_string() or { '' })
 }
 ```

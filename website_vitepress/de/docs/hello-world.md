@@ -1,8 +1,8 @@
 # Hello World
 
-## Your First V Program
+## Dein erstes V-Programm
 
-Create a file named `hello.v`:
+Erstelle eine Datei namens `hello.v`:
 
 ```v
 fn main() {
@@ -10,51 +10,51 @@ fn main() {
 }
 ```
 
-Run it:
+Führe es aus:
 
 ```bash
 v run hello.v
 ```
 
-Or compile and run separately:
+Oder kompiliere und führe es separat aus:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-## Skipping `fn main()`
+## `fn main()` weglassen
 
-For single-file scripts, `fn main()` is optional:
+Bei einzel-Datei-Skripten ist `fn main()` optional:
 
 ```v
 println('Hello, World!')
 ```
 
-This is useful for small programs and learning the language.
+Dies ist nützlich für kleine Programme und zum Lernen der Sprache.
 
-## Running Multiple Files
+## Mehrere Dateien ausführen
 
-If your project has multiple `.v` files in a folder, run all of them at once:
+Wenn dein Projekt mehrere `.v`-Dateien in einem Ordner hat, führe sie alle auf einmal aus:
 
 ```bash
 v run .
 ```
 
-## Comments
+## Kommentare
 
 ```v
-// This is a single line comment.
+// Dies ist ein einzeiliger Kommentar.
 /*
-  This is a multiline comment.
-  /* It can be nested. */
+  Dies ist ein mehrzeiliger Kommentar.
+  /* Er kann verschachtelt werden. */
 */
 ```
 
-## A Slightly Bigger Example
+## Ein etwas größeres Beispiel
 
 ```v
-// fibonacci.v — compute Fibonacci numbers up to a given rank
+// fibonacci.v — Fibonacci-Zahlen bis zu einem bestimmten Rang berechnen
 const args = arguments()
 
 fn main() {

@@ -1,58 +1,58 @@
-# Maps
+# Maps (Dictionnaires)
 
-Maps are unordered key-value stores. All keys must be of the same type, and all values must be of the same type.
+Les maps sont des magasins clé-valeur non ordonnés. Toutes les clés doivent être du même type, et toutes les valeurs doivent être du même type.
 
-## Creating Maps
+## Créer des maps
 
 ```v
-// map literal
+// littéral de map
 mut scores := {
     'Alice': 10
     'Bob':   20
     'Carol': 30
 }
 
-// empty map
+// map vide
 mut m := map[string]int{}
 ```
 
-## Adding and Updating
+## Ajouter et mettre à jour
 
 ```v
 mut m := map[string]int{}
 m['x'] = 1
 m['y'] = 2
-m['x'] = 99   // update existing key
+m['x'] = 99   // mettre à jour une clé existante
 println(m)    // {'x': 99, 'y': 2}
 ```
 
-## Reading Values
+## Lire des valeurs
 
 ```v
 scores := {'Alice': 10, 'Bob': 20}
 
 println(scores['Alice']) // 10
 
-// safe lookup with `or` block — avoids panicking on missing key
+// lecture sécurisée avec bloc `or` — évite la panique sur une clé manquante
 val := scores['Dave'] or { -1 }
 println(val) // -1
 ```
 
-## Checking for a Key
+## Vérifier une clé
 
 ```v
 m := {'a': 1, 'b': 2}
 
 if 'a' in m {
-    println('found a: ${m['a']}')
+    println('trouvé a : ${m['a']}')
 }
 
 if 'z' !in m {
-    println('z is not in the map')
+    println('z n\'est pas dans la map')
 }
 ```
 
-## Deleting Keys
+## Supprimer des clés
 
 ```v
 mut m := {'a': 1, 'b': 2, 'c': 3}
@@ -60,7 +60,7 @@ m.delete('b')
 println(m) // {'a': 1, 'c': 3}
 ```
 
-## Iterating
+## Itération
 
 ```v
 m := {'one': 1, 'two': 2, 'three': 3}
@@ -69,22 +69,22 @@ for key, val in m {
     println('${key} = ${val}')
 }
 
-// keys and values separately
+// clés et valeurs séparément
 for key in m.keys() {
     println(key)
 }
 ```
 
-## Map Size
+## Taille de la map
 
 ```v
 m := {'a': 1, 'b': 2}
 println(m.len) // 2
 ```
 
-## Allowed Key Types
+## Types de clés autorisés
 
-Map keys can be strings, integers, floats, runes, or any type that implements the `==` operator.
+Les clés d'une map peuvent être des chaînes, des entiers, des flottants, des runes, ou tout type qui implémente l'opérateur `==`.
 
 ```v
 mut m := map[int]string{}

@@ -1,8 +1,8 @@
 # JSON
 
-V has built-in JSON encoding and decoding in the `json` module — no external library needed.
+V hat eingebaute JSON-Kodierung und -Dekodierung im `json`-Modul — keine externe Bibliothek erforderlich.
 
-## Decoding JSON
+## JSON dekodieren
 
 ```v
 import json
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Encoding JSON
+## JSON kodieren
 
 ```v
 import json
@@ -45,9 +45,9 @@ fn main() {
 }
 ```
 
-## Custom Field Names
+## Benutzerdefinierte Feldnamen
 
-Use the `@[json: 'field_name']` attribute to map struct fields to different JSON keys:
+Verwende das `@[json: 'field_name']`-Attribut, um Struct-Felder auf verschiedene JSON-Schlüssel abzubilden:
 
 ```v
 import json
@@ -66,28 +66,28 @@ fn main() {
 }
 ```
 
-## Skipping Fields
+## Felder überspringen
 
-Use `@[json: '-']` to exclude a field from JSON serialization:
+Verwende `@[json: '-']`, um ein Feld von der JSON-Serialisierung auszuschließen:
 
 ```v
 struct User {
     name     string
     email    string
-    password string @[json: '-']  // never included in JSON output
+    password string @[json: '-']  // niemals in der JSON-Ausgabe enthalten
 }
 ```
 
-## Optional / Nullable Fields
+## Optionale / Nullable Felder
 
-Use option types for fields that may be absent in the JSON:
+Verwende Option-Typen für Felder, die im JSON möglicherweise fehlen:
 
 ```v
 import json
 
 struct Profile {
     name   string
-    bio    ?string   // optional — may be null or absent
+    bio    ?string   // optional — kann null oder nicht vorhanden sein
     age    ?int
 }
 
@@ -99,7 +99,7 @@ fn main() {
 }
 ```
 
-## Nested Structs
+## Verschachtelte Structs
 
 ```v
 import json

@@ -1,6 +1,6 @@
-# Functions
+# Funktionen
 
-## Basic Syntax
+## Grundlegende Syntax
 
 ```v
 fn main() {
@@ -17,13 +17,13 @@ fn sub(x int, y int) int {
 }
 ```
 
-The return type is specified **after** the parameter list. If the function returns nothing, the return type is omitted.
+Der Rückgabetyp wird **nach** der Parameterliste angegeben. Wenn die Funktion nichts zurückgibt, wird der Rückgabetyp weggelassen.
 
 ## Hoisting
 
-Functions can be used before they are declared. V hoists all declarations, so there is no need for header files or forward declarations.
+Funktionen können verwendet werden, bevor sie deklariert werden. V hebt alle Deklarationen (Hoisting), sodass keine Header-Dateien oder Vorwärtsdeklarationen benötigt werden.
 
-## Multiple Return Values
+## Mehrere Rückgabewerte
 
 ```v
 fn foo() (int, int) {
@@ -33,12 +33,12 @@ fn foo() (int, int) {
 a, b := foo()
 println(a) // 2
 println(b) // 3
-c, _ := foo() // ignore the second value with `_`
+c, _ := foo() // den zweiten Wert mit `_` ignorieren
 ```
 
-## Visibility
+## Sichtbarkeit
 
-Functions are **private** by default. Use `pub` to export them:
+Funktionen sind standardmäßig **privat**. Verwende `pub`, um sie zu exportieren:
 
 ```v
 pub fn public_function() {
@@ -48,13 +48,13 @@ fn private_function() {
 }
 ```
 
-## No Overloading
+## Kein Überladen
 
-Functions cannot be overloaded. This keeps the code unambiguous and easy to read.
+Funktionen können nicht überladen werden. Dadurch bleibt der Code eindeutig und einfach zu lesen.
 
-## Methods
+## Methoden
 
-Functions can be attached to types:
+Funktionen können an Typen gebunden werden:
 
 ```v
 struct User {
@@ -78,9 +78,9 @@ fn main() {
 }
 ```
 
-## High-Order Functions
+## Höhere-Ordnung-Funktionen
 
-Functions are first-class values and can be passed to other functions:
+Funktionen sind erstklassige Werte und können an andere Funktionen übergeben werden:
 
 ```v
 fn apply(arr []int, f fn(int) int) []int {
@@ -102,7 +102,7 @@ fn main() {
 }
 ```
 
-## Anonymous Functions
+## Anonyme Funktionen
 
 ```v
 fn main() {

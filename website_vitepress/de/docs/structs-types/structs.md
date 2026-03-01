@@ -1,8 +1,8 @@
 # Structs
 
-Structs are used to define custom data types with named fields.
+Structs werden verwendet, um benutzerdefinierte Datentypen mit benannten Feldern zu definieren.
 
-## Basic Struct
+## Einfacher Struct
 
 ```v
 struct Point {
@@ -17,9 +17,9 @@ fn main() {
 }
 ```
 
-## Mutable Structs
+## Veränderliche Structs
 
-Fields are immutable by default. Use `mut:` to declare mutable fields:
+Felder sind standardmäßig unveränderlich. Verwende `mut:`, um veränderliche Felder zu deklarieren:
 
 ```v
 struct User {
@@ -38,25 +38,25 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## Zugriffsmodifikatoren
 
 ```v
 struct Foo {
-    a int         // private immutable (default)
+    a int         // privat unveränderlich (Standard)
 mut:
-    b int         // private mutable
+    b int         // privat veränderlich
 pub:
-    c int         // public immutable
+    c int         // öffentlich unveränderlich
 pub mut:
-    d int         // public mutable, private to set
+    d int         // öffentlich veränderlich, privat setzbar
 __global:
-    e int         // public and mutable everywhere (rare)
+    e int         // öffentlich und überall veränderlich (selten)
 }
 ```
 
-## Methods
+## Methoden
 
-Functions can be attached to structs:
+Funktionen können an Structs gebunden werden:
 
 ```v
 struct Rectangle {
@@ -79,9 +79,9 @@ fn main() {
 }
 ```
 
-## Embedding
+## Einbettung (Embedding)
 
-Structs can embed other structs to inherit their fields and methods:
+Structs können andere Structs einbetten, um deren Felder und Methoden zu erben:
 
 ```v
 struct Animal {
@@ -103,12 +103,12 @@ fn (d Dog) speak() string {
 
 fn main() {
     d := Dog{Animal: Animal{name: 'Rex'}, breed: 'Labrador'}
-    println(d.name)    // Rex  (promoted from Animal)
+    println(d.name)    // Rex  (von Animal hochgestuft)
     println(d.speak()) // Woof!
 }
 ```
 
-## Default Field Values
+## Standard-Feldwerte
 
 ```v
 struct Config {
@@ -124,7 +124,7 @@ fn main() {
 }
 ```
 
-## JSON Example
+## JSON-Beispiel
 
 ```v
 import json

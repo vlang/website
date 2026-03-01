@@ -1,32 +1,32 @@
-# Introduction
+# Einführung
 
-V is a statically typed compiled programming language designed for building maintainable software.
+V ist eine statisch typisierte, kompilierte Programmiersprache, die für die Entwicklung wartbarer Software konzipiert wurde.
 
-It is influenced by Go, Oberon, Rust, Swift, Kotlin, and Python. V looks like Go and is nearly as simple, but it compiles much faster and offers more safety features.
+Sie ist beeinflusst von Go, Oberon, Rust, Swift, Kotlin und Python. V sieht aus wie Go und ist fast genauso einfach, kompiliert jedoch viel schneller und bietet mehr Sicherheitsfunktionen.
 
-Despite being simple, V covers all the fields: systems programming, web development, game development, GUI apps, mobile, science, embedded, tools, and more.
+Trotz seiner Einfachheit deckt V alle Bereiche ab: Systemprogrammierung, Webentwicklung, Spieleentwicklung, GUI-Anwendungen, Mobile, Wissenschaft, Embedded, Tools und mehr.
 
-## Key Features
+## Hauptmerkmale
 
-- **Simple** — Learn the entire language over a weekend. If you know Go, you already know ~80% of V.
-- **Fast compilation** — ~110k–1.2M lines of code per second per CPU core. V compiles itself in under 1 second.
-- **Safe** — No null, no global variables, no undefined behaviour. Immutability by default.
-- **Performance** — As fast as C. Compiles to human-readable C.
-- **Zero dependencies** — The compiler is only 400 KB with no external dependencies.
-- **C/C++ translation** — Translate entire C/C++ projects to V automatically.
-- **Hot code reloading** — Change code while the app is running without losing state.
-- **Built-in ORM & web framework** — Everything you need is in the standard library.
+- **Einfach** — Lerne die gesamte Sprache an einem Wochenende. Wenn du Go kennst, kennst du bereits ~80% von V.
+- **Schnelle Kompilierung** — ~110.000–1,2 Millionen Codezeilen pro Sekunde pro CPU-Kern. V kompiliert sich selbst in unter 1 Sekunde.
+- **Sicher** — Kein null, keine globalen Variablen, kein undefiniertes Verhalten. Unveränderlichkeit als Standard.
+- **Leistungsstark** — So schnell wie C. Kompiliert zu lesbarem C-Code.
+- **Keine Abhängigkeiten** — Der Compiler ist nur 400 KB groß ohne externe Abhängigkeiten.
+- **C/C++-Übersetzung** — Übersetze ganze C/C++-Projekte automatisch nach V.
+- **Hot Code Reloading** — Ändere Code während die App läuft, ohne den Zustand zu verlieren.
+- **Eingebautes ORM & Web-Framework** — Alles, was du brauchst, ist in der Standardbibliothek enthalten.
 
-## Where to Start
+## Wo anfangen
 
-- [Installation](/docs/installation) — Build V from source or download binaries.
-- [Hello World](/docs/hello-world) — Your first V program.
-- [Variables](/docs/basics/variables) — How to declare and use variables.
-- [Functions](/docs/basics/functions) — Defining and calling functions.
+- [Installation](/docs/installation) — V aus dem Quellcode bauen oder Binärdateien herunterladen.
+- [Hello World](/docs/hello-world) — Dein erstes V-Programm.
+- [Variablen](/docs/basics/variables) — Wie man Variablen deklariert und verwendet.
+- [Funktionen](/docs/basics/functions) — Funktionen definieren und aufrufen.
 
-## External Resources
+## Externe Ressourcen
 
-- [Official Documentation](https://docs.vlang.io) — Full language reference
-- [Standard Library](https://modules.vlang.io) — Module API reference
-- [Playground](https://play.vlang.io) — Run V code in the browser
-- [Package Manager](https://vpm.vlang.io) — Browse and publish V packages
+- [Offizielle Dokumentation](https://docs.vlang.io) — Vollständige Sprachreferenz
+- [Standardbibliothek](https://modules.vlang.io) — Modul-API-Referenz
+- [Playground](https://play.vlang.io) — V-Code im Browser ausführen
+- [Paketmanager](https://vpm.vlang.io) — V-Pakete durchsuchen und veröffentlichen

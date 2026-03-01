@@ -1,67 +1,67 @@
-# Installation
+# 安装
 
-## Install from Source
+## 从源码安装
 
-The recommended way to install V is from source. It only takes a few seconds:
+推荐从源码安装 V，只需几秒钟：
 
 ```bash
 git clone --depth=1 https://github.com/vlang/v && cd v && make
 ```
 
-On Windows, use `make.bat` instead of `make`.
+在 Windows 上，使用 `make.bat` 代替 `make`。
 
-## Symlink V
+## 创建符号链接
 
-After building, you can symlink V so it's available everywhere:
+构建完成后，可以为 V 创建符号链接，使其在任何地方都可用：
 
 ```bash
 sudo ./v symlink
 ```
 
-On Windows, run `v.exe symlink` from an elevated command prompt.
+在 Windows 上，以管理员权限运行 `v.exe symlink`。
 
-## Verify Installation
+## 验证安装
 
 ```bash
 v version
 ```
 
-You should see output like `V 0.5.0 ...`.
+你应该会看到类似 `V 0.5.0 ...` 的输出。
 
-## Download Pre-built Binaries
+## 下载预编译二进制文件
 
-Pre-built binaries are available for all major platforms on the
-[GitHub Releases](https://github.com/vlang/v/releases/latest) page:
+所有主流平台的预编译二进制文件可在
+[GitHub Releases](https://github.com/vlang/v/releases/latest) 页面下载：
 
-| Platform | File |
+| 平台 | 文件 |
 | --- | --- |
 | Linux (x86_64) | `v_linux.zip` |
 | macOS (Apple Silicon) | `v_macos_arm64.zip` |
 | macOS (Intel) | `v_macos_x86_64.zip` |
 | Windows | `v_windows.zip` |
 
-## Upgrading V
+## 升级 V
 
-To upgrade V to the latest version, run:
+将 V 升级到最新版本，运行：
 
 ```bash
 v up
 ```
 
-## Running a Program
+## 运行程序
 
 ```bash
 v run hello.v
 ```
 
-Or compile it:
+或者先编译再运行：
 
 ```bash
 v hello.v
 ./hello
 ```
 
-To run all `.v` files in a directory:
+运行目录下所有 `.v` 文件：
 
 ```bash
 v run .

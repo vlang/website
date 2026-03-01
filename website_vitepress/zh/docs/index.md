@@ -1,32 +1,30 @@
-# Introduction
+# 简介
 
-V is a statically typed compiled programming language designed for building maintainable software.
+V 是一种静态类型的编译型编程语言，专为构建可维护的软件而设计。
+它受到 Go、Oberon、Rust、Swift、Kotlin 和 Python 的影响。V 看起来像 Go，几乎同样简单，但编译速度更快，并提供了更多安全特性。
+尽管简单，V 涵盖了所有领域：系统编程、Web 开发、游戏开发、GUI 应用、移动端、科学计算、嵌入式、工具开发等。
 
-It is influenced by Go, Oberon, Rust, Swift, Kotlin, and Python. V looks like Go and is nearly as simple, but it compiles much faster and offers more safety features.
+## 核心特性
 
-Despite being simple, V covers all the fields: systems programming, web development, game development, GUI apps, mobile, science, embedded, tools, and more.
+- **简单** — 用一个周末即可学完整个语言。如果你了解 Go，你已经掌握了约 80% 的 V。
+- **快速编译** — 每个 CPU 核心每秒可编译约 11 万至 120 万行代码。V 在不到 1 秒内完成自身编译。
+- **安全** — 没有 null，没有全局变量，没有未定义行为。默认不可变。
+- **高性能** — 与 C 一样快。编译为人类可读的 C 代码。
+- **零依赖** — 编译器仅 400 KB，无任何外部依赖。
+- **C/C++ 转译** — 自动将整个 C/C++ 项目转换为 V。
+- **热代码重载** — 在应用运行时修改代码而不丢失状态。
+- **内置 ORM 和 Web 框架** — 标准库中包含你所需的一切。
 
-## Key Features
+## 从哪里开始
 
-- **Simple** — Learn the entire language over a weekend. If you know Go, you already know ~80% of V.
-- **Fast compilation** — ~110k–1.2M lines of code per second per CPU core. V compiles itself in under 1 second.
-- **Safe** — No null, no global variables, no undefined behaviour. Immutability by default.
-- **Performance** — As fast as C. Compiles to human-readable C.
-- **Zero dependencies** — The compiler is only 400 KB with no external dependencies.
-- **C/C++ translation** — Translate entire C/C++ projects to V automatically.
-- **Hot code reloading** — Change code while the app is running without losing state.
-- **Built-in ORM & web framework** — Everything you need is in the standard library.
+- [安装](/docs/installation) — 从源码构建 V 或下载二进制文件。
+- [Hello World](/docs/hello-world) — 你的第一个 V 程序。
+- [变量](/docs/basics/variables) — 如何声明和使用变量。
+- [函数](/docs/basics/functions) — 定义和调用函数。
 
-## Where to Start
+## 外部资源
 
-- [Installation](/docs/installation) — Build V from source or download binaries.
-- [Hello World](/docs/hello-world) — Your first V program.
-- [Variables](/docs/basics/variables) — How to declare and use variables.
-- [Functions](/docs/basics/functions) — Defining and calling functions.
-
-## External Resources
-
-- [Official Documentation](https://docs.vlang.io) — Full language reference
-- [Standard Library](https://modules.vlang.io) — Module API reference
-- [Playground](https://play.vlang.io) — Run V code in the browser
-- [Package Manager](https://vpm.vlang.io) — Browse and publish V packages
+- [官方文档](https://docs.vlang.io) — 完整的语言参考
+- [标准库](https://modules.vlang.io) — 模块 API 参考
+- [在线练习场](https://play.vlang.io) — 在浏览器中运行 V 代码
+- [包管理器](https://vpm.vlang.io) — 浏览和发布 V 包

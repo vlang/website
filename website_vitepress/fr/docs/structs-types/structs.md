@@ -1,8 +1,8 @@
 # Structs
 
-Structs are used to define custom data types with named fields.
+Les structs sont utilisés pour définir des types de données personnalisés avec des champs nommés.
 
-## Basic Struct
+## Struct de base
 
 ```v
 struct Point {
@@ -17,9 +17,9 @@ fn main() {
 }
 ```
 
-## Mutable Structs
+## Structs mutables
 
-Fields are immutable by default. Use `mut:` to declare mutable fields:
+Les champs sont immuables par défaut. Utilisez `mut:` pour déclarer des champs mutables :
 
 ```v
 struct User {
@@ -38,25 +38,25 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## Modificateurs d'accès
 
 ```v
 struct Foo {
-    a int         // private immutable (default)
+    a int         // privé immuable (par défaut)
 mut:
-    b int         // private mutable
+    b int         // privé mutable
 pub:
-    c int         // public immutable
+    c int         // public immuable
 pub mut:
-    d int         // public mutable, private to set
+    d int         // public mutable, privé à définir
 __global:
-    e int         // public and mutable everywhere (rare)
+    e int         // public et mutable partout (rare)
 }
 ```
 
-## Methods
+## Méthodes
 
-Functions can be attached to structs:
+Les fonctions peuvent être attachées aux structs :
 
 ```v
 struct Rectangle {
@@ -79,9 +79,9 @@ fn main() {
 }
 ```
 
-## Embedding
+## Inclusion (Embedding)
 
-Structs can embed other structs to inherit their fields and methods:
+Les structs peuvent inclure d'autres structs pour hériter de leurs champs et méthodes :
 
 ```v
 struct Animal {
@@ -103,12 +103,12 @@ fn (d Dog) speak() string {
 
 fn main() {
     d := Dog{Animal: Animal{name: 'Rex'}, breed: 'Labrador'}
-    println(d.name)    // Rex  (promoted from Animal)
+    println(d.name)    // Rex  (promu depuis Animal)
     println(d.speak()) // Woof!
 }
 ```
 
-## Default Field Values
+## Valeurs de champs par défaut
 
 ```v
 struct Config {
@@ -124,7 +124,7 @@ fn main() {
 }
 ```
 
-## JSON Example
+## Exemple JSON
 
 ```v
 import json
@@ -147,7 +147,7 @@ fn (mut u User) register() {
 fn main() {
     s := '[{"name":"Frodo","age":25},{"name":"Bobby","age":10}]'
     mut users := json.decode([]User, s) or {
-        eprintln('Failed to parse json')
+        eprintln('\u00c9chec de l\'analyse JSON')
         return
     }
     for i, user in users {

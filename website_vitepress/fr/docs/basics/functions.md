@@ -1,6 +1,6 @@
-# Functions
+# Fonctions
 
-## Basic Syntax
+## Syntaxe de base
 
 ```v
 fn main() {
@@ -17,13 +17,13 @@ fn sub(x int, y int) int {
 }
 ```
 
-The return type is specified **after** the parameter list. If the function returns nothing, the return type is omitted.
+Le type de retour est spécifié **après** la liste des paramètres. Si la fonction ne retourne rien, le type de retour est omis.
 
-## Hoisting
+## Hissage (Hoisting)
 
-Functions can be used before they are declared. V hoists all declarations, so there is no need for header files or forward declarations.
+Les fonctions peuvent être utilisées avant d'être déclarées. V hisse toutes les déclarations, il n'y a donc pas besoin de fichiers d'en-tête ni de déclarations anticipatives.
 
-## Multiple Return Values
+## Valeurs de retour multiples
 
 ```v
 fn foo() (int, int) {
@@ -33,12 +33,12 @@ fn foo() (int, int) {
 a, b := foo()
 println(a) // 2
 println(b) // 3
-c, _ := foo() // ignore the second value with `_`
+c, _ := foo() // ignorer la deuxième valeur avec `_`
 ```
 
-## Visibility
+## Visibilité
 
-Functions are **private** by default. Use `pub` to export them:
+Les fonctions sont **privées** par défaut. Utilisez `pub` pour les exporter :
 
 ```v
 pub fn public_function() {
@@ -48,13 +48,13 @@ fn private_function() {
 }
 ```
 
-## No Overloading
+## Pas de surcharge
 
-Functions cannot be overloaded. This keeps the code unambiguous and easy to read.
+Les fonctions ne peuvent pas être surchargées. Cela rend le code non ambigu et facile à lire.
 
-## Methods
+## Méthodes
 
-Functions can be attached to types:
+Les fonctions peuvent être attachées à des types :
 
 ```v
 struct User {
@@ -67,7 +67,7 @@ fn (u User) can_register() bool {
 }
 
 fn (mut u User) register() {
-    println('${u.name} is now registered')
+    println('${u.name} est maintenant inscrit')
 }
 
 fn main() {
@@ -78,9 +78,9 @@ fn main() {
 }
 ```
 
-## High-Order Functions
+## Fonctions d'ordre supérieur
 
-Functions are first-class values and can be passed to other functions:
+Les fonctions sont des valeurs de première classe et peuvent être passées à d'autres fonctions :
 
 ```v
 fn apply(arr []int, f fn(int) int) []int {
@@ -102,7 +102,7 @@ fn main() {
 }
 ```
 
-## Anonymous Functions
+## Fonctions anonymes
 
 ```v
 fn main() {

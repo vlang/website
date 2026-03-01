@@ -1,10 +1,10 @@
 # ORM
 
-V includes a built-in ORM that supports SQLite, PostgreSQL, MySQL, and MSSQL. No external library needed.
+V incluye un ORM integrado que soporta SQLite, PostgreSQL, MySQL y MSSQL. No se necesita ninguna biblioteca externa.
 
-## Defining a Model
+## Definir un Modelo
 
-Use the `@[table: 'table_name']` attribute to map a struct to a database table:
+Usa el atributo `@[table: 'nombre_tabla']` para mapear un struct a una tabla de base de datos:
 
 ```v
 import db.sqlite
@@ -20,9 +20,9 @@ pub:
 }
 ```
 
-## SQL Syntax (Built-in DSL)
+## Sintaxis SQL (DSL Integrado)
 
-V provides a clean SQL-like DSL for queries:
+V proporciona un DSL limpio similar a SQL para las consultas:
 
 ```v
 import db.sqlite
@@ -42,35 +42,35 @@ fn main() {
     user1 := User{id: '001', name: 'Alice'}
     user2 := User{id: '002', name: 'Bob'}
 
-    // Create table
+    // Crear tabla
     sql db { create table User }!
 
-    // Insert
+    // Insertar
     sql db { insert user1 into User }!
     sql db { insert user2 into User }!
 
-    // Select all
+    // Seleccionar todo
     all_users := sql db { select from User }!
     dump(all_users)
 
-    // Select with condition
+    // Seleccionar con condición
     alice := sql db { select from User where id == '001' }!
     dump(alice)
 
-    // Update
+    // Actualizar
     sql db { update User set name = 'Alice Smith' where id == '001' }!
 
-    // Delete
+    // Eliminar
     sql db { delete from User where id == '002' }!
 
-    // Drop table
+    // Eliminar tabla
     sql db { drop table User }!
 }
 ```
 
-## Query Builder Syntax
+## Sintaxis del Constructor de Consultas
 
-An alternative fluent query builder API is also available:
+También está disponible una API alternativa de constructor de consultas fluido:
 
 ```v
 import db.sqlite
@@ -94,23 +94,23 @@ fn main() {
     qb.insert(Product{id: 'p1', name: 'Widget', price: 9.99})!
     qb.insert(Product{id: 'p2', name: 'Gadget', price: 19.99})!
 
-    // Fetch all
+    // Obtener todos
     all := qb.query()!
     dump(all)
 
-    // Filter
+    // Filtrar
     cheap := qb.where('price < ?', 15.0)!.query()!
     dump(cheap)
 
-    // Update
+    // Actualizar
     qb.set('price = ?', 12.99)!.where('id = ?', 'p1')!.update()!
 
-    // Delete
+    // Eliminar
     qb.where('id = ?', 'p2')!.delete()!
 }
 ```
 
-## PostgreSQL Example
+## Ejemplo con PostgreSQL
 
 ```v
 import db.pg
@@ -124,7 +124,7 @@ fn main() {
     })!
     defer { db.close() }
 
-    // same SQL DSL works with PostgreSQL
+    // el mismo DSL SQL funciona con PostgreSQL
     users := sql db { select from User }!
     println(users)
 }

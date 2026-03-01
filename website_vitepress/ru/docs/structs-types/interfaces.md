@@ -1,8 +1,8 @@
-# Interfaces
+# Интерфейсы
 
-Interfaces define a contract — a set of methods that a type must implement. There is no explicit `implements` keyword; types satisfy interfaces automatically (structural/duck typing).
+Интерфейсы определяют контракт — набор методов, которые должен реализовывать тип. Ключевого слова `implements` нет; типы реализуют интерфейсы автоматически (структурная/утиная типизация).
 
-## Defining an Interface
+## Определение интерфейса
 
 ```v
 interface Shape {
@@ -11,9 +11,9 @@ interface Shape {
 }
 ```
 
-## Implementing an Interface
+## Реализация интерфейса
 
-Any struct that has the required methods automatically implements the interface:
+Любая структура, имеющая необходимые методы, автоматически реализует интерфейс:
 
 ```v
 struct Circle {
@@ -42,7 +42,7 @@ fn (r Rectangle) perimeter() f64 {
 }
 ```
 
-## Using Interfaces
+## Использование интерфейсов
 
 ```v
 fn print_shape_info(s Shape) {
@@ -63,9 +63,9 @@ fn main() {
 }
 ```
 
-## Interface with Fields
+## Интерфейс с полями
 
-Interfaces can also require fields (not just methods):
+Интерфейсы могут также требовать поля (не только методы):
 
 ```v
 interface Named {
@@ -86,7 +86,7 @@ fn main() {
 }
 ```
 
-## Type Checking with Interfaces
+## Проверка типов через интерфейсы
 
 ```v
 fn describe(s Shape) {
@@ -98,7 +98,7 @@ fn describe(s Shape) {
 }
 ```
 
-## Sum Types vs Interfaces
+## Суммарные типы и интерфейсы
 
-- Use **interfaces** when different unrelated types share common behaviour.
-- Use **sum types** (`type Foo = A | B`) when you have a closed, finite set of variants and want exhaustive pattern matching with `match`.
+- Используйте **интерфейсы**, когда разные несвязанные типы имеют общее поведение.
+- Используйте **суммарные типы** (`type Foo = A | B`), когда есть закрытый конечный набор вариантов и нужно исчерпывающее сопоставление шаблонов через `match`.

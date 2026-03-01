@@ -1,10 +1,10 @@
-# For Loops
+# Bucles For
 
-V has a single looping keyword: `for`. It covers all iteration patterns.
+V tiene una única palabra clave de iteración: `for`. Cubre todos los patrones de iteración.
 
-## Range Loop
+## Bucle de Rango
 
-Iterate over a half-open range `start..end` (end is exclusive):
+Itera sobre un rango semiabierto `inicio..fin` (fin es exclusivo):
 
 ```v
 for i in 0 .. 5 {
@@ -12,23 +12,23 @@ for i in 0 .. 5 {
 }
 ```
 
-## Iterating Over Arrays
+## Iterar Sobre Arrays
 
 ```v
 names := ['Alice', 'Bob', 'Carol']
 
-// value only
+// solo valor
 for name in names {
     println(name)
 }
 
-// index and value
+// índice y valor
 for i, name in names {
     println('${i}: ${name}')
 }
 ```
 
-## Iterating Over Maps
+## Iterar Sobre Maps
 
 ```v
 m := {'a': 1, 'b': 2, 'c': 3}
@@ -38,7 +38,7 @@ for key, val in m {
 }
 ```
 
-## Classic C-style Loop
+## Bucle Clásico Estilo C
 
 ```v
 for i := 0; i < 10; i++ {
@@ -46,7 +46,7 @@ for i := 0; i < 10; i++ {
 }
 ```
 
-## Condition-only Loop (while equivalent)
+## Bucle Solo con Condición (equivalente a while)
 
 ```v
 mut n := 0
@@ -56,7 +56,7 @@ for n < 5 {
 }
 ```
 
-## Infinite Loop
+## Bucle Infinito
 
 ```v
 mut i := 0
@@ -66,19 +66,19 @@ for {
 }
 ```
 
-## `break` and `continue`
+## `break` y `continue`
 
 ```v
 for i in 0 .. 10 {
-    if i == 3 { continue }  // skip 3
-    if i == 7 { break }     // stop at 7
+    if i == 3 { continue }  // saltar 3
+    if i == 7 { break }     // parar en 7
     println(i)
 }
 ```
 
-## Labeled Loops
+## Bucles Etiquetados
 
-For nested loops, you can label and break/continue from an outer loop:
+Para bucles anidados, puedes etiquetar y hacer break/continue desde un bucle exterior:
 
 ```v
 outer: for i in 0 .. 3 {
@@ -91,7 +91,7 @@ outer: for i in 0 .. 3 {
 }
 ```
 
-## Primes Example
+## Ejemplo de Números Primos
 
 ```v
 import math { log }

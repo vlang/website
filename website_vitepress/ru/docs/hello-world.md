@@ -1,8 +1,8 @@
 # Hello World
 
-## Your First V Program
+## Ваша первая программа на V
 
-Create a file named `hello.v`:
+Создайте файл с именем `hello.v`:
 
 ```v
 fn main() {
@@ -10,51 +10,51 @@ fn main() {
 }
 ```
 
-Run it:
+Запустите его:
 
 ```bash
 v run hello.v
 ```
 
-Or compile and run separately:
+Или скомпилируйте и запустите отдельно:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-## Skipping `fn main()`
+## Пропуск `fn main()`
 
-For single-file scripts, `fn main()` is optional:
+Для однофайловых скриптов `fn main()` не обязателен:
 
 ```v
 println('Hello, World!')
 ```
 
-This is useful for small programs and learning the language.
+Это удобно для небольших программ и изучения языка.
 
-## Running Multiple Files
+## Запуск нескольких файлов
 
-If your project has multiple `.v` files in a folder, run all of them at once:
+Если ваш проект содержит несколько файлов `.v` в одной папке, запустите их все сразу:
 
 ```bash
 v run .
 ```
 
-## Comments
+## Комментарии
 
 ```v
-// This is a single line comment.
+// Это однострочный комментарий.
 /*
-  This is a multiline comment.
-  /* It can be nested. */
+  Это многострочный комментарий.
+  /* Он может быть вложенным. */
 */
 ```
 
-## A Slightly Bigger Example
+## Немного более сложный пример
 
 ```v
-// fibonacci.v — compute Fibonacci numbers up to a given rank
+// fibonacci.v — вычисляем числа Фибоначчи до заданного ранга
 const args = arguments()
 
 fn main() {

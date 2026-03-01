@@ -1,44 +1,44 @@
 # Match
 
-`match` is V's pattern matching statement — more powerful than a C `switch`. It must be exhaustive: every possible value must be handled.
+`match` est l'instruction de correspondance de motifs de V — plus puissante qu'un `switch` en C. Elle doit être exhaustive : chaque valeur possible doit être gérée.
 
-## Basic Usage
+## Utilisation de base
 
 ```v
 x := 3
 
 match x {
-    1 { println('one') }
-    2 { println('two') }
-    3 { println('three') }
-    else { println('other') }
+    1 { println('un') }
+    2 { println('deux') }
+    3 { println('trois') }
+    else { println('autre') }
 }
 ```
 
-## Match as an Expression
+## Match comme expression
 
 ```v
 name := 'Bob'
 greeting := match name {
-    'Alice' { 'Hey Alice!' }
-    'Bob'   { 'What is up, Bob?' }
-    else    { 'Hello, ${name}.' }
+    'Alice' { 'Salut Alice !' }
+    'Bob'   { 'Quoi de neuf, Bob ?' }
+    else    { 'Bonjour, ${name}.' }
 }
 println(greeting)
 ```
 
-## Matching Multiple Values
+## Correspondance avec plusieurs valeurs
 
 ```v
 n := 5
 match n {
-    1, 3, 5, 7, 9 { println('odd') }
-    2, 4, 6, 8    { println('even') }
-    else          { println('out of range') }
+    1, 3, 5, 7, 9 { println('impair') }
+    2, 4, 6, 8    { println('pair') }
+    else          { println('hors plage') }
 }
 ```
 
-## Matching Ranges
+## Correspondance avec des plages
 
 ```v
 score := 72
@@ -52,9 +52,9 @@ grade := match score {
 println(grade) // C
 ```
 
-## Matching Sum Types
+## Correspondance sur des types somme
 
-When matching on a sum type, V gives you access to the inner value with the correct type:
+Lors de la correspondance sur un type somme, V vous donne accès à la valeur interne avec le type correct :
 
 ```v
 type Shape = Circle | Rectangle
@@ -76,7 +76,7 @@ fn area(s Shape) f64 {
 }
 ```
 
-## FizzBuzz with Match
+## FizzBuzz avec Match
 
 ```v
 for n in 1 .. 101 {

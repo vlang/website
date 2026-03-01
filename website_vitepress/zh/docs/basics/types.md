@@ -1,35 +1,35 @@
-# Primitive Types
+# 基本类型
 
-## Integer Types
-
-```v
-// Signed integers
-i8    // -128 to 127
-i16   // -32,768 to 32,767
-int   // -2,147,483,648 to 2,147,483,647  (always 32-bit)
-i64   // -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
-
-// Unsigned integers
-u8    // 0 to 255  (also used for bytes)
-u16   // 0 to 65,535
-u32   // 0 to 4,294,967,295
-u64   // 0 to 18,446,744,073,709,551,615
-
-// Platform-dependent
-isize // signed, size of a pointer
-usize // unsigned, size of a pointer
-```
-
-> **Note:** Unlike C and Go, `int` in V is always 32-bit regardless of platform.
-
-## Floating-Point Types
+## 整数类型
 
 ```v
-f32   // single-precision (32-bit)
-f64   // double-precision (64-bit)
+// 有符号整数
+i8    // -128 到 127
+i16   // -32,768 到 32,767
+int   // -2,147,483,648 到 2,147,483,647  （始终为 32 位）
+i64   // -9,223,372,036,854,775,808 到 9,223,372,036,854,775,807
+
+// 无符号整数
+u8    // 0 到 255  （也用于字节）
+u16   // 0 到 65,535
+u32   // 0 到 4,294,967,295
+u64   // 0 到 18,446,744,073,709,551,615
+
+// 平台相关
+isize // 有符号，指针大小
+usize // 无符号，指针大小
 ```
 
-## Boolean
+> **注意：** 与 C 和 Go 不同，V 中的 `int` 无论平台如何始终为 32 位。
+
+## 浮点类型
+
+```v
+f32   // 单精度（32 位）
+f64   // 双精度（64 位）
+```
+
+## 布尔类型
 
 ```v
 is_ready := true
@@ -38,43 +38,43 @@ is_done  := false
 
 ## Rune
 
-A `rune` represents a Unicode code point:
+`rune` 表示一个 Unicode 码点：
 
 ```v
-letter := `A`        // rune literal uses backticks
+letter := `A`        // rune 字面量使用反引号
 emoji  := `🌎`
 println(letter)      // A
 println(int(letter)) // 65
 ```
 
-## Type Promotions
+## 类型提升
 
-Small types are automatically promoted when combined with larger types on the same side of an operator:
+当同一运算符两侧的较小类型与较大类型组合时，会自动提升：
 
 ```v
 u := u16(12)
-v := 13 + u    // v is u16 — no promotion
+v := 13 + u    // v 是 u16 — 无提升
 x := f32(45.6)
-y := x + 3.14  // y is f32 — no promotion
-a := 75        // int (default for integer literals)
-b := 14.7      // f64 (default for float literals)
+y := x + 3.14  // y 是 f32 — 无提升
+a := 75        // int（整数字面量的默认类型）
+b := 14.7      // f64（浮点字面量的默认类型）
 ```
 
-## Numeric Literals
+## 数字字面量
 
 ```v
-n1 := 1_000_000      // underscores for readability
-n2 := 0xff           // hex
-n3 := 0o77           // octal
-n4 := 0b1111_0000    // binary
-f1 := 3.14_159_265   // float with underscores
+n1 := 1_000_000      // 下划线提高可读性
+n2 := 0xff           // 十六进制
+n3 := 0o77           // 八进制
+n4 := 0b1111_0000    // 二进制
+f1 := 3.14_159_265   // 带下划线的浮点数
 ```
 
 ## `voidptr`
 
-A raw pointer type used mainly for C interoperability. Avoid in pure V code.
+主要用于 C 互操作的原始指针类型。在纯 V 代码中应避免使用。
 
 ```v
-// mostly for C interop
+// 主要用于 C 互操作
 p := voidptr(0)
 ```

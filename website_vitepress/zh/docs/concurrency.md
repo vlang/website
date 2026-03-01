@@ -1,8 +1,8 @@
-# Concurrency
+# 并发
 
-V uses lightweight threads (goroutines) to run work concurrently. The `spawn` keyword starts a function in a new thread.
+V 使用轻量级线程（协程）来并发执行工作。`spawn` 关键字在新线程中启动一个函数。
 
-## Basic Spawning
+## 基本用法
 
 ```v
 import time
@@ -19,15 +19,15 @@ fn main() {
     threads << spawn expensive_computing(2, 500)
     threads << spawn expensive_computing(3, 1000)
 
-    // Wait for all threads to finish
+    // 等待所有线程完成
     threads.wait()
     println('All jobs finished!')
 }
 ```
 
-## Getting Return Values
+## 获取返回值
 
-Threads can return values. Calling `.wait()` on a `[]thread T` returns `[]T`:
+线程可以返回值。对 `[]thread T` 调用 `.wait()` 会返回 `[]T`：
 
 ```v
 fn expensive_computing(i int) int {
@@ -45,7 +45,7 @@ fn main() {
 }
 ```
 
-## Concurrent HTTP Requests
+## 并发 HTTP 请求
 
 ```v
 import net.http
@@ -75,14 +75,14 @@ fn main() {
 }
 ```
 
-## Channels
+## 通道
 
-Channels allow safe communication between threads:
+通道允许线程之间进行安全通信：
 
 ```v
 fn producer(ch chan int) {
     for i in 1 .. 6 {
-        ch <- i  // send to channel
+        ch <- i  // 发送到通道
     }
     ch.close()
 }
@@ -97,9 +97,9 @@ fn main() {
 }
 ```
 
-## Mutexes
+## 互斥锁
 
-Use `sync.Mutex` to protect shared state:
+使用 `sync.Mutex` 保护共享状态：
 
 ```v
 import sync
@@ -119,7 +119,7 @@ fn (mut c Counter) increment() {
 
 ## `defer`
 
-`defer` executes a statement when the surrounding function returns — useful for cleanup:
+`defer` 在外围函数返回时执行语句——适用于清理操作：
 
 ```v
 import os
@@ -128,7 +128,7 @@ fn process_file(path string) {
     f := os.open(path) or { return }
     defer { f.close() }
 
-    // use f — it will be closed automatically
+    // 使用 f — 它将被自动关闭
     println(f.read_to_string() or { '' })
 }
 ```

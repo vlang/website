@@ -1,10 +1,10 @@
-# Error Handling
+# Fehlerbehandlung
 
-V uses **Option** and **Result** types instead of exceptions. This makes error handling explicit and visible in function signatures.
+V verwendet **Option**- und **Result**-Typen anstelle von Ausnahmen. Dadurch wird die Fehlerbehandlung explizit und in Funktionssignaturen sichtbar.
 
-## Option Types
+## Option-Typen
 
-An `?T` (option) holds either a value of type `T` or `none`:
+Ein `?T` (Option) enthält entweder einen Wert vom Typ `T` oder `none`:
 
 ```v
 fn find_user(id int) ?string {
@@ -21,9 +21,9 @@ fn main() {
 }
 ```
 
-## Result Types
+## Result-Typen
 
-A `!T` (result) holds either a value of type `T` or an error:
+Ein `!T` (Result) enthält entweder einen Wert vom Typ `T` oder einen Fehler:
 
 ```v
 fn divide(a f64, b f64) !f64 {
@@ -42,9 +42,9 @@ fn main() {
 }
 ```
 
-## The `or` Block
+## Der `or`-Block
 
-The `or` block runs when the result is `none` or an error. Inside `or`, `err` holds the error value:
+Der `or`-Block wird ausgeführt, wenn das Ergebnis `none` oder ein Fehler ist. Innerhalb von `or` enthält `err` den Fehlerwert:
 
 ```v
 import net.http
@@ -58,20 +58,20 @@ fn main() {
 }
 ```
 
-## Propagating Errors with `!`
+## Fehler mit `!` weitergeben
 
-Adding `!` after a call propagates the error up to the caller (similar to `?` in Rust):
+Das Hinzufügen von `!` nach einem Aufruf gibt den Fehler an den Aufrufer weiter (ähnlich wie `?` in Rust):
 
 ```v
 fn read_config(path string) !string {
-    content := os.read_file(path)!  // propagates if error
+    content := os.read_file(path)!  // wird weitergegeben, wenn ein Fehler auftritt
     return content
 }
 ```
 
-## Custom Errors
+## Eigene Fehlertypen
 
-Implement the `IError` interface to create custom error types:
+Implementiere das `IError`-Interface, um eigene Fehlertypen zu erstellen:
 
 ```v
 struct DivisionError {
@@ -95,7 +95,7 @@ fn safe_divide(a f64, b f64) !f64 {
 }
 ```
 
-## Matching on Error Types
+## Auf Fehlertypen matchen
 
 ```v
 import semver
@@ -120,9 +120,9 @@ fn check_error(err IError) {
 }
 ```
 
-## The `?` Unwrap Operator
+## Der `?`-Entpack-Operator
 
-Use `val?` inside an option context to unwrap or propagate `none`:
+Verwende `val?` in einem Option-Kontext, um den Wert zu entpacken oder `none` weiterzugeben:
 
 ```v
 fn get_name(users map[int]string, id int) ?string {

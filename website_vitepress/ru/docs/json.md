@@ -1,8 +1,8 @@
 # JSON
 
-V has built-in JSON encoding and decoding in the `json` module — no external library needed.
+V имеет встроенную поддержку кодирования и декодирования JSON в модуле `json` — внешние библиотеки не нужны.
 
-## Decoding JSON
+## Декодирование JSON
 
 ```v
 import json
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Encoding JSON
+## Кодирование JSON
 
 ```v
 import json
@@ -45,9 +45,9 @@ fn main() {
 }
 ```
 
-## Custom Field Names
+## Пользовательские имена полей
 
-Use the `@[json: 'field_name']` attribute to map struct fields to different JSON keys:
+Используйте атрибут `@[json: 'field_name']` для отображения полей структуры на другие ключи JSON:
 
 ```v
 import json
@@ -66,28 +66,28 @@ fn main() {
 }
 ```
 
-## Skipping Fields
+## Пропуск полей
 
-Use `@[json: '-']` to exclude a field from JSON serialization:
+Используйте `@[json: '-']` для исключения поля из сериализации JSON:
 
 ```v
 struct User {
     name     string
     email    string
-    password string @[json: '-']  // never included in JSON output
+    password string @[json: '-']  // никогда не включается в JSON-вывод
 }
 ```
 
-## Optional / Nullable Fields
+## Опциональные / допускающие null поля
 
-Use option types for fields that may be absent in the JSON:
+Используйте опциональные типы для полей, которые могут отсутствовать в JSON:
 
 ```v
 import json
 
 struct Profile {
     name   string
-    bio    ?string   // optional — may be null or absent
+    bio    ?string   // опциональное — может быть null или отсутствовать
     age    ?int
 }
 
@@ -99,7 +99,7 @@ fn main() {
 }
 ```
 
-## Nested Structs
+## Вложенные структуры
 
 ```v
 import json

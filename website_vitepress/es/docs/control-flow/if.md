@@ -1,73 +1,73 @@
 # If / Else
 
-## Basic Syntax
+## Sintaxis Básica
 
 ```v
 a := 10
 
 if a < 10 {
-    println('less than 10')
+    println('menor que 10')
 } else if a == 10 {
-    println('exactly 10')
+    println('exactamente 10')
 } else {
-    println('greater than 10')
+    println('mayor que 10')
 }
 ```
 
-## If as an Expression
+## If como Expresión
 
-In V, `if` is an expression and can be used on the right side of an assignment:
+En V, `if` es una expresión y puede usarse en el lado derecho de una asignación:
 
 ```v
 num := 7
-result := if num % 2 == 0 { 'even' } else { 'odd' }
-println(result) // odd
+result := if num % 2 == 0 { 'par' } else { 'impar' }
+println(result) // impar
 ```
 
-## Inline Short Form
+## Forma Corta en Línea
 
 ```v
 x := 42
-if x > 0 { println('positive') }
+if x > 0 { println('positivo') }
 ```
 
-## Condition with Initialization
+## Condición con Inicialización
 
-You can initialize a variable inside an `if` condition:
+Puedes inicializar una variable dentro de una condición `if`:
 
 ```v
 if val := some_function_returning_option() {
-    println('got value: ${val}')
+    println('valor obtenido: ${val}')
 } else {
-    println('no value')
+    println('ningún valor')
 }
 ```
 
-## The `in` Operator
+## El Operador `in`
 
-Use `in` to check membership in arrays or maps:
+Usa `in` para verificar membresía en arrays o maps:
 
 ```v
 nums := [1, 2, 3]
 if 2 in nums {
-    println('found 2')
+    println('encontrado 2')
 }
 
 m := {'a': 1, 'b': 2}
 if 'a' in m {
-    println('key exists')
+    println('clave existe')
 }
 ```
 
-Use `!in` for the inverse:
+Usa `!in` para la inversa:
 
 ```v
 if 5 !in nums {
-    println('5 is not in the array')
+    println('5 no está en el array')
 }
 ```
 
-## FizzBuzz Example
+## Ejemplo FizzBuzz
 
 ```v
 for n in 1 .. 101 {

@@ -1,32 +1,32 @@
-# Introduction
+# はじめに
 
-V is a statically typed compiled programming language designed for building maintainable software.
+V は、保守性の高いソフトウェアを構築するために設計された、静的型付けのコンパイル言語です。
 
-It is influenced by Go, Oberon, Rust, Swift, Kotlin, and Python. V looks like Go and is nearly as simple, but it compiles much faster and offers more safety features.
+Go、Oberon、Rust、Swift、Kotlin、Python の影響を受けています。V は Go に似た見た目で、ほぼ同じくらいシンプルですが、コンパイルがはるかに速く、より多くの安全機能を提供します。
 
-Despite being simple, V covers all the fields: systems programming, web development, game development, GUI apps, mobile, science, embedded, tools, and more.
+シンプルでありながら、V はシステムプログラミング、Web 開発、ゲーム開発、GUI アプリ、モバイル、科学、組み込み、ツールなど、あらゆる分野をカバーしています。
 
-## Key Features
+## 主な特徴
 
-- **Simple** — Learn the entire language over a weekend. If you know Go, you already know ~80% of V.
-- **Fast compilation** — ~110k–1.2M lines of code per second per CPU core. V compiles itself in under 1 second.
-- **Safe** — No null, no global variables, no undefined behaviour. Immutability by default.
-- **Performance** — As fast as C. Compiles to human-readable C.
-- **Zero dependencies** — The compiler is only 400 KB with no external dependencies.
-- **C/C++ translation** — Translate entire C/C++ projects to V automatically.
-- **Hot code reloading** — Change code while the app is running without losing state.
-- **Built-in ORM & web framework** — Everything you need is in the standard library.
+- **シンプル** — 週末で言語全体を習得できます。Go を知っているなら、すでに V の約 80% を知っています。
+- **高速コンパイル** — CPU コアあたり毎秒 ~11 万〜 120 万行のコード。V 自体を 1 秒未満でコンパイルします。
+- **安全** — null なし、グローバル変数なし、未定義動作なし。デフォルトで不変。
+- **高性能** — C と同じくらい高速。人間が読める C にコンパイルされます。
+- **依存なし** — コンパイラはわずか 400 KB で外部依存関係なし。
+- **C/C++ 変換** — C/C++ プロジェクト全体を自動的に V に変換できます。
+- **ホットコードリロード** — 状態を失うことなく、アプリの実行中にコードを変更できます。
+- **組み込み ORM & Web フレームワーク** — 必要なものはすべて標準ライブラリに含まれています。
 
-## Where to Start
+## はじめるには
 
-- [Installation](/docs/installation) — Build V from source or download binaries.
-- [Hello World](/docs/hello-world) — Your first V program.
-- [Variables](/docs/basics/variables) — How to declare and use variables.
-- [Functions](/docs/basics/functions) — Defining and calling functions.
+- [インストール](/docs/installation) — ソースから V をビルドするか、バイナリをダウンロードします。
+- [Hello World](/docs/hello-world) — 最初の V プログラム。
+- [変数](/docs/basics/variables) — 変数の宣言と使用方法。
+- [関数](/docs/basics/functions) — 関数の定義と呼び出し。
 
-## External Resources
+## 外部リソース
 
-- [Official Documentation](https://docs.vlang.io) — Full language reference
-- [Standard Library](https://modules.vlang.io) — Module API reference
-- [Playground](https://play.vlang.io) — Run V code in the browser
-- [Package Manager](https://vpm.vlang.io) — Browse and publish V packages
+- [公式ドキュメント](https://docs.vlang.io) — 完全な言語リファレンス
+- [標準ライブラリ](https://modules.vlang.io) — モジュール API リファレンス
+- [プレイグラウンド](https://play.vlang.io) — ブラウザで V コードを実行
+- [パッケージマネージャー](https://vpm.vlang.io) — V パッケージの閲覧と公開

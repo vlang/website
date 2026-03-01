@@ -1,8 +1,8 @@
-# Structs
+# Структуры
 
-Structs are used to define custom data types with named fields.
+Структуры используются для определения пользовательских типов данных с именованными полями.
 
-## Basic Struct
+## Базовая структура
 
 ```v
 struct Point {
@@ -17,9 +17,9 @@ fn main() {
 }
 ```
 
-## Mutable Structs
+## Изменяемые структуры
 
-Fields are immutable by default. Use `mut:` to declare mutable fields:
+Поля неизменяемы по умолчанию. Используйте `mut:` для объявления изменяемых полей:
 
 ```v
 struct User {
@@ -38,25 +38,25 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## Модификаторы доступа
 
 ```v
 struct Foo {
-    a int         // private immutable (default)
+    a int         // приватное неизменяемое (по умолчанию)
 mut:
-    b int         // private mutable
+    b int         // приватное изменяемое
 pub:
-    c int         // public immutable
+    c int         // публичное неизменяемое
 pub mut:
-    d int         // public mutable, private to set
+    d int         // публичное изменяемое, приватное для записи
 __global:
-    e int         // public and mutable everywhere (rare)
+    e int         // публичное и изменяемое везде (редко)
 }
 ```
 
-## Methods
+## Методы
 
-Functions can be attached to structs:
+Функции можно прикреплять к структурам:
 
 ```v
 struct Rectangle {
@@ -79,9 +79,9 @@ fn main() {
 }
 ```
 
-## Embedding
+## Встраивание
 
-Structs can embed other structs to inherit their fields and methods:
+Структуры могут встраивать другие структуры, наследуя их поля и методы:
 
 ```v
 struct Animal {
@@ -103,12 +103,12 @@ fn (d Dog) speak() string {
 
 fn main() {
     d := Dog{Animal: Animal{name: 'Rex'}, breed: 'Labrador'}
-    println(d.name)    // Rex  (promoted from Animal)
+    println(d.name)    // Rex  (поднято из Animal)
     println(d.speak()) // Woof!
 }
 ```
 
-## Default Field Values
+## Значения полей по умолчанию
 
 ```v
 struct Config {
@@ -124,7 +124,7 @@ fn main() {
 }
 ```
 
-## JSON Example
+## Пример с JSON
 
 ```v
 import json

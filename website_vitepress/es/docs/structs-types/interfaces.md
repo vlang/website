@@ -1,8 +1,8 @@
 # Interfaces
 
-Interfaces define a contract — a set of methods that a type must implement. There is no explicit `implements` keyword; types satisfy interfaces automatically (structural/duck typing).
+Las interfaces definen un contrato — un conjunto de métodos que un tipo debe implementar. No hay una palabra clave explícita `implements`; los tipos satisfacen interfaces automáticamente (tipado estructural/duck typing).
 
-## Defining an Interface
+## Definir una Interfaz
 
 ```v
 interface Shape {
@@ -11,9 +11,9 @@ interface Shape {
 }
 ```
 
-## Implementing an Interface
+## Implementar una Interfaz
 
-Any struct that has the required methods automatically implements the interface:
+Cualquier struct que tenga los métodos requeridos implementa automáticamente la interfaz:
 
 ```v
 struct Circle {
@@ -42,12 +42,12 @@ fn (r Rectangle) perimeter() f64 {
 }
 ```
 
-## Using Interfaces
+## Usar Interfaces
 
 ```v
 fn print_shape_info(s Shape) {
-    println('Area:      ${s.area():.2f}')
-    println('Perimeter: ${s.perimeter():.2f}')
+    println('Área:      ${s.area():.2f}')
+    println('Perímetro: ${s.perimeter():.2f}')
 }
 
 fn main() {
@@ -63,9 +63,9 @@ fn main() {
 }
 ```
 
-## Interface with Fields
+## Interfaz con Campos
 
-Interfaces can also require fields (not just methods):
+Las interfaces también pueden requerir campos (no solo métodos):
 
 ```v
 interface Named {
@@ -77,7 +77,7 @@ struct Person {
 }
 
 fn greet(n Named) {
-    println('Hello, ${n.name}!')
+    println('Hola, ${n.name}!')
 }
 
 fn main() {
@@ -86,19 +86,19 @@ fn main() {
 }
 ```
 
-## Type Checking with Interfaces
+## Verificación de Tipos con Interfaces
 
 ```v
 fn describe(s Shape) {
     if s is Circle {
-        println('Circle with radius ${s.radius}')
+        println('Círculo con radio ${s.radius}')
     } else if s is Rectangle {
-        println('Rectangle ${s.width} x ${s.height}')
+        println('Rectángulo ${s.width} x ${s.height}')
     }
 }
 ```
 
-## Sum Types vs Interfaces
+## Tipos Sum vs Interfaces
 
-- Use **interfaces** when different unrelated types share common behaviour.
-- Use **sum types** (`type Foo = A | B`) when you have a closed, finite set of variants and want exhaustive pattern matching with `match`.
+- Usa **interfaces** cuando tipos diferentes no relacionados comparten comportamiento común.
+- Usa **tipos sum** (`type Foo = A | B`) cuando tienes un conjunto cerrado y finito de variantes y quieres coincidencia de patrones exhaustiva con `match`.

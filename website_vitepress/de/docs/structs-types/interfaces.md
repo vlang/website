@@ -1,8 +1,8 @@
 # Interfaces
 
-Interfaces define a contract — a set of methods that a type must implement. There is no explicit `implements` keyword; types satisfy interfaces automatically (structural/duck typing).
+Interfaces definieren einen Vertrag — eine Menge von Methoden, die ein Typ implementieren muss. Es gibt kein explizites `implements`-Schlüsselwort; Typen erfüllen Interfaces automatisch (strukturelles/Duck-Typing).
 
-## Defining an Interface
+## Ein Interface definieren
 
 ```v
 interface Shape {
@@ -11,9 +11,9 @@ interface Shape {
 }
 ```
 
-## Implementing an Interface
+## Ein Interface implementieren
 
-Any struct that has the required methods automatically implements the interface:
+Jeder Struct, der die erforderlichen Methoden hat, implementiert das Interface automatisch:
 
 ```v
 struct Circle {
@@ -42,7 +42,7 @@ fn (r Rectangle) perimeter() f64 {
 }
 ```
 
-## Using Interfaces
+## Interfaces verwenden
 
 ```v
 fn print_shape_info(s Shape) {
@@ -63,9 +63,9 @@ fn main() {
 }
 ```
 
-## Interface with Fields
+## Interface mit Feldern
 
-Interfaces can also require fields (not just methods):
+Interfaces können auch Felder (nicht nur Methoden) erfordern:
 
 ```v
 interface Named {
@@ -86,7 +86,7 @@ fn main() {
 }
 ```
 
-## Type Checking with Interfaces
+## Typprüfung mit Interfaces
 
 ```v
 fn describe(s Shape) {
@@ -98,7 +98,7 @@ fn describe(s Shape) {
 }
 ```
 
-## Sum Types vs Interfaces
+## Sum-Typen vs. Interfaces
 
-- Use **interfaces** when different unrelated types share common behaviour.
-- Use **sum types** (`type Foo = A | B`) when you have a closed, finite set of variants and want exhaustive pattern matching with `match`.
+- Verwende **Interfaces**, wenn verschiedene, nicht verwandte Typen gemeinsames Verhalten teilen.
+- Verwende **Sum-Typen** (`type Foo = A | B`), wenn du eine geschlossene, endliche Menge von Varianten hast und erschöpfendes Pattern-Matching mit `match` möchtest.

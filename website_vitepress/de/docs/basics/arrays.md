@@ -1,6 +1,6 @@
 # Arrays
 
-## Basic Usage
+## Grundlegende Verwendung
 
 ```v
 mut nums := [1, 2, 3]
@@ -11,9 +11,9 @@ nums[1] = 20
 println(nums)        // [1, 20, 3]
 ```
 
-## Typed Arrays
+## Typisierte Arrays
 
-Array element types are inferred. You can also declare an empty array with an explicit type:
+Array-Elementtypen werden automatisch erkannt. Du kannst auch ein leeres Array mit einem expliziten Typ deklarieren:
 
 ```v
 mut names := []string{}
@@ -22,24 +22,24 @@ names << 'Bob'
 println(names) // ['Alice', 'Bob']
 ```
 
-## Pre-allocated Arrays
+## Vorab alloziierte Arrays
 
 ```v
-// array of 5 ints, all initialized to 0
+// Array mit 5 ints, alle mit 0 initialisiert
 a := []int{len: 5}
 
-// array of 3 strings, all initialized to 'x'
+// Array mit 3 strings, alle mit 'x' initialisiert
 b := []string{len: 3, init: 'x'}
 ```
 
-## Appending Elements
+## Elemente anhängen
 
-Use `<<` to append:
+Verwende `<<` zum Anhängen:
 
 ```v
 mut a := [1, 2, 3]
 a << 4
-a << [5, 6]   // append another array
+a << [5, 6]   // ein weiteres Array anhängen
 println(a)    // [1, 2, 3, 4, 5, 6]
 ```
 
@@ -47,9 +47,9 @@ println(a)    // [1, 2, 3, 4, 5, 6]
 
 ```v
 a := [1, 2, 3, 4, 5]
-b := a[1..3]  // [2, 3]  (from index 1, up to but not including 3)
-c := a[..2]   // [1, 2]  (from start to index 2)
-d := a[3..]   // [4, 5]  (from index 3 to end)
+b := a[1..3]  // [2, 3]  (von Index 1 bis ausschließlich Index 3)
+c := a[..2]   // [1, 2]  (vom Anfang bis Index 2)
+d := a[3..]   // [4, 5]  (von Index 3 bis zum Ende)
 ```
 
 ## Iteration
@@ -66,7 +66,7 @@ for i, name in names {
 }
 ```
 
-## Common Methods
+## Häufige Methoden
 
 ```v
 mut a := [3, 1, 4, 1, 5, 9, 2, 6]
@@ -88,7 +88,7 @@ mapped := a.map(it * 2)
 println(mapped) // [18, 12, 10, 8, 6, 4, 2, 2]
 ```
 
-## Multidimensional Arrays
+## Mehrdimensionale Arrays
 
 ```v
 mut matrix := [][]int{len: 3, init: []int{len: 3}}
@@ -98,12 +98,12 @@ matrix[2][2] = 9
 println(matrix) // [[1, 0, 0], [0, 5, 0], [0, 0, 9]]
 ```
 
-## Fixed-size Arrays
+## Arrays mit fester Größe
 
 ```v
-mut a := [5]int{}   // fixed array of 5 ints
+mut a := [5]int{}   // festes Array mit 5 ints
 a[0] = 10
 println(a)          // [10, 0, 0, 0, 0]
 ```
 
-Fixed arrays are stack-allocated and cannot be grown.
+Arrays mit fester Größe werden auf dem Stack alloziert und können nicht vergrößert werden.

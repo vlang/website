@@ -1,8 +1,8 @@
 # JSON
 
-V has built-in JSON encoding and decoding in the `json` module — no external library needed.
+V 在 `json` 模块中内置了 JSON 编码和解码功能——无需外部库。
 
-## Decoding JSON
+## 解码 JSON
 
 ```v
 import json
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Encoding JSON
+## 编码 JSON
 
 ```v
 import json
@@ -45,9 +45,9 @@ fn main() {
 }
 ```
 
-## Custom Field Names
+## 自定义字段名
 
-Use the `@[json: 'field_name']` attribute to map struct fields to different JSON keys:
+使用 `@[json: 'field_name']` 属性将结构体字段映射到不同的 JSON 键：
 
 ```v
 import json
@@ -66,28 +66,28 @@ fn main() {
 }
 ```
 
-## Skipping Fields
+## 跳过字段
 
-Use `@[json: '-']` to exclude a field from JSON serialization:
+使用 `@[json: '-']` 从 JSON 序列化中排除某个字段：
 
 ```v
 struct User {
     name     string
     email    string
-    password string @[json: '-']  // never included in JSON output
+    password string @[json: '-']  // 永远不包含在 JSON 输出中
 }
 ```
 
-## Optional / Nullable Fields
+## 可选/可空字段
 
-Use option types for fields that may be absent in the JSON:
+对可能在 JSON 中缺失的字段使用 option 类型：
 
 ```v
 import json
 
 struct Profile {
     name   string
-    bio    ?string   // optional — may be null or absent
+    bio    ?string   // 可选——可能为 null 或缺失
     age    ?int
 }
 
@@ -99,7 +99,7 @@ fn main() {
 }
 ```
 
-## Nested Structs
+## 嵌套结构体
 
 ```v
 import json

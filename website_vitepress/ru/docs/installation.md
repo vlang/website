@@ -1,67 +1,67 @@
-# Installation
+# Установка
 
-## Install from Source
+## Установка из исходников
 
-The recommended way to install V is from source. It only takes a few seconds:
+Рекомендуемый способ установить V — собрать его из исходников. Это занимает всего несколько секунд:
 
 ```bash
 git clone --depth=1 https://github.com/vlang/v && cd v && make
 ```
 
-On Windows, use `make.bat` instead of `make`.
+На Windows используйте `make.bat` вместо `make`.
 
-## Symlink V
+## Создание символической ссылки
 
-After building, you can symlink V so it's available everywhere:
+После сборки можно создать символическую ссылку на V, чтобы он был доступен отовсюду:
 
 ```bash
 sudo ./v symlink
 ```
 
-On Windows, run `v.exe symlink` from an elevated command prompt.
+На Windows выполните `v.exe symlink` из командной строки с правами администратора.
 
-## Verify Installation
+## Проверка установки
 
 ```bash
 v version
 ```
 
-You should see output like `V 0.5.0 ...`.
+Вы должны увидеть вывод вида `V 0.5.0 ...`.
 
-## Download Pre-built Binaries
+## Загрузка готовых бинарных файлов
 
-Pre-built binaries are available for all major platforms on the
-[GitHub Releases](https://github.com/vlang/v/releases/latest) page:
+Готовые бинарные файлы доступны для всех основных платформ на странице
+[GitHub Releases](https://github.com/vlang/v/releases/latest):
 
-| Platform | File |
+| Платформа | Файл |
 | --- | --- |
 | Linux (x86_64) | `v_linux.zip` |
 | macOS (Apple Silicon) | `v_macos_arm64.zip` |
 | macOS (Intel) | `v_macos_x86_64.zip` |
 | Windows | `v_windows.zip` |
 
-## Upgrading V
+## Обновление V
 
-To upgrade V to the latest version, run:
+Для обновления V до последней версии выполните:
 
 ```bash
 v up
 ```
 
-## Running a Program
+## Запуск программы
 
 ```bash
 v run hello.v
 ```
 
-Or compile it:
+Или скомпилируйте её:
 
 ```bash
 v hello.v
 ./hello
 ```
 
-To run all `.v` files in a directory:
+Чтобы запустить все файлы `.v` в директории:
 
 ```bash
 v run .

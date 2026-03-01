@@ -1,44 +1,44 @@
 # Maps
 
-Maps are unordered key-value stores. All keys must be of the same type, and all values must be of the same type.
+Maps sind ungeordnete Schlüssel-Wert-Speicher. Alle Schlüssel müssen vom gleichen Typ sein, und alle Werte müssen vom gleichen Typ sein.
 
-## Creating Maps
+## Maps erstellen
 
 ```v
-// map literal
+// Map-Literal
 mut scores := {
     'Alice': 10
     'Bob':   20
     'Carol': 30
 }
 
-// empty map
+// Leere Map
 mut m := map[string]int{}
 ```
 
-## Adding and Updating
+## Hinzufügen und Aktualisieren
 
 ```v
 mut m := map[string]int{}
 m['x'] = 1
 m['y'] = 2
-m['x'] = 99   // update existing key
+m['x'] = 99   // vorhandenen Schlüssel aktualisieren
 println(m)    // {'x': 99, 'y': 2}
 ```
 
-## Reading Values
+## Werte lesen
 
 ```v
 scores := {'Alice': 10, 'Bob': 20}
 
 println(scores['Alice']) // 10
 
-// safe lookup with `or` block — avoids panicking on missing key
+// sicheres Nachschlagen mit `or`-Block — verhindert Panic bei fehlendem Schlüssel
 val := scores['Dave'] or { -1 }
 println(val) // -1
 ```
 
-## Checking for a Key
+## Auf einen Schlüssel prüfen
 
 ```v
 m := {'a': 1, 'b': 2}
@@ -52,7 +52,7 @@ if 'z' !in m {
 }
 ```
 
-## Deleting Keys
+## Schlüssel löschen
 
 ```v
 mut m := {'a': 1, 'b': 2, 'c': 3}
@@ -60,7 +60,7 @@ m.delete('b')
 println(m) // {'a': 1, 'c': 3}
 ```
 
-## Iterating
+## Iteration
 
 ```v
 m := {'one': 1, 'two': 2, 'three': 3}
@@ -69,22 +69,22 @@ for key, val in m {
     println('${key} = ${val}')
 }
 
-// keys and values separately
+// Schlüssel und Werte separat
 for key in m.keys() {
     println(key)
 }
 ```
 
-## Map Size
+## Map-Größe
 
 ```v
 m := {'a': 1, 'b': 2}
 println(m.len) // 2
 ```
 
-## Allowed Key Types
+## Erlaubte Schlüsseltypen
 
-Map keys can be strings, integers, floats, runes, or any type that implements the `==` operator.
+Map-Schlüssel können Strings, Integer, Floats, Runes oder beliebige Typen sein, die den `==`-Operator implementieren.
 
 ```v
 mut m := map[int]string{}

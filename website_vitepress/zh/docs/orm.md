@@ -1,10 +1,10 @@
 # ORM
 
-V includes a built-in ORM that supports SQLite, PostgreSQL, MySQL, and MSSQL. No external library needed.
+V 内置了支持 SQLite、PostgreSQL、MySQL 和 MSSQL 的 ORM。无需外部库。
 
-## Defining a Model
+## 定义模型
 
-Use the `@[table: 'table_name']` attribute to map a struct to a database table:
+使用 `@[table: 'table_name']` 属性将结构体映射到数据库表：
 
 ```v
 import db.sqlite
@@ -20,9 +20,9 @@ pub:
 }
 ```
 
-## SQL Syntax (Built-in DSL)
+## SQL 语法（内置 DSL）
 
-V provides a clean SQL-like DSL for queries:
+V 提供了简洁的类 SQL DSL 用于查询：
 
 ```v
 import db.sqlite
@@ -42,35 +42,35 @@ fn main() {
     user1 := User{id: '001', name: 'Alice'}
     user2 := User{id: '002', name: 'Bob'}
 
-    // Create table
+    // 创建表
     sql db { create table User }!
 
-    // Insert
+    // 插入
     sql db { insert user1 into User }!
     sql db { insert user2 into User }!
 
-    // Select all
+    // 查询所有
     all_users := sql db { select from User }!
     dump(all_users)
 
-    // Select with condition
+    // 条件查询
     alice := sql db { select from User where id == '001' }!
     dump(alice)
 
-    // Update
+    // 更新
     sql db { update User set name = 'Alice Smith' where id == '001' }!
 
-    // Delete
+    // 删除
     sql db { delete from User where id == '002' }!
 
-    // Drop table
+    // 删除表
     sql db { drop table User }!
 }
 ```
 
-## Query Builder Syntax
+## 查询构造器语法
 
-An alternative fluent query builder API is also available:
+还提供了另一种流式查询构造器 API：
 
 ```v
 import db.sqlite
@@ -94,23 +94,23 @@ fn main() {
     qb.insert(Product{id: 'p1', name: 'Widget', price: 9.99})!
     qb.insert(Product{id: 'p2', name: 'Gadget', price: 19.99})!
 
-    // Fetch all
+    // 查询所有
     all := qb.query()!
     dump(all)
 
-    // Filter
+    // 过滤
     cheap := qb.where('price < ?', 15.0)!.query()!
     dump(cheap)
 
-    // Update
+    // 更新
     qb.set('price = ?', 12.99)!.where('id = ?', 'p1')!.update()!
 
-    // Delete
+    // 删除
     qb.where('id = ?', 'p2')!.delete()!
 }
 ```
 
-## PostgreSQL Example
+## PostgreSQL 示例
 
 ```v
 import db.pg
@@ -124,7 +124,7 @@ fn main() {
     })!
     defer { db.close() }
 
-    // same SQL DSL works with PostgreSQL
+    // 同样的 SQL DSL 也适用于 PostgreSQL
     users := sql db { select from User }!
     println(users)
 }

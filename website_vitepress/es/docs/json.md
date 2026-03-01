@@ -1,8 +1,8 @@
 # JSON
 
-V has built-in JSON encoding and decoding in the `json` module — no external library needed.
+V tiene codificación y decodificación JSON integrada en el módulo `json` — no se necesita ninguna biblioteca externa.
 
-## Decoding JSON
+## Decodificar JSON
 
 ```v
 import json
@@ -18,7 +18,7 @@ fn main() {
     s := '[{"name":"Frodo","age":25},{"name":"Bobby","age":10}]'
 
     mut users := json.decode([]User, s) or {
-        eprintln('Failed to parse json')
+        eprintln('Error al analizar json')
         return
     }
 
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Encoding JSON
+## Codificar JSON
 
 ```v
 import json
@@ -45,9 +45,9 @@ fn main() {
 }
 ```
 
-## Custom Field Names
+## Nombres de Campo Personalizados
 
-Use the `@[json: 'field_name']` attribute to map struct fields to different JSON keys:
+Usa el atributo `@[json: 'nombre_campo']` para mapear campos de struct a claves JSON diferentes:
 
 ```v
 import json
@@ -66,28 +66,28 @@ fn main() {
 }
 ```
 
-## Skipping Fields
+## Omitir Campos
 
-Use `@[json: '-']` to exclude a field from JSON serialization:
+Usa `@[json: '-']` para excluir un campo de la serialización JSON:
 
 ```v
 struct User {
     name     string
     email    string
-    password string @[json: '-']  // never included in JSON output
+    password string @[json: '-']  // nunca incluido en la salida JSON
 }
 ```
 
-## Optional / Nullable Fields
+## Campos Opcionales / Anulables
 
-Use option types for fields that may be absent in the JSON:
+Usa tipos option para campos que pueden estar ausentes en el JSON:
 
 ```v
 import json
 
 struct Profile {
     name   string
-    bio    ?string   // optional — may be null or absent
+    bio    ?string   // opcional — puede ser null o estar ausente
     age    ?int
 }
 
@@ -99,7 +99,7 @@ fn main() {
 }
 ```
 
-## Nested Structs
+## Structs Anidados
 
 ```v
 import json

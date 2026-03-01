@@ -1,10 +1,10 @@
-# Testing
+# Testes
 
-V has built-in testing support. No test framework or external library needed.
+V possui suporte a testes integrado. Nenhum framework de teste ou biblioteca externa necessária.
 
-## Writing Tests
+## Escrevendo Testes
 
-Test functions must start with `test_` and live in files ending with `_test.v`:
+As funções de teste devem começar com `test_` e estar em arquivos terminados com `_test.v`:
 
 ```v
 // math_test.v
@@ -24,17 +24,17 @@ fn test_add_large_numbers() {
 }
 ```
 
-Run tests with:
+Execute os testes com:
 
 ```bash
 v test math_test.v
-# or run all tests in a directory:
+# ou execute todos os testes em um diretório:
 v test .
 ```
 
-## Assertions
+## Asserções
 
-Use `assert` to check conditions. A failing assertion prints the values of both sides:
+Use `assert` para verificar condições. Uma asserção que falha exibe os valores de ambos os lados:
 
 ```v
 fn test_string_ops() {
@@ -45,34 +45,34 @@ fn test_string_ops() {
 }
 ```
 
-## Test Setup and Teardown
+## Configuração e Desmontagem de Testes
 
 ```v
-// Use testsuite_begin and testsuite_end for module-level setup/teardown
+// Use testsuite_begin e testsuite_end para configuração/desmontagem no nível do módulo
 fn testsuite_begin() {
-    // runs once before all tests in the file
-    println('Setting up test suite...')
+    // executado uma vez antes de todos os testes no arquivo
+    println('Configurando suite de testes...')
 }
 
 fn testsuite_end() {
-    // runs once after all tests in the file
-    println('Tearing down test suite...')
+    // executado uma vez após todos os testes no arquivo
+    println('Desmontando suite de testes...')
 }
 ```
 
-## Testing Error Cases
+## Testando Casos de Erro
 
 ```v
 fn safe_divide(a f64, b f64) !f64 {
     if b == 0 {
-        return error('division by zero')
+        return error('divisão por zero')
     }
     return a / b
 }
 
 fn test_divide_by_zero() {
     result := safe_divide(10, 0) or { err.msg() }
-    assert result == 'division by zero'
+    assert result == 'divisão por zero'
 }
 
 fn test_divide_normal() {
@@ -81,22 +81,22 @@ fn test_divide_normal() {
 }
 ```
 
-## Running Specific Tests
+## Executando Testes Específicos
 
 ```bash
-# Run a single test file
+# Executar um único arquivo de teste
 v test mypackage/foo_test.v
 
-# Run tests matching a pattern
+# Executar testes correspondendo a um padrão
 v test -run test_add .
 
-# Run with verbose output
+# Executar com saída detalhada
 v test -v .
 ```
 
-## Table-driven Tests
+## Testes Baseados em Tabela
 
-V doesn't have a built-in table-driven test helper, but you can do it manually:
+V não possui um helper de teste baseado em tabela integrado, mas você pode fazer manualmente:
 
 ```v
 fn test_add_table() {
@@ -112,9 +112,9 @@ fn test_add_table() {
 }
 ```
 
-## Code Coverage
+## Cobertura de Código
 
-Generate a coverage report:
+Gere um relatório de cobertura:
 
 ```bash
 v -coverage ./coverage_output test .

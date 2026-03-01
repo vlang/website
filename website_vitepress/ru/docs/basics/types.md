@@ -1,80 +1,80 @@
-# Primitive Types
+# Примитивные типы
 
-## Integer Types
-
-```v
-// Signed integers
-i8    // -128 to 127
-i16   // -32,768 to 32,767
-int   // -2,147,483,648 to 2,147,483,647  (always 32-bit)
-i64   // -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
-
-// Unsigned integers
-u8    // 0 to 255  (also used for bytes)
-u16   // 0 to 65,535
-u32   // 0 to 4,294,967,295
-u64   // 0 to 18,446,744,073,709,551,615
-
-// Platform-dependent
-isize // signed, size of a pointer
-usize // unsigned, size of a pointer
-```
-
-> **Note:** Unlike C and Go, `int` in V is always 32-bit regardless of platform.
-
-## Floating-Point Types
+## Целочисленные типы
 
 ```v
-f32   // single-precision (32-bit)
-f64   // double-precision (64-bit)
+// Со знаком
+i8    // -128 до 127
+i16   // -32,768 до 32,767
+int   // -2,147,483,648 до 2,147,483,647  (всегда 32-битный)
+i64   // -9,223,372,036,854,775,808 до 9,223,372,036,854,775,807
+
+// Без знака
+u8    // 0 до 255  (также используется для байтов)
+u16   // 0 до 65,535
+u32   // 0 до 4,294,967,295
+u64   // 0 до 18,446,744,073,709,551,615
+
+// Зависит от платформы
+isize // со знаком, размер указателя
+usize // без знака, размер указателя
 ```
 
-## Boolean
+> **Примечание:** В отличие от C и Go, `int` в V всегда 32-битный независимо от платформы.
+
+## Типы с плавающей точкой
+
+```v
+f32   // одинарная точность (32 бита)
+f64   // двойная точность (64 бита)
+```
+
+## Булевский тип
 
 ```v
 is_ready := true
 is_done  := false
 ```
 
-## Rune
+## Руна
 
-A `rune` represents a Unicode code point:
+`rune` представляет кодовую точку Unicode:
 
 ```v
-letter := `A`        // rune literal uses backticks
+letter := `A`        // литерал руны использует обратные кавычки
 emoji  := `🌎`
 println(letter)      // A
 println(int(letter)) // 65
 ```
 
-## Type Promotions
+## Повышение типов
 
-Small types are automatically promoted when combined with larger types on the same side of an operator:
+Малые типы автоматически повышаются при сочетании с большими типами на одной стороне оператора:
 
 ```v
 u := u16(12)
-v := 13 + u    // v is u16 — no promotion
+v := 13 + u    // v является u16 — без повышения
 x := f32(45.6)
-y := x + 3.14  // y is f32 — no promotion
-a := 75        // int (default for integer literals)
-b := 14.7      // f64 (default for float literals)
+y := x + 3.14  // y является f32 — без повышения
+a := 75        // int (по умолчанию для целочисленных литералов)
+b := 14.7      // f64 (по умолчанию для вещественных литералов)
 ```
 
-## Numeric Literals
+## Числовые литералы
 
 ```v
-n1 := 1_000_000      // underscores for readability
-n2 := 0xff           // hex
-n3 := 0o77           // octal
-n4 := 0b1111_0000    // binary
-f1 := 3.14_159_265   // float with underscores
+n1 := 1_000_000      // подчёркивание для удобства чтения
+n2 := 0xff           // шестнадцатеричное
+n3 := 0o77           // восьмеричное
+n4 := 0b1111_0000    // двоичное
+f1 := 3.14_159_265   // вещественное с подчёркиваниями
 ```
 
 ## `voidptr`
 
-A raw pointer type used mainly for C interoperability. Avoid in pure V code.
+Тип необработанного указателя, используемый в основном для взаимодействия с C. Избегайте в чистом коде на V.
 
 ```v
-// mostly for C interop
+// в основном для интероперабельности с C
 p := voidptr(0)
 ```

@@ -1,10 +1,10 @@
 # ORM
 
-V includes a built-in ORM that supports SQLite, PostgreSQL, MySQL, and MSSQL. No external library needed.
+V включает встроенный ORM с поддержкой SQLite, PostgreSQL, MySQL и MSSQL. Внешние библиотеки не нужны.
 
-## Defining a Model
+## Определение модели
 
-Use the `@[table: 'table_name']` attribute to map a struct to a database table:
+Используйте атрибут `@[table: 'table_name']` для привязки структуры к таблице базы данных:
 
 ```v
 import db.sqlite
@@ -20,9 +20,9 @@ pub:
 }
 ```
 
-## SQL Syntax (Built-in DSL)
+## SQL-синтаксис (встроенный DSL)
 
-V provides a clean SQL-like DSL for queries:
+V предоставляет чистый SQL-подобный DSL для выполнения запросов:
 
 ```v
 import db.sqlite
@@ -42,35 +42,35 @@ fn main() {
     user1 := User{id: '001', name: 'Alice'}
     user2 := User{id: '002', name: 'Bob'}
 
-    // Create table
+    // Создать таблицу
     sql db { create table User }!
 
-    // Insert
+    // Вставить
     sql db { insert user1 into User }!
     sql db { insert user2 into User }!
 
-    // Select all
+    // Выбрать все записи
     all_users := sql db { select from User }!
     dump(all_users)
 
-    // Select with condition
+    // Выбрать с условием
     alice := sql db { select from User where id == '001' }!
     dump(alice)
 
-    // Update
+    // Обновить
     sql db { update User set name = 'Alice Smith' where id == '001' }!
 
-    // Delete
+    // Удалить
     sql db { delete from User where id == '002' }!
 
-    // Drop table
+    // Удалить таблицу
     sql db { drop table User }!
 }
 ```
 
-## Query Builder Syntax
+## Синтаксис построителя запросов
 
-An alternative fluent query builder API is also available:
+Также доступен альтернативный текучий API-построитель запросов:
 
 ```v
 import db.sqlite
@@ -94,23 +94,23 @@ fn main() {
     qb.insert(Product{id: 'p1', name: 'Widget', price: 9.99})!
     qb.insert(Product{id: 'p2', name: 'Gadget', price: 19.99})!
 
-    // Fetch all
+    // Получить все
     all := qb.query()!
     dump(all)
 
-    // Filter
+    // Фильтрация
     cheap := qb.where('price < ?', 15.0)!.query()!
     dump(cheap)
 
-    // Update
+    // Обновление
     qb.set('price = ?', 12.99)!.where('id = ?', 'p1')!.update()!
 
-    // Delete
+    // Удаление
     qb.where('id = ?', 'p2')!.delete()!
 }
 ```
 
-## PostgreSQL Example
+## Пример с PostgreSQL
 
 ```v
 import db.pg
@@ -124,7 +124,7 @@ fn main() {
     })!
     defer { db.close() }
 
-    // same SQL DSL works with PostgreSQL
+    // тот же SQL DSL работает и с PostgreSQL
     users := sql db { select from User }!
     println(users)
 }

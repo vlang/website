@@ -1,10 +1,10 @@
-# Testing
+# Tests
 
-V has built-in testing support. No test framework or external library needed.
+V hat eingebaute Test-Unterstützung. Kein Test-Framework oder externe Bibliothek erforderlich.
 
-## Writing Tests
+## Tests schreiben
 
-Test functions must start with `test_` and live in files ending with `_test.v`:
+Testfunktionen müssen mit `test_` beginnen und in Dateien liegen, die auf `_test.v` enden:
 
 ```v
 // math_test.v
@@ -24,17 +24,17 @@ fn test_add_large_numbers() {
 }
 ```
 
-Run tests with:
+Tests ausführen mit:
 
 ```bash
 v test math_test.v
-# or run all tests in a directory:
+# oder alle Tests in einem Verzeichnis ausführen:
 v test .
 ```
 
 ## Assertions
 
-Use `assert` to check conditions. A failing assertion prints the values of both sides:
+Verwende `assert`, um Bedingungen zu prüfen. Eine fehlgeschlagene Assertion gibt die Werte beider Seiten aus:
 
 ```v
 fn test_string_ops() {
@@ -45,22 +45,22 @@ fn test_string_ops() {
 }
 ```
 
-## Test Setup and Teardown
+## Test-Setup und Teardown
 
 ```v
-// Use testsuite_begin and testsuite_end for module-level setup/teardown
+// Verwende testsuite_begin und testsuite_end für Setup/Teardown auf Modulebene
 fn testsuite_begin() {
-    // runs once before all tests in the file
+    // wird einmal vor allen Tests in der Datei ausgeführt
     println('Setting up test suite...')
 }
 
 fn testsuite_end() {
-    // runs once after all tests in the file
+    // wird einmal nach allen Tests in der Datei ausgeführt
     println('Tearing down test suite...')
 }
 ```
 
-## Testing Error Cases
+## Fehlerfälle testen
 
 ```v
 fn safe_divide(a f64, b f64) !f64 {
@@ -81,22 +81,22 @@ fn test_divide_normal() {
 }
 ```
 
-## Running Specific Tests
+## Bestimmte Tests ausführen
 
 ```bash
-# Run a single test file
+# Eine einzelne Testdatei ausführen
 v test mypackage/foo_test.v
 
-# Run tests matching a pattern
+# Tests ausführen, die einem Muster entsprechen
 v test -run test_add .
 
-# Run with verbose output
+# Mit ausführlicher Ausgabe
 v test -v .
 ```
 
-## Table-driven Tests
+## Tabellengesteuerte Tests
 
-V doesn't have a built-in table-driven test helper, but you can do it manually:
+V hat keinen eingebauten Helfer für tabellengesteuerte Tests, aber man kann es manuell umsetzen:
 
 ```v
 fn test_add_table() {
@@ -112,9 +112,9 @@ fn test_add_table() {
 }
 ```
 
-## Code Coverage
+## Code-Abdeckung
 
-Generate a coverage report:
+Einen Abdeckungsbericht erstellen:
 
 ```bash
 v -coverage ./coverage_output test .

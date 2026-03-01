@@ -1,32 +1,32 @@
-# Introduction
+# Введение
 
-V is a statically typed compiled programming language designed for building maintainable software.
+V — это статически типизированный компилируемый язык программирования, созданный для разработки поддерживаемого программного обеспечения.
 
-It is influenced by Go, Oberon, Rust, Swift, Kotlin, and Python. V looks like Go and is nearly as simple, but it compiles much faster and offers more safety features.
+Он вдохновлён языками Go, Oberon, Rust, Swift, Kotlin и Python. V похож на Go и почти так же прост, но компилируется значительно быстрее и предлагает больше функций безопасности.
 
-Despite being simple, V covers all the fields: systems programming, web development, game development, GUI apps, mobile, science, embedded, tools, and more.
+Несмотря на простоту, V охватывает все области: системное программирование, веб-разработку, разработку игр, GUI-приложения, мобильные приложения, науку, встраиваемые системы, инструменты и многое другое.
 
-## Key Features
+## Ключевые особенности
 
-- **Simple** — Learn the entire language over a weekend. If you know Go, you already know ~80% of V.
-- **Fast compilation** — ~110k–1.2M lines of code per second per CPU core. V compiles itself in under 1 second.
-- **Safe** — No null, no global variables, no undefined behaviour. Immutability by default.
-- **Performance** — As fast as C. Compiles to human-readable C.
-- **Zero dependencies** — The compiler is only 400 KB with no external dependencies.
-- **C/C++ translation** — Translate entire C/C++ projects to V automatically.
-- **Hot code reloading** — Change code while the app is running without losing state.
-- **Built-in ORM & web framework** — Everything you need is in the standard library.
+- **Простой** — Изучите весь язык за выходные. Если вы знаете Go, вы уже знаете ~80% V.
+- **Быстрая компиляция** — ~110k–1.2M строк кода в секунду на одно ядро CPU. V компилирует сам себя менее чем за 1 секунду.
+- **Безопасный** — Нет null, нет глобальных переменных, нет неопределённого поведения. Неизменяемость по умолчанию.
+- **Производительный** — Такой же быстрый, как C. Компилируется в читаемый код на C.
+- **Без зависимостей** — Компилятор занимает всего 400 КБ без внешних зависимостей.
+- **Трансляция C/C++** — Автоматически переводите целые проекты на C/C++ в V.
+- **Горячая перезагрузка кода** — Изменяйте код во время работы приложения без потери состояния.
+- **Встроенные ORM и веб-фреймворк** — Всё необходимое находится в стандартной библиотеке.
 
-## Where to Start
+## С чего начать
 
-- [Installation](/docs/installation) — Build V from source or download binaries.
-- [Hello World](/docs/hello-world) — Your first V program.
-- [Variables](/docs/basics/variables) — How to declare and use variables.
-- [Functions](/docs/basics/functions) — Defining and calling functions.
+- [Установка](/docs/installation) — Соберите V из исходников или скачайте бинарные файлы.
+- [Hello World](/docs/hello-world) — Ваша первая программа на V.
+- [Переменные](/docs/basics/variables) — Как объявлять и использовать переменные.
+- [Функции](/docs/basics/functions) — Определение и вызов функций.
 
-## External Resources
+## Внешние ресурсы
 
-- [Official Documentation](https://docs.vlang.io) — Full language reference
-- [Standard Library](https://modules.vlang.io) — Module API reference
-- [Playground](https://play.vlang.io) — Run V code in the browser
-- [Package Manager](https://vpm.vlang.io) — Browse and publish V packages
+- [Официальная документация](https://docs.vlang.io) — Полный справочник по языку
+- [Стандартная библиотека](https://modules.vlang.io) — Справочник API модулей
+- [Песочница](https://play.vlang.io) — Запускайте код на V в браузере
+- [Менеджер пакетов](https://vpm.vlang.io) — Просматривайте и публикуйте пакеты V
