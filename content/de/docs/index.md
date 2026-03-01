@@ -19,10 +19,10 @@ Trotz seiner Einfachheit deckt V alle Bereiche ab: Systemprogrammierung, Webentw
 
 ## Wo anfangen
 
-- [Installation](/docs/installation) — V aus dem Quellcode bauen oder Binärdateien herunterladen.
-- [Hello World](/docs/hello-world) — Dein erstes V-Programm.
-- [Variablen](/docs/basics/variables) — Wie man Variablen deklariert und verwendet.
-- [Funktionen](/docs/basics/functions) — Funktionen definieren und aufrufen.
+- [Installation](/de/docs/installation) — V aus dem Quellcode bauen oder Binärdateien herunterladen.
+- [Hello World](/de/docs/hello-world) — Dein erstes V-Programm.
+- [Variablen](/de/docs/basics/variables) — Wie man Variablen deklariert und verwendet.
+- [Funktionen](/de/docs/basics/functions) — Funktionen definieren und aufrufen.
 
 ## Externe Ressourcen
 

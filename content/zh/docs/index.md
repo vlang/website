@@ -17,10 +17,10 @@ V 是一种静态类型的编译型编程语言，专为构建可维护的软件
 
 ## 从哪里开始
 
-- [安装](/docs/installation) — 从源码构建 V 或下载二进制文件。
-- [Hello World](/docs/hello-world) — 你的第一个 V 程序。
-- [变量](/docs/basics/variables) — 如何声明和使用变量。
-- [函数](/docs/basics/functions) — 定义和调用函数。
+- [安装](/zh/docs/installation) — 从源码构建 V 或下载二进制文件。
+- [Hello World](/zh/docs/hello-world) — 你的第一个 V 程序。
+- [变量](/zh/docs/basics/variables) — 如何声明和使用变量。
+- [函数](/zh/docs/basics/functions) — 定义和调用函数。
 
 ## 外部资源
 

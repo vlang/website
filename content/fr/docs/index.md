@@ -19,10 +19,10 @@ Malgré sa simplicité, V couvre tous les domaines : la programmation système, 
 
 ## Par où commencer
 
-- [Installation](/docs/installation) — Compilez V depuis les sources ou téléchargez les binaires.
-- [Hello World](/docs/hello-world) — Votre premier programme V.
-- [Variables](/docs/basics/variables) — Comment déclarer et utiliser des variables.
-- [Fonctions](/docs/basics/functions) — Définir et appeler des fonctions.
+- [Installation](/fr/docs/installation) — Compilez V depuis les sources ou téléchargez les binaires.
+- [Hello World](/fr/docs/hello-world) — Votre premier programme V.
+- [Variables](/fr/docs/basics/variables) — Comment déclarer et utiliser des variables.
+- [Fonctions](/fr/docs/basics/functions) — Définir et appeler des fonctions.
 
 ## Ressources externes
 

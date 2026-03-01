@@ -19,10 +19,10 @@ Meskipun sederhana, V mencakup semua bidang: pemrograman sistem, pengembangan we
 
 ## Tempat Mulai
 
-- [Instalasi](/docs/installation) — Bangun V dari sumber atau unduh binary.
-- [Hello World](/docs/hello-world) — Program V pertama Anda.
-- [Variabel](/docs/basics/variables) — Cara mendeklarasikan dan menggunakan variabel.
-- [Fungsi](/docs/basics/functions) — Mendefinisikan dan memanggil fungsi.
+- [Instalasi](/id/docs/installation) — Bangun V dari sumber atau unduh binary.
+- [Hello World](/id/docs/hello-world) — Program V pertama Anda.
+- [Variabel](/id/docs/basics/variables) — Cara mendeklarasikan dan menggunakan variabel.
+- [Fungsi](/id/docs/basics/functions) — Mendefinisikan dan memanggil fungsi.
 
 ## Sumber Daya Eksternal
 

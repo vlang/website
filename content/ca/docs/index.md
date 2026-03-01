@@ -19,10 +19,10 @@ Tot i ser simple, V cobreix tots els àmbits: programació de sistemes, desenvol
 
 ## Per On Començar
 
-- [Instal·lació](/docs/installation) — Compila V des del codi font o descarrega binaris.
-- [Hola Món](/docs/hello-world) — El teu primer programa en V.
-- [Variables](/docs/basics/variables) — Com declarar i usar variables.
-- [Funcions](/docs/basics/functions) — Definir i cridar funcions.
+- [Instal·lació](/ca/docs/installation) — Compila V des del codi font o descarrega binaris.
+- [Hola Món](/ca/docs/hello-world) — El teu primer programa en V.
+- [Variables](/ca/docs/basics/variables) — Com declarar i usar variables.
+- [Funcions](/ca/docs/basics/functions) — Definir i cridar funcions.
 
 ## Recursos Externs
 

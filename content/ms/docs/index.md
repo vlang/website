@@ -19,10 +19,10 @@ Walaupun ringkas, V merangkumi semua bidang: pengaturcaraan sistem, pembangunan 
 
 ## Tempat Bermula
 
-- [Pemasangan](/docs/installation) — Bina V dari sumber atau muat turun binari.
-- [Hello World](/docs/hello-world) — Program V pertama anda.
-- [Pemboleh Ubah](/docs/basics/variables) — Cara mengisytihar dan menggunakan pemboleh ubah.
-- [Fungsi](/docs/basics/functions) — Mentakrifkan dan memanggil fungsi.
+- [Pemasangan](/ms/docs/installation) — Bina V dari sumber atau muat turun binari.
+- [Hello World](/ms/docs/hello-world) — Program V pertama anda.
+- [Pemboleh Ubah](/ms/docs/basics/variables) — Cara mengisytihar dan menggunakan pemboleh ubah.
+- [Fungsi](/ms/docs/basics/functions) — Mentakrifkan dan memanggil fungsi.
 
 ## Sumber Luaran
 

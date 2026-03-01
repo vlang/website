@@ -19,10 +19,10 @@ Apesar de ser simples, V abrange todas as áreas: programação de sistemas, des
 
 ## Por Onde Começar
 
-- [Instalação](/docs/installation) — Compile V a partir do código-fonte ou baixe os binários.
-- [Hello World](/docs/hello-world) — Seu primeiro programa em V.
-- [Variáveis](/docs/basics/variables) — Como declarar e usar variáveis.
-- [Funções](/docs/basics/functions) — Definindo e chamando funções.
+- [Instalação](/pt/docs/installation) — Compile V a partir do código-fonte ou baixe os binários.
+- [Hello World](/pt/docs/hello-world) — Seu primeiro programa em V.
+- [Variáveis](/pt/docs/basics/variables) — Como declarar e usar variáveis.
+- [Funções](/pt/docs/basics/functions) — Definindo e chamando funções.
 
 ## Recursos Externos
 

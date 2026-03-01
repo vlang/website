@@ -19,10 +19,10 @@ Til tross for å være enkelt, dekker V alle felt: systemprogrammering, webutvik
 
 ## Hvor du skal begynne
 
-- [Installasjon](/docs/installation) — Bygg V fra kilde eller last ned binærfiler.
-- [Hello World](/docs/hello-world) — Ditt første V-program.
-- [Variabler](/docs/basics/variables) — Hvordan deklarere og bruke variabler.
-- [Funksjoner](/docs/basics/functions) — Definere og kalle funksjoner.
+- [Installasjon](/no/docs/installation) — Bygg V fra kilde eller last ned binærfiler.
+- [Hello World](/no/docs/hello-world) — Ditt første V-program.
+- [Variabler](/no/docs/basics/variables) — Hvordan deklarere og bruke variabler.
+- [Funksjoner](/no/docs/basics/functions) — Definere og kalle funksjoner.
 
 ## Eksterne ressurser
 

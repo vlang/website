@@ -19,10 +19,10 @@ Unatoč jednostavnosti, V pokriva sva područja: sistemsko programiranje, web ra
 
 ## Gdje početi
 
-- [Instalacija](/docs/installation) — Izgradite V iz izvornog koda ili preuzmite binarne datoteke.
-- [Hello World](/docs/hello-world) — Vaš prvi V program.
-- [Varijable](/docs/basics/variables) — Kako deklarirati i koristiti varijable.
-- [Funkcije](/docs/basics/functions) — Definiranje i pozivanje funkcija.
+- [Instalacija](/bs/docs/installation) — Izgradite V iz izvornog koda ili preuzmite binarne datoteke.
+- [Hello World](/bs/docs/hello-world) — Vaš prvi V program.
+- [Varijable](/bs/docs/basics/variables) — Kako deklarirati i koristiti varijable.
+- [Funkcije](/bs/docs/basics/functions) — Definiranje i pozivanje funkcija.
 
 ## Vanjski resursi
 
