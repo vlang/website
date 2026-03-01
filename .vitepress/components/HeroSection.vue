@@ -4,7 +4,7 @@
     <div class="hero-identity">
       <img src="/img/v-logo.png" alt="V logo" class="hero-logo" />
       <span class="hero-name">{{ t.hero.name }}</span>
-      <span class="version-badge">v0.5.0</span>
+      <span v-if="latestRelease" class="version-badge">{{ latestRelease.tag_name }}</span>
     </div>
 
     <!-- headline -->
@@ -72,8 +72,10 @@ import { ref, onMounted, computed } from 'vue'
 import DownloadButton from './DownloadButton.vue'
 import VideoDemoCarousel from './VideoDemoCarousel.vue'
 import { useTranslations } from '../composables/useTranslations'
+import { useLatestRelease } from '../composables/useLatestRelease'
 
 const t = useTranslations()
+const { latestRelease } = useLatestRelease()
 
 const stars = ref<number | null>(null)
 
