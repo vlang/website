@@ -53,6 +53,37 @@ export interface SiteTranslations {
       forum: string
     }
   }
+  docs: {
+    sidebar: {
+      gettingStarted: string
+      basics: string
+      controlFlow: string
+      structsTypes: string
+      advanced: string
+      items: {
+        introduction: string
+        installation: string
+        helloWorld: string
+        variables: string
+        functions: string
+        primitiveTypes: string
+        strings: string
+        arrays: string
+        maps: string
+        ifElse: string
+        match: string
+        forLoops: string
+        structs: string
+        enums: string
+        interfaces: string
+        concurrency: string
+        errorHandling: string
+        json: string
+        orm: string
+        testing: string
+      }
+    }
+  }
 }
 
 const en: SiteTranslations = {
@@ -145,6 +176,37 @@ const en: SiteTranslations = {
       tutorials: 'Tutorials',
       playground: 'Playground',
       forum: 'Forum',
+    },
+  },
+  docs: {
+    sidebar: {
+      gettingStarted: 'Getting Started',
+      basics: 'Basics',
+      controlFlow: 'Control Flow',
+      structsTypes: 'Structs & Types',
+      advanced: 'Advanced',
+      items: {
+        introduction: 'Introduction',
+        installation: 'Installation',
+        helloWorld: 'Hello World',
+        variables: 'Variables',
+        functions: 'Functions',
+        primitiveTypes: 'Primitive Types',
+        strings: 'Strings',
+        arrays: 'Arrays',
+        maps: 'Maps',
+        ifElse: 'If / Else',
+        match: 'Match',
+        forLoops: 'For Loops',
+        structs: 'Structs',
+        enums: 'Enums',
+        interfaces: 'Interfaces',
+        concurrency: 'Concurrency',
+        errorHandling: 'Error Handling',
+        json: 'JSON',
+        orm: 'ORM',
+        testing: 'Testing',
+      },
     },
   },
 }
@@ -241,6 +303,37 @@ const ar: SiteTranslations = {
       forum: 'المنتدى',
     },
   },
+  docs: {
+    sidebar: {
+      gettingStarted: 'Getting Started',
+      basics: 'Basics',
+      controlFlow: 'Control Flow',
+      structsTypes: 'Structs & Types',
+      advanced: 'Advanced',
+      items: {
+        introduction: 'مقدمة',
+        installation: 'Installation',
+        helloWorld: 'Hello World',
+        variables: 'متغيرات',
+        functions: 'وظائف',
+        primitiveTypes: 'أنواع أساسية',
+        strings: 'سلاسل نصية',
+        arrays: 'مصفوفات',
+        maps: 'خرائط',
+        ifElse: 'if الشرطية',
+        match: 'مفاتيح',
+        forLoops: 'الحلقات الدورانية',
+        structs: 'الهياكل',
+        enums: 'التعدادات',
+        interfaces: 'واجهات',
+        concurrency: 'التزامن',
+        errorHandling: 'أنواع الخيارات ومعالجة الأخطاء',
+        json: 'فك تشفير (json)',
+        orm: 'ORM',
+        testing: 'تجريب',
+      },
+    },
+  },
 }
 
 const ms: SiteTranslations = {
@@ -333,6 +426,37 @@ const ms: SiteTranslations = {
       tutorials: 'Tutorial',
       playground: 'Playground',
       forum: 'Forum',
+    },
+  },
+  docs: {
+    sidebar: {
+      gettingStarted: 'Getting Started',
+      basics: 'Basics',
+      controlFlow: 'Control Flow',
+      structsTypes: 'Structs & Types',
+      advanced: 'Advanced',
+      items: {
+        introduction: 'Perkenalan',
+        installation: 'Installation',
+        helloWorld: 'Hello World',
+        variables: 'Variabel',
+        functions: 'Fungsi',
+        primitiveTypes: 'Tipe Dasar',
+        strings: 'Strings',
+        arrays: 'Arrays',
+        maps: 'Maps',
+        ifElse: 'If',
+        match: 'Switch',
+        forLoops: 'For loop',
+        structs: 'Structs',
+        enums: 'Enums',
+        interfaces: 'Interfaces',
+        concurrency: 'Concurrency',
+        errorHandling: 'Option types & error handling',
+        json: 'Decoding JSON',
+        orm: 'ORM',
+        testing: 'Testing',
+      },
     },
   },
 }
@@ -429,6 +553,37 @@ const bs: SiteTranslations = {
       forum: 'Forum',
     },
   },
+  docs: {
+    sidebar: {
+      gettingStarted: 'Getting Started',
+      basics: 'Basics',
+      controlFlow: 'Control Flow',
+      structsTypes: 'Structs & Types',
+      advanced: 'Advanced',
+      items: {
+        introduction: 'Uvod',
+        installation: 'Installation',
+        helloWorld: 'Hello World',
+        variables: 'Varijable',
+        functions: 'Funkcije',
+        primitiveTypes: 'Jednostavni tipovi',
+        strings: 'Stringovi',
+        arrays: 'Nizovi',
+        maps: 'Mape',
+        ifElse: 'If',
+        match: 'Switch',
+        forLoops: 'For petlja',
+        structs: 'Struktovi',
+        enums: 'Enumi',
+        interfaces: 'Interfejsi',
+        concurrency: 'Konkurencija',
+        errorHandling: 'Vrste opcija i rukovanje greškama',
+        json: 'Dekodiranje JSON-a',
+        orm: 'ORM',
+        testing: 'Testiranje',
+      },
+    },
+  },
 }
 
 const ca: SiteTranslations = {
@@ -521,6 +676,37 @@ const ca: SiteTranslations = {
       tutorials: 'Tutorials',
       playground: 'Playground',
       forum: 'Fòrum',
+    },
+  },
+  docs: {
+    sidebar: {
+      gettingStarted: 'Getting Started',
+      basics: 'Basics',
+      controlFlow: 'Control Flow',
+      structsTypes: 'Structs & Types',
+      advanced: 'Advanced',
+      items: {
+        introduction: 'Introducció',
+        installation: 'Installation',
+        helloWorld: 'Hello World',
+        variables: 'Variables',
+        functions: 'Funcions',
+        primitiveTypes: 'Tipus bàsics',
+        strings: 'Strings',
+        arrays: 'Arrays',
+        maps: 'Maps',
+        ifElse: 'If',
+        match: 'Switch',
+        forLoops: 'Bucle for',
+        structs: 'Structs',
+        enums: 'Enums',
+        interfaces: 'Interfícies',
+        concurrency: 'Concurrència',
+        errorHandling: "Tipus opcionals i control d'errors",
+        json: 'Descodificació de JSON',
+        orm: 'ORM',
+        testing: 'Testing',
+      },
     },
   },
 }
@@ -617,6 +803,37 @@ const zh: SiteTranslations = {
       forum: '论坛',
     },
   },
+  docs: {
+    sidebar: {
+      gettingStarted: 'Getting Started',
+      basics: 'Basics',
+      controlFlow: 'Control Flow',
+      structsTypes: 'Structs & Types',
+      advanced: 'Advanced',
+      items: {
+        introduction: '介绍',
+        installation: 'Installation',
+        helloWorld: 'Hello World',
+        variables: '变量',
+        functions: '函数',
+        primitiveTypes: '基本类型',
+        strings: '字符串',
+        arrays: '数组',
+        maps: '集合',
+        ifElse: 'If 语句',
+        match: 'Switch 语句',
+        forLoops: 'For 循环',
+        structs: '结构体',
+        enums: '枚举',
+        interfaces: '接口',
+        concurrency: '并发',
+        errorHandling: 'Option 类型 & 错误处理',
+        json: 'JSON 解析',
+        orm: 'ORM',
+        testing: '测试',
+      },
+    },
+  },
 }
 
 const fr: SiteTranslations = {
@@ -709,6 +926,37 @@ const fr: SiteTranslations = {
       tutorials: 'Tutoriels',
       playground: 'Playground',
       forum: 'Forum',
+    },
+  },
+  docs: {
+    sidebar: {
+      gettingStarted: 'Getting Started',
+      basics: 'Basics',
+      controlFlow: 'Control Flow',
+      structsTypes: 'Structs & Types',
+      advanced: 'Advanced',
+      items: {
+        introduction: 'Introduction',
+        installation: 'Installation',
+        helloWorld: 'Hello World',
+        variables: 'Variables',
+        functions: 'Fonctions',
+        primitiveTypes: 'Types de base',
+        strings: 'Chaînes de caractères',
+        arrays: 'Listes',
+        maps: 'Maps',
+        ifElse: 'If',
+        match: 'Switch',
+        forLoops: 'Boucle for',
+        structs: 'Structures',
+        enums: 'Énumérations',
+        interfaces: 'Interfaces',
+        concurrency: 'Parallélisme',
+        errorHandling: "Types d'options et gestion des erreurs",
+        json: 'Décodage de json',
+        orm: 'ORM',
+        testing: 'Tests',
+      },
     },
   },
 }
@@ -805,6 +1053,37 @@ const de: SiteTranslations = {
       forum: 'Forum',
     },
   },
+  docs: {
+    sidebar: {
+      gettingStarted: 'Getting Started',
+      basics: 'Basics',
+      controlFlow: 'Control Flow',
+      structsTypes: 'Structs & Types',
+      advanced: 'Advanced',
+      items: {
+        introduction: 'Einführung',
+        installation: 'Installation',
+        helloWorld: 'Hello World',
+        variables: 'Variablen',
+        functions: 'Funktionen',
+        primitiveTypes: 'Grundtypen',
+        strings: 'Strings',
+        arrays: 'Arrays',
+        maps: 'Maps',
+        ifElse: 'If',
+        match: 'Switch',
+        forLoops: 'For-Schleife',
+        structs: 'Structs',
+        enums: 'Enums',
+        interfaces: 'Interfaces',
+        concurrency: 'Parallelität',
+        errorHandling: 'Optionstypen und Fehlerbehandlung',
+        json: 'JSON dekodieren',
+        orm: 'ORM',
+        testing: 'Testen',
+      },
+    },
+  },
 }
 
 const id: SiteTranslations = {
@@ -897,6 +1176,37 @@ const id: SiteTranslations = {
       tutorials: 'Tutorial',
       playground: 'Playground',
       forum: 'Forum',
+    },
+  },
+  docs: {
+    sidebar: {
+      gettingStarted: 'Getting Started',
+      basics: 'Basics',
+      controlFlow: 'Control Flow',
+      structsTypes: 'Structs & Types',
+      advanced: 'Advanced',
+      items: {
+        introduction: 'Pengantar',
+        installation: 'Installation',
+        helloWorld: 'Hello World',
+        variables: 'Variabel',
+        functions: 'Fungsi',
+        primitiveTypes: 'Tipe-tipe Dasar',
+        strings: 'Strings',
+        arrays: 'Arrays',
+        maps: 'Maps',
+        ifElse: 'If',
+        match: 'Switch',
+        forLoops: 'Looping For',
+        structs: 'Structs',
+        enums: 'Enums',
+        interfaces: 'Antarmuka',
+        concurrency: 'Konkurensi',
+        errorHandling: 'Jenis opsi & penanganan kesalahan',
+        json: 'Decoding JSON',
+        orm: 'ORM',
+        testing: 'Pengujian',
+      },
     },
   },
 }
@@ -993,6 +1303,37 @@ const ja: SiteTranslations = {
       forum: 'フォーラム',
     },
   },
+  docs: {
+    sidebar: {
+      gettingStarted: 'Getting Started',
+      basics: 'Basics',
+      controlFlow: 'Control Flow',
+      structsTypes: 'Structs & Types',
+      advanced: 'Advanced',
+      items: {
+        introduction: 'はじめに',
+        installation: 'Installation',
+        helloWorld: 'Hello World',
+        variables: '変数',
+        functions: '関数',
+        primitiveTypes: '基本型',
+        strings: '文字列',
+        arrays: '配列',
+        maps: 'マップ',
+        ifElse: 'If条件分岐',
+        match: 'Switch',
+        forLoops: 'Forループ',
+        structs: '構造体',
+        enums: '列挙型',
+        interfaces: 'インターフェース',
+        concurrency: '並列処理',
+        errorHandling: 'Optional型とエラーハンドリング',
+        json: 'JSONのデコード',
+        orm: 'ORM',
+        testing: 'テスト',
+      },
+    },
+  },
 }
 
 const no: SiteTranslations = {
@@ -1085,6 +1426,37 @@ const no: SiteTranslations = {
       tutorials: 'Veiledninger',
       playground: 'Playground',
       forum: 'Nettforum',
+    },
+  },
+  docs: {
+    sidebar: {
+      gettingStarted: 'Getting Started',
+      basics: 'Basics',
+      controlFlow: 'Control Flow',
+      structsTypes: 'Structs & Types',
+      advanced: 'Advanced',
+      items: {
+        introduction: 'Innledning',
+        installation: 'Installation',
+        helloWorld: 'Hello World',
+        variables: 'Variabler',
+        functions: 'Funksjoner',
+        primitiveTypes: 'Enkle basistyper',
+        strings: 'Teksttyper',
+        arrays: 'Matriser',
+        maps: 'Kart',
+        ifElse: 'If',
+        match: 'Brytere',
+        forLoops: 'For løkker',
+        structs: 'Strukter',
+        enums: 'Enumer',
+        interfaces: 'Interfacer',
+        concurrency: 'Samtidighet',
+        errorHandling: 'Valgtyper og behandling av programfeil',
+        json: 'JSON dekoding',
+        orm: 'ORM',
+        testing: 'Feilsøking',
+      },
     },
   },
 }
@@ -1181,6 +1553,37 @@ const pt: SiteTranslations = {
       forum: 'Fórum',
     },
   },
+  docs: {
+    sidebar: {
+      gettingStarted: 'Getting Started',
+      basics: 'Basics',
+      controlFlow: 'Control Flow',
+      structsTypes: 'Structs & Types',
+      advanced: 'Advanced',
+      items: {
+        introduction: 'Introdução',
+        installation: 'Installation',
+        helloWorld: 'Hello World',
+        variables: 'Variáveis',
+        functions: 'Funções',
+        primitiveTypes: 'Tipos básicos',
+        strings: 'Strings',
+        arrays: 'Arrays',
+        maps: 'Maps',
+        ifElse: 'If',
+        match: 'Switch',
+        forLoops: 'Laço for',
+        structs: 'Structs',
+        enums: 'Enums',
+        interfaces: 'Interfaces',
+        concurrency: 'Concorrência',
+        errorHandling: 'Tipos opcionais e tratamento de erros',
+        json: 'Decodificação JSON',
+        orm: 'ORM',
+        testing: 'Teste',
+      },
+    },
+  },
 }
 
 const ru: SiteTranslations = {
@@ -1273,6 +1676,37 @@ const ru: SiteTranslations = {
       tutorials: 'Туториалы',
       playground: 'Playground',
       forum: 'Форум',
+    },
+  },
+  docs: {
+    sidebar: {
+      gettingStarted: 'Getting Started',
+      basics: 'Basics',
+      controlFlow: 'Control Flow',
+      structsTypes: 'Structs & Types',
+      advanced: 'Advanced',
+      items: {
+        introduction: 'Введение',
+        installation: 'Installation',
+        helloWorld: 'Hello World',
+        variables: 'Переменные',
+        functions: 'Функции',
+        primitiveTypes: 'Базовые типы',
+        strings: 'Строки',
+        arrays: 'Массивы',
+        maps: 'Maps',
+        ifElse: 'If',
+        match: 'Switch',
+        forLoops: 'Цикл for',
+        structs: 'Структуры',
+        enums: 'Enums',
+        interfaces: 'Интерфейсы',
+        concurrency: 'Concurrency',
+        errorHandling: 'Опц. типы и обработка ошибок',
+        json: 'Работа с JSON',
+        orm: 'ORM',
+        testing: 'Тестирование',
+      },
     },
   },
 }
@@ -1369,6 +1803,37 @@ const es: SiteTranslations = {
       forum: 'Foro',
     },
   },
+  docs: {
+    sidebar: {
+      gettingStarted: 'Getting Started',
+      basics: 'Basics',
+      controlFlow: 'Control Flow',
+      structsTypes: 'Structs & Types',
+      advanced: 'Advanced',
+      items: {
+        introduction: 'Introducción',
+        installation: 'Installation',
+        helloWorld: 'Hello World',
+        variables: 'Variables',
+        functions: 'Funciones',
+        primitiveTypes: 'Tipos básicos',
+        strings: 'Strings',
+        arrays: 'Arrays',
+        maps: 'Maps',
+        ifElse: 'If',
+        match: 'Switch',
+        forLoops: 'Bucle for',
+        structs: 'Structs',
+        enums: 'Enums',
+        interfaces: 'Interfaces',
+        concurrency: 'Concurrencia',
+        errorHandling: 'Tipos opcionales y manejo de errores',
+        json: 'Decodificación de JSON',
+        orm: 'ORM',
+        testing: 'Pruebas',
+      },
+    },
+  },
 }
 
 const tr: SiteTranslations = {
@@ -1461,6 +1926,37 @@ const tr: SiteTranslations = {
       tutorials: 'Eğitimler',
       playground: 'Playground',
       forum: 'Forum',
+    },
+  },
+  docs: {
+    sidebar: {
+      gettingStarted: 'Getting Started',
+      basics: 'Basics',
+      controlFlow: 'Control Flow',
+      structsTypes: 'Structs & Types',
+      advanced: 'Advanced',
+      items: {
+        introduction: 'Talimat',
+        installation: 'Installation',
+        helloWorld: 'Hello World',
+        variables: 'Değişkenler',
+        functions: 'Fonksiyonlar',
+        primitiveTypes: 'Basit tipler',
+        strings: 'Stringler',
+        arrays: 'Diziler',
+        maps: 'Mapler',
+        ifElse: 'If',
+        match: 'Switch',
+        forLoops: 'For döngüsü',
+        structs: 'Struct',
+        enums: 'Enumlar',
+        interfaces: 'Arayüzler',
+        concurrency: 'Eşzamanlılık',
+        errorHandling: 'Option tipleri & hata işleme',
+        json: 'JSON çözme',
+        orm: 'ORM',
+        testing: 'Testing',
+      },
     },
   },
 }
