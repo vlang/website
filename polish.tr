@@ -1,35 +1,35 @@
 examples
-Examples
+Przykłady
 -----
 documentation
-Documentation
+Dokumentacja
 -----
 modules
-Modules
+Moduły
 -----
 faq
 FAQ
 -----
 built_in_v
-Built in V
+Wbudowany V
 -----
 the_v_lang
-The V Programming Language
+Język programowania V
 -----
 v_slogan
-Simple, fast, safe, compiled language for developing maintainable software
+Prosty, szybki, bezpieczny, skompilowany język do tworzenia oprogramowania, które można konserwować
 -----
 includes_binaries 
-includes binaries for 3 systems
+zawiera binaria dla 3 systemów
 -----
 install_source 
-Or install V from source 
+Lub zainstaluj V ze źródła
 -----
 couple_seconds 
 this will take a couple of seconds
 -----
 wip_info
-V is an actively developed language at an early stage.
+V jest aktywnie rozwijanym językiem na wczesnym etapie.
 Features that are still being worked on are marked with $wip
 <br> 
 Everything else on this page and the docs has been implemented and open-sourced.
@@ -43,109 +43,109 @@ blog
 Blog 
 -----
 fast_compilation
-Fast compilation
+Szybka kompilacja
 -----
 safety
-Safety
+Bezpieczeństwo
 -----
 performance 
-Performance 
+Wydajność 
 -----
 simple_language_for_maintainable_programs
-Simple language for building  maintainable programs 
+Prosty język do budowania programów, które można konserwować 
 -----
 zero_deps 
-400 KB compiler with zero dependencies
+Kompilator 400 KB z zerowymi zależnościami
 -----
 c_translation 
-C/C++ translation 
+Tłumaczenie C/C++
 -----
 introduction
-Introduction 
+Wstęp
 -----
 comments
-Comments 
+Uwagi
 -----
 functions
-Functions 
+Funkcje
 -----
 variables
-Variables 
+Zmienne
 -----
 basic_types 
-Basic types 
+Typy podstawowe 
 -----
 strings
-Strings
+Smyczki
 -----
 arrays
-Arrays 
+Tablice
 -----
 maps
-Maps 
+Mapy
 -----
 if
-If 
+jeśli 
 -----
 in_op 
-In operator 
+W operatorze
 -----
 for_loop 
-For loop 
+W pętli For
 -----
 switch 
-Switch 
+Przełącznik
 -----
 structs 
-Structs 
+Struktury
 -----
 access_mod 
-Access modifiers 
+Modyfikatory dostępu
 -----
 methods
-Methods
+Metody
 -----
 pure_fns 
-Pure functions 
+Czyste funkcje 
 -----
 high_fns 
-High order functions 
+Funkcje wysokiego rzędu 
 -----
 constants 
-Constants 
+Stałe
 -----
 modules
-Modules 
+Moduły
 -----
 interfaces
-Interfaces 
+Interfejsy
 -----
 enums
-Enums 
+Wyliczenia
 -----
 optionals_and_errors 
-Option types & error handling 
+Rodzaje opcji i obsługa błędów 
 -----
 generics
-Generics 
+Generyki
 -----
 concurrency
-Concurrency 
+Konkurencja
 -----
 decoding_json 
-Decoding JSON 
+Dekodowanie JSON
 -----
 testing
-Testing 
+Testowanie
 -----
 memory_management 
-Memory management 
+Zarządzanie pamięcią
 -----
 fast_comp1
-V compiles between ≈100k and 1.2 million lines of code per second per CPU core. 
+V kompiluje od 100 tys. do 1,2 miliona linii kodu na sekundę na rdzeń procesora.
 -----
 fast_comp2
-V compiles itself in 0.15 - 0.6 seconds.
+V kompiluje się w 0,15 - 0,6 sekundy.
 -----
 fast_comp3
 -----
