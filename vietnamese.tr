@@ -1,0 +1,157 @@
+examples
+Ví dụ
+-----
+documentation
+Tài liệu
+-----
+modules
+Mô-đun
+-----
+faq
+FAQ
+-----
+built_in_v
+Được xây dựng từ ngôn ngữ V
+-----
+the_v_lang
+Ngôn ngữ lập trình V
+-----
+v_slogan
+Simple, fast, safe, compiled language for developing maintainable software
+Ngôn ngữ biên dịch đơn giản, nhanh chóng, an toàn, chuyên dành cho việc xây dựng phần mềm dễ bảo trì
+-----
+includes_binaries 
+Bao gồm các tệp cho 3 hệ thống
+-----
+install_source 
+Hoặc cài đặt V từ source
+-----
+couple_seconds 
+Điều này sẽ mất một vài giây
+-----
+wip_info
+Ngôn ngữ lập trình V hiện vẫn đang được phát triển sôi nổi ở giai đoạn đầu.
+Các chức năng đang trong giai đoạn phát triển sẽ được đánh dấu là $wip
+<br> 
+Những phần còn lại của trang và tài liệu này đều được triển khai và mở mã nguồn.
+<p> 
+Vào thời điểm phiên bản v1.0 được phát hành vào tháng 12 năm 2019, sẽ không còn những mục $wip.
+-----
+forum
+Diễn đàn
+-----
+blog
+Blog 
+-----
+fast_compilation
+Biên dịch nhanh chóng
+-----
+safety
+An toàn
+-----
+performance 
+Hiệu năng 
+-----
+simple_language_for_maintainable_programs
+Ngôn ngữ lập trình đơn giản dùng để xây dựng các phần mềm dễ bảo trì
+-----
+zero_deps 
+Trình biên dịch chỉ 400 KB với không thư viện phụ thuộc
+-----
+c_translation 
+Phiên dịch sang C/C++
+-----
+introduction
+Giới thiệu 
+-----
+comments
+Bình luận 
+-----
+functions
+Hàm 
+-----
+variables
+Biến 
+-----
+basic_types 
+Kiểu cơ bản
+-----
+strings
+Chuỗi
+-----
+arrays
+Mảng 
+-----
+maps
+Maps 
+-----
+if
+Điều kiện If
+-----
+in_op 
+Toán tử In
+-----
+for_loop 
+Vòng lặp For
+-----
+switch 
+Switch 
+-----
+structs 
+Structs 
+-----
+access_mod 
+Sửa đổi truy cập 
+-----
+methods
+Methods
+-----
+pure_fns 
+Hàm bản chất
+-----
+high_fns 
+Hàm thứ tự cao
+-----
+constants 
+Hằng 
+-----
+modules
+Mô-đun 
+-----
+interfaces
+Giao diện 
+-----
+enums
+E-num 
+-----
+optionals_and_errors 
+Kiểu lựa chọn và xử lý lỗi
+-----
+generics
+Giao diện chung 
+-----
+concurrency
+Đồng thời 
+-----
+decoding_json 
+Chuyển mã JSON 
+-----
+testing
+Kiểm thử 
+-----
+memory_management 
+Quản lý bộ nhớ
+-----
+fast_comp1
+Trình biên dịch V giữa 100k và 1.2 triệu dòng code mỗi giây mỗi CPU.
+-----
+fast_comp2
+V biên dịch chính mình trong 0.15 - 0.6 giây.
+-----
+fast_comp3
+-----
+fast_comp4
+-----
+no_null
+Không null
+-----
