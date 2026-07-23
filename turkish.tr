@@ -11,10 +11,10 @@ faq
 SSS
 -----
 built_in_v
-V ile build edildi
+V ile inşa edildi
 -----
 the_v_lang
-The V Programlama Dili
+V Programlama Dili
 -----
 v_slogan
 Bakımı kolay yazılım geliştirmek için basit, hızlı, güvenli, derlenmiş dil
@@ -32,7 +32,7 @@ wip_info
 V, erken bir aşamada aktif olarak geliştirilmiş bir dildir.
 Hala üzerinde çalışılan özellikler $wip ile işaretlenmiştir
 <br>
-Bu sayfadaki ve dokümanlardaki diğer her şey implemente edildi ve açık kaynaklıdır.
+Bu sayfadaki ve dokümanlardaki diğer her şey açık kaynaklıdır ve dahil edilmiştir.
 <p>
 Aralık 2019 için planlanan V 1.0 sürümüne kadar artık $wip kalmayacak.
 -----
@@ -52,16 +52,16 @@ performance
 Performans
 -----
 simple_language_for_maintainable_programs
-Sürdürülebilir programlar oluşturmak için basit dil
+Sürdürülebilir programlar oluşturmak için basit bir dil
 -----
 zero_deps 
 Sıfır bağımlılığa sahip 400 KB derleyici
 -----
 c_translation 
-C/C++ çeviri 
+C/C++ dönüşümü
 -----
 introduction
-Talimat 
+Başlangıç
 -----
 comments
 Yorumlar 
@@ -76,28 +76,28 @@ basic_types
 Basit tipler
 -----
 strings
-Stringler
+String türleri
 -----
 arrays
 Diziler 
 -----
 maps
-Mapler
+Map türleri
 -----
 if
-If 
+If
 -----
 in_op 
-In operatörü 
+In operatörü
 -----
 for_loop 
-For döngüsü 
+For döngüsü
 -----
 switch 
-Switch 
+Switch
 -----
 structs 
-Struct
+Struct özellikleri
 -----
 access_mod 
 Erişim niteleyicileri
@@ -124,10 +124,10 @@ enums
 Enumlar
 -----
 optionals_and_errors 
-Option tipleri & hata işleme
+Option türleri & hata işleme
 -----
 generics
-Jenerikler 
+Yaygın türler
 -----
 concurrency
 Eşzamanlılık 
@@ -136,7 +136,7 @@ decoding_json
 JSON çözme
 -----
 testing
-Testing 
+Test etmek 
 -----
 memory_management 
 Bellek yönetimi 
