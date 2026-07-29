@@ -25,7 +25,10 @@
 		font-size: 14px;
 		line-height: 1.5;
 	}
-	.wrap { max-width: 1400px; margin: 0 auto; padding: 24px 20px 60px; }
+	/* use the full screen width so the wide stats table never needs horizontal scroll */
+	.wrap { max-width: none; margin: 0 auto; padding: 24px 24px 60px; }
+	/* keep the graph at a readable size instead of stretching it across the whole screen */
+	.chartbox { max-width: 1400px; }
 	h1 { font-size: 26px; margin: 0 0 4px; }
 	h1 a { color: var(--fg); text-decoration: none; }
 	.sub { color: var(--muted); margin-bottom: 20px; }
@@ -96,10 +99,10 @@
 	<div class="stats">
 		<div class="stat"><div class="k">Benchmarks</div><div class="v">48</div></div>
 		<div class="stat"><div class="k">Latest commit</div><div class="v">2026-07-28 01:57</div></div>
-		<div class="stat"><div class="k">Page generated</div><div class="v">2026-07-29 03:46:10</div></div>
+		<div class="stat"><div class="k">Page generated</div><div class="v">2026-07-29 04:23:25</div></div>
 	</div>
 
-		<div class="panel">
+		<div class="panel chartbox">
 			<h2>Self-compilation time (ms), oldest → newest</h2>
 			<canvas id="chart" width="1360" height="320"></canvas>
 			<div class="legend">
