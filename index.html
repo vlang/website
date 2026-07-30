@@ -81,12 +81,13 @@
 	td.msg { max-width: 368px; overflow: hidden; text-overflow: ellipsis; color: var(--fg); }
 	td.commit a { color: var(--accent); text-decoration: none; }
 	.cell { position: relative; }
+	.memory { color: var(--muted); font-size: 11px; }
 	.diff {
 		display: inline-block;
 		border-radius: 3px;
 		color: #fff;
 		padding: 0 5px;
-		margin-left: 6px;
+		margin-top: 3px;
 		font-size: 11px;
 	}
 	.minus { background: var(--red); }
@@ -106,9 +107,9 @@
 	</div>
 
 	<div class="stats">
-		<div class="stat"><div class="k">Benchmarks</div><div class="v">48</div></div>
-		<div class="stat"><div class="k">Latest commit</div><div class="v">Jul 28 01:57</div></div>
-		<div class="stat"><div class="k">Page generated</div><div class="v">2026-07-30 06:35:59</div></div>
+		<div class="stat"><div class="k">Benchmarks</div><div class="v">55</div></div>
+		<div class="stat"><div class="k">Latest commit</div><div class="v">5d3d74 · Jul 30 04:25</div></div>
+		<div class="stat"><div class="k">Page generated</div><div class="v">2026-07-30 07:59:16</div></div>
 	</div>
 
 		<div class="panel chartbox">
@@ -134,272 +135,560 @@
 				<th>v -o v</th>
 				<th>V lines / s</th>
 				<th>V lines</th>
-				<th>v hello.v</th>
 				<th>v.c size</th>
 				<th>scan</th>
 				<th>parse</th>
 				<th>check</th>
 				<th>cgen</th>
+				<th>v hello.v</th>
+			</tr>
+			<tr>
+				<td class="left">Jul 30 04:25</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/5d3d7484" target="_blank">5d3d74</a></td>
+				<td class="left msg" title="ci: fix macOS V3 rollout failures">ci: fix macOS V3 rollout failures</td>
+				<td class="cell">2676ms
+					<br>
+					<span class="diff minus">+801</span>
+				</td>
+				<td class="cell">7953ms
+					<br>
+					<span class="diff minus">+2873</span>
+				</td>
+				<td>108511</td>
+				<td>290376</td>
+				<td>18079 KB</td>
+				<td>3ms
+					<div class="memory">636 MB</div>
+				</td>
+				<td>192ms
+					<div class="memory">636 MB</div>
+				</td>
+				<td>539ms
+					<div class="memory">3969 MB</div>
+				</td>
+				<td>547ms
+					<div class="memory">1143 MB</div>
+				</td>
+				<td class="cell">76ms
+				</td>
+			</tr>
+			<tr>
+				<td class="left">Jul 30 04:15</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/d26a8637" target="_blank">d26a86</a></td>
+				<td class="left msg" title="parser: add error for `map` incomplete declaration (#27956)">parser: add error for `map` incomplete declaration (#27956)</td>
+				<td class="cell">1875ms
+					<br>
+					<span class="diff minus">+432</span>
+				</td>
+				<td class="cell">5080ms
+					<br>
+					<span class="diff minus">+312</span>
+				</td>
+				<td>154859</td>
+				<td>290362</td>
+				<td>18079 KB</td>
+				<td>2ms
+					<div class="memory">636 MB</div>
+				</td>
+				<td>147ms
+					<div class="memory">636 MB</div>
+				</td>
+				<td>403ms
+					<div class="memory">3971 MB</div>
+				</td>
+				<td>382ms
+					<div class="memory">1715 MB</div>
+				</td>
+				<td class="cell">61ms
+				</td>
+			</tr>
+			<tr>
+				<td class="left">Jul 30 04:13</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/f20fe195" target="_blank">f20fe1</a></td>
+				<td class="left msg" title="checker: fix wrapped fn aliases in multiple returns (#27977)">checker: fix wrapped fn aliases in multiple returns (#27977)</td>
+				<td class="cell">1443ms
+					<br>
+					<span class="diff plus">-1955</span>
+				</td>
+				<td class="cell">4768ms
+					<br>
+					<span class="diff plus">-764</span>
+				</td>
+				<td>201221</td>
+				<td>290362</td>
+				<td>18079 KB</td>
+				<td>2ms
+					<div class="memory">635 MB</div>
+				</td>
+				<td>138ms
+					<div class="memory">635 MB</div>
+				</td>
+				<td>378ms
+					<div class="memory">3969 MB</div>
+				</td>
+				<td>355ms
+					<div class="memory">5530 MB</div>
+				</td>
+				<td class="cell">59ms
+				</td>
+			</tr>
+			<tr>
+				<td class="left">Jul 30 03:54</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/6fd6cb03" target="_blank">6fd6cb</a></td>
+				<td class="left msg" title="v3: keep scoped macOS transforms parallel (#27980)">v3: keep scoped macOS transforms parallel (#27980)</td>
+				<td class="cell">3398ms
+					<br>
+					<span class="diff minus">+1898</span>
+				</td>
+				<td class="cell">5532ms
+					<br>
+					<span class="diff minus">+576</span>
+				</td>
+				<td>85450</td>
+				<td>290362</td>
+				<td>18079 KB</td>
+				<td>2ms
+					<div class="memory">636 MB</div>
+				</td>
+				<td>151ms
+					<div class="memory">636 MB</div>
+				</td>
+				<td>423ms
+					<div class="memory">3970 MB</div>
+				</td>
+				<td>456ms
+					<div class="memory">1424 MB</div>
+				</td>
+				<td class="cell">62ms
+				</td>
+			</tr>
+			<tr>
+				<td class="left">Jul 30 03:45</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/229fc6e6" target="_blank">229fc6</a></td>
+				<td class="left msg" title="v3: keep refined C extern redeclarations in the signature tables (#27978)">v3: keep refined C extern redeclarations in the signature tables (#27978)</td>
+				<td class="cell">1500ms
+					<br>
+					<span class="diff plus">-4277</span>
+				</td>
+				<td class="cell">4956ms
+					<br>
+					<span class="diff plus">-4087</span>
+				</td>
+				<td>193573</td>
+				<td>290360</td>
+				<td>18079 KB</td>
+				<td>2ms
+					<div class="memory">636 MB</div>
+				</td>
+				<td>145ms
+					<div class="memory">636 MB</div>
+				</td>
+				<td>407ms
+					<div class="memory">3968 MB</div>
+				</td>
+				<td>379ms
+					<div class="memory">6231 MB</div>
+				</td>
+				<td class="cell">61ms
+				</td>
+			</tr>
+			<tr>
+				<td class="left">Jul 30 03:41</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/432da693" target="_blank">432da6</a></td>
+				<td class="left msg" title="ci: stabilize macOS password input test">ci: stabilize macOS password input test</td>
+				<td class="cell">5777ms
+					<br>
+					<span class="diff minus">+3590</span>
+				</td>
+				<td class="cell">9043ms
+					<br>
+					<span class="diff minus">+1260</span>
+				</td>
+				<td>50258</td>
+				<td>290344</td>
+				<td>18079 KB</td>
+				<td>2ms
+					<div class="memory">636 MB</div>
+				</td>
+				<td>150ms
+					<div class="memory">636 MB</div>
+				</td>
+				<td>419ms
+					<div class="memory">3968 MB</div>
+				</td>
+				<td>406ms
+					<div class="memory">6407 MB</div>
+				</td>
+				<td class="cell">59ms
+				</td>
+			</tr>
+			<tr>
+				<td class="left">Jul 30 03:40</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/50aec3b4" target="_blank">50aec3</a></td>
+				<td class="left msg" title="cmd/tools/fast: tighten benchmark table layout">cmd/tools/fast: tighten benchmark table layout</td>
+				<td class="cell">2187ms
+					<br>
+					<span class="diff minus">+1609</span>
+				</td>
+				<td class="cell">7783ms
+					<br>
+					<span class="diff minus">+4987</span>
+				</td>
+				<td>132759</td>
+				<td>290344</td>
+				<td>18079 KB</td>
+				<td>2ms
+					<div class="memory">636 MB</div>
+				</td>
+				<td>170ms
+					<div class="memory">636 MB</div>
+				</td>
+				<td>546ms
+					<div class="memory">3968 MB</div>
+				</td>
+				<td>491ms
+					<div class="memory">1700 MB</div>
+				</td>
+				<td class="cell">89ms
+				</td>
 			</tr>
 			<tr>
 				<td class="left">Jul 28 01:57</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/9ed23df0" target="_blank">9ed23d</a></td>
 				<td class="left msg" title="v3: expand checker fixture compatibility (#27954)">v3: expand checker fixture compatibility (#27954)</td>
 				<td class="cell">578ms
+					<br>
 					<span class="diff minus">+54</span>
 				</td>
 				<td class="cell">2796ms
+					<br>
 					<span class="diff plus">-109</span>
 				</td>
 				<td>339750</td>
 				<td>196376</td>
+				<td>10633 KB</td>
+				<td>24ms
+				</td>
+				<td>106ms
+				</td>
+				<td>123ms
+				</td>
+				<td>75ms
+				</td>
 				<td class="cell">109ms
 				</td>
-				<td>10633 KB</td>
-				<td>24ms</td>
-				<td>106ms</td>
-				<td>123ms</td>
-				<td>75ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jul 28 01:34</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/09062b45" target="_blank">09062b</a></td>
 				<td class="left msg" title="checker, cgen: fix three interface regressions (#27960)">checker, cgen: fix three interface regressions (#27960)</td>
 				<td class="cell">524ms
+					<br>
 					<span class="diff minus">+44</span>
 				</td>
 				<td class="cell">2905ms
+					<br>
 					<span class="diff minus">+110</span>
 				</td>
 				<td>374763</td>
 				<td>196376</td>
+				<td>10633 KB</td>
+				<td>25ms
+				</td>
+				<td>112ms
+				</td>
+				<td>131ms
+				</td>
+				<td>84ms
+				</td>
 				<td class="cell">112ms
 				</td>
-				<td>10633 KB</td>
-				<td>25ms</td>
-				<td>112ms</td>
-				<td>131ms</td>
-				<td>84ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jul 27 21:45</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/d8abccbd" target="_blank">d8abcc</a></td>
 				<td class="left msg" title="checker, cgen: fix fixed array struct initialization (#27959)">checker, cgen: fix fixed array struct initialization (#27959)</td>
 				<td class="cell">480ms
+					<br>
 					<span class="diff plus">-20</span>
 				</td>
 				<td class="cell">2795ms
 				</td>
 				<td>408737</td>
 				<td>196194</td>
+				<td>10623 KB</td>
+				<td>24ms
+				</td>
+				<td>108ms
+				</td>
+				<td>120ms
+				</td>
+				<td>75ms
+				</td>
 				<td class="cell">110ms
 				</td>
-				<td>10623 KB</td>
-				<td>24ms</td>
-				<td>108ms</td>
-				<td>120ms</td>
-				<td>75ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jul 27 13:33</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/bdaf88cb" target="_blank">bdaf88</a></td>
 				<td class="left msg" title="cgen: complete Windows CRT stream declarations (#27948)">cgen: complete Windows CRT stream declarations (#27948)</td>
 				<td class="cell">500ms
+					<br>
 					<span class="diff plus">-31</span>
 				</td>
 				<td class="cell">2809ms
+					<br>
 					<span class="diff plus">-820</span>
 				</td>
 				<td>392380</td>
 				<td>196190</td>
+				<td>10622 KB</td>
+				<td>24ms
+				</td>
+				<td>106ms
+				</td>
+				<td>123ms
+				</td>
+				<td>77ms
+				</td>
 				<td class="cell">123ms
 				</td>
-				<td>10622 KB</td>
-				<td>24ms</td>
-				<td>106ms</td>
-				<td>123ms</td>
-				<td>77ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jul 27 13:33</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/2373b3ab" target="_blank">2373b3</a></td>
 				<td class="left msg" title="ci: harden update_tccbin rebuild matrix (#27951)">ci: harden update_tccbin rebuild matrix (#27951)</td>
 				<td class="cell">531ms
+					<br>
 					<span class="diff plus">-183</span>
 				</td>
 				<td class="cell">3629ms
+					<br>
 					<span class="diff minus">+60</span>
 				</td>
 				<td>369461</td>
 				<td>196184</td>
+				<td>10621 KB</td>
+				<td>26ms
+				</td>
+				<td>118ms
+				</td>
+				<td>126ms
+				</td>
+				<td>77ms
+				</td>
 				<td class="cell">113ms
+					<br>
 					<span class="diff plus">-102</span>
 				</td>
-				<td>10621 KB</td>
-				<td>26ms</td>
-				<td>118ms</td>
-				<td>126ms</td>
-				<td>77ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jul 27 01:47</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/ac7d7f36" target="_blank">ac7d7f</a></td>
 				<td class="left msg" title="v3: fix systemic parser/checker/transform/markused/gen issues; +75 passing tests (#27925)">v3: fix systemic parser/checker/transform/markused/gen issues; +75 passing tests (#27925)</td>
 				<td class="cell">714ms
+					<br>
 					<span class="diff minus">+58</span>
 				</td>
 				<td class="cell">3569ms
 				</td>
 				<td>274767</td>
 				<td>196184</td>
+				<td>10621 KB</td>
+				<td>38ms
+				</td>
+				<td>173ms
+				</td>
+				<td>199ms
+				</td>
+				<td>120ms
+				</td>
 				<td class="cell">215ms
+					<br>
 					<span class="diff minus">+51</span>
 				</td>
-				<td>10621 KB</td>
-				<td>38ms</td>
-				<td>173ms</td>
-				<td>199ms</td>
-				<td>120ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jul 26 19:14</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/85859f0f" target="_blank">85859f</a></td>
 				<td class="left msg" title="net.urllib: reject backslashes in URL authorities (#27947)">net.urllib: reject backslashes in URL authorities (#27947)</td>
 				<td class="cell">656ms
+					<br>
 					<span class="diff minus">+100</span>
 				</td>
 				<td class="cell">3543ms
+					<br>
 					<span class="diff minus">+409</span>
 				</td>
 				<td>299033</td>
 				<td>196166</td>
+				<td>10620 KB</td>
+				<td>32ms
+				</td>
+				<td>147ms
+				</td>
+				<td>160ms
+				</td>
+				<td>102ms
+				</td>
 				<td class="cell">164ms
 				</td>
-				<td>10620 KB</td>
-				<td>32ms</td>
-				<td>147ms</td>
-				<td>160ms</td>
-				<td>102ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jul 26 09:46</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/88c5db79" target="_blank">88c5db</a></td>
 				<td class="left msg" title="cgen: fix five invalid C edge cases (#27942)">cgen: fix five invalid C edge cases (#27942)</td>
 				<td class="cell">556ms
+					<br>
 					<span class="diff plus">-162</span>
 				</td>
 				<td class="cell">3134ms
+					<br>
 					<span class="diff plus">-703</span>
 				</td>
 				<td>352816</td>
 				<td>196166</td>
+				<td>10620 KB</td>
+				<td>30ms
+				</td>
+				<td>131ms
+				</td>
+				<td>141ms
+				</td>
+				<td>95ms
+				</td>
 				<td class="cell">141ms
 				</td>
-				<td>10620 KB</td>
-				<td>30ms</td>
-				<td>131ms</td>
-				<td>141ms</td>
-				<td>95ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jul 26 09:18</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/c669ee16" target="_blank">c669ee</a></td>
 				<td class="left msg" title="checker: detect recursive `.str()` method calls (#27926)">checker: detect recursive `.str()` method calls (#27926)</td>
 				<td class="cell">718ms
+					<br>
 					<span class="diff plus">-66</span>
 				</td>
 				<td class="cell">3837ms
+					<br>
 					<span class="diff minus">+288</span>
 				</td>
 				<td>273183</td>
 				<td>196146</td>
+				<td>10619 KB</td>
+				<td>29ms
+				</td>
+				<td>132ms
+				</td>
+				<td>143ms
+				</td>
+				<td>99ms
+				</td>
 				<td class="cell">163ms
 				</td>
-				<td>10619 KB</td>
-				<td>29ms</td>
-				<td>132ms</td>
-				<td>143ms</td>
-				<td>99ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jul 26 08:13</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/556aa270" target="_blank">556aa2</a></td>
 				<td class="left msg" title="ci: path-gate slow platform workflows (#27861)">ci: path-gate slow platform workflows (#27861)</td>
 				<td class="cell">784ms
+					<br>
 					<span class="diff minus">+144</span>
 				</td>
 				<td class="cell">3549ms
 				</td>
 				<td>248684</td>
 				<td>194969</td>
+				<td>10545 KB</td>
+				<td>30ms
+				</td>
+				<td>135ms
+				</td>
+				<td>144ms
+				</td>
+				<td>94ms
+				</td>
 				<td class="cell">129ms
+					<br>
 					<span class="diff plus">-37</span>
 				</td>
-				<td>10545 KB</td>
-				<td>30ms</td>
-				<td>135ms</td>
-				<td>144ms</td>
-				<td>94ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jul 24 13:18</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/c82d3f08" target="_blank">c82d3f</a></td>
 				<td class="left msg" title="Add shared tccbin conformance test suite (#27924)">Add shared tccbin conformance test suite (#27924)</td>
 				<td class="cell">640ms
+					<br>
 					<span class="diff plus">-23</span>
 				</td>
 				<td class="cell">3527ms
+					<br>
 					<span class="diff minus">+133</span>
 				</td>
 				<td>299885</td>
 				<td>191927</td>
+				<td>10388 KB</td>
+				<td>31ms
+				</td>
+				<td>138ms
+				</td>
+				<td>150ms
+				</td>
+				<td>93ms
+				</td>
 				<td class="cell">166ms
 				</td>
-				<td>10388 KB</td>
-				<td>31ms</td>
-				<td>138ms</td>
-				<td>150ms</td>
-				<td>93ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jul 18 18:13</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/6bfa6e47" target="_blank">6bfa6e</a></td>
 				<td class="left msg" title="v3: update test pass/failure lists">v3: update test pass/failure lists</td>
 				<td class="cell">663ms
+					<br>
 					<span class="diff minus">+36</span>
 				</td>
 				<td class="cell">3394ms
+					<br>
 					<span class="diff minus">+42</span>
 				</td>
 				<td>289343</td>
 				<td>191835</td>
+				<td>10383 KB</td>
+				<td>29ms
+				</td>
+				<td>131ms
+				</td>
+				<td>141ms
+				</td>
+				<td>93ms
+				</td>
 				<td class="cell">131ms
 				</td>
-				<td>10383 KB</td>
-				<td>29ms</td>
-				<td>131ms</td>
-				<td>141ms</td>
-				<td>93ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jul 13 03:00</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/5b514acd" target="_blank">5b514a</a></td>
 				<td class="left msg" title="build(deps): bump gha-utilities/sass-build from 0.4.11 to 0.6.1 (#27758)">build(deps): bump gha-utilities/sass-build from 0.4.11 to 0.6.1 (#27758)</td>
 				<td class="cell">627ms
+					<br>
 					<span class="diff minus">+158</span>
 				</td>
 				<td class="cell">3352ms
+					<br>
 					<span class="diff minus">+709</span>
 				</td>
 				<td>305328</td>
 				<td>191441</td>
+				<td>10370 KB</td>
+				<td>30ms
+				</td>
+				<td>128ms
+				</td>
+				<td>144ms
+				</td>
+				<td>91ms
+				</td>
 				<td class="cell">136ms
 				</td>
-				<td>10370 KB</td>
-				<td>30ms</td>
-				<td>128ms</td>
-				<td>144ms</td>
-				<td>91ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jul 8 13:10</td>
@@ -411,13 +700,17 @@
 				</td>
 				<td>407117</td>
 				<td>190938</td>
+				<td>10344 KB</td>
+				<td>24ms
+				</td>
+				<td>96ms
+				</td>
+				<td>113ms
+				</td>
+				<td>71ms
+				</td>
 				<td class="cell">104ms
 				</td>
-				<td>10344 KB</td>
-				<td>24ms</td>
-				<td>96ms</td>
-				<td>113ms</td>
-				<td>71ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jul 5 01:20</td>
@@ -429,13 +722,17 @@
 				</td>
 				<td>419268</td>
 				<td>190767</td>
+				<td>10346 KB</td>
+				<td>23ms
+				</td>
+				<td>95ms
+				</td>
+				<td>113ms
+				</td>
+				<td>68ms
+				</td>
 				<td class="cell">103ms
 				</td>
-				<td>10346 KB</td>
-				<td>23ms</td>
-				<td>95ms</td>
-				<td>113ms</td>
-				<td>68ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jun 29 16:14</td>
@@ -444,17 +741,22 @@
 				<td class="cell">460ms
 				</td>
 				<td class="cell">2649ms
+					<br>
 					<span class="diff minus">+56</span>
 				</td>
 				<td>413319</td>
 				<td>190127</td>
+				<td>10314 KB</td>
+				<td>23ms
+				</td>
+				<td>95ms
+				</td>
+				<td>113ms
+				</td>
+				<td>69ms
+				</td>
 				<td class="cell">104ms
 				</td>
-				<td>10314 KB</td>
-				<td>23ms</td>
-				<td>95ms</td>
-				<td>113ms</td>
-				<td>69ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jun 26 21:02</td>
@@ -466,13 +768,17 @@
 				</td>
 				<td>425346</td>
 				<td>189279</td>
+				<td>10260 KB</td>
+				<td>23ms
+				</td>
+				<td>95ms
+				</td>
+				<td>110ms
+				</td>
+				<td>69ms
+				</td>
 				<td class="cell">103ms
 				</td>
-				<td>10260 KB</td>
-				<td>23ms</td>
-				<td>95ms</td>
-				<td>110ms</td>
-				<td>69ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jun 20 21:55</td>
@@ -484,13 +790,17 @@
 				</td>
 				<td>415360</td>
 				<td>188989</td>
+				<td>10246 KB</td>
+				<td>23ms
+				</td>
+				<td>95ms
+				</td>
+				<td>111ms
+				</td>
+				<td>69ms
+				</td>
 				<td class="cell">103ms
 				</td>
-				<td>10246 KB</td>
-				<td>23ms</td>
-				<td>95ms</td>
-				<td>111ms</td>
-				<td>69ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jun 12 14:35</td>
@@ -502,13 +812,17 @@
 				</td>
 				<td>399597</td>
 				<td>186612</td>
+				<td>10116 KB</td>
+				<td>23ms
+				</td>
+				<td>106ms
+				</td>
+				<td>116ms
+				</td>
+				<td>65ms
+				</td>
 				<td class="cell">105ms
 				</td>
-				<td>10116 KB</td>
-				<td>23ms</td>
-				<td>106ms</td>
-				<td>116ms</td>
-				<td>65ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jun 6 13:06</td>
@@ -520,13 +834,17 @@
 				</td>
 				<td>404576</td>
 				<td>186105</td>
+				<td>10076 KB</td>
+				<td>22ms
+				</td>
+				<td>105ms
+				</td>
+				<td>118ms
+				</td>
+				<td>60ms
+				</td>
 				<td class="cell">105ms
 				</td>
-				<td>10076 KB</td>
-				<td>22ms</td>
-				<td>105ms</td>
-				<td>118ms</td>
-				<td>60ms</td>
 			</tr>
 			<tr>
 				<td class="left">May 31 02:38</td>
@@ -535,17 +853,22 @@
 				<td class="cell">455ms
 				</td>
 				<td class="cell">2573ms
+					<br>
 					<span class="diff minus">+39</span>
 				</td>
 				<td>407290</td>
 				<td>185317</td>
+				<td>10040 KB</td>
+				<td>23ms
+				</td>
+				<td>108ms
+				</td>
+				<td>121ms
+				</td>
+				<td>63ms
+				</td>
 				<td class="cell">127ms
 				</td>
-				<td>10040 KB</td>
-				<td>23ms</td>
-				<td>108ms</td>
-				<td>121ms</td>
-				<td>63ms</td>
 			</tr>
 			<tr>
 				<td class="left">May 24 20:35</td>
@@ -554,17 +877,22 @@
 				<td class="cell">456ms
 				</td>
 				<td class="cell">2534ms
+					<br>
 					<span class="diff plus">-40</span>
 				</td>
 				<td>403458</td>
 				<td>183977</td>
+				<td>9962 KB</td>
+				<td>22ms
+				</td>
+				<td>104ms
+				</td>
+				<td>116ms
+				</td>
+				<td>61ms
+				</td>
 				<td class="cell">104ms
 				</td>
-				<td>9962 KB</td>
-				<td>22ms</td>
-				<td>104ms</td>
-				<td>116ms</td>
-				<td>61ms</td>
 			</tr>
 			<tr>
 				<td class="left">May 21 00:59</td>
@@ -573,17 +901,22 @@
 				<td class="cell">442ms
 				</td>
 				<td class="cell">2574ms
+					<br>
 					<span class="diff plus">-37</span>
 				</td>
 				<td>412703</td>
 				<td>182415</td>
+				<td>9894 KB</td>
+				<td>22ms
+				</td>
+				<td>103ms
+				</td>
+				<td>113ms
+				</td>
+				<td>54ms
+				</td>
 				<td class="cell">134ms
 				</td>
-				<td>9894 KB</td>
-				<td>22ms</td>
-				<td>103ms</td>
-				<td>113ms</td>
-				<td>54ms</td>
 			</tr>
 			<tr>
 				<td class="left">May 16 11:52</td>
@@ -592,17 +925,22 @@
 				<td class="cell">454ms
 				</td>
 				<td class="cell">2611ms
+					<br>
 					<span class="diff minus">+122</span>
 				</td>
 				<td>401795</td>
 				<td>182415</td>
+				<td>9890 KB</td>
+				<td>23ms
+				</td>
+				<td>105ms
+				</td>
+				<td>115ms
+				</td>
+				<td>57ms
+				</td>
 				<td class="cell">139ms
 				</td>
-				<td>9890 KB</td>
-				<td>23ms</td>
-				<td>105ms</td>
-				<td>115ms</td>
-				<td>57ms</td>
 			</tr>
 			<tr>
 				<td class="left">May 12 05:30</td>
@@ -614,13 +952,17 @@
 				</td>
 				<td>411092</td>
 				<td>181703</td>
+				<td>9837 KB</td>
+				<td>22ms
+				</td>
+				<td>103ms
+				</td>
+				<td>114ms
+				</td>
+				<td>53ms
+				</td>
 				<td class="cell">135ms
 				</td>
-				<td>9837 KB</td>
-				<td>22ms</td>
-				<td>103ms</td>
-				<td>114ms</td>
-				<td>53ms</td>
 			</tr>
 			<tr>
 				<td class="left">May 7 18:42</td>
@@ -632,13 +974,17 @@
 				</td>
 				<td>412570</td>
 				<td>181531</td>
+				<td>9821 KB</td>
+				<td>22ms
+				</td>
+				<td>103ms
+				</td>
+				<td>112ms
+				</td>
+				<td>54ms
+				</td>
 				<td class="cell">135ms
 				</td>
-				<td>9821 KB</td>
-				<td>22ms</td>
-				<td>103ms</td>
-				<td>112ms</td>
-				<td>54ms</td>
 			</tr>
 			<tr>
 				<td class="left">May 1 22:13</td>
@@ -650,33 +996,43 @@
 				</td>
 				<td>415914</td>
 				<td>180923</td>
+				<td>9785 KB</td>
+				<td>22ms
+				</td>
+				<td>101ms
+				</td>
+				<td>110ms
+				</td>
+				<td>53ms
+				</td>
 				<td class="cell">134ms
 				</td>
-				<td>9785 KB</td>
-				<td>22ms</td>
-				<td>101ms</td>
-				<td>110ms</td>
-				<td>53ms</td>
 			</tr>
 			<tr>
 				<td class="left">Apr 27 15:45</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/cbaff6ac" target="_blank">cbaff6</a></td>
 				<td class="left msg" title="builtin: C.GC_register_displacement">builtin: C.GC_register_displacement</td>
 				<td class="cell">432ms
+					<br>
 					<span class="diff plus">-57</span>
 				</td>
 				<td class="cell">2469ms
+					<br>
 					<span class="diff plus">-56</span>
 				</td>
 				<td>418030</td>
 				<td>180589</td>
+				<td>9764 KB</td>
+				<td>22ms
+				</td>
+				<td>102ms
+				</td>
+				<td>109ms
+				</td>
+				<td>53ms
+				</td>
 				<td class="cell">134ms
 				</td>
-				<td>9764 KB</td>
-				<td>22ms</td>
-				<td>102ms</td>
-				<td>109ms</td>
-				<td>53ms</td>
 			</tr>
 			<tr>
 				<td class="left">Apr 24 21:39</td>
@@ -688,13 +1044,17 @@
 				</td>
 				<td>374824</td>
 				<td>183289</td>
+				<td>9708 KB</td>
+				<td>22ms
+				</td>
+				<td>103ms
+				</td>
+				<td>119ms
+				</td>
+				<td>77ms
+				</td>
 				<td class="cell">140ms
 				</td>
-				<td>9708 KB</td>
-				<td>22ms</td>
-				<td>103ms</td>
-				<td>119ms</td>
-				<td>77ms</td>
 			</tr>
 			<tr>
 				<td class="left">Apr 24 00:05</td>
@@ -706,33 +1066,43 @@
 				</td>
 				<td>376216</td>
 				<td>182089</td>
+				<td>9624 KB</td>
+				<td>21ms
+				</td>
+				<td>101ms
+				</td>
+				<td>117ms
+				</td>
+				<td>69ms
+				</td>
 				<td class="cell">136ms
 				</td>
-				<td>9624 KB</td>
-				<td>21ms</td>
-				<td>101ms</td>
-				<td>117ms</td>
-				<td>69ms</td>
 			</tr>
 			<tr>
 				<td class="left">Apr 24 00:05</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/cac3d9e3" target="_blank">cac3d9</a></td>
 				<td class="left msg" title="builder: fix assembly-tests 3 of 4 failing (fixes #11433)">builder: fix assembly-tests 3 of 4 failing (fixes #11433)</td>
 				<td class="cell">487ms
+					<br>
 					<span class="diff minus">+28</span>
 				</td>
 				<td class="cell">2477ms
+					<br>
 					<span class="diff minus">+83</span>
 				</td>
 				<td>370971</td>
 				<td>180663</td>
+				<td>9510 KB</td>
+				<td>21ms
+				</td>
+				<td>101ms
+				</td>
+				<td>116ms
+				</td>
+				<td>68ms
+				</td>
 				<td class="cell">152ms
 				</td>
-				<td>9510 KB</td>
-				<td>21ms</td>
-				<td>101ms</td>
-				<td>116ms</td>
-				<td>68ms</td>
 			</tr>
 			<tr>
 				<td class="left">Apr 20 15:54</td>
@@ -744,53 +1114,69 @@
 				</td>
 				<td>385416</td>
 				<td>176906</td>
+				<td>9182 KB</td>
+				<td>21ms
+				</td>
+				<td>100ms
+				</td>
+				<td>107ms
+				</td>
+				<td>65ms
+				</td>
 				<td class="cell">143ms
 				</td>
-				<td>9182 KB</td>
-				<td>21ms</td>
-				<td>100ms</td>
-				<td>107ms</td>
-				<td>65ms</td>
 			</tr>
 			<tr>
 				<td class="left">Apr 17 21:06</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/2f459d26" target="_blank">2f459d</a></td>
 				<td class="left msg" title="checker: fmt infix.v">checker: fmt infix.v</td>
 				<td class="cell">450ms
+					<br>
 					<span class="diff minus">+95</span>
 				</td>
 				<td class="cell">2381ms
 				</td>
 				<td>391606</td>
 				<td>176223</td>
+				<td>9115 KB</td>
+				<td>21ms
+				</td>
+				<td>100ms
+				</td>
+				<td>107ms
+				</td>
+				<td>69ms
+				</td>
 				<td class="cell">140ms
+					<br>
 					<span class="diff minus">+38</span>
 				</td>
-				<td>9115 KB</td>
-				<td>21ms</td>
-				<td>100ms</td>
-				<td>107ms</td>
-				<td>69ms</td>
 			</tr>
 			<tr>
 				<td class="left">Apr 15 22:23</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/29fd92cc" target="_blank">29fd92</a></td>
 				<td class="left msg" title="all: fix more tests">all: fix more tests</td>
 				<td class="cell">355ms
+					<br>
 					<span class="diff minus">+56</span>
 				</td>
 				<td class="cell">2362ms
+					<br>
 					<span class="diff minus">+167</span>
 				</td>
 				<td>481022</td>
 				<td>170763</td>
+				<td>9101 KB</td>
+				<td>20ms
+				</td>
+				<td>77ms
+				</td>
+				<td>88ms
+				</td>
+				<td>60ms
+				</td>
 				<td class="cell">102ms
 				</td>
-				<td>9101 KB</td>
-				<td>20ms</td>
-				<td>77ms</td>
-				<td>88ms</td>
-				<td>60ms</td>
 			</tr>
 			<tr>
 				<td class="left">Apr 13 01:09</td>
@@ -802,33 +1188,43 @@
 				</td>
 				<td>519183</td>
 				<td>155236</td>
+				<td>8599 KB</td>
+				<td>18ms
+				</td>
+				<td>61ms
+				</td>
+				<td>69ms
+				</td>
+				<td>57ms
+				</td>
 				<td class="cell">92ms
 				</td>
-				<td>8599 KB</td>
-				<td>18ms</td>
-				<td>61ms</td>
-				<td>69ms</td>
-				<td>57ms</td>
 			</tr>
 			<tr>
 				<td class="left">Apr 5 09:27</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/fa627735" target="_blank">fa6277</a></td>
 				<td class="left msg" title="checker: deref fix">checker: deref fix</td>
 				<td class="cell">296ms
+					<br>
 					<span class="diff minus">+72</span>
 				</td>
 				<td class="cell">2167ms
+					<br>
 					<span class="diff minus">+200</span>
 				</td>
 				<td>521256</td>
 				<td>154292</td>
+				<td>8540 KB</td>
+				<td>18ms
+				</td>
+				<td>61ms
+				</td>
+				<td>70ms
+				</td>
+				<td>56ms
+				</td>
 				<td class="cell">78ms
 				</td>
-				<td>8540 KB</td>
-				<td>18ms</td>
-				<td>61ms</td>
-				<td>70ms</td>
-				<td>56ms</td>
 			</tr>
 			<tr>
 				<td class="left">Apr 4 19:49</td>
@@ -837,17 +1233,22 @@
 				<td class="cell">224ms
 				</td>
 				<td class="cell">1967ms
+					<br>
 					<span class="diff minus">+116</span>
 				</td>
 				<td>638522</td>
 				<td>143029</td>
+				<td>7698 KB</td>
+				<td>17ms
+				</td>
+				<td>56ms
+				</td>
+				<td>53ms
+				</td>
+				<td>23ms
+				</td>
 				<td class="cell">78ms
 				</td>
-				<td>7698 KB</td>
-				<td>17ms</td>
-				<td>56ms</td>
-				<td>53ms</td>
-				<td>23ms</td>
 			</tr>
 			<tr>
 				<td class="left">Mar 23 08:51</td>
@@ -859,13 +1260,17 @@
 				</td>
 				<td>644513</td>
 				<td>140504</td>
+				<td>7483 KB</td>
+				<td>17ms
+				</td>
+				<td>55ms
+				</td>
+				<td>52ms
+				</td>
+				<td>22ms
+				</td>
 				<td class="cell">78ms
 				</td>
-				<td>7483 KB</td>
-				<td>17ms</td>
-				<td>55ms</td>
-				<td>52ms</td>
-				<td>22ms</td>
 			</tr>
 			<tr>
 				<td class="left">Mar 14 09:38</td>
@@ -877,13 +1282,17 @@
 				</td>
 				<td>639232</td>
 				<td>139992</td>
+				<td>7462 KB</td>
+				<td>16ms
+				</td>
+				<td>55ms
+				</td>
+				<td>52ms
+				</td>
+				<td>22ms
+				</td>
 				<td class="cell">77ms
 				</td>
-				<td>7462 KB</td>
-				<td>16ms</td>
-				<td>55ms</td>
-				<td>52ms</td>
-				<td>22ms</td>
 			</tr>
 			<tr>
 				<td class="left">Mar 8 15:47</td>
@@ -895,13 +1304,17 @@
 				</td>
 				<td>652146</td>
 				<td>138255</td>
+				<td>7344 KB</td>
+				<td>16ms
+				</td>
+				<td>53ms
+				</td>
+				<td>50ms
+				</td>
+				<td>22ms
+				</td>
 				<td class="cell">77ms
 				</td>
-				<td>7344 KB</td>
-				<td>16ms</td>
-				<td>53ms</td>
-				<td>50ms</td>
-				<td>22ms</td>
 			</tr>
 			<tr>
 				<td class="left">Feb 18 12:31</td>
@@ -913,13 +1326,17 @@
 				</td>
 				<td>655980</td>
 				<td>137756</td>
+				<td>7322 KB</td>
+				<td>16ms
+				</td>
+				<td>52ms
+				</td>
+				<td>49ms
+				</td>
+				<td>21ms
+				</td>
 				<td class="cell">76ms
 				</td>
-				<td>7322 KB</td>
-				<td>16ms</td>
-				<td>52ms</td>
-				<td>49ms</td>
-				<td>21ms</td>
 			</tr>
 			<tr>
 				<td class="left">Feb 14 06:06</td>
@@ -931,13 +1348,17 @@
 				</td>
 				<td>658511</td>
 				<td>137629</td>
+				<td>7316 KB</td>
+				<td>16ms
+				</td>
+				<td>52ms
+				</td>
+				<td>49ms
+				</td>
+				<td>21ms
+				</td>
 				<td class="cell">76ms
 				</td>
-				<td>7316 KB</td>
-				<td>16ms</td>
-				<td>52ms</td>
-				<td>49ms</td>
-				<td>21ms</td>
 			</tr>
 			<tr>
 				<td class="left">Feb 8 20:58</td>
@@ -949,13 +1370,17 @@
 				</td>
 				<td>657177</td>
 				<td>137350</td>
+				<td>7300 KB</td>
+				<td>16ms
+				</td>
+				<td>52ms
+				</td>
+				<td>49ms
+				</td>
+				<td>22ms
+				</td>
 				<td class="cell">77ms
 				</td>
-				<td>7300 KB</td>
-				<td>16ms</td>
-				<td>52ms</td>
-				<td>49ms</td>
-				<td>22ms</td>
 			</tr>
 			<tr>
 				<td class="left">Feb 1 08:20</td>
@@ -967,13 +1392,17 @@
 				</td>
 				<td>661386</td>
 				<td>136907</td>
+				<td>7275 KB</td>
+				<td>16ms
+				</td>
+				<td>52ms
+				</td>
+				<td>49ms
+				</td>
+				<td>22ms
+				</td>
 				<td class="cell">77ms
 				</td>
-				<td>7275 KB</td>
-				<td>16ms</td>
-				<td>52ms</td>
-				<td>49ms</td>
-				<td>22ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jan 28 05:23</td>
@@ -982,17 +1411,22 @@
 				<td class="cell">210ms
 				</td>
 				<td class="cell">1812ms
+					<br>
 					<span class="diff plus">-380</span>
 				</td>
 				<td>651666</td>
 				<td>136850</td>
+				<td>7271 KB</td>
+				<td>16ms
+				</td>
+				<td>52ms
+				</td>
+				<td>48ms
+				</td>
+				<td>21ms
+				</td>
 				<td class="cell">77ms
 				</td>
-				<td>7271 KB</td>
-				<td>16ms</td>
-				<td>52ms</td>
-				<td>48ms</td>
-				<td>21ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jan 25 16:22</td>
@@ -1004,33 +1438,43 @@
 				</td>
 				<td>612852</td>
 				<td>136666</td>
+				<td>7264 KB</td>
+				<td>16ms
+				</td>
+				<td>53ms
+				</td>
+				<td>48ms
+				</td>
+				<td>23ms
+				</td>
 				<td class="cell">86ms
 				</td>
-				<td>7264 KB</td>
-				<td>16ms</td>
-				<td>53ms</td>
-				<td>48ms</td>
-				<td>23ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jan 16 00:53</td>
 				<td class="left commit"><a href="https://github.com/vlang/v/commit/8de6de94" target="_blank">8de6de</a></td>
 				<td class="left msg" title="thirdparty.mbedtls: upgrade to v3.6.5 (#26365)">thirdparty.mbedtls: upgrade to v3.6.5 (#26365)</td>
 				<td class="cell">232ms
+					<br>
 					<span class="diff minus">+29</span>
 				</td>
 				<td class="cell">2167ms
+					<br>
 					<span class="diff minus">+405</span>
 				</td>
 				<td>586159</td>
 				<td>135989</td>
+				<td>7227 KB</td>
+				<td>18ms
+				</td>
+				<td>57ms
+				</td>
+				<td>53ms
+				</td>
+				<td>23ms
+				</td>
 				<td class="cell">84ms
 				</td>
-				<td>7227 KB</td>
-				<td>18ms</td>
-				<td>57ms</td>
-				<td>53ms</td>
-				<td>23ms</td>
 			</tr>
 			<tr>
 				<td class="left">Jan 9 18:01</td>
@@ -1042,13 +1486,17 @@
 				</td>
 				<td>668901</td>
 				<td>135787</td>
+				<td>7070 KB</td>
+				<td>16ms
+				</td>
+				<td>51ms
+				</td>
+				<td>48ms
+				</td>
+				<td>19ms
+				</td>
 				<td class="cell">76ms
 				</td>
-				<td>7070 KB</td>
-				<td>16ms</td>
-				<td>51ms</td>
-				<td>48ms</td>
-				<td>19ms</td>
 			</tr>
 		</table>
 		</div>
