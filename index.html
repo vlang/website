@@ -78,8 +78,7 @@
 	}
 	th.left, td.left { text-align: left; }
 	tbody tr:hover { background: #1c202b; }
-	td.num { color: var(--muted); font-size: 11px; }
-	td.msg { max-width: 460px; overflow: hidden; text-overflow: ellipsis; color: var(--fg); }
+	td.msg { max-width: 368px; overflow: hidden; text-overflow: ellipsis; color: var(--fg); }
 	td.commit a { color: var(--accent); text-decoration: none; }
 	.cell { position: relative; }
 	.diff {
@@ -108,8 +107,8 @@
 
 	<div class="stats">
 		<div class="stat"><div class="k">Benchmarks</div><div class="v">48</div></div>
-		<div class="stat"><div class="k">Latest commit</div><div class="v">2026-07-28 01:57</div></div>
-		<div class="stat"><div class="k">Page generated</div><div class="v">2026-07-29 05:39:02</div></div>
+		<div class="stat"><div class="k">Latest commit</div><div class="v">Jul 28 01:57</div></div>
+		<div class="stat"><div class="k">Page generated</div><div class="v">2026-07-30 06:35:59</div></div>
 	</div>
 
 		<div class="panel chartbox">
@@ -128,25 +127,23 @@
 		<div class="tablewrap">
 		<table>
 			<tr>
-				<th></th>
 				<th class="left">Timestamp</th>
 				<th class="left">Commit</th>
 				<th class="left">Message</th>
 				<th>v -o v.c</th>
 				<th>v -o v</th>
+				<th>V lines / s</th>
+				<th>V lines</th>
 				<th>v hello.v</th>
 				<th>v.c size</th>
 				<th>scan</th>
 				<th>parse</th>
 				<th>check</th>
 				<th>cgen</th>
-				<th>V lines</th>
-				<th>lines/s</th>
 			</tr>
 			<tr>
-				<td class="num">48</td>
-				<td class="left">2026-07-28 01:57</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/9ed23df0" target="_blank">9ed23df0</a></td>
+				<td class="left">Jul 28 01:57</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/9ed23df0" target="_blank">9ed23d</a></td>
 				<td class="left msg" title="v3: expand checker fixture compatibility (#27954)">v3: expand checker fixture compatibility (#27954)</td>
 				<td class="cell">578ms
 					<span class="diff minus">+54</span>
@@ -154,6 +151,8 @@
 				<td class="cell">2796ms
 					<span class="diff plus">-109</span>
 				</td>
+				<td>339750</td>
+				<td>196376</td>
 				<td class="cell">109ms
 				</td>
 				<td>10633 KB</td>
@@ -161,13 +160,10 @@
 				<td>106ms</td>
 				<td>123ms</td>
 				<td>75ms</td>
-				<td>196376</td>
-				<td>339750</td>
 			</tr>
 			<tr>
-				<td class="num">47</td>
-				<td class="left">2026-07-28 01:34</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/09062b45" target="_blank">09062b45</a></td>
+				<td class="left">Jul 28 01:34</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/09062b45" target="_blank">09062b</a></td>
 				<td class="left msg" title="checker, cgen: fix three interface regressions (#27960)">checker, cgen: fix three interface regressions (#27960)</td>
 				<td class="cell">524ms
 					<span class="diff minus">+44</span>
@@ -175,6 +171,8 @@
 				<td class="cell">2905ms
 					<span class="diff minus">+110</span>
 				</td>
+				<td>374763</td>
+				<td>196376</td>
 				<td class="cell">112ms
 				</td>
 				<td>10633 KB</td>
@@ -182,19 +180,18 @@
 				<td>112ms</td>
 				<td>131ms</td>
 				<td>84ms</td>
-				<td>196376</td>
-				<td>374763</td>
 			</tr>
 			<tr>
-				<td class="num">46</td>
-				<td class="left">2026-07-27 21:45</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/d8abccbd" target="_blank">d8abccbd</a></td>
+				<td class="left">Jul 27 21:45</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/d8abccbd" target="_blank">d8abcc</a></td>
 				<td class="left msg" title="checker, cgen: fix fixed array struct initialization (#27959)">checker, cgen: fix fixed array struct initialization (#27959)</td>
 				<td class="cell">480ms
 					<span class="diff plus">-20</span>
 				</td>
 				<td class="cell">2795ms
 				</td>
+				<td>408737</td>
+				<td>196194</td>
 				<td class="cell">110ms
 				</td>
 				<td>10623 KB</td>
@@ -202,13 +199,10 @@
 				<td>108ms</td>
 				<td>120ms</td>
 				<td>75ms</td>
-				<td>196194</td>
-				<td>408737</td>
 			</tr>
 			<tr>
-				<td class="num">45</td>
-				<td class="left">2026-07-27 13:33</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/bdaf88cb" target="_blank">bdaf88cb</a></td>
+				<td class="left">Jul 27 13:33</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/bdaf88cb" target="_blank">bdaf88</a></td>
 				<td class="left msg" title="cgen: complete Windows CRT stream declarations (#27948)">cgen: complete Windows CRT stream declarations (#27948)</td>
 				<td class="cell">500ms
 					<span class="diff plus">-31</span>
@@ -216,6 +210,8 @@
 				<td class="cell">2809ms
 					<span class="diff plus">-820</span>
 				</td>
+				<td>392380</td>
+				<td>196190</td>
 				<td class="cell">123ms
 				</td>
 				<td>10622 KB</td>
@@ -223,13 +219,10 @@
 				<td>106ms</td>
 				<td>123ms</td>
 				<td>77ms</td>
-				<td>196190</td>
-				<td>392380</td>
 			</tr>
 			<tr>
-				<td class="num">44</td>
-				<td class="left">2026-07-27 13:33</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/2373b3ab" target="_blank">2373b3ab</a></td>
+				<td class="left">Jul 27 13:33</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/2373b3ab" target="_blank">2373b3</a></td>
 				<td class="left msg" title="ci: harden update_tccbin rebuild matrix (#27951)">ci: harden update_tccbin rebuild matrix (#27951)</td>
 				<td class="cell">531ms
 					<span class="diff plus">-183</span>
@@ -237,6 +230,8 @@
 				<td class="cell">3629ms
 					<span class="diff minus">+60</span>
 				</td>
+				<td>369461</td>
+				<td>196184</td>
 				<td class="cell">113ms
 					<span class="diff plus">-102</span>
 				</td>
@@ -245,19 +240,18 @@
 				<td>118ms</td>
 				<td>126ms</td>
 				<td>77ms</td>
-				<td>196184</td>
-				<td>369461</td>
 			</tr>
 			<tr>
-				<td class="num">43</td>
-				<td class="left">2026-07-27 01:47</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/ac7d7f36" target="_blank">ac7d7f36</a></td>
+				<td class="left">Jul 27 01:47</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/ac7d7f36" target="_blank">ac7d7f</a></td>
 				<td class="left msg" title="v3: fix systemic parser/checker/transform/markused/gen issues; +75 passing tests (#27925)">v3: fix systemic parser/checker/transform/markused/gen issues; +75 passing tests (#27925)</td>
 				<td class="cell">714ms
 					<span class="diff minus">+58</span>
 				</td>
 				<td class="cell">3569ms
 				</td>
+				<td>274767</td>
+				<td>196184</td>
 				<td class="cell">215ms
 					<span class="diff minus">+51</span>
 				</td>
@@ -266,13 +260,10 @@
 				<td>173ms</td>
 				<td>199ms</td>
 				<td>120ms</td>
-				<td>196184</td>
-				<td>274767</td>
 			</tr>
 			<tr>
-				<td class="num">42</td>
-				<td class="left">2026-07-26 19:14</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/85859f0f" target="_blank">85859f0f</a></td>
+				<td class="left">Jul 26 19:14</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/85859f0f" target="_blank">85859f</a></td>
 				<td class="left msg" title="net.urllib: reject backslashes in URL authorities (#27947)">net.urllib: reject backslashes in URL authorities (#27947)</td>
 				<td class="cell">656ms
 					<span class="diff minus">+100</span>
@@ -280,6 +271,8 @@
 				<td class="cell">3543ms
 					<span class="diff minus">+409</span>
 				</td>
+				<td>299033</td>
+				<td>196166</td>
 				<td class="cell">164ms
 				</td>
 				<td>10620 KB</td>
@@ -287,13 +280,10 @@
 				<td>147ms</td>
 				<td>160ms</td>
 				<td>102ms</td>
-				<td>196166</td>
-				<td>299033</td>
 			</tr>
 			<tr>
-				<td class="num">41</td>
-				<td class="left">2026-07-26 09:46</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/88c5db79" target="_blank">88c5db79</a></td>
+				<td class="left">Jul 26 09:46</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/88c5db79" target="_blank">88c5db</a></td>
 				<td class="left msg" title="cgen: fix five invalid C edge cases (#27942)">cgen: fix five invalid C edge cases (#27942)</td>
 				<td class="cell">556ms
 					<span class="diff plus">-162</span>
@@ -301,6 +291,8 @@
 				<td class="cell">3134ms
 					<span class="diff plus">-703</span>
 				</td>
+				<td>352816</td>
+				<td>196166</td>
 				<td class="cell">141ms
 				</td>
 				<td>10620 KB</td>
@@ -308,13 +300,10 @@
 				<td>131ms</td>
 				<td>141ms</td>
 				<td>95ms</td>
-				<td>196166</td>
-				<td>352816</td>
 			</tr>
 			<tr>
-				<td class="num">40</td>
-				<td class="left">2026-07-26 09:18</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/c669ee16" target="_blank">c669ee16</a></td>
+				<td class="left">Jul 26 09:18</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/c669ee16" target="_blank">c669ee</a></td>
 				<td class="left msg" title="checker: detect recursive `.str()` method calls (#27926)">checker: detect recursive `.str()` method calls (#27926)</td>
 				<td class="cell">718ms
 					<span class="diff plus">-66</span>
@@ -322,6 +311,8 @@
 				<td class="cell">3837ms
 					<span class="diff minus">+288</span>
 				</td>
+				<td>273183</td>
+				<td>196146</td>
 				<td class="cell">163ms
 				</td>
 				<td>10619 KB</td>
@@ -329,19 +320,18 @@
 				<td>132ms</td>
 				<td>143ms</td>
 				<td>99ms</td>
-				<td>196146</td>
-				<td>273183</td>
 			</tr>
 			<tr>
-				<td class="num">39</td>
-				<td class="left">2026-07-26 08:13</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/556aa270" target="_blank">556aa270</a></td>
+				<td class="left">Jul 26 08:13</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/556aa270" target="_blank">556aa2</a></td>
 				<td class="left msg" title="ci: path-gate slow platform workflows (#27861)">ci: path-gate slow platform workflows (#27861)</td>
 				<td class="cell">784ms
 					<span class="diff minus">+144</span>
 				</td>
 				<td class="cell">3549ms
 				</td>
+				<td>248684</td>
+				<td>194969</td>
 				<td class="cell">129ms
 					<span class="diff plus">-37</span>
 				</td>
@@ -350,13 +340,10 @@
 				<td>135ms</td>
 				<td>144ms</td>
 				<td>94ms</td>
-				<td>194969</td>
-				<td>248684</td>
 			</tr>
 			<tr>
-				<td class="num">38</td>
-				<td class="left">2026-07-24 13:18</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/c82d3f08" target="_blank">c82d3f08</a></td>
+				<td class="left">Jul 24 13:18</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/c82d3f08" target="_blank">c82d3f</a></td>
 				<td class="left msg" title="Add shared tccbin conformance test suite (#27924)">Add shared tccbin conformance test suite (#27924)</td>
 				<td class="cell">640ms
 					<span class="diff plus">-23</span>
@@ -364,6 +351,8 @@
 				<td class="cell">3527ms
 					<span class="diff minus">+133</span>
 				</td>
+				<td>299885</td>
+				<td>191927</td>
 				<td class="cell">166ms
 				</td>
 				<td>10388 KB</td>
@@ -371,13 +360,10 @@
 				<td>138ms</td>
 				<td>150ms</td>
 				<td>93ms</td>
-				<td>191927</td>
-				<td>299885</td>
 			</tr>
 			<tr>
-				<td class="num">37</td>
-				<td class="left">2026-07-18 18:13</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/6bfa6e47" target="_blank">6bfa6e47</a></td>
+				<td class="left">Jul 18 18:13</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/6bfa6e47" target="_blank">6bfa6e</a></td>
 				<td class="left msg" title="v3: update test pass/failure lists">v3: update test pass/failure lists</td>
 				<td class="cell">663ms
 					<span class="diff minus">+36</span>
@@ -385,6 +371,8 @@
 				<td class="cell">3394ms
 					<span class="diff minus">+42</span>
 				</td>
+				<td>289343</td>
+				<td>191835</td>
 				<td class="cell">131ms
 				</td>
 				<td>10383 KB</td>
@@ -392,13 +380,10 @@
 				<td>131ms</td>
 				<td>141ms</td>
 				<td>93ms</td>
-				<td>191835</td>
-				<td>289343</td>
 			</tr>
 			<tr>
-				<td class="num">36</td>
-				<td class="left">2026-07-13 03:00</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/5b514acd" target="_blank">5b514acd</a></td>
+				<td class="left">Jul 13 03:00</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/5b514acd" target="_blank">5b514a</a></td>
 				<td class="left msg" title="build(deps): bump gha-utilities/sass-build from 0.4.11 to 0.6.1 (#27758)">build(deps): bump gha-utilities/sass-build from 0.4.11 to 0.6.1 (#27758)</td>
 				<td class="cell">627ms
 					<span class="diff minus">+158</span>
@@ -406,6 +391,8 @@
 				<td class="cell">3352ms
 					<span class="diff minus">+709</span>
 				</td>
+				<td>305328</td>
+				<td>191441</td>
 				<td class="cell">136ms
 				</td>
 				<td>10370 KB</td>
@@ -413,18 +400,17 @@
 				<td>128ms</td>
 				<td>144ms</td>
 				<td>91ms</td>
-				<td>191441</td>
-				<td>305328</td>
 			</tr>
 			<tr>
-				<td class="num">35</td>
-				<td class="left">2026-07-08 13:10</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/7790e9d5" target="_blank">7790e9d5</a></td>
+				<td class="left">Jul 8 13:10</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/7790e9d5" target="_blank">7790e9</a></td>
 				<td class="left msg" title="parser: fix @@ escape before complex at-expressions in templates (#27701)">parser: fix @@ escape before complex at-expressions in templates (#27701)</td>
 				<td class="cell">469ms
 				</td>
 				<td class="cell">2643ms
 				</td>
+				<td>407117</td>
+				<td>190938</td>
 				<td class="cell">104ms
 				</td>
 				<td>10344 KB</td>
@@ -432,18 +418,17 @@
 				<td>96ms</td>
 				<td>113ms</td>
 				<td>71ms</td>
-				<td>190938</td>
-				<td>407117</td>
 			</tr>
 			<tr>
-				<td class="num">34</td>
-				<td class="left">2026-07-05 01:20</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/53371642" target="_blank">53371642</a></td>
+				<td class="left">Jul 5 01:20</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/53371642" target="_blank">533716</a></td>
 				<td class="left msg" title="cgen: fix generic multi-return interface cast with stale checker types (#27610)">cgen: fix generic multi-return interface cast with stale checker types (#27610)</td>
 				<td class="cell">455ms
 				</td>
 				<td class="cell">2621ms
 				</td>
+				<td>419268</td>
+				<td>190767</td>
 				<td class="cell">103ms
 				</td>
 				<td>10346 KB</td>
@@ -451,19 +436,18 @@
 				<td>95ms</td>
 				<td>113ms</td>
 				<td>68ms</td>
-				<td>190767</td>
-				<td>419268</td>
 			</tr>
 			<tr>
-				<td class="num">33</td>
-				<td class="left">2026-06-29 16:14</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/67fe660a" target="_blank">67fe660a</a></td>
+				<td class="left">Jun 29 16:14</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/67fe660a" target="_blank">67fe66</a></td>
 				<td class="left msg" title="ci: use FreeBSD version 15.1 (#27597)">ci: use FreeBSD version 15.1 (#27597)</td>
 				<td class="cell">460ms
 				</td>
 				<td class="cell">2649ms
 					<span class="diff minus">+56</span>
 				</td>
+				<td>413319</td>
+				<td>190127</td>
 				<td class="cell">104ms
 				</td>
 				<td>10314 KB</td>
@@ -471,18 +455,17 @@
 				<td>95ms</td>
 				<td>113ms</td>
 				<td>69ms</td>
-				<td>190127</td>
-				<td>413319</td>
 			</tr>
 			<tr>
-				<td class="num">32</td>
-				<td class="left">2026-06-26 21:02</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/5bc4b1a1" target="_blank">5bc4b1a1</a></td>
+				<td class="left">Jun 26 21:02</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/5bc4b1a1" target="_blank">5bc4b1</a></td>
 				<td class="left msg" title="wasm: emit a clean error for scalar `?T`/`!T` returns instead of an internal ICE (#27516)">wasm: emit a clean error for scalar `?T`/`!T` returns instead of an internal ICE (#27516)</td>
 				<td class="cell">445ms
 				</td>
 				<td class="cell">2593ms
 				</td>
+				<td>425346</td>
+				<td>189279</td>
 				<td class="cell">103ms
 				</td>
 				<td>10260 KB</td>
@@ -490,18 +473,17 @@
 				<td>95ms</td>
 				<td>110ms</td>
 				<td>69ms</td>
-				<td>189279</td>
-				<td>425346</td>
 			</tr>
 			<tr>
-				<td class="num">31</td>
-				<td class="left">2026-06-20 21:55</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/71e00974" target="_blank">71e00974</a></td>
+				<td class="left">Jun 20 21:55</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/71e00974" target="_blank">71e009</a></td>
 				<td class="left msg" title="v3: fixes to compile v1 compiler">v3: fixes to compile v1 compiler</td>
 				<td class="cell">455ms
 				</td>
 				<td class="cell">2595ms
 				</td>
+				<td>415360</td>
+				<td>188989</td>
 				<td class="cell">103ms
 				</td>
 				<td>10246 KB</td>
@@ -509,18 +491,17 @@
 				<td>95ms</td>
 				<td>111ms</td>
 				<td>69ms</td>
-				<td>188989</td>
-				<td>415360</td>
 			</tr>
 			<tr>
-				<td class="num">30</td>
-				<td class="left">2026-06-12 14:35</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/dd68cb18" target="_blank">dd68cb18</a></td>
+				<td class="left">Jun 12 14:35</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/dd68cb18" target="_blank">dd68cb</a></td>
 				<td class="left msg" title="checker: infer generic fn values from call args (#27432)">checker: infer generic fn values from call args (#27432)</td>
 				<td class="cell">467ms
 				</td>
 				<td class="cell">2577ms
 				</td>
+				<td>399597</td>
+				<td>186612</td>
 				<td class="cell">105ms
 				</td>
 				<td>10116 KB</td>
@@ -528,18 +509,17 @@
 				<td>106ms</td>
 				<td>116ms</td>
 				<td>65ms</td>
-				<td>186612</td>
-				<td>399597</td>
 			</tr>
 			<tr>
-				<td class="num">29</td>
-				<td class="left">2026-06-06 13:06</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/a4c4b8cb" target="_blank">a4c4b8cb</a></td>
+				<td class="left">Jun 6 13:06</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/a4c4b8cb" target="_blank">a4c4b8</a></td>
 				<td class="left msg" title="builtin: fix track_heap cross C generation (#27367)">builtin: fix track_heap cross C generation (#27367)</td>
 				<td class="cell">460ms
 				</td>
 				<td class="cell">2564ms
 				</td>
+				<td>404576</td>
+				<td>186105</td>
 				<td class="cell">105ms
 				</td>
 				<td>10076 KB</td>
@@ -547,19 +527,18 @@
 				<td>105ms</td>
 				<td>118ms</td>
 				<td>60ms</td>
-				<td>186105</td>
-				<td>404576</td>
 			</tr>
 			<tr>
-				<td class="num">28</td>
-				<td class="left">2026-05-31 02:38</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/6b855c14" target="_blank">6b855c14</a></td>
+				<td class="left">May 31 02:38</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/6b855c14" target="_blank">6b855c</a></td>
 				<td class="left msg" title="v2: transformer pending_stmts swap-with-fresh instead of clone+clear">v2: transformer pending_stmts swap-with-fresh instead of clone+clear</td>
 				<td class="cell">455ms
 				</td>
 				<td class="cell">2573ms
 					<span class="diff minus">+39</span>
 				</td>
+				<td>407290</td>
+				<td>185317</td>
 				<td class="cell">127ms
 				</td>
 				<td>10040 KB</td>
@@ -567,19 +546,18 @@
 				<td>108ms</td>
 				<td>121ms</td>
 				<td>63ms</td>
-				<td>185317</td>
-				<td>407290</td>
 			</tr>
 			<tr>
-				<td class="num">27</td>
-				<td class="left">2026-05-24 20:35</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/349b46e8" target="_blank">349b46e8</a></td>
+				<td class="left">May 24 20:35</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/349b46e8" target="_blank">349b46</a></td>
 				<td class="left msg" title="v2/cleanc: cut memory blowup in generic scan loops + guard map/_or_t emits">v2/cleanc: cut memory blowup in generic scan loops + guard map/_or_t emits</td>
 				<td class="cell">456ms
 				</td>
 				<td class="cell">2534ms
 					<span class="diff plus">-40</span>
 				</td>
+				<td>403458</td>
+				<td>183977</td>
 				<td class="cell">104ms
 				</td>
 				<td>9962 KB</td>
@@ -587,19 +565,18 @@
 				<td>104ms</td>
 				<td>116ms</td>
 				<td>61ms</td>
-				<td>183977</td>
-				<td>403458</td>
 			</tr>
 			<tr>
-				<td class="num">26</td>
-				<td class="left">2026-05-21 00:59</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/47f2d2b2" target="_blank">47f2d2b2</a></td>
+				<td class="left">May 21 00:59</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/47f2d2b2" target="_blank">47f2d2</a></td>
 				<td class="left msg" title="builder: add Macports legacy software options (#26691)">builder: add Macports legacy software options (#26691)</td>
 				<td class="cell">442ms
 				</td>
 				<td class="cell">2574ms
 					<span class="diff plus">-37</span>
 				</td>
+				<td>412703</td>
+				<td>182415</td>
 				<td class="cell">134ms
 				</td>
 				<td>9894 KB</td>
@@ -607,19 +584,18 @@
 				<td>103ms</td>
 				<td>113ms</td>
 				<td>54ms</td>
-				<td>182415</td>
-				<td>412703</td>
 			</tr>
 			<tr>
-				<td class="num">25</td>
-				<td class="left">2026-05-16 11:52</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/0160c65b" target="_blank">0160c65b</a></td>
+				<td class="left">May 16 11:52</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/0160c65b" target="_blank">0160c6</a></td>
 				<td class="left msg" title="tests: fix msvc-windows CI failures in coutput_test and waitgroup_test">tests: fix msvc-windows CI failures in coutput_test and waitgroup_test</td>
 				<td class="cell">454ms
 				</td>
 				<td class="cell">2611ms
 					<span class="diff minus">+122</span>
 				</td>
+				<td>401795</td>
+				<td>182415</td>
 				<td class="cell">139ms
 				</td>
 				<td>9890 KB</td>
@@ -627,18 +603,17 @@
 				<td>105ms</td>
 				<td>115ms</td>
 				<td>57ms</td>
-				<td>182415</td>
-				<td>401795</td>
 			</tr>
 			<tr>
-				<td class="num">24</td>
-				<td class="left">2026-05-12 05:30</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/da7e85cb" target="_blank">da7e85cb</a></td>
+				<td class="left">May 12 05:30</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/da7e85cb" target="_blank">da7e85</a></td>
 				<td class="left msg" title="all: msvc fixes">all: msvc fixes</td>
 				<td class="cell">442ms
 				</td>
 				<td class="cell">2489ms
 				</td>
+				<td>411092</td>
+				<td>181703</td>
 				<td class="cell">135ms
 				</td>
 				<td>9837 KB</td>
@@ -646,18 +621,17 @@
 				<td>103ms</td>
 				<td>114ms</td>
 				<td>53ms</td>
-				<td>181703</td>
-				<td>411092</td>
 			</tr>
 			<tr>
-				<td class="num">23</td>
-				<td class="left">2026-05-07 18:42</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/1b91ac32" target="_blank">1b91ac32</a></td>
+				<td class="left">May 7 18:42</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/1b91ac32" target="_blank">1b91ac</a></td>
 				<td class="left msg" title="checker: overwrite stale unresolved fixed-array sym for struct fields (fix #27078) (#27081)">checker: overwrite stale unresolved fixed-array sym for struct fields (fix #27078) (#27081)</td>
 				<td class="cell">440ms
 				</td>
 				<td class="cell">2488ms
 				</td>
+				<td>412570</td>
+				<td>181531</td>
 				<td class="cell">135ms
 				</td>
 				<td>9821 KB</td>
@@ -665,18 +639,17 @@
 				<td>103ms</td>
 				<td>112ms</td>
 				<td>54ms</td>
-				<td>181531</td>
-				<td>412570</td>
 			</tr>
 			<tr>
-				<td class="num">22</td>
-				<td class="left">2026-05-01 22:13</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/0346e6a8" target="_blank">0346e6a8</a></td>
+				<td class="left">May 1 22:13</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/0346e6a8" target="_blank">0346e6</a></td>
 				<td class="left msg" title="v2: fmt tests">v2: fmt tests</td>
 				<td class="cell">435ms
 				</td>
 				<td class="cell">2474ms
 				</td>
+				<td>415914</td>
+				<td>180923</td>
 				<td class="cell">134ms
 				</td>
 				<td>9785 KB</td>
@@ -684,13 +657,10 @@
 				<td>101ms</td>
 				<td>110ms</td>
 				<td>53ms</td>
-				<td>180923</td>
-				<td>415914</td>
 			</tr>
 			<tr>
-				<td class="num">21</td>
-				<td class="left">2026-04-27 15:45</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/cbaff6ac" target="_blank">cbaff6ac</a></td>
+				<td class="left">Apr 27 15:45</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/cbaff6ac" target="_blank">cbaff6</a></td>
 				<td class="left msg" title="builtin: C.GC_register_displacement">builtin: C.GC_register_displacement</td>
 				<td class="cell">432ms
 					<span class="diff plus">-57</span>
@@ -698,6 +668,8 @@
 				<td class="cell">2469ms
 					<span class="diff plus">-56</span>
 				</td>
+				<td>418030</td>
+				<td>180589</td>
 				<td class="cell">134ms
 				</td>
 				<td>9764 KB</td>
@@ -705,18 +677,17 @@
 				<td>102ms</td>
 				<td>109ms</td>
 				<td>53ms</td>
-				<td>180589</td>
-				<td>418030</td>
 			</tr>
 			<tr>
-				<td class="num">20</td>
-				<td class="left">2026-04-24 21:39</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/db0afe47" target="_blank">db0afe47</a></td>
+				<td class="left">Apr 24 21:39</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/db0afe47" target="_blank">db0afe</a></td>
 				<td class="left msg" title="websocket: fmt">websocket: fmt</td>
 				<td class="cell">489ms
 				</td>
 				<td class="cell">2525ms
 				</td>
+				<td>374824</td>
+				<td>183289</td>
 				<td class="cell">140ms
 				</td>
 				<td>9708 KB</td>
@@ -724,18 +695,17 @@
 				<td>103ms</td>
 				<td>119ms</td>
 				<td>77ms</td>
-				<td>183289</td>
-				<td>374824</td>
 			</tr>
 			<tr>
-				<td class="num">19</td>
-				<td class="left">2026-04-24 00:05</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/4f7f3371" target="_blank">4f7f3371</a></td>
+				<td class="left">Apr 24 00:05</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/4f7f3371" target="_blank">4f7f33</a></td>
 				<td class="left msg" title="net.http: fix windows: Failed to upload a file via content_type: multipart/form-data (fixes #19256)">net.http: fix windows: Failed to upload a file via content_type: multipart/form-data (fixes #19256)</td>
 				<td class="cell">484ms
 				</td>
 				<td class="cell">2491ms
 				</td>
+				<td>376216</td>
+				<td>182089</td>
 				<td class="cell">136ms
 				</td>
 				<td>9624 KB</td>
@@ -743,13 +713,10 @@
 				<td>101ms</td>
 				<td>117ms</td>
 				<td>69ms</td>
-				<td>182089</td>
-				<td>376216</td>
 			</tr>
 			<tr>
-				<td class="num">18</td>
-				<td class="left">2026-04-24 00:05</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/cac3d9e3" target="_blank">cac3d9e3</a></td>
+				<td class="left">Apr 24 00:05</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/cac3d9e3" target="_blank">cac3d9</a></td>
 				<td class="left msg" title="builder: fix assembly-tests 3 of 4 failing (fixes #11433)">builder: fix assembly-tests 3 of 4 failing (fixes #11433)</td>
 				<td class="cell">487ms
 					<span class="diff minus">+28</span>
@@ -757,6 +724,8 @@
 				<td class="cell">2477ms
 					<span class="diff minus">+83</span>
 				</td>
+				<td>370971</td>
+				<td>180663</td>
 				<td class="cell">152ms
 				</td>
 				<td>9510 KB</td>
@@ -764,18 +733,17 @@
 				<td>101ms</td>
 				<td>116ms</td>
 				<td>68ms</td>
-				<td>180663</td>
-				<td>370971</td>
 			</tr>
 			<tr>
-				<td class="num">17</td>
-				<td class="left">2026-04-20 15:54</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/fea8698d" target="_blank">fea8698d</a></td>
+				<td class="left">Apr 20 15:54</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/fea8698d" target="_blank">fea869</a></td>
 				<td class="left msg" title="cgen: fmt">cgen: fmt</td>
 				<td class="cell">459ms
 				</td>
 				<td class="cell">2394ms
 				</td>
+				<td>385416</td>
+				<td>176906</td>
 				<td class="cell">143ms
 				</td>
 				<td>9182 KB</td>
@@ -783,19 +751,18 @@
 				<td>100ms</td>
 				<td>107ms</td>
 				<td>65ms</td>
-				<td>176906</td>
-				<td>385416</td>
 			</tr>
 			<tr>
-				<td class="num">16</td>
-				<td class="left">2026-04-17 21:06</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/2f459d26" target="_blank">2f459d26</a></td>
+				<td class="left">Apr 17 21:06</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/2f459d26" target="_blank">2f459d</a></td>
 				<td class="left msg" title="checker: fmt infix.v">checker: fmt infix.v</td>
 				<td class="cell">450ms
 					<span class="diff minus">+95</span>
 				</td>
 				<td class="cell">2381ms
 				</td>
+				<td>391606</td>
+				<td>176223</td>
 				<td class="cell">140ms
 					<span class="diff minus">+38</span>
 				</td>
@@ -804,13 +771,10 @@
 				<td>100ms</td>
 				<td>107ms</td>
 				<td>69ms</td>
-				<td>176223</td>
-				<td>391606</td>
 			</tr>
 			<tr>
-				<td class="num">15</td>
-				<td class="left">2026-04-15 22:23</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/29fd92cc" target="_blank">29fd92cc</a></td>
+				<td class="left">Apr 15 22:23</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/29fd92cc" target="_blank">29fd92</a></td>
 				<td class="left msg" title="all: fix more tests">all: fix more tests</td>
 				<td class="cell">355ms
 					<span class="diff minus">+56</span>
@@ -818,6 +782,8 @@
 				<td class="cell">2362ms
 					<span class="diff minus">+167</span>
 				</td>
+				<td>481022</td>
+				<td>170763</td>
 				<td class="cell">102ms
 				</td>
 				<td>9101 KB</td>
@@ -825,18 +791,17 @@
 				<td>77ms</td>
 				<td>88ms</td>
 				<td>60ms</td>
-				<td>170763</td>
-				<td>481022</td>
 			</tr>
 			<tr>
-				<td class="num">14</td>
-				<td class="left">2026-04-13 01:09</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/6d9a5805" target="_blank">6d9a5805</a></td>
+				<td class="left">Apr 13 01:09</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/6d9a5805" target="_blank">6d9a58</a></td>
 				<td class="left msg" title="docs: suggest the vpm sqlite module in v documentation for orm (fixes #25768)">docs: suggest the vpm sqlite module in v documentation for orm (fixes #25768)</td>
 				<td class="cell">299ms
 				</td>
 				<td class="cell">2195ms
 				</td>
+				<td>519183</td>
+				<td>155236</td>
 				<td class="cell">92ms
 				</td>
 				<td>8599 KB</td>
@@ -844,13 +809,10 @@
 				<td>61ms</td>
 				<td>69ms</td>
 				<td>57ms</td>
-				<td>155236</td>
-				<td>519183</td>
 			</tr>
 			<tr>
-				<td class="num">13</td>
-				<td class="left">2026-04-05 09:27</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/fa627735" target="_blank">fa627735</a></td>
+				<td class="left">Apr 5 09:27</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/fa627735" target="_blank">fa6277</a></td>
 				<td class="left msg" title="checker: deref fix">checker: deref fix</td>
 				<td class="cell">296ms
 					<span class="diff minus">+72</span>
@@ -858,6 +820,8 @@
 				<td class="cell">2167ms
 					<span class="diff minus">+200</span>
 				</td>
+				<td>521256</td>
+				<td>154292</td>
 				<td class="cell">78ms
 				</td>
 				<td>8540 KB</td>
@@ -865,19 +829,18 @@
 				<td>61ms</td>
 				<td>70ms</td>
 				<td>56ms</td>
-				<td>154292</td>
-				<td>521256</td>
 			</tr>
 			<tr>
-				<td class="num">12</td>
-				<td class="left">2026-04-04 19:49</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/a5ee1ee8" target="_blank">a5ee1ee8</a></td>
-				<td class="left msg" title="builder: "v run src" and "v run ./scr" behaves differently (fixes #24205)">builder: "v run src" and "v run ./scr" behaves differently (fixes #24205)</td>
+				<td class="left">Apr 4 19:49</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/a5ee1ee8" target="_blank">a5ee1e</a></td>
+				<td class="left msg" title="builder: &#34;v run src&#34; and &#34;v run ./scr&#34; behaves differently (fixes #24205)">builder: &#34;v run src&#34; and &#34;v run ./scr&#34; behaves differently (fixes #24205)</td>
 				<td class="cell">224ms
 				</td>
 				<td class="cell">1967ms
 					<span class="diff minus">+116</span>
 				</td>
+				<td>638522</td>
+				<td>143029</td>
 				<td class="cell">78ms
 				</td>
 				<td>7698 KB</td>
@@ -885,18 +848,17 @@
 				<td>56ms</td>
 				<td>53ms</td>
 				<td>23ms</td>
-				<td>143029</td>
-				<td>638522</td>
 			</tr>
 			<tr>
-				<td class="num">11</td>
-				<td class="left">2026-03-23 08:51</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/58f18573" target="_blank">58f18573</a></td>
+				<td class="left">Mar 23 08:51</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/58f18573" target="_blank">58f185</a></td>
 				<td class="left msg" title="v2: fix CI macOS and Sanitized CI failures">v2: fix CI macOS and Sanitized CI failures</td>
 				<td class="cell">218ms
 				</td>
 				<td class="cell">1851ms
 				</td>
+				<td>644513</td>
+				<td>140504</td>
 				<td class="cell">78ms
 				</td>
 				<td>7483 KB</td>
@@ -904,18 +866,17 @@
 				<td>55ms</td>
 				<td>52ms</td>
 				<td>22ms</td>
-				<td>140504</td>
-				<td>644513</td>
 			</tr>
 			<tr>
-				<td class="num">10</td>
-				<td class="left">2026-03-14 09:38</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/d0d6d1ee" target="_blank">d0d6d1ee</a></td>
+				<td class="left">Mar 14 09:38</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/d0d6d1ee" target="_blank">d0d6d1</a></td>
 				<td class="left msg" title="v2.eval: disable eval tests temporarily">v2.eval: disable eval tests temporarily</td>
 				<td class="cell">219ms
 				</td>
 				<td class="cell">1849ms
 				</td>
+				<td>639232</td>
+				<td>139992</td>
 				<td class="cell">77ms
 				</td>
 				<td>7462 KB</td>
@@ -923,18 +884,17 @@
 				<td>55ms</td>
 				<td>52ms</td>
 				<td>22ms</td>
-				<td>139992</td>
-				<td>639232</td>
 			</tr>
 			<tr>
-				<td class="num">9</td>
-				<td class="left">2026-03-08 15:47</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/64360d2c" target="_blank">64360d2c</a></td>
+				<td class="left">Mar 8 15:47</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/64360d2c" target="_blank">64360d</a></td>
 				<td class="left msg" title="sokol: fix `v run examples/2048/` on macos (regressed after 5d6de17) (#26705)">sokol: fix `v run examples/2048/` on macos (regressed after 5d6de17) (#26705)</td>
 				<td class="cell">212ms
 				</td>
 				<td class="cell">1817ms
 				</td>
+				<td>652146</td>
+				<td>138255</td>
 				<td class="cell">77ms
 				</td>
 				<td>7344 KB</td>
@@ -942,18 +902,17 @@
 				<td>53ms</td>
 				<td>50ms</td>
 				<td>22ms</td>
-				<td>138255</td>
-				<td>652146</td>
 			</tr>
 			<tr>
-				<td class="num">8</td>
-				<td class="left">2026-02-18 12:31</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/aca3797f" target="_blank">aca3797f</a></td>
+				<td class="left">Feb 18 12:31</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/aca3797f" target="_blank">aca379</a></td>
 				<td class="left msg" title="examples: improve pidigits.v using a much faster spigot algorithm from https://mail.python.org/pipermail/edu-sig/2012-December/010721.html">examples: improve pidigits.v using a much faster spigot algorithm from https://mail.python.org/pipermail/edu-sig/2012-December/010721.html</td>
 				<td class="cell">210ms
 				</td>
 				<td class="cell">1816ms
 				</td>
+				<td>655980</td>
+				<td>137756</td>
 				<td class="cell">76ms
 				</td>
 				<td>7322 KB</td>
@@ -961,18 +920,17 @@
 				<td>52ms</td>
 				<td>49ms</td>
 				<td>21ms</td>
-				<td>137756</td>
-				<td>655980</td>
 			</tr>
 			<tr>
-				<td class="num">7</td>
-				<td class="left">2026-02-14 06:06</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/02a62934" target="_blank">02a62934</a></td>
+				<td class="left">Feb 14 06:06</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/02a62934" target="_blank">02a629</a></td>
 				<td class="left msg" title="time: prevent linux time functions from being included in non-linux platforms (#26596)">time: prevent linux time functions from being included in non-linux platforms (#26596)</td>
 				<td class="cell">209ms
 				</td>
 				<td class="cell">1812ms
 				</td>
+				<td>658511</td>
+				<td>137629</td>
 				<td class="cell">76ms
 				</td>
 				<td>7316 KB</td>
@@ -980,18 +938,17 @@
 				<td>52ms</td>
 				<td>49ms</td>
 				<td>21ms</td>
-				<td>137629</td>
-				<td>658511</td>
 			</tr>
 			<tr>
-				<td class="num">6</td>
-				<td class="left">2026-02-08 20:58</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/ee2b5d71" target="_blank">ee2b5d71</a></td>
+				<td class="left">Feb 8 20:58</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/ee2b5d71" target="_blank">ee2b5d</a></td>
 				<td class="left msg" title="ci: fix `./v test vlib/v/generics/new_generics_regression_test.v`">ci: fix `./v test vlib/v/generics/new_generics_regression_test.v`</td>
 				<td class="cell">209ms
 				</td>
 				<td class="cell">1808ms
 				</td>
+				<td>657177</td>
+				<td>137350</td>
 				<td class="cell">77ms
 				</td>
 				<td>7300 KB</td>
@@ -999,18 +956,17 @@
 				<td>52ms</td>
 				<td>49ms</td>
 				<td>22ms</td>
-				<td>137350</td>
-				<td>657177</td>
 			</tr>
 			<tr>
-				<td class="num">5</td>
-				<td class="left">2026-02-01 08:20</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/ba1cfccb" target="_blank">ba1cfccb</a></td>
+				<td class="left">Feb 1 08:20</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/ba1cfccb" target="_blank">ba1cfc</a></td>
 				<td class="left msg" title="crypto.blake3: add @[direct_array_access] and improve f() performance (#26480)">crypto.blake3: add @[direct_array_access] and improve f() performance (#26480)</td>
 				<td class="cell">207ms
 				</td>
 				<td class="cell">1803ms
 				</td>
+				<td>661386</td>
+				<td>136907</td>
 				<td class="cell">77ms
 				</td>
 				<td>7275 KB</td>
@@ -1018,19 +974,18 @@
 				<td>52ms</td>
 				<td>49ms</td>
 				<td>22ms</td>
-				<td>136907</td>
-				<td>661386</td>
 			</tr>
 			<tr>
-				<td class="num">4</td>
-				<td class="left">2026-01-28 05:23</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/bf9ac865" target="_blank">bf9ac865</a></td>
+				<td class="left">Jan 28 05:23</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/bf9ac865" target="_blank">bf9ac8</a></td>
 				<td class="left msg" title="ssa: bring back mem2reg">ssa: bring back mem2reg</td>
 				<td class="cell">210ms
 				</td>
 				<td class="cell">1812ms
 					<span class="diff plus">-380</span>
 				</td>
+				<td>651666</td>
+				<td>136850</td>
 				<td class="cell">77ms
 				</td>
 				<td>7271 KB</td>
@@ -1038,18 +993,17 @@
 				<td>52ms</td>
 				<td>48ms</td>
 				<td>21ms</td>
-				<td>136850</td>
-				<td>651666</td>
 			</tr>
 			<tr>
-				<td class="num">3</td>
-				<td class="left">2026-01-25 16:22</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/15222a99" target="_blank">15222a99</a></td>
+				<td class="left">Jan 25 16:22</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/15222a99" target="_blank">15222a</a></td>
 				<td class="left msg" title="builtin,strconv: fix zero to string conversion for floats, add tests (fix #26429) (#26435)">builtin,strconv: fix zero to string conversion for floats, add tests (fix #26429) (#26435)</td>
 				<td class="cell">223ms
 				</td>
 				<td class="cell">2192ms
 				</td>
+				<td>612852</td>
+				<td>136666</td>
 				<td class="cell">86ms
 				</td>
 				<td>7264 KB</td>
@@ -1057,13 +1011,10 @@
 				<td>53ms</td>
 				<td>48ms</td>
 				<td>23ms</td>
-				<td>136666</td>
-				<td>612852</td>
 			</tr>
 			<tr>
-				<td class="num">2</td>
-				<td class="left">2026-01-16 00:53</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/8de6de94" target="_blank">8de6de94</a></td>
+				<td class="left">Jan 16 00:53</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/8de6de94" target="_blank">8de6de</a></td>
 				<td class="left msg" title="thirdparty.mbedtls: upgrade to v3.6.5 (#26365)">thirdparty.mbedtls: upgrade to v3.6.5 (#26365)</td>
 				<td class="cell">232ms
 					<span class="diff minus">+29</span>
@@ -1071,6 +1022,8 @@
 				<td class="cell">2167ms
 					<span class="diff minus">+405</span>
 				</td>
+				<td>586159</td>
+				<td>135989</td>
 				<td class="cell">84ms
 				</td>
 				<td>7227 KB</td>
@@ -1078,18 +1031,17 @@
 				<td>57ms</td>
 				<td>53ms</td>
 				<td>23ms</td>
-				<td>135989</td>
-				<td>586159</td>
 			</tr>
 			<tr>
-				<td class="num">1</td>
-				<td class="left">2026-01-09 18:01</td>
-				<td class="left commit"><a href="https://github.com/vlang/v/commit/7b22bae1" target="_blank">7b22bae1</a></td>
+				<td class="left">Jan 9 18:01</td>
+				<td class="left commit"><a href="https://github.com/vlang/v/commit/7b22bae1" target="_blank">7b22ba</a></td>
 				<td class="left msg" title="cgen: fix generic function error propagation type mismatch (fix #26263) (#26295)">cgen: fix generic function error propagation type mismatch (fix #26263) (#26295)</td>
 				<td class="cell">203ms
 				</td>
 				<td class="cell">1762ms
 				</td>
+				<td>668901</td>
+				<td>135787</td>
 				<td class="cell">76ms
 				</td>
 				<td>7070 KB</td>
@@ -1097,8 +1049,6 @@
 				<td>51ms</td>
 				<td>48ms</td>
 				<td>19ms</td>
-				<td>135787</td>
-				<td>668901</td>
 			</tr>
 		</table>
 		</div>
