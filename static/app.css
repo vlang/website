@@ -2831,3 +2831,20 @@ li code {
 .no-js .menu-toggle {
   display: none;
 }
+/* Right-to-left language support (e.g. Persian). The `dir` attribute on
+   <html> already flips text flow; these rules keep code, commands and
+   media left-to-right and align prose to the right. */
+html[dir="rtl"] body {
+  text-align: right;
+}
+html[dir="rtl"] pre,
+html[dir="rtl"] code,
+html[dir="rtl"] .demo-command,
+html[dir="rtl"] .example-code {
+  direction: ltr;
+  text-align: left;
+}
+html[dir="rtl"] .demo-media video,
+html[dir="rtl"] .demo-media img {
+  direction: ltr;
+}

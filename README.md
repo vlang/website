@@ -60,7 +60,8 @@ hardware, build flags, and uncut elapsed time visible.
 code, tables, screenshots, and videos. Expanded feature groups remain addressable
 by URL fragments. Resources, books, merchandise, five editor integrations, all
 six sponsors, donation links, community links, original credits, and English,
-Russian, Spanish, French, Japanese, Chinese, Turkish, and Brazilian Portuguese language selection remain available. The previous
+Russian, Spanish, French, Japanese, Chinese, Turkish, Brazilian Portuguese,
+and Persian (Farsi) language selection remain available. The previous
 site is preserved in `oldv/`.
 
 Check a running instance against the old site's complete link inventory:
