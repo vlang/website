@@ -301,7 +301,10 @@ li code {
 }
 .header-actions select {
   font-size: 11px;
-  width: 48px;
+  /* Closed label must fit the widest option (PT-BR, 日本語); max-content
+     floor also keeps flex-shrink from re-clipping it under header pressure. */
+  min-width: max-content;
+  width: fit-content;
   color: var(--muted);
   border: none;
   background: transparent;
@@ -2231,7 +2234,6 @@ li code {
     font-size: clamp(40px, 12vw, 52px);
   }
   .header-actions select {
-    width: 44px;
     font-size: 10px;
   }
   .donation-link {
