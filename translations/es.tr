@@ -11,7 +11,7 @@ home_nav_language
 Lenguaje
 -----
 home_nav_stdlib_docs
-Documentación de la biblioteca estándar
+Biblioteca estándar
 -----
 home_nav_ecosystem
 Ecosistema
@@ -38,7 +38,7 @@ faq
 Preguntas frecuentes
 -----
 playground
-Entorno de pruebas
+Playground
 -----
 built_in_v
 Hecho con V
@@ -133,7 +133,7 @@ strings
 Cadenas
 -----
 arrays
-Arreglos
+Arrays
 -----
 maps
 Mapas
@@ -346,7 +346,7 @@ home_index_adb
 Una aplicación V en ejecución cambia inmediatamente al editar su código
 -----
 home_index_adc
-Edita. Guarda. Ya está en vivo.
+Edita. Guarda. Míralo en vivo.
 -----
 home_index_add
 Cambia el código.
@@ -355,7 +355,7 @@ home_index_ade
 No pierdas el ritmo.
 -----
 home_index_adf
-Recarga de código en vivo sin perder el estado de la aplicación. Un camino más corto desde la idea hasta lo que ves.
+Recarga en vivo sin perder el estado de tu aplicación. Un camino más corto desde la idea hasta el resultado final.
 -----
 home_index_adg
 Descubre la recarga en vivo ↗
@@ -397,16 +397,16 @@ home_index_aei
 Compilación de una aplicación para Windows desde otro sistema operativo
 -----
 home_index_aej
-Un lenguaje. Más destinos.
+Un código. Múltiples destinos.
 -----
 home_index_afa
 Compila aquí.
 -----
 home_index_afb
-Ejecuta allí.
+Ejecuta allá.
 -----
 home_index_afc
-Compila aplicaciones nativas para otro sistema operativo. Lleva tus herramientas contigo.
+Compila aplicaciones nativas para otros sistemas operativos sin depender de herramientas externas.
 -----
 home_index_afd
 Descubre la compilación cruzada ↗
@@ -808,7 +808,7 @@ home_content_afi
 Compilador pequeño y fácil de construir
 -----
 home_content_afj
-V puede arrancarse desde cero en menos de un segundo compilando su código traducido a C con un sencillo comando:
+V puede compilarse a sí mismo en menos de un segundo al compilar su código traducido a C con un simple comando:
 -----
 home_content_aga
 No requiere bibliotecas ni dependencias.
@@ -910,7 +910,7 @@ home_content_ajc
 Traducción de C
 -----
 home_content_ajd
-V puede traducir a V todo tu proyecto escrito en C y ofrecerte seguridad, sencillez y una compilación más rápida (mediante módulos).
+V puede traducir tu proyecto de C a V y ofrecerte seguridad, sencillez y mayor velocidad de compilación (mediante módulos).
 -----
 home_content_aje
 Hay una
@@ -925,13 +925,13 @@ home_content_ajh
 La traducción de C++ a V se encuentra en una etapa temprana.
 -----
 home_content_aji
-Recarga de código en caliente
+Hot reload
 -----
 home_content_ajj
-Aplica tus cambios al instante sin recompilar.
+Visualiza tus cambios al instante, sin recompilar.
 -----
 home_content_baa
-Además, como no tienes que volver al estado en el que estabas trabajando después de cada compilación, puedes ahorrar muchos minutos valiosos de desarrollo.
+Además, al no tener que recrear el flujo o pantalla en la que estabas trabajando tras cada compilación, ahorrarás muchísimo tiempo de desarrollo.
 -----
 home_content_bab
 github.com/.../examples/hot_reload
@@ -997,7 +997,7 @@ home_content_bcb
 github.com/vlang/ui
 -----
 home_content_bcc
-Volt, un cliente de Slack/Discord de 3 MB creado con V y V UI:
+Volt, un cliente de Slack/Discord de 3 MB creado con V y V UI
 -----
 home_content_bcd
 Screen3
@@ -1012,7 +1012,7 @@ home_content_bcg
 o
 -----
 home_content_bch
-. No hace falta ningún paso adicional, ni siquiera para aplicaciones gráficas o con interfaz de usuario.
+. Sin pasos adicionales, incluso para aplicaciones con interfaz gráfica.
 -----
 home_content_bci
 (Por ahora, el software para macOS solo puede compilarse en macOS).
