@@ -35,6 +35,7 @@ enum Lang {
 	zh
 	tr
 	pt_br
+	fa
 	// cn
 	// pt
 }
@@ -49,6 +50,7 @@ fn (lang Lang) str() string {
 		.zh { 'zh' }
 		.tr { 'tr' }
 		.pt_br { 'pt-br' }
+		.fa { 'fa' }
 	}
 }
 
@@ -62,6 +64,7 @@ fn lang_from_code(code string) ?Lang {
 		'zh' { .zh }
 		'tr' { .tr }
 		'pt-br' { .pt_br }
+		'fa' { .fa }
 		else { none }
 	}
 }
@@ -180,6 +183,10 @@ pub fn (mut ctx Context) set_lang() {
 	ctx.lang = lang_from_code(code) or { Lang.en }
 }
 
+fn (ctx Context) html_dir() string {
+	return if ctx.lang == .fa { 'rtl' } else { 'ltr' }
+}
+
 fn build_tr_menu(cur_lang Lang) string {
 	// mut sb := strings.new_builder()
 	// sb.write_string('<select>')
@@ -192,7 +199,8 @@ fn build_tr_menu(cur_lang Lang) string {
 		'<option value=ja ${if cur_lang == .ja { 'selected' } else { '' }}>日本語</option>' +
 		'<option value=zh ${if cur_lang == .zh { 'selected' } else { '' }}>中文</option>' +
 		'<option value=tr ${if cur_lang == .tr { 'selected' } else { '' }}>TR</option>' +
-		'<option value=pt-br ${if cur_lang == .pt_br { 'selected' } else { '' }}>PT-BR</option></select>'
+		'<option value=pt-br ${if cur_lang == .pt_br { 'selected' } else { '' }}>PT-BR</option>' +
+		'<option value=fa ${if cur_lang == .fa { 'selected' } else { '' }}>فارسی</option></select>'
 	/*
 	s := match cur_lang {
 		.ru { 'English' }
